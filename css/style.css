@@ -2160,3 +2160,9 @@ pre .javascript .function {
 .entry-content td, .comment-content td {
   border: 0px none;
 }
+#s { /* search button */
+  width: auto;
+}
+.highlight > table {
+  border-bottom: medium none;
+}
