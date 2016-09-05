@@ -1,70 +1,70 @@
 Celular Metralhadora 
-Quando estiver conversando no celular, pressione triângulo para delisgar e rapidamente mude para a Tec9, então aparecerá um celular que atira! 
-(desativa quando entrar em um veículo) 
+Quando estiver conversando no celular, pressione triÃ¢ngulo para delisgar e rapidamente mude para a Tec9, entÃ£o aparecerÃ¡ um celular que atira! 
+(desativa quando entrar em um veÃ­culo) 
 
 Savanna a prova de balas 
-Depois de terminar a missão 'High Stakes, Low-Rider', Cesar e seu carro ficam na linha de chegada, com portas trancadas. Você pode empurrar o carro para a garagem mais próxima e as portas se destravarão. O carro continua a prova de balas. 
+Depois de terminar a missÃ£o 'High Stakes, Low-Rider', Cesar e seu carro ficam na linha de chegada, com portas trancadas. VocÃª pode empurrar o carro para a garagem mais prÃ³xima e as portas se destravarÃ£o. O carro continua a prova de balas. 
 
-Maneira fácil de conseguir um Hunter 
-Vá ao aeroporto de LV e escolha a corrida Heli Hell, voe com o Hunter até o aeroporto novamente e saia dele para perder, então saia da missão e pegue o Hunter. 
+Maneira fÃ¡cil de conseguir um Hunter 
+VÃ¡ ao aeroporto de LV e escolha a corrida Heli Hell, voe com o Hunter atÃ© o aeroporto novamente e saia dele para perder, entÃ£o saia da missÃ£o e pegue o Hunter. 
 
-Caia de lugares altos e não morra 
-Fique apertando pular o mais rápido que puder enquanto estiver caindo e você irá ter muito menos dano. 
+Caia de lugares altos e nÃ£o morra 
+Fique apertando pular o mais rÃ¡pido que puder enquanto estiver caindo e vocÃª irÃ¡ ter muito menos dano. 
 
-Vinyls de graça na Loco Low co. e Wheel Arch Angels 
-Cansado das garagens levarem o seu vinyl? Não quer pagar $500 em um bonito vinyl de fogo? Leve seu veículo a sua Mod Shop preferida. Quando estiver lá, seleciona o vinyl que você quer. Agora pressione e bem rápido. Seu carro terá o vinyl e você não paga nada. Entretanto, isso não funciona com os outros acessórios. (cores, spoilers etc.) Também veja que você não consertará seu carro. 
+Vinyls de graÃ§a na Loco Low co. e Wheel Arch Angels 
+Cansado das garagens levarem o seu vinyl? NÃ£o quer pagar $500 em um bonito vinyl de fogo? Leve seu veÃ­culo a sua Mod Shop preferida. Quando estiver lÃ¡, seleciona o vinyl que vocÃª quer. Agora pressione e bem rÃ¡pido. Seu carro terÃ¡ o vinyl e vocÃª nÃ£o paga nada. Entretanto, isso nÃ£o funciona com os outros acessÃ³rios. (cores, spoilers etc.) TambÃ©m veja que vocÃª nÃ£o consertarÃ¡ seu carro. 
 
-Vá a qualquer cidade mais cedo sem ficar com 4 estrelas 
-Pege um veículo e vá onde está dividido entre área trancada e aberta. A área trancada é a região em azul. Não passe a divisa. Espere até ver um policial, ou atire num pedestre para ficar com 1 estrela. Com isso, dirija além da divisa e ande pela cidade um pouco. Você não ficará com 4 estrelas. Depois disso, se mate e você estará no hospital. Depois que sair, você pode andar pela cidade sem estrelas. 
+VÃ¡ a qualquer cidade mais cedo sem ficar com 4 estrelas 
+Pege um veÃ­culo e vÃ¡ onde estÃ¡ dividido entre Ã¡rea trancada e aberta. A Ã¡rea trancada Ã© a regiÃ£o em azul. NÃ£o passe a divisa. Espere atÃ© ver um policial, ou atire num pedestre para ficar com 1 estrela. Com isso, dirija alÃ©m da divisa e ande pela cidade um pouco. VocÃª nÃ£o ficarÃ¡ com 4 estrelas. Depois disso, se mate e vocÃª estarÃ¡ no hospital. Depois que sair, vocÃª pode andar pela cidade sem estrelas. 
 
-CJ sem cabeça 
-Encontre uma Katane, e entre no modo multiplayer. Faça com que o 2º jogador arranque sua cabeça, então você volta para o modo normal sem cabeça. 
+CJ sem cabeÃ§a 
+Encontre uma Katane, e entre no modo multiplayer. FaÃ§a com que o 2Âº jogador arranque sua cabeÃ§a, entÃ£o vocÃª volta para o modo normal sem cabeÃ§a. 
 
 Nitro infinito 
-Se você explodir um carro em sua garagem com o nitro ativado, ele volta com nitro permanente. 
+Se vocÃª explodir um carro em sua garagem com o nitro ativado, ele volta com nitro permanente. 
 
-Pedestre invencível 
-Se pegar um carro com um passageiro e ir ao Pay'n'Spray e trancá-lo lá, quando a porta abrir o passageiro estará invencível. Não importa o que faça, você não pode matá-lo. 
+Pedestre invencÃ­vel 
+Se pegar um carro com um passageiro e ir ao Pay'n'Spray e trancÃ¡-lo lÃ¡, quando a porta abrir o passageiro estarÃ¡ invencÃ­vel. NÃ£o importa o que faÃ§a, vocÃª nÃ£o pode matÃ¡-lo. 
 
 Mountain Bike derretendo 
-Pegue uma mountian bike, comece a dar ré segurando quadrado, e enquanto segura ele, comece a apertar bem rápido. 
-Quadro de CJ irá se contorcer em formas malucas. 
-Ele parecerá que está derretendo no chão. 
+Pegue uma mountian bike, comece a dar rÃ© segurando quadrado, e enquanto segura ele, comece a apertar bem rÃ¡pido. 
+Quadro de CJ irÃ¡ se contorcer em formas malucas. 
+Ele parecerÃ¡ que estÃ¡ derretendo no chÃ£o. 
 
-Mountain Bike Pára-quedas 
-Essa dica é similar a das motos em VC, mas essa tem uma área limitada. Nessa área, você não pode cair da bike, então você pode pular e fazer o que quiser com ela. Para fazer isso você precisa: 
+Mountain Bike PÃ¡ra-quedas 
+Essa dica Ã© similar a das motos em VC, mas essa tem uma Ã¡rea limitada. Nessa Ã¡rea, vocÃª nÃ£o pode cair da bike, entÃ£o vocÃª pode pular e fazer o que quiser com ela. Para fazer isso vocÃª precisa: 
 
-1: Vá ao topo do Monte Chiliad 
-2: Pegue um pára-quedas, que está perto do trailer 
-3: Pegue a BMX que está no morro para iniciar a corrida 
-4: Use a rampa a esquerda e pule. Agora pule da bike e abra o pára-quedas. 
+1: VÃ¡ ao topo do Monte Chiliad 
+2: Pegue um pÃ¡ra-quedas, que estÃ¡ perto do trailer 
+3: Pegue a BMX que estÃ¡ no morro para iniciar a corrida 
+4: Use a rampa a esquerda e pule. Agora pule da bike e abra o pÃ¡ra-quedas. 
 
-Se fizer corretamente, você deverá ser transportado para o inicio da corrida (pára-quedas ainda aberto) Agora você pode fazer pulos insanos sem cair da bike. 
+Se fizer corretamente, vocÃª deverÃ¡ ser transportado para o inicio da corrida (pÃ¡ra-quedas ainda aberto) Agora vocÃª pode fazer pulos insanos sem cair da bike. 
 
-Sem tráfego 
-Inicie um novo jogo e chegue até as missões do OG Loc. Na missão da praia, fale com o DJ e responda sempre sim. Quando ele disser vamos dançar, agora apenas saia e não haverá carros nas ruas. Salve o jogo, e agora você pode fazer isso onde você for. 
-Algumas coisas engraçadas para se fazer com essa dicas eh o cheat "todos te odeiam" para parecer um filme de terror de zumbis, ou aumentar o nível de procurado para perseguições mais rápidas. 
+Sem trÃ¡fego 
+Inicie um novo jogo e chegue atÃ© as missÃµes do OG Loc. Na missÃ£o da praia, fale com o DJ e responda sempre sim. Quando ele disser vamos danÃ§ar, agora apenas saia e nÃ£o haverÃ¡ carros nas ruas. Salve o jogo, e agora vocÃª pode fazer isso onde vocÃª for. 
+Algumas coisas engraÃ§adas para se fazer com essa dicas eh o cheat "todos te odeiam" para parecer um filme de terror de zumbis, ou aumentar o nÃ­vel de procurado para perseguiÃ§Ãµes mais rÃ¡pidas. 
 
 Reutilizar o nitro 
-Quando seu nitro acabar, saia do veículo e volte. Seu nitro estará reabastecido e você não precisará esperar 2 minutos. 
+Quando seu nitro acabar, saia do veÃ­culo e volte. Seu nitro estarÃ¡ reabastecido e vocÃª nÃ£o precisarÃ¡ esperar 2 minutos. 
 
 Recarregar rapidamente 
-Quando precisar recarregar rapidamente, pressione então ou vice-versa antes que a munição de CJ acabe. 
+Quando precisar recarregar rapidamente, pressione entÃ£o ou vice-versa antes que a muniÃ§Ã£o de CJ acabe. 
 
-Pular músicas nas rádios 
-Você pode pular as músicas das rádios. Mude para outra rádio, então volte para rádio tocando a música que você odeia. Assim que o nome da rádio ficar amarelo, antes da rádio começar a tocas, mude a estação de novo. Mude para a outra estação, e a música que estava sendo tocada será pulada. 
+Pular mÃºsicas nas rÃ¡dios 
+VocÃª pode pular as mÃºsicas das rÃ¡dios. Mude para outra rÃ¡dio, entÃ£o volte para rÃ¡dio tocando a mÃºsica que vocÃª odeia. Assim que o nome da rÃ¡dio ficar amarelo, antes da rÃ¡dio comeÃ§ar a tocas, mude a estaÃ§Ã£o de novo. Mude para a outra estaÃ§Ã£o, e a mÃºsica que estava sendo tocada serÃ¡ pulada. 
 
-Pare com que as gangs rivais tomem seus territórios 
-Para isso, vá alguma casa e salve o jogo quando a mensagem "sua área está em ataque" aparecer. Isso parará o ataque, e o território continua seu. 
+Pare com que as gangs rivais tomem seus territÃ³rios 
+Para isso, vÃ¡ alguma casa e salve o jogo quando a mensagem "sua Ã¡rea estÃ¡ em ataque" aparecer. Isso pararÃ¡ o ataque, e o territÃ³rio continua seu. 
 
 Super pulo de bike 
-Isso necessita que você tenha uma arma que pode ser usado enquanto você anda de bike. Assim que soltar o botão de pulo , aperte . Você deve apertar e soltar bem rápido para que a arma não atire. Você pode pular cerca de 2 lojas se tudo der certo. 
+Isso necessita que vocÃª tenha uma arma que pode ser usado enquanto vocÃª anda de bike. Assim que soltar o botÃ£o de pulo , aperte . VocÃª deve apertar e soltar bem rÃ¡pido para que a arma nÃ£o atire. VocÃª pode pular cerca de 2 lojas se tudo der certo. 
 
 Caminhos do submundo 
-Você precisará e um Jetpack para explorar o submundo. 
-Entrada 1: Vá para o mar ao Leste de LV perto de Sobell Rail Yard. Agora voando sobre a borda perto do nível do mar. Há uma parede de rocha que você pode passar em um certo ponto. A rocha se move. Quando você entrar, você deve voar um pouco ao norte antes de entrar totalmente no submundo. 
+VocÃª precisarÃ¡ e um Jetpack para explorar o submundo. 
+Entrada 1: VÃ¡ para o mar ao Leste de LV perto de Sobell Rail Yard. Agora voando sobre a borda perto do nÃ­vel do mar. HÃ¡ uma parede de rocha que vocÃª pode passar em um certo ponto. A rocha se move. Quando vocÃª entrar, vocÃª deve voar um pouco ao norte antes de entrar totalmente no submundo. 
 
-Entrada 2: Está na "esquina" de uma parede de sua casa em Vinewood, a direita da piscina. Apenas voe em direção a parede com reflexos diferentes. 
+Entrada 2: EstÃ¡ na "esquina" de uma parede de sua casa em Vinewood, a direita da piscina. Apenas voe em direÃ§Ã£o a parede com reflexos diferentes. 
 
 Modo Wide Screen 
-Para fazer isso vá há qualquer aeroporto, e compre uma passagem pra qualquer lugar. Quando o avião aparecer na pista coloque o cheat "destroir todos os veículos". Você morrerá, e será mandado ao hospital mais perto, mas a tela continuará em Wide Screen. Atenção: O único jeito de sair do modo Wide Screen é comprar outra passagem, e pular do avião, ou faça uma missão. Você também não será capaz de ver o mapa, saúde, ou colete, armas, dinheiro, nível de procurado, e não pode pausar, ou salvar o jogo. 
+Para fazer isso vÃ¡ hÃ¡ qualquer aeroporto, e compre uma passagem pra qualquer lugar. Quando o aviÃ£o aparecer na pista coloque o cheat "destroir todos os veÃ­culos". VocÃª morrerÃ¡, e serÃ¡ mandado ao hospital mais perto, mas a tela continuarÃ¡ em Wide Screen. AtenÃ§Ã£o: O Ãºnico jeito de sair do modo Wide Screen Ã© comprar outra passagem, e pular do aviÃ£o, ou faÃ§a uma missÃ£o. VocÃª tambÃ©m nÃ£o serÃ¡ capaz de ver o mapa, saÃºde, ou colete, armas, dinheiro, nÃ­vel de procurado, e nÃ£o pode pausar, ou salvar o jogo. 

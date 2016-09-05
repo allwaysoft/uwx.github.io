@@ -1,12 +1,12 @@
-Uma das grandes novidades do GTA San Andreas em relação aos anteriores é o sistema de namoradas, CJ poderá ter diversas namoradas ao longo do jogo, mas cuidado, não é tão fácil cuidar delas como parece.
+Uma das grandes novidades do GTA San Andreas em relaÃ§Ã£o aos anteriores Ã© o sistema de namoradas, CJ poderÃ¡ ter diversas namoradas ao longo do jogo, mas cuidado, nÃ£o Ã© tÃ£o fÃ¡cil cuidar delas como parece.
 
 Como ter um bom relacionamento ?
 
-Você deverá manter um bom relacionamento que é representado por uma barrinha que vai de 0% a 100%, dependendo da porcentagem você irá ganhar recompensas e até ser convidado para tomar um cafézinho.
+VocÃª deverÃ¡ manter um bom relacionamento que Ã© representado por uma barrinha que vai de 0% a 100%, dependendo da porcentagem vocÃª irÃ¡ ganhar recompensas e atÃ© ser convidado para tomar um cafÃ©zinho.
 
-Você deve sempre dar atenção as suas namoradas quando estiver por perto, senão a porcentagem do relacionamento irá decair com o tempo.
+VocÃª deve sempre dar atenÃ§Ã£o as suas namoradas quando estiver por perto, senÃ£o a porcentagem do relacionamento irÃ¡ decair com o tempo.
 
-Para aumentar o nível de relacionamento você pode fazer algumas coisas e tentar não fazer algumas coisas, como a lista a seguir mostra (varia de namorada para namorada):
+Para aumentar o nÃ­vel de relacionamento vocÃª pode fazer algumas coisas e tentar nÃ£o fazer algumas coisas, como a lista a seguir mostra (varia de namorada para namorada):
 
 Ter um bom encontro: +5%
 Ter um encontro ruim:  -5%
@@ -15,144 +15,144 @@ Presentear com um Dildo = +1%
 Depois de um bom encontro de 2 jogadores (Somente no PS2): +5%
 Depois de um encontro ruim de 2 jogadores (Somente no PS2): -5%
 Namorada aceitar beijo: +1%
-Namorada não aceitar beijo: -1%
-Sexo (Hotcoffee - Tomar um cafézinho): +5%
-A seguir confira as suas namoradas, onde encontrá-las e como manter um bom nível de relacionamento com elas.
+Namorada nÃ£o aceitar beijo: -1%
+Sexo (Hotcoffee - Tomar um cafÃ©zinho): +5%
+A seguir confira as suas namoradas, onde encontrÃ¡-las e como manter um bom nÃ­vel de relacionamento com elas.
 
  
 
 Denise
 
-Você conhece Denise na missão Burning Desire, quando salva ela de um incêndio. Denise é bem do gueto mesmo, gosta de atirar nas pessoas e de dançar no clube de Los Santos.
+VocÃª conhece Denise na missÃ£o Burning Desire, quando salva ela de um incÃªndio. Denise Ã© bem do gueto mesmo, gosta de atirar nas pessoas e de danÃ§ar no clube de Los Santos.
 
-Localização: Ela mora perto da sua casa, do lado da ponte.
+LocalizaÃ§Ã£o: Ela mora perto da sua casa, do lado da ponte.
 
-Horários:Entre 16:00 e 06:00
+HorÃ¡rios:Entre 16:00 e 06:00
 
-Encontro para comer:O lugar preferido de Denise fica a poucos quarteirões de sua casa. Você poderá leva-la a alguns fast foods se quiser variar um pouco.
+Encontro para comer:O lugar preferido de Denise fica a poucos quarteirÃµes de sua casa. VocÃª poderÃ¡ leva-la a alguns fast foods se quiser variar um pouco.
 
-Encontro para dançar: Leve-a ao único clube de dança de Los Santos, que está marcado no mapa e dance perfeitamente.
+Encontro para danÃ§ar: Leve-a ao Ãºnico clube de danÃ§a de Los Santos, que estÃ¡ marcado no mapa e dance perfeitamente.
 
-Leva-la para passear: Denise gosta de passear pela área ao redor de sua casa e adora velocidade. Quando a barra “FUN” aparecer acelere o carro e pare perto das gangues pra ela atirar.
+Leva-la para passear: Denise gosta de passear pela Ã¡rea ao redor de sua casa e adora velocidade. Quando a barra â€œFUNâ€ aparecer acelere o carro e pare perto das gangues pra ela atirar.
 
-Presentes: Procure flores ou vá a delegacia pegar o “pinto”,aperte L1 pra presenteá-la.
+Presentes: Procure flores ou vÃ¡ a delegacia pegar o â€œpintoâ€,aperte L1 pra presenteÃ¡-la.
 
-Sexo: Denise irá lhe convidar para tomar café após seu relacionamento com ela atingir 40%.
+Sexo: Denise irÃ¡ lhe convidar para tomar cafÃ© apÃ³s seu relacionamento com ela atingir 40%.
 
 Recompensas
 
-Com 50% ela lhe dará as chaves do carro dela, um Hustle verde;
-Com 100% ela lhe dará a Pinp Suit, a roupa de cafetão.
+Com 50% ela lhe darÃ¡ as chaves do carro dela, um Hustle verde;
+Com 100% ela lhe darÃ¡ a Pinp Suit, a roupa de cafetÃ£o.
 
 
  
 
 Michele
 
-Michelle é uma mecânica que fica de vez enquanto na auto escola de carros, em San Fierro. Você tem que ser gordão pra chamar a atenção dela, quando estiver obeso, vá a auto escola falar com ela e marcar um encontro.
+Michelle Ã© uma mecÃ¢nica que fica de vez enquanto na auto escola de carros, em San Fierro. VocÃª tem que ser gordÃ£o pra chamar a atenÃ§Ã£o dela, quando estiver obeso, vÃ¡ a auto escola falar com ela e marcar um encontro.
 
-Localização: Ela mora no norte de San Fierro, numa oficina.
+LocalizaÃ§Ã£o: Ela mora no norte de San Fierro, numa oficina.
 
-Horários: Entre 00:00 e 12:00
+HorÃ¡rios: Entre 00:00 e 12:00
 
-Encontro para comer: Ela gosta de bares, então a leve para os bares nas redondezas.
+Encontro para comer: Ela gosta de bares, entÃ£o a leve para os bares nas redondezas.
 
-Encontro para dançar: Leve-a para o único clube de dança de San Fierro, marcado no mapa.
+Encontro para danÃ§ar: Leve-a para o Ãºnico clube de danÃ§a de San Fierro, marcado no mapa.
 
-Leva-la para passear: Quanto mais rápido melhor. Dirija o mais rápido possível e evite colisões. Michelle não se importará com o local que você está indo, tudo o que ela quer é que você guie rápido.
+Leva-la para passear: Quanto mais rÃ¡pido melhor. Dirija o mais rÃ¡pido possÃ­vel e evite colisÃµes. Michelle nÃ£o se importarÃ¡ com o local que vocÃª estÃ¡ indo, tudo o que ela quer Ã© que vocÃª guie rÃ¡pido.
 
-Encontro especial: Aleatoriamente, haverá um encontro especial, onde você não irá guiar o carro, e sim Michelle. Nesse encontro você não terá que fazer nada, apenas observar a paisagem. Chegue no local e, para evitar um bug do jogo, desça do carro e vá até a marca vermelha andando. Michelle irá entrar no carro do lado do motorista e você do lado do passageiro. A visão mudará para primeira pessoa, e você irá poder controlar a câmera livremente. Depois de algum tempo rodando, Michelle irá voltar para casa e encerrar o encontro. Caso você aperte acidentalmente o botão para descer do carro, o encontro irá falhar.
+Encontro especial: Aleatoriamente, haverÃ¡ um encontro especial, onde vocÃª nÃ£o irÃ¡ guiar o carro, e sim Michelle. Nesse encontro vocÃª nÃ£o terÃ¡ que fazer nada, apenas observar a paisagem. Chegue no local e, para evitar um bug do jogo, desÃ§a do carro e vÃ¡ atÃ© a marca vermelha andando. Michelle irÃ¡ entrar no carro do lado do motorista e vocÃª do lado do passageiro. A visÃ£o mudarÃ¡ para primeira pessoa, e vocÃª irÃ¡ poder controlar a cÃ¢mera livremente. Depois de algum tempo rodando, Michelle irÃ¡ voltar para casa e encerrar o encontro. Caso vocÃª aperte acidentalmente o botÃ£o para descer do carro, o encontro irÃ¡ falhar.
 
 Recompensas
 
-Enquanto estiver namorando Micelle, você poderá usar a garagem da casa dela como se fosse uma Pay N’ Spray, mas sem pagar nada;
-Com 50% ela lhe dará as chaves de seu Monster Truck;
-Com 100% ela lhe dará a Racing Suit, um uniforme de piloto com o logotipo da garagem dela nas costas.
+Enquanto estiver namorando Micelle, vocÃª poderÃ¡ usar a garagem da casa dela como se fosse uma Pay Nâ€™ Spray, mas sem pagar nada;
+Com 50% ela lhe darÃ¡ as chaves de seu Monster Truck;
+Com 100% ela lhe darÃ¡ a Racing Suit, um uniforme de piloto com o logotipo da garagem dela nas costas.
 
 
  
 
 Helena
 
-Helena é uma advogada. Ela fica de vez enquanto em Blueberry, uma cidadezinha ao norte de Los Santos. Você a encontra em cima do telhado de uma Ammunation, atirando nos alvos.
+Helena Ã© uma advogada. Ela fica de vez enquanto em Blueberry, uma cidadezinha ao norte de Los Santos. VocÃª a encontra em cima do telhado de uma Ammunation, atirando nos alvos.
 
 Requerimentos para ela namorar com CJ
 
-25% ou menos de músculos;
+25% ou menos de mÃºsculos;
 Pouca gordura;
-Alto nível de sex appeal.
-Horários:Entre 14:00 a 2:00 e 08:00 a 12:00
+Alto nÃ­vel de sex appeal.
+HorÃ¡rios:Entre 14:00 a 2:00 e 08:00 a 12:00
 
-Encontro para comer: O restaurante mais próximo que Helena gosta fica em Rodeo.
+Encontro para comer: O restaurante mais prÃ³ximo que Helena gosta fica em Rodeo.
 
-Encontro para dançar: Você escolhe o mais próximo, mas os dois clubes são distantes. Los Santos é a melhor opção por causa da distância, mas ela não têm preferências entre Los Santos e San Fierro.
+Encontro para danÃ§ar: VocÃª escolhe o mais prÃ³ximo, mas os dois clubes sÃ£o distantes. Los Santos Ã© a melhor opÃ§Ã£o por causa da distÃ¢ncia, mas ela nÃ£o tÃªm preferÃªncias entre Los Santos e San Fierro.
 
-Leva-la para passear: Helena gosta que você dirija devagar e corretamente. Ela gosta de passear pelo campo e pelas partes mais belas das cidades. Para um melhor desempenho, passeie nas áreas próximas da fazenda dela.
+Leva-la para passear: Helena gosta que vocÃª dirija devagar e corretamente. Ela gosta de passear pelo campo e pelas partes mais belas das cidades. Para um melhor desempenho, passeie nas Ã¡reas prÃ³ximas da fazenda dela.
 
-Sexo: Helena irá lhe convidar para tomar café após seu relacionamento com ela atingir 70%.
+Sexo: Helena irÃ¡ lhe convidar para tomar cafÃ© apÃ³s seu relacionamento com ela atingir 70%.
 
 Recompensas
 
-Enquanto estiver namorando Helena, você terá acesso ao galpão da fazenda dela, que tem uma chainsaw (serra elétrica), um flamethrower (lança-chamas), coquetéis molotov e uma pistola;
-Com 50% ela lhe dará as chaves de seu Bandito;
-Com 100% você receberá a Rural Clothes.
+Enquanto estiver namorando Helena, vocÃª terÃ¡ acesso ao galpÃ£o da fazenda dela, que tem uma chainsaw (serra elÃ©trica), um flamethrower (lanÃ§a-chamas), coquetÃ©is molotov e uma pistola;
+Com 50% ela lhe darÃ¡ as chaves de seu Bandito;
+Com 100% vocÃª receberÃ¡ a Rural Clothes.
  
 
  
 
 Katie
 
-Katie é uma enfermeira, ela pode ser encontrada no Country Club de San Fierro, próximo a academia.
+Katie Ã© uma enfermeira, ela pode ser encontrada no Country Club de San Fierro, prÃ³ximo a academia.
 
 Requerimentos para ela namorar CJ
 
-75% ou mais de músculos;
-Alto nível de sex appeal.
-Localização: Ela mora em The Paradise District.
+75% ou mais de mÃºsculos;
+Alto nÃ­vel de sex appeal.
+LocalizaÃ§Ã£o: Ela mora em The Paradise District.
 
-Horários: Entre 12:00 e 00:00
+HorÃ¡rios: Entre 12:00 e 00:00
 
-Encontro para comer: Ela gosta de restaurantes (dinner’s).
+Encontro para comer: Ela gosta de restaurantes (dinnerâ€™s).
 
-Encontro para dançar: Leve-a para o clube em San Fierro.
+Encontro para danÃ§ar: Leve-a para o clube em San Fierro.
 
-Leva-la para passear: Ela gosta de pouca velocidade. Não corra e não bata. Ela também detesta as áreas perto da casa dela. Aconselho você a leva-la para Chinatown, local que ela realmente adora. Dica: quando ela pedir para você mostrar como anda de carro ande em marcha ré,que você estará na velocidade que ela gosta.
+Leva-la para passear: Ela gosta de pouca velocidade. NÃ£o corra e nÃ£o bata. Ela tambÃ©m detesta as Ã¡reas perto da casa dela. Aconselho vocÃª a leva-la para Chinatown, local que ela realmente adora. Dica: quando ela pedir para vocÃª mostrar como anda de carro ande em marcha rÃ©,que vocÃª estarÃ¡ na velocidade que ela gosta.
 
-Sexo: Katie irá lhe convidar para tomar café após seu relacionamento com ela atingir 50%.
+Sexo: Katie irÃ¡ lhe convidar para tomar cafÃ© apÃ³s seu relacionamento com ela atingir 50%.
 
 Recompensas
 
-Quando você for pro hospital, suas armas não serão confiscadas;
-Aos 50% ela te da as chaves do Romero, um carro funerário;
-Nos 100% ela te presenteia com a roupa de médico.
+Quando vocÃª for pro hospital, suas armas nÃ£o serÃ£o confiscadas;
+Aos 50% ela te da as chaves do Romero, um carro funerÃ¡rio;
+Nos 100% ela te presenteia com a roupa de mÃ©dico.
  
 
  
 
 Barbara
 
-Barbara é uma policial separada do marido e tem 2 filhos. Ela pode ser encontrada em El Quebrados, na parte deserta de San Andreas. Apesar de ser uma mulher da lei ela não se importa que você cometa crimes.
+Barbara Ã© uma policial separada do marido e tem 2 filhos. Ela pode ser encontrada em El Quebrados, na parte deserta de San Andreas. Apesar de ser uma mulher da lei ela nÃ£o se importa que vocÃª cometa crimes.
 
 Requerimentos
 
 50% ou mais de gordura;
-Alto nível de sex appeal.
-Localização: Na própria delegacia em El Quebrados.
+Alto nÃ­vel de sex appeal.
+LocalizaÃ§Ã£o: Na prÃ³pria delegacia em El Quebrados.
 
-Horários: Entre 16:00 e 06:00
+HorÃ¡rios: Entre 16:00 e 06:00
 
-Encontro para comer: Barbara gosta de restaurantes (dinner’s). O mais próximo fica em El Quebrados.
+Encontro para comer: Barbara gosta de restaurantes (dinnerâ€™s). O mais prÃ³ximo fica em El Quebrados.
 
-Encontro para dançar: Escolha entre ir a San Fierro ou Las Venturas... San Fierro parece ser um pouco mais próximo do fim de mundo em que ela mora.
+Encontro para danÃ§ar: Escolha entre ir a San Fierro ou Las Venturas... San Fierro parece ser um pouco mais prÃ³ximo do fim de mundo em que ela mora.
 
-Leva-la para passear: Barbara gosta de andar o mais devagar possível. Se arraste pelas estradas com ela pelas áreas ao redor de El Quebrados.
+Leva-la para passear: Barbara gosta de andar o mais devagar possÃ­vel. Se arraste pelas estradas com ela pelas Ã¡reas ao redor de El Quebrados.
 
-Sexo: Barbara irá lhe convidar para tomar café após seu relacionamento com ela atingir 60%.
+Sexo: Barbara irÃ¡ lhe convidar para tomar cafÃ© apÃ³s seu relacionamento com ela atingir 60%.
 
 Recompensas
 
-Quando for preso, suas armas não serão levadas e você não terá que pagar fiança;
-Com 50% ela te da as chaves da Ranger da polícia;
+Quando for preso, suas armas nÃ£o serÃ£o levadas e vocÃª nÃ£o terÃ¡ que pagar fianÃ§a;
+Com 50% ela te da as chaves da Ranger da polÃ­cia;
 Aos 100% ela te da a roupa de policial.
  
 
@@ -160,22 +160,22 @@ Aos 100% ela te da a roupa de policial.
 
 Millie
 
-Você conhece Millie na missão Key to her heart, onde você ganha a roupa de gigolô. Use essa roupa pra fazer sexo com a safada. Falando nisso ela é a namorada mais safada, o quarto dela é todo especial, decorado como um inferno!
+VocÃª conhece Millie na missÃ£o Key to her heart, onde vocÃª ganha a roupa de gigolÃ´. Use essa roupa pra fazer sexo com a safada. Falando nisso ela Ã© a namorada mais safada, o quarto dela Ã© todo especial, decorado como um inferno!
 
-Localização: Você encontra ela no norte de Las Venturras.
+LocalizaÃ§Ã£o: VocÃª encontra ela no norte de Las Venturras.
 
-Horários: Entre 12:00 e 22:00
+HorÃ¡rios: Entre 12:00 e 22:00
 
-Encontro para dançar: Leve-a para o Camel’s Toe, em Las Venturas.
+Encontro para danÃ§ar: Leve-a para o Camelâ€™s Toe, em Las Venturas.
 
-Leva-la para passear: Ela gosta que você guie na velocidade média. Não é muito difícil agrada-la. Ela gosta da área em que vive, então basta ficar rodando pelas ruas da vizinhança dela.
+Leva-la para passear: Ela gosta que vocÃª guie na velocidade mÃ©dia. NÃ£o Ã© muito difÃ­cil agrada-la. Ela gosta da Ã¡rea em que vive, entÃ£o basta ficar rodando pelas ruas da vizinhanÃ§a dela.
 
-Encontro especial: O encontro especial de Millie é justamente seu tipo mais simples e fácil de encontro. Ela pedirá que você vista a gimp suit e lhe convidará para entrar em sua casa. É basicamente um encontro sexual, mas não conta como sexo nas estatísticas nem você precisa dar nenhum tipo de presente para ela.
+Encontro especial: O encontro especial de Millie Ã© justamente seu tipo mais simples e fÃ¡cil de encontro. Ela pedirÃ¡ que vocÃª vista a gimp suit e lhe convidarÃ¡ para entrar em sua casa. Ã‰ basicamente um encontro sexual, mas nÃ£o conta como sexo nas estatÃ­sticas nem vocÃª precisa dar nenhum tipo de presente para ela.
 
-Sexo: Millie irá lhe convidar para tomar café após seu relacionamento com ela atingir 40%.
+Sexo: Millie irÃ¡ lhe convidar para tomar cafÃ© apÃ³s seu relacionamento com ela atingir 40%.
 
 Recompensas
 
-Com aproximadamente 35%, Millie irá ligar para você e falar que você pode ir até a casa dela para pegar o keycard. Entre na casa dela e pegue o cartão (necessário para a última heist mission, em Las Venturas);
-Com 50% ela lhe dará as chaves de seu Club cor-de-rosa;
-com 100% nada, já que a Gimp suit você já pega desde o começo de seu namoro com ela; Aliás, é preferível usar a Gimp suit sempre que for encontrar com ela.
+Com aproximadamente 35%, Millie irÃ¡ ligar para vocÃª e falar que vocÃª pode ir atÃ© a casa dela para pegar o keycard. Entre na casa dela e pegue o cartÃ£o (necessÃ¡rio para a Ãºltima heist mission, em Las Venturas);
+Com 50% ela lhe darÃ¡ as chaves de seu Club cor-de-rosa;
+com 100% nada, jÃ¡ que a Gimp suit vocÃª jÃ¡ pega desde o comeÃ§o de seu namoro com ela; AliÃ¡s, Ã© preferÃ­vel usar a Gimp suit sempre que for encontrar com ela.

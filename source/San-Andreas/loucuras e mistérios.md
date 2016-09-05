@@ -1,19 +1,19 @@
 .Barbeiro:
 
-Vá até o primero barbeiro do jogo com uma camera fotográfica. La você deve ir até o espelho e aproximar a câmera na parede. Aparecerá uma maquina de jogos e uma mulher ou um homem andando no espelho... 
+VÃ¡ atÃ© o primero barbeiro do jogo com uma camera fotogrÃ¡fica. La vocÃª deve ir atÃ© o espelho e aproximar a cÃ¢mera na parede. AparecerÃ¡ uma maquina de jogos e uma mulher ou um homem andando no espelho... 
 
 .Carro Fantasma:
 
-O carro-fantasma existe sim. Basta você matar o motorista quando o carro estiver em movimento e atrás de você. O carro te seguirá!
+O carro-fantasma existe sim. Basta vocÃª matar o motorista quando o carro estiver em movimento e atrÃ¡s de vocÃª. O carro te seguirÃ¡!
 
-.Pé-Grande:
+.PÃ©-Grande:
 
-O pé-grande esta atrás da árvore perto da cabana do serial killer no monte Chiliad. Para encontrá-lo você tem que ir à meia noite, hora que ele sai pra caçar. 
+O pÃ©-grande esta atrÃ¡s da Ã¡rvore perto da cabana do serial killer no monte Chiliad. Para encontrÃ¡-lo vocÃª tem que ir Ã  meia noite, hora que ele sai pra caÃ§ar. 
 
 .Piratas:
 
-Para encontrá-los é só pegar um barco de grande porte e navegar em qualquer lugar. Após alum tempo aparecerá um navio bem grande, com diversos inimigos, começarão a te atacar. Se você conseguir matar todos, inclusive o capitão, o porão do navio abrirá repleto de dinheiro. 
+Para encontrÃ¡-los Ã© sÃ³ pegar um barco de grande porte e navegar em qualquer lugar. ApÃ³s alum tempo aparecerÃ¡ um navio bem grande, com diversos inimigos, comeÃ§arÃ£o a te atacar. Se vocÃª conseguir matar todos, inclusive o capitÃ£o, o porÃ£o do navio abrirÃ¡ repleto de dinheiro. 
 
 .Submarino:
 
-Para econtrá-lo você deve ficar, em média, 25 minutos trafegando de barco, em direção ao alto mar, na região do porto San Fierro!!!! Você chegará até uma parede, atire uma granada contra a parede que ela será destruída. Um horizonte negro irá aparecer e estacionado nele haverá um submarino e uma pessoa em cima dele. Se você matar essa pessoa terá uma grande surpresa!
+Para econtrÃ¡-lo vocÃª deve ficar, em mÃ©dia, 25 minutos trafegando de barco, em direÃ§Ã£o ao alto mar, na regiÃ£o do porto San Fierro!!!! VocÃª chegarÃ¡ atÃ© uma parede, atire uma granada contra a parede que ela serÃ¡ destruÃ­da. Um horizonte negro irÃ¡ aparecer e estacionado nele haverÃ¡ um submarino e uma pessoa em cima dele. Se vocÃª matar essa pessoa terÃ¡ uma grande surpresa!

@@ -1,98 +1,98 @@
 Celular Metralhadora 
-Quando estiver conversando no celular, pressione tri‚ngulo para desligar e rapidamente mude para a Tec9, ent„o aparecer· um celular que atira! 
-(desativa quando entrar em um veÌculo) 
+Quando estiver conversando no celular, pressione tri√¢ngulo para desligar e rapidamente mude para a Tec9, ent√£o aparecer√° um celular que atira! 
+(desativa quando entrar em um ve√≠culo) 
 
-Consiga o key card facilmente com a Mile: Se encontre com ela, e a mate. Assim Woozie ligara para vocÍ dizendu q o key card esta na casa de Mile. 
+Consiga o key card facilmente com a Mile: Se encontre com ela, e a mate. Assim Woozie ligara para voc√™ dizendu q o key card esta na casa de Mile. 
 
-Revele o mapa sem precisar dirigir: V· ao aeroporto mais prÛximo pegue qualquer avi„o e saia voando para todas as direÁıes. Feito isso pressione `start¥ e o mapa estar· liberado. 
+Revele o mapa sem precisar dirigir: V√° ao aeroporto mais pr√≥ximo pegue qualquer avi√£o e saia voando para todas as dire√ß√µes. Feito isso pressione `start¬¥ e o mapa estar√° liberado. 
 
-Ganhe a licenÁa de piloto sem precisar ir para a escola de pilotagem: Entre no aeroporto de Los Santos, entre no shamal (Legacy) e comece a voar com ele por aproximadamente 25 min. Feito isso aparecer· na parte superior-direita da tela uma mensagem dizendo: continue voando por aproximadamente mais 10 min. Feito isso vc receber· a carteira de piloto e ter· acesso a todos os aeroportos do jogo. 
+Ganhe a licen√ßa de piloto sem precisar ir para a escola de pilotagem: Entre no aeroporto de Los Santos, entre no shamal (Legacy) e comece a voar com ele por aproximadamente 25 min. Feito isso aparecer√° na parte superior-direita da tela uma mensagem dizendo: continue voando por aproximadamente mais 10 min. Feito isso vc receber√° a carteira de piloto e ter√° acesso a todos os aeroportos do jogo. 
 
 Savanna a prova de balas 
-Depois de terminar a miss„o 'High Stakes, Low-Rider', Cesar e seu carro ficam na linha de chegada, com portas trancadas. VocÍ pode empurrar o carro para a garagem mais prÛxima e as portas se destravar„o. O carro continua a prova de balas. 
+Depois de terminar a miss√£o 'High Stakes, Low-Rider', Cesar e seu carro ficam na linha de chegada, com portas trancadas. Voc√™ pode empurrar o carro para a garagem mais pr√≥xima e as portas se destravar√£o. O carro continua a prova de balas. 
 
-Maneira f·cil de conseguir um Hunter 
-V· ao aeroporto de LV e escolha a corrida Heli Hell, voe com o Hunter atÈ o aeroporto novamente e saia dele para perder, ent„o saia da miss„o e pegue o Hunter. 
+Maneira f√°cil de conseguir um Hunter 
+V√° ao aeroporto de LV e escolha a corrida Heli Hell, voe com o Hunter at√© o aeroporto novamente e saia dele para perder, ent√£o saia da miss√£o e pegue o Hunter. 
 
-Caia de lugares altos e n„o morra 
-Fique apertando pular o mais r·pido que puder enquanto estiver caindo e vocÍ ir· ter muito menos dano. 
+Caia de lugares altos e n√£o morra 
+Fique apertando pular o mais r√°pido que puder enquanto estiver caindo e voc√™ ir√° ter muito menos dano. 
 
-Vinyls de graÁa na Loco Low co. e Wheel Arch Angels 
-Cansado das garagens levarem o seu vinyl? N„o quer pagar $500 em um bonito vinyl de fogo? Leve seu veÌculo a sua Mod Shop preferida. Quando estiver l·, seleciona o vinyl que vocÍ quer. Agora pressione e bem r·pido. Seu carro ter· o vinyl e vocÍ n„o paga nada. Entretanto, isso n„o funciona com os outros acessÛrios. (cores, spoilers etc.) TambÈm veja que vocÍ n„o consertar· seu carro. 
+Vinyls de gra√ßa na Loco Low co. e Wheel Arch Angels 
+Cansado das garagens levarem o seu vinyl? N√£o quer pagar $500 em um bonito vinyl de fogo? Leve seu ve√≠culo a sua Mod Shop preferida. Quando estiver l√°, seleciona o vinyl que voc√™ quer. Agora pressione e bem r√°pido. Seu carro ter√° o vinyl e voc√™ n√£o paga nada. Entretanto, isso n√£o funciona com os outros acess√≥rios. (cores, spoilers etc.) Tamb√©m veja que voc√™ n√£o consertar√° seu carro. 
 
-V· a qualquer cidade mais cedo sem ficar com 4 estrelas 
-Pegue um veÌculo e v· onde est· dividido entre ·rea trancada e aberta. A ·rea trancada È a regi„o em azul. N„o passe a divisa. Espere atÈ ver um policial, ou atire num pedestre para ficar com uma estrela. Com isso, dirija alÈm da divisa e ande pela cidade um pouco. VocÍ n„o ficar· com quatro estrelas. Depois disso, se mate e vocÍ estar· no hospital. Depois que sair, vocÍ pode andar pela cidade sem estrelas. 
+V√° a qualquer cidade mais cedo sem ficar com 4 estrelas 
+Pegue um ve√≠culo e v√° onde est√° dividido entre √°rea trancada e aberta. A √°rea trancada √© a regi√£o em azul. N√£o passe a divisa. Espere at√© ver um policial, ou atire num pedestre para ficar com uma estrela. Com isso, dirija al√©m da divisa e ande pela cidade um pouco. Voc√™ n√£o ficar√° com quatro estrelas. Depois disso, se mate e voc√™ estar√° no hospital. Depois que sair, voc√™ pode andar pela cidade sem estrelas. 
 
-CJ sem cabeÁa 
-Encontre uma Katana, e entre no modo multiplayer. FaÁa com que o 2∫ jogador arranque sua cabeÁa, ent„o vocÍ volta para o modo normal sem cabeÁa. 
+CJ sem cabe√ßa 
+Encontre uma Katana, e entre no modo multiplayer. Fa√ßa com que o 2¬∫ jogador arranque sua cabe√ßa, ent√£o voc√™ volta para o modo normal sem cabe√ßa. 
 
 Nitro infinito 
-Se vocÍ explodir um carro em sua garagem com o nitro ativado, ele volta com nitro permanente. 
+Se voc√™ explodir um carro em sua garagem com o nitro ativado, ele volta com nitro permanente. 
 
-Pedestre invencÌvel 
-Se pegar um carro com um passageiro e ir ao Pay'n'Spray e tranc·-lo l·, quando a porta abrir o passageiro estar· invencÌvel. N„o importa o que faÁa, vocÍ n„o pode mat·-lo. 
+Pedestre invenc√≠vel 
+Se pegar um carro com um passageiro e ir ao Pay'n'Spray e tranc√°-lo l√°, quando a porta abrir o passageiro estar√° invenc√≠vel. N√£o importa o que fa√ßa, voc√™ n√£o pode mat√°-lo. 
 
 Mountain Bike derretendo 
-Pegue uma mountian bike, comece a dar rÈ segurando quadrado, e enquanto segura ele, comece a apertar bem r·pido. 
-Quadro de CJ ir· se contorcer em formas malucas. 
-Ele parecer· que est· derretendo no ch„o. 
+Pegue uma mountian bike, comece a dar r√© segurando quadrado, e enquanto segura ele, comece a apertar bem r√°pido. 
+Quadro de CJ ir√° se contorcer em formas malucas. 
+Ele parecer√° que est√° derretendo no ch√£o. 
 
-Mountain Bike P·ra-quedas 
-Essa dica È similar a das motos em VC, mas essa tem uma ·rea limitada. Nessa ·rea, vocÍ n„o pode cair da bike, ent„o vocÍ pode pular e fazer o que quiser com ela. Para fazer isso vocÍ precisa: 
+Mountain Bike P√°ra-quedas 
+Essa dica √© similar a das motos em VC, mas essa tem uma √°rea limitada. Nessa √°rea, voc√™ n√£o pode cair da bike, ent√£o voc√™ pode pular e fazer o que quiser com ela. Para fazer isso voc√™ precisa: 
 
-1: V· ao topo do Monte Chiliad 
-2: Pegue um p·ra-quedas, que est· perto do trailer 
-3: Pegue a BMX que est· no morro para iniciar a corrida 
-4: Use a rampa a esquerda e pule. Agora pule da bike e abra o p·ra-quedas. 
+1: V√° ao topo do Monte Chiliad 
+2: Pegue um p√°ra-quedas, que est√° perto do trailer 
+3: Pegue a BMX que est√° no morro para iniciar a corrida 
+4: Use a rampa a esquerda e pule. Agora pule da bike e abra o p√°ra-quedas. 
 
-Se fizer corretamente, vocÍ dever· ser transportado para o inicio da corrida (p·ra-quedas ainda aberto) Agora vocÍ pode fazer pulos insanos sem cair da bike. 
+Se fizer corretamente, voc√™ dever√° ser transportado para o inicio da corrida (p√°ra-quedas ainda aberto) Agora voc√™ pode fazer pulos insanos sem cair da bike. 
 
-Sem tr·fego 
-Inicie um novo jogo e chegue atÈ as missıes do OG Loc. Na miss„o da praia, fale com o DJ e responda sempre sim. Quando ele disser vamos danÁar, agora apenas saia e n„o haver· carros nas ruas. Salve o jogo, e agora vocÍ pode fazer isso onde vocÍ for. 
-Algumas coisas engraÁadas para se fazer com essas dicas eh o cheat "todos te odeiam" para parecer um filme de terror de zumbis, ou aumentar o nÌvel de procurado para perseguiÁıes mais r·pidas. 
+Sem tr√°fego 
+Inicie um novo jogo e chegue at√© as miss√µes do OG Loc. Na miss√£o da praia, fale com o DJ e responda sempre sim. Quando ele disser vamos dan√ßar, agora apenas saia e n√£o haver√° carros nas ruas. Salve o jogo, e agora voc√™ pode fazer isso onde voc√™ for. 
+Algumas coisas engra√ßadas para se fazer com essas dicas eh o cheat "todos te odeiam" para parecer um filme de terror de zumbis, ou aumentar o n√≠vel de procurado para persegui√ß√µes mais r√°pidas. 
 
 Reutilizar o nitro 
-Quando seu nitro acabar, saia do veÌculo e volte. Seu nitro estar· reabastecido e vocÍ n„o precisar· esperar 2 minutos. 
+Quando seu nitro acabar, saia do ve√≠culo e volte. Seu nitro estar√° reabastecido e voc√™ n√£o precisar√° esperar 2 minutos. 
 
 Recarregar rapidamente 
-Quando precisar recarregar rapidamente, pressione ent„o ou vice-versa antes que a muniÁ„o de CJ acabe. 
+Quando precisar recarregar rapidamente, pressione ent√£o ou vice-versa antes que a muni√ß√£o de CJ acabe. 
 
-Pular m˙sicas nas r·dios 
-VocÍ pode pular as m˙sicas das r·dios. Mude para outra r·dio, ent„o volte para r·dio tocando a m˙sica que vocÍ odeia. Assim que o nome da r·dio ficar amarelo, antes da r·dio comeÁar a tocas, mude a estaÁ„o de novo. Mude para a outra estaÁ„o, e a m˙sica que estava sendo tocada ser· pulada. 
+Pular m√∫sicas nas r√°dios 
+Voc√™ pode pular as m√∫sicas das r√°dios. Mude para outra r√°dio, ent√£o volte para r√°dio tocando a m√∫sica que voc√™ odeia. Assim que o nome da r√°dio ficar amarelo, antes da r√°dio come√ßar a tocas, mude a esta√ß√£o de novo. Mude para a outra esta√ß√£o, e a m√∫sica que estava sendo tocada ser√° pulada. 
 
-Pare com que as gangs rivais tomem seus territÛrios 
-Para isso, v· alguma casa e salve o jogo quando a mensagem "sua ·rea est· em ataque" aparecer. Isso parar· o ataque, e o territÛrio continua seu. 
+Pare com que as gangs rivais tomem seus territ√≥rios 
+Para isso, v√° alguma casa e salve o jogo quando a mensagem "sua √°rea est√° em ataque" aparecer. Isso parar√° o ataque, e o territ√≥rio continua seu. 
 
 Super pulo de bike 
-Isso necessita que vocÍ tenha uma arma que pode ser usado enquanto vocÍ anda de bike. Assim que soltar o bot„o de pulo, aperte. VocÍ deve apertar e soltar bem r·pido para que a arma n„o atire. VocÍ pode pular cerca de duas lojas se tudo der certo. 
+Isso necessita que voc√™ tenha uma arma que pode ser usado enquanto voc√™ anda de bike. Assim que soltar o bot√£o de pulo, aperte. Voc√™ deve apertar e soltar bem r√°pido para que a arma n√£o atire. Voc√™ pode pular cerca de duas lojas se tudo der certo. 
 
 Caminhos do submundo 
-VocÍ precisar· e um Jetpack para explorar o submundo. 
-Entrada um: V· para o mar ao Leste de LV perto de Sobell Rail Yard. Agora voando sobre a borda perto do nÌvel do mar. H· uma parede de rocha que vocÍ pode passar em um certo ponto. A rocha se move. Quando vocÍ entrar, vocÍ deve voar um pouco ao norte antes de entrar totalmente no submundo. 
+Voc√™ precisar√° e um Jetpack para explorar o submundo. 
+Entrada um: V√° para o mar ao Leste de LV perto de Sobell Rail Yard. Agora voando sobre a borda perto do n√≠vel do mar. H√° uma parede de rocha que voc√™ pode passar em um certo ponto. A rocha se move. Quando voc√™ entrar, voc√™ deve voar um pouco ao norte antes de entrar totalmente no submundo. 
 
-Entrada dois: Est· na "esquina" de uma parede de sua casa em Vinewood, a direita da piscina. Apenas voe em direÁ„o a parede com reflexos diferentes. 
+Entrada dois: Est√° na "esquina" de uma parede de sua casa em Vinewood, a direita da piscina. Apenas voe em dire√ß√£o a parede com reflexos diferentes. 
 
 Modo Wide Screen 
-Para fazer isso v· h· qualquer aeroporto, e compre uma passagem pra qualquer lugar. Quando o avi„o aparecer na pista coloque o cheat "destroir todos os veÌculos". VocÍ morrer·, e ser· mandado ao hospital mais perto, mas a tela continuar· em Wide Screen. AtenÁ„o: O ˙nico jeito de sair do modo Wide Screen È comprar outra passagem, e pular do avi„o, ou faÁa uma miss„o. VocÍ tambÈm n„o ser· capaz de ver o mapa, sa˙de, ou colete, armas, dinheiro, nÌvel de procurado, e n„o pode pausar, ou salvar o jogo. 
+Para fazer isso v√° h√° qualquer aeroporto, e compre uma passagem pra qualquer lugar. Quando o avi√£o aparecer na pista coloque o cheat "destroir todos os ve√≠culos". Voc√™ morrer√°, e ser√° mandado ao hospital mais perto, mas a tela continuar√° em Wide Screen. Aten√ß√£o: O √∫nico jeito de sair do modo Wide Screen √© comprar outra passagem, e pular do avi√£o, ou fa√ßa uma miss√£o. Voc√™ tamb√©m n√£o ser√° capaz de ver o mapa, sa√∫de, ou colete, armas, dinheiro, n√≠vel de procurado, e n√£o pode pausar, ou salvar o jogo. 
 
-Uma vez aconteceu comigo de quando eu estava jogando de dois jogadores, se o jogador dois pegar uma espada e cortar a cabeÁa do CJ ele ir· morrer e, se vocÍ continuar jogando tanto no modo de um jogador ou de dois, vocÍ ir· ficar com a cabeÁa decepada espirrando sangue parecendo um chafariz. 
+Uma vez aconteceu comigo de quando eu estava jogando de dois jogadores, se o jogador dois pegar uma espada e cortar a cabe√ßa do CJ ele ir√° morrer e, se voc√™ continuar jogando tanto no modo de um jogador ou de dois, voc√™ ir√° ficar com a cabe√ßa decepada espirrando sangue parecendo um chafariz. 
 
-Outra coisa È que quando estiver nadando pelo mar de Los Santos v· mergulhando e achar· uma espÈcie de t˙nel subterr‚neo que ir· acabar numa imensa bolsa de ar com uma AK-47, coquetÈis molotov, e uma micro smg, tambÈm tinha R$100.000,00. 
-Quando vocÍ est· fugindo da polÌcia, e cai num lago ou num rio a polÌcia simplesmente joga o carro ou a moto na ·gua. 
+Outra coisa √© que quando estiver nadando pelo mar de Los Santos v√° mergulhando e achar√° uma esp√©cie de t√∫nel subterr√¢neo que ir√° acabar numa imensa bolsa de ar com uma AK-47, coquet√©is molotov, e uma micro smg, tamb√©m tinha R$100.000,00. 
+Quando voc√™ est√° fugindo da pol√≠cia, e cai num lago ou num rio a pol√≠cia simplesmente joga o carro ou a moto na √°gua. 
 
-Veja o que vocÍ tem para fazer para completar 100%!!!: 
+Veja o que voc√™ tem para fazer para completar 100%!!!: 
 
-Propriedades - ?? necess·rio Ter comprado e finalizado as missıes das: 
+Propriedades - ?? necess√°rio Ter comprado e finalizado as miss√µes das: 
 Loja de carros ? San Fierro 
 Aeroporto Abandonado ? Deserto 
-Loja do Zero ? San Fierro Obs: Necessita Ter acabado as 3 primeiras missıes 
-Para conseguir os 100% È preciso tambÈm, obter todas as propriedades compr·veis do jogo, ou seja todas as casas, lojas, etc.... 
+Loja do Zero ? San Fierro Obs: Necessita Ter acabado as 3 primeiras miss√µes 
+Para conseguir os 100% √© preciso tamb√©m, obter todas as propriedades compr√°veis do jogo, ou seja todas as casas, lojas, etc.... 
 
 Auto Escolas, escola de pilotagem, de barcos, etc 
 
-No Jogo h· escolas de carros, aviıes, barcos e motos.... ?? tambÈm È necess·rio para completar 100% que vocÍ consiga passar de todas 
+No Jogo h√° escolas de carros, avi√µes, barcos e motos.... ?? tamb√©m √© necess√°rio para completar 100% que voc√™ consiga passar de todas 
 
-Auto Escola ? Fica em San Fierro, faÁa Todas as missıes a seguir 
+Auto Escola ? Fica em San Fierro, fa√ßa Todas as miss√µes a seguir 
 
 - 360 
 - 180 
@@ -107,7 +107,7 @@ Auto Escola ? Fica em San Fierro, faÁa Todas as missıes a seguir
 - Alley Oop 
 - City Slicking 
 
-Escola de pilotagem ? Fica no Deserto, faÁa todas as missıes a seguir 
+Escola de pilotagem ? Fica no Deserto, fa√ßa todas as miss√µes a seguir 
 
 - Takeoff 
 - Land Plane 
@@ -120,7 +120,7 @@ Escola de pilotagem ? Fica no Deserto, faÁa todas as missıes a seguir
 - Barrel Roll 
 - Parachute onto Target 
 
-Escola de Barcos, fica no deserto numa cidadezinha em cima de San Fierro, faÁa as missıes a seguir: 
+Escola de Barcos, fica no deserto numa cidadezinha em cima de San Fierro, fa√ßa as miss√µes a seguir: 
 
 - Basic Seamanship 
 - Plot a Course 
@@ -128,7 +128,7 @@ Escola de Barcos, fica no deserto numa cidadezinha em cima de San Fierro, faÁa a
 - Flying Fish 
 - Land, Sea, and Air 
 
-Escola de Motos, fica em Las Venturas e faÁa as missıes a seguir: 
+Escola de Motos, fica em Las Venturas e fa√ßa as miss√µes a seguir: 
 
 - 360 
 - 180 
@@ -137,9 +137,9 @@ Escola de Motos, fica em Las Venturas e faÁa as missıes a seguir:
 - Stoppie 
 - Jump & Stoppie 
 
-Missıes do Mount Chilliad 
+Miss√µes do Mount Chilliad 
 
-No Topo do Mount Chilliad, suba na Mountain Bike, haver„o trÍs corridas no total: 
+No Topo do Mount Chilliad, suba na Mountain Bike, haver√£o tr√™s corridas no total: 
 
 Corrida 1? Race 1 
 Corrida 2? Race 2 
@@ -147,7 +147,7 @@ Corrida 3? Race 3
 
 Academias 
 
-Aprenda os trÍs golpes de cada academia: 
+Aprenda os tr√™s golpes de cada academia: 
 
 Los Santos ? Tanton Gym 
 San Fierro ? Cobra Martial Arts 
@@ -155,7 +155,7 @@ Las Venturas ? Below The Beld Gym
 
 Corridas 
 
-H· em cada cidade, torneios de carros, siga a lista a seguir: 
+H√° em cada cidade, torneios de carros, siga a lista a seguir: 
 
 Los Santos 
 
@@ -194,9 +194,9 @@ Las Venturas Airport Races
 - Whirly Bird Waypoint 
 - Heli Hell 
 
-Missıes Ammunation 
+Miss√µes Ammunation 
 
-FaÁa Todas as missıes da Ammunation 
+Fa√ßa Todas as miss√µes da Ammunation 
 
 - Pistol Challenge 
 - SMG Challenge 
@@ -205,20 +205,20 @@ FaÁa Todas as missıes da Ammunation
 
 Obs: Pode ser Feito em qualquer Ammunation que possua estande de tiro. 
 
-Eventos de Est·dios 
+Eventos de Est√°dios 
 
-S„o os Est·dios que tem em LS, SF e LV...Detone todas: 
+S√£o os Est√°dios que tem em LS, SF e LV...Detone todas: 
 
 - 8-Track 
 - Blood Bowl 
 - Dirt Track 
 - Kickstart 
 
-ExportaÁıes 
+Exporta√ß√µes 
 
 Exporte as 3 listas ? 30 carros 
 Exporte as cargas de trem 
-Exporte as cargas de Caminh„o (Zona Rural) 
+Exporte as cargas de Caminh√£o (Zona Rural) 
 
 Eventos Escondidos: 
 
@@ -231,35 +231,35 @@ Los Santos ? Roboi?s Food Mart
 San Fierro ? Hippy Shooper 
 Las Venturas ? Burguer Shot 
 
-Sub Missıes 
+Sub Miss√µes 
 
 Vigilante ? Level 12 
-ParamÈdico ? Level 12 
+Param√©dico ? Level 12 
 Bombeiro ? Level 12 
-T·xi ? 50 passageiros 
+T√°xi ? 50 passageiros 
 Pimping ? Level 10 
 Robbery ? Totalizar $100.000 em mercadorias roubadas. 
 Freight ? 2 levels (10 cargas) 
 
-Coisas Colet·veis 
+Coisas Colet√°veis 
 
-Los Santos ? 100 pixaÁıes 
+Los Santos ? 100 pixa√ß√µes 
 San Fierro ? 50 fotografias 
 Las Venturas ? 50 ferraduras 
 San Andreas ? 50 ostras 
 
-Assets necess·rios: 
+Assets necess√°rios: 
 
 Los Santos ? Roboi?s Food Mart 
 Countryside ? RS Haul 
 San Fierro ? Wang Cars, Zero?s RC Shop, Hippy Shooper, Vank Hoff Hotel 
-Deserto ? Verdant Meadows Airfield (cemitÈrio de aviıes), Hunter Quarry 
+Deserto ? Verdant Meadows Airfield (cemit√©rio de avi√µes), Hunter Quarry 
 Las Venturas ? Burguer Shot. 
 
 Todas as namoradas: 
 
-No GTA San Andreas, È possÌvel ter 6 namoradas. Duas delas vocÍ encontra automaticamente no decorrer do jogo, e as outras 4 vocÍ encontra em lugares especÌficos. 
-Cada uma tem um gosto diferente, por isso aqui est· uma lista traduzida pelo amigo HellHound, com o que vocÍ precisa para se dar bem com elas! 
+No GTA San Andreas, √© poss√≠vel ter 6 namoradas. Duas delas voc√™ encontra automaticamente no decorrer do jogo, e as outras 4 voc√™ encontra em lugares espec√≠ficos. 
+Cada uma tem um gosto diferente, por isso aqui est√° uma lista traduzida pelo amigo HellHound, com o que voc√™ precisa para se dar bem com elas! 
 
 Base: 
 
@@ -279,131 +279,131 @@ Depois de um encontro ruim: -5%
 Outros: 
 
 Conseguir beijar = -1% 
-Garota n„o aceitar o beijo = -1% 
+Garota n√£o aceitar o beijo = -1% 
 Sexo = +5% 
 
 Garotas: 
 
 Denise 
 
-Ela ser· sua primeira garota e tambÈm a mais f·cil de namorar 
-VocÍ ganha ela automaticamente apÛs a miss„o Burning Desire 
-Ela vive prÛxima de sua casa, e vocÍ nao ter· que levar ela muito longe de casa para agrad·-la 
-Detalhe: ela gosta de matar as pessoas enquanto vocÍ est· dirigindo mas n„o se sinta obrigado a parar o carro pra ela acabar de matar a pessoas 
+Ela ser√° sua primeira garota e tamb√©m a mais f√°cil de namorar 
+Voc√™ ganha ela automaticamente ap√≥s a miss√£o Burning Desire 
+Ela vive pr√≥xima de sua casa, e voc√™ nao ter√° que levar ela muito longe de casa para agrad√°-la 
+Detalhe: ela gosta de matar as pessoas enquanto voc√™ est√° dirigindo mas n√£o se sinta obrigado a parar o carro pra ela acabar de matar a pessoas 
 Requesitos : Nenhum 
-Casa : Ela mora na rua a direita de sua casa, prÛximo a ponte 
-O tempo que ela esta em casa È 
-00:00 atÈ ‡s 6:00 e das 16:00 atÈ ‡s 00:00 
-Sexo : ela ir· comeÁar a lhe chamar pra tomar CafÈ apos 40% de relacionamento 
-Recompensas : nos 50% vocÍ ganha as chaves do carro dela que È um Hustler Verde 
-Nos 100% ela ir· lhe dar a Pimp Suit , a qual È uma roupa azul claro 
+Casa : Ela mora na rua a direita de sua casa, pr√≥ximo a ponte 
+O tempo que ela esta em casa √© 
+00:00 at√© √†s 6:00 e das 16:00 at√© √†s 00:00 
+Sexo : ela ir√° come√ßar a lhe chamar pra tomar Caf√© apos 40% de relacionamento 
+Recompensas : nos 50% voc√™ ganha as chaves do carro dela que √© um Hustler Verde 
+Nos 100% ela ir√° lhe dar a Pimp Suit , a qual √© uma roupa azul claro 
 
 Michelle 
 
-Michele È uma mecanica que mora em San Fierro, vocÍ poder· encontr·-la na escola de direÁ„o. Ela fica na sala onde tem a tv (a tv que vocÍ usa pra fazer as liÁıes) 
-Se vocÍ n„o encontr·-la, fique saindo e entrando na escola pela porta da frente 
+Michele √© uma mecanica que mora em San Fierro, voc√™ poder√° encontr√°-la na escola de dire√ß√£o. Ela fica na sala onde tem a tv (a tv que voc√™ usa pra fazer as li√ß√µes) 
+Se voc√™ n√£o encontr√°-la, fique saindo e entrando na escola pela porta da frente 
 se mesmo assim ela nao aparecer tente outro dia 
-Requesitos: VocÍ tem que ter 50% da barrinha Fat (gordo) alÈm de um grande sex appeal 
+Requesitos: Voc√™ tem que ter 50% da barrinha Fat (gordo) al√©m de um grande sex appeal 
 Casa: ela vive na parte norte distante de san fierro 
-Ela est· em casa ‡s 00:00 e 12:00 
-Sexo: provavelmente ir· comeÁar aos 40% da barrinha de namoro 
-Recompensas: somente por namorar ela vocÍ j· ir· poder utilizar a garagem da casa dela. Aquilo funciona como um pay n spray, mas È de graÁa 
-Nos 50% ela lhe dar· as chaves do Monster Truck dela 
-Nos 100% ela lhe dar· a Racing Suit (roupa de corrida) 
+Ela est√° em casa √†s 00:00 e 12:00 
+Sexo: provavelmente ir√° come√ßar aos 40% da barrinha de namoro 
+Recompensas: somente por namorar ela voc√™ j√° ir√° poder utilizar a garagem da casa dela. Aquilo funciona como um pay n spray, mas √© de gra√ßa 
+Nos 50% ela lhe dar√° as chaves do Monster Truck dela 
+Nos 100% ela lhe dar√° a Racing Suit (roupa de corrida) 
 
 Helena 
 
-Helena È uma adivogada que gosta de usar armas de fogo e mora numa fazenda 
-Ela poder· ser encontrada na cidade de Blueberry em Red County. Ela gosta de atirar nos alvos no telhado da Ammunation. 
-Ela sÛ pode ser vista de vez em quando isso quer dizer que se vocÍ n„o a encontrar em um dia, volte no outro 
-Requesitos: pouco m˙sculo (menos que 25%) 
+Helena √© uma adivogada que gosta de usar armas de fogo e mora numa fazenda 
+Ela poder√° ser encontrada na cidade de Blueberry em Red County. Ela gosta de atirar nos alvos no telhado da Ammunation. 
+Ela s√≥ pode ser vista de vez em quando isso quer dizer que se voc√™ n√£o a encontrar em um dia, volte no outro 
+Requesitos: pouco m√∫sculo (menos que 25%) 
 Pouco Fat (gordura) 
 Um grande sex appeal 
 Casa: Helena mora numa fazenda em Flint County 
-Ela pode ser encontrada em casa nos seguintes hor·rios 
-00:00 atÈ 2:00 
-08:00 atÈ 12:00 
-14:00 atÈ 00:00 
+Ela pode ser encontrada em casa nos seguintes hor√°rios 
+00:00 at√© 2:00 
+08:00 at√© 12:00 
+14:00 at√© 00:00 
 Sexo: somente quando a barrinha estiver em 70% 
-Recompensas: por namorar Helena vocÍ ganha acesso a um abrigo de ferramenta que contem as seguintes armas 
-Serra elÈtrica 
-LanÁa chamas 
-CoquetÈis molotov 
+Recompensas: por namorar Helena voc√™ ganha acesso a um abrigo de ferramenta que contem as seguintes armas 
+Serra el√©trica 
+Lan√ßa chamas 
+Coquet√©is molotov 
 Pistola 
 E podera usar o carro dela (Bandito) 
-Aos 50% ela lhe dar· as chaves do carro dela (sendo que nao ira prestar pra nada pois vocÍ j· usa o carro T.T) 
+Aos 50% ela lhe dar√° as chaves do carro dela (sendo que nao ira prestar pra nada pois voc√™ j√° usa o carro T.T) 
 Aos 100% ela ira lhe dar a roupa rural 
 
 Katie 
 
-Katie È uma enfermeira que vive em San Fierro ela pode ser encontrada na extremidade do Country Club em San Fierro. Para encontr·-la v· para o canto nordeste do Aviva Club (pelo gin·sio). 
-Requesitos: muito m˙sculo (pelo menos 75%) 
+Katie √© uma enfermeira que vive em San Fierro ela pode ser encontrada na extremidade do Country Club em San Fierro. Para encontr√°-la v√° para o canto nordeste do Aviva Club (pelo gin√°sio). 
+Requesitos: muito m√∫sculo (pelo menos 75%) 
 Grande sex appeal 
 Casa: Katie vive em The paradise District de San Fierro seguindo a grande estrada para o norte 
-Os hor·rios que ela esta disponÌel s„o das 12:00 atÈ 0:00 
-Sexo: ela comeÁar· a chamar vocÍ quando estiver com 50% do relacionamento 
-??Recompensa: por namorar ela ir· lhe tirar do hospital de graÁa e atÈ melhor vocÍ continuar· com suas armas 
-Aos 50% ela lhe dar· as chaves do carro um Romero 
-Aos 100% ela lhe dar· a roupa de mÈdico. 
+Os hor√°rios que ela esta dispon√≠el s√£o das 12:00 at√© 0:00 
+Sexo: ela come√ßar√° a chamar voc√™ quando estiver com 50% do relacionamento 
+??Recompensa: por namorar ela ir√° lhe tirar do hospital de gra√ßa e at√© melhor voc√™ continuar√° com suas armas 
+Aos 50% ela lhe dar√° as chaves do carro um Romero 
+Aos 100% ela lhe dar√° a roupa de m√©dico. 
 
 Barbara 
 
-A Barbara È uma policial divorciada com duas crianÁas e vocÍ pode sair com ela! 
-Note que embora a Barbara diga que ela È uma policial, ela n„o se preocupar· se vocÍ cometer crimes 
-Ela pode ser encontrada na cidade de El Quebrado na parte noroeste do mapa (Ilha de Las Venturas) ela est· no estacionamento da delegacia de polÌcia ao norte do pay n spray 
+A Barbara √© uma policial divorciada com duas crian√ßas e voc√™ pode sair com ela! 
+Note que embora a Barbara diga que ela √© uma policial, ela n√£o se preocupar√° se voc√™ cometer crimes 
+Ela pode ser encontrada na cidade de El Quebrado na parte noroeste do mapa (Ilha de Las Venturas) ela est√° no estacionamento da delegacia de pol√≠cia ao norte do pay n spray 
 Requesitos: 50% da barra de fat (gordo) 
 E um grande sex appeal 
-Casa: vocÍ nunca ir· saber onde ela vive (vocÍ sempre encontrar· com ela onde voc?? a achou. Ela esta disponÌel nos seguintes hor·rios 
-00:00 atÈ 6:00 
-16:00 atÈ 00:00 
-Sexo : ela ir· comeÁar a lhe chamar quando estiver com 60% da barrinha 
-Recompensas : por namorar vocÍ poder· ser solto da pris„o sem precisar pagar nada alÈm de continuar com suas armas 
-Com 50% ela lhe dar· as chaves do Ranger dela 
-Com 100% vocÍ ir· receber a roupa de policial 
+Casa: voc√™ nunca ir√° saber onde ela vive (voc√™ sempre encontrar√° com ela onde voc?? a achou. Ela esta dispon√≠el nos seguintes hor√°rios 
+00:00 at√© 6:00 
+16:00 at√© 00:00 
+Sexo : ela ir√° come√ßar a lhe chamar quando estiver com 60% da barrinha 
+Recompensas : por namorar voc√™ poder√° ser solto da pris√£o sem precisar pagar nada al√©m de continuar com suas armas 
+Com 50% ela lhe dar√° as chaves do Ranger dela 
+Com 100% voc√™ ir√° receber a roupa de policial 
 
 Millie 
 
-VocÍ ir· conseguir ela automaticamente apÛs a miss„o Key to her heart em Las Venturas. ?? bom vocÍ usar a roupa que recebe na miss„o quando for encontrar ela, pois vocÍ ter· uma chance de Fazer o encontro especial 
-Requesitos: nenhuma Casa: ela mora no distrito de Prickle Pine ao nordeste de Las Venturas. Ela estar· disponÌvel das 12:00 atÈ ‡s 22:00 
-Encontro especial: para fazer essa vocÍ simplesmente ter· de usar a roupa que vocÍ ganha na miss„o Key to her heart 
-Sexo: VocÍ sÛ ira fazer sexo com ela quando tiver 40% da barrinha cheia 
+Voc√™ ir√° conseguir ela automaticamente ap√≥s a miss√£o Key to her heart em Las Venturas. ?? bom voc√™ usar a roupa que recebe na miss√£o quando for encontrar ela, pois voc√™ ter√° uma chance de Fazer o encontro especial 
+Requesitos: nenhuma Casa: ela mora no distrito de Prickle Pine ao nordeste de Las Venturas. Ela estar√° dispon√≠vel das 12:00 at√© √†s 22:00 
+Encontro especial: para fazer essa voc√™ simplesmente ter√° de usar a roupa que voc√™ ganha na miss√£o Key to her heart 
+Sexo: Voc√™ s√≥ ira fazer sexo com ela quando tiver 40% da barrinha cheia 
 Recompensas: por namorar ela, nada 
-Nos 35% ela ir· dar o cart„o do cassino 
-Nos 50% ela lhe dar· as chaves do carro, um Club rosa 
-Aos 100% vocÍ nao ganhar· nada, a n„o ser que vocÍ ainda n„o tenha recebido a roupa da Denise. 
+Nos 35% ela ir√° dar o cart√£o do cassino 
+Nos 50% ela lhe dar√° as chaves do carro, um Club rosa 
+Aos 100% voc√™ nao ganhar√° nada, a n√£o ser que voc√™ ainda n√£o tenha recebido a roupa da Denise. 
 
-Todos os cÛdigos: 
+Todos os c√≥digos: 
 
 
 Se suicidar: DIREITA, L2, BAXO, R1, ESQUERDA, ESQUERDA, R1, L1, L2, L1 
-Sa˙de e MuniÁ„o m·ximas e dinheiro: R1, R2, L1, X, ESQUERDA, BAXO, DIREITA, CIMA, ESQUERDA, BAXO, DIREITA, CIMA 
+Sa√∫de e Muni√ß√£o m√°ximas e dinheiro: R1, R2, L1, X, ESQUERDA, BAXO, DIREITA, CIMA, ESQUERDA, BAXO, DIREITA, CIMA 
 Armas 1: R1, R2, L1, R2, ESQUERDA, BAXO, DIREITA, CIMA, ESQUERDA, BAXO, DIREITA, CIMA 
 Armas 2: R1, R2, L1, R2, ESQUERDA, BAXO, DIREITA, CIMA, ESQUERDA, BAXO, BAXO, BAXO 
 Armas 3: R1, R2, L1, R2, ESQUERDA, BAXO, DIREITA, CIMA, ESQUERDA, BAXO, BAXO, ESQUERDA 
-Aumentar o nÌvel de procurado: R1, R1, BOLA, R2, ESQUERDA, DIREITA, ESQUERDA, DIREITA, ESQUERDA, DIREITA 
-Diminuir o nÌvel de procurado: R1, R1, BOLA, R2, CIMA, BAXO, CIMA, BAXO, CIMA, BAXO 
+Aumentar o n√≠vel de procurado: R1, R1, BOLA, R2, ESQUERDA, DIREITA, ESQUERDA, DIREITA, ESQUERDA, DIREITA 
+Diminuir o n√≠vel de procurado: R1, R1, BOLA, R2, CIMA, BAXO, CIMA, BAXO, CIMA, BAXO 
 Nunca ser procurado: BOLA, DIREITA, BOLA, DIREITA, ESQUERDA, QUADRADO, TRI??NGULO, CIMA 
-NÌvel 6 de procurado: BOLA, DIREITA, BOLA, DIREITA, ESQUERDA, QUADRADO, X, BAXO 
+N√≠vel 6 de procurado: BOLA, DIREITA, BOLA, DIREITA, ESQUERDA, QUADRADO, X, BAXO 
 Todos vestidos com roupas de praia, inclusive CJ: CIMA, CIMA, BAXO, BAXO, QUADRADO, BOLA, L1, R1, TRI??NGULO, BAXO 
-Barra Muscle (m˙sculos) no m·ximo: TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, BOLA, ESQUERDA 
-Barra Muscle (m˙sculos) no mÌnimo: TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, BOLA, DIREITA 
-Barra Fat (gordo) no m·ximo: TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, BOLA, BAXO 
-VocÍ ganha um p·ra-quedas: ESQUERDA, DIREITA, L1, L2, R1, R2, R2, CIMA, BAXO, DIREITA, L1 
+Barra Muscle (m√∫sculos) no m√°ximo: TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, BOLA, ESQUERDA 
+Barra Muscle (m√∫sculos) no m√≠nimo: TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, BOLA, DIREITA 
+Barra Fat (gordo) no m√°ximo: TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, BOLA, BAXO 
+Voc√™ ganha um p√°ra-quedas: ESQUERDA, DIREITA, L1, L2, R1, R2, R2, CIMA, BAXO, DIREITA, L1 
 CJ pula mais alto: CIMA, CIMA, TRI??NGULO, TRI??NGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, R2, R2 
 Mira infinita enquanto estiver dirigindo: CIMA, CIMA, QUADRADO, L2, DIREITA, X, R1, BAXO, R2, BOLA 
-FÙlego infinito de baixo d'·gua: BAXO, ESQUERDA, L1, BAXO, BAXO, R2, BAXO, L2, BAXO 
+F√¥lego infinito de baixo d'√°gua: BAXO, ESQUERDA, L1, BAXO, BAXO, R2, BAXO, L2, BAXO 
 Super soco: CIMA, ESQUERDA, X, TRI??NGULO, R1, BOLA, BOLA, BOLA, L2 
-Modo Adrenalina (c‚mera lenta e CJ mais forte): X, X, QUADRADO, R1, L1, X, BAXO, ESQUERDA, X 
+Modo Adrenalina (c√¢mera lenta e CJ mais forte): X, X, QUADRADO, R1, L1, X, BAXO, ESQUERDA, X 
 Nunca ter fome: QUADRADO, L2, R1, TRI??NGULO, CIMA, QUADRADO, L2, CIMA, X 
-Slut Magnet (atrai mulheres com brinquedos erÛticos e ganha um gimp suit): QUADRADO, DIREITA, QUADRADO, QUADRADO, L2, X, TRI??NGULO, X, TRI??NGULO 
-VeÌculos flutuam quando tocados por outro veÌculo: QUADRADO, R2, BAXO, BAXO, ESQUERDA, BAXO, ESQUERDA, ESQUERDA, L2, X 
-Todos os sem·foros abertos (verdes): DIREITA, R1, CIMA, L2, L2, ESQUERDA, R1, L1, R1, R1 
-Todos os t·xis com nitro: CIMA, X, TRI??NGULO, X, TRI??NGULO, X, QUADRADO, R2, DIREITA 
-Carros r·pidos e raros aparecem regularmente: CIMA, L1, R1, CIMA, DIREITA, CIMA, X, L2, X, L1 
-Carros voam como aviıes: QUADRADO, BAXO, L2, CIMA, L1, BOLA, CIMA, X, ESQUERDA 
+Slut Magnet (atrai mulheres com brinquedos er√≥ticos e ganha um gimp suit): QUADRADO, DIREITA, QUADRADO, QUADRADO, L2, X, TRI??NGULO, X, TRI??NGULO 
+Ve√≠culos flutuam quando tocados por outro ve√≠culo: QUADRADO, R2, BAXO, BAXO, ESQUERDA, BAXO, ESQUERDA, ESQUERDA, L2, X 
+Todos os sem√°foros abertos (verdes): DIREITA, R1, CIMA, L2, L2, ESQUERDA, R1, L1, R1, R1 
+Todos os t√°xis com nitro: CIMA, X, TRI??NGULO, X, TRI??NGULO, X, QUADRADO, R2, DIREITA 
+Carros r√°pidos e raros aparecem regularmente: CIMA, L1, R1, CIMA, DIREITA, CIMA, X, L2, X, L1 
+Carros voam como avi√µes: QUADRADO, BAXO, L2, CIMA, L1, BOLA, CIMA, X, ESQUERDA 
 Pular bem mais alto com a bicicleta: TRI??NGULO, QUADRADO, BOLA, BOLA, QUADRADO, BOLA, BOLA, L1, L2, L2, R1, R2 
 Explodir os carros: R2, L2, R1, L1, L2, R2, QUADRADO, TRI??NGULO, BOLA, TRI??NGULO, L2, L1 
-Dirigir na ·gua: DIREITA, R2, BOLA, R1, L2, QUADRADO, R1, R2 
+Dirigir na √°gua: DIREITA, R2, BOLA, R1, L2, QUADRADO, R1, R2 
 Carro pula com L3: TRI??NGULO, R1, R1, ESQUERDA, R1, L1, R2, L1 
 Carros mais velozes: DIREITA, R1, CIMA, L2, L2, ESQUERDA, R1, L1, R1, R1 
 Carros ficam rosa: BOLA, L1, BAXO, L2, ESQUERDA, X, R1, L1, DIREITA, BOLA 
@@ -411,11 +411,11 @@ Carros ficam preto: BOLA, L2, CIMA, R1, ESQUERDA, X, R1, L1, ESQUERDA, BOLA
 Barcos Dodo: R2, BOLA, CIMA, L1, DIREITA, R1, DIREITA, CIMA, QUADRADO, TRI??NGULO 
 Dozer: R2, L1, L1, DIREITA, DIREITA, CIMA, CIMA, X, L1, ESQUERDA 
 Monster (big-foot): DIREITA, CIMA, R1, R1, R1, BAXO, TRI??NGULO, TRI??NGULO, X, BOLA, L1, L1 
-Stuntplane (avi„o de manobras): BOLA, CIMA, L1, L2, BAXO, R1, L1, L1, ESQUERDA, ESQUERDA, X, TRI??NGULO 
-QuadricÌculo: ESQUERDA, ESQUERDA, BAXO, BAXO, CIMA, CIMA, QUADRADO, BOLA, TRI??NGULO, R1, R2 
+Stuntplane (avi√£o de manobras): BOLA, CIMA, L1, L2, BAXO, R1, L1, L1, ESQUERDA, ESQUERDA, X, TRI??NGULO 
+Quadric√≠culo: ESQUERDA, ESQUERDA, BAXO, BAXO, CIMA, CIMA, QUADRADO, BOLA, TRI??NGULO, R1, R2 
 Hydra (jato): TRI??NGULO, TRI??NGULO, QUADRADO, BOLA, X, L1, L1, BAXO, CIMA 
-Vortex (barco que tambÈm anda de terra): TRI??NGULO, TRI??NGULO, QUADRADO, BOLA, X, L1, L1, BAXO, BAXO 
-JetPack (funciona como um helicÛptero): L1, L2, R1, R2, CIMA, BAXO, ESQUERDA, DIREITA, L1, L2, R1, R2, CIMA, BAXO, ESQUERDA, DIREITA 
+Vortex (barco que tamb√©m anda de terra): TRI??NGULO, TRI??NGULO, QUADRADO, BOLA, X, L1, L1, BAXO, BAXO 
+JetPack (funciona como um helic√≥ptero): L1, L2, R1, R2, CIMA, BAXO, ESQUERDA, DIREITA, L1, L2, R1, R2, CIMA, BAXO, ESQUERDA, DIREITA 
 Rhino (tanque): BOLA, BOLA, L1, BOLA, BOLA, BOLA, L1, L2, R1, TRI??NGULO, BOLA, TRI??NGULO 
 Bloodring Banger: BAXO, R1, BOLA, L2, L2, X, R1, L1, ESQUERDA, ESQUERDA 
 Ranger: CIMA, DIREITA, DIREITA, L1, DIREITA, CIMA, QUADRADO, L2 
@@ -425,37 +425,37 @@ Romero: BAXO, R2, BAXO, R1, L2, ESQUERDA, R1, L1, ESQUERDA, DIREITA
 Stretch: R2, CIMA, L2, ESQUERDA, ESQUERDA, R1, L1, BOLA, DIREITA 
 Trashmaster: BOLA, R1, BOLA, R1, ESQUERDA, ESQUERDA, R1, L1, BOLA, DIREITA 
 Caddy: BOLA, L1, CIMA, R1, L2, X, R1, L1, BOLA, X 
-Recrute qualquer um (e ele ganha um lanÁa-mÌssil se n„o tiver armas): R2, R2, R2, X, L2, L1, R2, L1, BAXO, X 
+Recrute qualquer um (e ele ganha um lan√ßa-m√≠ssil se n√£o tiver armas): R2, R2, R2, X, L2, L1, R2, L1, BAXO, X 
 Tema Ninja (pedestres de preto com Katana, motos e carros pretos, e CJ ganha uma Katana): 
 X, X, BAXO, R2, L2, BOLA, R1, BOLA, QUADRADO 
 Recrute qualquer um: BAXO, QUADRADO, CIMA, R2, R2, CIMA, DIREITA, DIREITA, CIMA 
 Somente carros da zona rural na cidade: L1, L1, R1, R1, L2, L1, R2, BAXO, ESQUERDA, CIMA 
-(Hotknifes, baggages, pizzaboys, e quadricÌculos aparecem na cidade). 
-Todos os carros ficam com suspens„o a ar, e os pedestres est„o vestidos de palhaÁo: TRI??NGULO, TRI??NGULO, L1, QUADRADO, QUADRADO, BOLA, QUADRADO, BAXO, BOLA 
+(Hotknifes, baggages, pizzaboys, e quadric√≠culos aparecem na cidade). 
+Todos os carros ficam com suspens√£o a ar, e os pedestres est√£o vestidos de palha√ßo: TRI??NGULO, TRI??NGULO, L1, QUADRADO, QUADRADO, BOLA, QUADRADO, BAXO, BOLA 
 Gangs em todos os lugares (inclusive fora de LS): ESQUERDA, DIREITA, DIREITA, DIREITA, ESQUERDA, X, BAXO, CIMA, QUADRADO, DIREITA 
-Tr·fego reduzido: X, BAXO, CIMA, R2, BAXO, TRI??NGULO, L1, TRI??NGULO, ESQUERDA 
+Tr√°fego reduzido: X, BAXO, CIMA, R2, BAXO, TRI??NGULO, L1, TRI??NGULO, ESQUERDA 
 Gangs controlam as ruas: L2, CIMA, R1, R1, ESQUERDA, R1, R1, R2, DIREITA, BAXO 
 Pedestres malucos: BAXO, ESQUERDA, CIMA, ESQUERDA, X, R2, R1, L2, L1 
 Pedestres com armas: R2, R1, X, TRI??NGULO, X, TRI??NGULO, CIMA, BAXO 
 Motoristas agressivos: R2, BOLA, R1, L2, ESQUERDA, R1, L1, R2, L2 
-Seu carro invulner·vel, e explodindo tudo o que tocar: L1, L2, L2, CIMA, BAXO, BAXO, CIMA, R1, R2, R2, 
-Sempre meia-noite (se vocÍ se matar, passa para meio-dia): QUADRADO, L1, R1, DIREITA, X, CIMA, L1, ESQUERDA, ESQUERDA 
+Seu carro invulner√°vel, e explodindo tudo o que tocar: L1, L2, L2, CIMA, BAXO, BAXO, CIMA, R1, R2, R2, 
+Sempre meia-noite (se voc√™ se matar, passa para meio-dia): QUADRADO, L1, R1, DIREITA, X, CIMA, L1, ESQUERDA, ESQUERDA 
 Tempestade de areia: CIMA, BAXO, L1, L1, L2, L2, L1, L2, R1, R2 
-CÈu laranja: ESQUERDA, ESQUERDA, L2, R1, DIREITA, QUADRADO, QUADRADO, L1, L2, X 
-Hora mais r·pida: BOLA, BOLA, L1, QUADRADO, L1, QUADRADO, QUADRADO, QUADRADO, L1, TRI??NGULO, BOLA, TRI??NGULO 
-AÁıes mais r·pidas: TRI??NGULO, CIMA, DIREITA, BAXO, L2, L1, QUADRADO 
-AÁıes mais lentas: TRI??NGULO, CIMA, DIREITA, BAXO, QUADRADO, R2, R1 
-Manh„: R2, X, L1, L1, L2, L2, L2, QUADRADO 
+C√©u laranja: ESQUERDA, ESQUERDA, L2, R1, DIREITA, QUADRADO, QUADRADO, L1, L2, X 
+Hora mais r√°pida: BOLA, BOLA, L1, QUADRADO, L1, QUADRADO, QUADRADO, QUADRADO, L1, TRI??NGULO, BOLA, TRI??NGULO 
+A√ß√µes mais r√°pidas: TRI??NGULO, CIMA, DIREITA, BAXO, L2, L1, QUADRADO 
+A√ß√µes mais lentas: TRI??NGULO, CIMA, DIREITA, BAXO, QUADRADO, R2, R1 
+Manh√£: R2, X, L1, L1, L2, L2, L2, QUADRADO 
 Meio dia: R2, X, L1, L1, L2, L2, L2, BAXO 
 Noite: R2, X, L1, L1, L2, L2, L2, TRI??NGULO 
-Trovıes: R2, X, L1, L1, L2, L2, L2, BOLA 
+Trov√µes: R2, X, L1, L1, L2, L2, L2, BOLA 
 Neblina: R2, X, L1, L1, L2, L2, L2, X 
 Ilha secreta: R2, L1, L1, BAXO, CIMA, CIMA, QUADRADO, BOLA, TRI??NGULO, R1, R2 
 Vida infinita: BAXO, X, DIREITA, ESQUERDA, DIREITA, R1, DIREITA, BAXO, CIMA, TRI??NGULO 
 
 Algumas recompensas: 
 
-Bombeiro: Se vc fizer 12 missıes como bombeiro vc ganha imunidade ao fogo; 
-ParamÈdico: Se vc fizer 12 missıes como paramÈdico sua barra de vida (healt) fica no m·x 
-T·xi: Se vc fizer 100 missıes como taxista vc consegue um pulo m·x para todos os t·xis; 
-Policial: Se vc fizer 12 missıes como policial o seu colete passa para 150.
+Bombeiro: Se vc fizer 12 miss√µes como bombeiro vc ganha imunidade ao fogo; 
+Param√©dico: Se vc fizer 12 miss√µes como param√©dico sua barra de vida (healt) fica no m√°x 
+T√°xi: Se vc fizer 100 miss√µes como taxista vc consegue um pulo m√°x para todos os t√°xis; 
+Policial: Se vc fizer 12 miss√µes como policial o seu colete passa para 150.

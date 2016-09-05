@@ -15,14 +15,14 @@ http://myepsilon.org/blueberry_mystery/blue_light_bridge_barns.jpg
 The bridge overlays a dry pass, which also fits the instructions on how to join Epsilon - "Travel through the dawn to the pass pictured in our brochures.". Could this be the pass? If so, it should be a red truck close to Blueberry, but I haven't been able to find one (except from those driving around).
 
 There's logic to this;
-• The RED TRUCK and the PASS mentioned under "Join now!" on epsilonprogram.com
-• The testimonial of a man from Blueberry, speaking about wearing LIGHT BLUE
-• The sign in Blueberry with the words RED and TRUCK
-• The empty building in Blueberry with the BLUE light
-• The PASS with a bridge with BLUE LIGHT underneath
-• The BLUE LIGHT at the barns and the hillside
-• All these objects situated in BLUEberry
-• Blueberry is in RED County
+â€¢ The RED TRUCK and the PASS mentioned under "Join now!" on epsilonprogram.com
+â€¢ The testimonial of a man from Blueberry, speaking about wearing LIGHT BLUE
+â€¢ The sign in Blueberry with the words RED and TRUCK
+â€¢ The empty building in Blueberry with the BLUE light
+â€¢ The PASS with a bridge with BLUE LIGHT underneath
+â€¢ The BLUE LIGHT at the barns and the hillside
+â€¢ All these objects situated in BLUEberry
+â€¢ Blueberry is in RED County
 
 This could explain part of the mystery around the text on the epsilonprogram.com-website:
 
@@ -32,8 +32,8 @@ Blindfold required.
 
 If Blueberry is the place where some secret is hidden, and the blue light bridge is over the pass to travel through, we're closing in on something here. But we still miss a couple of things here;
 
-• Neither the pass, nor anything else from Blueberry is pictured in the brochure (booklet that follows the game)
-• Nobody has ever found a red truck any different from the other cars
+â€¢ Neither the pass, nor anything else from Blueberry is pictured in the brochure (booklet that follows the game)
+â€¢ Nobody has ever found a red truck any different from the other cars
 
 Also CJ cannot raise his arm or speak on command, and there's no blindfold in the game, but it's logical that this might be part of a cut scene if we first find the right car
 

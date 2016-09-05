@@ -1,53 +1,53 @@
-Esses são os extras do jogo, ou seja, não são necessários para zerar. Eles são necessários para completar 100% do jogo. 
+Esses sÃ£o os extras do jogo, ou seja, nÃ£o sÃ£o necessÃ¡rios para zerar. Eles sÃ£o necessÃ¡rios para completar 100% do jogo. 
 
-Missões de Asset
+MissÃµes de Asset
 Zero
-Após aparacer o Z no radar, compre a Zero´s RC shop para poder fazer as missões.
+ApÃ³s aparacer o Z no radar, compre a ZeroÂ´s RC shop para poder fazer as missÃµes.
 
 1- Air Raid
-Nessa missão você deverá defender os transmissores do Zero de vários RC´s enviados por um cara chamado Berkley, que deseja se vingar de Zero por ter perdido para ele uma feira de ciências. Faça essa missão de dia, para poder ver os aviões no céu.Você terá uma minigun com balas infinitas para impedir que os RC´s joguem bombas nos 4 transmissores de Zero.Tente não mirar atirando, ou ficará difícil de acertar os alvos, e ataque os grupos. Você pode ver a posição deles no radar. Se conseguir evitar que os primeiros 10 RC´s não soltem bombas nos transmissores, ficará mais fácil suportar os ataques depois.
+Nessa missÃ£o vocÃª deverÃ¡ defender os transmissores do Zero de vÃ¡rios RCÂ´s enviados por um cara chamado Berkley, que deseja se vingar de Zero por ter perdido para ele uma feira de ciÃªncias. FaÃ§a essa missÃ£o de dia, para poder ver os aviÃµes no cÃ©u.VocÃª terÃ¡ uma minigun com balas infinitas para impedir que os RCÂ´s joguem bombas nos 4 transmissores de Zero.Tente nÃ£o mirar atirando, ou ficarÃ¡ difÃ­cil de acertar os alvos, e ataque os grupos. VocÃª pode ver a posiÃ§Ã£o deles no radar. Se conseguir evitar que os primeiros 10 RCÂ´s nÃ£o soltem bombas nos transmissores, ficarÃ¡ mais fÃ¡cil suportar os ataques depois.
 Recompensa: $3000
 
 2- Supply Lines
-Aqui você terá que destruir 3 vans, 1 moto e 1 bicleta com um avião equipado com uma metralhadora. Você tem umaquantidade limitada de combustível, por isso, você deve ver a localização dos veículos no mapa, e planajear a rota mais curta.Quando encontrar uma um veículo, a destrua rápido, pois o motorista deve ser eliminado. No caso das vans, tente acertaa tampa do combustível, ou pare na rua que fique atirando na van até ela eplodir.Lembre-se: não saia voando sem planejar bem que caminho você fará, ou seu combustível acaba e você falha a missão.
+Aqui vocÃª terÃ¡ que destruir 3 vans, 1 moto e 1 bicleta com um aviÃ£o equipado com uma metralhadora. VocÃª tem umaquantidade limitada de combustÃ­vel, por isso, vocÃª deve ver a localizaÃ§Ã£o dos veÃ­culos no mapa, e planajear a rota mais curta.Quando encontrar uma um veÃ­culo, a destrua rÃ¡pido, pois o motorista deve ser eliminado. No caso das vans, tente acertaa tampa do combustÃ­vel, ou pare na rua que fique atirando na van atÃ© ela eplodir.Lembre-se: nÃ£o saia voando sem planejar bem que caminho vocÃª farÃ¡, ou seu combustÃ­vel acaba e vocÃª falha a missÃ£o.
 Recompensa: $5000
 
 3- New Model Army
-Essa missão é a mais divertida do Zero. Nela você tem que ajudar o carrinho a chegar na outra base, para isso você teráque remover os obstáculos na pista usando o imã do helicóptero. Deverá destruir mini-tanques jogando as bombas queestão na sua base em cima deles e colocando tábuas de ferro nos rios para fazer uma ponte para o carrinho passar, nãotem segredo, é só ajudar ele a chegar do outro lado removendo os obstáculos.
+Essa missÃ£o Ã© a mais divertida do Zero. Nela vocÃª tem que ajudar o carrinho a chegar na outra base, para isso vocÃª terÃ¡que remover os obstÃ¡culos na pista usando o imÃ£ do helicÃ³ptero. DeverÃ¡ destruir mini-tanques jogando as bombas queestÃ£o na sua base em cima deles e colocando tÃ¡buas de ferro nos rios para fazer uma ponte para o carrinho passar, nÃ£otem segredo, Ã© sÃ³ ajudar ele a chegar do outro lado removendo os obstÃ¡culos.
 Recompensa: $7000
 
-Após essa missão, você terá terminado as missões do Zero. A Zero´s RC shop vai render $5000 por dia, por isso, passe lápara pegar o dinheiro regularmente.
+ApÃ³s essa missÃ£o, vocÃª terÃ¡ terminado as missÃµes do Zero. A ZeroÂ´s RC shop vai render $5000 por dia, por isso, passe lÃ¡para pegar o dinheiro regularmente.
 
 Cesar Vialpando
-Depois de fazer a missão Ya Ka-Boom-Boom, você poderá comprar a Wang Cars, que custa $50000. Após comprá-la, vá na Garagem para pegar as missões.
+Depois de fazer a missÃ£o Ya Ka-Boom-Boom, vocÃª poderÃ¡ comprar a Wang Cars, que custa $50000. ApÃ³s comprÃ¡-la, vÃ¡ na Garagem para pegar as missÃµes.
 
 1- Zeroing In
-Você precisa roubar um carro de uma mulher. Zero colocou um sistema que atualiza a posição dela cada vez que ocelularé usado, por isso, vá rápido até o ponto no radar, antes que ele desapareca e você perca ela. Quando chegar perto do carro,você terá que utilizar o P.I.T, que você aprendeu na auto-escola. Coloque a frente do seu carro na lateral do carro dela,e empure, para que o carro gire, e você possa pegá-lo.Agora é só levar o carro para a Garagem. Não se preocupe se o carro estiver danificado.
-Após essa missão, você poderá levar seu carro para ser modificado em uma nova garagem na cidade.
+VocÃª precisa roubar um carro de uma mulher. Zero colocou um sistema que atualiza a posiÃ§Ã£o dela cada vez que ocelularÃ© usado, por isso, vÃ¡ rÃ¡pido atÃ© o ponto no radar, antes que ele desapareca e vocÃª perca ela. Quando chegar perto do carro,vocÃª terÃ¡ que utilizar o P.I.T, que vocÃª aprendeu na auto-escola. Coloque a frente do seu carro na lateral do carro dela,e empure, para que o carro gire, e vocÃª possa pegÃ¡-lo.Agora Ã© sÃ³ levar o carro para a Garagem. NÃ£o se preocupe se o carro estiver danificado.
+ApÃ³s essa missÃ£o, vocÃª poderÃ¡ levar seu carro para ser modificado em uma nova garagem na cidade.
 Recompensa: $5000 +Respeito
 
 2- Test Drive
-Cesar precisa de 2 carros, e vocês dois irão pegá-los em uma loja na cidade. Dirija o carro até a loja, então você verá nacena, Cesar e CJ roubando os carros. Acelere o carro para pular da loja, e siga Cesar. Em pouco tempo, a polícia iráaparecer, então continue seguindo Cesar, até ele falar que o carro tem nitro. Ative o nitro, e a polícia irá ficar para trás.Cesar entrará em um beco, mas terá mais carros de polícia. Volte, e o siga para despistar os tiras. Após despistá-los,para o carro na Garagem.
+Cesar precisa de 2 carros, e vocÃªs dois irÃ£o pegÃ¡-los em uma loja na cidade. Dirija o carro atÃ© a loja, entÃ£o vocÃª verÃ¡ nacena, Cesar e CJ roubando os carros. Acelere o carro para pular da loja, e siga Cesar. Em pouco tempo, a polÃ­cia irÃ¡aparecer, entÃ£o continue seguindo Cesar, atÃ© ele falar que o carro tem nitro. Ative o nitro, e a polÃ­cia irÃ¡ ficar para trÃ¡s.Cesar entrarÃ¡ em um beco, mas terÃ¡ mais carros de polÃ­cia. Volte, e o siga para despistar os tiras. ApÃ³s despistÃ¡-los,para o carro na Garagem.
 Recompensa: $5000 +Respeito
 
 3- Customs Fast Track
-Um amigo de Cesar conta que há um carro que ele deseja em um container em Easter Basin. Vá até lá com Cesar, saiado carro e pare na marca. Use quadrado para subir o imã, e pegue um dos containers. Não importa qual você pegue, oúltimo que você pegar será o certo. Após pegar o cantainer, use quadrado para subir o imã, e X para abaixar. Coloque ocontainer no chão, e aperte bola para soltar o container. Faça isso até o terceiro container, então um Sentinel com 3 carasirá aparecer. Aperta triângulo para sair, e ajudar Cesar a matar eles. Irá aparecer mais um Sentinel com 3 caras, entãomate eles, e depois mate os outros 2 que aparecerão à pé.Agora entre no carro, e vá até a Garagem para terminar a missão.
-Após essa missão, você poderá voltar ao local e importar e exportar carros. Vá até o quadro, e veja quais carros faltam. Aperta triângulo para ver qual o carro disponível para ser comprado no dia.
+Um amigo de Cesar conta que hÃ¡ um carro que ele deseja em um container em Easter Basin. VÃ¡ atÃ© lÃ¡ com Cesar, saiado carro e pare na marca. Use quadrado para subir o imÃ£, e pegue um dos containers. NÃ£o importa qual vocÃª pegue, oÃºltimo que vocÃª pegar serÃ¡ o certo. ApÃ³s pegar o cantainer, use quadrado para subir o imÃ£, e X para abaixar. Coloque ocontainer no chÃ£o, e aperte bola para soltar o container. FaÃ§a isso atÃ© o terceiro container, entÃ£o um Sentinel com 3 carasirÃ¡ aparecer. Aperta triÃ¢ngulo para sair, e ajudar Cesar a matar eles. IrÃ¡ aparecer mais um Sentinel com 3 caras, entÃ£omate eles, e depois mate os outros 2 que aparecerÃ£o Ã  pÃ©.Agora entre no carro, e vÃ¡ atÃ© a Garagem para terminar a missÃ£o.
+ApÃ³s essa missÃ£o, vocÃª poderÃ¡ voltar ao local e importar e exportar carros. VÃ¡ atÃ© o quadro, e veja quais carros faltam. Aperta triÃ¢ngulo para ver qual o carro disponÃ­vel para ser comprado no dia.
 Recompensa: $9250 (o valor pode mudar) +Respeito
 
 4- Puncture Wounds
-Cesar esteve atrás de um certo carro por horas, mas o motorista não parou por nada. CJ tem uma idéia de usar tapetesde prego para pegar o carro. Vá até o carro indo para a zona rural, entre na sua frente, e aperte bola para furar os pneusdo carro. Não utilize os tapetes de preto à toa, pois você tem apenas 3!Chegue perto do carro, e o telefone irá tocar. Cesar pergunta sobre o carro, e CJ avisa que só falta trocar os pneus.Depois da cena, dirija o carro até a Garagem para terminar a missão.
+Cesar esteve atrÃ¡s de um certo carro por horas, mas o motorista nÃ£o parou por nada. CJ tem uma idÃ©ia de usar tapetesde prego para pegar o carro. VÃ¡ atÃ© o carro indo para a zona rural, entre na sua frente, e aperte bola para furar os pneusdo carro. NÃ£o utilize os tapetes de preto Ã  toa, pois vocÃª tem apenas 3!Chegue perto do carro, e o telefone irÃ¡ tocar. Cesar pergunta sobre o carro, e CJ avisa que sÃ³ falta trocar os pneus.Depois da cena, dirija o carro atÃ© a Garagem para terminar a missÃ£o.
 Recompensa: $5000 +Respeito
 
-Após essa missão, você terá terminado as missões do Cesar. A Wang Cars vai render $8000 por dia, por isso, passe lá para pegar o dinheiro regularmente.Todos os carros roubados nas missões do Cesar, estarão estacionados no interior da Wang Cars.
+ApÃ³s essa missÃ£o, vocÃª terÃ¡ terminado as missÃµes do Cesar. A Wang Cars vai render $8000 por dia, por isso, passe lÃ¡ para pegar o dinheiro regularmente.Todos os carros roubados nas missÃµes do Cesar, estarÃ£o estacionados no interior da Wang Cars.
 
 Hunter Quarry
-Localização: Deserto de Las Venturas
-Fica disponível depois da missão Explosive Situation do Woozie.São 7 níveis. Você deverá utilizar o Dolzer para fazer alguns serviços.
+LocalizaÃ§Ã£o: Deserto de Las Venturas
+Fica disponÃ­vel depois da missÃ£o Explosive Situation do Woozie.SÃ£o 7 nÃ­veis. VocÃª deverÃ¡ utilizar o Dolzer para fazer alguns serviÃ§os.
 
 RS Haul - Trucking
-Localização: Zona Rural de San FierroFica disponível depois da missão Tanker Commander da Catallina.
-São 8 níveis. Você deverá fazer entregas com um caminhão, em um determinado tempo.
+LocalizaÃ§Ã£o: Zona Rural de San FierroFica disponÃ­vel depois da missÃ£o Tanker Commander da Catallina.
+SÃ£o 8 nÃ­veis. VocÃª deverÃ¡ fazer entregas com um caminhÃ£o, em um determinado tempo.
 
 Vank Hoff Hotel - Valet Parking
-Localização: Downtown San FierroFica disponível depois da missão 555 WE TIP do CJ.São 5 níveis. Você deverá vestir a roupa de Valet que é entregue no seu armário, e estacionar carros dos clientes do hotel
+LocalizaÃ§Ã£o: Downtown San FierroFica disponÃ­vel depois da missÃ£o 555 WE TIP do CJ.SÃ£o 5 nÃ­veis. VocÃª deverÃ¡ vestir a roupa de Valet que Ã© entregue no seu armÃ¡rio, e estacionar carros dos clientes do hotel

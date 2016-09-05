@@ -1,155 +1,155 @@
-LOS SANTOS ñ Los Santos FÛrum
+LOS SANTOS ‚Äì Los Santos F√≥rum
 
-8-TRACK ñ Complete todas as 12 voltas e termine em 1∫ lugar. Na corrida, tente tomar a ponta logo nas primeiras voltas, deixe uma vantagem sobre os oponentes, mas n„o dÍ voltas nos ˙ltimos colocados pra n„o complicar.
-- Recompensa: $ 10000, os carros Hotring Racer e Monster ficam disponÌveis em frente ao est·dio.
+8-TRACK ‚Äì Complete todas as 12 voltas e termine em 1¬∫ lugar. Na corrida, tente tomar a ponta logo nas primeiras voltas, deixe uma vantagem sobre os oponentes, mas n√£o d√™ voltas nos √∫ltimos colocados pra n√£o complicar.
+- Recompensa: $ 10000, os carros Hotring Racer e Monster ficam dispon√≠veis em frente ao est√°dio.
 
-SAN FIERRO ñ Coruin Stadium
+SAN FIERRO ‚Äì Coruin Stadium
 
-BLOOD BOWL ñ V· pegando os checkpoints atÈ completar 1 minuto. Quando seu carro estiver muito quebrado, pegue a ferramenta para consert·-lo.
-- Recompensa: O carro Bloodring Banger fica disponÌvel em frente ao est·dio.
+BLOOD BOWL ‚Äì V√° pegando os checkpoints at√© completar 1 minuto. Quando seu carro estiver muito quebrado, pegue a ferramenta para consert√°-lo.
+- Recompensa: O carro Bloodring Banger fica dispon√≠vel em frente ao est√°dio.
 
-LAS VENTURRAS ñ Blackfield Stadium LV
+LAS VENTURRAS ‚Äì Blackfield Stadium LV
 
-KICKSTART ñ Suba na moto e pegue o m·ximo de anÈis coloridos que puder (Verdes = 1 ponto, Amarelo = 2, Vermelho = 3), quebre o recorde de 30 pontos para passar a miss„o.
-- Recompensa: O carro Dune fica na frente do est·dio.
+KICKSTART ‚Äì Suba na moto e pegue o m√°ximo de an√©is coloridos que puder (Verdes = 1 ponto, Amarelo = 2, Vermelho = 3), quebre o recorde de 30 pontos para passar a miss√£o.
+- Recompensa: O carro Dune fica na frente do est√°dio.
 
-DIRT TRACK ñ Complete as 6 voltas e termine em 1∫ lugar.
-- Recompensa: O bugue BF Injection fica disponÌvel na frente do est·dio.
+DIRT TRACK ‚Äì Complete as 6 voltas e termine em 1¬∫ lugar.
+- Recompensa: O bugue BF Injection fica dispon√≠vel na frente do est√°dio.
 
-COMPETI«’ES EM 2 RODAS
+COMPETI√á√ïES EM 2 RODAS
 
-LOS SANTOS ñ Pista de Skate perto do hospital
+LOS SANTOS ‚Äì Pista de Skate perto do hospital
 
-BMX ñ Suba na bicicleta e pegue todos os anÈis antes que o tempo se esgote.
+BMX ‚Äì Suba na bicicleta e pegue todos os an√©is antes que o tempo se esgote.
 
-SAN FIERRO ñ Porto de esportaÁ„o de carros.
+SAN FIERRO ‚Äì Porto de esporta√ß√£o de carros.
 
-NRG-500 ñ Suba na moto e pegue todos os anÈis antes de o tempo se esgotar.
+NRG-500 ‚Äì Suba na moto e pegue todos os an√©is antes de o tempo se esgotar.
 
-COUNTRYSIDE (ZONA RURAL) ñ Topo do monte Chilliad.
+COUNTRYSIDE (ZONA RURAL) ‚Äì Topo do monte Chilliad.
 
-THE CHILLIAD CHELLENGE ñ Suba na bicicleta entre as 7 e as 18 horas para comeÁar as missıes.
+THE CHILLIAD CHELLENGE ‚Äì Suba na bicicleta entre as 7 e as 18 horas para come√ßar as miss√µes.
 
-1∫ - SCOTCH BONNET YELLOW ROUTE ñ DesÁa o morro pegando todos os checkpoints, chegue l· embaixo em 1∫ lugar para liberar mais uma corrida.
-2∫ - BIRDSEYE WENDER ñ DesÁa o morro denovo, sÛ que agora o trajeto È diferente e mais perigoso, chegue l· embaixo em 1∫ lugar para liberar a ˙ltima corrida.
-3∫ - COBRA RUN ñ Essa È a ˙ltima corrida das 3. Quando subir na passarela de madeira, n„o acelere para n„o cair, depois que passar da rampa, v· catando todos os checkpoints atÈ a chegada.
+1¬∫ - SCOTCH BONNET YELLOW ROUTE ‚Äì Des√ßa o morro pegando todos os checkpoints, chegue l√° embaixo em 1¬∫ lugar para liberar mais uma corrida.
+2¬∫ - BIRDSEYE WENDER ‚Äì Des√ßa o morro denovo, s√≥ que agora o trajeto √© diferente e mais perigoso, chegue l√° embaixo em 1¬∫ lugar para liberar a √∫ltima corrida.
+3¬∫ - COBRA RUN ‚Äì Essa √© a √∫ltima corrida das 3. Quando subir na passarela de madeira, n√£o acelere para n√£o cair, depois que passar da rampa, v√° catando todos os checkpoints at√© a chegada.
 
 RACE TOURNAMENT
 
-LOS SANTOS ñ Little MÈxico ñ Complete todas as corridas em 1∫ lugar. A cada corrida vencida vocÍ ganha $ 10.000.
+LOS SANTOS ‚Äì Little M√©xico ‚Äì Complete todas as corridas em 1¬∫ lugar. A cada corrida vencida voc√™ ganha $ 10.000.
 
-Corrida ñ Dist‚ncia em milhas ñ VeÌculo
+Corrida ‚Äì Dist√¢ncia em milhas ‚Äì Ve√≠culo
 
-Lowrider Race ñ 1,46 milhas ñ Blade
-Little Loop ñ 0,82 milhas ñ NRG-500
-Backroad Wanderer ñ 2,05 milhas ñ FCR-900
-City Circuit ñ 2,26 milhas ñ FCR-900
-Vinewood ñ 2,41 milhas ñ Sunrise
-Freeway ñ 2,62 milhas ñ Super GT
-Into the Country ñ 5,22 milhas ñ Bullet
-Badlands A ñ 2,99milhas ñ Sabre
-Badlands B ñ 2,99 milhas ñ ZR-350
+Lowrider Race ‚Äì 1,46 milhas ‚Äì Blade
+Little Loop ‚Äì 0,82 milhas ‚Äì NRG-500
+Backroad Wanderer ‚Äì 2,05 milhas ‚Äì FCR-900
+City Circuit ‚Äì 2,26 milhas ‚Äì FCR-900
+Vinewood ‚Äì 2,41 milhas ‚Äì Sunrise
+Freeway ‚Äì 2,62 milhas ‚Äì Super GT
+Into the Country ‚Äì 5,22 milhas ‚Äì Bullet
+Badlands A ‚Äì 2,99milhas ‚Äì Sabre
+Badlands B ‚Äì 2,99 milhas ‚Äì ZR-350
 
-SAN FIERRO ñ Doherty ñ Complete todas as corridas em 1∫ lugar, cada vitÛria vale $ 10.000.
+SAN FIERRO ‚Äì Doherty ‚Äì Complete todas as corridas em 1¬∫ lugar, cada vit√≥ria vale $ 10.000.
 
-Corrida ñ Dist‚ncia em milhas ñ VeÌculo
+Corrida ‚Äì Dist√¢ncia em milhas ‚Äì Ve√≠culo
 
-Dirtbike Danger ñ 1,99 milhas ñ Sanchez
-Bandito County ñ 2,02 milhas ñ Bandito
-GO-GO Karting ñ 1,18 milhas ñ Kart
-San Fierro Fastlane ñ 1,64 milhas ñ Alpha
-San Fierro Hills ñ 5,20 milhas ñ Phoenix
-Country Endurance ñ 6,68 milhas ñ Bullet
+Dirtbike Danger ‚Äì 1,99 milhas ‚Äì Sanchez
+Bandito County ‚Äì 2,02 milhas ‚Äì Bandito
+GO-GO Karting ‚Äì 1,18 milhas ‚Äì Kart
+San Fierro Fastlane ‚Äì 1,64 milhas ‚Äì Alpha
+San Fierro Hills ‚Äì 5,20 milhas ‚Äì Phoenix
+Country Endurance ‚Äì 6,68 milhas ‚Äì Bullet
 
-LAS VENTURRAS ñ LVA Freight Depot ñ Termine todas as corridas em 1∫ lugar, cada corrida vencida, vocÍ ganha $ 10.000.
+LAS VENTURRAS ‚Äì LVA Freight Depot ‚Äì Termine todas as corridas em 1¬∫ lugar, cada corrida vencida, voc√™ ganha $ 10.000.
 
-Corrida ñ Dist‚ncia ñ VeÌculo
+Corrida ‚Äì Dist√¢ncia ‚Äì Ve√≠culo
 
-SF to LV ñ 4,85 milhas ñ Banshee
-Dam Rider ñ 2,67 milhas ñ NRG-500
-Desert Tricks ñ 2,91 milhas ñ FCR-900
-LV Ringroad ñ 3,70 milhas ñ Turismo
+SF to LV ‚Äì 4,85 milhas ‚Äì Banshee
+Dam Rider ‚Äì 2,67 milhas ‚Äì NRG-500
+Desert Tricks ‚Äì 2,91 milhas ‚Äì FCR-900
+LV Ringroad ‚Äì 3,70 milhas ‚Äì Turismo
 
-AEROPORTO DE LAS VENTURRAS ñ Las Venturras Airport ñ V· pegando todos os checkpoints atÈ o ˙ltimo.
-Corrida ñ Dist‚ncia em milhas ñ VeÌculo
+AEROPORTO DE LAS VENTURRAS ‚Äì Las Venturras Airport ‚Äì V√° pegando todos os checkpoints at√© o √∫ltimo.
+Corrida ‚Äì Dist√¢ncia em milhas ‚Äì Ve√≠culo
 
-World War Ace ñ 4,24 milhas ñ Rustler
-Barnstorming ñ 7,64 milhas ñ Stuntplane
-Military Service ñ 10,80 milhas ñ Hydra
-Chopper Checkpoint ñ 3,05 milhas ñ Maverick
-Whirly Bird Waypoint ñ 2,73 milhas ñ News Chopper
-Heli Hell ñ 3,08 milhas ñ Hunter
+World War Ace ‚Äì 4,24 milhas ‚Äì Rustler
+Barnstorming ‚Äì 7,64 milhas ‚Äì Stuntplane
+Military Service ‚Äì 10,80 milhas ‚Äì Hydra
+Chopper Checkpoint ‚Äì 3,05 milhas ‚Äì Maverick
+Whirly Bird Waypoint ‚Äì 2,73 milhas ‚Äì News Chopper
+Heli Hell ‚Äì 3,08 milhas ‚Äì Hunter
 
-Se vocÍ passou todas vocÍ ganha $ 1.000.000. ParabÈns!
+Se voc√™ passou todas voc√™ ganha $ 1.000.000. Parab√©ns!
 
-O guindaste da Import/Export est· disponÌvel em San Fierro apÛs a miss„o Customs Fast Track, do Cesar. Se vocÍ j· jogou os outros GTAís, deve estar acostumado com esse tipo de miss„o paralela. SÛ que em San Andreas h· um adicional. VocÍ receber· uma gorda quantia por cada carro que vocÍ exportar. AlÈm disso, existem alguns carros que vocÍ poder· importar usando o guindaste. Claro que para isso, vocÍ ter· que pagar o preÁo exigido.
+O guindaste da Import/Export est√° dispon√≠vel em San Fierro ap√≥s a miss√£o Customs Fast Track, do Cesar. Se voc√™ j√° jogou os outros GTA‚Äôs, deve estar acostumado com esse tipo de miss√£o paralela. S√≥ que em San Andreas h√° um adicional. Voc√™ receber√° uma gorda quantia por cada carro que voc√™ exportar. Al√©m disso, existem alguns carros que voc√™ poder√° importar usando o guindaste. Claro que para isso, voc√™ ter√° que pagar o pre√ßo exigido.
 
-VocÍ ter· trÍs listas de carros para completar. Alguns s„o f·ceis de achar, outros s„o bem difÌceis. E, como vocÍ pode ver, d· para fazer um bom dinheiro exportando os carros pedidos nas trÍs listas. R$ 1.104.000, para ser mais preciso.
+Voc√™ ter√° tr√™s listas de carros para completar. Alguns s√£o f√°ceis de achar, outros s√£o bem dif√≠ceis. E, como voc√™ pode ver, d√° para fazer um bom dinheiro exportando os carros pedidos nas tr√™s listas. R$ 1.104.000, para ser mais preciso.
 
 Lista 1
 
 Patriot
-Locais onde est· Estacionado
-Easter Basin, San Fierro - Dentro da Marinha. (Entrando l· ficar· com 5 Estrelas)
+Locais onde est√° Estacionado
+Easter Basin, San Fierro - Dentro da Marinha. (Entrando l√° ficar√° com 5 Estrelas)
 Easter Bay Chemicals, San Fierro - Estacionado no estacionamento.
-Restricted Area, Desert - Na ‡rea 69 do lado dos aviıes. (Entrando ficar· com 5 Estrelas)
+Restricted Area, Desert - Na √†rea 69 do lado dos avi√µes. (Entrando ficar√° com 5 Estrelas)
 Recopensa
 $40,000
 Foto
 
 Sanchez
-Locais onde est· Estacionado
-Mount Chiliad, Countryside - Estacionado prÛximo ao fim da linha da corrida do mont child.
-Angel Pine, Countryside - Estacionado prÛximo da Soft House em Angel Pine.
-Hunter Quarry, Desert - Na ·rea de mineradores no deserto, prÛximo a escada
+Locais onde est√° Estacionado
+Mount Chiliad, Countryside - Estacionado pr√≥ximo ao fim da linha da corrida do mont child.
+Angel Pine, Countryside - Estacionado pr√≥ximo da Soft House em Angel Pine.
+Hunter Quarry, Desert - Na √°rea de mineradores no deserto, pr√≥ximo a escada
 Recopensa
 $10,000
 Foto 
 
 Stretch
-Locais onde est· Estacionado
-Hashbury, San Fierro - na Wang Cars e prÛximo ao Pay N' Spray
+Locais onde est√° Estacionado
+Hashbury, San Fierro - na Wang Cars e pr√≥ximo ao Pay N' Spray
 Recopensa
 $40,000
 Foto 
 
 Feltzer
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Flint Country, Countryside - O Feltzer aparece randonimamente no estacionamento marcado por um largo cinza no radar em Flint Country.
 Recopensa
 $35,000
 Foto 
 
 Remington
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Unity Station, Los Santos - Estacionado no estacionamento.
 Recopensa
 $30,000
 Foto 
 
 Buffalo
-Locais onde est· Estacionado
-Fern Ridge, Countryside - Do lado da soft house em Fern Ridge. … a cabana da Catalina, fica ao lado dela.
+Locais onde est√° Estacionado
+Fern Ridge, Countryside - Do lado da soft house em Fern Ridge. √â a cabana da Catalina, fica ao lado dela.
 Recompensa
 $35,000
 Foto 
 
 Sentinel
-Locais onde est· Estacionado
-Vinewood, Los Santos - Fica no canto inferior direito do Est˙dio de Filmes no estacionamento.
+Locais onde est√° Estacionado
+Vinewood, Los Santos - Fica no canto inferior direito do Est√∫dio de Filmes no estacionamento.
 Recopensa
 $35,000
 Foto 
 
 Infernus
-Locais onde est· Estacionado
-Paradiso, San Fierro - Fica estacionado a frente desta casa. Se n„o estiver l·, de uma volta e confere novamente.
+Locais onde est√° Estacionado
+Paradiso, San Fierro - Fica estacionado a frente desta casa. Se n√£o estiver l√°, de uma volta e confere novamente.
 Recopensa
 $95,000
 Foto 
 
 Camper
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Mount Chiliad, Countryside - No topo do mont child.
 Juniper Hollow, San Fierro - Estacionado proxima a entrada da ponte.
 Recompensa
@@ -157,8 +157,8 @@ $26,000
 Foto
 
 Admiral
-Locais onde est· Estacionado
-Verona Beach, Los Santos - Tente se guiar pelo radar, encontre a rua onde tem aquela parte cinza. Caso n„o esteja l·, dÍ uma volta e confere novamente.
+Locais onde est√° Estacionado
+Verona Beach, Los Santos - Tente se guiar pelo radar, encontre a rua onde tem aquela parte cinza. Caso n√£o esteja l√°, d√™ uma volta e confere novamente.
 Recopensa
 $35,000
 Foto 
@@ -166,73 +166,73 @@ Foto
 Lista 2
 
 Slamvan
-Locais onde est· Estacionado
-El Corona, Los Santos - Estacionado prÛximo ao sex shop atr·s das casas.
+Locais onde est√° Estacionado
+El Corona, Los Santos - Estacionado pr√≥ximo ao sex shop atr√°s das casas.
 Recopensa
 $19,000
 Foto 
 
 Blista Compact
-Locais onde est· Estacionado
-Easter Bay Airport, San Fierro - Estacionado dentro do aeroporto ao lado de um galp„o. Se Localize pelo Radar.
+Locais onde est√° Estacionado
+Easter Bay Airport, San Fierro - Estacionado dentro do aeroporto ao lado de um galp√£o. Se Localize pelo Radar.
 Recopensa
 $35,000
 Foto 
 
 Stafford
-Locais onde est· Estacionado
-Queens, San Fierro - VocÍ achar· um estacionado em frente ao Vank Hoff Hotel.
+Locais onde est√° Estacionado
+Queens, San Fierro - Voc√™ achar√° um estacionado em frente ao Vank Hoff Hotel.
 Recopensa
 $35,000
 Foto 
 
 Sabre
-Locais onde est· Estacionado
-Garcia, San Fierro - Ao norte no fim do estacionamento, prÛximo ao campo de baseball.
+Locais onde est√° Estacionado
+Garcia, San Fierro - Ao norte no fim do estacionamento, pr√≥ximo ao campo de baseball.
 Recopensa
 $19,000
 Foto 
 
 FCR-900
-Locais onde est· Estacionado
-Roca Escalante, Las Venturas - Estacionado prÛximo a pizzaria.
+Locais onde est√° Estacionado
+Roca Escalante, Las Venturas - Estacionado pr√≥ximo a pizzaria.
 Recopensa
 $10,000
 Foto 
 
 Cheetah
-Locais onde est· Estacionado
-Prickle Pine, Las Venturas - Estacionado em frente a um safe house que vocÍ pode comprar.
+Locais onde est√° Estacionado
+Prickle Pine, Las Venturas - Estacionado em frente a um safe house que voc√™ pode comprar.
 Recopensa
 $105,000
 Foto
 
 Rancher
-Locais onde est· Estacionado
-Blueberry Acres, Countryside - Estacionado atr·s da fazenda.
-Bone Country, Desert - Estacionado prÛximo ao Cluckin' Bell.
+Locais onde est√° Estacionado
+Blueberry Acres, Countryside - Estacionado atr√°s da fazenda.
+Bone Country, Desert - Estacionado pr√≥ximo ao Cluckin' Bell.
 Bone Country - Desert - Estacionado proximo aos trailers e ao lado da ammunation.
 Recopensa
 $40,000
 Foto 
 
 Stallion
-Locais onde est· Estacionado
-Sem LocalizaÁ„o.
-Eles podem ser pegos procurando alguÈm dirigindo ele. As Vezes se vocÍ tiver sorte um aparecer· logo apÛs o Loading saindo da safe house em Doherty garage. Outro lugar que poder· achar È em Venturas Strip.
+Locais onde est√° Estacionado
+Sem Localiza√ß√£o.
+Eles podem ser pegos procurando algu√©m dirigindo ele. As Vezes se voc√™ tiver sorte um aparecer√° logo ap√≥s o Loading saindo da safe house em Doherty garage. Outro lugar que poder√° achar √© em Venturas Strip.
 Reconpensa
 $19,000
 Foto 
 
 Tanker
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Tierra Robada, Desert - Estacionado ao leste da Escola de Barcos.
 Recopensa
 $35,000
 Foto 
 
 Comet
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Avispa Country Club, San Fierro - Proximo a Quadra de Tennis.
 Reconpensa
 $35,000
@@ -241,87 +241,87 @@ Foto
 Lista 3
 
 Blade
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 El Corona, Los Santos - Estacionado numa casa ao lado do Aeroporto.
 Recopensa
 $19,000
 Foto 
 
 Freeway
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Hashbury, San Fierro - Estacionado em frente ao Hippy Shopper.
 Recopensa
 $10,000
 Foto 
 
 Mesa
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Mount Chiliad, Countryside - Estacionado Proximo ao fim da linha da corrida do mont child.
 Recopensa
 $25,000
 Foto 
 
 ZR-350
-Locais onde est· Estacionado
-The Clown's Pocket, Las Venturas - Estacionado em frente ao Clowns Pocket building. Se N„o encontrar volte depois.
+Locais onde est√° Estacionado
+The Clown's Pocket, Las Venturas - Estacionado em frente ao Clowns Pocket building. Se N√£o encontrar volte depois.
 Recopensa
 $45,000
 Foto 
 
 Euros
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 The Camels Toe, Las Venturas - Estacionado proximo a sphinx statue, em frente das portas.
 Recopensa
 $35,000
 Foto 
 
 Banshee
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Garcia, San Fierro - Ao lado do GYM de San Fierro.
 Recopensa
 $45,000
 Foto 
 
 Super GT
-Locais onde est· Estacionado
-Doherty, San Fierro - Aparecer· em frente a auto escola se vocÍ completar todos as liÁıes no minimo com bronze.
+Locais onde est√° Estacionado
+Doherty, San Fierro - Aparecer√° em frente a auto escola se voc√™ completar todos as li√ß√µes no minimo com bronze.
 Recopensa
 $105,000
 Foto 
 
 Journey
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Mount Chiliad, Countryside - No topo a Esquerda da montanha.
-Vinewood, Los Santos - Norte do Estacionamento do est˙dio de filmes.
+Vinewood, Los Santos - Norte do Estacionamento do est√∫dio de filmes.
 Vinewood, Los Santos - Ao lado do de cima.
 Recopensa
 $22,000
 Foto 
 
 Huntley
-Locais onde est· Estacionado
-Doherty, San Fierro - Lado direito da Auto Escola. Se n„o tiver l· saia e volte.
+Locais onde est√° Estacionado
+Doherty, San Fierro - Lado direito da Auto Escola. Se n√£o tiver l√° saia e volte.
 Recopensa
 $40,000
 Foto 
 
 BF Injection
-Locais onde est· Estacionado
+Locais onde est√° Estacionado
 Verona Beach, Los Santos - Proximo ao gym em oeste da praia.
 Missionary Hill, San Fierro - Ao sul da praia.
 Recopensa
 $15,000
 Foto 
 
-3 primeiros veÌculos que ficam disponÌveis para importaÁ„o
+3 primeiros ve√≠culos que ficam dispon√≠veis para importa√ß√£o
 
-A importaÁ„o funciona de forma um pouco diferente. As importaÁıes s„o feitas de acordo com o dia da semana. Dos carros que podem ser importados, trÍs est„o disponÌveis logo de cara.
+A importa√ß√£o funciona de forma um pouco diferente. As importa√ß√µes s√£o feitas de acordo com o dia da semana. Dos carros que podem ser importados, tr√™s est√£o dispon√≠veis logo de cara.
 
 Perennial $8,000.
 The Club $28,000.
 Jester $28,000.
 
-Os outros veÌculos v„o ficando disponÌveis de acordo com o n˙mero de carros que vocÍ exporta.
+Os outros ve√≠culos v√£o ficando dispon√≠veis de acordo com o n√∫mero de carros que voc√™ exporta.
 
 Lista completa de cada dia
 
@@ -341,7 +341,7 @@ Stretch $32,000
 Turismo $76,000
 ZR 350 $36,000
 
-TerÁas
+Ter√ßas
 Admiral $28,000
 Bantido $12,000
 Huntley $32,000
@@ -373,7 +373,7 @@ Jester $28,000
 Patriot $32,000
 Sabre $15,200
 
-S·bados
+S√°bados
 Blade $15,200
 Bullet $84,000
 Cheetah $84,000
@@ -381,21 +381,21 @@ Comet $28,000
 Remington $24,000
 Sanchez $8,000
 
-⁄ltimos veÌculos que ficam disponÌveis para importaÁ„o
+√öltimos ve√≠culos que ficam dispon√≠veis para importa√ß√£o
 
-ApÛs entregar 5 carros da primeira lista: Monster $32,000
-ApÛs entregar toda a primeira lista: Windsor $28,000
-ApÛs entregar 5 carros da segunda lista: Bandito $12,000
-ApÛs entregar toda a segunda lista: Turismo $76,000
-ApÛs entregar 5 carros da terceira lista: Vortex $20,000
-ApÛs entregar toda a terceira lista: Bullet $84,000
+Ap√≥s entregar 5 carros da primeira lista: Monster $32,000
+Ap√≥s entregar toda a primeira lista: Windsor $28,000
+Ap√≥s entregar 5 carros da segunda lista: Bandito $12,000
+Ap√≥s entregar toda a segunda lista: Turismo $76,000
+Ap√≥s entregar 5 carros da terceira lista: Vortex $20,000
+Ap√≥s entregar toda a terceira lista: Bullet $84,000
 
 Master 98.3 sounds
 
 
 Apresentado por DJ Johnny "The Love Giant" Parkinson
 
-O gigante mais pequeno do mundo, Johnny Parkinson, leva-o numa viagem musical, espiritual e sexual com uma banda sonora de cl·ssicos nonstop. Os gigantes da soul, rare groove e apenas um bocadinho de funk cl·ssico, apresentado pelo gigante em pessoa. Lembre-se, tamanho n„o È argumento.
+O gigante mais pequeno do mundo, Johnny Parkinson, leva-o numa viagem musical, espiritual e sexual com uma banda sonora de cl√°ssicos nonstop. Os gigantes da soul, rare groove e apenas um bocadinho de funk cl√°ssico, apresentado pelo gigante em pessoa. Lembre-se, tamanho n√£o √© argumento.
 
 1. Charles Wright - Express Yourself
 2. Maceo And The Macks - Cross The Tracks (We Better Go Back)
@@ -422,7 +422,7 @@ Play-Back FM
 
 
 Apresentado por DJ Forth Right MC
-O homem mais bomb·stico do hip-hop, Forth Right MC, traz hip-hop a sÈrio ‡ costa oeste. As sensibilidades da Costa Este e o toque ˙nico da teoria da conspiraÁ„o de Forth right guiam-no numa liÁ„o histÛrica.
+O homem mais bomb√°stico do hip-hop, Forth Right MC, traz hip-hop a s√©rio √† costa oeste. As sensibilidades da Costa Este e o toque √∫nico da teoria da conspira√ß√£o de Forth right guiam-no numa li√ß√£o hist√≥rica.
 
 1. Kool G - Road To The Riches
 2. Big Daddy Kane - Warm It Up Kane
@@ -441,7 +441,7 @@ Bounce FM
 
 
 Apresentado por DJ The Funktipus
-O indescritivel Funktipus toca o indefinivel funk. O som que tem feito vibrar Los Santos ao longo de vinte anos est· agora na 'The Party', na Bounce FM. Funktipus vai abrir os seus olhos para o que est· mesmo a acontecer l· fora.
+O indescritivel Funktipus toca o indefinivel funk. O som que tem feito vibrar Los Santos ao longo de vinte anos est√° agora na 'The Party', na Bounce FM. Funktipus vai abrir os seus olhos para o que est√° mesmo a acontecer l√° fora.
 
 1. Zapp - I Can Make You Dance
 2. Kool And The Gang - Hollywood Swinging
@@ -463,7 +463,7 @@ O indescritivel Funktipus toca o indefinivel funk. O som que tem feito vibrar Lo
 
 K-DST
 Apresentado por DJ Tommy "The Nightmare" Smith
-Tommy Smith, outrora na cena do rock progressivo dos 1970s, Crystal Ship, montou agora residÍncia na r·dio do driving rock. K-DST 'The Dust' toca rock and roll cl·ssico non-stop.
+Tommy Smith, outrora na cena do rock progressivo dos 1970s, Crystal Ship, montou agora resid√™ncia na r√°dio do driving rock. K-DST 'The Dust' toca rock and roll cl√°ssico non-stop.
 
 1. Foghat - Slow Ride
 2. Creedence Clearwater Revival - Green River
@@ -485,7 +485,7 @@ Tommy Smith, outrora na cena do rock progressivo dos 1970s, Crystal Ship, montou
 
 CSR 
 Apresentado por DJ Philip "PM" Michaels
- xitos ligados aos chart tops e clubs, fornecidos por Philip "PM" Michaels, entertainer. New Jack Swing e modern soul da cena mais em voga de hoje em dia. Onde a soul encontra a preppy. Philip est· tambÈm disponÌvel para casamentos, funerais e Bar Mitzvahs.
+√äxitos ligados aos chart tops e clubs, fornecidos por Philip "PM" Michaels, entertainer. New Jack Swing e modern soul da cena mais em voga de hoje em dia. Onde a soul encontra a preppy. Philip est√° tamb√©m dispon√≠vel para casamentos, funerais e Bar Mitzvahs.
 
 1. SWV - I'm So Into You
 2. Soul II Soul - Keep On Movin
@@ -503,7 +503,7 @@ Apresentado por DJ Philip "PM" Michaels
 
 Radio-X 
 Apresentado por DJ Sage
-Finalmente, H¡ uma alternativa. O lugar do Rock Moderno. Isto È uma revoluÁ„o. Guitarras, hedonismo nihilistico, e dizer ‡ geraÁ„o mais velha para se irem lixar. Nunca ninguÈm fez isto antes. Somos pensadores originais. Somos livres. Sage lidera a apresentaÁ„o; ela È um talento not·vel.
+Finalmente, H√Å uma alternativa. O lugar do Rock Moderno. Isto √© uma revolu√ß√£o. Guitarras, hedonismo nihilistico, e dizer √† gera√ß√£o mais velha para se irem lixar. Nunca ningu√©m fez isto antes. Somos pensadores originais. Somos livres. Sage lidera a apresenta√ß√£o; ela √© um talento not√°vel.
 
 1. Helmet - Unsung
 2. Depeche Mode - Personal Jesus
@@ -523,7 +523,7 @@ Finalmente, H¡ uma alternativa. O lugar do Rock Moderno. Isto È uma revoluÁ„o. G
 
 K-Rose
 Apresentado por DJ Mary-Beth Maybell
-Um coraÁ„o partido nunca soou t„o bem. M˙sica country e western transmitida desde Bone County para todo o Estado de San Andreas. Todos os grandes artistas, toda a grande m˙sica. Com Mary-Beth Maybell, a Rainha Vi˙va da Prarie.
+Um cora√ß√£o partido nunca soou t√£o bem. M√∫sica country e western transmitida desde Bone County para todo o Estado de San Andreas. Todos os grandes artistas, toda a grande m√∫sica. Com Mary-Beth Maybell, a Rainha Vi√∫va da Prarie.
 
 1. Jerry Reed - Amos Moses
 2. Conway Twitty And Lorretta Lynn - Louisiana Woman, Mississippi Man
@@ -543,7 +543,7 @@ Um coraÁ„o partido nunca soou t„o bem. M˙sica country e western transmitida desd
 
 Radio Los Santos
 Apresentado por DJ Julio G
-Julio G quebra o som das ruas. … a Costa Oeste a dominar.
+Julio G quebra o som das ruas. √â a Costa Oeste a dominar.
 
 1. Too Short - The Ghetto
 2. 2 Pac - I Don't Give A F**k
@@ -564,7 +564,7 @@ Julio G quebra o som das ruas. … a Costa Oeste a dominar.
 
 SF-UR 
 Apresentado por Hans Oberlander
-M˙sica house de qualidade, do fundo do underground, fornecida por um excitado alem„o. M˙sica para mentes abertas.
+M√∫sica house de qualidade, do fundo do underground, fornecida por um excitado alem√£o. M√∫sica para mentes abertas.
 
 1. Jomanda - Make My Body Rock
 2. 808 State - Pacific

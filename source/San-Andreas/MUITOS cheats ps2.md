@@ -1,4 +1,4 @@
-Energia m·xima, armor e dinheiro: R1, R2, L1, X, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima 
+Energia m√°xima, armor e dinheiro: R1, R2, L1, X, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima 
 
 Todas as armas 1: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima 
 
@@ -6,49 +6,49 @@ Todas as armas 2: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baix
 
 Todas as armas 3: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Baixo, Baixo 
 
-Aumente seu nÌvel de procurado: R1, R1, Circle, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita 
+Aumente seu n√≠vel de procurado: R1, R1, Circle, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita 
 
-Abaixe seu nÌvel de procurado: R1, R1, Circle, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo 
+Abaixe seu n√≠vel de procurado: R1, R1, Circle, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo 
 
-M˙sculos no m·ximo: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Esquerda. 
+M√∫sculos no m√°ximo: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Esquerda. 
 
-CJ Magrinho: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Direita. 
+CJ Magrinho: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Direita. 
 
-Caminh„o-monstro: Pressione Direita, Cima, R1, R1, R1, Baixo, Tri‚ngulo, Tri‚ngulo, X, CÌrculo, L1, L1. 
+Caminh√£o-monstro: Pressione Direita, Cima, R1, R1, R1, Baixo, Tri√¢ngulo, Tri√¢ngulo, X, C√≠rculo, L1, L1. 
 
-Seu carro invulner·vel e destruindo tudo o que tocar: Pressione L1, L2, L2, Cima, Baixo, Baixo, Cima, R1, R2, R2. 
+Seu carro invulner√°vel e destruindo tudo o que tocar: Pressione L1, L2, L2, Cima, Baixo, Baixo, Cima, R1, R2, R2. 
 
-Avi„o de manobras: Pressione CÌrculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri‚ngulo. 
+Avi√£o de manobras: Pressione C√≠rculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri√¢ngulo. 
 
-Transforma tudo em praia: Pressione Cima, Cima, Baixo, Baixo, Quadrado, CÌrculo, L1, R1, Tri‚ngulo, Baixo. 
+Transforma tudo em praia: Pressione Cima, Cima, Baixo, Baixo, Quadrado, C√≠rculo, L1, R1, Tri√¢ngulo, Baixo. 
 
-Super manobras na BMX: Pressione Tri‚ngulo, Quadrado, CÌrculo, CÌrculo, Quadrado, CÌrculo, CÌrculo, L1, L2, L2, R1, R2. 
+Super manobras na BMX: Pressione Tri√¢ngulo, Quadrado, C√≠rculo, C√≠rculo, Quadrado, C√≠rculo, C√≠rculo, L1, L2, L2, R1, R2. 
 
-Hovercraft: Pressione Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L2, Baixo, Baixo. 
+Hovercraft: Pressione Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L2, Baixo, Baixo. 
 
-Quadriciclo: Pressione Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, CÌrculo, Tri‚ngulo, R1, R2. 
+Quadriciclo: Pressione Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, C√≠rculo, Tri√¢ngulo, R1, R2. 
 
-Peso m·ximo: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Baixo. 
+Peso m√°ximo: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Baixo. 
 
-Pular 10 vezes mais alto: Pressione Cima,Cima, Tri‚ngulo, Tri‚ngulo, Cima, Cima, Esquerda, Direita, CÌrculo, R2, R2. 
+Pular 10 vezes mais alto: Pressione Cima,Cima, Tri√¢ngulo, Tri√¢ngulo, Cima, Cima, Esquerda, Direita, C√≠rculo, R2, R2. 
 
-Hydra: Pressione Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L1, Baixo, Cima. 
+Hydra: Pressione Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L1, Baixo, Cima. 
 
-P·ra-quedas: Pressione Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1. 
+P√°ra-quedas: Pressione Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1. 
 
 Jetpack: Pressione L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita, L1, L2, R1, R2, UP, Baixo, Esquerda, Direita. 
 
-Revele o mapa sem precisar dirigir: V· para Los Santos ou San Fierro e ent„o pegue um avi„o para Las Venturas. Ent„o pressione start e no menu cheque o mapa. Surpresa! 
+Revele o mapa sem precisar dirigir: V√° para Los Santos ou San Fierro e ent√£o pegue um avi√£o para Las Venturas. Ent√£o pressione start e no menu cheque o mapa. Surpresa! 
 
-Consiga o Key Card facilmente com a Millie: Existe uma forma mais f·cil de conseguir o Key Card com a Millie. ApÛs encontrar-se com ela, mate-a. Woozie ir· te telefonar e dizer que o cart„o est· na 
+Consiga o Key Card facilmente com a Millie: Existe uma forma mais f√°cil de conseguir o Key Card com a Millie. Ap√≥s encontrar-se com ela, mate-a. Woozie ir√° te telefonar e dizer que o cart√£o est√° na 
 
-casa dela. V· atÈ l· e È sÛ pegar o cart„o 
+casa dela. V√° at√© l√° e √© s√≥ pegar o cart√£o 
 
 Sexo,Dinheiro,Armas..... 
 
-Para Fazer Sexo Com As Mulheres Vc Deve Pegar Um Carro Bem Bonito e Pare No Lado Dela FaÁa Isso Sem Assusta-la Fassa Isso mais Com As Prostitutas E Buzine Com O (L3) Ou (R3) E ela Te Perguntara Algo E Depois Aperte Para A E Ela Entrara No Carro Ai Vc Va A Um Lugar Calmo E Onde N„o tenha ninguen E mexa No Analogico Para E Ai O Show ComeÁara 
+Para Fazer Sexo Com As Mulheres Vc Deve Pegar Um Carro Bem Bonito e Pare No Lado Dela Fa√ßa Isso Sem Assusta-la Fassa Isso mais Com As Prostitutas E Buzine Com O (L3) Ou (R3) E ela Te Perguntara Algo E Depois Aperte Para A E Ela Entrara No Carro Ai Vc Va A Um Lugar Calmo E Onde N√£o tenha ninguen E mexa No Analogico Para E Ai O Show Come√ßara 
 
-$250 mil, energia e escudo no m·ximo: 
+$250 mil, energia e escudo no m√°ximo: 
 
 Durante o jogo pressione: R1, R2, L1, X, ESQUERDA, BAIXO, DIREITA, CIMA, ESQUERDA, BAIXO, DIREITA, CIMA. 
 
@@ -60,19 +60,19 @@ Ficar Magrinho:
 
 Durante o jogo pressione: TRIANGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, CIRCULO, DIREITA. 
 
-Pilote um Avi„o: 
+Pilote um Avi√£o: 
 
 Durante o jogo pressione: CIRCULO, CIMA, L1, L2, BAIXO, R1, L1, L1, ESQUERDA, ESQUERDA, X, TRIANGULO. 
 
-Tr·fego Agressivo: 
+Tr√°fego Agressivo: 
 
 Durante o jogo pressione: R2, CIRCULO, R1, L2, ESQUERDA, R1, L1, R2, L2. 
 
-Tr·fego Negro: 
+Tr√°fego Negro: 
 
 Durante o jogo pressione: CIRCULO, L2, UP, R1, ESQUERDA, X, R1, L1, ESQUERDA, CIRCULO. 
 
-Tr·fego rosa: 
+Tr√°fego rosa: 
 
 Durante o jogo pressione: CIRCULO, L1, BAIXO, L2, ESQUERDA, X, R1, L1, DIREITA, CIRCULO. 
 
@@ -80,19 +80,19 @@ Exploda Todos os Carros:
 
 Durante o jogo pressione: R2, L2, R1, L1, L2, R2, QUADRADO, TRIANGULO, CIRCULO, TRIANGULO, L2, L1. 
 
-Recompensa Por Sua CabeÁa: 
+Recompensa Por Sua Cabe√ßa: 
 
 Durante o jogo pressione: BAIXO, CIMA, CIMA, CIMA, X, R2, R1, L2, L2. 
 
-Dirigir na ¡gua: 
+Dirigir na √Ågua: 
 
 Durante o jogo pressione: DIREITA, R2, CIRCULO, R1, L2, QUADRADO, R1, R2. 
 
-RelÛgio mais r·pido: 
+Rel√≥gio mais r√°pido: 
 
 Durante o jogo pressione: CIRCULO, CIRCULO, L1, QUADRADO, L1, QUADRADO, QUADRADO, QUADRADO, L1, TRIANGULO, CIRCULO, TRIANGULO. 
 
-Carros mais r·pidos: 
+Carros mais r√°pidos: 
 
 Durante o jogo pressione: DIREITA, R1, CIMA, L2, L2, ESQUERDA, R1, L1, R1, R1. 
 
@@ -136,11 +136,11 @@ Anoitecer:
 
 Durante o jogo pressione: R2, X, L1, L1, L2, L2, L2, TRIANGULO. 
 
-Pedestres Revoltados (N„o pode ser desativado): 
+Pedestres Revoltados (N√£o pode ser desativado): 
 
 Durante o jogo pressione: BAIXO, ESQUERDA, CIMA, ESQUERDA, X, R2, R1, L2, L1. 
 
-Pedestres atacam (N„o pode ser dsligado): 
+Pedestres atacam (N√£o pode ser dsligado): 
 
 Durante o jogo pressione: BAIXO, CIMA, CIMA, CIMA, X, R2, R1, L2, L2. 
 
@@ -148,7 +148,7 @@ Pedestres com armas:
 
 Durante o jogo pressione: R2, R1, X, TRIANGULO, X, TRIANGULO, CIMA, BAIXO. 
 
-DireÁ„o perfeita: 
+Dire√ß√£o perfeita: 
 
 Durante o jogo pressione: TRIANGULO, R1, R1, ESQUERDA, R1, L1, R2, L1. 
 
@@ -164,7 +164,7 @@ Neblina:
 
 Durante o jogo pressione: R2, X, L1, L1, L2, L2, L2, X. 
 
-Jogo mais r·pido: 
+Jogo mais r√°pido: 
 
 Durante o jogo pressione: TRIANGULO, CIMA, DIREITA, BAIXO, L2, L1, QUADRADO. 
 
@@ -172,27 +172,27 @@ Jogo mais lento:
 
 Durante o jogo pressione: TRIANGULO, CIMA, DIREITA, BAIXO, QUADRADO, R2, R1. 
 
-SuicÌdio: 
+Suic√≠dio: 
 
 Durante o jogo pressione: DIREITA, L2, BAIXO, R1, ESQUERDA, ESQUERDA, R1, L1, L2, L1. 
 
-Abaixar NÌvel Procurado: 
+Abaixar N√≠vel Procurado: 
 
 Durante o jogo pressione: R1, R1, CIRCULO, R2, CIMA, BAIXO, CIMA, BAIXO, CIMA, BAIXO. 
 
-Aumentar NÌvel Procurado: 
+Aumentar N√≠vel Procurado: 
 
 Durante o jogo pressione: R1, R1, CIRCULO, R2, ESQUERDA, DIREITA, ESQUERDA, DIREITA, ESQUERDA, DIREITA. 
 
-Armas NÌvel 1 (Bat, Pistol, Shotgun, Mini SMG, AK 47, Rocket Launcher, Molotov Cocktail, Spray Can, Brass Knuckles): 
+Armas N√≠vel 1 (Bat, Pistol, Shotgun, Mini SMG, AK 47, Rocket Launcher, Molotov Cocktail, Spray Can, Brass Knuckles): 
 
 Durante o jogo pressione: R1, R2, L1, R2, ESQUERDA, BAIXO, DIREITA, CIMA, ESQUERDA, BAIXO, DIREITA, CIMA. 
 
-Armas NÌvel 2 (Knife, Pistol, Sawnoff Shotgun, Tec 9, Sniper Rifle, Flamethrower, Grenades, Fire Extinguisher): 
+Armas N√≠vel 2 (Knife, Pistol, Sawnoff Shotgun, Tec 9, Sniper Rifle, Flamethrower, Grenades, Fire Extinguisher): 
 
 Durante o jogo pressione: R1, R2, L1, R2, ESQUERDA, BAIXO, DIREITA, CIMA, ESQUERDA, BAIXO, BAIXO, ESQUERDA. 
 
-Armas NÌvel 3 (Chainsaw, Silenced Pistol, Combat Shotgun, M4, Bazooka, Plastic Explosive): 
+Armas N√≠vel 3 (Chainsaw, Silenced Pistol, Combat Shotgun, M4, Bazooka, Plastic Explosive): 
 
 Durante o jogo pressione: R1, R2, L1, R2, ESQUERDA, BAIXO, DIREITA, CIMA, ESQUERDA, BAIXO, BAIXO, BAIXO. 
 
@@ -200,19 +200,19 @@ Modo ET:
 
 Durante o jogo pressione: TRIANGULO, QUADRADO, CIRCULO, CIRCULO, QUADRADO, CIRCULO, CIRCULO, L1, L2, L2, R1, R2. 
 
-Todos os habitantes s„o garotas sensuais: 
+Todos os habitantes s√£o garotas sensuais: 
 
 Durante o jogo pressione: CIMA, CIMA, BAIXO, BAIXO, QUADRADO, CIRCULO, L1, R1, TRIANGULO, BAIXO. 
 
-Saltos com veÌculos: 
+Saltos com ve√≠culos: 
 
 Durante o jogo pressione: ESQUERDA, DIREITA, L1, L2, R1, R2, R2, CIMA, BAIXO, DIREITA, L1. 
 
-VeÌculo da morte: 
+Ve√≠culo da morte: 
 
 Durante o jogo pressione: L1, L2, L2, CIMA, BAIXO, BAIXO, CIMA, R1, R2, R2. 
 
-Caminh„o monstro: 
+Caminh√£o monstro: 
 
 Durante o jogo pressione: DIREITA, CIMA, R1, R1, R1, BAIXO, TRIANGULO, TRIANGULO, X, CIRCULO, L1, L1. 
 
@@ -224,11 +224,11 @@ Overcast:
 
 Durante o jogo pressione: R2, X, L1, L1, L2, L2, L2, QUADRADO. 
 
-Todos os veÌculos s„o motos de entrega de pizza e pedestres atendentes de fast food ou palhaÁos: 
+Todos os ve√≠culos s√£o motos de entrega de pizza e pedestres atendentes de fast food ou palha√ßos: 
 
 TRIANGULO, TRIANGULO, L1, QUADRADO, QUADRADO, CIRCULO, QUADRADO, BAIXO, CIRCULO. 
 
-MuniÁ„o ilimitada: 
+Muni√ß√£o ilimitada: 
 
 L1, R1, QUADRADO, R1, ESQUERDA, R2, R1, ESQUERDA, QUADRADO, BAIXO, L1, L1. 
 
@@ -236,11 +236,11 @@ Energia ilimitada e outras imunidades:
 
 BAIXO, X, DIREITA, ESQUERDA, DIREITA, R1, DIREITA, BAIXO, CIMA, TRIANGULO. 
 
-NÌvel de perseguiÁ„o travado: 
+N√≠vel de persegui√ß√£o travado: 
 
 CIRCULO, DIREITA, CIRCULO, DIREITA, ESQUERDA, QUADRADO, TRIANGULO, CIMA. 
 
-NÌvel de perseguiÁ„o insano(6estrelas): 
+N√≠vel de persegui√ß√£o insano(6estrelas): 
 
 CIRCULO, DIREITA, CIRCULO, DIREITA, ESQUERDA, QUADRADO, X, BAIXO. 
 
@@ -248,7 +248,7 @@ Kit de armamento completo para motorista:
 
 CIMA, CIMA, QUADRADO, L2, DIREITA, X, R1, BAIXO, R2, CIRCULO. 
 
-FÙlego ilimitado: 
+F√¥lego ilimitado: 
 
 BAIXO, ESQUERDA, L1, BAIXO, BAIXO, R2, BAIXO, L2, BAIXO. 
 
@@ -260,11 +260,11 @@ Saltos dez vezes mais altos:
 
 CIMA, CIMA, TRIANGULO, TRIANGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, R2, R2. 
 
-Respeito(respect)no m·ximo: 
+Respeito(respect)no m√°ximo: 
 
 L1, R1, TRIANGULO, BAIXO, R2, X, L1, CIMA, L2, L2, L1, L1. 
 
-Sexy(sex appeal)no m·ximo: 
+Sexy(sex appeal)no m√°ximo: 
 
 CIRCULO, TRIANGULO, TRIANGULO, CIMA, CIRCULO, R1, L2, CIMA, TRIANGULO, L1, L1, L1. 
 
@@ -272,23 +272,23 @@ Nunca sentir fome:
 
 QUADRADO, L2, R1, TRIANGULO, CIMA, QUADRADO, L2, CIMA, X. 
 
-Sem m˙sculos(muscle)ou gordura(fat): 
+Sem m√∫sculos(muscle)ou gordura(fat): 
 
 TRIANGULO, CIMA, CIMA, ESQUERDA, DIREITA, QUADRADO, CIRCULO, DIREITA. 
 
-Todos os pedestres s„o Elvis: 
+Todos os pedestres s√£o Elvis: 
 
 L1, CIRCULO, TRIANGULO, L1, L1, QUADRADO, L2, CIMA, BAIXO, ESQUERDA. 
 
-Garotas de programa com acessÛrios: 
+Garotas de programa com acess√≥rios: 
 
 QUADRADO, DIREITA, QUADRADO, QUADRADO, L2, X, TRIANGULO, X, TRIANGULO. 
 
-Sem pedestres ou polÌcia, somente gangues: 
+Sem pedestres ou pol√≠cia, somente gangues: 
 
 L2, CIMA, R1, R1, ESQUERDA, R1, R1, R2, DIREITA, BAIXO. 
 
-Sem pedestres mas com tr·fego: 
+Sem pedestres mas com tr√°fego: 
 
 X, BAIXO, CIMA, R2, BAIXO, TRIANGULO, L1, TRIANGULO, ESQUERDA. 
 
@@ -296,7 +296,7 @@ Pedestres da Yakusa(com katanas):
 
 X, X, BAIXO, R2, L2, CIRCULO, R1, CIRCULO, QUADRADO. 
 
-Garotas de programa pagam para sair com vocÍ: 
+Garotas de programa pagam para sair com voc√™: 
 
 DIREITA, L2, L2, BAIXO, L2, CIMA, CIMA, L2, R2. 
 
@@ -304,7 +304,7 @@ Recrutar qualquer pedestre com 9mm:
 
 BAIXO, QUADRADO, CIMA, R2, R2, CIMA, DIREITA, DIREITA, CIMA. 
 
-Recrutar qualquer pedestre com lanÁa-foguetes: 
+Recrutar qualquer pedestre com lan√ßa-foguetes: 
 
 R2, R2, R2, X, L2, L1, R2, L1, BAIXO, X. 
 
@@ -312,11 +312,11 @@ Todos os carros com nitro:
 
 ESQUERDA, TRIANGULO, R1, L1, CIMA, QUADRADO, TRIANGULO, BAIXO, CIRCULO, L2, L1, L1. 
 
-Todos os taxis com nitro e opÁ„o de salto(L3): 
+Todos os taxis com nitro e op√ß√£o de salto(L3): 
 
 CIMA, X, TRIANGULO, X, TRIANGULO, X, QUADRADO, R2, DIREITA. 
 
-Todos os carros s„o pretos: 
+Todos os carros s√£o pretos: 
 
 CIRCULO, L2, CIMA, R1, ESQUERDA, X, R1, L1, ESQUERDA, CIRCULO. 
 
@@ -340,7 +340,7 @@ Tanker:
 
 R1, CIMA, ESQUERDA, DIREITA, R2, CIMA, DIREITA, QUADRADO, DIREITA, L2, L1, L1. 
 
-RelÛgio travado na meia-noite: 
+Rel√≥gio travado na meia-noite: 
 
 QUADRADO, L1, R1, DIREITA, X, CIMA, L1, ESQUERDA, ESQUERDA. 
 
@@ -348,7 +348,7 @@ Tempestade:
 
 R2, X, L1, L1, L2, L2, L2, CIRCULO. 
 
-CÈu laranja: 
+C√©u laranja: 
 
 ESQUERDA, ESQUERDA, L2, R1, DIREITA, QUADRADO, QUADRADO, L1, L2, X. 
 
@@ -364,7 +364,7 @@ Tempo nebuloso:
 
 L2, BAIXO, BAIXO, ESQUERDA, QUADRADO, ESQUERDA, R2, QUADRADO, X, R1, L1, L1. 
 
-Todos os sem·faros com sinal verde: 
+Todos os sem√°faros com sinal verde: 
 
 DIREITA, R1, CIMA, L2, L2, ESQUERDA, R1, L1, R1, R1. 
 
@@ -388,7 +388,7 @@ Armas:
 
 Durante o jogo, pressione R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Baixo, Baixo. 
 
-Tr‚nsito intenso: 
+Tr√¢nsito intenso: 
 
 Durante o jogo, pressione R2, Circulo, R1, L2, Esquerda, R1, L1, R2, L2. 
 
@@ -396,11 +396,11 @@ Melhore a dirigibilidade:
 
 Durante o jogo, pressione Triangulo, R1, R1, Esquerda, R1, L1, R2, L1. 
 
-Carros podem andar na ·gua: 
+Carros podem andar na √°gua: 
 
 Durante o jogo, pressione Direita, R2, Circulo, R1, L2, Quadrado, R1, R2. 
 
-Cometa suicÌdio: 
+Cometa suic√≠dio: 
 
 Durante o jogo, pressione Direita, L2, Baixo, R1, Esquerda, Esquerda, R1, L1, L2, L1. 
 
@@ -412,7 +412,7 @@ Pedestres malucos:
 
 Durante o jogo, pressione Baixo, Esquerda, Cima, Esquerda, X, R2, R1, L2, L1. 
 
-Pedestrem odeiam vocÍ: 
+Pedestrem odeiam voc√™: 
 
 Durante o jogo, pressione Baixo, Cima, Cima, Cima, X, R2, R1, L2, L2. 
 
@@ -420,7 +420,7 @@ Pedestres com armas:
 
 Durante o jogo, pressione R2, R1, X, Triangulo, X, Triangulo, Cima, Baixo. 
 
-C‚mera Lenta: 
+C√¢mera Lenta: 
 
 Durante o jogo, pressione Triangulo, Cima, Direita, Baixo, Quadrado, R2, R1. 
 
@@ -428,11 +428,11 @@ Jogo acelerado:
 
 Durante o jogo, pressione Circulo, Circulo, L1, Quadrado, L1, Quadrado, Quadrado, Quadrado, L1, Triangulo, Circulo, Triangulo. 
 
-Baixe o nÌvel de procurado pela polÌcia: 
+Baixe o n√≠vel de procurado pela pol√≠cia: 
 
 Durante o jogo, pressione R1, R1, Circulo, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo. 
 
-Aumente o nÌvel de procurado pela polÌcia: 
+Aumente o n√≠vel de procurado pela pol√≠cia: 
 
 Durante o jogo, pressione R1, R1, Circulo, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita. 
 
@@ -512,49 +512,49 @@ Candy Suxxx do Vice City
 
 Pegue o seu memory card que tem o jogo Vice City gravado e leia-o no San Andreas 
 
-Carros mais r·pidos 
+Carros mais r√°pidos 
 
 Durante o jogo, pressione Direita, R1, Cima, L2, L2, Esquerda, R1, L1, R1, R1 
 
-Acelere o relÛgio 
+Acelere o rel√≥gio 
 
 Durante o jogo, pressione Circulo, Circulo, L1, Quadrado, L1, Quadrado, Quadrado, Quadrado, L1, Triangulo, Circulo, Triangulo 
 
-M˙sculos no m·ximo: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Esquerda. 
+M√∫sculos no m√°ximo: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Esquerda. 
 
-CJ Magrinho: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Direita. 
+CJ Magrinho: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Direita. 
 
-Caminh„o-monstro: Pressione Direita, Cima, R1, R1, R1, Baixo, Tri‚ngulo, Tri‚ngulo, X, CÌrculo, L1, L1. 
+Caminh√£o-monstro: Pressione Direita, Cima, R1, R1, R1, Baixo, Tri√¢ngulo, Tri√¢ngulo, X, C√≠rculo, L1, L1. 
 
-Seu carro invulner·vel e destruindo tudo o que tocar: Pressione L1, L2, L2, Cima, Baixo, Baixo, Cima, R1, R2, R2. 
+Seu carro invulner√°vel e destruindo tudo o que tocar: Pressione L1, L2, L2, Cima, Baixo, Baixo, Cima, R1, R2, R2. 
 
-Avi„o de manobras: Pressione CÌrculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri‚ngulo. 
+Avi√£o de manobras: Pressione C√≠rculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri√¢ngulo. 
 
-Transforma tudo em praia: Pressione Cima, Cima, Baixo, Baixo, Quadrado, CÌrculo, L1, R1, Tri‚ngulo, Baixo. 
+Transforma tudo em praia: Pressione Cima, Cima, Baixo, Baixo, Quadrado, C√≠rculo, L1, R1, Tri√¢ngulo, Baixo. 
 
-Super manobras na BMX: Pressione Tri‚ngulo, Quadrado, CÌrculo, CÌrculo, Quadrado, CÌrculo, CÌrculo, L1, L2, L2, R1, R2. 
+Super manobras na BMX: Pressione Tri√¢ngulo, Quadrado, C√≠rculo, C√≠rculo, Quadrado, C√≠rculo, C√≠rculo, L1, L2, L2, R1, R2. 
 
-Hovercraft: Pressione Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L2, Baixo, Baixo. 
+Hovercraft: Pressione Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L2, Baixo, Baixo. 
 
-Quadriciclo: Pressione Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, CÌrculo, Tri‚ngulo, R1, R2. 
+Quadriciclo: Pressione Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, C√≠rculo, Tri√¢ngulo, R1, R2. 
 
-Peso m·ximo: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Baixo. 
+Peso m√°ximo: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Baixo. 
 
-Pular 10 vezes mais alto: Pressione Cima,Cima, Tri‚ngulo, Tri‚ngulo, Cima, Cima, Esquerda, Direita, CÌrculo, R2, R2. 
+Pular 10 vezes mais alto: Pressione Cima,Cima, Tri√¢ngulo, Tri√¢ngulo, Cima, Cima, Esquerda, Direita, C√≠rculo, R2, R2. 
 
-Hydra: Pressione Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L1, Baixo, Cima. 
+Hydra: Pressione Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L1, Baixo, Cima. 
 
-P·ra-quedas: Pressione Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1. 
+P√°ra-quedas: Pressione Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1. 
 
 Jetpack: Pressione L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita, L1, L2, R1, R2, cima, Baixo, Esquerda, Direita. 
 
-Revele o mapa sem precisar dirigir: V· para Los Santos ou San Fierro e ent„o pegue um avi„o para Las Venturas. Ent„o pressione start e no menu cheque o mapa. Surpresa! 
+Revele o mapa sem precisar dirigir: V√° para Los Santos ou San Fierro e ent√£o pegue um avi√£o para Las Venturas. Ent√£o pressione start e no menu cheque o mapa. Surpresa! 
 
-Consiga o Key Card facilmente com a Millie: Existe uma forma mais f·cil de conseguir o Key Card com a Millie. ApÛs encontrar-se com ela, mate-a. Woozie ir· te telefonar e dizer que o cart„o est· na casa dela. V· atÈ l· e È sÛ pegar o cart„o. 
+Consiga o Key Card facilmente com a Millie: Existe uma forma mais f√°cil de conseguir o Key Card com a Millie. Ap√≥s encontrar-se com ela, mate-a. Woozie ir√° te telefonar e dizer que o cart√£o est√° na casa dela. V√° at√© l√° e √© s√≥ pegar o cart√£o. 
 
-As seq¸Íncias de comandos abaixo devem ser feitas durante o jogo: 
+As seq√º√™ncias de comandos abaixo devem ser feitas durante o jogo: 
 
-1. Energia m·xima, colete e dinheiro: R1, R2, L1, X, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima∑. 
+1. Energia m√°xima, colete e dinheiro: R1, R2, L1, X, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima¬∑. 
 
 2. Todas as armas 1: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima. 
 
@@ -562,61 +562,61 @@ As seq¸Íncias de comandos abaixo devem ser feitas durante o jogo:
 
 4. Todas as armas 3: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Baixo, Baixo. 
 
-5. Aumente seu nÌvel de procurado: R1, R1, bola, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita. 
+5. Aumente seu n√≠vel de procurado: R1, R1, bola, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita. 
 
-6. Abaixe seu nÌvel de procurado: R1, R1, bola, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo. 
+6. Abaixe seu n√≠vel de procurado: R1, R1, bola, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo. 
 
-7. M˙sculos no m·ximo: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Esquerda. 
+7. M√∫sculos no m√°ximo: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Esquerda. 
 
-8. CJ Magrinho: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Direita. 
+8. CJ Magrinho: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Direita. 
 
-9. Caminh„o-monstro: Pressione Direita, Cima, R1, R1, R1, Baixo, Tri‚ngulo, Tri‚ngulo, X, CÌrculo, L1, L1. 
+9. Caminh√£o-monstro: Pressione Direita, Cima, R1, R1, R1, Baixo, Tri√¢ngulo, Tri√¢ngulo, X, C√≠rculo, L1, L1. 
 
-10. Seu carro invulner·vel e destruindo tudo o que tocar: Pressione L1, L2, L2, Cima, Baixo, Baixo, Cima, R1, R2, R2. 
+10. Seu carro invulner√°vel e destruindo tudo o que tocar: Pressione L1, L2, L2, Cima, Baixo, Baixo, Cima, R1, R2, R2. 
 
-11. Avi„o de manobras: Pressione CÌrculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri‚ngulo. 
+11. Avi√£o de manobras: Pressione C√≠rculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri√¢ngulo. 
 
-12. Transforma tudo em praia: Pressione Cima, Cima, Baixo, Baixo, Quadrado, CÌrculo, L1, R1, Tri‚ngulo, Baixo. 
+12. Transforma tudo em praia: Pressione Cima, Cima, Baixo, Baixo, Quadrado, C√≠rculo, L1, R1, Tri√¢ngulo, Baixo. 
 
-13. Super manobras na BMX: Pressione Tri‚ngulo, Quadrado, CÌrculo, CÌrculo, Quadrado, CÌrculo, CÌrculo, L1, L2, L2, R1, R2. 
+13. Super manobras na BMX: Pressione Tri√¢ngulo, Quadrado, C√≠rculo, C√≠rculo, Quadrado, C√≠rculo, C√≠rculo, L1, L2, L2, R1, R2. 
 
-14. Hovercraft: Pressione Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L2, Baixo, Baixo. 
+14. Hovercraft: Pressione Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L2, Baixo, Baixo. 
 
-15. Quadriciclo: Pressione Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, CÌrculo, Tri‚ngulo, R1, R2. 
+15. Quadriciclo: Pressione Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, C√≠rculo, Tri√¢ngulo, R1, R2. 
 
-16. Peso m·ximo: Pressione Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Baixo. 
+16. Peso m√°ximo: Pressione Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Baixo. 
 
-17. Pular 10 vezes mais alto: Pressione Cima, Cima, Tri‚ngulo, Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, R2, R2. 
+17. Pular 10 vezes mais alto: Pressione Cima, Cima, Tri√¢ngulo, Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, R2, R2. 
 
-18. Hydra: Pressione Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L1, Baixo, Cima. 
+18. Hydra: Pressione Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L1, Baixo, Cima. 
 
-19. P·ra-quedas: Pressione Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1. 
+19. P√°ra-quedas: Pressione Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1. 
 
 20. Jetpack: Pressione L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita, L1, L2, R1, R2, UP, Baixo, Esquerda, Direita. 
 
-21. Dirija como um profissional: durante o jogo pressione a seq¸Íncia Tri‚ngulo, R1, R1, Esquerda, R1, L1, R2, L1∑. 
+21. Dirija como um profissional: durante o jogo pressione a seq√º√™ncia Tri√¢ngulo, R1, R1, Esquerda, R1, L1, R2, L1¬∑. 
 
 22. Aumentar a velocidade do carro: R1, R2, L1, L1, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima. 
 
-23. Fazer todos os carros explodirem: R2, L1, R1, L1, L2, R2, Quadrado, Tri‚ngulo, CÌrculo, Tri‚ngulo, L2, L1 enquanto joga. 
+23. Fazer todos os carros explodirem: R2, L1, R1, L1, L2, R2, Quadrado, Tri√¢ngulo, C√≠rculo, Tri√¢ngulo, L2, L1 enquanto joga. 
 
-24. Carros andando sobre a ·gua: Direita, R2, CÌrculo, R1, L2, Quadrado, R1, R2. 
+24. Carros andando sobre a √°gua: Direita, R2, C√≠rculo, R1, L2, Quadrado, R1, R2. 
 
-25. Tr‚nsito agressivo: R2, CÌrculo, R1, L2, Direita, R1, L1, R2, L2. 
+25. Tr√¢nsito agressivo: R2, C√≠rculo, R1, L2, Direita, R1, L1, R2, L2. 
 
-26. Mulheres de biquÌni carregam armas: Direita, L1, CÌrculo, L2, Esquerda, X, R1, L1, L1, X. 
+26. Mulheres de biqu√≠ni carregam armas: Direita, L1, C√≠rculo, L2, Esquerda, X, R1, L1, L1, X. 
 
-27. Para tornar os carros mais f·ceis de guiar: Tri‚ngulo, R1, R1, Esquerda, R1, L1, R2, L1. 
+27. Para tornar os carros mais f√°ceis de guiar: Tri√¢ngulo, R1, R1, Esquerda, R1, L1, R2, L1. 
 
-28. Fazer o tempo passar mais devagar: Tri‚ngulo, Cima, Direita, Baixo, Quadrado, R2, R1. 
+28. Fazer o tempo passar mais devagar: Tri√¢ngulo, Cima, Direita, Baixo, Quadrado, R2, R1. 
 
-29. Tempo passar mais r·pido: CÌrculo, CÌrculo, L1, Quadrado, L1, Quadrado, Quadrado, Quadrado, L1, Tri‚ngulo, CÌrculo, Tri‚ngulo. 
+29. Tempo passar mais r√°pido: C√≠rculo, C√≠rculo, L1, Quadrado, L1, Quadrado, Quadrado, Quadrado, L1, Tri√¢ngulo, C√≠rculo, Tri√¢ngulo. 
 
 30. Pedestres te odeiam: Baixo, Cima, Cima, Cima, X, R2, R1, L2, L2. 
 
 31. Pedestres em protesto: Baixo, Esquerda, Cima, Esquerda, X, R2, R1, L2, L1. 
 
-32. Gr·ficos mais claros: pause o jogo e v· para Display , ent„o selecione Trails e desligue esta opÁ„o. O jogo ficar· muito mais claro. 
+32. Gr√°ficos mais claros: pause o jogo e v√° para Display , ent√£o selecione Trails e desligue esta op√ß√£o. O jogo ficar√° muito mais claro. 
 
 33. Freie ou vire melhor: Segure R1 para virar e frear melhor. 
 
@@ -624,7 +624,7 @@ As seq¸Íncias de comandos abaixo devem ser feitas durante o jogo:
 
 35. Carros rosas: Bola, L1, baixa, L2, esquerda,X, R1, L1, direita.Bola 
 
-36. Carro funer·rio: Baixo, R2, baixo, R1, L2, direita, R1, L1, esquerda, direita. 
+36. Carro funer√°rio: Baixo, R2, baixo, R1, L2, direita, R1, L1, esquerda, direita. 
 
 37. carros desgovernados 
 
@@ -632,35 +632,35 @@ As seq¸Íncias de comandos abaixo devem ser feitas durante o jogo:
 
 39. Carros flutuantes 
 
-40. Habilitar helicÛptero Hunter: bola, X, L1, bola, bola, L1, bola, R1, R2, L2, L1, L1. 
+40. Habilitar helic√≥ptero Hunter: bola, X, L1, bola, bola, L1, bola, R1, R2, L2, L1, L1. 
 
 41. Elvis: L1, bola, triangula, quadrada, L2, baixo, cima, direita. 
 
-42. Limusine Love Fist: R2, Cima, L2, Esquerda, Esquerda, R1, L1, CÌrculo, Direita. 
+42. Limusine Love Fist: R2, Cima, L2, Esquerda, Esquerda, R1, L1, C√≠rculo, Direita. 
 
 43. Se suicidar: Direita, L2, Baixo, R1, Esquerda, Esquerda, R1, L1, L2, L1 
 
-44. Super soco: Cima, Esquerda, X, Tri‚ngulo, R1, Bola, Bola, Bola, L2 
+44. Super soco: Cima, Esquerda, X, Tri√¢ngulo, R1, Bola, Bola, Bola, L2 
 
-45. VeÌculos flutuam quando tocados por outro veÌculo: Quadrado, R2, Baixo, Baixo, Esquerda, Baixo, Esquerda, Esquerda, L2, X 
+45. Ve√≠culos flutuam quando tocados por outro ve√≠culo: Quadrado, R2, Baixo, Baixo, Esquerda, Baixo, Esquerda, Esquerda, L2, X 
 
 46. 
 
-Todos os sem·foros abertos (verdes): Direita, R1, Cima, L2, L2, Esquerda, R1, L1, R1, R1 
+Todos os sem√°foros abertos (verdes): Direita, R1, Cima, L2, L2, Esquerda, R1, L1, R1, R1 
 
-47. Todos os t·xis com nitro: Cima, X, Tri‚ngulo, X, Tri‚ngulo, X, Quadrado, R2, Direita 
+47. Todos os t√°xis com nitro: Cima, X, Tri√¢ngulo, X, Tri√¢ngulo, X, Quadrado, R2, Direita 
 
-48. Carros r·pidos e raros aparecem regularmente: Cima, L1, R1, Cima, Direita, Cima, X, L2, X, L1 
+48. Carros r√°pidos e raros aparecem regularmente: Cima, L1, R1, Cima, Direita, Cima, X, L2, X, L1 
 
-49. Carros voam como aviıes: Quadrado, Baixo, L2, Cima, L1, Bola, Cima, X, Esquerda 
+49. Carros voam como avi√µes: Quadrado, Baixo, L2, Cima, L1, Bola, Cima, X, Esquerda 
 
-50. Pular bem mais alto com a bicicleta: Tri‚ngulo, Quadrado, CÌrculo, CÌrculo, Quadrado, CÌrculo,CÌrculo, L1, L2, L2, R1, R2 
+50. Pular bem mais alto com a bicicleta: Tri√¢ngulo, Quadrado, C√≠rculo, C√≠rculo, Quadrado, C√≠rculo,C√≠rculo, L1, L2, L2, R1, R2 
 
-51. Carro pula com L3: Tri‚ngulo, R1, R1, Esquerda, R1, L1, R2, L1 
+51. Carro pula com L3: Tri√¢ngulo, R1, R1, Esquerda, R1, L1, R2, L1 
 
 52. Dozer: R2, L1, L1, Direita, Direita, Cima, Cima, X, L1 Esquerda 
 
-53. Rhino (tanque): Bola, Bola, L1, Bola, Bola, Bola, L1, L2, R1, Tri‚ngulo, Bola, Tri‚ngulo 
+53. Rhino (tanque): Bola, Bola, L1, Bola, Bola, Bola, L1, L2, R1, Tri√¢ngulo, Bola, Tri√¢ngulo 
 
 54. Bloodring Banger: Baixo, R1, Bola, L2, L2, X, R1, L1, Esquerda, Esquerda 
 
@@ -686,31 +686,31 @@ X, X, Baixo, R2, L2, Bola, R1, Bola, Quadrado
 
 64. Somente carros da zona rural na cidade: L1, L1, R1, R1, L2, L1, R2, Baixo, Esquerda, Cima 
 
-65. Carros com suspens„o a ar e pedestres vestidos de palhaÁo: Tri‚ngulo, Tri‚ngulo, L1, Quadrado, Quadrado, Bola, Quadrado, Baixo, Bola 
+65. Carros com suspens√£o a ar e pedestres vestidos de palha√ßo: Tri√¢ngulo, Tri√¢ngulo, L1, Quadrado, Quadrado, Bola, Quadrado, Baixo, Bola 
 
 66. Gang em todos os lugares (inclusive fora de LS): Esquerda, Direita, Direita, Direita, Esquerda, X, Baixo, Cima, Quadrado, Direita 
 
-67. Tr·fego reduzido: X, Baixo, Cima, R2, Baixo, Tri‚ngulo, L1, Tri‚ngulo, Esquerda 
+67. Tr√°fego reduzido: X, Baixo, Cima, R2, Baixo, Tri√¢ngulo, L1, Tri√¢ngulo, Esquerda 
 
 68. Gangs controlando as ruas: L2, Cima, R1, R1, Esquerda, R1, R1, R2, Direita, Baixo 
 
 69. Pedestres malucos: Baixo, Esquerda, Cima, Esquerda, X, R2, R1, L2, L1 
 
-70. Pedestres com armas: R2, R1, X, Tri‚ngulo, X, Tri‚ngulo, Cima, Baixo 
+70. Pedestres com armas: R2, R1, X, Tri√¢ngulo, X, Tri√¢ngulo, Cima, Baixo 
 
 71. Motoristas agressivos: R2, Bola, R1, L2, Esquerda, R1, L1, R2, L2 
 
 72. Tempestade de areia: Cima, Baixo, L1, L1, L2, L2, L1, L2, R1, R2 
 
-73. CÈu laranja: Esquerda, Esquerda, L2, R1, Direita, Quadrado, Quadrado, L1, L2, X 
+73. C√©u laranja: Esquerda, Esquerda, L2, R1, Direita, Quadrado, Quadrado, L1, L2, X 
 
-74. Manh„: R2, X, L1, L1, L2, L2, L2, Quadrado 
+74. Manh√£: R2, X, L1, L1, L2, L2, L2, Quadrado 
 
 75. Meio-dia: R2, X, L1, L1, L2, L2, L2, Baixo 
 
-76. Noite: R2, X, L1, L1, L2, L2, L2, Tri‚ngulo 
+76. Noite: R2, X, L1, L1, L2, L2, L2, Tri√¢ngulo 
 
-77. Trovıes: R2, X, L1, L1, L2, L2, L2, Circulo ∑. 
+77. Trov√µes: R2, X, L1, L1, L2, L2, L2, Circulo ¬∑. 
 
 78. Neblina: R2, X, L1, L1, L2, L2, L2, X. 
 
@@ -720,7 +720,7 @@ X, X, Baixo, R2, L2, Bola, R1, Bola, Quadrado
 
 Se suicidar: Direita, L2, Baixo, R1, Esquerda, Esquerda, R1, L1, L2, L1 
 
-Sa˙de e MuniÁ„o m·ximas e dinheiro: R1, R2, L1, X, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima 
+Sa√∫de e Muni√ß√£o m√°ximas e dinheiro: R1, R2, L1, X, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima 
 
 Armas 1: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Direita, Cima 
 
@@ -728,53 +728,53 @@ Armas 2: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Baixo,
 
 Armas 3: R1, R2, L1, R2, Esquerda, Baixo, Direita, Cima, Esquerda, Baixo, Baixo, Esquerda 
 
-Aumentar o nÌvel de procurado: R1, R1, Bola, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita 
+Aumentar o n√≠vel de procurado: R1, R1, Bola, R2, Esquerda, Direita, Esquerda, Direita, Esquerda, Direita 
 
-Diminuir o nÌvel de procurado: R1, R1, Bola, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo 
+Diminuir o n√≠vel de procurado: R1, R1, Bola, R2, Cima, Baixo, Cima, Baixo, Cima, Baixo 
 
-Nunca ser procurado: Bola, Direita, Bola, Direita, Esquerda, Quadrado, Tri‚ngulo, Cima 
+Nunca ser procurado: Bola, Direita, Bola, Direita, Esquerda, Quadrado, Tri√¢ngulo, Cima 
 
-NÌvel 6 de procurado: Bola, Direita, Bola, Direita, Esquerda, Quadrado, X, Baixo 
+N√≠vel 6 de procurado: Bola, Direita, Bola, Direita, Esquerda, Quadrado, X, Baixo 
 
-Todos vestidos com roupas de praia, inclusive CJ: Cima, Cima, Baixo, Baixo, Quadrado, CÌrculo, L1, R1, Tri‚ngulo, Baixo 
+Todos vestidos com roupas de praia, inclusive CJ: Cima, Cima, Baixo, Baixo, Quadrado, C√≠rculo, L1, R1, Tri√¢ngulo, Baixo 
 
-Barra Muscle (m˙sculos) no m·ximo: Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Esquerda 
+Barra Muscle (m√∫sculos) no m√°ximo: Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Esquerda 
 
-Barra Muscle (m˙sculos) no mÌnimo: Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Direita 
+Barra Muscle (m√∫sculos) no m√≠nimo: Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Direita 
 
-Barra Fat (gordo) no m·ximo: Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, CÌrculo, Baixo 
+Barra Fat (gordo) no m√°ximo: Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, C√≠rculo, Baixo 
 
-VocÍ ganha um p·ra-quedas: Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1 
+Voc√™ ganha um p√°ra-quedas: Esquerda, Direita, L1, L2, R1, R2, R2, Cima, Baixo, Direita, L1 
 
-CJ pula mais alto: Cima, Cima, Tri‚ngulo, Tri‚ngulo, Cima, Cima, Esquerda, Direita, Quadrado, R2, R2 
+CJ pula mais alto: Cima, Cima, Tri√¢ngulo, Tri√¢ngulo, Cima, Cima, Esquerda, Direita, Quadrado, R2, R2 
 
-MuniÁ„o infinita enquanto estiver dirigindo: Cima, Cima, Quadrado, L2, Direita, X, R1, Baixo, R2, Bola 
+Muni√ß√£o infinita enquanto estiver dirigindo: Cima, Cima, Quadrado, L2, Direita, X, R1, Baixo, R2, Bola 
 
-FÙlego infinito de baixo d ·gua: Baixo, Esquerda, L1, Baixo, Baixo, R2, Baixo, L2, Baixo 
+F√¥lego infinito de baixo d √°gua: Baixo, Esquerda, L1, Baixo, Baixo, R2, Baixo, L2, Baixo 
 
-Super soco: Cima, Esquerda, X, Tri‚ngulo, R1, Bola, Bola, Bola, L2 
+Super soco: Cima, Esquerda, X, Tri√¢ngulo, R1, Bola, Bola, Bola, L2 
 
-Modo Adrenalina (c‚mera lenta e CJ mais forte): X, X, Quadrado, R1, L1, X, Baixo, Esquerda, X 
+Modo Adrenalina (c√¢mera lenta e CJ mais forte): X, X, Quadrado, R1, L1, X, Baixo, Esquerda, X 
 
-2- VEÕCULOS 
+2- VE√çCULOS 
 
-VeÌculos flutuam quando tocados por outro veÌculo: Quadrado, R2, Baixo, Baixo, Esquerda, Baixo, Esquerda, Esquerda, L2, X 
+Ve√≠culos flutuam quando tocados por outro ve√≠culo: Quadrado, R2, Baixo, Baixo, Esquerda, Baixo, Esquerda, Esquerda, L2, X 
 
-Todos os sem·faros abertos (verdes): Direita, R1, Cima, L2, L2, Esquerda, R1, L1, R1, R1 
+Todos os sem√°faros abertos (verdes): Direita, R1, Cima, L2, L2, Esquerda, R1, L1, R1, R1 
 
-Todos os t·xis com nitro: Cima, X, Tri‚ngulo, X, Tri‚ngulo, X, Quadrado, R2, Direita 
+Todos os t√°xis com nitro: Cima, X, Tri√¢ngulo, X, Tri√¢ngulo, X, Quadrado, R2, Direita 
 
-Carros r·pidos e raros aparecem regularmente: Cima, L1, R1, Cima, Direita, Cima, X, L2, X, L1 
+Carros r√°pidos e raros aparecem regularmente: Cima, L1, R1, Cima, Direita, Cima, X, L2, X, L1 
 
-Carros voam como aviıes: Quadrado, Baixo, L2, Cima, L1, Bola, Cima, X, Esquerda 
+Carros voam como avi√µes: Quadrado, Baixo, L2, Cima, L1, Bola, Cima, X, Esquerda 
 
-Pular bem mais alto com a bicicleta: Tri‚ngulo, Quadrado, CÌrculo, CÌrculo, Quadrado, CÌrculo,CÌrculo, L1, L2, L2, R1, R2 
+Pular bem mais alto com a bicicleta: Tri√¢ngulo, Quadrado, C√≠rculo, C√≠rculo, Quadrado, C√≠rculo,C√≠rculo, L1, L2, L2, R1, R2 
 
-Explodir os carros: R2, L2, R1, L1, L2, R2, Quadrado, Tri‚ngulo, Bola, Tri‚ngulo, L2, L1 
+Explodir os carros: R2, L2, R1, L1, L2, R2, Quadrado, Tri√¢ngulo, Bola, Tri√¢ngulo, L2, L1 
 
-Dirigir na ·gua: Direita, R2, Bola, R1, L2, Quadrado, R1, R2 
+Dirigir na √°gua: Direita, R2, Bola, R1, L2, Quadrado, R1, R2 
 
-Carro pula com L3: Tri‚ngulo, R1, R1, Esquerda, R1, L1, R2, L1 
+Carro pula com L3: Tri√¢ngulo, R1, R1, Esquerda, R1, L1, R2, L1 
 
 Carros mais velozes: Direita, R1, Cima, L2, L2, Esquerda, R1, L1, R1, R1 
 
@@ -782,23 +782,23 @@ Carros rosas: Bola, L1, Baixo, L2, Esqueda, X, R1, L1, Direita, Bola
 
 Carros pretos: Bola, L2, Cima, R1, Esquerda, X, R1, L1, Esquerda, Bola 
 
-3- APARECER VEÕCULOS 
+3- APARECER VE√çCULOS 
 
 Dozer: R2, L1, L1, Direita, Direita, Cima, Cima, X, L1 Esquerda 
 
-Monster (big-foot): Direita, Cima, R1, R1, R1, Baixo, Tri‚ngulo, Tri‚ngulo, X, CÌrculo, L1, L1 
+Monster (big-foot): Direita, Cima, R1, R1, R1, Baixo, Tri√¢ngulo, Tri√¢ngulo, X, C√≠rculo, L1, L1 
 
-Stuntplane (avi„o de manobras): CÌrculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri‚ngulo 
+Stuntplane (avi√£o de manobras): C√≠rculo, Cima, L1, L2, Baixo, R1, L1, L1, Esquerda, Esquerda, X, Tri√¢ngulo 
 
-QuadricÌculo: Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, CÌrculo, Tri‚ngulo, R1, R2 
+Quadric√≠culo: Esquerda, Esquerda, Baixo, Baixo, Cima, Cima, Quadrado, C√≠rculo, Tri√¢ngulo, R1, R2 
 
-Hydra (jato): Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L1, Baixo, Cima 
+Hydra (jato): Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L1, Baixo, Cima 
 
-Vortex (barco que tambÈm anda de terra): Tri‚ngulo, Tri‚ngulo, Quadrado, CÌrculo, X, L1, L2, Baixo, Baixo 
+Vortex (barco que tamb√©m anda de terra): Tri√¢ngulo, Tri√¢ngulo, Quadrado, C√≠rculo, X, L1, L2, Baixo, Baixo 
 
-JetPack (funciona como um helicÛptero): L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita, L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita 
+JetPack (funciona como um helic√≥ptero): L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita, L1, L2, R1, R2, Cima, Baixo, Esquerda, Direita 
 
-Rhino (tanque): Bola, Bola, L1, Bola, Bola, Bola, L1, L2, R1, Tri‚ngulo, Bola, Tri‚ngulo 
+Rhino (tanque): Bola, Bola, L1, Bola, Bola, Bola, L1, L2, R1, Tri√¢ngulo, Bola, Tri√¢ngulo 
 
 Bloodring Banger: Baixo, R1, Bola, L2, L2, X, R1, L1, Esquerda, Esquerda 
 
@@ -826,17 +826,17 @@ Recrute qualquer um: Baixo, Quadrado, Cima, R2, R2, Cima, Direita, Direita, Cima
 
 Somente carros da zona rural na cidade: L1, L1, R1, R1, L2, L1, R2, Baixo, Esquerda, Cima 
 
-Carros com suspens„o a ar e pedestres vestidos de palhaÁo: Tri‚ngulo, Tri‚ngulo, L1, Quadrado, Quadrado, Bola, Quadrado, Baixo, Bola 
+Carros com suspens√£o a ar e pedestres vestidos de palha√ßo: Tri√¢ngulo, Tri√¢ngulo, L1, Quadrado, Quadrado, Bola, Quadrado, Baixo, Bola 
 
 Gangs em todos os lugares (inclusive fora de LS): Esquerda, Direita, Direita, Direita, Esquerda, X, Baixo, Cima, Quadrado, Direita 
 
-Tr·fego reduzido: X, Baixo, Cima, R2, Baixo, Tri‚ngulo, L1, Tri‚ngulo, Esquerda 
+Tr√°fego reduzido: X, Baixo, Cima, R2, Baixo, Tri√¢ngulo, L1, Tri√¢ngulo, Esquerda 
 
 Gangs controlando as ruas: L2, Cima, R1, R1, Esquerda, R1, R1, R2, Direita, Baixo 
 
 Pedestres malucos: Baixo, Esquerda, Cima, Esquerda, X, R2, R1, L2, L1 
 
-Pedestres com armas: R2, R1, X, Tri‚ngulo, X, Tri‚ngulo, Cima, Baixo 
+Pedestres com armas: R2, R1, X, Tri√¢ngulo, X, Tri√¢ngulo, Cima, Baixo 
 
 Motoristas agressivos: R2, Bola, R1, L2, Esquerda, R1, L1, R2, L2 
 
@@ -844,20 +844,20 @@ Motoristas agressivos: R2, Bola, R1, L2, Esquerda, R1, L1, R2, L2
 
 Tempestade de areia: Cima, Baixo, L1, L1, L2, L2, L1, L2, R1, R2 
 
-CÈu laranja: Esquerda, Esquerda, L2, R1, Direita, Quadrado, Quadrado, L1, L2, X 
+C√©u laranja: Esquerda, Esquerda, L2, R1, Direita, Quadrado, Quadrado, L1, L2, X 
 
-Hor·rio: Bola, Bola, L1, Quadrado, L1, Quadrado, Quadrado, Quadrado, L1, Tri‚ngulo, Bola, Tri‚ngulo 
+Hor√°rio: Bola, Bola, L1, Quadrado, L1, Quadrado, Quadrado, Quadrado, L1, Tri√¢ngulo, Bola, Tri√¢ngulo 
 
-AÁıes mais r·pidas: Tri‚ngulo, Cima, Direita, Baixo, L2, L1, Quadrado 
+A√ß√µes mais r√°pidas: Tri√¢ngulo, Cima, Direita, Baixo, L2, L1, Quadrado 
 
-AÁıes mais lentas: Tri‚ngulo, Cima, Direita, Baixo, Quadrado, R2, R1 
+A√ß√µes mais lentas: Tri√¢ngulo, Cima, Direita, Baixo, Quadrado, R2, R1 
 
-Manh„: R2, X, L1, L1, L2, L2, L2, Quadrado 
+Manh√£: R2, X, L1, L1, L2, L2, L2, Quadrado 
 
 Meio-dia: R2, X, L1, L1, L2, L2, L2, Baixo 
 
-Noite: R2, X, L1, L1, L2, L2, L2, Tri‚ngulo 
+Noite: R2, X, L1, L1, L2, L2, L2, Tri√¢ngulo 
 
-Trovıes: R2, X, L1, L1, L2, L2, L2, Bola 
+Trov√µes: R2, X, L1, L1, L2, L2, L2, Bola 
 
 Neblina: R2, X, L1, L1, L2, L2, L2, X

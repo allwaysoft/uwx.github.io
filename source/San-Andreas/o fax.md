@@ -7,57 +7,57 @@ http://myepsilon.org/fax/the_epsilon_fax.jpg
 Here is the content of the fax you recive:
 How much is your soul worth? 
 
-Weíve put a price on salvation and itís a price worth paying. In fact, weíre running a special. While other major religions tithe 10%, we tithe 8.75%. But if you join Epsilon now, youíll only be tithed 8.125%. The government takes 33% of your income and what do you get for it? If you answered nothing, youíre on the right track to making yourself a whole person and finally understanding how the universe works, and all that for this special, one time only, low price. 
+We‚Äôve put a price on salvation and it‚Äôs a price worth paying. In fact, we‚Äôre running a special. While other major religions tithe 10%, we tithe 8.75%. But if you join Epsilon now, you‚Äôll only be tithed 8.125%. The government takes 33% of your income and what do you get for it? If you answered nothing, you‚Äôre on the right track to making yourself a whole person and finally understanding how the universe works, and all that for this special, one time only, low price. 
 
-Finally a religion that is easy to understand. In this day and age, can you afford to spend weeks combing through cryptic text written thousands of years ago when people lived to the ripe age of 23 and were forced to slaughter goats? The Epsilon Tract is easy to understand ñ itís still being written. And trust us, it will be in simple, easy to understand bullet points. 
+Finally a religion that is easy to understand. In this day and age, can you afford to spend weeks combing through cryptic text written thousands of years ago when people lived to the ripe age of 23 and were forced to slaughter goats? The Epsilon Tract is easy to understand ‚Äì it‚Äôs still being written. And trust us, it will be in simple, easy to understand bullet points. 
 
-Salvation is here and you donít need to be intelligent to understand very obvious point ñ saving souls is like saving money. So you should do it exactly the same way! 
+Salvation is here and you don‚Äôt need to be intelligent to understand very obvious point ‚Äì saving souls is like saving money. So you should do it exactly the same way! 
 
 Kifflom! Brother-Uncle, Sister-Aunt! 
 
-KIFFLOM ñ HAPPINESS IS YOURS! KIFFLOM! 
+KIFFLOM ‚Äì HAPPINESS IS YOURS! KIFFLOM! 
 
-The future, as told by a descendant of Kraft, hasnít happened yet, but it will, and will you be ready? Make your commitment now. What level of salvation are you ready for? 
+The future, as told by a descendant of Kraft, hasn‚Äôt happened yet, but it will, and will you be ready? Make your commitment now. What level of salvation are you ready for? 
 
-AZUR $10,000 For the person that wants to be saved, but not that much, let us suggest the AZUR pinnacle- Raise your left hand and recite the words: ìTake me to my father-father, brother-uncle. Kifflom.î Weíll do the rest. Because we all know, there is Kifflom and there is Kraft, and both be praised. Then send $10,000. 
+AZUR $10,000 For the person that wants to be saved, but not that much, let us suggest the AZUR pinnacle- Raise your left hand and recite the words: ‚ÄúTake me to my father-father, brother-uncle. Kifflom.‚Äù We‚Äôll do the rest. Because we all know, there is Kifflom and there is Kraft, and both be praised. Then send $10,000. 
 
 TOPAZ $25,000 TOPAZ level salvation is for the person who wants a better life, wants a cleaner soul, and is prepared to shop around for a great deal. The TOPAZ level Epsilonist receives all of the benefits of AQUAMARINE level participation, minus some of the conjugal rights, especially on Thursdays. 
 
-AQUAMARINE $79,000 Itís a small price to pay for personal fulfillment. At the AQUAMARINE level, you gain all of the riches of your AZUR and TOPAZ brothers and sisters, however you will be given a special lapel pin and invited to more parties. 
+AQUAMARINE $79,000 It‚Äôs a small price to pay for personal fulfillment. At the AQUAMARINE level, you gain all of the riches of your AZUR and TOPAZ brothers and sisters, however you will be given a special lapel pin and invited to more parties. 
 
-TURQUOISE $100,000 All the TURQUOISE level, complete enlightenment will occur. N Itís not new age! The music is terrible and makes people into suburbanite eunuchs! Weíre looking for a new wage. For $100,000 all of the mysteries of the universe will be yours, including a PIN code to enter the Epsilon compound in the hills overlooking San Andreas. TURQUOISE members will take weekly meeting with the Honorable Cris Formage in a relaxed setting with everyone wearing only robes that are easily disrobed. 
+TURQUOISE $100,000 All the TURQUOISE level, complete enlightenment will occur. N It‚Äôs not new age! The music is terrible and makes people into suburbanite eunuchs! We‚Äôre looking for a new wage. For $100,000 all of the mysteries of the universe will be yours, including a PIN code to enter the Epsilon compound in the hills overlooking San Andreas. TURQUOISE members will take weekly meeting with the Honorable Cris Formage in a relaxed setting with everyone wearing only robes that are easily disrobed. 
 
 
 
 THE TWELVE TENETS OF EPSILONISM 
 
-1. The world is 157 years old ñ FACT! 
-2. Dinosaurs are a lie that people believe because they are weak ñFACT! 
-3. You are happy, you just donít know it ñ FACT! 
-4. We all come from the same tree ñ FACT! 
-5. Everyone is related to everyone else, except for people with red hair ñ FACT! 
-6. Sperm does not exist ñ It is a lie spread by biology teachers ñ along with everything else you have ever been told ñ FACT! 
-7. Men are supposed to lie with nine new partners a week. Women are supposed to lie with six, except in July, when they must lie with five men a day ñ FACT! 
-8. Aliens exist and are present on Earth. If you have a birth mark, you may be descended from Kraft, the famous emperor of the 4th Paradigm ñ FACT! 
-9. Trees talk, but only some people hear them ñ FACT! 
-10. People who believe in something live much longer than atheists, and they have eternal life thrown in for good measure ñ FACT! 
-11. f you believe this and turn your hands and wallet over to EPSILONISM,youíll live a happy life. Otherwise you are doomed - FACT! 
-12. KIFFLOM ñ HAPPINESS IS YOURS! KIFFLOM! 
+1. The world is 157 years old ‚Äì FACT! 
+2. Dinosaurs are a lie that people believe because they are weak ‚ÄìFACT! 
+3. You are happy, you just don‚Äôt know it ‚Äì FACT! 
+4. We all come from the same tree ‚Äì FACT! 
+5. Everyone is related to everyone else, except for people with red hair ‚Äì FACT! 
+6. Sperm does not exist ‚Äì It is a lie spread by biology teachers ‚Äì along with everything else you have ever been told ‚Äì FACT! 
+7. Men are supposed to lie with nine new partners a week. Women are supposed to lie with six, except in July, when they must lie with five men a day ‚Äì FACT! 
+8. Aliens exist and are present on Earth. If you have a birth mark, you may be descended from Kraft, the famous emperor of the 4th Paradigm ‚Äì FACT! 
+9. Trees talk, but only some people hear them ‚Äì FACT! 
+10. People who believe in something live much longer than atheists, and they have eternal life thrown in for good measure ‚Äì FACT! 
+11. f you believe this and turn your hands and wallet over to EPSILONISM,you‚Äôll live a happy life. Otherwise you are doomed - FACT! 
+12. KIFFLOM ‚Äì HAPPINESS IS YOURS! KIFFLOM! 
 
-If you didnít know this, maybe you should read the Epsilom Tract. 
-Remember ñ The tract is still being written. 
+If you didn‚Äôt know this, maybe you should read the Epsilom Tract. 
+Remember ‚Äì The tract is still being written. 
 
 
 
 TESTIMONIALS 
 
-ìThe Epsilom Tract helped me give up smackî ñ Jezz Torrent 
-ìKifflom changed my life. I used to have a well paid job, a family and good prospects. Now, Iíve given that up to find real meaning in wearing light blue and proclaiming my real religionî ñ Jonas Ackerman, Blueberry, San Andreas 
-ìMuch better than Inversion Therapy. My mother sleeps much easier now that ëIíve joined the fellowshipî Kifflom. Jeremy Smith, San Fierro. 
-ìReligion never worked for me, until now!î Brain Van Ginsberg, Carcer City 
-ìI was lost. Luckily, now I go to regular meetings of a cult group and give them lots of money, so everything is okayî Jane Pole, Ohio. 
-ìAt first, I was nervous about giving up my identity and sleeping with all of those men, but I really enjoy it nowî Mary Fortune, Liberty City 
-ìChirs Formage is a genius. Itís a religion without homework!î Morgan August, Los Santos, San Andreas 
-ìThis religion changed the way I looked at everything, especially group sex!î James Waistcoat, Willowfield, San Andreas.
+‚ÄúThe Epsilom Tract helped me give up smack‚Äù ‚Äì Jezz Torrent 
+‚ÄúKifflom changed my life. I used to have a well paid job, a family and good prospects. Now, I‚Äôve given that up to find real meaning in wearing light blue and proclaiming my real religion‚Äù ‚Äì Jonas Ackerman, Blueberry, San Andreas 
+‚ÄúMuch better than Inversion Therapy. My mother sleeps much easier now that ‚ÄòI‚Äôve joined the fellowship‚Äù Kifflom. Jeremy Smith, San Fierro. 
+‚ÄúReligion never worked for me, until now!‚Äù Brain Van Ginsberg, Carcer City 
+‚ÄúI was lost. Luckily, now I go to regular meetings of a cult group and give them lots of money, so everything is okay‚Äù Jane Pole, Ohio. 
+‚ÄúAt first, I was nervous about giving up my identity and sleeping with all of those men, but I really enjoy it now‚Äù Mary Fortune, Liberty City 
+‚ÄúChirs Formage is a genius. It‚Äôs a religion without homework!‚Äù Morgan August, Los Santos, San Andreas 
+‚ÄúThis religion changed the way I looked at everything, especially group sex!‚Äù James Waistcoat, Willowfield, San Andreas.
  
 Note that all the testemonials are represented on the Epsilon Program website, except the last one. The testemonial itself does not seem to give any useful information, but since this is put in as extra testemonial on the fax - so It could be a clue that something is to be found in Willowfield.

@@ -1,32 +1,32 @@
-JUSTICEIRO: roube qualquer viatura e acabe com os criminosos indicados no radar até ultrapassar o nível 12 para subir a resistência do colete para 150. 
+JUSTICEIRO: roube qualquer viatura e acabe com os criminosos indicados no radar atÃ© ultrapassar o nÃ­vel 12 para subir a resistÃªncia do colete para 150. 
 
-BOMBEIRO: use um caminhão de bombeiro para apagar os incêndios da cidade. Ultrapasse o nível 12 para deixar CJ á prova de fogo. 
+BOMBEIRO: use um caminhÃ£o de bombeiro para apagar os incÃªndios da cidade. Ultrapasse o nÃ­vel 12 para deixar CJ Ã¡ prova de fogo. 
 
-PARAMÉDICO: dirija uma ambulância e leve as vítimas aos hospitais. Alcance o nível 12 para obter energia de 150. 
+PARAMÃ‰DICO: dirija uma ambulÃ¢ncia e leve as vÃ­timas aos hospitais. Alcance o nÃ­vel 12 para obter energia de 150. 
 
-TAXISTA: roube um táxi e tansporte 50 passageiros em uma só seqüência. Ultrapasse esta meta para deixar todos os táxis do game com sistema de nitro. 
+TAXISTA: roube um tÃ¡xi e tansporte 50 passageiros em uma sÃ³ seqÃ¼Ãªncia. Ultrapasse esta meta para deixar todos os tÃ¡xis do game com sistema de nitro. 
 
-MAQUINISTA: entre em qualquer trem que estiver parado nas estações. Segure X para ganhar velocidade e aperte R1 a cerca de 400 metros da estação para conseguir tempo. Complete o nível 2 para ganhar $50 mil e aumentar sua porcentagem geral. 
+MAQUINISTA: entre em qualquer trem que estiver parado nas estaÃ§Ãµes. Segure X para ganhar velocidade e aperte R1 a cerca de 400 metros da estaÃ§Ã£o para conseguir tempo. Complete o nÃ­vel 2 para ganhar $50 mil e aumentar sua porcentagem geral. 
 
-GIGOLÔ: arrume um carro de gigolô, como os modelos Broadway ou Pimpmobile, e leve as prostitutas aos pontos de encontro. Alcance o nível 10 para que elas paguem para sair com o seu personagem. 
-Para fazer os serviços comuns , entre em veículos específicos do ofício e pressione R3 para começar. Conheça todos os serviços e suas recompensas: 
+GIGOLÃ”: arrume um carro de gigolÃ´, como os modelos Broadway ou Pimpmobile, e leve as prostitutas aos pontos de encontro. Alcance o nÃ­vel 10 para que elas paguem para sair com o seu personagem. 
+Para fazer os serviÃ§os comuns , entre em veÃ­culos especÃ­ficos do ofÃ­cio e pressione R3 para comeÃ§ar. ConheÃ§a todos os serviÃ§os e suas recompensas: 
 
-JUSTICEIRO: roube qualquer viatura e acabe com os criminosos indicados no radar até ultrapassar o nível 12 para subir a resistência do colete para 150. 
+JUSTICEIRO: roube qualquer viatura e acabe com os criminosos indicados no radar atÃ© ultrapassar o nÃ­vel 12 para subir a resistÃªncia do colete para 150. 
 
-BOMBEIRO: use um caminhão de bombeiro para apagar os incêndios da cidade. Ultrapasse o nível 12 para deixar CJ á prova de fogo. 
+BOMBEIRO: use um caminhÃ£o de bombeiro para apagar os incÃªndios da cidade. Ultrapasse o nÃ­vel 12 para deixar CJ Ã¡ prova de fogo. 
 
-PARAMÉDICO: dirija uma ambulância e leve as vítimas aos hospitais. Alcance o nível 12 para obter energia de 150. 
+PARAMÃ‰DICO: dirija uma ambulÃ¢ncia e leve as vÃ­timas aos hospitais. Alcance o nÃ­vel 12 para obter energia de 150. 
 
-TAXISTA: roube um táxi e tansporte 50 passageiros em uma só seqüência. Ultrapasse esta meta para deixar todos os táxis do game com sistema de nitro. 
+TAXISTA: roube um tÃ¡xi e tansporte 50 passageiros em uma sÃ³ seqÃ¼Ãªncia. Ultrapasse esta meta para deixar todos os tÃ¡xis do game com sistema de nitro. 
 
-MAQUINISTA: entre em qualquer trem que estiver parado nas estações. Segure X para ganhar velocidade e aperte R1 a cerca de 400 metros da estação para conseguir tempo. Complete o nível 2 para ganhar $50 mil e aumentar sua porcentagem geral. 
+MAQUINISTA: entre em qualquer trem que estiver parado nas estaÃ§Ãµes. Segure X para ganhar velocidade e aperte R1 a cerca de 400 metros da estaÃ§Ã£o para conseguir tempo. Complete o nÃ­vel 2 para ganhar $50 mil e aumentar sua porcentagem geral. 
 
-GIGOLÔ: arrume um carro de gigolô, como os modelos Broadway ou Pimpmobile, e leve as prostitutas aos pontos de encontro. Alcance o nível 10 para que elas paguem para sair com o seu personagem. 
+GIGOLÃ”: arrume um carro de gigolÃ´, como os modelos Broadway ou Pimpmobile, e leve as prostitutas aos pontos de encontro. Alcance o nÃ­vel 10 para que elas paguem para sair com o seu personagem. 
 
-SAQUEADOR: após a missão Home Invasion, procure por um furgão igual ao da missão no estacionamento em El Corona. Entre no veículo á noite, vá ás casas indicadas e roube videogames, televisões e outros objetos de valor. Acumule $10 mil para aumentar seu progresso. 
+SAQUEADOR: apÃ³s a missÃ£o Home Invasion, procure por um furgÃ£o igual ao da missÃ£o no estacionamento em El Corona. Entre no veÃ­culo Ã¡ noite, vÃ¡ Ã¡s casas indicadas e roube videogames, televisÃµes e outros objetos de valor. Acumule $10 mil para aumentar seu progresso. 
 
-MOTORISTA DE BUMBA: ganhe dinheiro dirigindo um ônibus. Primeiro roube um com o nome Coach e comece a passear pela cidade parando nos pontos para pegar passageiros e liberar outros. Cada pedreste gera cinco dólares na sua conta. 
+MOTORISTA DE BUMBA: ganhe dinheiro dirigindo um Ã´nibus. Primeiro roube um com o nome Coach e comece a passear pela cidade parando nos pontos para pegar passageiros e liberar outros. Cada pedreste gera cinco dÃ³lares na sua conta. 
 
-SAQUEADOR: após a missão Home Invasion, procure por um furgão igual ao da missão no estacionamento em El Corona. Entre no veículo á noite, vá ás casas indicadas e roube videogames, televisões e outros objetos de valor. Acumule $10 mil para aumentar seu progresso. 
+SAQUEADOR: apÃ³s a missÃ£o Home Invasion, procure por um furgÃ£o igual ao da missÃ£o no estacionamento em El Corona. Entre no veÃ­culo Ã¡ noite, vÃ¡ Ã¡s casas indicadas e roube videogames, televisÃµes e outros objetos de valor. Acumule $10 mil para aumentar seu progresso. 
 
-MOTORISTA DE BUMBA: ganhe dinheiro dirigindo um ônibus. Primeiro roube um com o nome Coach e comece a passear pela cidade parando nos pontos para pegar passageiros e liberar outros. Cada pedreste gera cinco dólares na sua conta. 
+MOTORISTA DE BUMBA: ganhe dinheiro dirigindo um Ã´nibus. Primeiro roube um com o nome Coach e comece a passear pela cidade parando nos pontos para pegar passageiros e liberar outros. Cada pedreste gera cinco dÃ³lares na sua conta. 

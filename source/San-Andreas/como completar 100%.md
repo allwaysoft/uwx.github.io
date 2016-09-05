@@ -1,16 +1,16 @@
-Veja o que você tem para fazer para completar 100%!!!
+Veja o que vocÃª tem para fazer para completar 100%!!!
 
-Propriedades - É necessário Ter comprado e finalizado as missões das:
-Loja de carros – San Fierro
-Aeroporto Abondando – Deserto
-Loja do Zero – San Fierro Obs: Necessita Ter acabado as 3 primeiras missões
-Para conseguir os 100% é preciso também, obter todas as propriedades compráveis do jogo, ou seja todas as casas, lojas, etc....
+Propriedades - Ã‰ necessÃ¡rio Ter comprado e finalizado as missÃµes das:
+Loja de carros â€“ San Fierro
+Aeroporto Abondando â€“ Deserto
+Loja do Zero â€“ San Fierro Obs: Necessita Ter acabado as 3 primeiras missÃµes
+Para conseguir os 100% Ã© preciso tambÃ©m, obter todas as propriedades comprÃ¡veis do jogo, ou seja todas as casas, lojas, etc....
 
 Auto Escolas, escola de pilotagem, de barcos, etc
 
-No Jogo há escolas de carros, aviões, barcos e motos.... É também é necessário para completar 100% que você consiga passar de todas
+No Jogo hÃ¡ escolas de carros, aviÃµes, barcos e motos.... Ã‰ tambÃ©m Ã© necessÃ¡rio para completar 100% que vocÃª consiga passar de todas
 
-Auto Escola – Fica em San Fierro, faça Todas as missões a seguir
+Auto Escola â€“ Fica em San Fierro, faÃ§a Todas as missÃµes a seguir
 
 - 360
 - 180
@@ -25,7 +25,7 @@ Auto Escola – Fica em San Fierro, faça Todas as missões a seguir
 - Alley Oop
 - City Slicking
 
-Escola de pilotagem – Fica no Deserto, faça todas as missões a seguir
+Escola de pilotagem â€“ Fica no Deserto, faÃ§a todas as missÃµes a seguir
 
 - Takeoff
 - Land Plane
@@ -38,7 +38,7 @@ Escola de pilotagem – Fica no Deserto, faça todas as missões a seguir
 - Barrel Roll
 - Parachute onto Target
 
-Escola de Barcos, fica no deserto numa cidadizinha em cima de San Fierro, faça as missões a seguir:
+Escola de Barcos, fica no deserto numa cidadizinha em cima de San Fierro, faÃ§a as missÃµes a seguir:
 
 - Basic Seamanship
 - Plot a Course
@@ -46,7 +46,7 @@ Escola de Barcos, fica no deserto numa cidadizinha em cima de San Fierro, faça a
 - Flying Fish
 - Land, Sea, and Air
 
-Escola de Motos, fica em Las Venturas e faça as missões a seguir:
+Escola de Motos, fica em Las Venturas e faÃ§a as missÃµes a seguir:
 
 - 360
 - 180
@@ -55,25 +55,25 @@ Escola de Motos, fica em Las Venturas e faça as missões a seguir:
 - Stoppie
 - Jump & Stoppie
 
-Missões do Mount Chilliad
+MissÃµes do Mount Chilliad
 
-No Topo do Mount Chilliad, suba na Mountain Bike, haverão três corridas no total:
+No Topo do Mount Chilliad, suba na Mountain Bike, haverÃ£o trÃªs corridas no total:
 
-Corrida 1 – Race1
-Corrida 2 – Race2
-Corrida 3 – Race3
+Corrida 1 â€“ Race1
+Corrida 2 â€“ Race2
+Corrida 3 â€“ Race3
 
 Academias
 
 Aprenda os 3 golpes de cada academia:
 
-Los Santos – Tanton Gym
-San Fierro – Cobra Martial Arts
-Las Venturas – Below The Beld Gym
+Los Santos â€“ Tanton Gym
+San Fierro â€“ Cobra Martial Arts
+Las Venturas â€“ Below The Beld Gym
 
 Corridas
 
-Há em cada cidade, torneios de carros, siga a lista a seguir:
+HÃ¡ em cada cidade, torneios de carros, siga a lista a seguir:
 
 Los Santos
 
@@ -112,9 +112,9 @@ Las Venturas Airport Races
 - Whirly Bird Waypoint
 - Heli Heli
 
-Missões Ammunation
+MissÃµes Ammunation
 
-Faça Todas as missões da Ammunation
+FaÃ§a Todas as missÃµes da Ammunation
 
 - Pistol Challenge
 - SMG Challenge
@@ -123,20 +123,20 @@ Faça Todas as missões da Ammunation
 
 Obs: Pode ser Feito em qualquer Ammunation que possua estande de tiro.
 
-Eventos de Estádios
+Eventos de EstÃ¡dios
 
-São os Estadios que tem em LS, SF e LV....Detone todas:
+SÃ£o os Estadios que tem em LS, SF e LV....Detone todas:
 
 - 8-Track
 - Blood Bowl
 - Dirt Track
 - Kickstart
 
-Exportações
+ExportaÃ§Ãµes
 
-Exporte as 3 listas – 30 carros
+Exporte as 3 listas â€“ 30 carros
 Exporte as cargas de trem
-Exporte as cargas de Caminhão (Zona Rural)
+Exporte as cargas de CaminhÃ£o (Zona Rural)
 
 Eventos Escondidos:
 
@@ -145,31 +145,31 @@ NGR 500 Challenge
 
 Courier Missions
 
-Los Santos – Roboi’s Food Mart
-San Fierro – Hippy Shooper
-Las Venturas – Burguer Shot
+Los Santos â€“ Roboiâ€™s Food Mart
+San Fierro â€“ Hippy Shooper
+Las Venturas â€“ Burguer Shot
 
-Sub Missões
+Sub MissÃµes
 
-Vigilante – Level 12
-Paramédico – Level 12
-Bombeiro – Level 12
-Táxi – 50 passageiros
-Pimping – Level 10
-Robbery – Totalizar $100.000 em mercadorias roubadas.
-Freight – 2 levels (10 cargas)
+Vigilante â€“ Level 12
+ParamÃ©dico â€“ Level 12
+Bombeiro â€“ Level 12
+TÃ¡xi â€“ 50 passageiros
+Pimping â€“ Level 10
+Robbery â€“ Totalizar $100.000 em mercadorias roubadas.
+Freight â€“ 2 levels (10 cargas)
 
-Coisas Coletáveis
+Coisas ColetÃ¡veis
 
-Los Santos – 100 pixações
-San Fierro – 50 fotografias
-Las Venturas – 50 ferraduras
-San Andreas – 50 ostras
+Los Santos â€“ 100 pixaÃ§Ãµes
+San Fierro â€“ 50 fotografias
+Las Venturas â€“ 50 ferraduras
+San Andreas â€“ 50 ostras
 
-Assets necessários:
+Assets necessÃ¡rios:
 
-Los Santos – Roboi’s Food Mart
-Countryside – RS Haul
-San Fierro – Wang Cars, Zero’s RC Shop, Hippy Shooper, Vank Hoff Hotel
-Deserto – Verdant Meadows Airfield (cemitério de aviões), Hunter Quarry
-Las Venturas – Burguer Shot
+Los Santos â€“ Roboiâ€™s Food Mart
+Countryside â€“ RS Haul
+San Fierro â€“ Wang Cars, Zeroâ€™s RC Shop, Hippy Shooper, Vank Hoff Hotel
+Deserto â€“ Verdant Meadows Airfield (cemitÃ©rio de aviÃµes), Hunter Quarry
+Las Venturas â€“ Burguer Shot

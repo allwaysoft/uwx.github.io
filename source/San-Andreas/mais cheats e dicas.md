@@ -752,7 +752,7 @@ This is kind of self explanatory. All road vehicles will be rare sports cars.
 Up, L Trigger, R Trigger, Up, Right, Up, A, White, A, L Trigger
 
 Car Drive-Bying 
-This code will put the crosshair from 2 player mode onto the screen when in vehicle so you can aim 360บ around the car when drive-bying. 
+This code will put the crosshair from 2 player mode onto the screen when in vehicle so you can aim 360ยบ around the car when drive-bying. 
 Up, Up, X, White, Right, A, R Trigger, Down, Black, B
 
 No Traffic 

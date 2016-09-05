@@ -1,5 +1,5 @@
-Vá até o departamento de polícia de Los Santos. Ao lado da delegacia tem uma garagem exclusiva para guardar carros de polícia. Eu aconselho você a entrar com um carro de polícia, porque se você entrar calmamente passando pela barreira um policial irá tocar o alarme e todo o departamento será alertado. Então pegue uma carro da polícia e espere a barreira subir.
+VÃ¡ atÃ© o departamento de polÃ­cia de Los Santos. Ao lado da delegacia tem uma garagem exclusiva para guardar carros de polÃ­cia. Eu aconselho vocÃª a entrar com um carro de polÃ­cia, porque se vocÃª entrar calmamente passando pela barreira um policial irÃ¡ tocar o alarme e todo o departamento serÃ¡ alertado. EntÃ£o pegue uma carro da polÃ­cia e espere a barreira subir.
 
-Mais adiante você verá que a entrada para a garagem está fechada, então chegue perto da garagem que a garagem se abrirá. Siaa em frente fazendo a curva e vá reto até o final. No canto você verá um pedestre apanhando dos polícias.
+Mais adiante vocÃª verÃ¡ que a entrada para a garagem estÃ¡ fechada, entÃ£o chegue perto da garagem que a garagem se abrirÃ¡. Siaa em frente fazendo a curva e vÃ¡ reto atÃ© o final. No canto vocÃª verÃ¡ um pedestre apanhando dos polÃ­cias.
 
-OBS: Não tente matar os policiais que estão batendo no pedestre pois o próprio pedestre irá atirar em você.
+OBS: NÃ£o tente matar os policiais que estÃ£o batendo no pedestre pois o prÃ³prio pedestre irÃ¡ atirar em vocÃª.
