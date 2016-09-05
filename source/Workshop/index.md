@@ -215,15 +215,18 @@ This used to be possible, but is no longer possible since the game no longer all
 
 # Garry's Mod Asset Mount Tutorial
 
-I found a way to mount Source games in Garry's mod without installing addons from other people
-things you need:
-1. Notepad++ (or a .cfg editor that works i recommend Notepad++)
-2. The game you want to get assets from, i will get the assets from Half-Life 2 Episode 2 (You need to have the game downloaded on your Laptop,PC etc.)
-----
-OK so let's start
-1. go to your Garry's mod folder (For me is C:\Program Files\Garrys mod\Garrysmod) (where the assets are located) then go to the folder called "cfg" after you done that open the file called "Mount.cfg" or "Mount" with a text editor i recommend to use notepad++, DO NOT USE MICROSOFT NOTEPAD
+Here's way to mount Source games in Garry's Mod without installing addons from other people.
 
-2. in Mount.cfg it should type this
+Things you'll need:
+
+1. Notepad++ (or another good text file editor)
+2. The game you want to get assets from, I will get the assets from Half-Life 2 Episode 2 (You need to have the game downloaded on your Laptop, PC, etc.)
+
+The process:
+
+1. Go to your Garry's Mod folder (For me it's `C:\Program Files\Garrys mod\Garrysmod`) (where the assets are located), then go to the folder called `cfg`. After you've done that, open the file called `Mount.cfg` or `Mount` with a text file editor. **DO NOT USE MICROSOFT NOTEPAD.**
+
+2. In `Mount.cfg`, type this:
 ```
 //
 // Use this file to mount additional paths to the filesystem
@@ -237,26 +240,25 @@ OK so let's start
 }
 ```
 
-if you want to mount Team-Fortress 2 assets then remove the two slashes `//` from the start of tf, after you removed them, remove the `C:\mytf2server\tf` and replace with the location of where Team-Fotress 2 is located here is a example:
+If you want to mount Team-Fortress 2 assets then remove the two slashes `//` from the start of `tf`. After you've removed them, remove the `C:\mytf2server\tf` and replace it with the location where Team-Fotress 2 is installed, here'is an example:
 
 `"tf" "C:\Program Files\Steam\Steamapps\Team-Fotress 2\tf"`  
 or  
 `"tf" "C:\Program Files\Team-Fortress 2\tf"`
 
-after you have put the location of team-fortress 2, you can start Garry's mod and you will have the maps,textures,spawnlist etc.
+After you've added the location of Team-Fortress 2, you can start Garry's Mod and you will have the maps, textures, spawnlist, etc.
 
-now what if you want with counter strike source or Half-Life 2 episode 1?
-So here is the thing
+Now what if you want to do this with Counter-Strike: Source or Half-Life 2: Episode 1?
+So here is the thing:
 
-every game has it's own folder with the game's content  
-in Counter-Strike Source it have a folder called "cstrike"  
-In Half-Life 2 episode 1 it has "episodic"  
-and in Half-Life 2 Episode 2 it has "ep2"  
-you have to add the folder name with the game content in the first line
+Every game has its own folder with the game's content.  
+In Counter-Strike: Source there's a folder called `cstrike`  
+In Half-Life 2: Episode 1 there's `episodic`  
+And in Half-Life 2: Episode 2 there's `ep2`  
+You have to add the folder name with the game content in the first part.
 
-if you want to mount Half-Life 2 episode 2  
-add a new line in mount.cfg next to tf  
-like this:
+If you want to mount Half-Life 2 Episode 2, for example:  
+Add a new line in `Mount.cfg` next to `tf` like this:
 
 ```
 //
@@ -268,12 +270,11 @@ like this:
 {
 // "cstrike" "C:\steamcmd\steamapps\common\Counter-Strike Source Dedicated Server\cstrike"
 "tf" "C:\mytf2server\tf"
-"ep2" "Half-Life2locationhere"
+"ep2" "Half-Life2_location_here"
 }```
 
-replace the `Half-Life2locationhere` with Half-Life 2 Episode 2's location  
-the location for me is `C:\Program Files\Half-Life 2\ep2`  
-so it has to be like this 
+Replace the `Half-Life2_location_here` with Half-Life 2 Episode 2's location.  
+For example, if it's `C:\Program Files\Half-Life 2\ep2` it has to be like this 
 
 ```
 //
@@ -288,21 +289,16 @@ so it has to be like this
 "ep2" "C:\Program Files\Half-Life 2\ep2)
 }```
 
-and you don't have to mount the games in garry's mod after you did this, it will be automatically mounted
+Also, you don't have to mount the games in Garry's Mod after you did this, they will be automatically mounted.
 
-If you didn't understood PM me and i will be happy to help
-
-and if you are new here you can open the spoilers and welcome to cs.rin.ru hope you have a great time
-
-Things that you need to do  
+##### Things that you need to do
 1. Install the spawn lists for the games  
 [Download Spawnlists](https://mega.nz/#!DdAUWIxI!Z4xfXUxZSUi1_6G22cp9SJhVjFmXjDvHosLw_mXsco4)  
-extract the zip file and there will be a ton of .txt files you need to put them in `GarrysMod/garrysmod/settings/spawnlists​`  
-then restart the game
+Extract the zip file and there will be a ton of .txt files, you need to put them in `GarrysMod/garrysmod/settings/spawnlists​` then restart the game.
 
-and the new npc's won't appear in the npc tab, i will find a way to appear. The only way to spawn them is in console,
+The new NPCs won't appear in the NPC tab. The only way to spawn them is in console,
 
-For hunter from half life 2 episode 2  
+For hunter from Half-Life 2: Episode 2, for example:  
 `npc_create npc_hunter`
 
 # Other games
