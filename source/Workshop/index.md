@@ -85,7 +85,7 @@ Use the [Steam Workshop Downloader](http://steamworkshopdownloader.com/) and pla
 
 # Killing Floor Workshop Installation
 
-Use the [Steam Workshop Downloader](http://steamworkshopdownloader.com/) and place files in the \maps folder. Maps should be .rom extension.
+Use the [Steam Workshop Downloader](http://steamworkshopdownloader.com/) and place files in the `\maps` folder. Maps should be .rom extension.
 
 # Audiosurf 2 Workshop Installation
 
