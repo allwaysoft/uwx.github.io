@@ -71,3 +71,12 @@ deploy:
   type: github
   repository: https://github.com/rafa1231518/rafa1231518.github.io.git
   branch: master
+
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
