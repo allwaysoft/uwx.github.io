@@ -1,5 +1,5 @@
 ---
-title: Workshop
+title: FSD ConnectX Plugin Games Compatibility List
 date: 2016-09-04 19:26:55
 ---
 
@@ -19,7 +19,7 @@ table {
     background-color: rgba(255, 255, 255, 0.79)
 }
 td {
-	padding: 2px 2px 2px 2px !important;
+    padding: 2px 2px 2px 2px !important;
 }
 tr {
     border: 1px solid rgb(221, 221, 221);
@@ -28,25 +28,56 @@ thead {
     border: 1px solid rgb(221, 221, 221);
 }
 th {
-	padding: 2px 2px 2px 2px;
+    padding: 2px 2px 2px 2px;
 }
 #primary {
-	width: 70.104166667%;
+    width: 70.104166667%;
 }
 /*th:contains(Game) {
-	width: 25%;
+    width: 25%;
 }*/
 td[style="text-align:center"] {
-	font-family: "Source Code Pro", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: "Source Code Pro", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 </style>
 
 <script type="text/javascript">
 // ⑩⑨⑧⑦⑥⑤④③②①⓪
 document.body.onload = function() {
-	$('th:contains(Game)')[0].style.width = '25%';
+    $('th:contains(Game)')[0].style.width = '25%';
 }
 </script>
+
+This is an ongoing list of games that work/partially work/don't work with the ConnectX plugin on FSD.
+
+Possible Reasons?
+
+There must be a timeout/minimum data rate on file access rather than just allowing the file to be accessed whatever the data rate.
+
+Other than equipment issues it could be the following:
+
+* Heavily used network, if the network is being heavily used it may actually crash games and give various errors like dirty disc, fatal crash, etc.
+* Wireless connections can be a lot slower than wired, so if the connection is wireless at some point, either the pc end or the Xbox end, you may have many difficulties.
+* Some games that do a lot of streaming may have problems due to the bandwidth limit (GTA IV Scenery springs to mind)
+* Games that use large container files may also cause a problem.
+  _And at the other end of the scale:_
+* Games that use too many small files may cause problems.
+
+So far, most games work really well, some are not so good. DLC *should* not be affected.
+
+**A couple of notes:**
+
+* Xbox1 Games do not work;
+* XBLA games should work fine as generally, the game sizes on XBLA games are smaller but some may have issues.
+* It has been posted that perhaps converting to GOD container would be better for some non-working/partially working games, the same could potentially be applied for GOD games that may work better as JTAG rips.
+* If a game is on the 'working' lists but does not work for you, make sure you have the latest TU installed.
+* If you plan to play a game over system link (Xlink Kai, etc.), I would recommend copying the game to your USB or internal drives, some games have a timeout function when waiting for players to join, so as you will have extended loading times it might cause you to be booted from games/lobbies.
+
+
+
+**__So far listed:__**
+
+A trend will hopefully be indicated as more games are added to the various lists.
 
 | Game | Rating | Review (if available) |
 | --- | :---: | --- |
@@ -312,7 +343,7 @@ document.body.onload = function() {
 | T |  |  |
 | Test drive unlimited 2 | ⑩ | Works perfectly, just like in the internal HDD. |
 | Texas Cheat 'em | ⑩ | Works perfectly, just like in the internal HDD. |
-| Texas HOld 'em | ⑩ | Works perfectly, just like in the internal HDD. |
+| Texas Hold 'em | ⑩ | Works perfectly, just like in the internal HDD. |
 | THC Civil War | ⑩ |  |
 | The Cursed Crusade | ⑩ |  |
 | The Darkness 2 | ① | Starts but freezes on loading first level |
@@ -329,7 +360,7 @@ document.body.onload = function() {
 | Transformers 3: DotM | ⑩ |  |
 | Trials HD | ⑩ | Works perfectly, just like in the internal HDD. |
 | Tron Evolution | ⑩ |  |
-| TROPICO 5 | ① | Extremely slow loading, laggy main menu, impossible to go in game. |
+| Tropico 5 | ① | Extremely slow loading, laggy main menu, impossible to go in game. |
 | U |  |  |
 | Ultimate Mortal Kombat 3 | ⑩ | Works perfectly, just like in the internal HDD. |
 | Under Defeat HD | ⑩ |  |
