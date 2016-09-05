@@ -17,7 +17,7 @@ date: 2016-09-04 19:26:55
 
 1. Download the mod via [Steam Workshop Downloader](http://steamworkshopdownloader.com/)
 2. You should get a file with no extension
-3. Open the PlagueIncSC.exe (scenario editor)
+3. Open `PlagueIncSC.exe` (the scenario editor)
 4. Create a new scenario (make sure you select all parts - disease lab, world lab, gov. actions lab), name it after the mod you want to play, save it and exit the Scenario editor
 5. Go to `%APPDATA%\Local\Ndemic Creations\Plague Inc. Evolved\Scenario Creator\`Name of the scenario you just created`\`
 6. In there you will see:
@@ -30,7 +30,7 @@ date: 2016-09-04 19:26:55
     `scenario.txt`
     `picture.png`
 
-7. Now comes the annoying part: open the mod file you downloaded from "steam workshop downloader" with text editor (I recommend Notepad++), you should see a lot of text (never mind the black squares at the beginning and at the end)
+7. Now comes the annoying part: open the mod file you downloaded from [Steam Workshop Downloader](http://steamworkshopdownloader.com/) with a text editor (I recommend Notepad++), you should see a lot of text (never mind the black squares at the beginning and at the end)
 8. Now go back and start opening the .txt files in the "scenario editor" folder.
 9. For example open `disease.txt`, the code starts with `global:`
 10. Now look for the same line in the mod file (which you have opened in text editor). When you find it, copy all the code below it (it will be a lot of code). You need to be careful to copy only the code belonging to "disease" section. How to know if you got all the code? Simple; when you see, for example title "Government action:" you got all the code that belonged to the "Disease (or any other section that started above it)" section. Now copy the selected code and paste it into "Disease.txt" in your Scenario Creator map. Make sure you overwrite the previous code.
@@ -53,9 +53,9 @@ Note:
 
 # Tabletop Simulator Workshop Installation
 
-> Workshop mods may not work properly since update v3.3! Try this fix: If the mod's number starts with a "3", save it as .json. If it starts with a 2, save as .cjc.
-> For workshop mods, we will be using the website [Steam Workshop Downloader](http://steamworkshopdownloader.com/).
-> If the website doesn't do anything, try a different browser / disable your ad blocker!
+**Workshop mods may not work properly since update v3.3! Try this fix: If the mod's number starts with a "3", save it as .json. If it starts with a 2, save as .cjc.**
+**For workshop mods, we will be using the website [Steam Workshop Downloader](http://steamworkshopdownloader.com/).**
+**If the website doesn't do anything, try a different browser / disable your ad blocker!**
 
 1. Go to the [Tabletop Simulator workshop page](http://steamcommunity.com/workshop/browse/?appid=286160)
 2. Find the mod you want to download and copy the URL. For example, the UNO mod is [here](http://steamcommunity.com/sharedfiles/filedetails/?id=260389428).
