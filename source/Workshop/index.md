@@ -165,13 +165,13 @@ document.body.onload = function() {
 | F |  |  |
 | F1 2011 | ④ | Very long loading times. |
 | Fable II | ⑩ |  |
-| Fallout 3 | ① | Disc read error. |
+| Fallout 3 | ① (XEX?) | Disc read error. |
 | Family Game Night 4 | ⑩ |  |
-| Farming Simulator 15 | ⑨ | Slightly slower loading, lag spikes at first when loading vehicles into memory, otherwise fine. |
+| Farming Simulator 15 | ⑨ | Slightly slower loading, game freezes at first when loading vehicles into memory, otherwise fine. |
 | Fatal Intertia | ⑩ |  |
 | FCE360 | ⑩ | Works perfectly, can also load ROMs without any problems |
-| Field & Stream: Total Outdoorsman | ⑩ |  |
-| FIFA 12 | ④(XEX) ⑩ (GOD) | Stuttering. Best with GOD format. |
+| Field &amp; Stream: Total Outdoorsman | ⑩ |  |
+| FIFA 12 | ④ (XEX) ⑩ (GOD) | Stuttering. Best with GOD format. |
 | FIFA 13 | ④ | Stuttering |
 | FIFA 14 | ④ | Stuttering |
 | FIFA 15 | ④ | Stuttering |
@@ -190,9 +190,9 @@ document.body.onload = function() {
 | Ghostbusters | ① (XEX) ⑩ (GOD) | GOD format only. |
 | Ghost Recon Future Soldier | ⑩ | GOD format. |
 | Goat Simulator | ⑨ | Slow loading, but fine in-game. |
-| Goat simulator: MMOre GoatZ edition | ⑨ | Slow loading, but fine in-game. |
-| Goldeneye 007 Reloaded | ⑨ | Slow loading, but fine in-game. |
-| Grand Theft Auto: San ANDREAS (remastered) | ⑨ | Slow loading, but fine in-game. |
+| Goat Simulator: MMOre GoatZ Edition | ⑨ | Slow loading, but fine in-game. |
+| GoldenEye 007 Reloaded | ⑨ | Slow loading, but fine in-game. |
+| Grand Theft Auto: San Andreas (remastered mobile port) | ⑨ | Slow loading, but fine in-game. |
 | Guncraft Blocked and Loaded | ④ | Very slow loading times, possibly not working. |
 | Gunstar Heroes XBLA | ⑩ | Perfect |
 | H |  |  |
@@ -226,7 +226,7 @@ document.body.onload = function() {
 | Mad Riders | ⑨ | Slower loading, perfect in game. |
 | Madden 12 | ① (XEX) ⑩ (GOD) | GOD format only. |
 | Mafia 2 | ⑩ |  |
-| Majin & the Forsaken Kingdom | ⑩ |  |
+| Majin &amp; the Forsaken Kingdom | ⑩ |  |
 | MAME360 | ⑩ | Works perfectly, can also load roms without any problems |
 | Marble blast ultra | ⑩ | Works perfectly, very quick load |
 | Mass Effect | ⑨ | Some minor loading delays during missions |
@@ -261,7 +261,7 @@ document.body.onload = function() {
 | P |  |  |
 | Paperboy | ⑩ | Works perfectly, very quick load |
 | PCSXR 360 | ① | Does not work. |
-| Perfect dark | ⑩ | Works perfectly, very quick load |
+| Perfect Dark | ⑩ | Works perfectly, very quick load |
 | PES 2012 | ⑩ |  |
 | Prototype | ① | GOD and XEX do not work. |
 | Prototype 2 | ① | GOD and XEX do not work. |
@@ -272,7 +272,7 @@ document.body.onload = function() {
 | Rayman | ⑩ | GOD format. |
 | Rayman® Origins | ⑦ | Works perfectly, slow loading. |
 | Resident Evil - ORC | ① |  |
-| Resident Evil: Code VerÃ³nica X HD | ⑨ | Works perfectly, choppy videos. |
+| Resident Evil - Code: Veronica X HD | ⑨ | Works perfectly, choppy videos. |
 | RIDE | ⑤ | Very long loading times (even between each race), bikes take very long to load, game is very choppy. |
 | Ridge Racer Unbounded | ① | Blank screen |
 | Rio | ⑩ |  |
@@ -338,9 +338,9 @@ document.body.onload = function() {
 | V |  |  |
 | Vanquish | ⑩ |  |
 | W |  |  |
-| Willians Pinball hall of fame | ⑩ | GOD format |
+| Willians Pinball Hall of Fame | ⑩ | GOD format |
 | Who Wants To Be A Millionaire Special Editions | ⑩ | Works perfectly. |
-| Wolfenstein 3d | ⑩ | Works perfectly, very quick load |
+| Wolfenstein 3D | ⑩ | Works perfectly, very quick load |
 | Worms | ⑩ | Works perfectly, just like in the internal HDD. |
 | Worms 2: Armageddon | ⑩ | Works perfectly, just like in the internal HDD. |
 | WSC Real 11: World Snooker Championship | ⑧ | Works perfectly, slow initial load times, in-game perfect. |
