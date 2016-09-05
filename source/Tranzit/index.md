@@ -161,5 +161,12 @@ Além da oficina, na 2ª área, os outros locais em que a Caixa pode aparecer de
 
 ### Power Ups.
 
-_Power Ups_ são recompensas mágicas que aparecem aleatoriamente após matar um zumbi ou cão diabólico. Esses _Power Ups_ são dourados e brilhantes, e você precisa encostar nele para ativá-lo, beneficiando todo o seu grupo. Note que o zumbi precisa estar dentro do mapa para soltar um _Power Ups_, e não em uma área inacessível, como atrás de uma barreira. Todos os mapas zumbis tem _Power Ups_, a não ser que você tenha desabilitado "magias" nas opções do jogo. Alguns _Power Ups_ são exclusivos em alguns mapas. De qualquer sorte, todos os mapas zumbis possuem os seguintes _Power Ups_: **Dobro de pontos (2X)** - Você ganha pontos em dobro por 30 segundos. **Morte instantânea (Caveira)** - Por 30 segundos, o zumbi morre com apenas um tiro ou facada. Aproveite matando só na faca para ganhar mais pontos. **Máximo de munição (Carregador)** - Recarrega as armas de todos os jogadores do time. Não funciona para jogadores que estejam mortos. Antes de pegar o _máximo de munição_, avise seus companheiros de equipe para recarregarem suas armas. **Carpinteiro (Martelo)** - Reconstrói todas as barreiras do mapa, e todos os jogadores vivos do time ganham 200 pontos.
-**Nuke** **(Bomba)** - Mata todos os zumbis do mapa, e dá 400 pontos para todos os jogadores vivos do time.
+_Power Ups_ são recompensas mágicas que aparecem aleatoriamente após matar um zumbi ou cão diabólico. Esses _Power Ups_ são dourados e brilhantes, e você precisa encostar nele para ativá-lo, beneficiando todo o seu grupo. Note que o zumbi precisa estar dentro do mapa para soltar um _Power Ups_, e não em uma área inacessível, como atrás de uma barreira.
+
+Todos os mapas zumbis têm _Power Ups_, a não ser que você tenha desabilitado "magias" nas opções do jogo. Alguns _Power Ups_ são exclusivos em alguns mapas. De qualquer sorte, todos os mapas zumbis possuem os seguintes _Power Ups_:
+
+**Dobro de pontos (2X)** - Você ganha pontos em dobro por 30 segundos.
+**Morte instantânea (Caveira)** - Por 30 segundos, o zumbi morre com apenas um tiro ou facada. Aproveite matando só na faca para ganhar mais pontos.
+**Máximo de munição (Carregador)** - Recarrega as armas de todos os jogadores do time. Não funciona para jogadores que estejam mortos. Antes de pegar o _máximo de munição_, avise seus companheiros de equipe para recarregarem suas armas.
+**Carpinteiro (Martelo)** - Reconstrói todas as barreiras do mapa, e todos os jogadores vivos do time ganham 200 pontos.
+**Cabum!** **(Bomba)** - Mata todos os zumbis do mapa, e dá 400 pontos para todos os jogadores vivos do time.
