@@ -33,6 +33,9 @@ skip_render: # https://github.com/hexojs/hexo/issues/1591
   - "libraries/lib/*" #yep
   - "libraries/mode/*/*"
   - "libraries/mode/rpm/changes/index.html"
+  - "libraries/uglify.js"
+  - "libraries/_uglify.js"
+  - "libraries/beautify.js"
 
 # Writing
 new_post_name: :title.md # File name of new posts
