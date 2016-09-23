@@ -1,18 +1,84 @@
 ---
-title: FSD ConnectX Plugin Games Compatibility List
+title:
 date: 2016-09-04 19:26:55
 useGithubLayout: true
 ---
 
-<div align="center" style="font-family: \"Comic Sans MS\";">\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~</div><br><div align="center" style="font-family: \"Comic Sans MS\";"><span style='color:#FF0000;'>T</span><span style='color:#FF3600;'>h</span><span style='color:#FF6D00;'>e</span> <span style='color:#FFDA00;'>U</span><span style='color:#ECFF00;'>l</span><span style='color:#B6FF00;'>t</span><span style='color:#7FFF00;'>i</span><span style='color:#48FF00;'>m</span><span style='color:#12FF00;'>a</span><span style='color:#00FF24;'>t</span><span style='color:#00FF5B;'>e</span> <span style='color:#00FFC8;'>N</span><span style='color:#00FEFF;'>F</span><span style='color:#00C8FF;'>M</span><span style='color:#0091FF;'>M</span> <span style='color:#0024FF;'>J</span><span style='color:#1200FF;'>a</span><span style='color:#4800FF;'>v</span><span style='color:#7F00FF;'>a</span> <span style='color:#EC00FF;'>G</span><span style='color:#FF00DA;'>u</span><span style='color:#FF00A3;'>i</span><span style='color:#FF006D;'>d</span><span style='color:#FF0036;'>e</span></div><br><div align="center" style="font-family: \"Comic Sans MS\";">\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~</div>
+<style type="text/css">
+.spoiler-toggle {
+	font-size: 16px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin:0px;
+	padding:0px;
+	text-decoration: none;
+}
+.spoiler-parent {
+	margin:20px; 
+	margin-top:5px; 
+	border: 1px solid #3bbfe7;
+}
+.spoiler-text {
+	/*height:22px; text-align: center;*/
 
-<hr>
+	padding: 5px;
+}
+.spoiler-content {
+	padding: 5px;
+}
+</style>
+
+<div class="spoiler-parent">
+<dt class="spoiler-text"><strong>Spoiler:</strong>
+<a href="javascript:void(0);" class="spoiler-toggle">Show</a></dt>
+<dd><div class="spoiler-content" name="spoiler" style="display: none;">
+  Holaaaaa, Bienvenido!!!!!
+  
+</div></dd></div>
+
+::: Spoiledz
+
+this is the content
+
+:::
+
+:::
+this is content too
+:::
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('.spoiler-toggle').click(function() {
+    var spoiler = $(this).parents('.spoiler-parent').find('.spoiler-content').toggle('slow');
+    if (this.textContent == 'Hide') {
+       this.textContent = 'Show';
+    } else {
+       this.textContent = 'Hide';
+    }
+    return false;
+  });
+
+  Array.prototype.forEach.bind(document.querySelectorAll('.header-anchor'))(function(el) {
+  	var parent = el.parentElement;
+    parent.onmouseover = function() {
+      el.style.opacity = '0.5';
+    };
+    parent.onmouseout = function() {
+      el.style.opacity = '0';
+    };
+    el.style.opacity = '0';
+  });
+});
+</script>
+<style type="text/css">
+.comic-header { font-family: 'Comic Sans MS'; font-size: 29px; line-height: normal; }
+</style>
+<div align="center" class="comic-header">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div><div align="center" class="comic-header"><span style='color:#FF0000;'>T</span><span style='color:#FF3600;'>h</span><span style='color:#FF6D00;'>e</span> <span style='color:#FFDA00;'>U</span><span style='color:#ECFF00;'>l</span><span style='color:#B6FF00;'>t</span><span style='color:#7FFF00;'>i</span><span style='color:#48FF00;'>m</span><span style='color:#12FF00;'>a</span><span style='color:#00FF24;'>t</span><span style='color:#00FF5B;'>e</span> <span style='color:#00FFC8;'>N</span><span style='color:#00FEFF;'>F</span><span style='color:#00C8FF;'>M</span><span style='color:#0091FF;'>M</span> <span style='color:#0024FF;'>J</span><span style='color:#1200FF;'>a</span><span style='color:#4800FF;'>v</span><span style='color:#7F00FF;'>a</span> <span style='color:#EC00FF;'>G</span><span style='color:#FF00DA;'>u</span><span style='color:#FF00A3;'>i</span><span style='color:#FF006D;'>d</span><span style='color:#FF0036;'>e</span></div><div align="center" class="comic-header">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
 
 ## Table of Contents
 
 (coming soon)
-
-<hr>
 
 ## NFMM Files
 
@@ -24,10 +90,9 @@ useGithubLayout: true
 
 <div align="center"><font color="#FF0000">&gt;</font><font color="#FF0F0F">&gt;</font><font color="#FF1E1E">&gt;</font><font color="#FF2D2D">&gt;</font><font color="#FF3C3C">&gt;</font><font color="#FF4B4B">&gt;</font><font color="#FF5A5A">&gt;</font><font color="#FF6969">&gt;</font><font color="#FF7878">&gt;</font><font color="#FF8787">&gt;</font><font color="#FF9696">&gt;</font><font color="#FFA5A5">&gt;</font><font color="#FFB4B4">&gt;</font><font color="#FFC3C3">&gt;</font><font color="#FFD2D2">&gt;</font><font color="#FFE1E1">&gt;</font><font color="#FFF0F0">&gt;</font> <a href="http://www.needformadness.com/download/win/Need-for-Madness.zip" class="postlink" target="_blank" rel="nofollow"><strong><font color="#FF0000">n</font><font color="#FF1D00">e</font><font color="#FF3A00">e</font><font color="#FF5800">d</font><font color="#FF7500">f</font><font color="#FF9300">o</font><font color="#FFB000">r</font><font color="#FFCD00">m</font><font color="#FFEB00">a</font><font color="#F5FF00">d</font><font color="#D7FF00">n</font><font color="#BAFF00">e</font><font color="#9CFF00">s</font><font color="#7FFF00">s</font><font color="#62FF00">.</font><font color="#44FF00">c</font><font color="#27FF00">o</font><font color="#09FF00">m</font><font color="#00FF13">/</font><font color="#00FF31">d</font><font color="#00FF4E">o</font><font color="#00FF6B">w</font><font color="#00FF89">n</font><font color="#00FFA6">l</font><font color="#00FFC4">o</font><font color="#00FFE1">a</font><font color="#00FEFF">d</font><font color="#00E1FF">/</font><font color="#00C4FF">w</font><font color="#00A6FF">i</font><font color="#0089FF">n</font><font color="#006BFF">/</font><font color="#004EFF">N</font><font color="#0031FF">e</font><font color="#0013FF">e</font><font color="#0900FF">d</font><font color="#2700FF">-</font><font color="#4400FF">f</font><font color="#6200FF">o</font><font color="#7F00FF">r</font><font color="#9C00FF">-</font><font color="#BA00FF">M</font><font color="#D700FF">a</font><font color="#F500FF">d</font><font color="#FF00EB">n</font><font color="#FF00CD">e</font><font color="#FF00B0">s</font><font color="#FF0093">s</font><font color="#FF0075">.</font><font color="#FF0058">z</font><font color="#FF003A">i</font><font color="#FF001D">p</font></strong></a> <font color="#FFFFFF">&lt;</font><font color="#FFF0F0">&lt;</font><font color="#FFE1E1">&lt;</font><font color="#FFD2D2">&lt;</font><font color="#FFC3C3">&lt;</font><font color="#FFB4B4">&lt;</font><font color="#FFA5A5">&lt;</font><font color="#FF9696">&lt;</font><font color="#FF8787">&lt;</font><font color="#FF7878">&lt;</font><font color="#FF6969">&lt;</font><font color="#FF5A5A">&lt;</font><font color="#FF4B4B">&lt;</font><font color="#FF3C3C">&lt;</font><font color="#FF2D2D">&lt;</font><font color="#FF1E1E">&lt;</font><font color="#FF0F0F">&lt;</font></div>
 
-<hr>
-
 ## Setting up your NFMM project in Eclipse
 
+:::
 Firstly, download Eclipse. No more BlueJ. If you want to use BlueJ, annoy Kappanated until he makes a separate tutorial. Download the version corresponding to your computer. If you're not sure, download the 32-bit version.
 
 <img src="http://i.imgur.com/ORXUN5V.png">
@@ -62,6 +127,7 @@ If everything loads, congratulations! You now have a working copy of NFMM, fully
 
 <img src="http://i.imgur.com/RdAQmzE.png">
 
+<p></p><p></p>
 
 **Some things to note:**
 * The class you should run is Madness, never GameSparker. This is because, in NFMM, the game runs inside of a Frame, which allows the Car Maker, Stage Maker, Antialiasing and Motion Effects buttons to work, and reduces incompatibility with newer Java versions.
@@ -70,14 +136,12 @@ If everything loads, congratulations! You now have a working copy of NFMM, fully
 * LAN multiplayer works, but there is no chat, no clans and no multiplayer dome. You do not require a full account to play, and the 3 game limit has been removed. I am not going to add online multiplayer, at least not until Omar closes down the official servers.
 * Keep in mind that this is not the final version of the files, and although they've been cleaned up a little bit, they need heavy improvement.
 * The car and stage limit have been hacked. There is one limit, which is sort of hardcoded into Medium, but I'd rather not mess with it.
-
-<hr>
+:::
 
 ## Graphical Hacks
 
-<hr>
-
 ### Adding credits screens
+:::
 Go into xtGraphics, and find void credits. Look for this:
 ```java
 if (this.flipo == 103) {
@@ -89,10 +153,12 @@ Above that, find this:
 if (this.flipo == 102) {
 ```
 Add to the 102 for every screen you're adding.
-Above that, copy all the code under ```java
+Above that, copy all the code under
+```java
 if (this.flipo == 101) {
 ```
 and paste it below that, and change the 101 to 102 etc. depending on how many screens you're adding. Customize it to your liking.
+:::
 ### Changing the resolution
 Go into GameSparker, add this at the top:
 ```java
@@ -257,7 +323,8 @@ if(control.right)
 	            if(sc[0] != minsl)
 	            	sc[0]--;
 	        }
-```### Adding random colors for AI cars[spoiler="]Go into xtGraphics, add this before (or after) void colorCar:```java
+```### Adding random colors for AI cars[spoiler="]Go into xtGraphics, add this before (or after) void colorCar:
+```java
 public void colorCarSP(final ContO conto, final int i) {
 		if (i == 0) //player
 			for (int i132 = 0; i132 < conto.npl; i132++) {
@@ -299,25 +366,30 @@ public void colorCarSP(final ContO conto, final int i) {
 ```java
 if (xtgraphics.fase == 22)
 					xtgraphics.colorCar(contos108[xtgraphics.sc[i145]], i145);
-```Replace that with this:```java
+```Replace that with this:
+```java
 if (xtgraphics.fase == 22)
 					xtgraphics.colorCar(contos108[xtgraphics.sc[i145]], i145);
 				else
 					xtgraphics.colorCarSP(contos108[xtgraphics.sc[i145]], i145);
 ```
 
-### Customize polygon outlines[spoiler="]Go into a .rad file, go to the polygon you want and add this after the < p >: ```java
+### Customize polygon outlines
+
+Go into a .rad file, go to the polygon you want and add this after the &lt;p&gt;:
+
+```java
 customOutline()
 ```
 This will enable custom outlines. Now, this won't actually do anything since it's still using the default settings. To change them, add any of these (you can add multiple and mix them) below customOutline:
 
-**$outlineW(number)** - changes the outline width (default is 1)
-**$outlineCap(butt)** or **$outlineCap(round)** or **$outlineCap(square)** - changes the dash segments' end algorithm (default is butt)
-**$outlineJoin(bevel)** or **$outlineJoin(miter)** or **$outlineJoin(round)** - changes the path segments' connections (default is miter)
-**$outlineMtlimit(number)** - if you used **$outlineJoin(miter)**, this is how far the dash will go to extend its outside edges until 2 ends meet (default is 10)
+`$outlineW(number)` - changes the outline width (default is 1)
+`$outlineCap(butt)` or `$outlineCap(round)` or `$outlineCap(square)` - changes the dash segments' end algorithm (default is butt)
+`$outlineJoin(bevel)` or `$outlineJoin(miter)` or `$outlineJoin(round)` - changes the path segments' connections (default is miter)
+`$outlineMtlimit(number)` - if you used `$outlineJoin(miter)`, this is how far the dash will go to extend its outside edges until 2 ends meet (default is 10)
 
 ### Stage on fire/Cars on fire
-Go to the end of void loadstage in GameSparker and add this before **System.gc();**
+Go to the end of void loadstage in GameSparker and add this before `System.gc();`
 #### Stage on fire
 ```java
 
@@ -326,8 +398,8 @@ if (checkpoints.stage == 1)
             for (int j = 0; j < contos[k].npl; j++)
                 contos[k].p[j].embos = 1;
 ```
-**checkpoints.stage == 1** means Stage 1 will be on fire. If you want more than one stage, you can do something like this:
-**if (checkpoints.stage == 1 || checkpoints.stage == 2)**
+`checkpoints.stage == 1` means Stage 1 will be on fire. If you want more than one stage, you can do something like this:
+`if (checkpoints.stage == 1 || checkpoints.stage == 2)`
 This would make Stage 1 and Stage 2 be on fire.
 
 #### Cars on fire
@@ -337,15 +409,11 @@ if (checkpoints.stage == 1)
             for (int j = 0; j < contos[k].npl; j++)
                 contos[k].p[j].embos = 1;
 ```
-**checkpoints.stage == 1** means the cars in Stage 1 will be on fire. If you want more than one stage, you can do something like this:
-**if (checkpoints.stage == 1 || checkpoints.stage == 2)**
+`checkpoints.stage == 1` means the cars in Stage 1 will be on fire. If you want more than one stage, you can do something like this:
+`if (checkpoints.stage == 1 || checkpoints.stage == 2)`
 This would make the cars in Stage 1 and Stage 2 be on fire.
 
-<hr>
-
 ## Core Hacks
-
-<hr>
 
 ### Floating track pieces
 Find:
