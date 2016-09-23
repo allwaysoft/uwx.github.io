@@ -15,6 +15,13 @@ date: 2016-08-15 13:49:34
 
 <script type="text/javascript">
 window.onload = function() {
+  function re_escape_n(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  }
+  function re_escape(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace(/\n/g, '\\n');
+  }
+
   function descape(string) {
     /*
     From joliss/js-string-escape under MIT:
@@ -217,6 +224,24 @@ window.onload = function() {
       console.trace(err);
     }
   };
+  // Escape RegExp
+  document.getElementById('do-resc').onclick = function() {
+    try {
+      myCodeMirror.setValue(re_escape(myCodeMirror.getValue()));
+    } catch (err) {
+      alert("Could not escape: " + err);
+      console.trace(err);
+    }
+  };
+  // Escape RegExp (no newlines)
+  document.getElementById('do-resc2').onclick = function() {
+    try {
+      myCodeMirror.setValue(re_escape_n(myCodeMirror.getValue()));
+    } catch (err) {
+      alert("Could not escape: " + err);
+      console.trace(err);
+    }
+  };
 };
 </script>
 
@@ -230,6 +255,6 @@ window.onload = function() {
 }
 </style>
 
-<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape</button> <button class="submit" id="do-enc">Encode URI</button>
+<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button>
 
 <div id="textfield"></div>
