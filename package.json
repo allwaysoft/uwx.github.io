@@ -12,8 +12,14 @@
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.11",
     "hexo-renderer-stylus": "^0.3.1",
+    "hexo-renderer-hansen": "file:local_modules/hexo-renderer-hansen",
     "hexo-server": "^0.2.0"
+  },
+  "devDependencies": {
+    "rm-local-modules": "0.0.1"
+  },
+  "scripts": {
+    "i": "rm-local-modules & npm install && exit 0"
   }
 }
