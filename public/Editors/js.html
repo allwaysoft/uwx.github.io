@@ -16,42 +16,30 @@
   <title>JavaScript Minifier and Beautifier | Chris Hansen&#39;s Nut Shack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="window.onload = function() {
-  function descape(string) {
-    /*
-    From joliss/js-string-escape under MIT:
-
-    The MIT License (MIT)
-
-    Copyright (c) 2013 Jo Liss
-
-    Permission is he">
+  function re_escape_n(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, &apos;\\$&amp;&apos;);
+  }
+  function re_escape(str) {
+    return str.replace(/[-\/\\^$*+?.()|[">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JavaScript Minifier and Beautifier">
 <meta property="og:url" content="http://rafa1231518.github.io/Editors/js.html">
 <meta property="og:site_name" content="Chris Hansen's Nut Shack">
 <meta property="og:description" content="window.onload = function() {
-  function descape(string) {
-    /*
-    From joliss/js-string-escape under MIT:
-
-    The MIT License (MIT)
-
-    Copyright (c) 2013 Jo Liss
-
-    Permission is he">
-<meta property="og:updated_time" content="2016-09-07T05:07:24.021Z">
+  function re_escape_n(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, &apos;\\$&amp;&apos;);
+  }
+  function re_escape(str) {
+    return str.replace(/[-\/\\^$*+?.()|[">
+<meta property="og:updated_time" content="2016-09-19T02:21:29.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Minifier and Beautifier">
 <meta name="twitter:description" content="window.onload = function() {
-  function descape(string) {
-    /*
-    From joliss/js-string-escape under MIT:
-
-    The MIT License (MIT)
-
-    Copyright (c) 2013 Jo Liss
-
-    Permission is he">
+  function re_escape_n(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, &apos;\\$&amp;&apos;);
+  }
+  function re_escape(str) {
+    return str.replace(/[-\/\\^$*+?.()|[">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -67,6 +55,7 @@
   -->
 </head>
 <body class="home blog custom-background custom-font-enabled single-author">
+  
   <div id="page" class="hfeed site">
       <header id="masthead" class="site-header" role="banner">
     <hgroup>
@@ -130,6 +119,13 @@
 
 <script type="text/javascript">
 window.onload = function() {
+  function re_escape_n(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  }
+  function re_escape(str) {
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace(/\n/g, '\\n');
+  }
+
   function descape(string) {
     /*
     From joliss/js-string-escape under MIT:
@@ -332,6 +328,24 @@ window.onload = function() {
       console.trace(err);
     }
   };
+  // Escape RegExp
+  document.getElementById('do-resc').onclick = function() {
+    try {
+      myCodeMirror.setValue(re_escape(myCodeMirror.getValue()));
+    } catch (err) {
+      alert("Could not escape: " + err);
+      console.trace(err);
+    }
+  };
+  // Escape RegExp (no newlines)
+  document.getElementById('do-resc2').onclick = function() {
+    try {
+      myCodeMirror.setValue(re_escape_n(myCodeMirror.getValue()));
+    } catch (err) {
+      alert("Could not escape: " + err);
+      console.trace(err);
+    }
+  };
 };
 </script>
 
@@ -345,7 +359,7 @@ window.onload = function() {
 }
 </style>
 
-<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape</button> <button class="submit" id="do-enc">Encode URI</button>
+<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button>
 
 <div id="textfield"></div>
       
@@ -428,5 +442,6 @@ window.onload = function() {
 <div id="bg"></div>
 
   </div>
+  
 </body>
 </html>
