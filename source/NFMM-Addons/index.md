@@ -5,73 +5,6 @@ useGithubLayout: true
 ---
 
 <style type="text/css">
-.spoiler-toggle {
-	font-size: 16px;
-	line-height: 1.5;
-	word-wrap: break-word;
-	margin:0px;
-	padding:0px;
-	text-decoration: none;
-}
-.spoiler-parent {
-	margin:20px; 
-	margin-top:5px; 
-	border: 1px solid #3bbfe7;
-}
-.spoiler-text {
-	/*height:22px; text-align: center;*/
-
-	padding: 5px;
-}
-.spoiler-content {
-	padding: 5px;
-}
-</style>
-
-<div class="spoiler-parent">
-<dt class="spoiler-text"><strong>Spoiler:</strong>
-<a href="javascript:void(0);" class="spoiler-toggle">Show</a></dt>
-<dd><div class="spoiler-content" name="spoiler" style="display: none;">
-  Holaaaaa, Bienvenido!!!!!
-  
-</div></dd></div>
-
-::: Spoiledz
-
-this is the content
-
-:::
-
-:::
-this is content too
-:::
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-$(function() {
-  $('.spoiler-toggle').click(function() {
-    var spoiler = $(this).parents('.spoiler-parent').find('.spoiler-content').toggle('slow');
-    if (this.textContent == 'Hide') {
-       this.textContent = 'Show';
-    } else {
-       this.textContent = 'Hide';
-    }
-    return false;
-  });
-
-  Array.prototype.forEach.bind(document.querySelectorAll('.header-anchor'))(function(el) {
-  	var parent = el.parentElement;
-    parent.onmouseover = function() {
-      el.style.opacity = '0.5';
-    };
-    parent.onmouseout = function() {
-      el.style.opacity = '0';
-    };
-    el.style.opacity = '0';
-  });
-});
-</script>
-<style type="text/css">
 .comic-header { font-family: 'Comic Sans MS'; font-size: 29px; line-height: normal; }
 </style>
 <div align="center" class="comic-header">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div><div align="center" class="comic-header"><span style='color:#FF0000;'>T</span><span style='color:#FF3600;'>h</span><span style='color:#FF6D00;'>e</span> <span style='color:#FFDA00;'>U</span><span style='color:#ECFF00;'>l</span><span style='color:#B6FF00;'>t</span><span style='color:#7FFF00;'>i</span><span style='color:#48FF00;'>m</span><span style='color:#12FF00;'>a</span><span style='color:#00FF24;'>t</span><span style='color:#00FF5B;'>e</span> <span style='color:#00FFC8;'>N</span><span style='color:#00FEFF;'>F</span><span style='color:#00C8FF;'>M</span><span style='color:#0091FF;'>M</span> <span style='color:#0024FF;'>J</span><span style='color:#1200FF;'>a</span><span style='color:#4800FF;'>v</span><span style='color:#7F00FF;'>a</span> <span style='color:#EC00FF;'>G</span><span style='color:#FF00DA;'>u</span><span style='color:#FF00A3;'>i</span><span style='color:#FF006D;'>d</span><span style='color:#FF0036;'>e</span></div><div align="center" class="comic-header">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
@@ -159,7 +92,9 @@ if (this.flipo == 101) {
 ```
 and paste it below that, and change the 101 to 102 etc. depending on how many screens you're adding. Customize it to your liking.
 :::
+
 ### Changing the resolution
+:::
 Go into GameSparker, add this at the top:
 ```java
 final int width = 1024;
@@ -286,8 +221,10 @@ and
 for (int i356 = 0; i356 < 360000; i356++) {
 ```
 you're done!
+:::
 
 ### Instant car select
+:::
 in xtgraphics, find:
 ```java
 if (control.right) {
@@ -373,9 +310,10 @@ if (xtgraphics.fase == 22)
 				else
 					xtgraphics.colorCarSP(contos108[xtgraphics.sc[i145]], i145);
 ```
+:::
 
 ### Customize polygon outlines
-
+:::
 Go into a .rad file, go to the polygon you want and add this after the &lt;p&gt;:
 
 ```java
@@ -387,9 +325,12 @@ This will enable custom outlines. Now, this won't actually do anything since it'
 `$outlineCap(butt)` or `$outlineCap(round)` or `$outlineCap(square)` - changes the dash segments' end algorithm (default is butt)
 `$outlineJoin(bevel)` or `$outlineJoin(miter)` or `$outlineJoin(round)` - changes the path segments' connections (default is miter)
 `$outlineMtlimit(number)` - if you used `$outlineJoin(miter)`, this is how far the dash will go to extend its outside edges until 2 ends meet (default is 10)
+:::
 
 ### Stage on fire/Cars on fire
+:::
 Go to the end of void loadstage in GameSparker and add this before `System.gc();`
+
 #### Stage on fire
 ```java
 
@@ -412,10 +353,12 @@ if (checkpoints.stage == 1)
 `checkpoints.stage == 1` means the cars in Stage 1 will be on fire. If you want more than one stage, you can do something like this:
 `if (checkpoints.stage == 1 || checkpoints.stage == 2)`
 This would make the cars in Stage 1 and Stage 2 be on fire.
+:::
 
 ## Core Hacks
 
 ### Floating track pieces
+:::
 Find:
 ```java
 if (string.startsWith("set")) {
@@ -512,3 +455,4 @@ if (string.startsWith("fset")) {
                 }
 ```
 To make flying pieces, use fset(MODEL,X,Z,Y,ROTATION)
+:::
