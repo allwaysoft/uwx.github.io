@@ -82,6 +82,7 @@ deploy:
   repository: https://github.com/rafa1231518/rafa1231518.github.io.git
   branch: master
 
+# Marked config
 marked:
   gfm: true
   pedantic: false
@@ -90,3 +91,26 @@ marked:
   breaks: true
   smartLists: true
   smartypants: true
+
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true # Doesn't escape HTML content
+    xhtmlOut: false # Parser will not produce XHTML compliant code. Ex: A line break will be <br>
+    breaks: true # Parser produces `<br>` tags every time there is a line break in the source document.
+    linkify: true # Returns text links as proper links inlined with the paragraph.
+    typographer: true # Substitution of common typographical elements will take place.
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
