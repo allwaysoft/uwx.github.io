@@ -1,0 +1,30 @@
+{
+  "author": {
+    "name": "Celso Miranda",
+    "email": "contacto@celsomiranda.net",
+    "url": "http://celsomiranda.net/"
+  },
+  "description": "hansen is a Markdown parser, done right. A faster and CommonMark compliant alternative for Hexo.",
+  "directories": {},
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "gitHead": "dadb32b55b3dca9c457f51572ff605e8121a8433",
+  "keywords": [
+    "hexo",
+    "renderer",
+    "markdown",
+    "hansen",
+    "hexo-renderer"
+  ],
+  "license": "MIT",
+  "main": "index",
+  "name": "hexo-renderer-hansen",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "version": "1.0.0",
+  "private": true
+}
