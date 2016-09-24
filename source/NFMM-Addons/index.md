@@ -64,7 +64,7 @@ If everything loads, congratulations! You now have a working copy of NFMM, fully
 <p></p><p></p>
 
 **Some things to note:**
-* The class you should run is Madness, never GameSparker. This is because, in NFMM, the game runs inside of a Frame, which allows the Car Maker, Stage Maker, Antialiasing and Motion Effects buttons to work, and reduces incompatibility with newer Java versions.
+* The class you should run is Madness, never GameSparker. This is because, in NFMM, the game runs inside of a JFrame, which allows the Car Maker, Stage Maker, Antialiasing and Motion Effects buttons to work, and reduces incompatibility with newer Java versions.
 * You should play this NFM using the newest Java JDK/JRE versions, do not use old Java 7 versions!
 * 99% of the NFM2 tutorials won't work! A lot has changed since NFM2's release!
 * LAN multiplayer works, but there is no chat, no clans and no multiplayer dome. You do not require a full account to play, and the 3 game limit has been removed. I am not going to add online multiplayer, at least not until Omar closes down the official servers.
@@ -457,4 +457,635 @@ if (string.startsWith("fset")) {
                 }
 ```
 To make flying pieces, use `fset(MODEL,X,Z,Y,ROTATION)`
+:::
+
+## Gameplay Hacks
+
+### Teleport hack
+:::
+In ContO, find public void fixit and add this before it:
+
+```java
+    public void teleflash(Graphics2D rd)
+        {
+            int ai[] = new int[8];
+            int ai1[] = new int[8];
+            int ai2[] = new int[4];
+            int j1 = 0;
+            do
+            {
+                ai[j1] = (keyx[j1] + x) - m.x;
+                ai1[j1] = (grat + y) - m.y;
+                ai2[j1] = (keyz[j1] + z) - m.z;
+            } while(++j1 < 4);
+            rot(ai, ai1, x - m.x, y - m.y, xy, 4);
+            rot(ai1, ai2, y - m.y, z - m.y, zy, 4);
+            rot(ai, ai2, x - m.x, z - m.z, xz, 4);
+            rot(ai, ai2, m.cx, m.cz, m.xz, 4);
+            rot(ai1, ai2, m.cy, m.cz, m.zy, 4);
+            j1 = 0;
+            int l1 = 0;
+            int i2 = 0;
+            int j2 = 0;
+            do
+            {
+                int k2 = 0;
+                do
+                {
+                    if(Math.abs(ai[j2] - ai[k2]) > j1)
+                    {
+                        j1 = Math.abs(ai[j2] - ai[k2]);
+                    }
+                    if(Math.abs(ai1[j2] - ai1[k2]) > l1)
+                    {
+                        l1 = Math.abs(ai1[j2] - ai1[k2]);
+                    }
+                    if(py(ai[j2], ai[k2], ai1[j2], ai1[k2]) > i2)
+                    {
+                        i2 = py(ai[j2], ai[k2], ai1[j2], ai1[k2]);
+                    }
+                } while(++k2 < 4);
+            } while(++j2 < 4);
+            i2 = (int)(Math.sqrt(i2) / 1.5D);
+            if(j1 < i2)
+            {
+                j1 = i2;
+            }
+            if(l1 < i2)
+            {
+                l1 = i2;
+            }
+            j2 = m.cx + (int)((float)(x - m.x - m.cx) * m.cos(m.xz) - (float)(z - m.z - m.cz) * m.sin(m.xz));
+            int l2 = m.cz + (int)((float)(x - m.x - m.cx) * m.sin(m.xz) + (float)(z - m.z - m.cz) * m.cos(m.xz));
+            int i3 = m.cy + (int)((float)(y - m.y - m.cy) * m.cos(m.zy) - (float)(l2 - m.cz) * m.sin(m.zy));
+            l2 = m.cz + (int)((float)(y - m.y - m.cy) * m.sin(m.zy) + (float)(l2 - m.cz) * m.cos(m.zy));
+            ai[0] = xs((int)((double)j2 - (double)j1 / 0.80000000000000004D - (double)m.random() * ((double)j1 / 2.3999999999999999D)), l2);
+            ai1[0] = ys((int)((double)i3 - (double)l1 / 1.9199999999999999D - (double)m.random() * ((double)l1 / 5.6699999999999999D)), l2);
+            ai[1] = xs((int)((double)j2 - (double)j1 / 0.80000000000000004D - (double)m.random() * ((double)j1 / 2.3999999999999999D)), l2);
+            ai1[1] = ys((int)((double)i3 + (double)l1 / 1.9199999999999999D + (double)m.random() * ((double)l1 / 5.6699999999999999D)), l2);
+            ai[2] = xs((int)((double)j2 - (double)j1 / 1.9199999999999999D - (double)m.random() * ((double)j1 / 5.6699999999999999D)), l2);
+            ai1[2] = ys((int)((double)i3 + (double)l1 / 0.80000000000000004D + (double)m.random() * ((double)l1 / 2.3999999999999999D)), l2);
+            ai[3] = xs((int)((double)j2 + (double)j1 / 1.9199999999999999D + (double)m.random() * ((double)j1 / 5.6699999999999999D)), l2);
+            ai1[3] = ys((int)((double)i3 + (double)l1 / 0.80000000000000004D + (double)m.random() * ((double)l1 / 2.3999999999999999D)), l2);
+            ai[4] = xs((int)((double)j2 + (double)j1 / 0.80000000000000004D + (double)m.random() * ((double)j1 / 2.3999999999999999D)), l2);
+            ai1[4] = ys((int)((double)i3 + (double)l1 / 1.9199999999999999D + (double)m.random() * ((double)l1 / 5.6699999999999999D)), l2);
+            ai[5] = xs((int)((double)j2 + (double)j1 / 0.80000000000000004D + (double)m.random() * ((double)j1 / 2.3999999999999999D)), l2);
+            ai1[5] = ys((int)((double)i3 - (double)l1 / 1.9199999999999999D - (double)m.random() * ((double)l1 / 5.6699999999999999D)), l2);
+            ai[6] = xs((int)((double)j2 + (double)j1 / 1.9199999999999999D + (double)m.random() * ((double)j1 / 5.6699999999999999D)), l2);
+            ai1[6] = ys((int)((double)i3 - (double)l1 / 0.80000000000000004D - (double)m.random() * ((double)l1 / 2.3999999999999999D)), l2);
+            ai[7] = xs((int)((double)j2 - (double)j1 / 1.9199999999999999D - (double)m.random() * ((double)j1 / 5.6699999999999999D)), l2);
+            ai1[7] = ys((int)((double)i3 - (double)l1 / 0.80000000000000004D - (double)m.random() * ((double)l1 / 2.3999999999999999D)), l2);
+
+
+                rot(ai, ai1, xs(j2, l2), ys(i3, l2), 22, 8);
+
+
+            //FIX HOOP COLOR
+            int j3 = (int)(25F + 25F * ((float)m.snap[0] / 200F));
+            if(j3 > 25)
+            {
+                j3 = 25;
+            }
+            if(j3 < 0)
+            {
+                j3 = 0;
+            }
+            int k3 = (int)(0F + 0F * ((float)m.snap[1] / 200F));
+            if(k3 > 0)
+            {
+                k3 = 0;
+            }
+            if(k3 < 0)
+            {
+                k3 = 0;
+            }
+            int l3 = (int)(0F + 0F * ((float)m.snap[2] / 200F));
+            if(l3 > 0)
+            {
+                l3 = 0;
+            }
+            if(l3 < 0)
+            {
+                l3 = 0;
+            }
+            rd.setColor(new Color(j3, k3, l3));
+            rd.fillPolygon(ai, ai1, 8);
+            ai[0] = xs((int)((float)(j2 - j1) - m.random() * (float)(j1 / 4)), l2);
+            ai1[0] = ys((int)((double)i3 - (double)l1 / 2.3999999999999999D - (double)m.random() * ((double)l1 / 9.5999999999999996D)), l2);
+            ai[1] = xs((int)((float)(j2 - j1) - m.random() * (float)(j1 / 4)), l2);
+            ai1[1] = ys((int)((double)i3 + (double)l1 / 2.3999999999999999D + (double)m.random() * ((double)l1 / 9.5999999999999996D)), l2);
+            ai[2] = xs((int)((double)j2 - (double)j1 / 2.3999999999999999D - (double)m.random() * ((double)j1 / 9.5999999999999996D)), l2);
+            ai1[2] = ys((int)((float)(i3 + l1) + m.random() * (float)(l1 / 4)), l2);
+            ai[3] = xs((int)((double)j2 + (double)j1 / 2.3999999999999999D + (double)m.random() * ((double)j1 / 9.5999999999999996D)), l2);
+            ai1[3] = ys((int)((float)(i3 + l1) + m.random() * (float)(l1 / 4)), l2);
+            ai[4] = xs((int)((float)(j2 + j1) + m.random() * (float)(j1 / 4)), l2);
+            ai1[4] = ys((int)((double)i3 + (double)l1 / 2.3999999999999999D + (double)m.random() * ((double)l1 / 9.5999999999999996D)), l2);
+            ai[5] = xs((int)((float)(j2 + j1) + m.random() * (float)(j1 / 4)), l2);
+            ai1[5] = ys((int)((double)i3 - (double)l1 / 2.3999999999999999D - (double)m.random() * ((double)l1 / 9.5999999999999996D)), l2);
+            ai[6] = xs((int)((double)j2 + (double)j1 / 2.3999999999999999D + (double)m.random() * ((double)j1 / 9.5999999999999996D)), l2);
+            ai1[6] = ys((int)((float)(i3 - l1) - m.random() * (float)(l1 / 4)), l2);
+            ai[7] = xs((int)((double)j2 - (double)j1 / 2.3999999999999999D - (double)m.random() * ((double)j1 / 9.5999999999999996D)), l2);
+            ai1[7] = ys((int)((float)(i3 - l1) - m.random() * (float)(l1 / 4)), l2);
+            //CARFIX COLOR #2
+            j3 = (int)(255F + 255F * ((float)m.snap[0] / 200F));
+            if(j3 > 255)
+            {
+                j3 = 255;
+            }
+            if(j3 < 0)
+            {
+                j3 = 0;
+            }
+            k3 = (int)(25F + 25F * ((float)m.snap[1] / 200F));
+            if(k3 > 255)
+            {
+                k3 = 255;
+            }
+            if(k3 < 0)
+            {
+                k3 = 0;
+            }
+            l3 = (int)(25F + 25F * ((float)m.snap[2] / 200F));
+            if(l3 > 255)
+            {
+                l3 = 255;
+            }
+            if(l3 < 0)
+            {
+                l3 = 0;
+            }
+            rd.setColor(new Color(j3, k3, l3));
+            rd.fillPolygon(ai, ai1, 8);
+        }
+```
+
+Add this to the top of Control:
+
+```java
+    boolean tele = false;
+```
+
+Add this to public Control:
+
+```java
+    tele = false;
+```
+
+Add this to public void reset:
+
+```java
+    tele = false;
+```
+
+Find all instances of:
+
+```java
+    xtgraphics.stat(mads[0], contos0[0], checkpoints, u[0], true);
+```
+
+and
+
+```java
+    xtgraphics.stat(mads[0], contos0[0], checkpoints, u[0], false);
+```
+
+and
+
+```java
+    xtgraphics.stat(mads[xtgraphics.im], contos0[xtgraphics.im], checkpoints, u[0],
+                                    false);
+```
+and
+
+```java
+    xtgraphics.stat(mads[xtgraphics.im], contos0[xtgraphics.im], checkpoints, u[0],
+                                    true);
+```
+
+And add this right after them:
+
+```java
+    xtgraphics.attack(rd, contos0, u[0]);
+```
+
+Now, find this:
+
+```java
+    if (e.getKeyCode() == KeyEvent.VK_V) {
+                    view++;
+                    if (view == 3)
+                        view = 0;
+                }
+```
+
+and add this right after it:
+
+```java
+    if (e.getKeyCode() == KeyEvent.VK_C)
+                    u[0].tele = true;
+```
+
+Find this:
+
+```java
+                    if (e.getKeyCode() == KeyEvent.VK_SPACE)
+                        u[0].handb = false;
+```
+
+and add this right after it:
+
+```java
+    if (e.getKeyCode() == KeyEvent.VK_C)
+                        u[0].tele = false;
+```
+
+Now, go to xtGraphics and find:
+
+```java
+    int[] zstart = {
+                -760, -380, -380, 0, 380, 380, 760, 0
+        };
+```
+
+and add this right after it:
+
+```java
+    private int arrowvar = -1;
+```
+
+Now, find this:
+
+```java
+    public void arrow(final int i, final int i216, final CheckPoints checkpoints, final boolean bool) {
+            final int[] is = new int[7];
+            final int[] is217 = new int[7];
+            final int[] is218 = new int[7];
+            final int i219 = 400;
+            final int i220 = -90;
+            final int i221 = 700;
+            for (int i222 = 0; i222 < 7; i222++)
+                is217[i222] = i220;
+            is[0] = i219;
+            is218[0] = i221 + 110;
+            is[1] = i219 - 35;
+            is218[1] = i221 + 50;
+            is[2] = i219 - 15;
+            is218[2] = i221 + 50;
+            is[3] = i219 - 15;
+            is218[3] = i221 - 50;
+            is[4] = i219 + 15;
+            is218[4] = i221 - 50;
+            is[5] = i219 + 15;
+            is218[5] = i221 + 50;
+            is[6] = i219 + 35;
+            is218[6] = i221 + 50;
+            int i224;
+            if (!bool) {
+    			// ...
+            }
+    }
+```
+
+Add this right after it:
+
+```java
+                arrowvar = -1;
+```
+
+Then find:
+
+```java
+    } else
+                    i226 = alocked;
+```
+
+Add this right after it:
+
+```java
+    arrowvar = i226;
+```
+
+Now, add this before public void stat:
+
+```java
+        public void attack(Graphics2D rd, ContO conto[], Control control)
+      {
+          if(control.tele && arrowvar != -1)
+          {
+              conto[im].teleflash(rd);
+
+              conto[im].x = conto[arrowvar].x;// + 400;
+              conto[im].z = conto[arrowvar].z;// - 400;
+              ///conto[im].y = conto[arrowvar].y; ////this makes it really overpowered (lel like its not already), plus glitchy
+
+              // you can add some other features here, for example:
+              // conto[im].xz = conto[arrowvar].xz; // this will rotate the player to the angle of the teleported car
+
+              wasay = true;
+              say = "Sucessfully teleported to " + cd.names[sc[arrowvar]];
+
+              tcnt = -5;
+          }
+      }
+```
+:::
+
+## Control Hacks
+
+### Disabling AB
+:::
+Go into GameSparker and find this:
+
+```java
+if (e.getKeyCode() == KeyEvent.VK_UP)
+u[0].up = true;
+if (e.getKeyCode() == KeyEvent.VK_DOWN)
+u[0].down = true;
+```
+Replace it with this:
+
+```java
+if (e.getKeyCode() == KeyEvent.VK_UP) {
+u[0].down = false;
+u[0].up = true;
+}
+if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+u[0].up = false;
+u[0].down = true;
+}
+```
+:::
+
+## Stat Hacks
+
+### The Car Stats (in NFMM)
+:::
+**acelf** - The Acceleration stat.
+*3 values inside of it, first value being how fast the car can move from rest (not moving). Second and third value meaning how much speed it gains while the car is moving (Higher number means faster).*
+```java
+float[][] acelf = { { 11.0F, 5.0F, 5.0F }, { 14.0F, 7.0F, 5.0F }, { 10.0F, 5.0F, 8.0F }, { 11.0F, 6.0F, 8.0F },
+            { 10.0F, 5.0F, 8.0F }, { 12.0F, 6.0F, 5.0F }, { 7.0F, 9.0F, 4.0F }, { 11.0F, 5.0F, 5.0F },
+            { 12.0F, 7.0F, 4.0F }, { 12.0F, 7.0F, 8.0F }, { 11.5F, 6.5F, 8.0F }, { 9.0F, 5.0F, 5.0F },
+            { 13.0F, 7.0F, 4.5F }, { 13.0F, 8.0F, 5.0F }, { 11.0F, 13.0F, 4.0F }, { 12.0F, 6.0F, 8.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F },
+            { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F }, { 0.0F, 0.0F, 0.0F } };
+```
+
+**acname** - Added car name.
+*Used for custom cars, should not be touched.*
+```java
+String acname = "Radical One";
+```
+
+**adds** - Top 20 adds.
+*How many people added car X (displayed on the "Top 20 cars" screen). Should not be touched.*
+```java
+int[] adds = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+```
+**bounce** - The bounciness of your car (mainly the wheels). 
+*The higher the value, the more bouncy they are.*
+```java
+float[] bounce = { 1.2F, 1.05F, 1.3F, 1.15F, 1.3F, 1.2F, 1.15F, 1.1F, 1.2F, 1.1F, 1.15F, 0.8F, 1.05F, 0.8F, 1.1F,
+            1.15F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**cclass** - Car class.
+**0** = _Class C_
+**1** = _Class B & C_
+**2** = _Class B_
+**3** = _Class A & B_
+**4** = _Class A_
+```java
+int[] cclass = { 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 3, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+***clrad** - Collision Radius.
+_Clrad is the radius around each point that gets collided._
+_So if you have a car with many points, you need the **clrad** to be low or it will get damaged very fast as so many points will get affected._
+_If a car has low points you need the **clrad** to be bigger so the damage reaches other points or else the car will be indestructible._
+```java
+    int[] clrad = { 3300, 1700, 4700, 3000, 2000, 4500, 3500, 5000, 10000, 15000, 4000, 7000, 10000, 15000, 5500, 5000,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0 };
+
+```
+**comprad** - Tolerance towards other Cars.
+*This is what makes a car prone to getting hit by other cars.*
+```java
+﻿float[] comprad = { 0.5F, 0.4F, 0.8F, 0.5F, 0.4F, 0.5F, 0.5F, 0.5F, 0.5F, 0.8F, 0.5F, 1.5F, 0.5F, 0.8F, 0.5F, 0.8F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F };
+
+```
+**dammult** - Damage Multiplier.
+_The amount of damage based on the hit that should affect the points in the **clrad** around the point of collision._
+```java
+﻿float[] dammult = { 0.75F, 0.8F, 0.45F, 0.8F, 0.42F, 0.7F, 0.72F, 0.6F, 0.58F, 0.41F, 0.67F, 0.45F, 0.61F, 0.01F,
+            0.38F, 0.52F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**dishandle** - The Handling statbar.
+*Does not affect the actual car's handling, just like in the Car Maker.*
+```java
+float[] dishandle = { 0.65F, 0.6F, 0.55F, 0.77F, 0.62F, 0.9F, 0.6F, 0.72F, 0.45F, 0.8F, 0.95F, 0.4F, 0.87F, 0.42F,
+            1.0F, 0.95F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**enginsignature** - Engine sound effect.
+**0** = _Normal Engine_
+**1** = _V8 Engine_
+**2** = _Retro Engine_
+**3** = _Power Engine_
+**4** = _Diesel Engine_
+```java
+int[] enginsignature = { 0, 1, 2, 1, 0, 3, 2, 2, 1, 0, 3, 4, 1, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**flipy** - The height at which your car will be put at after recovering from a Bad Landing.
+```java
+int[] flipy = { -50, -60, -92, -44, -60, -57, -54, -60, -77, -57, -82, -85, -28, -100, -63, -127, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**grip** - Tire Traction.
+__Drifter X has this low.__ The higher the grip, the less it slides and spins out and the less it drifts.
+__Also note__: This stat somehow affects the Acceleration statbar, but not the car's Acceleration.
+```java
+float[] grip = { 20.0F, 27.0F, 18.0F, 22.0F, 19.0F, 20.0F, 25.0F, 20.0F, 19.0F, 24.0F, 22.5F, 25.0F, 30.0F, 27.0F,
+            25.0F, 27.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**handb** - The handbrake power.
+*Basically, the braking power. Any negative value, would make you shoot forward instead of backward.*
+*The reason being is that when the speed is 100 for example and you subtract negative a handb value, you add to it instead of subtract.*
+*7 is the lowest handb you should use.*
+```java
+int[] handb = { 7, 10, 7, 15, 12, 8, 9, 10, 5, 7, 8, 10, 8, 12, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**lcardate **- The date a custom car was added to your account [sup](?)[/sup]
+```java
+int[] lcardate = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**lift** - Lifts Others
+*This defines if the car lifts up other cars when it collides with them from the front and*
+*how high it can lift them.*
+*Does the car have a pointy nose like MAX Revenge, Radical One or La Vita Crab, a*
+*pointy nose/front part that can go under the wheels of other cars and lift them?*
+*If so then give it some Lifts Others.*
+*If it has a nose/front part that is a block like most cars then give it 0 Lifts Others.*
+```java
+int[] lift = { 0, 30, 0, 20, 0, 30, 0, 0, 20, 0, 0, 0, 10, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+```
+**maxmag** - Maximum Damage.
+*The amount of Damage that a car can take before it is considered as "wasted".*
+```java
+int[] maxmag = { 7600, 4200, 7200, 6000, 6000, 15000, 17200, 17000, 18000, 11000, 19000, 10700, 13000, 9999999,
+            5800, 18000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**moment** - A cars' actual strength.
+*This does not affect the strength statbar in the __Car Select__ menu. See* **outdam** *for that.*
+```java
+float[] moment = { 1.3F, 0.75F, 1.4F, 1.2F, 1.1F, 1.38F, 1.43F, 1.48F, 1.35F, 1.7F, 1.42F, 2.0F, 1.26F, 5.0F, 1.5F,
+            2.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**msquash** - Roof Destruction.
+*The amount of breakage that can happen to a cars' top.*
+```java
+int[] msquash = { 7, 4, 7, 2, 8, 4, 6, 4, 3, 8, 4, 10, 3, 20, 3, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+```
+**names** - The names of all the cars.
+```java
+String[] names = { "Tornado Shark", "Formula 7", "Wow Caninaro", "La Vita Crab", "Nimi", "MAX Revenge",
+            "Lead Oxide", "Kool Kat", "Drifter X", "Sword of Justice", "High Rider", "EL KING", "Mighty Eight",
+            "M A S H E E N", "Radical One", "DR Monstaa", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
+```
+
+**outdam** - Strength statbar.
+*Just changes the Strength statbar according to the value the game reads.*
+*NOT affected by **moment**.*
+```java
+float[] outdam = { 0.68F, 0.35F, 0.8F, 0.5F, 0.42F, 0.76F, 0.82F, 0.76F, 0.72F, 0.62F, 0.79F, 0.95F, 0.77F, 1.0F,
+            0.85F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**powerloss** - Endurance.
+```java
+int[] powerloss = { 2500000, 2500000, 3500000, 2500000, 4000000, 2500000, 3200000, 3200000, 2750000, 5500000,
+            2750000, 4500000, 3500000, 4500000, 3000000, 5500000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**push** - Pushes Others.
+*This defines if the car pushes other cars away when it collides with them and how far it*
+*can push them.*
+*Is the car a heavy car with a strong body like MASHEEN or El King, where when it*
+*collides with other cars it pushes them away?*
+*Or does the car have special bumpers or body parts for pushing cars away like Sword of*
+*Justice has?*
+*If so then give it some Pushes Others depending how strong you think it can push cars.*
+*If it is a car like any other car, with an average weight and body strength then you should*
+*give it 0 Pushes Others.*
+```java
+int[] push = { 2, 2, 3, 3, 2, 2, 2, 4, 2, 2, 2, 4, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**revlift** - Gets Lifted.
+*This defines if the car can get lifted over other cars when it collides with them and how*
+*high it can get lifted.*
+*Is the car higher off the ground like Wow Caninaro or has big wheels like Dr Monstaa,*
+*should its jump over cars when it collides with them?*
+*If so then give it some Gets Lifted depending on how high it should go.*
+*If the car is lowered to the ground like most cars then it should have 0 Gets Lifted.*
+```java
+int[] revlift = { 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**revpush** - Gets Pushed
+*This defines if the car gets pushed away when it collides with other cars and how far it*
+*gets pushed away.*
+*If the car is lighter then most cars, then it should get pushed away when it collides with*
+*others cars.*
+*Getting pushed can be helpful if the car is week because it gets it away from the danger*
+*(from the car that hit it) faster, making it take lesser hits and escape better.*
+*However getting pushed is not helpful when racing.*
+```java
+int[] revpush = { 2, 3, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+**simag** - Tolerance towards Track Pieces.
+```java
+float[] simag = { 0.9F, 0.85F, 1.05F, 0.9F, 0.85F, 0.9F, 1.05F, 0.9F, 1.0F, 1.05F, 0.9F, 1.1F, 0.9F, 1.3F, 0.9F,
+            1.15F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
+```
+
+**swits** - Top Speed.
+*Take the values as if each one was a gear from a gearbox. 1st to 2nd, 2nd to 3rd, dependent on power obtained.*
+```java
+int[][] swits = { { 50, 185, 282 }, { 100, 200, 310 }, { 60, 180, 275 }, { 76, 195, 298 }, { 70, 170, 275 },
+            { 70, 202, 293 }, { 60, 170, 289 }, { 70, 206, 291 }, { 90, 210, 295 }, { 90, 190, 276 }, { 70, 200, 295 },
+            { 50, 160, 270 }, { 90, 200, 305 }, { 50, 130, 210 }, { 80, 200, 300 }, { 70, 210, 290 }, { 0, 0, 0 },
+            { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 },
+            { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 },
+            { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 },
+            { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 },
+            { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+```
+
+**turn** - Turn Speed.
+*The car's turning speed/response.*
+```java
+int[] turn = { 6, 9, 5, 7, 8, 7, 5, 5, 9, 7, 7, 4, 6, 5, 7, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+```
+
+
+Stats which may be found in `xtGraphics.java`
+
+**sndsize** - Track Sound Size.
+*That's just the sound size written in the "loading stage sound track" part.*
+```java
+int[] sndsize = { 39, 128, 23, 58, 106, 140, 81, 135, 38, 141, 106, 76, 56, 116, 92, 208, 70, 80, 152, 102, 27, 65,
+            52, 30, 151, 129, 80, 44, 57, 123, 202, 210, 111 };
+```
+
 :::
