@@ -283,7 +283,14 @@ if(control.right)
 	            if(sc[0] != minsl)
 	            	sc[0]--;
 	        }
-```### Adding random colors for AI cars[spoiler="]Go into xtGraphics, add this before (or after) void colorCar:
+```
+:::
+
+### Adding random colors for AI cars
+
+:::
+Go into xtGraphics, add this before (or after) void colorCar:
+
 ```java
 public void colorCarSP(final ContO conto, final int i) {
 		if (i == 0) //player
@@ -322,17 +329,24 @@ public void colorCarSP(final ContO conto, final int i) {
 			}
 		}
 	}
-```Now go into GameSparker and find this:
+```
+
+Now go into GameSparker and find this:
+
 ```java
 if (xtgraphics.fase == 22)
 					xtgraphics.colorCar(contos108[xtgraphics.sc[i145]], i145);
-```Replace that with this:
+```
+
+Replace that with this:
+
 ```java
 if (xtgraphics.fase == 22)
 					xtgraphics.colorCar(contos108[xtgraphics.sc[i145]], i145);
 				else
 					xtgraphics.colorCarSP(contos108[xtgraphics.sc[i145]], i145);
 ```
+
 :::
 
 ### Customize polygon outlines
