@@ -115,37 +115,37 @@ do the same thing for
 ```
 find:
 ```java
-final Medium medium = new Medium();
+		final Medium medium = new Medium();
 ```
 replace that with:
 ```java
-final Medium medium = new Medium(this);
+		final Medium medium = new Medium(this);
 ```
 Go into Madness, and find this:
 ```java
-frame.setMinimumSize(new Dimension(930, 586));
+		frame.setMinimumSize(new Dimension(930, 586));
 		frame.setSize(930, 586);
 ```
 replace the 930, 586 with the resolution you want.
 
 Go into Medium, find
 ```java
-int cx = 400;
+	int cx = 400;
 	int cy = 225;
 ```
 replace that with:
 ```java
-int cx;
+	int cx;
 	int cy;
 ```
 find
 ```java
-int w = 800;
+	int w = 800;
 	int h = 450;
 ```
 replace with
 ```java
-int w;
+	int w;
 	int h;
 ```
 find
@@ -154,14 +154,14 @@ public Medium() {
 ```
 add this to it:
 ```java
-cx = 400;
+		cx = 400;
 		cy = 225;
 		w = 800;
 		h = 450;
 ```
 now, before that public Medium() { add this:
 ```java
-public Medium(GameSparker gs) {
+	public Medium(GameSparker gs) {
 		cx = gs.width/2;
 		cy = gs.height/2;
 		w = gs.width;
