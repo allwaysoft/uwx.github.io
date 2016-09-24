@@ -48,7 +48,9 @@
     <link rel="icon" href="/css/images/favicon.ico">
   
   <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/css/style.css">
+  
   
 
   
@@ -56,6 +58,7 @@
   <!-- tracking
   <script src='//push.zhanzhang.baidu.com/push.js'></script>
   -->
+
 </head>
 <body class="home blog custom-background custom-font-enabled single-author">
   
@@ -157,7 +160,7 @@
 Content-Disposition: form-data; name="imgfile"; filename="after effects.png"
 Content-Type: image/png
 
-` + reader.result + `
+<code> + reader.result + </code>
 -----------------------------19781744215459--
 `);
         }
@@ -176,7 +179,6 @@ Content-Type: image/png
     dropZone.addEventListener('drop', handleFileSelect, false);
   }
 </script>
-
 <style type="text/css">
 #drop_zone {
     border: 2px dashed #bbb;
@@ -190,13 +192,10 @@ Content-Type: image/png
     padding: 10px;
 }
 </style>
-
-<div class="dropHolder"><br><br><div id="drop_zone">Drop Files here</div>
-
-<output id="list"></output>
-
-<p></p></div><p></p>
-
+<div class="dropHolder">
+<div id="drop_zone">Drop Files here</div>
+<p><output id="list"></output></p>
+</div>
       
     </div><!-- .entry-content -->
 

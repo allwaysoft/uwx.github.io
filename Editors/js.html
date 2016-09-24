@@ -20,7 +20,7 @@
     return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, &apos;\\$&amp;&apos;);
   }
   function re_escape(str) {
-    return str.replace(/[-\/\\^$*+?.()|[">
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JavaScript Minifier and Beautifier">
 <meta property="og:url" content="http://rafa1231518.github.io/Editors/js.html">
@@ -30,7 +30,7 @@
     return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, &apos;\\$&amp;&apos;);
   }
   function re_escape(str) {
-    return str.replace(/[-\/\\^$*+?.()|[">
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]">
 <meta property="og:updated_time" content="2016-09-19T02:21:29.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Minifier and Beautifier">
@@ -39,13 +39,15 @@
     return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, &apos;\\$&amp;&apos;);
   }
   function re_escape(str) {
-    return str.replace(/[-\/\\^$*+?.()|[">
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
   
   <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/css/style.css">
+  
   
 
   
@@ -53,6 +55,7 @@
   <!-- tracking
   <script src='//push.zhanzhang.baidu.com/push.js'></script>
   -->
+
 </head>
 <body class="home blog custom-background custom-font-enabled single-author">
   
@@ -108,15 +111,10 @@
     <div class="entry-content">
       
         <script src="/libraries/lib/codemirror.js"></script>
-
 <link rel="stylesheet" href="/libraries/lib/codemirror.css">
-
 <script src="/libraries/mode/css/css.js"></script>
-
 <script src="/libraries/uglify.js"></script>
-
 <script src="/libraries/beautify.js"></script>
-
 <script type="text/javascript">
 window.onload = function() {
   function re_escape_n(str) {
@@ -348,7 +346,6 @@ window.onload = function() {
   };
 };
 </script>
-
 <style type="text/css">
 .CodeMirror { /* not at all stolen from http://jsbeautifier.org/ */
     border: 1px solid #ccc;
@@ -358,9 +355,7 @@ window.onload = function() {
     background: white;
 }
 </style>
-
-<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button>
-
+<p><button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button></p>
 <div id="textfield"></div>
       
     </div><!-- .entry-content -->
