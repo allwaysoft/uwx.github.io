@@ -12,7 +12,28 @@ useGithubLayout: true
 
 ## Table of Contents
 
-(coming soon)
+* [Table of Contents](#table-of-contents)
+* [NFMM Files](#nfmm-files)
+* [Setting up your NFMM project in Eclipse](#setting-up-your-nfmm-project-in-eclipse)
+* [Graphical Hacks](#graphical-hacks)
+	* [Adding credits screens](#adding-credits-screens)
+	* [Changing the resolution](#changing-the-resolution)
+	* [Instant car select](#instant-car-select)
+	* [Customize polygon outlines](#customize-polygon-outlines)
+	* [Stage on fire/Cars on fire](#stage-on-fire/cars-on-fire)
+	* [Stage on fire](#stage-on-fire)
+	* [Cars on fire](#cars-on-fire)
+* [Core Hacks](#core-hacks)
+	* [Floating track pieces](#floating-track-pieces)
+* [Gameplay Hacks](#gameplay-hacks)
+	* [Teleport hack](#teleport-hack)
+* [Control Hacks](#control-hacks)
+	* [Disabling AB](#disabling-ab)
+* [Stat Hacks](#stat-hacks)
+	* [The Car Stats (in NFMM)](#the-car-stats-(in-nfmm))
+* [Stage Maker Hacks](#stage-maker-hacks)
+	* [Adding custom track pieces](#adding-custom-track-pieces)
+* [Changelog](#changelog)
 
 ## NFMM Files
 
@@ -820,6 +841,8 @@ u[0].down = true;
 
 ### The Car Stats (in NFMM)
 :::
+
+
 **acelf** - The Acceleration stat.
 *3 values inside of it, first value being how fast the car can move from rest (not moving). Second and third value meaning how much speed it gains while the car is moving (Higher number means faster).*
 ```java
@@ -944,7 +967,7 @@ int[] handb = { 7, 10, 7, 15, 12, 8, 9, 10, 5, 7, 8, 10, 8, 12, 7, 7, 0, 0, 0, 0
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 ```
 
-**lcardate **- The date a custom car was added to your account [sup](?)[/sup]
+**lcardate** - The date a custom car was added to your account [?]
 ```java
 int[] lcardate = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 ```
@@ -1094,11 +1117,19 @@ int[] sndsize = { 39, 128, 23, 58, 106, 140, 81, 135, 38, 141, 106, 76, 56, 116,
 
 ### Adding custom track pieces
 :::
-Go into StageMaker.java and find:
-`private final int maxpart = 65;`
-Add 1 to it for however many parts you're adding.
-Then, find `int[][] atp =` then add `, { 0, 0, 0, 0 }` **(mind the comma!!!!)**. These are the points where other track parts attach to this part, in the format: `(X, Y) (X, Y)`. There are only 2 attach points per part.
-Now, find `public void loadbase()` and add your new part's `.rad` file(s) to the end of `final String[] strings = `
-Then, find `public void partcustom()` and add `part.add(rd, "Part name here");` to the bottom. Change "Part name here" to the name of the part that is displayed in the menu.
-If you did everything right, you should see your new part(s) in the "Custom Parts" menu!
+
+
+Go into StageMaker.java and find:  
+`private final int maxpart = 65;`  
+Add 1 to it for however many parts you're adding.  
+Then, find `int[][] atp =` then add `, { 0, 0, 0, 0 }` **(mind the comma!!!!)**. These are the points where other track parts attach to this part, in the format: `(X, Y) (X, Y)`. There are only 2 attach points per part.  
+Now, find `public void loadbase()` and add your new part's `.rad` file(s) to the end of `final String[] strings = `  
+Then, find `public void partcustom()` and add `part.add(rd, "Part name here");` to the bottom. Change "Part name here" to the name of the part that is displayed in the menu.  
+If you did everything right, you should see your new part(s) in the "Custom Parts" menu! 
+
+
 :::
+
+## Changelog
+
+<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=rafa1231518&repo=OpenNFMM&limit=20" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="252px"></iframe>
