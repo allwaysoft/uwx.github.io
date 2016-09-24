@@ -1,5 +1,6 @@
 ---
 title:
+altTitle: The Ultimate NFMM Java Guide
 date: 2016-09-04 19:26:55
 useGithubLayout: true
 ---
