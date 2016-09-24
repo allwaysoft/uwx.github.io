@@ -12,5 +12,5 @@ module.exports = function (data, options) {
     return `<div class="spoiler-parent"><dt class="spoiler-text"><strong>Spoiler: </strong><a href="javascript:void(0);" class="spoiler-toggle">Show</a></dt><dd><div class="spoiler-content" name="spoiler" style="display: none;">` + spoiler_content + `</div></dd></div>`;
   });
 
-  return hrender.call(this, data, options);
+  return hrender.call(this, data, options).replace(/`(.*?)`/gm, '<code>$1</code>'); // markdown-it render + a little bug fix
 };
