@@ -220,6 +220,7 @@ and
 ```java
 for (int i356 = 0; i356 < 360000; i356++) {
 ```
+
 you're done!
 :::
 
@@ -454,5 +455,5 @@ if (string.startsWith("fset")) {
                     }
                 }
 ```
-To make flying pieces, use fset(MODEL,X,Z,Y,ROTATION)
+To make flying pieces, use `fset(MODEL,X,Z,Y,ROTATION)`
 :::
