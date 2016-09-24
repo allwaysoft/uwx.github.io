@@ -1,0 +1,1 @@
+hexo clean && hexo generate && git subtree push --prefix public origin master
