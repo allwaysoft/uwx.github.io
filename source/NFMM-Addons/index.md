@@ -1089,3 +1089,16 @@ int[] sndsize = { 39, 128, 23, 58, 106, 140, 81, 135, 38, 141, 106, 76, 56, 116,
 ```
 
 :::
+
+## Stage Maker Hacks
+
+### Adding custom track pieces
+:::
+Go into StageMaker.java and find:
+`private final int maxpart = 65;`
+Add 1 to it for however many parts you're adding.
+Then, find `int[][] atp =` then add `, { 0, 0, 0, 0 }` **(mind the comma!!!!)**. These are the points where other track parts attach to this part, in the format: `(X, Y) (X, Y)`. There are only 2 attach points per part.
+Now, find `public void loadbase()` and add your new part's `.rad` file(s) to the end of `final String[] strings = `
+Then, find `public void partcustom()` and add `part.add(rd, "Part name here");` to the bottom. Change "Part name here" to the name of the part that is displayed in the menu.
+If you did everything right, you should see your new part(s) in the "Custom Parts" menu!
+:::
