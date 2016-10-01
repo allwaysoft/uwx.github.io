@@ -1146,4 +1146,4 @@ If you did everything right, you should see your new part(s) in the "Custom Part
 
 ## Changelog
 
-<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=rafa1231518&repo=OpenNFMM&limit=20" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="252px"></iframe>
+<iframe src="https://tylerlh.github.io/github-latest-commits-widget/?username=rafa1231518&repo=OpenNFMM&limit=20" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="252px"></iframe>
