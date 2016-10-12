@@ -71,6 +71,10 @@ window.onload = function() {
     });
   }
 
+  function jsonEscape(str) {
+    return str.replace(/\"/g, '\\"').replace(/\r?\n/g, '\\n');
+  }
+
   function minify(__str) {
 
     var options = UglifyJS.defaults({}, {
@@ -242,6 +246,15 @@ window.onload = function() {
       console.trace(err);
     }
   };
+  // Escape JSON
+  document.getElementById('do-jesc').onclick = function() {
+    try {
+      myCodeMirror.setValue(jsonEscape(myCodeMirror.getValue()));
+    } catch (err) {
+      alert("Could not escape: " + err);
+      console.trace(err);
+    }
+  };
 };
 </script>
 
@@ -255,6 +268,6 @@ window.onload = function() {
 }
 </style>
 
-<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button>
+<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button><button class="submit" id="do-jesc">Escape (JSON)</button> 
 
 <div id="textfield"></div>
