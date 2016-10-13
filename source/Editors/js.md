@@ -268,6 +268,6 @@ window.onload = function() {
 }
 </style>
 
-<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-esc">Escape (String)</button> <button class="submit" id="do-enc">Encode URI</button> <button class="submit" id="do-resc">Escape (RegExp)</button> <button class="submit" id="do-resc2">Escape (RegExp without newlines)</button><button class="submit" id="do-jesc">Escape (JSON)</button> 
+<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> 
 
 <div id="textfield"></div>
