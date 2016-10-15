@@ -1,0 +1,21 @@
+.spoiler-toggle {
+	font-size: 16px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	margin:0px;
+	padding:0px;
+	text-decoration: none;
+}
+.spoiler-parent {
+	margin:20px; 
+	margin-top:5px; 
+	border: 1px solid #3bbfe7;
+}
+.spoiler-text {
+	/*height:22px; text-align: center;*/
+
+	padding: 5px;
+}
+.spoiler-content {
+	padding: 5px;
+}
