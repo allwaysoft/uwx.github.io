@@ -24,9 +24,16 @@ window.onload = function() {
   function makeVisible(el) {
     el.style.display = '';
   }
+
 //  function toggleSelector(selector) {
 //    toggleElement(document.querySelector(selector));
 //  }
+
+  function outputText(str) {
+    var lintOutput = document.querySelector('#lint-output');
+    makeVisible(lintOutput);
+    lintOutput.textContent = str.replace(/\n/g, '<br>');
+  }
 
   function removeDuplicateLines(text) {
     text = text.replace(/\r/g, '');
@@ -283,10 +290,8 @@ window.onload = function() {
       try {
         myCodeMirror.setValue(action(myCodeMirror.getValue()));
       } catch (err) {
-        var lintOutput = document.querySelector('#lint-output');
-        makeVisible(lintOutput);
-        lintOutput.textContent = errorText + err;
-        
+        outputText(errorText + err);
+
         console.trace(err);
       }
     };
@@ -310,9 +315,7 @@ window.onload = function() {
   document.getElementById('do-dupl').onclick = makeFunc(function(text) {
     let out = removeDuplicateLines(text);
 
-    var lintOutput = document.querySelector('#lint-output');
-    makeVisible(lintOutput);
-    lintOutput.textContent = out[1];
+    outputText(out[1]);
 
     return out[0];
   }, 'Could not remove duplicate lines: ');
@@ -338,9 +341,7 @@ window.onload = function() {
       errText.push(errors[i].id + ' ' + errors[i].code + ', ' + errors[i].line + ':' + errors[i].character + ' - ' + errors[i].raw);
     }
 
-    var lintOutput = document.querySelector('#lint-output');
-    makeVisible(lintOutput);
-    lintOutput.textContent = errText.join('\n');
+    outputText(errText.join('<br>'));
 
     return text;
   }, 'Could not run JSHint: ');
