@@ -2195,3 +2195,17 @@ body {
 .hansen-input {
   width: 85px;
 }
+/**/
+#lint-output {
+    padding: 4px;
+    /*margin: 4px;*/
+    /*margin-top: 4px;
+    margin-bottom: 4px;*/
+    margin: 4px 0;
+    background-color: rgba(120,187,218,128);
+    /*outline: #488;*/
+    outline: rgba(0,120,255,153) dashed 1px;
+    
+    /*background-color: #78bbda80;
+    outline: #0078FF99 dashed 1px;*/
+}
