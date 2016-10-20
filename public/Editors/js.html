@@ -42,7 +42,7 @@
 
 //  function toggleSelector(selector) {
 //    toggleElement(document.querySelector(se">
-<meta property="og:updated_time" content="2016-10-20T22:13:00.367Z">
+<meta property="og:updated_time" content="2016-10-20T22:16:55.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Minifier and Beautifier">
 <meta name="twitter:description" content="window.onload = function() {
@@ -151,7 +151,7 @@ window.onload = function() {
   function outputText(str) {
     var lintOutput = document.querySelector('#lint-output');
     makeVisible(lintOutput);
-    lintOutput.textContent = str.replace(/\n/g, '<br>');
+    lintOutput.innerHTML = str.replace(/\n/g, '<br>');
   }
 
   function removeDuplicateLines(text) {
