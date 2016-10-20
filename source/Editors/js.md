@@ -32,7 +32,7 @@ window.onload = function() {
   function outputText(str) {
     var lintOutput = document.querySelector('#lint-output');
     makeVisible(lintOutput);
-    lintOutput.textContent = str.replace(/\n/g, '<br>');
+    lintOutput.innerHTML = str.replace(/\n/g, '<br>');
   }
 
   function removeDuplicateLines(text) {
