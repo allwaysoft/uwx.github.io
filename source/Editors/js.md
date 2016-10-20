@@ -21,8 +21,8 @@ date: 2016-08-15 13:49:34
 window.onload = function() {
   'use strict';
 
-  function toggleElement(el) {
-    el.style.display = el.style.display === 'none' ? '' : 'none';
+  function makeVisible(el) {
+    el.style.display = '';
   }
 //  function toggleSelector(selector) {
 //    toggleElement(document.querySelector(selector));
@@ -283,7 +283,10 @@ window.onload = function() {
       try {
         myCodeMirror.setValue(action(myCodeMirror.getValue()));
       } catch (err) {
-        alert(errorText + err);
+        var lintOutput = document.querySelector('#lint-output');
+        makeVisible(lintOutput);
+        lintOutput.textContent = errorText + err;
+        
         console.trace(err);
       }
     };
@@ -306,7 +309,11 @@ window.onload = function() {
   // Remove duplicate lines
   document.getElementById('do-dupl').onclick = makeFunc(function(text) {
     let out = removeDuplicateLines(text);
-    alert(out[1]);
+
+    var lintOutput = document.querySelector('#lint-output');
+    makeVisible(lintOutput);
+    lintOutput.textContent = out[1];
+
     return out[0];
   }, 'Could not remove duplicate lines: ');
   // Remove empty lines
@@ -330,7 +337,11 @@ window.onload = function() {
     for (var i = errors.length - 1; i >= 0; i--) {
       errText.push(errors[i].id + ' ' + errors[i].code + ', ' + errors[i].line + ':' + errors[i].character + ' - ' + errors[i].raw);
     }
-    alert(errText.join('\n'));
+
+    var lintOutput = document.querySelector('#lint-output');
+    makeVisible(lintOutput);
+    lintOutput.textContent = errText.join('\n');
+
     return text;
   }, 'Could not run JSHint: ');
 };
