@@ -11,6 +11,8 @@ date: 2016-08-15 13:49:34
 
 <script src="/libraries/uglify.js"></script>
 
+<script src="/libraries/jshint.js"></script>
+
 <script src="/libraries/beautify.js"></script>
 
 <script src="/libraries/text-mechanic.js"></script>
@@ -18,6 +20,13 @@ date: 2016-08-15 13:49:34
 <script type="text/javascript">
 window.onload = function() {
   'use strict';
+
+  function toggleElement(el) {
+    el.style.display = el.style.display === 'none' ? '' : 'none';
+  }
+//  function toggleSelector(selector) {
+//    toggleElement(document.querySelector(selector));
+//  }
 
   function removeDuplicateLines(text) {
     text = text.replace(/\r/g, '');
@@ -310,6 +319,20 @@ window.onload = function() {
   document.getElementById('list-generate').onclick = makeFunc(generateNumberList, 'Could not generate list of numbers: ');
   document.getElementById('list-randomize').onclick = makeFunc(randomizeList, 'Could not randomize list of numbers: ');
   document.getElementById('list-reverse').onclick = makeFunc(reverseList, 'Could not reverse list of numbers: ');
+
+  // linters:
+  document.getElementById('do-jshint').onclick = makeFunc(function(text) {
+    var options = JSON.parse(document.getElementById('jshint-rules').textContent);
+    JSHINT(text, options);
+    var errors = JSHINT.data().errors;
+    if (errors.length === 0) return text;
+    var errText = [];
+    for (var i = errors.length - 1; i >= 0; i--) {
+      errText.push(errors[i].id + ' ' + errors[i].code + ', ' + errors[i].line + ':' + errors[i].character + ' - ' + errors[i].raw);
+    }
+    alert(errText.join('\n'));
+    return text;
+  }, 'Could not run JSHint: ');
 };
 </script>
 
@@ -348,8 +371,27 @@ window.onload = function() {
   <button class="submit hansen-wrap" id="list-reverse">Reverse List</button>
 </div>
 
+<h1 class="hansen-header">Code Linting Tools</h1>
+
+<button class="submit hansen-wrap" id="do-jshint">JSHint</button>
+
 <h1 class="hansen-header">General Text Tools</h1>
 
 <button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button>
 
 <div id="textfield"></div>
+
+<div id="lint-output" style="display: none !important;">placeholder text, this should not be visible</div>
+
+<textarea id="jshint-rules" style="width: 47.48%; height: 15em; resize: vertical;">
+{
+  "strict": "global",
+  "node": true,
+  "esnext": true,
+  "unused": "vars",
+  "bitwise": false,
+  "evil": true,
+  "varstmt": true,
+  "unused": "vars"
+} 
+</textarea>
