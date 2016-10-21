@@ -17,6 +17,8 @@ date: 2016-08-15 13:49:34
 
 <script src="/libraries/text-mechanic.js"></script>
 
+<script src="/libraries/non-printable-chars-regex.js"></script>
+
 <script type="text/javascript">
 window.onload = function() {
   'use strict';
@@ -285,6 +287,39 @@ window.onload = function() {
     lineNumbers: true
   });
 
+  function escapeNonPrintable(str) {
+    // window.MATCH_NON_PRINTABLE_CHARS is from libraries/non-printable-chars-regex.js
+// THE THEORY: (but not actually how it seems to work)
+//    return str.replace(window.MATCH_NON_PRINTABLE_CHARS, function(match) {
+//      var codePoint = match.codePointAt(0);
+//      var codeVal = codePoint.toString(16);
+//      if (codePoint < 256) {
+//        return '\\x' + ("00" + codeVal).slice(-2); // not in JSON
+//      } else if (codePoint < 65536) {
+//        return '\\u' + ("0000" + codeVal).slice(-4); // basically the standard
+//      } else {
+//        return '\\u{' + codeVal + '}' // new in ES6
+//      }
+//    });
+    return str.replace(window.MATCH_NON_PRINTABLE_CHARS, function(match) {
+      var codePoint = match.codePointAt(0);
+      var codeVal = codePoint.toString(16);
+      if (codePoint < 256) {
+        return '\\x' + ("00" + codeVal).slice(-2); // not in JSON
+      } else {
+        return '\\u' + ("0000" + codeVal).slice(-4); // basically the standard
+      }
+    });
+  }
+
+  function escapeNonPrintableJSON(str) {
+    return str.replace(window.MATCH_NON_PRINTABLE_CHARS, function(match) {
+      var codePoint = match.codePointAt(0);
+      var codeVal = codePoint.toString(16);
+      return '\\u' + ("0000" + codeVal).slice(-4); // basically the standard
+    });
+  }
+
   function makeFunc(action, errorText) {
     return function() {
       try {
@@ -323,6 +358,10 @@ window.onload = function() {
   document.getElementById('do-reme').onclick = makeFunc(removeEmptyLines, 'Could not remove empty lines: ');
   // Trim lines
   document.getElementById('do-trim').onclick = makeFunc(trimLines, 'Could not trim lines: ');
+  // Escape non-printable characters
+  document.getElementById('do-reprint').onclick = makeFunc(escapeNonPrintable, 'Could not escape non-printable characters: ');
+  // Escape non-printable characters (JSON)
+  document.getElementById('do-prijson').onclick = makeFunc(escapeNonPrintableJSON, 'Could not escape non-printable characters: ');
 
 
   // list tools:
@@ -345,6 +384,7 @@ window.onload = function() {
 
     return text;
   }, 'Could not run JSHint: ');
+
 };
 </script>
 
@@ -389,7 +429,7 @@ window.onload = function() {
 
 <h1 class="hansen-header">General Text Tools</h1>
 
-<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button>
+<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button>
 
 <div id="textfield"></div>
 
