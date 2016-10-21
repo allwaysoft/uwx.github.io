@@ -14,3 +14,4 @@ A bunch of text tools I made to avoid having to write the same few regular expre
 [CSS Minifier and Beautifier](/Editors/css.html)
 [JSON Minifier and Beautifier](/Editors/json.html)
 [JavaScript Minifier and Beautifier](/Editors/js.html)
+[GitHub Remote File Uploader](/GH-Uploader/index.html)
