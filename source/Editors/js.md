@@ -19,23 +19,23 @@ date: 2016-08-15 13:49:34
 
 <script src="/libraries/non-printable-chars-regex.js"></script>
 
+<script src="/libraries/arnoldjs.js"></script>
+
+<script src="/libraries/brainfuck.js"></script>
+
+<script src="/libraries/hq9plus.js"></script>
+
+<script src="/libraries/checksum1.js"></script>
+
+<script src="/libraries/crc32.js"></script>
+
+<script src="/libraries/md5.js"></script>
+
+<script src="/libraries/common.js"></script>
+
 <script type="text/javascript">
 window.onload = function() {
   'use strict';
-
-  function makeVisible(el) {
-    el.style.display = '';
-  }
-
-//  function toggleSelector(selector) {
-//    toggleElement(document.querySelector(selector));
-//  }
-
-  function outputText(str) {
-    var lintOutput = document.querySelector('#lint-output');
-    makeVisible(lintOutput);
-    lintOutput.innerHTML = str.replace(/\n/g, '<br>');
-  }
 
   function removeDuplicateLines(text) {
     text = text.replace(/\r/g, '');
@@ -274,13 +274,15 @@ window.onload = function() {
     return stream + "";
 
   }
+
   function beautify(text) {
     return js_beautify(text, {
       'indent_size' : 2,
       'indent_char' : ' '
     });
   }
-  var myCodeMirror = CodeMirror(document.getElementById('textfield'), {
+
+  window.myCodeMirror = CodeMirror(document.getElementById('textfield'), {
     value: "// Minifier powered by UglifyJS2\nvar a = 0; var b = 'abc';\n\n/** UglifyJS is released under the BSD license:\n\nCopyright 2012-2013 (c) Mihai Bazon <mihai.bazon@gmail.com>\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n    * Redistributions of source code must retain the above\n      copyright notice, this list of conditions and the following\n      disclaimer.\n\n    * Redistributions in binary form must reproduce the above\n      copyright notice, this list of conditions and the following\n      disclaimer in the documentation and/or other materials\n      provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER “AS IS” AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE\nLIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\nOR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\nPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR\nTORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE. */",
     mode:  "css",
     lineWrapping: true,
@@ -320,16 +322,69 @@ window.onload = function() {
     });
   }
 
-  function makeFunc(action, errorText) {
-    return function() {
-      try {
-        myCodeMirror.setValue(action(myCodeMirror.getValue()));
-      } catch (err) {
-        outputText(errorText + err);
+  function unZalgo(str) {
+    return str.replace(/[\u0300–\u036F\u1AB0–\u1AFF\u1DC0–\u1DFF\u20D0–\u20FF\uFE20–\uFE2F\u0483-\u0486\u05C7\u0610-\u061A\u0656-\u065F\u0670\u06D6-\u06ED\u0711\u0730-\u073F\u0743-\u074A\u0F18-\u0F19\u0F35\u0F37\u0F72-\u0F73\u0F7A-\u0F81\u0F84\u0e00-\u0eff\uFC5E-\uFC62]/g, '');
+  }
 
-        console.trace(err);
-      }
-    };
+  function fromBinary(str) {
+    str = str.replace(/\s*/g, ''); // remove whitespace
+    str = str.match(/.{1,7}/g); // split 8 chars
+    var outstr = [];
+    for (var i = 0; i < str.length; i++) {
+      outstr.push(parseInt(str[i], 2));
+    }
+    return outstr.join('');
+  }
+
+  function toBinary(str) {
+    var outstr = [];
+    for (var i = 0; i < str.length; i++) {
+      outstr.push(str[i].charCodeAt(i).toString(2));
+    }
+    return outstr.join(' ');
+  }
+
+  function toHex(str) {
+    var outstr = [];
+    for (var i = 0; i < str.length; i++) {
+      outstr.push((str[i].charCodeAt(i) % 256).toString(16)); // % 256 gets only the lower byte
+    }
+    return outstr.join(' ');
+  }
+
+  function fromHex(str) {
+    str = str.replace(/\s*/g, ''); // remove whitespace
+    str = str.match(/../g); // split 2 chars
+    var outstr = [];
+    for (var i = 0; i < str.length; i++) {
+      outstr.push(String.fromCharCode(parseInt(str[i], 16)));
+    }
+    return outstr.join('');
+  }
+
+  function toDec(str) {
+    var outstr = [];
+    for (var i = 0; i < str.length; i++) {
+      outstr.push((str[i].charCodeAt(i) % 256).toString()); // % 256 gets only the lower byte
+    }
+    return outstr.join(' ');
+  }
+
+  function fromDec(str) {
+    str = str.split(' '); // split by space
+    var outstr = [];
+    for (var i = 0; i < str.length; i++) {
+      outstr.push(String.fromCharCode(parseInt(str[i])));
+    }
+    return outstr.join('');
+  }
+
+  function doChecksum(str) {
+    var achk = checksum(str);
+    var bchk = crc32(str);
+    var cchk = MD5(str);
+    outputText('Checksum: ' + achk + '\nCRC32: ' + bchk + '\nMD5: ' + cchk);
+    return str;
   }
 
   // Minify
@@ -348,7 +403,7 @@ window.onload = function() {
   document.getElementById('do-jesc').onclick = makeFunc(jsonEscape, 'Could not encode: ');
   // Remove duplicate lines
   document.getElementById('do-dupl').onclick = makeFunc(function(text) {
-    let out = removeDuplicateLines(text);
+    var out = removeDuplicateLines(text);
 
     outputText(out[1]);
 
@@ -362,6 +417,8 @@ window.onload = function() {
   document.getElementById('do-reprint').onclick = makeFunc(escapeNonPrintable, 'Could not escape non-printable characters: ');
   // Escape non-printable characters (JSON)
   document.getElementById('do-prijson').onclick = makeFunc(escapeNonPrintableJSON, 'Could not escape non-printable characters: ');
+  // Remove combining characters
+  document.getElementById('do-zalgo').onclick = makeFunc(unZalgo, 'Could not remove combining characters: ');
 
 
   // list tools:
@@ -370,6 +427,7 @@ window.onload = function() {
   document.getElementById('list-reverse').onclick = makeFunc(reverseList, 'Could not reverse list of numbers: ');
 
   // linters:
+  // jshint
   document.getElementById('do-jshint').onclick = makeFunc(function(text) {
     var options = JSON.parse(document.getElementById('jshint-rules').textContent);
     JSHINT(text, options);
@@ -384,8 +442,76 @@ window.onload = function() {
 
     return text;
   }, 'Could not run JSHint: ');
+  // code eval
+  document.getElementById('do-eval').onclick = makeFunc(function(text) {
+    var evaled = eval(text);
 
+    if (evaled !== undefined)
+      outputText(evaled);
+
+    return text;
+  }, 'Could not execute code lines: ');
+  // arnoldjs code eval
+  document.getElementById('do-arnold').onclick = makeFunc(function(text) {
+    var evaled = eval(transpileArnold(text));
+
+    if (evaled !== undefined)
+      outputText(evaled);
+
+    return text;
+  }, 'Could not execute code lines: ');
+  // brainfuck code eval
+  document.getElementById('do-bfuk').onclick = makeFunc(function(text) {
+    var evaled = runBrainfuck(text);
+
+    if (evaled !== undefined)
+      outputText(evaled);
+
+    return text;
+  }, 'Could not execute code lines: ');
+  // fishq9+ code eval
+  document.getElementById('do-fishq9').onclick = makeFunc(function(text) {
+    var lintOutput = document.querySelector('#lint-output');
+    makeVisible(lintOutput);
+      lintOutput.innerHTML = "(Executing script, no result yet)";
+
+    fishq9plus(function(str) {
+      lintOutput.innerHTML = lintOutput.innerHTML + '\n' + str;
+    }, text);
+
+    return text;
+  }, 'Could not execute code lines: ');
+
+  document.getElementById('do-264').onclick =  makeFunc(btoa, 'Could not convert to Base64: ');
+  document.getElementById('do-f64').onclick =  makeFunc(atob, 'Could not convert from Base64: ');
+  document.getElementById('do-2hex').onclick = makeFunc(toHex, 'Could not convert to Hex: ');
+  document.getElementById('do-fhex').onclick = makeFunc(fromHex, 'Could not convert from Hex: ');
+  document.getElementById('do-2dec').onclick = makeFunc(toDec, 'Could not convert to Decimal: ');
+  document.getElementById('do-fdec').onclick = makeFunc(fromDec, 'Could not convert from Decimal: ');
+  document.getElementById('do-2bi').onclick =  makeFunc(toBinary, 'Could not convert to Binary: ');
+  document.getElementById('do-fbi').onclick =  makeFunc(fromBinary, 'Could not convert from Binary: ');
+  document.getElementById('do-checksm').onclick =  makeFunc(doChecksum, 'Could not calculate checksum: ');
+  document.getElementById('do-rand').onclick =  makeFunc(function() {
+    return Math.random().toString();
+  }, 'Could not generate random number: ');
 };
+
+//Finds y value of given object
+function hFindPos(obj) {
+  var curtop = 0;
+  if (obj.offsetParent) {
+    do {
+        curtop += obj.offsetTop;
+    } while (obj = obj.offsetParent);
+  }
+  return curtop;
+}
+
+document.body.addEventListener("load", function() {
+  var elem = document.getElementById('txt-header');
+  if (elem.scrollIntoView) elem.scrollIntoView();
+  else window.scroll(0, hFindPos(elem));
+}, true);
 </script>
 
 <style type="text/css">
@@ -423,13 +549,21 @@ window.onload = function() {
   <button class="submit hansen-wrap" id="list-reverse">Reverse List</button>
 </div>
 
-<h1 class="hansen-header">Code Linting Tools</h1>
+<h1 class="hansen-header">Code Tools</h1>
 
-<button class="submit hansen-wrap" id="do-jshint">JSHint</button>
+<button class="submit hansen-wrap" id="do-jshint">JSHint</button> <button class="submit hansen-wrap" id="do-eval">Execute (Javascript using eval)</button> <button class="submit hansen-wrap" id="do-arnold">Execute (ArnoldC using ArnoldJS)</button> <button class="submit hansen-wrap" id="do-bfuk">Execute (Brainfuck)</button> <button class="submit hansen-wrap" id="do-fishq9">Execute (FisHQ9+)</button>
 
-<h1 class="hansen-header">General Text Tools</h1>
+<h1 class="hansen-header">Encryption Tools</h1>
 
-<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button>
+<button class="submit hansen-wrap" id="do-264">Convert to Base64</button> <button class="submit hansen-wrap" id="do-f64">Convert from Base64</button>
+<button class="submit hansen-wrap" id="do-2hex">Convert to Hex</button> <button class="submit hansen-wrap" id="do-fhex">Convert from Hex</button>
+<button class="submit hansen-wrap" id="do-2dec">Convert to Decimal</button> <button class="submit hansen-wrap" id="do-fdec">Convert from Decimal</button>
+<button class="submit hansen-wrap" id="do-2bi">Convert to Binary</button> <button class="submit hansen-wrap" id="do-fbi">Convert from Binary</button>
+<button class="submit hansen-wrap" id="do-checksm">Get checksum (CRC32, MD5)</button>
+
+<h1 class="hansen-header" id="txt-header">General Text Tools</h1>
+
+<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button> <button class="submit hansen-wrap" id="do-zalgo">Remove combining characters</button> <button class="submit hansen-wrap" id="do-rand">Generate random number (0-1)</button>
 
 <div id="textfield"></div>
 
