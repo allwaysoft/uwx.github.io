@@ -143,6 +143,6 @@ window.onload = function() {
   <input type="file" id="file" name="files[]" multiple />
 </form>
 
-<b>WARNING:</b> Never enter your password anywhere, even here. Read the source code to make sure you're safe.
+<b>WARNING:</b> Never trust your password anywhere, even here. Read the source code to make sure you're safe.
 
 <button class="submit hansen-wrap" id="h-upload">Upload</button>
