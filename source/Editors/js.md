@@ -432,7 +432,7 @@ window.onload = function() {
     var options = JSON.parse(document.getElementById('jshint-rules').textContent);
     JSHINT(text, options);
     var errors = JSHINT.data().errors;
-    if (errors.length === 0) return text;
+    //if (errors.length === 0) return text;
     var errText = [];
     for (var i = errors.length - 1; i >= 0; i--) {
       errText.push(errors[i].id + ' ' + errors[i].code + ', ' + errors[i].line + ':' + errors[i].character + ' - ' + errors[i].raw);

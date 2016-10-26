@@ -75,14 +75,24 @@ window.onload = function() {
   document.getElementById('do-min').onclick = makeFunc(minify, 'Could not minify: ');
   // Beautify
   document.getElementById('do-bt').onclick = makeFunc(beautify, 'Could not beautify: ');
+
+  // just to keep it DRY
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
   // Lint
   document.getElementById('do-lint').onclick = makeFunc(function(text) {
-    var options = JSON.parse(document.getElementById('csslint-rules').textContent);
+    //var options = JSON.parse(document.getElementById('csslint-rules').textContent);
+    var options = {};
+    var i;
+    for (i = checkboxes.length - 1; i >= 0; i--) {
+    	options[checkboxes[i].name] = !!checkboxes[i].checked;
+    }
+
     var output = CSSLint.verify(text, options);
     var errors = output.messages;
-    if (errors.length === 0) return text;
+    //if (errors.length === 0) return text;
     var errText = [];
-    for (var i = errors.length - 1; i >= 0; i--) {
+    for (i = errors.length - 1; i >= 0; i--) {
       errText.push(errors[i].line + ':' + errors[i].col + ' - ' + errors[i].type + ': ' + errors[i].message);
     }
 
@@ -96,6 +106,7 @@ window.onload = function() {
 	el.onclick = function() {
 		this.parentElement.parentElement.parentElement.querySelectorAll('input[type="checkbox"]').forEach(function(v) {
 			v.checked = true;
+			localStorage.setItem('check-' + v.name, v.checked);
 		});
 	}
   });
@@ -103,23 +114,34 @@ window.onload = function() {
 	el.onclick = function() {
 		this.parentElement.parentElement.parentElement.querySelectorAll('input[type="checkbox"]').forEach(function(v) {
 			v.checked = false;
+			localStorage.setItem('check-' + v.name, v.checked);
 		});
 	}
   });
   document.getElementsByClassName('globalSelectAll').forEach(function(el) {
 	el.onclick = function() {
-		document.querySelectorAll('input[type="checkbox"]').forEach(function(v) {
+		checkboxes.forEach(function(v) {
 			v.checked = true;
+			localStorage.setItem('check-' + v.name, v.checked);
 		});
 	}
   });
   document.getElementsByClassName('globalSelectNone').forEach(function(el) {
 	el.onclick = function() {
-		document.querySelectorAll('input[type="checkbox"]').forEach(function(v) {
+		checkboxes.forEach(function(v) {
 			v.checked = false;
+			localStorage.setItem('check-' + v.name, v.checked);
 		});
 	}
   });
+  // load saved selections
+  checkboxes.forEach(function(el) {
+  	el.onclick = function() {
+		localStorage.setItem('check-' + this.name, this.checked); // or the opposite? idk
+	};
+	el.checked = localStorage.getItem('check-' + el.name) == 'true';
+  });
+
 };
 </script>
 
@@ -219,6 +241,7 @@ window.onload = function() {
     <a class="right" href="https://github.com/CSSLint/csslint/wiki/Rules">Learn More About the Rules</a>
 </div>
 
+<!--
 <textarea id="csslint-rules" style="width: 47.48%; height: 15em; resize: vertical;">
 {
 	"box-model": true,
@@ -254,3 +277,4 @@ window.onload = function() {
 	"unique-headings": true
 }
 </textarea>
+-->
