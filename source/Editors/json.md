@@ -9,32 +9,44 @@ date: 2016-08-15 13:49:34
 
 <script src="/libraries/mode/javascript/javascript.js"></script>
 
+<script src="/libraries/jsonlint.js"></script>
+
+<script src="/libraries/jsonlint-stuff.js"></script>
+
+<script src="/libraries/common.js"></script>
+
 <script type="text/javascript">
 window.onload = function() {
-  var myCodeMirror = CodeMirror(document.getElementById('textfield'), {
+  window.myCodeMirror = CodeMirror(document.getElementById('textfield'), {
     value: "[\n  \"it's hip to be square!\"\n]\n",
     mode:  "javascript",
     lineWrapping: true,
     lineNumbers: true
   });
   // Minify
-  document.getElementById('do-min').onclick = function() {
-    try {
-      myCodeMirror.setValue(JSON.stringify(JSON.parse(myCodeMirror.getValue()), null, 0));
-    } catch (err) {
-      alert("Could not minify: " + err);
-      console.trace(err);
-    }
-  };
+  document.getElementById('do-min').onclick =  makeFunc(function(text) {
+    return JSON.stringify(JSON.parse(text));
+  }, 'Could not minify: ');
+
   // Beautify
-  document.getElementById('do-bt').onclick = function() {
+  document.getElementById('do-bt').onclick =  makeFunc(function(text) {
+    return JSON.stringify(JSON.parse(text), null, 2);
+  }, 'Could not beautify: ');
+
+  // Lint
+  document.getElementById('do-lint').onclick = makeFunc(function(text) {
+
     try {
-      myCodeMirror.setValue(JSON.stringify(JSON.parse(myCodeMirror.getValue()), null, 2));
-    } catch (err) {
-      alert("Could not beautify: " + err);
-      console.trace(err);
+      var output = jsonlint.parse(text);
+      outputText('No errors found, ol\' chap');
+      return JSON.stringify(output, null, 2);
+    } catch (e) {
+      outputText(e.toString());
+      return text;
     }
-  };
+
+  }, 'Could not run CSSLint: ');
+
 };
 </script>
 
@@ -48,6 +60,8 @@ window.onload = function() {
 }
 </style>
 
-<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button>
+<button class="submit" id="do-min">Minify</button> <button class="submit" id="do-bt">Beautify</button> <button class="submit" id="do-lint">Lint</button>
 
 <div id="textfield"></div>
+
+<div id="lint-output" style="display: none !important;">placeholder text, this should not be visible</div>

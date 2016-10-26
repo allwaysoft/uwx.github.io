@@ -10,7 +10,7 @@ function makeFunc(action, errorText) {
       myCodeMirror.setValue(action(myCodeMirror.getValue()));
     } catch (err) {
       outputText(errorText + err);
-
+      console.error(err);
       console.trace(err);
     }
   };
