@@ -241,5 +241,5 @@ XSS <a href="http://kuza55.blogspot.co.uk/2007/02/bookmarklets-are-not-secure.ht
 GPU computer clusters  can cycle through as many as <a href="http://arstechnica.com/security/2012/12/25-gpu-cluster-cracks-every-standard-windows-password-in-6-hours/">350 billion guesses per second</a>.</p><!-- #BeginLibraryItem "/Library/foot_docs.lbi" --><p>
 <hr>
 <div id="bl" class="footer"><a href="security.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

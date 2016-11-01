@@ -298,6 +298,6 @@
   These have an additional column INST_ID (instance number)<br>
 This document was originally based on Oracle 9i.</p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="index.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2015<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2015<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

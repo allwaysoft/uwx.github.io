@@ -104,5 +104,5 @@ The <span class="code">-Identity</span> parameter specifies the AD object to res
 </script></p>
 <hr>
 <div id="bl" class="footer"><a href="restore-adobject.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2015<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2015<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

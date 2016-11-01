@@ -401,5 +401,5 @@ Oracle <a href="../orav/index.html">V$ performance</a> views<br>
 <a href="others.html">Other views</a> (UTL, repcat etc)<br>
 <a href="http://docs.oracle.com/cd/E16655_01/server.121/e17615/toc.htm">Oracle 12c documentation</a> - Part II Static Data Dictionary Views</p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="index.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

@@ -51,6 +51,6 @@ Toys &amp; Games : <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;l
 </blockquote></blockquote>
 <p class="quote">“It is better to live rich than to die rich” - Samuel Johnson</p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="amazon.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

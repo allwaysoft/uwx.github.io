@@ -282,5 +282,5 @@ VNC  - <a href="http://www.testplant.com/products/vine_viewer">vine viewer </a>o
 </blockquote>
 <p class="quote"><i>“Real artists ship”  ~ Steve Jobs</i> (<a href="http://c2.com/cgi/wiki?RealArtistsShip">attr</a>)</p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="osx.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

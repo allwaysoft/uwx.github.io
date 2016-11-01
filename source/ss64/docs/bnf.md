@@ -58,6 +58,6 @@ these are shown in a list, all indented to the same degree:</p>
   <a href="http://en.wikipedia.org/wiki/Backus-Naur_form">Wikipedia entry for BNF</a> <br>
 <a href="http://www.cs.man.ac.uk/%7Epjj/farrell/comp2.html">Chomsky Normal Form</a></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="bnf.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

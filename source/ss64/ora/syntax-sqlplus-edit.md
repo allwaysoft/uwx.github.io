@@ -36,6 +36,6 @@ When you save the script with the text editor, it is saved back into the same fi
 </script></p>
 <hr>
 <div id="bl" class="footer"><a href="syntax-sqlplus-edit.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

@@ -305,5 +305,5 @@ bash is the default shell, it runs under <a href="http://en.wikipedia.org/wiki/D
 Links to <a href="../links/osx.html">other Sites, Books etc</a>...</p>
 <p class="quote"><i>“Mac OS X is a rock-solid system that's beautifully designed. I much prefer it to Linux” - <a href="http://www.wired.com/wired/archive/11.12/billjoy.html">Bill Joy</a></i></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="index.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

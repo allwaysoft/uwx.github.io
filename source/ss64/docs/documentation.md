@@ -26,6 +26,6 @@ ISM Integrated Service Management®<br>
 <p class="quote"><i> “In business, the idea of measuring what you are doing, picking the measurements that count like customer satisfaction and performance... you thrive on that” ~ Bill Gates  </i><!-- #BeginLibraryItem "/Library/foot_docs.lbi" --></p><p>
 <hr>
 <div id="bl" class="footer"><a href="documentation.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem --><p></p>
 

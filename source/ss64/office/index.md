@@ -40,6 +40,6 @@ Office  Resource Kit <i>by Microsoft Corp</i> <a href="http://www.amazon.com/exe
 <a href="http://support.microsoft.com/kb/222101">Q222101</a> - Office object model</p><!-- #BeginLibraryItem "/Library/foot_docs.lbi" --><p>
 <hr>
 <div id="bl" class="footer"><a href="index.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

@@ -155,6 +155,6 @@ SS64 - <a href="http://ss64.org/">PowerShell Discussion Forum</a></p>
 </blockquote>
 <p class="quote"><i>“The big breakthrough was when we got lower case” - <a href="http://www.microsoft.com/presspass/exec/billg/speeches/2008/06-03teched.mspx">Bill Gates </a> Tech•Ed 2008</i></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="pslinks.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

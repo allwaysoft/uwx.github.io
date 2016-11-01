@@ -33,5 +33,5 @@ Access 2010 Sp1 <a href="http://www.microsoft.com/download/en/details.aspx?id=26
 </blockquote>
 <p class="quote"><i>“Talk is cheap. Show me the code” - <a href="http://lkml.org/lkml/2000/8/25/132">Linus Torvalds</a></i></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="access.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

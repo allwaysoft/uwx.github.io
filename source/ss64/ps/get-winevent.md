@@ -213,6 +213,6 @@ eventquery.vbs - VBScript for 2003<br>
 </script></p>
 <hr>
 <div id="bl" class="footer"><a href="get-winevent.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2015<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2015<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

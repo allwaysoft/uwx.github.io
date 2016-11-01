@@ -215,5 +215,5 @@ Oracle Extended support, where available ( $$$ ) will add <b>3 years</b> to the 
 Oracle Sustaining  Support  is indefinite for as long as you license the Oracle product.</p><!-- #BeginLibraryItem "/Library/foot_docs.lbi" --><p>
 <hr>
 <div id="bl" class="footer"><a href="lifecycle.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

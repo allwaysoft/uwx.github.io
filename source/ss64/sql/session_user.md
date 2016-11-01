@@ -30,6 +30,6 @@ CREATE TABLE ptr<br>(<br> ptr_id int IDENTITY(5000, 1) NOT NULL,<br> ptr_text ch
 </script></p>
 <hr>
 <div id="bl" class="footer"><a href="session_user.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

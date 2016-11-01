@@ -81,6 +81,6 @@ Equivalent bash command: <a href="../bash/ln.html">ln</a> - Make links between f
 </script></p>
 <hr>
 <div id="bl" class="footer"><a href="get-psdrive.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2015<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2015<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

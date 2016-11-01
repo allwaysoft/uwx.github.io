@@ -243,6 +243,6 @@ Equivalent bash command (Linux):<a href="../bash/chmod.html">chmod</a> / <a href
 </script></p>
 <hr>
 <div id="bl" class="footer"><a href="icacls.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

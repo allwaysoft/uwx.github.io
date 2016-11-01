@@ -232,5 +232,5 @@ SS64 - <a href="http://ss64.org/">Windows CMD discussion Forum</a></p>
 <p class="quote"><i>“We have prided ourselves on always being the cheapest guy on the block. We have always told our people we're the high volume, low price guy in the software business" - Steve 
 Ballmer&nbsp;(Partnering for Success)</i></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="windows.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->

@@ -110,6 +110,6 @@ cmdlets installed, type <span class="code"><a href="get-command.html">Get-Comman
 <a href="../nt/csvde.html">CSVDE / <abbr title="LDAP Data Interchange Format">LDIF</abbr>DE</a> - Create, modify or delete directory objects.<br> 
 <a href="index.html">PowerShell cmdlets </a></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="ad.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2015<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2015<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 

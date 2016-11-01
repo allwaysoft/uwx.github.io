@@ -158,6 +158,6 @@ The syntax on these pages is based on Oracle version 9.2, while this is almost a
 <p>SS64 <a href="http://ss64.org/viewforum.php?id=9">Oracle Discussion forum</a><br>
 <a href="../links/oralinks.html">Links to other Sites, books etc…</a></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>
 <div id="bl" class="footer"><a href="index.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
-<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
 Some rights reserved</div><!-- #EndLibraryItem -->
 
