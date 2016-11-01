@@ -22,7 +22,7 @@ variable is empty/NULL</a>)</p>
 <pre>   Set _somevariable=%_somevariable:"=%</pre>
 <p>File and folder names cannot (legally) contain quotes so  the above is often all that's needed.</p>
 <p>A one line function, using a FOR command to run parameter expansion and remove quotes (the <span class="code">%~A</span> removes the quotes), this is a good approach when you need to dequote multiple strings, just call the function with each string:</p>
-<p class="code"> ::::::::: one line Dequote example ::::::::::::<br>
+<p class="code"> {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %} one line Dequote example {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}<br>
 @Echo Off<br>
 Setlocal<br>
  Set _mypath="C:\Program Files\ss64\"<br>

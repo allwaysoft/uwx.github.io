@@ -99,7 +99,7 @@ ENVIRONMENT
      MORE        This variable can be set with favored options to more.
      SHELL       Current shell in use (normally set by the shell at login</cmd></cmd></cmd></pre>
 <p>When the output of <span class="code">more</span> is redirected to a file, it outputs a small header for each file:<br>
-<span class="code">:::::::::::::: filename.txt ::::::::::::::</span></p>
+<span class="code">{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}:: filename.txt {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}::</span></p>
 <p><i class="quote">"There are few more impressive sights than a Scotsman 
   on the make" ~ Sir 
   James Barrie </i><br>

@@ -43,7 +43,7 @@ Options
 <p> The -n and -v options are non-standard and their use in scripts 
   is not recommended. </p>
 <p>When the output of <span class="code">more</span> is redirected to a file, it outputs a small header for each file:<br>
-<span class="code">:::::::::::::: filename.txt ::::::::::::::</span></p>
+<span class="code">{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}:: filename.txt {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}::</span></p>
 <p class="quote"><i>"If I had my life to live over, I'd make more mistakes next time. I would relax. I would limber up..." ~ Jenny Joseph</i></p>
 <p><b>Related:</b></p>
 <p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/less.1.html">lsss man page</a> - Apple.com<br>

@@ -388,7 +388,7 @@ Storing character data as Varchar2 will save space:</p>
 <p> Oracle9i and above allow Varchar2 columns to be defined as a number of bytes <span class="code">VARCHAR2(50 BYTE)</span> or a number of characters <span class="code">VARCHAR2(50 CHAR)</span>, the latter is useful if the database is ever converted to run a double-byte character set (such as Japanese), you won't have to edit the column sizes. The default measure, normally <span class="code">BYTE</span>, is set with <a href="syntax-initora.html">nls_length_semantics</a>.</p>
 <p> If you create a column as 
 <span class="code">Varchar2 (50)</span> but only store 10 bytes, then Oracle will only save 10 bytes to disk. 
-This does <b>not</b> mean that you should just create <span class="code">Varchar2 (4000)</span> columns 'just in case the space is needed', that is <a href="https://asktom.oracle.com/pls/asktom/f?p=100:11:0::::P11_QUESTION_ID:1145132537055">a really bad idea</a> which will reduce the performance and maintainability of your application.</p>
+This does <b>not</b> mean that you should just create <span class="code">Varchar2 (4000)</span> columns 'just in case the space is needed', that is <a href="https://asktom.oracle.com/pls/asktom/f?p=100:11:0{% raw %}:::{% endraw %}:P11_QUESTION_ID:1145132537055">a really bad idea</a> which will reduce the performance and maintainability of your application.</p>
 <p>CHAR:<br>
 Over time, when varchar2 columns are updated they will sometimes create chained rows,  CHAR columns are fixed width they are not affected by this, so less DBA effort is required to maintain performance.<br>
 <br>

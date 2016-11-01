@@ -317,7 +317,7 @@ SSLive_clinical02.dbf</pre>
 <p><b>Related:</b></p>
 <p><a href="syntax-reserved.html">Reserved keywords</a><br>
 <a href="syntax-ofa.html">Optimal Flexible Architecture</a> (OFA)<br>
-<a href="http://asktom.oracle.com/pls/apex/f?p=100:11:0::::P11_QUESTION_ID:6729304326802">Ask Tom</a> - Argues against the column prefix<br>
+<a href="http://asktom.oracle.com/pls/apex/f?p=100:11:0{% raw %}:::{% endraw %}:P11_QUESTION_ID:6729304326802">Ask Tom</a> - Argues against the column prefix<br>
 <a href="http://www.oracle-base.com/articles/misc/NamingConventions.php">Oracle-Base.com Naming conventions</a><br>
 <a href="http://philip.greenspun.com/sql/style.html">SQL formatting convention</a> - Philip Greenspun<br>
 <a href="../access/syntax-naming.html">Reddick Naming convention</a> (Access VBA) <br>

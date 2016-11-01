@@ -117,11 +117,11 @@ copy the script below or download <a href="datemath.txt">here</a> and save as Da
 
    ECHO DATEMATH - Convert date only (no maths)
    goto s_end
-   ::::::::::::::::::::::::::::::::::::::::::::::::::
+   {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}::
    
    :s_validate_2nd_date
     If "%4"=="+" goto s_syntax
-    :: Subtracting one date from another ::::::
+    :: Subtracting one date from another {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}
     :: strip leading zero
     SET v_yy2=%5
     if %v_yy2:~0,1% EQU 0 set v_yy2=%v_yy2:~1%
@@ -170,12 +170,12 @@ copy the script below or download <a href="datemath.txt">here</a> and save as Da
    ECHO %v_dd_int%
    ECHO ~~~~~~
    goto s_end_days
-   ::::::::::::::::::::::::::::::::::::::::::::::::::
+   {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}::
    
    :s_add_or_subtract_days
    if /i "%4"=="+" goto s_add_up_days
 
-   :: Subtract all days ::::::
+   :: Subtract all days {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}
    SET /a v_dd=%v_dd% - %v_number_of_days%
    
    :s_adjust_month_year
@@ -212,7 +212,7 @@ copy the script below or download <a href="datemath.txt">here</a> and save as Da
    goto s_adjust_month_year
  
    :s_add_up_days
-   :: add all days ::::::
+   :: add all days {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}
    SET /a v_dd=%v_dd% + %v_number_of_days%
    
    :s_subtract_days_
@@ -268,7 +268,7 @@ copy the script below or download <a href="datemath.txt">here</a> and save as Da
    
    ECHO DATEMATH - add or subtract days from a date = new date
    goto s_end
-   ::::::::::::::::::::::::::::::::::::::::::::::::::
+   {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}::
 
    :s_julian_day
    SET v_year=%1
@@ -288,7 +288,7 @@ copy the script below or download <a href="datemath.txt">here</a> and save as Da
    
    ECHO The Julian Day is [%v_JulianDay%]
    goto :eof
-   ::::::::::::::::::::::::::::::::::::::::::::::::::
+   {% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}{% raw %}:::{% endraw %}::
    
    :s_end
    ECHO ~~~~~~~~~~~~
