@@ -94,7 +94,7 @@ FILE_ATTRIBUTE_ENCRYPTED = 16384 (<span class="code">0x4000</span>)</p>
 <p>An alternative is using <a href="syntax-args.html#attributes">FOR parameter attributes</a></p>
 <p><abbr title="Distributed File System Replication">DFSR</abbr> will <a href="http://social.technet.microsoft.com/Forums/en/winserverfiles/thread/9164f02c-b81b-477a-b9b3-e71dcd10248e">not replicate</a> files if they have the temporary attribute set.<br> 
 The temporary attribute can be removed by using PowerShell to subtract <span class="code">0x100</span>:</p>
-<p class="code">PS C:\&gt; Get-childitem D:\Data -recurse | ForEach-Object -process {if (($_.attributes -band 0x100) -eq 0x100) {$_.attributes = ($_.attributes -band 0xFEFF)}} </p>
+<p class="code">PS C:\&gt; Get-childitem D:\Data -recurse | ForEach-Object -process {if (($_.attributes -band 0x100) -eq 0x100) {$_.attributes = ($_.attributes -band 0xFEFF){% raw %}}}{% endraw %} </p>
 <p><i class="quote">"The moral sense of conscience is by far the most important.. it is the most noble of all the <b>attributes</b> of man" - Charles Darwin</i><br>
 <br>
 <b>Related:</b><br>

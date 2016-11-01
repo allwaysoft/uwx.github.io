@@ -107,17 +107,17 @@ it is not.  Always `0' in interactive shells.<br>
 </p>
 </blockquote>
 <pre>   $#<i>name</i>
-   ${#<i>name</i>}
+   ${% raw %}{#{% endraw %}<i>name</i>}
         Substitutes the number of words in <i>name</i>.
 
    $#   Equivalent to `$#argv'. (+)
 
    $%<i>name</i>
-   ${%<i>name</i>}
+   ${% raw %}{%{% endraw %}<i>name</i>}
         Substitutes the number of characters in <i>name</i>.  (+)
 
    $%<i>number</i>
-   ${%<i>number</i>}
+   ${% raw %}{%{% endraw %}<i>number</i>}
         Substitutes the number of characters in $argv[<i>number</i>].  (+)
    $?   Equivalent to `$status'.  (+)
    $$   Substitutes the (decimal) process number of the (parent) shell.

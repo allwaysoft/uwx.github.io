@@ -70,12 +70,12 @@ Key
 <p>Get  the InstanceIDs of all jobs:</p>
 <p><span class="code">PS C:\&gt; get-job | format-table ID, Name, Command, InstanceID -auto</span></p>
 <p>Get the the (calculated)  job state of all jobs:</p>
-<p><span class="code">PS C:\&gt; get-job | format-table ID, Name, Command, @{Label="State";Expression={$_.jobstateinfo.state}} -auto</span></p>
+<p><span class="code">PS C:\&gt; get-job | format-table ID, Name, Command, @{Label="State";Expression={$_.jobstateinfo.state{% raw %}}}{% endraw %} -auto</span></p>
 <p><span class="code"></span> Stop a background job with a given InstanceID:</p>
 <p class="code">PS C:\&gt; stop-job -instanceid e4bbfed1-9c64-401a-a2c3-a7db34336cdf</p>
 <p>Start a job remotely using Invoke-Command and then stop the job that is running on a remote computer. Because the job is local, the "param" keyword is required to declare the local variables, and the -ArgumentList parameter can then be used to supply values for the variables:</p>
 <p><span class="code">PS C:\&gt; $s = new-pssession -computername Server64 -credential domain64\admin01<br>
-PS C:\&gt; $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog system}}<br>
+PS C:\&gt; $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog system{% raw %}}}{% endraw %}<br>
 <br>
 PS C:\&gt; invoke-command -session $s -scriptblock {param($j) stop-job -job $j} -ArgumentList $j</span></p>
 <p>Start a job on the local computer, which runs on Server64 (using <span class="code">-AsJob</span> makes the remote command run as a background job), then stop the job with a local Stop-Job command:</p>

@@ -22,7 +22,7 @@ Key
 <p><span class="code">PS C:\&gt; if ($MyDemoVar -like "*SS64*") {$MyDemoVar -replace "SS64", "Demonstration Example"}   </span><br>
   <br>
   Print the running services in green and stopped services in red:</p>
-<p class="code">PS C:\&gt; get-service | foreach-object{  if ($_.status -eq "stopped") {write-host -f red $_.name $_.status}`  else{ write-host -f green $_.name $_.status}}  </p>
+<p class="code">PS C:\&gt; get-service | foreach-object{  if ($_.status -eq "stopped") {write-host -f red $_.name $_.status}`  else{ write-host -f green $_.name $_.status{% raw %}}}{% endraw %}  </p>
 <p class="quote"><i>“You see things; and you say 'Why?' But I dream things that never were; and I say 'why not?' - George Bernard Shaw </i></p>
 <p><b>Related:</b><br>
  <br>    

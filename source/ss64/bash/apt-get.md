@@ -47,7 +47,7 @@ useGithubLayout: false
          [-t= <i>target</i>] <b>autoremove</b>
 
       apt-get {-v | --version} 
-      apt-get {-h | --help}}
+      apt-get {-h | --help{% raw %}}}{% endraw %}
 
  Where <i>Target</i> = {<i>target_release_name</i> | <i>target_release_number_expression</i> | <i>target_release_codename</i>}
 

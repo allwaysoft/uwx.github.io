@@ -31,7 +31,7 @@ Key
 <p><span class="code">PS C:\&gt; get-hotfix -description Security* -computername Server64, Server65 -cred Server64\billg</span></p>
 <p>Check all the servers listed in the Servers.txt file, for those which are missing the KB957095 security update write the computer name out to a second file:</p>
 <p><span class="code">PS C:\&gt; $a = get-content servers.txt<br>
-PS C:\&gt; $a | foreach { if (!(get-hotfix -id KB957095 -computername $_)) { add-content $_ -path Missing.txt }}<br>
+PS C:\&gt; $a | foreach { if (!(get-hotfix -id KB957095 -computername $_)) { add-content $_ -path Missing.txt {% raw %}}}{% endraw %}<br>
 </span>
   <br>
 Get the installed hotfixes, sort them by <i>InstalledOn</i>, and then  use <a href="syntax-arrays.html">array notation</a> to select the last item in the array:</p>

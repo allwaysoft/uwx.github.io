@@ -21,7 +21,7 @@ The PowerShell $Profile is run automatically when the shell session is started, 
 <p><a href="syntax-cd.html"> 'CD -' function</a> - quickly change directory/location </p>
 <p>List all local drives, listing only drives with &gt; 1 MB of free space excludes any unmounted
 drives.<br>
-<span class="code">function drives{gdr -p FileSystem |where {$_.free -gt 1MB}}</span></p>
+<span class="code">function drives{gdr -p FileSystem |where {$_.free -gt 1MB{% raw %}}}{% endraw %}</span></p>
 <p><a href="http://blogs.msdn.com/powershell/archive/2006/07/01/perserving-command-history-across-sessions.aspx">Perserve Command History Across Sessions</a></p>
 <p>Change background color on  all elevated command prompts (from<a href="http://www.ilovepowershell.com/profile-trick-how-to-set-administrator-mode-background-color/"> ilovepowershell.com</a>):</p>
 <p class="code">if ($host.UI.RawUI.WindowTitle -match "Administrator")<br>

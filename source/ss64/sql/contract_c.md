@@ -8,7 +8,7 @@ useGithubLayout: false
 <p>Create a contract in the database.</p>
 <pre>Syntax:
       CREATE CONTRACT <i>contract</i>  [AUTHORIZATION <i>owner</i> ]
-         ( {% raw %}{{<i>message_type_name </i>| [DEFAULT ] }{% endraw %}
+         ( {% raw %}{{{% endraw %}<i>message_type_name </i>| [DEFAULT ] }
            SENT BY { INITIATOR | TARGET | ANY }
             } [ ,...n] )  [;]
 

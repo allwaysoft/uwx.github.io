@@ -70,7 +70,7 @@ useGithubLayout: false
        COMP_POINT
               The index of the current cursor position relative to the beginning of the current command.  If
               the  current  cursor position is at the end of the current command, the value of this variable
-              is equal to ${#COMP_LINE}.  This variable is available only in shell  functions  and  external
+              is equal to ${% raw %}{#{% endraw %}COMP_LINE}.  This variable is available only in shell  functions  and  external
               commands  invoked  by  the  programmable  completion  facilities  (see Programmable Completion
               below).
 

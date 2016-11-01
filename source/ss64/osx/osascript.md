@@ -44,7 +44,7 @@ Options<i>
         strings do not have quotes around them, characters are not
         escaped, braces for lists and records are omitted, etc.  This is
         generally more useful, but can introduce ambiguities.  For exam-
-        ple, the lists `{"foo", "bar"}' and {% raw %}`{{"foo", {"bar"}}}'{% endraw %} would
+        ple, the lists `{"foo", "bar"}' and `{% raw %}{{{% endraw %}"foo", {"bar"{% raw %}}}{% endraw %}}' would
         both be displayed as `foo, bar'.  To see the results in an unam-
         biguous form that could be recompiled into the same value, use
         the <b>s</b> modifier.

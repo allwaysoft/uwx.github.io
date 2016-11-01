@@ -8,7 +8,7 @@ useGithubLayout: false
 <p>CMD Batch script to show if a folder is empty:</p>
 <pre>    @Echo off
     Setlocal
-    if {%1}=={} set _empty=Syntax: %0 "<folder to="" check="">" &amp;goto :message
+    if {% raw %}{%{% endraw %}1}=={} set _empty=Syntax: %0 "<folder to="" check="">" &amp;goto :message
 
     ::Does folder exist
     if not exist %1 (
@@ -20,7 +20,7 @@ useGithubLayout: false
     set _TMP=
     for /f "delims=" %%a in ('dir /b %1') do set _TMP=%%a
 
-    IF {%_TMP%}=={} (
+    IF {% raw %}{%{% endraw %}_TMP{% raw %}%}{% endraw %}=={} (
       set _empty=Empty
     ) ELSE (
       set _empty=Not Empty

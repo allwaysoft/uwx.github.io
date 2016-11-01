@@ -85,7 +85,7 @@ When the commands in the job are complete, Wait-Job will display the command pro
 <p>Use Wait-Job to determine whether a command running as a background job on three different computers is complete:</p>
 <p><span class="code">PS C:\&gt; $sess = new-pssession server01, server02, server03<br>
 
-PS C:\&gt; invoke-command -session $sess -scriptblock {start-job -name Date1 -scriptblock {get-date}}<br>
+PS C:\&gt; invoke-command -session $sess -scriptblock {start-job -name Date1 -scriptblock {get-date{% raw %}}}{% endraw %}<br>
 <br>
 PS C:\&gt; $done = invoke-command -session $sess -command {wait-job -name Date1}<br>
 
@@ -97,7 +97,7 @@ current session are complete (local jobs running on remote machines):</p>
 
 PS C:\&gt; $commands = 'get-eventlog -log system | where {$_.EntryType -eq "error" -and $_.Source -eq "LSASRV"} | out-file errors.txt'<br>
 <br>
-PS C:\&gt; invoke-command -session $sess -scriptblock {param($commands)start-job -scriptblock {$commands}} -ArgumentList $commands<br>
+PS C:\&gt; invoke-command -session $sess -scriptblock {param($commands)start-job -scriptblock {$commands{% raw %}}}{% endraw %} -ArgumentList $commands<br>
 PS C:\&gt; invoke-command -session $sess -scriptblock {wait-job -any}</span><br>
 <br>
 Identify three jobs by their IDs and wait until any of them are complete:</p>

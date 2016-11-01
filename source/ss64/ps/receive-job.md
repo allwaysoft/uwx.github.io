@@ -96,7 +96,7 @@ PS C:\&gt; $job | receive-job</span></p>
 <span class="code">PS C:\&gt; receive-job -name Job2 -keep</span><br>
 <br>Create PSSessions on two servers, then use  Invoke-Command  to run a Start-Job command in each of the PSSessions:</p>
 <p class="code">PS C:\&gt; $s = new-pssession -computername Server64, Server65<br>
-PS C:\&gt; $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}<br>
+PS C:\&gt; $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system{% raw %}}}{% endraw %}<br>
 PS C:\&gt; $j<br>
 PS C:\&gt; $results = invoke-command -session $s -scriptblock {param($j) receive-job -job $j} -ArgumentList $j</p>
 <p>Using Invoke-Command to run  Start-Job, will start independent jobs on each of the  computers. As a result, the command above returns two job objects representing  jobs 

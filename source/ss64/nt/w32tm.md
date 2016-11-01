@@ -46,7 +46,7 @@ useGithubLayout: false
       W32TM <b>/query</b> [/computer:<i>target</i>] {/source | /configuration | /peers | /status} [/verbose]
 
   Enable or disable a local computer Windows Time service private log.
-      W32TM <b>/debug</b> {<b>/disable</b> | {<b>/enable</b> /file:<i>name</i> /size:<i>bytes</i> /entries:<i>value</i> [/truncate]}}
+      W32TM <b>/debug</b> {<b>/disable</b> | {<b>/enable</b> /file:<i>name</i> /size:<i>bytes</i> /entries:<i>value</i> [/truncate]{% raw %}}}{% endraw %}
 
 
 Options:

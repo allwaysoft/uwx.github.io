@@ -188,7 +188,7 @@ useGithubLayout: false
    nls_dual_currency = <i>currency_symbol</i>
    nls_iso_currency =<i> territory</i>    Override the default set by NLS_TERRITORY
    nls_language =<i> language</i>         NLS language name (session default)
-   nls_length_semantics = {<u>BYTE</u>|CHAR}}  Default when creating new columns 
+   nls_length_semantics = {<u>BYTE</u>|CHAR{% raw %}}}{% endraw %}  Default when creating new columns 
    nls_nchar_conv_excp = {TRUE|<u>FALSE</u>}  Raise an exception instead of
                                        allowing an implicit conversion
    nls_numeric_characters ="<i>decimal_character group_separator</i>"

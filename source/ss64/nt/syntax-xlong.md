@@ -10,7 +10,7 @@ useGithubLayout: false
 <pre>@Echo off
 Setlocal EnableDelayedExpansion
 :: Report all file / folder paths that exceed the 256 character limit
-If {%1}=={} Echo Syntax: XLong DriveLetter&amp;goto :EOF
+If {% raw %}{%{% endraw %}1}=={} Echo Syntax: XLong DriveLetter&amp;goto :EOF
 Set wrk=%1
 Set wrk=%wrk:"=%
 

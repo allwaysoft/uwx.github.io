@@ -58,7 +58,7 @@ Key
 <p>Standard <a href="get-alias.html">Aliases</a> for New-Module:<span class="code"> <b>nmo</b></span></p>
 <p><b>Examples</b></p>
 <p>Create a new dynamic module with a function called "Hello". The command returns a module object that represents the new dynamic module:</p>
-<p><span class="code">PS C:\&gt; new-module -scriptblock {function Hello {"Hello!"}}</span><br>
+<p><span class="code">PS C:\&gt; new-module -scriptblock {function Hello {"Hello!"{% raw %}}}{% endraw %}</span><br>
 <br>
 Create a new dynamic module, and also, use <a href="export-modulemember.html">Export-ModuleMember</a> to export a variable into the current session. Without the Export-ModuleMember command, only the function is exported:</p>
 <pre>PS C:\&gt; New-Module -scriptblock <b>{</b>$SayHelloHelp="Type 'SayHello', a space, and a name.";

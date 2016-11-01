@@ -6,7 +6,7 @@ useGithubLayout: false
 ---
 <!-- #BeginLibraryItem "/Library/head_css.lbi" --><!-- #EndLibraryItem --><h1>@Keyframes</h1>
 <p>Control the intermediate steps in a CSS animation sequence by establishing keyframes (or waypoints) along the animation sequence that must be reached by certain points in time during the animation.</p>
-<pre>       @keyframes <i>AnimationName {keyframes-selector {css-styles;}}</i>
+<pre>       @keyframes <i>AnimationName {keyframes-selector {css-styles;{% raw %}}}{% endraw %}</i>
 
    <i>AnimationName</i>      The name of the animation.
 

@@ -49,7 +49,7 @@ Arrays</h1>
   word. <br>
   When there are no array members, <code>${name[@]}</code> expands to nothing. 
   This is analogous to the expansion of the special parameters <samp>`@'</samp> 
-  and <samp>`*'</samp>. <code>${#name[</code><var>subscript</var><code>]}</code> 
+  and <samp>`*'</samp>. <code>${% raw %}{#{% endraw %}name[</code><var>subscript</var><code>]}</code> 
   expands to the length of <code>${name[</code><var>subscript</var><code>]}</code>. 
   If <var>subscript</var> is <samp>`@'</samp> or <samp>`*'</samp>, the expansion 
   is the number of elements in the array. <br>

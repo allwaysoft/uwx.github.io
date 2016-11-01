@@ -41,7 +41,7 @@ DBCC bytes ( startaddress, length ) </p>
 <p>DBCC detachdb [( 'dbname' )] </p>
 <p>DBCC dropextendedproc (function_name) </p>
 <p>DBCC dropuserobject ('object_name') </p>
-<p>DBCC dumptrigger ({'BREAK', {0 | 1}} | 'DISPLAY' | {'SET', exception_number} 
+<p>DBCC dumptrigger ({'BREAK', {0 | 1{% raw %}}}{% endraw %} | 'DISPLAY' | {'SET', exception_number} 
 | {'CLEAR', exception_number}) </p>
 <p>DBCC errorlog </p>
 <p>DBCC extentinfo [({'database_name'| dbid | 0} 
@@ -91,8 +91,8 @@ DBCC incrementinstance (objectname, countername, instancename, value) </p>
 , targetfile, targetpg, order={1|0}) </p>
 <p>DBCC procbuf [({'dbname' | dbid}[, {'objname' | objid}
 [, nbufs[, printopt = { 0 | 1 } ]]] )] </p>
-<p>DBCC prtipage (dbid, objid, indexid [, [{% raw %}{{level, 0} {% endraw %}
-| {filenum, pagenum}}] [,printopt]]) </p>
+<p>DBCC prtipage (dbid, objid, indexid [, [{% raw %}{{{% endraw %}level, 0} 
+| {filenum, pagenum{% raw %}}}{% endraw %}] [,printopt]]) </p>
 <p>DBCC pss [(uid[, spid[, printopt = { 1 | 0 }]] )] </p>
 <p>DBCC readpage ({ dbid, 'dbname' }, fileid, pageid
 , formatstr [, printopt = { 0 | 1} ]) </p>
@@ -110,7 +110,7 @@ DBCC incrementinstance (objectname, countername, instancename, value) </p>
 <p>DBCC showoffrules </p>
 <p>DBCC showonrules </p>
 <p>DBCC showtableaffinity (table) </p>
-<p>DBCC showtext ('dbname', {textpointer | {fileid, pageid, slotid[,option]}})</p>
+<p>DBCC showtext ('dbname', {textpointer | {fileid, pageid, slotid[,option]{% raw %}}}{% endraw %})</p>
 <p>DBCC showweights</p>
 <p>DBCC sqlmgrstats </p>
 <p>DBCC stackdump [( {uid[, spid[, ecid]} | {threadId, 'THREADID'}] )] </p>

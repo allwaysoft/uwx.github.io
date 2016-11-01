@@ -61,7 +61,7 @@ Key
 <p class="code">PS C:\&gt; <a href="get-service.html">get-service</a> | ConvertTo-Html -Title "Services" -Body "&lt;H2&gt;The result of get-service&lt;/H2&gt; " -Property Name,Status&nbsp;<b> &gt;</b>&nbsp; c:\services.html</p>
 <p>Save the system services to C:\services.html and format in color (example from Hung Yuwu ): </p>
 <p class="code">PS C:\&gt; <a href="get-service.html">get-service</a> | ConvertTo-Html -Title "Services" -Body "&lt;H2&gt;The result of get-service&lt;/H2&gt; " -Property Name,Status | <br>
-<b>foreach</b> {if($_ -like "*&lt;td&gt;Running&lt;/td&gt;*"){$_ <b>-replace "&lt;tr&gt;", "&lt;tr bgcolor=green&gt;"</b>}elseif($_ -like "*&lt;td&gt;Stopped&lt;/td&gt;*"){$_ <b>-replace "&lt;tr&gt;", "&lt;tr bgcolor=red&gt;"</b>}else{$_}} <b>&gt;</b> c:\services.html</p>
+<b>foreach</b> {if($_ -like "*&lt;td&gt;Running&lt;/td&gt;*"){$_ <b>-replace "&lt;tr&gt;", "&lt;tr bgcolor=green&gt;"</b>}elseif($_ -like "*&lt;td&gt;Stopped&lt;/td&gt;*"){$_ <b>-replace "&lt;tr&gt;", "&lt;tr bgcolor=red&gt;"</b>}else{$_{% raw %}}}{% endraw %} <b>&gt;</b> c:\services.html</p>
 <p>Save the system services to C:\services.html and format with css, then open the HTML page with Invoke-Item:</p>
 <p><span class="code">PS C:\&gt; <a href="get-service.html">get-service</a> | ConvertTo-Html -CssUri "SS64.css" <b> &gt;</b> c:\services.html<br>
 PS C:\&gt; <a href="invoke-item.html">Invoke-Item</a> c:\services.html</span></p>

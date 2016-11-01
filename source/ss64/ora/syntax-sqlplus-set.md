@@ -195,7 +195,7 @@ SQLN[UMBER] {OFF|ON}
    ON = set the SQL prompt = the line number.
    OFF = set the SQL prompt = SQLPROMPT.
 
-SQLPRE[FIX] {#|<i>c</i>}
+SQLPRE[FIX] {% raw %}{#{% endraw %}|<i>c</i>}
    set a non-alphanumeric prefix char for immediately executing one line of SQL (#)
 
 SQLP[ROMPT] {<u>SQL&gt;</u>|<i>text</i>}

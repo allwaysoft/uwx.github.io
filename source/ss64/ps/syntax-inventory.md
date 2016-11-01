@@ -17,10 +17,10 @@ $result = Get-WmiObject -query $query
 
 if ($result.protocoladdress) {
 
- $build = @{n="Build";e={$_.BuildNumber}}
- $SPNumber = @{n="SPNumber";e={$_.CSDVersion}}
- $sku = @{n="SKU";e={$_.OperatingSystemSKU}}
- $hostname = @{n="HostName";e={$_.CSName}}
+ $build = @{n="Build";e={$_.BuildNumber{% raw %}}}{% endraw %}
+ $SPNumber = @{n="SPNumber";e={$_.CSDVersion{% raw %}}}{% endraw %}
+ $sku = @{n="SKU";e={$_.OperatingSystemSKU{% raw %}}}{% endraw %}
+ $hostname = @{n="HostName";e={$_.CSName{% raw %}}}{% endraw %}
 
    $Win32_OS = Get-WmiObject Win32_OperatingSystem -computer $ServerName | select $build,$SPNumber,Caption,$sku,$hostname, servicepackmajorversion
 

@@ -88,7 +88,7 @@ useGithubLayout: false
   </dd><dt><code>COMP_POINT</code> 
   </dt><dd>The index of the current cursor position relative to the beginning of the 
     current command. If the current cursor position is at the end of the current 
-    command, the value of this variable is equal to <code>${#COMP_LINE}</code>. 
+    command, the value of this variable is equal to <code>${% raw %}{#{% endraw %}COMP_LINE}</code>. 
     This variable is available only in shell functions and external commands invoked 
     by the programmable completion facilities. 
   </dd><dt><code>COMPREPLY</code> 

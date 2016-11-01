@@ -33,7 +33,7 @@ Options
        Returns the results of addition or subtraction of integer-valued
        arguments.
 
-     expr1 {*, /, %} expr2
+     expr1 {*, /, {% raw %}%}{% endraw %} expr2
        Returns the results of multiplication, integer division, or
        remainder of integer-valued arguments.
 

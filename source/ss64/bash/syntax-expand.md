@@ -45,7 +45,7 @@ $ mv app/ss64/alpha{,beta}.py
 
 $ mkdir /usr/local/src/bash/{old,new,dist,bugs}
 
-$ chown root /usr/{ucb/{ex,edit},lib/{ex?.?*,how_ex}}</pre>
+$ chown root /usr/{ucb/{ex,edit},lib/{ex?.?*,how_ex{% raw %}}}{% endraw %}</pre>
 </blockquote>
 <h2>Tilde Expansion</h2>
 <blockquote>
@@ -126,7 +126,7 @@ Substring indexing is zero-based unless the positional parameters are used,
 in which case the indexing starts at 1. </p>
 <p><code>${!<var>prefix</var>*}</code> <br>
 Expands to the names of variables whose names begin with <var>prefix</var>, separated by the first character of the <code>IFS</code> special variable. 
-<code>${#<var>parameter</var>}</code> </p>
+<code>${% raw %}{#{% endraw %}<var>parameter</var>}</code> </p>
 <p>The length in characters of the expanded value of <var>parameter</var> is substituted. If <var>parameter</var> is <samp>`*'</samp> or <samp>`@'</samp>, 
   the value substituted is the number of positional parameters. If <var>parameter</var> 
   is an array name subscripted by <samp>`*'</samp> or <samp>`@'</samp>, the value substituted is the number of elements in the array. </p>

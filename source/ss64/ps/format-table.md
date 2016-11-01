@@ -78,10 +78,10 @@ FormatString <i>string<br>
 Print a list of running processes formatted into groups with the same base priority class:</p>
 <p class="code">PS C:\&gt;get-process | format-table -groupby basepriority </p>
 <p>Print the winlogon process, including a calculated total running time:</p>
-<p class="code">PS C:\&gt;get-process winlogon | format-table ProcessName, @{Label="DD.HH:MM:Seconds"; Expression={(get-date) - $_.StartTime}}</p>
+<p class="code">PS C:\&gt;get-process winlogon | format-table ProcessName, @{Label="DD.HH:MM:Seconds"; Expression={(get-date) - $_.StartTime{% raw %}}}{% endraw %}</p>
 <p>Changing the above for the notepad process, notice that this this will add up the running time for ALL notepad processes currently running:</p>
 <pre>PS C:\&gt;get-process <span class="code">notepad</span> | format-table ProcessName, `
-       @{Label="DD.HH:MM:Seconds"; Expression={(get-date) - $_.StartTime}}</pre>
+       @{Label="DD.HH:MM:Seconds"; Expression={(get-date) - $_.StartTime{% raw %}}}{% endraw %}</pre>
 <p class="quote"><i>“A lot of people are afraid to say what they want, thats why a lot of people don't get what they want” ~ Madonna</i></p>
 <p><b>Related:</b><br>
   <br>

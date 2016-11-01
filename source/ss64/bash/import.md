@@ -70,7 +70,7 @@ file.</p>
 <pre>-frame</pre>
 <p> Include window manager frame.<br>
 </p>
-<pre>-geometry <width><i>x</i><height>{+-}<x offset="">{+-}<y off-="" set="">{%}{!}{&lt;}{&gt;}</y></x></height></width></pre>
+<pre>-geometry <width><i>x</i><height>{+-}<x offset="">{+-}<y off-="" set="">{% raw %}{%{% endraw %}}{!}{&lt;}{&gt;}</y></x></height></width></pre>
 <p> The width and height of the image.<br>
 </p>
 <pre>-interlace <i>type</i></pre>

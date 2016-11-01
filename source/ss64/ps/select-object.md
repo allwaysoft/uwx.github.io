@@ -66,7 +66,7 @@ Display only the Name and modules properties  of Get-Process, use -ExpandPropert
 <p>Display the 5 processes that are using the most memory (WS=Working Set):</p>
 <p class="code">PS C:\&gt; get-process | sort-object -property WS | select-object -Last 5</p>
 <p>Display  the name and claculate the start day of the processes running:</p>
-<p class="code">PS C:\&gt; get-process | select-object ProcessName,@{<b>Name</b>="Start Day"; <b>Expression</b>={$_.StartTime.DayOfWeek}}</p>
+<p class="code">PS C:\&gt; get-process | select-object ProcessName,@{<b>Name</b>="Start Day"; <b>Expression</b>={$_.StartTime.DayOfWeek{% raw %}}}{% endraw %}</p>
 <p>Get the first (newest) and last (oldest) events in the Windows PowerShell event log:</p>
 <p><span class="code">PS C:\&gt; $evts = get-eventlog -log "Windows PowerShell" <br>
 PS C:\&gt; $evts | select-object -index 0, ($evts.count - 1)</span></p>

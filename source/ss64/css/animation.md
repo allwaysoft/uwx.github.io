@@ -32,9 +32,9 @@ useGithubLayout: false
 <p>Set the ident called "rumble" to repeat, in a linear fashion every 0.1 s, with no startup delay and repeat indefinitely:</p>
 <p class="code">animation:         rumble linear 0.1s 0s infinite;</p>
 <p>Try it: first we set <a href="keyframes.html">@keyframes</a> to define a <a href="transform.html">transform</a> for "rumble"</p>
-<p class="code">@keyframes         rumble { 0%, 100% {} 50% {          transform: translateY(-0.2em) }}<br>
-@-webkit-keyframes rumble { 0%, 100% {} 50% {  -webkit-transform: translateY(-0.2em) }}<br>
-@-ms-keyframes     rumble { 0%, 100% {} 50% {      -ms-transform: translateY(-0.2em) }}<br>
+<p class="code">@keyframes         rumble { 0%, 100% {} 50% {          transform: translateY(-0.2em) {% raw %}}}{% endraw %}<br>
+@-webkit-keyframes rumble { 0%, 100% {} 50% {  -webkit-transform: translateY(-0.2em) {% raw %}}}{% endraw %}<br>
+@-ms-keyframes     rumble { 0%, 100% {} 50% {      -ms-transform: translateY(-0.2em) {% raw %}}}{% endraw %}<br>
 </p>
 <input type="button" onclick="ApplyStyle()" value="Apply Changes">
 <table>

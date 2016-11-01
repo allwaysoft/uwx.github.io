@@ -75,7 +75,7 @@ $a.ToUniversalTime()</p>
 <p>Display the bios date of a remote machine using WMI:</p>
 <p class="code">PS C:\&gt;$a = get-wmiobject win32_bios -computer SERVER64<br>
 $a | format-list -property Name, @{Label="BIOS Date "; `<br>
-Expression={$_.ConvertToDateTime($_.ReleaseDate)}}</p>
+Expression={$_.ConvertToDateTime($_.ReleaseDate){% raw %}}}{% endraw %}</p>
 <p>The backtick character (`) is the line continuation character</p>
 <p class="quote"><i>“Carpe Diem - Seize the day” ~ Horace </i></p>
 <p><b>Related:</b><br>

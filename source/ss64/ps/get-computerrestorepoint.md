@@ -30,7 +30,7 @@ Key
 <p>Get the sequence number of the most recently created restore point:</p>
 <pre>PS C:&gt; ((get-computerrestorepoint)[-1]).sequencenumber</pre>
 <p>List all the restore points on the local computer in a table:</p>
-<pre>PS C:&gt; get-computerrestorepoint | format-table SequenceNumber, _<br> @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -auto</pre>
+<pre>PS C:&gt; get-computerrestorepoint | format-table SequenceNumber, _<br> @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime){% raw %}}}{% endraw %}, Description -auto</pre>
 <p>Display the status of the most recent system restore operation:</p>
 <pre>PS C:&gt; get-computerrestorepoint -laststatus</pre>
 <p>Get the restore points with sequence numbers 460, 461, and 464:</p>
