@@ -582,7 +582,15 @@ function hashCodeMod(o, l) {
     return r.join('');
 }
 
-/* globals console */
+window.weirdhash = {};
+window.weirdhash.fastHash = fasthash_js;
+window.weirdhash.strHash = strhash;
+window.weirdhash.hashCode = hashCode;
+window.weirdhash.md5 = md5;
+window.weirdhash.sha1 = Sha1.hash;
+window.weirdhash.sum = sum;
+window.weirdhash.javaHashCode = stringHashCode;
+window.weirdhash.hashCode2 = hashCodeMod;
 
 //fasthash_js('The quick brown fox jumps over the lazy dog');
 //strhash('The quick brown fox jumps over the lazy dog');

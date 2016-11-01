@@ -1,4 +1,5 @@
-/*globals UglifyJS, js_beautify*/
+/*globals UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus*/
+/*jshint evil:true*/
 window.onload = function() {
   'use strict';
 
@@ -157,15 +158,11 @@ window.onload = function() {
     var toplevel = null,
         sourcesContent = {};
 
-    if (options.spidermonkey) {
-        toplevel = UglifyJS.AST_Node.from_mozilla_ast(files);
-    } else {
-      toplevel = UglifyJS.parse(__str, {
-        filename: 'inlinefile.js',
-        toplevel: toplevel,
-        bare_returns: options.parse ? options.parse.bare_returns : undefined
-      });
-    }
+    toplevel = UglifyJS.parse(__str, {
+      filename: 'inlinefile.js',
+      toplevel: toplevel,
+      bare_returns: options.parse ? options.parse.bare_returns : undefined
+    });
 
     if (options.wrap) {
       toplevel = toplevel.wrap_commonjs(options.wrap, options.exportAll);
@@ -344,7 +341,7 @@ window.onload = function() {
     return outstr.join('');
   }
 
-  function doChecksum(str) {
+  function doChecksum(suffix) {
     const fastHash = weirdhash.fastHash(suffix);
     const strHash = weirdhash.strHash(suffix);
     const hashCode = weirdhash.hashCode(suffix);
@@ -371,7 +368,7 @@ window.onload = function() {
                                 'Nicolás Bevacqua\'s: ' + sum + '\n' + 
                                 'Wes\': ' + javaHashCode + '\n' + 
                                 'Modified version of Fordi\'s: ' + hashCode2 + '\n');
-    return str;
+    return suffix;
   }
 
   // Minify
@@ -481,21 +478,23 @@ window.onload = function() {
   document.getElementById('do-rand').onclick =  makeFunc(function() {
     return Math.random().toString();
   }, 'Could not generate random number: ');
-};
+}; // jshint ignore:line
 
 //Finds y value of given object
 function hFindPos(obj) {
+  'use strict';
   var curtop = 0;
   if (obj.offsetParent) {
     do {
         curtop += obj.offsetTop;
-    } while (obj = obj.offsetParent);
+    } while (obj = obj.offsetParent); // jshint ignore:line
   }
   return curtop;
 }
 
 document.body.addEventListener("load", function() {
+  'use strict';
   var elem = document.getElementById('txt-header');
   if (elem.scrollIntoView) elem.scrollIntoView();
   else window.scroll(0, hFindPos(elem));
-}, true);
+}, true); // jshint ignore:line
