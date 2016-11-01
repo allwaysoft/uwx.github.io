@@ -1,0 +1,72 @@
+---
+title:
+altTitle: SS64 Docs
+date: 2016-09-04 19:26:55
+useGithubLayout: false
+---
+<!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1><a href="security.html">security</a> Export/import </h1> 
+<pre>   export [-k <i>keychain</i>] [-t <i>type</i>] [-f <i>format</i>] [-w] [-p <i>format</i>] [-P <i>passphrase</i>] [-o <i>outfile</i>]
+            Export one or more items from a keychain to one of a number of external representations.  If
+            keychain isn't provided, items will be exported from the user's default keychain.
+
+   import <i>inputfile</i> [-k <i>keychain</i>] [-t <i>type</i>] [-f <i>format</i>] [-w] [-P <i>passphrase</i>] [options...]
+            Import one or more items from inputfile into a keychain. If keychain isn't provided, items will
+            be imported into the user's default keychain.
+
+            Options:
+            -k <i>keychain</i>     Specify keychain into which item(s) will be imported/exported.
+            -t <i>type</i>         Specify the type of items to import/export.
+
+                            Import types are: cert, pub, priv, session,
+                            cert, and agg. Pub, priv, and session refer to keys; agg is one of the
+                            aggregate types (pkcs12 and PEM sequence). The command can often figure out what
+                            item_type an item contains based in the filename and/or item_format.
+
+                            Export types are: certs, allKeys, pubKeys, privKeys, identities, and all.
+                            The default is all. An identity consists of both
+                            a certificate and the corresponding provate key.
+
+            -f <i>format</i>       Specify the format of the exported data. Possible formats are openssl, bsafe,
+                            raw, pkcs7, pkcs8, pkcs12, x509, openssh1, openssh2, and pemseq. The command can
+                            often figure out what format an item is in based in the filename and/or
+                            item_type.  The default is openssl if one key
+                            is being exported. The default is x509 if one certificate is being exported.
+
+            -w              Specify that private keys are wrapped and must be unwrapped on import/export.
+            -x              Specify that private keys are non-extractable after being imported.
+            -p              Specifies that PEM armour is to be applied to the exports output data.
+            -P <i>passphrase</i>   Specify the unwrapping passphrase immediately. The default is to obtain a secure
+                            passphrase via GUI.
+            -o <i>outfile</i>      Write the output data to outfile. Default is to write data to stdout.
+            -a <i>attrName attrValue</i>
+                            Specify optional extended attribute name and value. Can be used multiple times.
+                            This is only valid when importing keys.
+            -A              Allow any application to access the imported key without warning (insecure, not
+                            recommended!)
+            -T <i>appPath</i>      Specify an application which may access the imported key (multiple -T options
+                            are allowed)
+
+   Examples
+
+            security&gt; import /tmp/certs.pem -k
+
+            security&gt; import /tmp/mycerts.p12 -t agg -k newcert.keychain
+
+            security&gt; import /tmp/mycerts.p12 -f pkcs12 -k newcert.keychain
+
+            security&gt; export -k login.keychain -t certs -o /tmp/certs.pem
+
+            security&gt; export -k newcert.keychain -t identities -f pkcs12 -o /tmp/mycerts.p12
+</pre>
+<p class="quote"><i>“Security is mostly a superstition. It does not exist in nature, nor do the children of men as a whole experience it. Avoiding danger is no safer in the long run than outright exposure. Life is either a daring adventure, or nothing” ~ Helen Keller</i></p>
+<p><b>Related:</b></p>
+<p><a href="security.html">security</a> - Administer Keychains, keys, certificates and the Security framework.</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->

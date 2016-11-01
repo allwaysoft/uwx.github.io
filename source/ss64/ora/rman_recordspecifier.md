@@ -1,0 +1,58 @@
+---
+title:
+altTitle: SS64 Docs
+date: 2016-09-04 19:26:55
+useGithubLayout: false
+---
+<!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1><a href="rman.html">RMAN</a> <code>RecordSpec</code></h1>
+<p>Subclause to specify which backups or copies the CHANGE, CROSSCHECK, DELETE, and LIST commands should process.<br>
+<br>
+Syntax:</p>
+<pre>   ARCHIVELOG '<i>filename</i>' [,…] <i>primary_key</i> [,…]
+
+   BACKUPSET <i>primary_key</i> [,…]
+
+   [BACKUPPIECE | PROXY ] <i>primary_key</i> [, …] 
+       '<i>media_handle</i>' [,…] TAG ['] <i>tag_name </i>[']
+
+   [CONTROLFILECOPY | DATAFILECOPY ] '<i>filename</i>' [,…] <i>primary_key</i> [,…]
+
+   [CONTROLFILECOPY | DATAFILECOPY ] TAG ['] <i>tag_name </i>['][,…] [NODUPLICATES]
+
+   DATAFILECOPY {ALL | LIKE '<i>string_pattern</i>'} [NODUPLICATES]
+
+Key
+   ARCHIVELOG      An archived redo log by either primary key or filename.
+
+   BACKUPSET       A backup set by primary key.
+
+   BACKUPPIECE     A backup piece by media handle, primary key, or tag name.
+
+   PROXY           A proxy copy by media handle, primary key, or tag name.
+
+   CONTROLFILECOPY A control file copy by primary key, filename pattern ('filename'),
+                   or TAG tag_name. If you crosscheck a control file copy, then you must
+                   specify a filename rather than a primary key.
+
+   DATAFILECOPY    A datafile copy by primary key, filename pattern ('filename'),
+                   tag (TAG tag_name), or matching string (LIKE 'string_pattern').
+                   Specify ALL to indicate all datafile copies recorded in the RMAN repository.
+
+   NODUPLICATES    Only one copy of the control file or datafile copy specified by
+                   the rest of the clause should be the target of the operation,
+                   even when there are multiple copies.</pre>
+<p><i class="quote">“Winning takes talent; to repeat takes character” ~ John Wooden</i><br><br>
+<b>Related:</b></p>
+<p><a href="rman_change.html">CHANGE</a> - Update the status of a backup in the RMAN repository.<br>
+<a href="rman_crosscheck.html">CROSSCHECK</a> - Check whether backup items still exist.<br>
+<a href="rman_delete.html">DELETE</a> - Delete backups from disk or tape<br>
+<a href="rman_list.html">LIST</a> - List RMAN backups and copies</p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="rman_recordspecifier.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->

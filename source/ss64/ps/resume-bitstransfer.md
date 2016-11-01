@@ -1,0 +1,58 @@
+---
+title:
+altTitle: SS64 Docs
+date: 2016-09-04 19:26:55
+useGithubLayout: false
+---
+<!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Resume-BitsTransfer</h1> 
+<p>Resume a Background Intelligent Transfer Service (BITS) transfer job.</p>
+<pre>Syntax
+      Resume-BitsTransfer [-BitsJob] <i>BitsJob</i>[] [-Asynchronous]
+         [-Confirm] [-WhatIf] [<a href="common.html"><i>CommonParameters</i></a>]
+
+Key
+   -BitsJob <i>BitsJob</i>[]
+       The BITS transfer job(s) to resume.
+       Pipe a value to this parameter from other cmdlets that return BitsJob objects, such as Get-BitsTransfer.
+
+   -Asynchronous
+       Allow the BITS transfer job to be processed in the background.
+       The command prompt reappears immediately after the BITS transfer job is resumed.
+       The returned BitsJob object can be used to monitor job status and progress.
+
+   -Confirm
+       Prompt for confirmation before executing the command.
+
+   -WhatIf
+       Describe what would happen if you executed the command, without actually executing the command.
+
+   <a href="common.html">CommonParameters</a>:
+       -Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
+       -OutBuffer -OutVariable.</pre>
+<p>Resume-BitsTransfer  resumes one or more suspended BITS transfer jobs. If the BITS transfer is already in process, the cmdlet does nothing. <br>
+View the current state of a transfer job with <a href="get-bitstransfer.html">Get-BitsTransfer</a>.</p>
+<p>By default,  Resume-BitsTransfer  restarts the transfer job synchronously even if the original job was specified as an asynchronous transfer job. to restart the transfer job as an asynchronous transfer, use the -Asynchronous parameter. This behavior may be used to convert an asynchronous transfer job into a synchronous transfer job. </p>
+<p><b>Examples</b></p>
+<p>Resume all the BITS transfer jobs that are owned by the current user:</p>
+<p><span class="code">PS C:\&gt; Get-BitsTransfer | Resume-BitsTransfer</span></p>
+<p>Resume  the BITS transfer job called AppPatchesMarch:</p>
+<p><span class="code">PS C:\&gt; Get-BitsTransfer -Name AppPatchesMarch | Resume-BitsTransfer</span></p>
+<p>Create a new BITS transfer job (suspended) add a file to it, and then resume the job:</p>
+<pre>PS C:\&gt; $newJob = Start-BitsTransfer -DisplayName "SS64Job" -Suspended
+PS C:\&gt; Add-BitsTransfer -BitsJob $newJob -ClientFileName C:\demo\file1.txt -ServerFileName http://example.com/file1.txt
+PS C:\&gt; Resume-BitsTransfer -BitsJob $newJob -Asynchronous</pre>
+<p class="quote"><i>“The people when rightly and fully trusted will return the trust” ~ Abraham Lincoln</i></p>
+<p><b>Related:</b></p>
+<p><a href="complete-bitstransfer.html">Complete-BitsTransfer</a> - Complete a BITS transfer<br>
+<a href="set-bitstransfer.html">Set-BitsTransfer</a> - Configure BITS transfer jobs<br>
+<a href="bits.html">BITS PowerShell cmdlets</a></p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+

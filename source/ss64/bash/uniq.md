@@ -1,0 +1,94 @@
+---
+title:
+altTitle: SS64 Docs
+date: 2016-09-04 19:26:55
+useGithubLayout: false
+---
+<!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>uniq</h1> 
+<p>Report or filter out repeated lines in a file. <br>
+Reads standard input comparing adjacent lines, and writes a copy of each unique 
+  input line to the standard output. <br>
+The second and succeeding copies of identical 
+adjacent input lines are not written. <br>
+</p>
+<pre>Syntax
+      uniq [<i>options</i>]... [<i>InputFile</i> [<i>OutputFile</i>]]
+
+Options
+
+   -<i>N</i>
+   -f <i>N</i>
+   --skip-fields=<i>N</i>
+       Skip <i>N</i> fields on each line before checking for uniqueness.  Fields
+       are sequences of non-space non-tab characters that are separated
+       from each other by at least one spaces or tabs.
+
+   +<i>N</i>
+   -s N
+   --skip-chars=<i>N</i>
+       Skip N characters before checking for uniqueness.  If you use both
+       the field and character skipping options, fields are skipped over
+       first.
+
+   -c
+   --count
+       Print the number of times each line occurred along with the line.
+
+   -i
+   --ignore-case
+       Ignore differences in case when comparing lines.
+
+   -d
+   --repeated
+       Print only duplicate lines.
+
+   -D
+   --all-repeated
+       Print all duplicate lines and only duplicate lines.  This option
+       is useful mainly in conjunction with other options e.g., to ignore
+       case or to compare only selected fields.  This is a GNU extension.
+
+   -u
+   --unique
+       Don't output lines that are repeated in the input.
+       Print only lines that are unique in the INPUT.
+
+   -w <i>N</i>
+   --check-chars=<i>N</i>
+       Compare <i>N</i> characters on each line
+       (after skipping any specified fields and characters).
+       By default the entire rest of the lines are compared.</pre>
+<p>By default, <span class="code">uniq</span> prints the unique lines in a sorted file, it 
+discards all but one of identical successive input lines. so that the OUTPUT contains unique lines.</p>
+<p><span class="code">uniq</span> will only compare lines that appear <i>successively</i> in the input.<br>
+<br>
+Repeated lines in the input will not be 
+  detected if they are not adjacent, so it may be necessary to sort the files 
+first.<br>
+<br>
+If an InputFile of <span class="code">-</span> (or nothing) is given, then uniq will read from standard input.</p>
+<p>If no <i>OutputFile</i> file is specified, <span class="code">uniq</span> writes to standard output.</p>
+<p><b>Examples</b></p>
+<p>Print the file demo.txt ommiting any duplicate lines:</p>
+<p class="code">$ sort demo.txt | uniq</p>
+<p>Print only the unique numbers given the input 1, 1, 2, 3</p>
+<p class="code">$ printf "%s\n" 1 1 2 3 | uniq -u<br>
+2<br>
+3</p>
+<p>Count the frequency of some words:</p>
+<p class="code">echo "one two three one three" | tr -cs "A-Za-z" "\n"  | sort | uniq -c | sort -n -r</p>
+<p class="quote"><i>“The unique the complex, the extraordinary and irreplaceable Diana, whose beauty, both internal and external, will never be extinguished from our minds” ~ Earl Spencer</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="sort.html">sort</a> - Sort text files - to find unique lines <span class="code">sort -u</span> (sort unique)<br>
+<a href="tr.html">tr</a> - Translate, squeeze, and/or delete characters.</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="uniq.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+

@@ -1,0 +1,93 @@
+---
+title:
+altTitle: SS64 Docs
+date: 2016-09-04 19:26:55
+useGithubLayout: false
+---
+<!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>install</h1> 
+<p>Install binaries.<br>
+  The file(s) are copied to the target file or directory. If the destination is 
+  a directory, then the file is copied into directory with its original filename.  
+  If the target file already exists, it is either renamed to file.old if the -b 
+  option is given or overwritten if permissions allow. An alternate backup suffix 
+may be specified via the -B option's argument. </p>
+<pre>Syntax
+     install [-bCcMpSsv] [-B <i>suffix</i>] [-f <i>flags</i>]
+                [-g <i>group</i>] [-m <i>mode</i>]
+             [-o <i>owner</i>] Sourcefile1 Destinationfile2
+
+     install [-bCcMpSsv] [-B <i>suffix</i>] [-f <i>flags</i>]
+                [-g <i>group</i>] [-m <i>mode</i>]
+             [-o owner] file1 ... fileN directory
+
+     install -d [-v] [-g <i>group</i>] [-m <i>mode</i>]
+                [-o <i>owner</i>] directory ...</pre>
+<p><span class="body"> The 3 variants above install either a single SOURCE file 
+  to DEST target<br>
+  or copy multiple SOURCE files to the destination. In the last variant,<br>
+  each DIRECTORY (and any missing parent directories) is created.</span> </p>
+<pre>Options
+     -b       Back up any existing files before overwriting them by renaming
+              them to file.old.  See -B for specifying a different backup suffix.
+
+     -B <i>suffix</i>
+              Use <i>suffix</i> as the backup suffix if -b is given.
+
+     -C       Copy the file.  If the target file already exists and the files
+              are the same, then don't change the modification time of the target.
+
+     -c       Copy the file.  This is actually the default.  The -c option is
+              only included for backwards compatibility.
+
+     -d       Create directories.  Missing parent directories are created as required.
+
+     -f       Specify the target's file flags; see chflags(1) for a list of
+              possible flags and their meanings.
+
+     -g       Specify a group.  A numeric GID is allowed.
+
+     -M       Disable all use of mmap(2).
+
+     -m       Specify an alternate mode.   The default mode is set to rwxr-xr-x
+              (0755).  The specified mode can be either an octal or symbolic
+              value; see chmod(1) for a description of possible mode values.
+
+     -o       Specify an owner.  A numeric UID is allowed.
+
+     -p       Preserve the modification time.  Copy the file, as if the -C
+              (compare and copy) option is specified, except if the target file
+              doesn't already exist or is different, then preserve the modifi-
+              cation time of the file.
+
+     -S       Safe copy.   Normally, install unlinks an existing target before
+              installing the new file.  With the -S flag a temporary file is
+              used and then renamed to be the target.  The reason this is safer
+              is that if the copy or rename fails, the existing target is left
+              untouched.
+
+     -s       install exec's the command strip(1) to strip binaries so that
+              install can be portable over a large number of systems and binary
+              types.
+
+     -v       Causes install to show when -C actually installs something.</pre>
+<p>By default, install preserves all file flags, with the exception of the `nodump' flag. </p>
+<p>The install utility attempts to prevent moving a file onto itself. Installing /dev/null creates an empty file.</p>
+<p class="quote"><i>“SysAdmins can't be sued for malpractice but surgeons don't have to deal with patients who install new versions of their own innards”</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/install.1.html">install man page</a> - Apple.com<br>
+<a href="chflags.html">chflags</a> - Change a file or folder's flags.<br>
+<a href="chgrp.html">chgrp</a> - Change group ownership<br>
+<a href="chmod.html">chmod</a> - Change access permissions<br>
+<a href="cp.html">cp</a> - Copy one or more files to another location<br>
+<a href="mv.html">mv</a> - Move or rename files or directories<br>
+strip(1), mmap(2),<br>
+<a href="chown.html">chown</a> - Change file owner and group</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->

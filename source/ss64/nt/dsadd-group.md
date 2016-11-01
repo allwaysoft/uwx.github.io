@@ -1,0 +1,60 @@
+---
+title:
+altTitle: SS64 Docs
+date: 2016-09-04 19:26:55
+useGithubLayout: false
+---
+<!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1><a href="dsadd.html">DSADD</a> Group (installable option either via <abbr title="Remote Server Administrative Tools / Active Directory Domain Services"><a href="../links/windows.html">RSAT</a> /AD DS</abbr> or <a href="../links/windows.html">adminpack.msi</a>)</h1>
+<p>Add a group to active directory.</p>
+<pre>Syntax
+      DSADD Group <i>GroupDN</i> [-secgrp {yes | no}] [-scope {l | g | u}] [-samid <i>SAMName</i>]
+         [-desc <i>Description</i>] [-memberof <i>Group</i> ...] [-members <i>Member</i> ...]
+            [{-s <i>Server</i> | -d <i>Domain</i>}] [-u <i>UserName</i>] [-p {<i>Password</i> | *}]
+               [-q] [{-uc | -uco | -uci}]
+
+Key
+   <i>Group_DN</i>  Distinguished name of the group that you want to add.
+             If omitted will be taken from standard input (stdin)
+
+   -secgrp   A security group (yes) or a distribution group (no) default=Yes.
+
+   -scope    <a href="syntax-permissions.html">Domain local</a> (l), <a href="syntax-permissions.html">global</a> (g), or <a href="syntax-permissions.html">universal</a> (u) default=g.
+
+   <i>SAMName</i>   Unique SAM account name for this group
+             (By default, the dn attribute from the GroupDN.)
+
+   -memberof Add this new group to other groups.
+   -members  Members to add to this new group. 
+
+   -s <i>Server</i> Connect to a remote server/domain, default=%logonserver% domain controller.
+
+   -q        Quiet, suppress all output
+
+   -uc       Unicode format
+   -uco      Unicode format for output only
+   -uci      Unicode format for input only</pre>
+<p><b>Examples</b></p>
+<p class="code">C:\&gt; dsadd group cn=Beatles,cn=Musicians,dc=ss64,dc=com<br>
+<br>
+C:\&gt; dsadd group "cn=Rolling Stones,cn=Musicians,dc=ss64,dc=com"</p>
+<p> <i class="quote">“If he is a man of honor in one thing, he is that in all things” ~ Raymond Chandler</i><br>
+  <br>
+<b> Related:</b></p>
+<p><a href="dsadd.html">DSAdd</a> - Add object<br>
+<a href="dsmod.html">DSMod</a> - Modify object<br>
+<a href="dsget.html">DSGet</a> - Display object <br>
+<a href="dsmove.html">DSMove</a> - Move object<br>
+<a href="dsquery.html">DSQuery</a> - Search for objects <br>
+<a href="dsrm.html">DSRM</a> - Delete object<br>
+PowerShell: <a href="../ps/new-adgroup.html">New-adGroup</a> - Create an AD group. <br>
+Equivalent bash commands (Linux): <a href="../bash/groupadd.html">groupadd</a> - Add group </p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="dsadd-group.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="../index.html">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
