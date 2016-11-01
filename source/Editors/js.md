@@ -1,6 +1,7 @@
 ---
 title: JavaScript Minifier and Beautifier
 date: 2016-08-15 13:49:34
+noSidebar: true
 ---
 
 <script src="/libraries/lib/codemirror.js"></script>
