@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PowerShell - password expiry reminder email
+When connected to the domain with a Windows computer, you will normally be  warned at logon if your password is about to expire. A remotly connected (VPN/Ci">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/syntax-expiry.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PowerShell - password expiry reminder email
+When connected to the domain with a Windows computer, you will normally be  warned at logon if your password is about to expire. A remotly connected (VPN/Ci">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PowerShell - password expiry reminder email
+When connected to the domain with a Windows computer, you will normally be  warned at logon if your password is about to expire. A remotly connected (VPN/Ci">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_pssyntax.lbi" --><!-- #EndLibraryItem --><h1>PowerShell - password expiry reminder email</h1>
+<p>When connected to the domain with a Windows computer, you will normally be  warned at logon if your password is about to expire. A remotly connected (VPN/Citrix) user may never see this  warning, this can lead to unexpected password expiries that waste the time of both  remote workers and IT helpdesk staff.</p>
+<p>The script below can be run to send an HTML formatted email alert to users before their password expires. If the script is scheduled to run once per day, users whose password is due to expire in less than 5 days will get a daily reminder email.</p>
+<p> Change the values in <b>bold</b> to match your environment.</p>
+<pre># New-PasswordReminder.ps1
+<p>###################################</p>
+<h1>Get the max Password age from AD</h1>
+<p>###################################<br>
+function Get-maxPwdAge{<br>
+$root = [ADSI]“LDAP://<b>SS64domain</b>”<br>
+$filter = “(&amp;(objectcategory=domainDNS)(distinguishedName=<b>DC=example,DC=com</b>))”<br>
+$ds = New-Object system.DirectoryServices.DirectorySearcher($root,$filter)<br>
+$dc = $ds.findone()<br>
+[int64]$maxpwdage = [System.Math]::Abs( $dc.properties.item(“maxPwdAge”)[0])<br>
+$maxpwdage/864000000000<br>
+}</p>
+<p>###################################</p>
+<h1>Function to send HTML email to each user</h1>
+<p>###################################</p>
+<p>function send_email ($days_remaining, $email, $name )<br>
+{<br>
+$today = Get-Date<br>
+$today = $today.ToString(“dddd (yyy-MMMM-dd)”)<br>
+$date_expire = [DateTime]::Now.AddDays($days_remaining);<br>
+$date_expire = $date_expire.ToString(“dddd (yyy-MMMM-dd)”)<br>
+$SmtpClient = new-object system.net.mail.smtpClient<br>
+$mailmessage = New-Object system.net.mail.mailmessage<br>
+$SmtpClient.Host = “<b><a href="http://MAIL64.example.com" target="_blank" rel="external">MAIL64.example.com</a></b>”<br>
+$mailmessage.from = “IT Helpdesk &lt;<b><a href="mailto:your_email@example.com" target="_blank" rel="external">your_email@example.com</a></b>&gt;”<br>
+$mailmessage.To.add($email)<br>
+$mailmessage.Subject = “$name, Your password will expire soon.”<br>
+$mailmessage.IsBodyHtml = $true</p>
+<p>$mailmessage.Body = @&quot;<br>
+&lt;h5&gt;&lt;font face=Arial&gt;Dear $name, &lt;/font&gt;&lt;/h5&gt;<br>
+&lt;h5&gt;&lt;font face=Arial&gt;Your password will expire in &lt;font color=red&gt;&lt;strong&gt;$days_remaining&lt;/strong&gt;&lt;/font&gt; days<br>
+on &lt;strong&gt;$date_expire&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;<br>
+Your domain password is required for Computer Login, remote VPN, and Email Access.&lt;br /&lt;br /&gt;<br>
+To change your password, press CTRL-ALT-DEL and choose Change Password.&lt;br /&gt;&lt;br /&gt;<br>
+For your password to be valid it must be 8 or more characters long and&lt;br /&gt;<br>
+contain a mix of THREE of the following FOUR properties:&lt;br /&gt;&lt;br /&gt;<br>
+uppercase letters (A-Z)&lt;br /&gt;<br>
+lowercase letters (a-z)&lt;br /&gt;<br>
+numbers (0-9)&lt;br /&gt;<br>
+symbols (!“£$%^&amp;*)&lt;br /&gt;&lt;br /&gt;<br>
+If you have any questions, please contact the IT Helpdesk on <b>0000 000 000</b> &lt;br /&gt;&lt;br /&gt;<br>
+Generated on : $today&lt;br /&gt;&lt;br /&gt;<br>
+_____________ &lt;br /&gt;<br>
+&lt;br /&gt;&lt;/font&gt;&lt;/h5&gt;<br>
+”@</p>
+<p>$smtpclient.Send($mailmessage)<br>
+}</p>
+<p>###################################</p>
+<h1>Search for Non-disabled AD users that have a Password Expiry.</h1>
+<p>###################################</p>
+<p>$strFilter = “(&amp;(objectCategory=User)(logonCount&gt;=0)(!(userAccountControl:1.2.840.113556.1.4.803:=2))(!(userAccountControl:1.2.840.113556.1.4.803:=65536)))”</p>
+<p>$objDomain = New-Object System.DirectoryServices.DirectoryEntry<br>
+$objSearcher = New-Object System.DirectoryServices.DirectorySearcher<br>
+$objSearcher.SearchRoot = $objDomain<br>
+$objSearcher.PageSize = 1000<br>
+$objSearcher.Filter = $strFilter<br>
+$colResults = $objSearcher.FindAll();</p>
+<h1>how many days before PW expiry do we start sending reminder emails?</h1>
+<p>$max_alert = <b>5</b></p>
+<h1>Get the maximum password lifetime</h1>
+<p>$max_pwd_life=Get-maxPwdAge</p>
+<p>$userlist = @()<br>
+foreach ($objResult in $colResults)<br>
+{$objItem = $objResult.Properties;<br>
+if ( $objItem.mail.gettype.IsInstance -eq $True)<br>
+{<br>
+$user_name = $<a href="http://objItem.name" target="_blank" rel="external">objItem.name</a><br>
+$user_email = $objItem.email<br>
+#Transform the DateTime readable format<br>
+$user_logon = [datetime]::FromFileTime($objItem.lastlogon[0])<br>
+$result = $objItem.pwdlastset<br>
+$user_pwd_last_set = [datetime]::FromFileTime($result[0])</p>
+<pre><code>     #calculate the difference in Day from last time a password was set
+     $diff_date = [INT]([DateTime]::Now - $user_pwd_last_set).TotalDays;
+</code></pre>
+<p>$Subtracted = $max_pwd_life - $diff_date<br>
+if (($Subtracted) -le $max_alert) {<br>
+$selected_user = New-Object psobject<br>
+#$selected_user | Add-Member NoteProperty -Name “Name” -Value $<a href="http://objItem.name" target="_blank" rel="external">objItem.name</a>[0]<br>
+$selected_user | Add-Member NoteProperty -Name “Name” -Value $objItem.Item(“displayname”)<br>
+$selected_user | Add-Member NoteProperty -Name “Email” -Value $objItem.mail[0]<br>
+$selected_user | Add-Member NoteProperty -Name “LastLogon” -Value $user_logon<br>
+$selected_user | Add-Member NoteProperty -Name “LastPwdSet” -Value $user_pwd_last_set<br>
+$selected_user | Add-Member NoteProperty -Name “RemainingDays” -Value ($Subtracted)<br>
+$userlist+=$selected_user<br>
+}<br>
+}<br>
+}</p>
+<p>###################################</p>
+<h1>Send email to each user</h1>
+<p>###################################<br>
+foreach ($userItem in $userlist )<br>
+{<br>
+if ($userItem.RemainingDays -ge 0) {<br>
+send_email $userItem.RemainingDays $userItem.Email $<a href="http://userItem.Name" target="_blank" rel="external">userItem.Name</a><br>
+# send_email $userItem.RemainingDays <a href="mailto:testing@example.com" target="_blank" rel="external">testing@example.com</a> $<a href="http://userItem.Name" target="_blank" rel="external">userItem.Name</a><br>
+}<br>
+}</p>
+<h1>END</h1></pre>
+<p> Based on a script by <a href="http://my.bergersoft.net/2009/05/26/how-to-send-password-expire-alert-to-ad-users-with-powershell/" target="_blank" rel="external">Levente Veres</a><br>
+This script assumes that you have not used <a title="Fine Grained Password policies" href="http://technet.microsoft.com/en-us/library/cc770394%28WS.10%29.aspx" target="_blank" rel="external">Fine Grained Password policies </a>(Windows Server 2008), to override the Default Domain Policy.</p>
+<p>The default windows domain logon password reminder is 14 days, if you are also sending reminders by email, you may wish to reduce the logon reminder to 5 days or so, this can be  configured in the Default Domain Group Policy under <span class="code">Interactive logon: Prompt user to change password before expiration</span>.</p>
+<p class="quote"><i>“I've seen  things you people wouldn't believe. Attack ships on fire off the  shoulder of Orion. I watched c-beams glitter in the dark near the  Tannhäuser Gate. All those moments will be lost in time, like tears in  rain“ ~ <a href="http://en.wikipedia.org/wiki/Tears_in_rain_soliloquy" target="_blank" rel="external">Bladerunner</a></i></p>
+<p><b>Related:</b></p>
+<p><a href="http://www.ehloworld.com/318" target="_blank" rel="external">ehloworld.com</a> - PW expiry reminder that will handle Fine Grained password policies (PowerShell)<br>
+<a href="http://blogs.msdn.com/b/adpowershell/archive/2010/02/26/find-out-when-your-password-expires.aspx" target="_blank" rel="external">Find out when your Password Expires</a> - AD PowerShell blog - includes Fine Grained Password Policies.<br>
+<a href="http://www.sheenaustin.com/2009/06/19/active-directory-password-expiry-reminder-email/" target="_blank" rel="external">Sheen austin</a> - AD Password Expiry Reminder Email (VBScript)<br>
+<a href="http://thelowedown.wordpress.com/2008/12/04/active-directory-automated-password-expiration-warnings/" target="_blank" rel="external">Thelowedown</a> - AD Automated password expiration&nbsp;warnings (Perl)</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-expiry.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/syntax-expiry.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

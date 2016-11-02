@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-Process 
+Get  a list of processes running on a machine
+Syntax
+      Get-Process [[-name] string[]] [-ComputerName string[]]
+         [-FileVersionInfo] [-Module] [CommonParameters]
+  Get-Process &amp;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-process.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-Process 
+Get  a list of processes running on a machine
+Syntax
+      Get-Process [[-name] string[]] [-ComputerName string[]]
+         [-FileVersionInfo] [-Module] [CommonParameters]
+  Get-Process &amp;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-Process 
+Get  a list of processes running on a machine
+Syntax
+      Get-Process [[-name] string[]] [-ComputerName string[]]
+         [-FileVersionInfo] [-Module] [CommonParameters]
+  Get-Process &amp;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-Process</h1> 
+<p>Get  a list of processes running on a machine</p>
+<pre>Syntax
+      Get-Process [[<b>-name</b>] <i>string</i>[]] [-ComputerName <i>string</i>[]]
+         [-FileVersionInfo] [-Module] [<i>CommonParameters</i>]
+<pre><code>  Get-Process &lt;b&gt;-id&lt;/b&gt; &lt;i&gt;Int32&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;[]]
+     [-FileVersionInfo] [-Module] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-Process &lt;b&gt;-inputObject&lt;/b&gt; &lt;i&gt;Process&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;[]]
+     [-FileVersionInfo] [-Module] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-name<br>
+Process name(s)<br>
+Separate multiple process names with commas or use wildcard characters.<br>
+The -Name is optional.</p>
+<p>-inputObject<br>
+Accept process object(s) as input to Get-Process.<br>
+A variable, command or expression that returns the process object(s)</p>
+<p>-id <i>Int32</i><br>
+Process ID(s) (PID). Use commas to separate multiple PIDs.<br>
+To find the PID of a process, type “get-process”.</p>
+<p>-ComputerName <i>string</i>[]<br>
+Get the processes running on the specified computers.<br>
+The default is the local computer.</p>
+<pre><code>   Type the NetBIOS name, an IP address, or a fully qualified domain name
+   of one or more computers. 
+   To specify the local computer, type the computer name, a dot (.), or &quot;localhost&quot;.
+
+   This parameter does not rely on PowerShell remoting.
+</code></pre>
+<p>-FileVersionInfo<br>
+Get the file version information for the program that runs in the process.</p>
+<pre><code>   On Windows Vista and later versions of Windows, you must open PowerShell with
+   the &quot;Run as administrator&quot; option to use this parameter on processes that you do not own.
+
+   Using this parameter is equivalent to getting the MainModule.FileVersionInfo property
+   of each process object. When you use -FileVersionInfo, Get-Process returns a FileVersionInfo object
+   (System.Diagnostics.FileVersionInfo), not a process object. So in this case, you cannot pipe 
+   the output to a cmdlet that expects a process object, such as Stop-Process.
+</code></pre>
+<p>-Module<br>
+Get the modules that have been loaded by the processes.<br>
+On Windows Vista and later versions of Windows, you must open PowerShell with<br>
+the “Run as administrator” option to use this parameter on processes that you do not own.</p>
+<pre><code>   This parameter is equivalent to getting the Modules property of each process object.
+   When you use this parameter, Get-Process returns a ProcessModule object
+   (System.Diagnostics.ProcessModule), not a process object. So in this case, you cannot pipe
+   the output of the command to a cmdlet that expects a process object, such as Stop-Process.
+
+   If both -Module and -FileVersionInfo  are specified in the same command,
+   Get-Process returns a FileVersionInfo object with information about the file version of all modules.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Get-Process:<span class="code"> ps, <b>gps</b></span></p>
+<p><b>Examples</b></p>
+<p>List  all  the  processes running on the local PC: </p>
+<p class="code">PS C:&gt; get-process</p>
+<p>List all available data about  Winword and Explorer processes on this computer: </p>
+<p class="code">PS C:&gt; get-process winword, explorer | format-list *</p>
+<p>List  the available properties of process objects: </p>
+<p class="code">PS C:&gt; Get-Process | Get-Member</p>
+<p>Get the  process of the current PowerShell session: </p>
+<p class="code">PS C:&gt; Get-Process -id $pid </p>
+<p>List the top 5 processes using the most CPU time: </p>
+<p class="code">PS C:&gt; Get-Process | sort CPU | select -last 5</p>
+<p>Get all processes that have a working set greater than 20 MB: </p>
+<p class="code">PS C:&gt; get-process | where-object {$_.WorkingSet -gt 20000000}</p>
+<p>List  processes grouped by priority.: </p>
+<p class="code">PS C:&gt; $a = get-process<br>
+   PS C:&gt; get-process -inputobject $a | format-table -view priority</p>
+<p>List all processes beginning with "s", and see when each running program was last updated. (newly updated executables can be a sign of a malware infection) This is done by piping the pathname of each executable into DIR and sorting by the last write time:</p>
+<p class="code">PS C:&gt; get-process s*|where {s$_.Path} | dir | sort LastWriteTime | <br>
+format-table fullname, name,@{label="LastWriteTime";Expr={$_.LastWriteTime}</p>
+<p>Get all the processes from several machines and display the memory usage: </p>
+<pre>$procs = get-process -computername server64,server65 |sort "WorkingSet"
+foreach($proc in $procs)
+{
+   $NonPagedMem = [int]($proc.NPM/1024)
+   $WorkingSet = [int64]($proc.WorkingSet64/1024)
+   $VirtualMem = [int]($proc.VM/1MB)
+   $id= $proc.Id
+   $machine = $proc.MachineName
+   $process = $proc.ProcessName
+   $procdata = new-object psobject
+   $procdata | add-member noteproperty NonPagedMem $NonPagedMem
+   $procdata | add-member noteproperty WorkingSet $WorkingSet 
+   $procdata | add-member noteproperty machine $machine
+   $procdata | add-member noteproperty process $process
+<p>$procdata | Select-Object machine,process,WorkingSet,NonPagedMem<br>
+}</p></pre><p></p>
+<p>Note that on 64 bit systems, some processes can have a very large working set that will overflow the Int32 value producing a negative number. </p>
+<p class="quote"><i>“Life is a process of becoming, a combination of states we have to go through. Where people fail is that they wish to elect a state and remain in it. This is a kind of death” ~ Anaïs Nin</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="stop-process.html">Stop-Process</a> - Stop a running process (kill) <br>
+Equivalent bash command: <a href="../bash/ps.html">ps</a> - <span class="body">Process status</span></p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-process.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

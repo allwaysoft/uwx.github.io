@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dscacheutil 
+Directory Service  cache - Gather information, statistics, initiate queries, flush the cache.
+dscacheutil replaces most of the functionality of thelookupd tool provided prior to OS X Leop">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/dscacheutil.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="dscacheutil 
+Directory Service  cache - Gather information, statistics, initiate queries, flush the cache.
+dscacheutil replaces most of the functionality of thelookupd tool provided prior to OS X Leop">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.086Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="dscacheutil 
+Directory Service  cache - Gather information, statistics, initiate queries, flush the cache.
+dscacheutil replaces most of the functionality of thelookupd tool provided prior to OS X Leop">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>dscacheutil</h1> 
+<p>Directory Service  cache - Gather information, statistics, initiate queries, flush the cache.<br>
+dscacheutil replaces most of the functionality of the<span class="code">lookupd</span> tool provided prior to OS X Leopard.</p>
+<pre>Syntax
+<pre><code>  dscacheutil -q &lt;i&gt;category&lt;/i&gt; [-a &lt;i&gt;key value&lt;/i&gt;]
+
+  dscacheutil -cachedump [-buckets] [-entries [category]]
+
+  dscacheutil -configuration
+
+  dscacheutil -flushcache
+
+  dscacheutil -statistics
+
+  dscacheutil -h
+</code></pre>
+<p>Options</p>
+<pre><code> -h      List the options for calling dscacheutil
+
+ -q &lt;i&gt;category&lt;/i&gt;
+         Initiate a query using standard calls.  These calls will either
+         return results from the cache or go fetch live data and place
+         them in the cache.  By default if no specific query is requested
+         via -a then all results within that category will be returned.
+
+ -a key &lt;i&gt;value&lt;/i&gt;
+         Optional flag to -q for a specific key with a value.
+
+ -cachedump
+         Dump an overview of the cache by default.  Additional flags will
+         provide more detailed information.
+
+ -buckets
+         Use in conjunction with -cachedump to also print hash bucket
+         usage of the current cache.
+
+ -entries [&lt;i&gt;category&lt;/i&gt;]
+         Use in conjunction with -cachedump to dump detailed information
+         about cache entries.  An optional category can be supplied to
+         only see types of interest.
+
+ -configuration
+         Print current configuration information, such as the search pol-
+         icy from Directory Service and cache parameters.
+
+ -flushcache
+         Flush the entire cache. This should only be used in extreme cases.
+         Validation information is used within the cache along with other 
+         techniques to ensure the OS has valid information
+         available to it.
+
+ -statistics
+         Print statistics from the cache including an overview and
+         detailed call statistics.  Some calls are not cached but are
+         derived from other calls internally.  Cache hits and cache misses
+         are not always be equal to external calls.  For example getad-
+         drinfo is actually a combination of gethostbyname with other
+         calls internally to the cache to maximize cache hit rate.
+
+ Available categories and associated keys:
+
+ &lt;u&gt;group&lt;/u&gt;       name or gid
+
+ &lt;u&gt;host&lt;/u&gt;        name or ip_address (used for both IPv6 and IPv4)
+
+ &lt;u&gt;mount&lt;/u&gt;       name
+
+ &lt;u&gt;protocol&lt;/u&gt;    name or number
+
+ &lt;u&gt;rpc&lt;/u&gt;         name or number
+
+ &lt;u&gt;service&lt;/u&gt;     name or port
+
+ &lt;u&gt;user&lt;/u&gt;        name or uid
+</code></pre>
+</pre>
+<p><br><b>Examples</b><br>
+<br>
+Lookup a user:</p>
+<pre>$ dscacheutil -q user -a name jdoe
+      name: jdoe
+      password: ********
+      uid: 501
+      gid: 501
+      dir: /Users/jdoe
+      shell: /bin/csh
+      gecos: John Doe</pre>
+<p>Lookup all users:</p>
+<pre>$ dscacheutil -q user</pre>
+<p>Dump cache overview:</p>
+<pre>$ dscacheutil -cachedump</pre>
+<p>Dump cache details with user entries:</p>
+<pre>$ dscacheutil -cachedump -entries user</pre>
+<p>Flush the DNS cache (OSX Leopard)</p>
+<pre>$ sudo dscacheutil -flushcache</pre>
+<p>Flush the DNS cache (OSX Snow Leopard 10.6 or greater) The mDNSResponder will automatically restart.</p>
+<pre>$ sudo killall -HUP mDNSResponder
+</pre>
+<p> Tip: You can use an <a href="alias.html">alias</a> to save  remembering long commands:<br>
+</p>
+<pre>$ alias flushdns='sudo killall -HUP mDNSResponder'</pre>
+<p>In normal operation, there should be no need to flush DNS entries, if your ISP provided DNS is unreliable, consider using Open DNS (     <span class="code">208.67.222.222</span> and <span class="code">208.67.220.220</span>) and/or Google DNS (<span class="code">8.8.8.8</span> and <span class="code">4.4.4.4</span>) as an alternative.</p>
+<p class="quote"><i>“Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods. Wash your spirit clean” ~ John Muir</i></p><p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/dscacheutil.1.html" target="_blank" rel="external">dscacheutil man page</a> - Apple.com<br>
+<span class="code">/private/etc/hosts</span> - OS X Hosts file <br>
+<a href="hostname.html">hostname</a> - Print or set system name<br>
+dsmemberutil(1)<br>
+Windows equivalent: <a href="../nt/ipconfig.html">ipconfig </a>/ flushdns</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="dscacheutil.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/dscacheutil.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

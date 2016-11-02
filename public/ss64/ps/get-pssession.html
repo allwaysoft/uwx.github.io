@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-PSSession 
+Get the PowerShell sessions (PSSessions) in the current session.
+Syntax
+      Get-PSSession [[-ComputerName] string[]] [CommonParameters]
+  Get-PSSession [-Id] &amp;lt;i&amp;gt;Int32&amp;lt;/i&amp;gt;[">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-pssession.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-PSSession 
+Get the PowerShell sessions (PSSessions) in the current session.
+Syntax
+      Get-PSSession [[-ComputerName] string[]] [CommonParameters]
+  Get-PSSession [-Id] &amp;lt;i&amp;gt;Int32&amp;lt;/i&amp;gt;[">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-PSSession 
+Get the PowerShell sessions (PSSessions) in the current session.
+Syntax
+      Get-PSSession [[-ComputerName] string[]] [CommonParameters]
+  Get-PSSession [-Id] &amp;lt;i&amp;gt;Int32&amp;lt;/i&amp;gt;[">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-PSSession</h1> 
+<p>Get the PowerShell sessions (PSSessions) in the current session.</p>
+<pre>Syntax
+      Get-PSSession [[-ComputerName] <i>string</i>[]] [<i>CommonParameters</i>]
+<pre><code>  Get-PSSession [-Id] &lt;i&gt;Int32&lt;/i&gt;[] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-PSSession [-InstanceId &lt;i&gt;Guid&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-PSSession [-Name &lt;i&gt;string&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-ComputerName <i>string</i>[]<br>
+Get only the PSSessions that are connected to the specified computers.<br>
+Wildcards are permitted.<br>
+Type the NetBIOS name, an IP address, or a fully-qualified domain name of one or more computers.<br>
+To specify the local computer, type the computer name, “localhost”, or a dot (.).</p>
+<p>-Id <i>Int32</i>[]<br>
+Get only the PSSessions with the specified IDs. Type one or more IDs (separated by commas),<br>
+or use the <a href="syntax-operators.html#range">range</a> operator (…) to specify a range of IDs.<br>
+An ID is an integer that uniquely identifies the PSSession in the current session.<br>
+It is easier to remember and type than the InstanceId, but is unique only within the current session.<br>
+To find the ID of a PSSession, use <a href="get-pssession.html">Get-PSSession</a> without parameters.</p>
+<p>-InstanceId <i>Guid</i>[]<br>
+Get only the PSSessions with the specified instance IDs.</p>
+<pre><code>   The InstanceID is a GUID that uniquely identifies a PSSession in the current session.
+   The InstanceID is unique, even when you have multiple sessions running on a single computer.
+
+   The InstanceID is stored in the InstanceID property of the object that represents a PSSession.
+   To find the InstanceID of the PSSessions in the current session:
+      &quot;&lt;a href=&quot;get-pssession.html&quot;&gt;Get-PSSession&lt;/a&gt; | &lt;a href=&quot;format-table.html&quot;&gt;format-table&lt;/a&gt; Name, ComputerName, InstanceId&quot;.
+</code></pre>
+<p>-Name <i>string</i>[]<br>
+Get only the PSSessions with the specified friendly names.<br>
+Wildcards are permitted.<br>
+To find the names of the PSSessions in the current session, type “<a href="get-pssession.html">get-pssession</a>” without parameters.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Get-PSSession:<span class="code"> gsn</span></p>
+<p>Get-PSSession  gets the Windows PowerShell sessions (PSSessions) that were created in the current session. <br>
+<br>
+Without parameters, Get-PSSession gets all of the PSSessions created in the current session. You can use the parameters of Get-PSSession to get the sessions that are connected to particular computers, or you can identify sessions 
+by their names, IDs, or instance IDs.<br>
+<br>
+For more information about Windows PowerShell sessions, see about_PSSessions.</p>
+<p><b>Examples</b></p>
+<p>Get all of the PSSessions that were created in the current session. : </p>
+<pre>PS C:&gt; get-pssession</pre>
+<p>Get the PSSessions that are connected to the Server64 computer and save them in the $sess variable:</p>
+<pre>PS C:&gt; $sess = get-pssession -computername Server64</pre>
+<p>Save the results of a Get-PSSession command in multiple variables:<br> 
+When  PowerShell assigns the first object to the first variable, the second object to the second variable, and so on. If there are more objects than variables, it assigns all remaining objects to the last variable in the array.</p>
+<p class="code">PS C:&gt; new-pssession -computername Server64, Server65, Server66<br>
+<br>
+</p><p>PS C:&gt; $s64, $s65, $s66 = get-pssession</p><p></p>
+<p>Get a PSSession  using its instance ID, and then  delete the PSSession.:</p>
+<pre>PS C:&gt; get-pssession | format-table -property computername, InstanceID<br><br>PS C:&gt; $sess = get-pssession -InstanceID fc3e6dfb-f342-253d-7fa4-1abdfc64ae84<br><br>PS C:&gt; remove-pssession -session $sess</pre>
+<p>Get all the PSSessions that connect to computers with computer names that begin with "mail": </p>
+<pre>PS C:&gt; get-pssession -computername mail*</pre>
+<p>Get the PSSession with ID = 4: </p>
+<pre>PS C:&gt; get-pssession 4</pre>
+<p class="quote"><i>“Remove advertising, disable a person or firm from proclaiming its wares and their merits, and the whole of society and of the economy is transformed. The enemies of advertising are the enemies of freedom” - David Ogilvy (Scottish/British military intelligence officer and later top advertising executive)</i></p>
+<p><b>Related:</b></p>
+<p><a href="enter-pssession.html">Enter-PSSession</a> - Start an interactive session with a remote computer<br>
+<a href="new-pssession.html">New-PSSession</a> - Create a persistent connection to a local or remote computer<br>
+<a href="remove-pssession.html">Remove-PSSession</a> - Close PowerShell sessions</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-pssession.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-pssession.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

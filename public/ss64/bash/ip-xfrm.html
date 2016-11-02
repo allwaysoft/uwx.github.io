@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ip xfrm
+Setting xfrm. xfrm is an IP framework, which can transform format of the datagrams, i.e. encrypt the packets with some algorithm. xfrm policy and xfrm state are associated through templates TM">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ip-xfrm.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ip xfrm
+Setting xfrm. xfrm is an IP framework, which can transform format of the datagrams, i.e. encrypt the packets with some algorithm. xfrm policy and xfrm state are associated through templates TM">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:40.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ip xfrm
+Setting xfrm. xfrm is an IP framework, which can transform format of the datagrams, i.e. encrypt the packets with some algorithm. xfrm policy and xfrm state are associated through templates TM">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1><a href="ip.html">ip xfrm</a></h1>
+<p>Setting xfrm. xfrm is an IP framework, which can transform format of the datagrams, i.e. encrypt the packets with some algorithm. xfrm policy and xfrm state are associated through templates TMPL_LIST. <br>
+This framework is used as a part of IPsec protocol. </p>
+<p><span class="code">ip xfrm state add</span> - add new state into xfrm<br>
+<span class="code">ip xfrm state update</span> - update existing xfrm state<br>
+<span class="code">ip xfrm state allocspi </span>- allocate SPI value <br>
+<span class="code">ip xfrm policy add</span> - add a new policy<br>
+<span class="code">ip xfrm policy update</span> - update an existing policy<br>
+<span class="code">ip xfrm policy delete</span> - delete existing policy<br>
+<span class="code">ip xfrm policy get</span> - get existing policy<br>
+<span class="code">ip xfrm policy deleteall</span> - delete all existing xfrm policy<br>
+<span class="code">ip xfrm policy list</span> - print out the list of xfrm policy<br>
+<span class="code">ip xfrm policy flush</span> - flush policies <br>
+<span class="code">ip xfrm monitor</span> -  list all objects or a defined group of them.</p>
+<pre>Syntax
+      <b>ip xfrm</b> <i>XFRM_OBJECT</i> { <i>COMMAND</i> }
+<pre><code>     XFRM_OBJECT := { state | policy | monitor }
+
+  &lt;b&gt;ip xfrm state&lt;/b&gt; { add | update } ID [ &lt;i&gt;XFRM_OPT&lt;/i&gt; ] [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID &lt;/i&gt;] [ seq &lt;i&gt;SEQ &lt;/i&gt;] [ replay-window &lt;i&gt;SIZE&lt;/i&gt; ]
+     [ flag &lt;i&gt;FLAG-LIST&lt;/i&gt; ] [ encap &lt;i&gt;ENCAP&lt;/i&gt; ] [ sel &lt;i&gt;SELECTOR&lt;/i&gt; ] [ &lt;i&gt;LIMIT-LIST &lt;/i&gt;]
+
+  &lt;b&gt;ip xfrm state allocspi&lt;/b&gt; ID [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID&lt;/i&gt; ] [ seq &lt;i&gt;SEQ&lt;/i&gt; ] [ min &lt;i&gt;SPI&lt;/i&gt; max &lt;i&gt;SPI&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm state&lt;/b&gt; { delete | get } &lt;i&gt;ID&lt;/i&gt;
+
+  &lt;b&gt;ip xfrm state&lt;/b&gt; { deleteall | list } [ &lt;i&gt;ID&lt;/i&gt; ] [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID &lt;/i&gt;] [ flag &lt;i&gt;FLAG_LIST&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm state flush&lt;/b&gt; [ proto &lt;i&gt;XFRM_PROTO&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm state count&lt;/b&gt;
+
+     ID := [ src &lt;i&gt;ADDR&lt;/i&gt; ] [ dst &lt;i&gt;ADDR&lt;/i&gt; ] [ proto &lt;i&gt;XFRM_PROTO&lt;/i&gt; ] [ spi SPI ]
+
+     XFRM_PROTO := [ esp | ah | comp | route2 | hao ]
+
+     MODE := [ transport | tunnel | ro | beet ] (default=transport)
+
+     FLAG-LIST := [ &lt;i&gt;FLAG-LIST&lt;/i&gt; ] &lt;i&gt;FLAG&lt;/i&gt;
+
+     FLAG := [ noecn | decap-dscp | wildrecv ]
+
+     ENCAP := &lt;i&gt;ENCAP-TYPE SPORT DPORT OADDR&lt;/i&gt;
+
+     ENCAP-TYPE := espinudp | espinudp-nonike
+
+     ALGO-LIST := [ &lt;i&gt;ALGO-LIST&lt;/i&gt; ] | [ &lt;i&gt;ALGO&lt;/i&gt; ]
+
+     ALGO := &lt;i&gt;ALGO_TYPE ALGO_NAME ALGO_KEY&lt;/i&gt;
+
+     ALGO_TYPE := [ enc | auth | comp ]
+
+     SELECTOR := src &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] dst &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] [ &lt;i&gt;UPSPEC&lt;/i&gt; ] [ dev &lt;i&gt;DEV&lt;/i&gt; ]
+
+     UPSPEC := proto &lt;i&gt;PROTO&lt;/i&gt; [[ sport &lt;i&gt;PORT&lt;/i&gt; ] [ dport &lt;i&gt;PORT&lt;/i&gt; ] | [ type &lt;i&gt;NUMBER&lt;/i&gt; ] [ code &lt;i&gt;NUMBER&lt;/i&gt; ]]
+
+     LIMIT-LIST := [ &lt;i&gt;LIMIT-LIST&lt;/i&gt; ] | [ limit &lt;i&gt;LIMIT&lt;/i&gt; ]
+
+     LIMIT := [ [time-soft|time-hard|time-use-soft|time-use-hard] SECONDS ] |
+                 [ [byte-soft|byte-hard] &lt;i&gt;SIZE&lt;/i&gt; ] | [ [packet-soft|packet-hard] &lt;i&gt;COUNT&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm policy&lt;/b&gt; { add | update } dir &lt;i&gt;DIR SELECTOR&lt;/i&gt; [ index &lt;i&gt;INDEX&lt;/i&gt; ]
+                    [ ptype &lt;i&gt;PTYPE&lt;/i&gt; ] [ action &lt;i&gt;ACTION&lt;/i&gt; ] [ priority &lt;i&gt;PRIORITY&lt;/i&gt; ]
+                       [ &lt;i&gt;LIMIT-LIST&lt;/i&gt; ] [ &lt;i&gt;TMPL-LIST&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm policy&lt;/b&gt; { delete | get } dir &lt;i&gt;DIR&lt;/i&gt; [ &lt;i&gt;SELECTOR&lt;/i&gt; | index &lt;i&gt;INDEX&lt;/i&gt; ] [ ptype &lt;i&gt;PTYPE&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm policy&lt;/b&gt; { deleteall | list } [ dir &lt;i&gt;DIR&lt;/i&gt; ] [ &lt;i&gt;SELECTOR&lt;/i&gt; ] [ index &lt;i&gt;INDEX &lt;/i&gt;]
+                    [ action &lt;i&gt;ACTION &lt;/i&gt;] [ priority &lt;i&gt;PRIORITY &lt;/i&gt;]
+
+  &lt;b&gt;ip xfrm policy flush&lt;/b&gt; [ ptype &lt;i&gt;PTYPE&lt;/i&gt; ]
+
+  &lt;b&gt;ip xfrm count&lt;/b&gt;
+
+     PTYPE := [ main | sub ] (default=main)
+
+     &amp;gt;DIR := [ in | out | fwd ]
+
+     SELECTOR := src &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] dst &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] [ &lt;i&gt;UPSPEC&lt;/i&gt; ] [ dev &lt;i&gt;DEV&lt;/i&gt; ]
+
+     UPSPEC := proto &lt;i&gt;PROTO&lt;/i&gt; [ [ sport &lt;i&gt;PORT&lt;/i&gt; ] [ dport &lt;i&gt;PORT&lt;/i&gt; ] |
+                  [ type &lt;i&gt;NUMBER&lt;/i&gt; ] [ code &lt;i&gt;NUMBER&lt;/i&gt; ] ]
+
+     ACTION := [ allow | block ] (default=allow)
+
+     &amp;gt;LIMIT-LIST := [ &lt;i&gt;LIMIT-LIST&lt;/i&gt; ] | [ limit &lt;i&gt;LIMIT&lt;/i&gt; ]
+
+     LIMIT := [ [time-soft|time-hard|time-use-soft|time-use-hard] &lt;i&gt;SECONDS&lt;/i&gt; ] |
+                 [ [byte-soft|byte-hard] &lt;i&gt;SIZE&lt;/i&gt; ] | [packet-soft|packet-hard] &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     TMPL-LIST := [ &lt;i&gt;TMPL-LIST&lt;/i&gt; ] | [ tmpl &lt;i&gt;TMPL&lt;/i&gt; ]
+
+     TMPL := ID [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID&lt;/i&gt; ] [ level &lt;i&gt;LEVEL&lt;/i&gt; ]
+
+     ID := [ src &lt;i&gt;ADDR&lt;/i&gt; ] [ dst &lt;i&gt;ADDR&lt;/i&gt; ] [ proto &lt;i&gt;XFRM_PROTO&lt;/i&gt; ] [ spi &lt;i&gt;SPI&lt;/i&gt; ]
+
+     XFRM_PROTO := [ esp | ah | comp | route2 | hao ]
+
+     MODE := [ transport | tunnel | beet ] (default=transport)
+
+     LEVEL := [ required | use ] (default=required)
+
+  &lt;b&gt;ip xfrm monitor&lt;/b&gt; [ all | LISTofOBJECTS ]
+</code></pre>
+<p>Key</p></pre><p></p>
+<p> ip xfrm state add - add new state into xfrm<br>
+ip xfrm state update - update existing xfrm state<br>
+ip xfrm state allocspi - allocate SPI value<br>
+</p>
+<pre>   MODE
+      is set as default to transport, but it could be set to tunnel,ro or beet.
+   FLAG-LIST
+      contains one or more flags. 
+   FLAG
+      could be set to noecn, decap-dscp or wildrecv.
+   ENCAP
+      encapsulation is set to encapsulation type ENCAP-TYPE, source port SPORT, destination port DPORT and OADDR.
+   ENCAP-TYPE
+      could be set to espinudp or espinudp-nonike. 
+   ALGO-LIST
+      contains one or more algorithms ALGO which depend on the type of algorithm set by ALGO_TYPE. It can be used these algoritms enc, auth or comp. </pre>
+<p> ip xfrm policy add - add a new policy<br>
+ip xfrm policy update - update an existing policy
+<br>
+ip xfrm policy delete - delete existing policy
+<br>
+ip xfrm policy get - get existing policy
+<br>
+ip xfrm policy deleteall - delete all existing xfrm policy
+<br>
+ip xfrm policy list - print out the list of xfrm policy<br>
+ip xfrm policy flush - flush policies, 
+It can be flush all policies or only those specified with ptype.<br>
+</p>
+<pre>   dir <i>DIR</i>
+      directory could be one of these: inp, out or fwd. 
+   SELECTOR
+      selects for which addresses will be set up the policy. The selector is defined by source and destination address. 
+   UPSPEC
+      is defined by source port sport, destination port dport, type as number and code also number.
+   dev <i>DEV</i>
+      specify network device. 
+   index <i>INDEX</i>
+      the number of indexed policy. 
+   ptype <i>PTYPE</i>
+      type is set as default on main, could be switch on sub. 
+   action <i>ACTION</i>
+      is set as default on allow. It could be switch on block. 
+   priority <i>PRIORITY</i>
+      priority is a number. Default priority is set on zero. 
+   LIMIT-LIST
+      limits are set in seconds, bytes or numbers of packets. 
+   TMPL-LIST
+      template list is based on ID, mode, reqid and level. 
+   ID
+      is specified by source address, destination address, proto and value of spi.
+   XFRM_PROTO
+      values: esp, ah, comp, route2 or hao. 
+   MODE
+      is set as default on transport, but it could be set on tunnel or beet.
+   LEVEL
+      is set as default on required and the other choice is use.
+   UPSPEC
+      is specified by sport, dport, type and code (NUMBER). </pre>
+<p class="quote">“Some painters transform the sun into a yellow spot; others transform a yellow spot into the sun” ~ Pablo Picasso</p><p><b>Related:</b></p>
+<p><a href="ip.html">ip</a> - Routing, devices and tunnels<br>
+Equivalent Windows  command: <a href="../nt/route.html">ROUTE</a> - Manipulate network routing tables</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ip-xfrm.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ip-xfrm.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

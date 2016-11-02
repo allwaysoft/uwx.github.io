@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sudo, sudoedit - execute a command as another user  
+sudo allows a permitted user to execute a command as the superuser or another user, as specified in the sudoers file.
+Syntax
+      sudo -K | -L | -">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/sudo.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="sudo, sudoedit - execute a command as another user  
+sudo allows a permitted user to execute a command as the superuser or another user, as specified in the sudoers file.
+Syntax
+      sudo -K | -L | -">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:42.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="sudo, sudoedit - execute a command as another user  
+sudo allows a permitted user to execute a command as the superuser or another user, as specified in the sudoers file.
+Syntax
+      sudo -K | -L | -">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>sudo, sudoedit - execute a command as another user </h1> 
+<p>sudo allows a permitted user to execute a command as the superuser or another user, as specified in the sudoers file.</p>
+<pre>Syntax
+      sudo -K | -L | -V | -h | -k | -l | -v 
+<pre><code>  sudo [-HPSb] [-a &lt;i&gt;auth_type&lt;/i&gt;] [-c &lt;i&gt;class&lt;/i&gt;|-] [-p &lt;i&gt;prompt&lt;/i&gt;]
+    [-u username|#&lt;i&gt;uid&lt;/i&gt;] {-e &lt;i&gt;file&lt;/i&gt; [...] | -i | -s | &lt;i&gt;command&lt;/i&gt;}
+
+  sudoedit [-S] [-a &lt;i&gt;auth_type&lt;/i&gt;] [-p &lt;i&gt;prompt&lt;/i&gt;] [-u &lt;i&gt;username&lt;/i&gt;|#&lt;i&gt;uid&lt;/i&gt;] &lt;i&gt;file&lt;/i&gt; [...] 
+</code></pre>
+<p>Options<br>
+-H   Set the HOME environment variable to the homedir of the target user<br>
+(root by default) as specified in passwd(5). By default, sudo does<br>
+not modify HOME (see set_home and always_set_home in sudoers(5)).</p>
+<p>-K  (sure kill) like kill (-k) except that it removes the user’s timestamp<br>
+entirely. Like -k, this option does not require a password.</p>
+<p>-L   list defaults, list out the parameters that can be set in a Defaults<br>
+line along with a short description for each. This option is useful<br>
+in conjunction with grep(1).</p>
+<p>-P   Preserve group vector, causes sudo to preserve the invoking user’s<br>
+group vector unaltered. By default, sudo will initialize the group<br>
+vector to the list of groups the target user is in. The real and<br>
+effective group IDs, however, are still set to match the target user.</p>
+<p>-S   stdin, read the password from the standard input instead of the terminal.</p>
+<p>-V   Version, print the version number and exit.<br>
+If the invoking user is already root the -V option will print out a<br>
+list of the defaults sudo was compiled with as well as the machine’s<br>
+local network addresses.</p>
+<p>-a   Authentication type, use the specified authentication type when<br>
+validating the user, as allowed by /etc/login.conf. The system<br>
+administrator can specify a list of sudo-specific authentication<br>
+methods by adding an “auth-sudo” entry in /etc/login.conf.<br>
+This option is only available on systems that support BSD<br>
+authentication where sudo has been configured with the<br>
+–with-bsdauth option.</p>
+<p>-b   Background, run the given command in the background.<br>
+Note that if you use the -b option you cannot use shell<br>
+job control to manipulate the process.</p>
+<p>-c   Class, run the specified command with resources limited by<br>
+the specified login class. The class argument can be either a<br>
+class name as defined in /etc/login.conf, or a single ‘-’ character.<br>
+Specifying a class of -indicates that the command should be run<br>
+restricted by the default login capabilities for the user the<br>
+command is run as. If the class argument specifies an existing user<br>
+class, the command must be run as root, or the sudo command must be<br>
+run from a shell that is already root.<br>
+This option is only available on systems with BSD login classes<br>
+where sudo has been configured with the --with-logincap option.</p>
+<p>-e   Edit, instead of running a command, the user wishes to edit one<br>
+or more files. In lieu of a command, the string “sudoedit” is<br>
+used when consulting the sudoers file. If the user is authorized<br>
+by sudoers the following steps are taken:<br>
+1. Temporary copies are made of the files to be edited with the<br>
+owner set to the invoking user.<br>
+2. The editor specified by the VISUAL or EDITOR environment variables<br>
+is run to edit the temporary files. If neither VISUAL nor EDITOR<br>
+are set, the program listed in the editor sudoers variable is used.<br>
+3. If they have been modified, the temporary files are copied back<br>
+to their original location and the temporary versions are removed.<br>
+If the specified file does not exist, it will be created.<br>
+Note that unlike most commands run by sudo, the editor is run with the<br>
+invoking user’s environment unmodified. If, for some reason, sudo is<br>
+unable to update a file with its edited version, the user will receive<br>
+a warning and the edited copy will remain in a temporary file.</p>
+<p>-h   Help, print a usage message and exit.</p>
+<p>-i   Simulate initial login, run the shell specified in the passwd(5) entry<br>
+of the user that the command is being run as. The command name argument<br>
+given to the shell begins with a - to tell the shell to run as a login shell.<br>
+sudo attempts to change to that user’s home directory before running the shell.<br>
+It also initializes the environment, leaving TERM unchanged, setting HOME ,<br>
+SHELL , USER , LOGNAME , and PATH , and unsetting all other environment variables.<br>
+Note that because the shell to use is determined before the sudoers file is<br>
+parsed, a runas_default setting in sudoers will specify the user to run the<br>
+shell as but will not affect which shell is actually run.</p>
+<p>-k   Kill, invalidates the user’s timestamp by setting the time on it to the epoch.<br>
+The next time sudo is run a password will be required.<br>
+This option does not require a password and was added to allow a user to<br>
+revoke sudo permissions from a .logout file.</p>
+<p>-l   List, list out the allowed (and forbidden) commands for the user on the current host.</p>
+<p>-p   Prompt, allows you to override the default password prompt and use a custom one.<br>
+The following percent (’%’) escapes are supported:<br>
+%u  expanded to the invoking user’s login name<br>
+%U  expanded to the login name of the user the command will be run as (defaults to root)<br>
+%h  expanded to the local hostname without the domain name<br>
+%H  expanded to the local hostname including the domain name<br>
+(on if the machine’s hostname is fully qualified or the fqdn sudoers option is set)<br>
+%%  two consecutive % characters are collapsed into a single % character</p>
+<p>-s    Shell, runs the shell specified by the SHELL environment variable if it is<br>
+set or the shell as specified in passwd(5).</p>
+<p>-u   User, causes sudo to run the specified command as a user other than root.<br>
+To specify a uid instead of a username, use #uid.<br>
+Note that if the targetpw Defaults option is set (see sudoers(5)) it is<br>
+not possible to run commands with a uid not listed in the password database.</p>
+<p>-v   Validate, sudo will update the user’s timestamp, prompting for the user’s password<br>
+if necessary. This extends the sudo timeout for another 5 minutes (or whatever<br>
+the timeout is set to in sudoers) but does not run a command.</p>
+<p>–   Indicates that sudo should stop processing command line arguments.<br>
+It is most useful in conjunction with the -s flag. </p></pre><br>
+<h2> Return Values</h2><p></p>
+<blockquote>
+<p>Upon successful execution of a program, the return value from sudo will simply be the return value of the program that was executed.</p>
+<p>Otherwise, sudo quits with an exit value of 1 if there is a configuration/permission problem or if sudo cannot execute the given command. In the latter case the error string is printed to stderr. If sudo cannot stat(2) one or more entries in the user's PATH an error is printed on stderr. (If the directory does not exist or if it is not really a directory, the entry is ignored and no error is printed.) This should not happen under normal circumstances. The most common reason for stat(2) to return "permission denied" is if you are running an automounter and one of the directories in your PATH is on a machine that is currently unreachable. </p>
+<p>sudo utilizes the following environment variables: EDITOR, HOME, PATH,SHELL,SUDO_PROMPT, SUDO_COMMAND, SUDO_USER, SUDO_UID, SUDO_GID, SUDO_PS1, USER, VISUAL. </p>
+</blockquote>
+<h2>Files</h2>
+<blockquote>
+<p>List of who can run what<span class="code">: 
+/etc/sudoers</span> <br>
+Directory containing timestamps:<span class="code"> /var/run/sudo</span> </p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>The following examples assume suitable sudoers(5) entries.</p>
+<p>Get a file listing of an unreadable directory:</p>
+<p class="code">$ sudo ls /usr/local/protected</p>
+<p>Run the last command as root, useful when you forget to use sudo for a command. <span class="code">!!</span> grabs the last run command.</p>
+<p class="code">sudo !!</p>
+<p>List the home directory of user yazza on a machine where the file system holding ~yazza is not exported as root:</p>
+<p class="code">$ sudo -u yazza ls ~yazza</p>
+<p>Edit the index.html file as user JDoe:</p>
+<p class="code">$ sudo -u JDoe vi ~www/htdocs/index.html</p>
+<p>Shutdown a machine:</p>
+<p class="code">$ sudo shutdown -r +15 "quick reboot"</p>
+<p>Make a usage listing of the directories in the /home partition. Note that this runs the commands in a sub-shell to make the cd and file redirection work:</p>
+<p class="code">$ sudo sh -c "cd /home ; du -s * | sort -rn &gt; USAGE"</p>
+<p><i class="quote">"It was just like Romeo and Juliet, only it ended in tragedy" ~ Milhouse</i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="grep.html">grep</a> - Search file(s) for lines that match a given pattern<br>
+<a href="su.html">su</a> - Substitute user identity<br>
+stat(2)<br>
+login_cap(3)<br>
+<a href="op.html">op</a> - Operator access<br>
+sudoers(5)<br>
+<a href="passwd.html">passwd</a> - Modify a user password<br>
+visudo(8) <br>
+<a href="http://www.sudo.ws/" target="_blank" rel="external">www.sudo.ws</a> - Todd Miller, sudo maintainer<br>
+Equivalent Windows command:  <a href="../nt/runas.html">RUNAS</a> /user</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/sudo.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pr 
+Printing and pagination filter for text files.
+  When multiple input files are specified, each is read, formatted, and written 
+to standard output. 
+Syntax
+      pr [options] [file ...]
+Options
++p">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/pr.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="pr 
+Printing and pagination filter for text files.
+  When multiple input files are specified, each is read, formatted, and written 
+to standard output. 
+Syntax
+      pr [options] [file ...]
+Options
++p">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="pr 
+Printing and pagination filter for text files.
+  When multiple input files are specified, each is read, formatted, and written 
+to standard output. 
+Syntax
+      pr [options] [file ...]
+Options
++p">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>pr</h1> 
+<p>Printing and pagination filter for text files.<br>
+  When multiple input files are specified, each is read, formatted, and written 
+to standard output. </p>
+<pre>Syntax
+      pr [<i>options</i>] [<i>file</i> ...]
+<p>Options<br>
+<i>+page</i><br>
+Begin output at page number <i>page</i> of the formatted input.</p>
+<pre><code> &lt;b&gt;-&lt;/b&gt;&lt;i&gt;column&lt;/i&gt;
+ Produce output that is &lt;i&gt;columns&lt;/i&gt; wide (default is 1) that is written
+ vertically down each column in the order in which the text is
+ received from the input file.  The options &lt;b&gt;-e&lt;/b&gt; and &lt;b&gt;-i&lt;/b&gt; are assumed.
+ This option should not be used with &lt;b&gt;-m&lt;/b&gt;.  When used with &lt;b&gt;-t&lt;/b&gt;, the
+ minimum number of lines is used to display the output.
+
+ &lt;b&gt;-a&lt;/b&gt;     Modify the effect of the &lt;b&gt;-column&lt;/b&gt; option so that the columns are
+ filled across the page in a round-robin order (e.g., when column is
+ 2, the first input line heads column 1, the second heads column 2,
+ the third is the second line in column 1, etc.).  This option
+ requires the use of the &lt;b&gt;-column&lt;/b&gt; option.
+
+ &lt;b&gt;-d&lt;/b&gt;     Produce output that is double spaced. An extra &lt;i&gt;&amp;lt;newline&amp;gt;&lt;/i&gt; character
+ is output following every &amp;lt;newline&amp;gt; found in the input.
+
+ &lt;b&gt;-e&lt;/b&gt; &lt;i&gt;[char][gap]&lt;/i&gt;
+
+ Expand each input &amp;lt;tab&amp;gt; to the next greater column position speci-
+ fied by the formula &lt;i&gt;n*gap+1&lt;/i&gt;, where &lt;i&gt;n&lt;/i&gt; is an integer &amp;gt; 0.  If &lt;i&gt;gap&lt;/i&gt; is
+ zero or is omitted the default is 8.   All &lt;i&gt;&amp;lt;tab&amp;gt;&lt;/i&gt; characters in the
+ input are expanded into the appropriate number of &lt;i&gt;&amp;lt;space&amp;gt;s&lt;/i&gt;.  If any
+ nondigit character, &lt;i&gt;char&lt;/i&gt;, is specified, it is used as the input tab
+ character.
+
+ &lt;b&gt;-F&lt;/b&gt;     Use a &lt;i&gt;&amp;lt;form-feed&amp;gt;&lt;/i&gt; character for new pages, instead of the default
+ behavior that uses a sequence of &lt;i&gt;&amp;lt;newline&amp;gt;&lt;/i&gt; characters.
+
+ &lt;b&gt;-h&lt;/b&gt; &lt;i&gt;header&lt;/i&gt;
+
+ Use the string &lt;i&gt;header&lt;/i&gt; to replace the &lt;i&gt;file&lt;/i&gt; &lt;i&gt;name&lt;/i&gt; in the header line.
+
+ &lt;b&gt;-i&lt;/b&gt; &lt;i&gt;[char][gap]&lt;/i&gt;
+ In output, replace multiple &amp;lt;space&amp;gt;s with &amp;lt;tab&amp;gt;s whenever two or
+ more adjacent &amp;lt;space&amp;gt;s reach column positions &lt;i&gt;gap+1&lt;/i&gt;, &lt;i&gt;2*gap+1&lt;/i&gt;, etc.
+ If &lt;i&gt;gap&lt;/i&gt; is zero or omitted, default &lt;i&gt;&amp;lt;tab&amp;gt;&lt;/i&gt; settings at every eighth
+ column position is used.  If any nondigit character, &lt;i&gt;char&lt;/i&gt;, is spec-
+ ified, it is used as the output &lt;i&gt;&amp;lt;tab&amp;gt;&lt;/i&gt; character.
+
+ &lt;b&gt;-l&lt;/b&gt; &lt;i&gt;lines&lt;/i&gt;
+
+ Override the 66 line default and reset the page length to &lt;i&gt;lines.&lt;/i&gt; If
+ &lt;i&gt;lines&lt;/i&gt; is not greater than the sum of both the header and trailer
+ depths (in lines), the &lt;b&gt;pr&lt;/b&gt; utility suppresses output of both the
+ header and trailer, as if the &lt;b&gt;-t&lt;/b&gt; option were in effect.
+
+ &lt;b&gt;-m&lt;/b&gt;     Merge the contents of multiple files.  One line from each file
+ specified by a file operand is written side by side into text
+ columns of equal fixed widths, in terms of the number of column
+ positions.  The number of text columns depends on the number of
+ file operands successfully opened.  The maximum number of files
+ merged depends on page width and the per process open file limit.
+ The options &lt;b&gt;-e&lt;/b&gt; and &lt;b&gt;-i&lt;/b&gt; are assumed.
+
+ &lt;b&gt;-n&lt;/b&gt; &lt;i&gt;[char][width]&lt;/i&gt;
+
+ Provide &lt;i&gt;width&lt;/i&gt; digit line numbering.  The default for &lt;i&gt;width&lt;/i&gt;, if not
+ specified, is 5.  The number occupies the first &lt;i&gt;width&lt;/i&gt; column posi-
+ tions of each text column or each line of &lt;b&gt;-m&lt;/b&gt; output.   If &lt;i&gt;char&lt;/i&gt; (any
+ nondigit character) is given, it is appended to the line number to
+ separate it from whatever follows. The default for &lt;i&gt;char&lt;/i&gt; is a &lt;i&gt;&amp;lt;tab&amp;gt;&lt;/i&gt;.
+ Line numbers longer than &lt;i&gt;width&lt;/i&gt; columns are truncated.
+
+ &lt;b&gt;-o&lt;/b&gt; &lt;i&gt;offset&lt;/i&gt;
+
+ Each line of output is preceded by &lt;i&gt;offset&lt;/i&gt; &lt;i&gt;&amp;lt;spaces&amp;gt;s&lt;/i&gt;.   If the &lt;b&gt;-o&lt;/b&gt;
+ option is not specified, the default is zero.  The space taken is
+ in addition to the output line width.
+
+ &lt;b&gt;-r&lt;/b&gt;     Write no diagnostic reports on failure to open a file.
+
+ &lt;b&gt;-s&lt;/b&gt; &lt;i&gt;char&lt;/i&gt;
+
+ Separate text columns by the single character &lt;i&gt;char&lt;/i&gt; instead of by
+ the appropriate number of &lt;i&gt;&amp;lt;space&amp;gt;s&lt;/i&gt; (default for &lt;i&gt;char&lt;/i&gt; is the &lt;i&gt;&amp;lt;tab&amp;gt;&lt;/i&gt;
+ character).
+
+ &lt;b&gt;-t&lt;/b&gt;     Print neither the five-line identifying header nor the five-line
+ trailer usually supplied for each page.  Quit printing after the
+ last line of each file without spacing to the end of the page.
+
+ &lt;b&gt;-w&lt;/b&gt; &lt;i&gt;width&lt;/i&gt;
+
+ Set the width of the line to &lt;i&gt;width&lt;/i&gt; column positions for multiple
+ text-column output only.  If the &lt;b&gt;-w&lt;/b&gt; option is not specified and the
+ &lt;b&gt;-s&lt;/b&gt; option is not specified, the default width is 72.   If the &lt;b&gt;-w&lt;/b&gt;
+ option is not specified and the &lt;b&gt;-s&lt;/b&gt; option is specified, the default
+ width is 512.
+
+ &lt;i&gt;file&lt;/i&gt;  A pathname of a file to be printed.
+       If no &lt;i&gt;file&lt;/i&gt; operands are specified, or if a &lt;i&gt;file&lt;/i&gt; operand is `&lt;b&gt;-&lt;/b&gt;',
+       the standard input is used.&lt;/pre&gt;
+</code></pre>
+<p>In all the option descriptions above, column, lines, offset, page, and width are positive decimal integers and gap is a nonnegative decimal integer.<br>
+<br> The -s option does not allow the option letter to be separated from its argument, and the options -e, -i, and -n require that both arguments, if present, not be separated from the option letter.</p>
+<p> By default, the input is separated into 66-line pages, each with </p>
+<ul><li> A 5-line header with the page number, date, time, and the pathname of the file. </li>
+<li> A 5-line trailer consisting of blank lines. </li>
+</ul>
+<p>If standard output is associated with a terminal, diagnostic messages are suppressed until the pr utility has completed processing. </p>
+<p>When multiple column output is specified, text columns are of equal width. By default text columns are separated by at least one &lt;blank&gt;. Input lines that do not fit into a text column are truncated. Lines are not truncated under single column output.</p>
+<p class="quote"><i>“We photographers deal in things which are continually vanishing, and when they have vanished there is no contrivance on earth can make them come back again. We cannot develop and print a memory” ~ Henri Cartier-Bresson</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/pr.1.html" target="_blank" rel="external">pr man page</a> - Apple.com<br>
+<a href="cat.html">cat</a> - Display the contents of a file<br>
+<a href="more.html">more</a> - Display output one screen at a time <br>
+<a href="say.html">say</a> - Convert text to audible speech<br>
+<a href="textutil.html">textutil</a> - Manipulate text files in various formats</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/pr.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

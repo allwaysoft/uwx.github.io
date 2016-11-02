@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ALTER TABLE partitioning
+Change the partition properties of an existing table.
+
+Syntax:
+   ALTER TABLE [schema.]table
+      partitioning_clause
+          [PARALLEL parallel_clause]
+             [ENABL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/table_a_part.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ALTER TABLE partitioning
+Change the partition properties of an existing table.
+
+Syntax:
+   ALTER TABLE [schema.]table
+      partitioning_clause
+          [PARALLEL parallel_clause]
+             [ENABL">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:33.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ALTER TABLE partitioning
+Change the partition properties of an existing table.
+
+Syntax:
+   ALTER TABLE [schema.]table
+      partitioning_clause
+          [PARALLEL parallel_clause]
+             [ENABL">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1><a href="table_a.html">ALTER TABLE</a> partitioning</h1>
+<p>Change the partition properties of an existing table.<br>
+<br>
+Syntax:</p>
+<pre><b>   ALTER</b> <b>TABLE</b> [<i>schema</i>.]<i>table</i>
+      <i>partitioning_clause</i>
+          [PARALLEL <a href="clause_parallel.html">parallel_clause</a>]
+             [ENABLE <a href="clause_enable.html">enable_clause</a> | DISABLE <a href="clause_disable.html">disable_clause</a>]
+                 [{ENABLE|DISABLE} TABLE LOCK]
+                    [{ENABLE|DISABLE} ALL TRIGGERS];
+<p><i> partitioning_clause</i>:<br>
+<b>ADD PARTITION<a id="ADDPARTITION"></a></b> <i>partition</i>    --add Range ptn<br>
+VALUES LESS THAN (<i>value</i>, <i>value</i>, [MAXVALUE],…)  [<i>partition_description</i>]</p>
+<p><b>ADD PARTITION</b> <i>partition</i>    --add Hash ptn<br>
+<i><a href="#storage_options">storage_options</a></i><br>
+<i><a href="#extent_options">extent_options</a></i><br>
+OVERFLOW<br>
+<i><a href="#storage_options">storage_options</a></i><br>
+<i><a href="#extent_options">extent_options</a></i><br>
+COMPRESS | NOCOMPRESS<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+PARALLEL <i>int</i> | NOPARALLEL</p>
+<p><b>ADD PARTITION</b> <i>partition</i>    --add List ptn<br>
+VALUES (DEFAULT | NULL | <i>value</i> [,…])  [<i>partition_description</i>]</p>
+<p><b>COALESCE PARTITION</b> <i>partition</i><br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+PARALLEL <i>int</i> | NOPARALLEL</p>
+<p><b>DROP </b>[<b>SUB</b>]<b>PARTITION</b> <i>partition</i><br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+PARALLEL <i>int</i> | NOPARALLEL</p>
+<p><b>MODIFY PARTITION</b> <i>partition</i><br>
+<i><a href="#storage_options">storage_options</a></i><br>
+<i><a href="#extent_options">extent_options</a></i><br>
+OVERFLOW<br>
+<i><a href="#storage_options">storage_options</a></i><br>
+<i><a href="#extent_options">extent_options</a></i><br>
+COMPRESS | NOCOMPRESS<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+<b>ADD SUBPARTITION</b> <i>subpartition</i> [VALUES (DEFAULT | NULL | <i>value</i> [,…])]<br>
+TABLESPACE <i>tablespace</i><br>
+OVERFLOW [TABLESPACE <i>tablespace</i>]<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+[{UPDATE | INVALIDATE} GLOBAL INDEXES]<br>
+[PARALLEL <i>int</i> | NOPARALLEL]<br>
+<b>COALESCE SUBPARTITION</b>            – for HASH Partition<br>
+[{UPDATE | INVALIDATE} GLOBAL INDEXES]<br>
+[PARALLEL <i>int</i> | NOPARALLEL]<br>
+MAPPING TABLE UPDATE BLOCK REFERENCES<br>
+MAPPING TABLE ALLOCATE EXTENT [( [size <i>int</i> K | M ]<br>
+[DATAFILE ‘<i>filename</i>’ ] [INSTANCE <i>int</i>] )<br>
+MAPPING TABLE DEALLOCATE UNUSED [KEEP <i>int</i> K | M ]<br>
+{ADD | DROP} VALUES (<i>partition_value</i>,…)   – for List Partition<br>
+[REBUILD] UNUSABLE LOCAL INDEXES</p>
+<p><b>MODIFY DEFAULT ATTRIBUTES</b> [FOR PARTITION <i>partition</i>]<i> <a href="#storage_options">storage_options</a></i><br>
+[PCTTHRESHOLD <i>int</i>] [[NO]COMPRESS [<i>int</i>]] [<i><a href="#overflow_clause">overflow_clause</a></i>]<br>
+[LOB <i>lob_item</i> <a href="clause_lob.html">LOB_parameters</a>][VARRAY <i>varray</i> <a href="clause_lob.html">LOB_parameters</a>]</p>
+<p><b>MODIFY SUBPARTITION</b> <i>subpartion</i><br>
+ALLOCATE EXTENT [( [size <i>int</i> K | M ]<br>
+[DATAFILE ‘<i>filename</i>’ ] [INSTANCE <i>int</i>] )<br>
+DEALLOCATE UNUSED [KEEP <i>int</i> K | M ]<br>
+{ADD | DROP} VALUES (<i>partition_value</i>,…)<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+{ADD | DROP} VALUES (<i>partition_value</i>,…)   – for List Partition<br>
+[REBUILD] UNUSABLE LOCAL INDEXES</p>
+<p><b>MOVE PARTITION</b> <i>partition</i> [MAPPING TABLE]<br>
+<i>storage_options</i> [COMPRESS [<i>int</i>] | NOCOMPRESS]<br>
+OVERFLOW <i>storage_options</i><br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+SUBPARTITIONS <i>hash_subpartition_quantity</i> [STORE IN (<i>tablespace</i>,…)]<br>
+<b>(</b>SUBPARTITION <i>subpartition</i> [VALUES (DEFAULT | NULL | <i>value</i>,…)]<br>
+TABLESPACE <i>tablespace</i><br>
+OVERFLOW [TABLESPACE <i>tablespace</i>]<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a> ,SUBPARTITION…<b>)</b><br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL|PARALLEL <i>int</i>}</p>
+<p><b>MOVE SUBPARTITION</b> <i>subpartion</i> [<i>partition_description</i>]<br>
+VALUES (DEFAULT | NULL | <i>value</i> [,…])<br>
+TABLESPACE <i>tablespace</i><br>
+OVERFLOW [TABLESPACE <i>tablespace</i>]<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL|PARALLEL <i>int</i>}</p>
+<p><b>RENAME</b> [<b>SUB</b>]<b>PARTITION</b> <i>ptn_name</i> TO <i>new_name</i></p>
+<p><b>TRUNCATE</b> [<b>SUB</b>]<b>PARTITION</b> <i>ptn_name</i><br>
+{DROP|REUSE} STORAGE<br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL|PARALLEL <i>int</i>}</p>
+<p><b>SET SUBPARTITION TEMPLATE</b> (SUBPARTITION <i>subpartition</i> [VALUES (DEFAULT | NULL | <i>value</i> [,…])]<br>
+TABLESPACE <i>tablespace</i><br>
+OVERFLOW [TABLESPACE <i>tablespace</i>]<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a> )</p>
+<p><b>SET SUBPARTITION TEMPLATE</b> <i>int</i>    --hash SubPartition quantity</p>
+<p><b>SPLIT PARTITION</b> <i>ptn_name</i> AT (<i>value</i>, <i>value</i>…)<br>
+INTO (<a href="#ADDPARTITION">ptn_spec</a>, <a href="#ADDPARTITION">ptn_spec</a>)<br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL|PARALLEL <i>int</i>}</p>
+<p><b>SPLIT SUBPARTITION</b> <i>ptn_name</i> VALUES (<i>value</i>, [NULL]<i>,value</i> [,…])<br>
+INTO (<a href="#ADDPARTITION">ptn_spec</a>, <a href="#ADDPARTITION">ptn_spec</a>)<br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL|PARALLEL <i>int</i>}</p>
+<p><b>MERGE PARTITIONS</b> <i>ptn_1</i>, <i>ptn_2</i><br>
+INTO PARTITION <i>partition</i><br>
+<i><a href="#storage_options">storage_options</a></i><br>
+<i><a href="#extent_options">extent_options</a></i><br>
+OVERFLOW<br>
+<i><a href="#storage_options">storage_options</a></i><br>
+<i><a href="#extent_options">extent_options</a></i><br>
+COMPRESS | NOCOMPRESS<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+SUBPARTITIONS <i>hash_subpartition_quantity</i> [STORE IN (<i>tablespace</i> [,…])]<br>
+<b>(</b>SUBPARTITION <i>subpartition</i> [VALUES (DEFAULT | NULL | <i>value</i> [,…])]<br>
+TABLESPACE <i>tablespace</i><br>
+OVERFLOW [TABLESPACE <i>tablespace</i>]<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a> ,SUBPARTITION…<b>)</b><br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL | PARALLEL <i>int</i>}</p>
+<p><b>MERGE SUBPARTITIONS</b> <i>subptn_1</i>, <i>subptn_2</i><br>
+INTO SUBPARTITION <i>subpartition</i><br>
+VALUES LESS THAN (<i>value</i>, <i>value</i>, [MAXVALUE] [,…])<br>
+TABLESPACE <i>tablespace</i><br>
+OVERFLOW [TABLESPACE <i>tablespace</i>]<br>
+LOB (<i>LOB_item</i>) STORE AS <a href="clause_lob.html">LOB_segname</a><br>
+VARRAY <i>varray </i>STORE AS <a href="clause_lob.html">LOB_segname</a> ,SUBPARTITION…<b><br>
+</b>      {UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL | PARALLEL <i>int</i>}</p>
+<p><b>EXCHANGE</b> [<b>SUB</b>]<b>PARTITION</b> [<i>sub</i>]<i>partition </i>WITH TABLE <i>table</i><br>
+{INCLUDING|EXCLUDING} INDEXES<br>
+{WITH|WITHOUT} VALIDATION<br>
+EXCEPTIONS INTO [schema.]table<br>
+{UPDATE | INVALIDATE} GLOBAL INDEXES<br>
+{NOPARALLEL|PARALLEL <i>int</i>}</p>
+<p><i>storage_options</i><a id="storage_options"></a>:<br>
+PCTFREE int<br>
+PCTUSED int<br>
+INITTRANS int<br>
+MAXTRANS int<br>
+STORAGE <a href="clause_storage.html">storage_clause</a><br>
+TABLESPACE tablespace<br>
+{LOGGING|NOLOGGING}</p>
+<p><i>overflow_clause</i><a id="overflow_clause"></a>:</p>
+<p>OVERFLOW ALLOCATE EXTENT [( [size <i>int</i> K | M ]<br>
+[DATAFILE ‘<i>filename</i>’ ] [INSTANCE <i>int</i>] )]</p>
+<p>OVERFLOW DEALLOCATE UNUSED [KEEP <i>int</i> K | M ]</p>
+<p>ADD OVERFLOW <i>storage_options</i> [(PARTITION <i>storage_options</i> [,PARTITION <i>storage_options</i> [,…]])]</p>
+<p><i>extent_options<a id="extent_options"></a>:</i><br>
+ALLOCATE EXTENT [( [size int K | M ]<br>
+[DATAFILE ‘filename’ ] [INSTANCE int] )]</p>
+<p>DEALLOCATE UNUSED [KEEP int K | M ]</p></pre><p></p>
+<p><b> Examples</b></p>
+<pre>Add a column to a table
+   ALTER TABLE STAFF_OPTIONS
+      ADD SO_INSURANCE_PROVIDER Varchar2(35);
+<p>Add  a default value to a column<br>
+ALTER TABLE STAFF_OPTIONS<br>
+MODIFY SO_INSURANCE_PROVIDER Varchar2(35) DEFAULT ‘ABC Ins’;</p>
+<p>Add two columns to a table and remove a constraint<br>
+ALTER TABLE STAFF_OPTIONS<br>
+ADD (SO_STAFF_ID INT, SO_PENSION_ID INT)<br>
+STORAGE INITIAL 10 K<br>
+NEXT 10 K<br>
+MAXEXTENTS 121<br>
+PCTINCREASE 0<br>
+FREELISTS 2<br>
+DROP CONSTRAINT cons_SO;</p></pre><p></p>
+<p><i class="quote">"You're either part of the solution or part of the problem" ~ Eldridge Cleaver </i><b><br>
+  <br>
+  Related Commands:<br>
+  <a href="analyze.html"><br>
+  </a></b><a href="analyze.html">ANALYZE</a> TABLE COMPUTE STATISTICS<br>
+  <a href="index_a.html">ALTER INDEX</a><br>
+  <a href="view_a.html">ALTER VIEW</a><br>
+  <a href="comment.html">COMMENT</a> - Add a comment to a table or a column. <br>
+  <a href="rename.html">RENAME</a> <br>
+  <a href="../orap/DBMS_REDEFINITION.html">DBMS_REDEFINITION</a> <br>
+  <b><br>
+</b><b>Related Views:</b></p>
+<pre>  <a href="../orad/DBA_ALL_TABLES.html">DBA_ALL_TABLES</a>       <a href="../orad/ALL_ALL_TABLES.html">ALL_ALL_TABLES</a>       <a href="../orad/USER_ALL_TABLES.html">USER_ALL_TABLES</a>
+  <a href="../orad/DBA_TABLES.html">DBA_TABLES</a>           <a href="../orad/ALL_TABLES.html">ALL_TABLES</a>           <a href="../orad/USER_TABLES.html">USER_TABLES</a>         <a href="../orad/TAB.html">TAB</a>
+  <a href="../orad/DBA_TAB_COLUMNS.html">DBA_TAB_COLUMNS</a>      <a href="../orad/ALL_TAB_COLUMNS.html">ALL_TAB_COLUMNS</a>      <a href="../orad/USER_TAB_COLUMNS.html">USER_TAB_COLUMNS</a> 
+  <a href="../orad/DBA_TAB_PARTITIONS.html">DBA_TAB_PARTITIONS</a>   <a href="../orad/ALL_TAB_PARTITIONS.html">ALL_TAB_PARTITIONS</a>   <a href="../orad/USER_TAB_PARTITIONS.html">USER_TAB_PARTITIONS</a> 
+  <a href="../orad/DBA_PART_TABLES.html">DBA_PART_TABLES</a>      <a href="../orad/ALL_PART_TABLES.html">ALL_PART_TABLES</a>      <a href="../orad/USER_PART_TABLES.html">USER_PART_TABLES</a></pre><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/table_a_part.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

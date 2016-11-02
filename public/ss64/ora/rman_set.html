@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RMAN Set Clause
+Settings that apply only to the current RMAN session.
+  
+Syntax:
+   SET { set_rman_option [;] | set_run_option; }
+set_rman_option::=
+{ ECHO { ON | OFF }
+| DBID [=] integer
+| CONTROLFIL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/rman_set.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="RMAN Set Clause
+Settings that apply only to the current RMAN session.
+  
+Syntax:
+   SET { set_rman_option [;] | set_run_option; }
+set_rman_option::=
+{ ECHO { ON | OFF }
+| DBID [=] integer
+| CONTROLFIL">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:30.876Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="RMAN Set Clause
+Settings that apply only to the current RMAN session.
+  
+Syntax:
+   SET { set_rman_option [;] | set_run_option; }
+set_rman_option::=
+{ ECHO { ON | OFF }
+| DBID [=] integer
+| CONTROLFIL">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1><a href="rman.html">RMAN</a> <code>Set Clause</code></h1>
+<p>Settings that apply only to the current RMAN session.<br>
+  <br>
+Syntax:</p>
+<pre>   SET { <a href="rman_set.html#set_rman_option">set_rman_option</a> [;] | <a href="rman_set.html#set_run_option">set_run_option</a>; }
+<p>set_rman_option<a id="set_rman_option"></a>::=<br>
+{ ECHO { ON | OFF }<br>
+| DBID [=] <i>integer</i><br>
+| CONTROLFILE AUTOBACKUP FORMAT FOR DEVICE TYPE <a href="rman_devicespecifier.html">deviceSpecifier</a> TO<br>
+’frmt_string’</p>
+<p>set_run_option<a id="set_run_option"></a>::=<br>
+{ NEWNAME FOR DATAFILE <a href="rman_datafile.html">datafileSpec</a> TO { ‘<i>filename</i>’ | NEW }<br>
+| ARCHIVELOG DESTINATION TO ‘<i>log_archive_dest</i>’<br>
+| <a href="rman_untilClause.html">untilClause</a><br>
+| COMMAND ID TO ‘<i>string</i>’<br>
+| CONTROLFILE AUTOBACKUP FORMAT FOR DEVICE TYPE <a href="rman_devicespecifier.html">deviceSpecifier</a> TO<br>
+’<i>frmt_string</i>’<br>
+.<br>
+.<br>
+.<br>
+}</p></pre><p></p>
+<p>  <b>Key</b></p>
+<p>ECHO - Controls whether RMAN commands are displayed in the
+    message log. </p>
+<p>DBID - A unique 32-bit identification number computed when the
+  database is created. RMAN displays the DBID upon connection to the target database.
+You can obtain the DBID by querying <a href="../orav/V$DATABASE.html">V$DATABASE</a> or RC_DATABASE.</p>
+<p>NEWNAME FOR DATAFILE - The default name for all subsequent RESTORE
+or SWITCH commands that affect the specified datafile.</p>
+<p>MAXCORRUPT FOR DATAFILE - A limit on the number of previously
+undetected physical block corruptions that Oracle will allow in the datafile(s)</p>
+<p>AUTOLOCATE - Force RMAN to automatically discover which nodes
+  of an Oracle Real Application Clusters configuration contain the backups that
+you want to restore.</p>
+<p><b>Related Commands:</b><br>
+<br>
+<a href="rman_change.html">
+CHANGE</a> - Update the status of a backup in the RMAN repository. <a href="rman_configure.html"><br>
+CONFIGURE</a> - Persistent RMAN settings. <a href="rman_list.html"><br>
+LIST</a> - List backups and copies <a href="rman_report.html"><br>
+REPORT</a> - Report backup status: database, files, backups <a href="rman_show.html"><br>
+SHOW</a> - Display the current configuration</p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="rman_set.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/rman_set.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="GetFileInfo 
+Get the file attributes on files in an HFS+ directory..
+Syntax
+      GetFileInfo [-a attributes] [-c creator] [-d date]
+                     [-m date] [-t type] file ...
+Options
+ -a &amp;lt;i">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/getfileinfo.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="GetFileInfo 
+Get the file attributes on files in an HFS+ directory..
+Syntax
+      GetFileInfo [-a attributes] [-c creator] [-d date]
+                     [-m date] [-t type] file ...
+Options
+ -a &amp;lt;i">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="GetFileInfo 
+Get the file attributes on files in an HFS+ directory..
+Syntax
+      GetFileInfo [-a attributes] [-c creator] [-d date]
+                     [-m date] [-t type] file ...
+Options
+ -a &amp;lt;i">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>GetFileInfo</h1> 
+<p>Get the file attributes on files in an HFS+ directory..</p>
+<pre>Syntax
+      GetFileInfo [-a <i>attributes</i>] [-c <i>creator</i>] [-d <i>date</i>]
+                     [-m <i>date</i>] [-t <i>type</i>] <i>file </i>...
+<p>Options</p>
+<pre><code> -a &lt;i&gt;attributes
+  &lt;/i&gt;  Get the file attributes bits where &lt;i&gt;attributes&lt;/i&gt; is a string
+    of case sensitive letters. Each letter corresponds to a
+    file attribute: an uppercase letter indicates that the
+    attribute bit is set (1), a lowercase letter indicates
+    that it is not (0).   
+
+    A | a    Alias file
+
+    B | b    Has bundle
+
+    C | c    Custom icon (allowed on folders)
+
+    D | d    Located on the desktop (allowed on folders)
+
+    E | e    Extension is hidden (allowed on folders)
+
+    I | i    Inited - Finder is aware of this file and has
+       given it a location in a window. (allowed on
+       folders)
+
+    L | l    Locked
+
+    M | m    Shared (can run multiple times)
+
+    N | n    File has no INIT resource
+
+    S | s    System file (name locked)
+
+    T | t    &quot;Stationery Pad&quot; file
+
+    V | v    Invisible (allowed on folders)
+
+ -c &lt;i&gt;creator&lt;/i&gt;      Specifies the file's creator, where &lt;i&gt;creator&lt;/i&gt; is a string of
+    exactly four characters.
+
+ -d &lt;i&gt;date&lt;/i&gt;      Gets the creation date, where &lt;i&gt;date&lt;/i&gt; is a string of the
+    form: &quot;mm/dd/[yy]yy [hh:mm:[:ss] [AM | PM]]&quot; Notes:
+    Enclose the string in quotation marks if it contains
+    spaces. Period '.' represents the current date and time.
+    [yy]yy &amp;lt; 100 assumes 21th century, e.g.20yy.
+
+ -m &lt;i&gt;date&lt;/i&gt;      Gets the modification date where &lt;i&gt;date&lt;/i&gt; is a string of the
+    form in -d above. (mm/dd/[yy]yy [hh:mm:[:ss] [AM | PM]])
+
+ -t &lt;i&gt;type&lt;/i&gt;      Gets the file type, where &lt;i&gt;type&lt;/i&gt; is a string of exactly four
+    characters.
+</code></pre>
+<p>GetFileInfo is part of<br>
+/Developer/Tools/</p>
+<p>EXAMPLES</p>
+<pre><code> Get and print the creator for the &quot;Late Breaking News&quot; file:
+
+    GetFileInfo -c &quot;Late Breaking News&quot;
+
+ Print the modification date of &quot;myFile&quot;:
+
+    GetFileInfo -m myFile&lt;/pre&gt;
+</code></pre>
+<p><b>Return Values<br>
+  </b>0 - attributes read<br>
+  1 - syntax error <br>
+  2 - any other error </p>
+<p class="quote"><i>"The more the merrier" ~ John 
+  Heywood</i></p>
+<p><b>Related:</b></p>
+<p>
+  <a href="chflags.html">chflags</a> - Change a file or folder's flags<a href="setfile.html"><br>
+setfile</a> - Set attributes of HFS+ files<br>
+</p><p><a href="textutil.html">textutil</a> - Manipulate text files in various formats</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p></p>
+<!-- OSX300 -->
+<p><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins></p>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><p></p>
+<hr>
+<div id="bl" class="footer"><a href="getfileinfo.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/getfileinfo.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

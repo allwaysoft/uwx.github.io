@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="curl  
+Transfer data  from or to a server, using one of the  protocols: HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE. (To transfer multiple files use wget or FTP.)
+
+Syntax">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/curl.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="curl  
+Transfer data  from or to a server, using one of the  protocols: HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE. (To transfer multiple files use wget or FTP.)
+
+Syntax">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="curl  
+Transfer data  from or to a server, using one of the  protocols: HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE. (To transfer multiple files use wget or FTP.)
+
+Syntax">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>curl</h1>  
+<p>Transfer data  from or to a server, using one of the  protocols: HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE. (To transfer multiple files use wget or FTP.)<br>
+</p>
+<pre>Syntax 
+      curl [<i>options</i>] [<i>URL</i>...]
+<p>Key<br>
+<i>url</i>  One or multiple URLs that will be fetched in sequence.</p>
+<pre><code>    Multiple URLs or parts of URLs can be specified by writing part sets within braces as in:
+
+    http://site.&lt;b&gt;{&lt;/b&gt;one,two,three&lt;b&gt;}&lt;/b&gt;.com
+
+    or get sequences of alphanumeric series by using [] as in:
+
+    ftp://ftp.numericals.com/file&lt;b&gt;[&lt;/b&gt;1-100&lt;b&gt;]&lt;/b&gt;.txt
+    ftp://ftp.numericals.com/file&lt;b&gt;[&lt;/b&gt;001-100&lt;b&gt;]&lt;/b&gt;.txt (with leading zeros)
+    ftp://ftp.letters.com/file&lt;b&gt;[&lt;/b&gt;a-z&lt;b&gt;]&lt;/b&gt;.txt
+</code></pre>
+<p>-A “<i>agent string</i>”<br>
+–user-agent &quot;<i>agent string</i>&quot;<br>
+Specify the User-Agent string to send to the HTTP server.<br>
+To encode blanks in the string, surround the string with single<br>
+quote marks. This can also be set with -H, --header option. (HTTP)</p>
+<p>-b <i>name</i>=<i>data</i><br>
+–cookie <i>name</i>=<i>data<br>
+</i>        Send the data to the HTTP server as a cookie. It is supposedly the data<br>
+previously received from the server in a “Set-Cookie:” line.<br>
+The data should be in the format  “NAME1=VALUE1; NAME2=VALUE2”.</p>
+<p>-c <i>filename</i><br>
+–cookie-jar <i>file name</i><br>
+Save cookies to <i>file</i> after a completed operation.<br>
+Curl writes all cookies previously read from a specified file<br>
+as well as all cookies received from remote server(s).<br>
+If no cookies are known, no file will be written.<br>
+TO write to stdout, set the file name to a single dash,  “-”</p>
+<p>–compressed<br>
+Request a compressed response using one of the algorithms<br>
+curl supports (gzip), and save  the  uncompressed  document.<br>
+If this option  is  used  and  the server sends an unsupported encoding,<br>
+curl will report an error.(HTTP)</p>
+<p>-d @<i>file</i><br>
+-d “<i>string</i>”<br>
+–data &quot;<i>string</i>&quot;<br>
+Send the specified data in an (HTTP) POST request, in the same way that a<br>
+web browser does.<br>
+This  will pass the data using the content-type<br>
+application/x-www-form-urlencoded.  Compare to -F, --form.</p>
+<pre><code>    -d, --data is the same as  --data-ascii.  To post data in pure binary, use --data-binary.
+    To URL-encode the value of a form field you may use --data-urlencode.
+
+    Multiple date options will be merged together.
+    Thus,  using  '-d  name=daniel  -d skill=lousy' would generate a post
+    that looks like  'name=daniel&amp;amp;skill=lousy'.
+
+    If the data starts with @, the rest should be a filename containing the data.
+</code></pre>
+<p>-F <i>name</i>=@<i>file</i><br>
+-F <i>name</i>=<i>content</i><br>
+–form <i>name</i>=<i>content</i><br>
+Emulate a filled-in form in which a user has pressed the submit button.<br>
+This will POST data using the Content-Type  multipart/form-data according<br>
+to  RFC 2388.  This enables uploading of binary files etc.</p>
+<pre><code>    If the data starts with @, the rest should be a filename.
+    To just get the content part from a file, prefix the file name with the
+    symbol &amp;lt;. The difference between @ and &amp;lt;  is that  @  makes a file get
+    attached in the post as a file upload, while the &amp;lt; makes a text field
+    and gets the contents for that text field from a file.
+
+    Example, to send your password file to the server, where 'password' is
+    the name of the form-field to which /etc/passwd will be the input:
+
+    curl -F password=@/etc/passwd www.mypasswords.com
+</code></pre>
+<p>-k<br>
+–insecure<br>
+This option explicitly allows curl to  perform  “insecure” SSL connections<br>
+and transfers. All SSL connections are attempted in secure mode using the<br>
+CA certificate  bundle  installed by  default. This  makes  all connections<br>
+considered “insecure” fail unless -k, --insecure is used.(SSL)</p>
+<p>–limit-rate <i>speed</i><br>
+Specify the maximum transfer rate.  This feature is useful if you have a<br>
+limited pipe and you’d like your transfer not to use your entire bandwidth.</p>
+<pre><code>    The given speed is measured in bytes/second, unless a suffix  is appended.
+    Appending 'k' or 'K' will count the number as kilobytes/sec, 'm' or M' megabytes,
+    while 'g' or 'G' makes it gigabytes/sec. Eg: 200K, 3m, 1G.
+</code></pre>
+<p>-m <i>seconds</i><br>
+–max-time <i>seconds</i><br>
+Maximum time that you allow the whole operation to take.<br>
+This is useful for preventing your batch jobs from  hanging for hours due to<br>
+slow networks or links going down.  See also the --connect-timeout option.</p>
+<p>-o <i>file</i><br>
+–output <i>file</i><br>
+Write output to <i>file</i> instead of stdout. If you are using {} or [] to fetch<br>
+multiple documents, you can use ‘#’ followed by a number  in  the <i>file</i> specifier.<br>
+That variable will be replaced with the current string for the URL being fetched.<br>
+Like in:<br>
+curl http://{one,two}.site.com -o &quot;file_#1.txt&quot;<br>
+or use several variables like:<br>
+curl http://{site,host}.host[1-5].com -o &quot;#1_#2&quot;<br>
+You may use this option as many times as the number of URLs you have.</p>
+<pre><code>    See also --create-dirs option to create the local directories dynamically.
+    Specify '-' to force the output to stdout.   
+</code></pre>
+<p>-O<br>
+–remote-name<br>
+Write output to a local file named like the remote file we get.<br>
+(Only the file part of the remote file is used, the path is cut off.)<br>
+The  remote file name to use for saving is extracted from the given URL, nothing else.<br>
+Consequentially, the file will be saved in the  current  working directory.</p>
+<p>-s<br>
+–silent<br>
+Silent or quiet mode. Don’t show progress meter or error messages.</p>
+<p>–trace-ascii <i>file</i><br>
+Enable a full trace dump of all  incoming  and  outgoing  data, including<br>
+descriptive information, to the given output file.<br>
+Use “-” as filename to have the output sent to stdout.<br>
+This option overrides previous uses of -v, --verbose or --trace-ascii.<br>
+If this option is used several times, the last one will be used.</p>
+<p>-T <i>file</i><br>
+–upload-file <i>file</i><br>
+Transfer the specified local file to the remote  URL.  PUT<br>
+If there is no file part in the specified URL, Curl will append the local<br>
+file name. You must use a trailing / on the last directory to really prove<br>
+to Curl that there is no file name or curl will think that the last<br>
+directory name is the remote file name to use.<br>
+Use the file name “-” to use stdin</p>
+<pre><code>    You can specify one -T for each URL on the command line. Each -T
+    + URL pair specifies what to upload and to where. curl also supports &quot;globbing&quot;
+    of the -T argument, meaning that you can upload multiple files to a single URL
+    like this:
+
+    curl -T &quot;{file1,file2}&quot; http://www.uploadtothissite.com
+    or even
+    curl -T &quot;img[1-1000].png&quot; ftp://ftp.picturemania.com/upload/
+</code></pre>
+<p>-I<br>
+–head<br>
+Fetch the HTTP-header only! (HTTP/FTP/FILE)<br>
+HTTP-servers feature the  command  HEAD which this uses to get nothing but<br>
+the header of a document. When used on an FTP or <i>FILE</i> file, curl displays<br>
+the file size and last modification time only.</p>
+<p>-u <i>user</i>:<i>password</i><br>
+–user <i>user</i>:<i>password</i><br>
+The username and password to use for server authentication.<br>
+Overrides -n, --netrc and --netrc-optional.</p>
+<pre><code>    If you just give the user name (without entering a  colon) curl will prompt
+    for a password.
+
+    If you use an SSPI-enabled curl binary and do NTLM authentication, you can
+    force curl to pick up the username and password from your environment by
+    specifying a single colon with this option: &quot;-u :&quot;.
+
+    If this option is used several times, the last one will be used.
+</code></pre>
+<p>-w<br>
+–write-out <i>format</i><br>
+Define extra info to display on stdout after a completed and successful operation.<br>
+The <i>format</i> is a string that may contain plain text mixed with any<br>
+number of variables. The <i>format</i> string can be specified  as “<i>string</i>”, or to<br>
+read from a file specify  &quot;@filename&quot;<br>
+to read the format from stdin use “@-”.</p>
+<pre><code>    Various variables may be included in the format and will be substituted by
+    curl (file size, ip address etc see man curl for details).
+    variables are specified as %{&lt;i&gt;variable_name&lt;/i&gt;} 
+
+    Output a newline using \n, a carriage return with \r and a tab space with \t.
+</code></pre>
+<p>-x <i>host</i>:<i>port</i><br>
+-x  [<i>protocol</i>://][<i>user</i>:<i>password</i>@]<i>proxyhost</i>[:<i>port</i>]<br>
+–proxy [<i>protocol</i>://][<i>user</i>:<i>password</i>@]<i>proxyhost</i>[:<i>port</i>]<br>
+Use the  specified HTTP proxy.<br>
+If the port number is not specified, it is assumed at port 1080.</p>
+<p>-H “<i>name</i>: <i>value</i>”<br>
+–header &quot;<i>name</i>: <i>value</i>&quot;<br>
+Add Header when getting a web page.<br>
+You may specify any number of extra headers.</p>
+<p>-H “<i>name</i>:”<br>
+–header &quot;<i>name</i>:&quot;<br>
+Remove Header, remove an internal header.</p>
+<p>-L<br>
+–location<br>
+Follow redirects if the server reports that the requested page has moved<br>
+(indicated with a Location: header and a 3XX response code)</p>
+<p>-v<br>
+–verbose<br>
+Make more verbose/talkative. Mostly useful for debugging.</p></pre><p></p>
+<p>This page is a heavily abbreviated selection of the full options, for more detail including return codes, run <span class="code">man curl</span><br>
+<br>
+curl is a powerful tool, please use it <a href="http://stackoverflow.com/questions/13314123/curl-and-ddos-problems" target="_blank" rel="external">responsibly</a>.</p>
+<p>The return status is zero if no errors occur, non-zero otherwise.</p>
+<p><b>Examples</b><br>
+<br> 
+Retrieve a web page and display in the terminal,  use  --include (-i) option to also display header information:</p>
+<p><span class="code">$ curl http://ss64.com<br>
+$ curl http://ss64.com -i</span><br>
+<br>
+ Retrieve a web page and save to a file<br>
+<span class="code">$ curl http://ss64.com/bash/ -o ss64.html</span><br>
+<br> 
+Retrieve a web page, or its redirected target:<br>
+<span class="code">$ curl ss64.co/bash/ <br>
+$ curl ss64.co/bash/ --location</span></p>
+<p>Limit the rate of data transfer to 1 Kilobytes/sec:<br>
+<span class="code">$ curl http://ss64.com/bash/ --limit-rate 1k -o ss64.html</span></p>
+<p>Download via a proxy server:<br>
+<span class="code">$ curl -x proxy.example.com:3128 http://ss64.com/bash/</span><br>
+</p>
+<p><i class="quote">"We are shallow because we have become enslaved by gross materialism, the glitter of gold and its equivalents, for which reason we think that only the material goods of this earth can satisfy us and we must therefore grab as much as can while we are able" ~ F. Sionil Jose</i><br>
+<br>
+<b> Related:</b><br>
+<br>
+<a href="http://curl.haxx.se/" target="_blank" rel="external">curl home page</a><br>
+<a href="ftp.html">ftp</a> - File Transfer Protocol<br>
+</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/curl.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

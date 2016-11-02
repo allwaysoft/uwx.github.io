@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dig - query options 
+ dig provides a number of query options which affect the way in which lookups are made and the results displayed. Some of these set or reset flag bits in the query header, some de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/dig-queryopt.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="dig - query options 
+ dig provides a number of query options which affect the way in which lookups are made and the results displayed. Some of these set or reset flag bits in the query header, some de">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.081Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="dig - query options 
+ dig provides a number of query options which affect the way in which lookups are made and the results displayed. Some of these set or reset flag bits in the query header, some de">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>dig - query options</h1> 
+<p> dig provides a number of query options which affect the way in which lookups are made and the results displayed. Some of these set or reset flag bits in the query header, some determine which sections of the answer get printed, and others determine the timeout and retry strategies. </p>
+<p> Each query option is identified by a keyword preceded by a plus sign (+). </p>
+<p>Some keywords set or reset an option. These can be preceded by the string <b>no</b> to negate the meaning of that keyword. </p>
+<p>Other keywords assign values to options like the timeout interval. They have the form +keyword=value. </p>
+<pre> +[no]tcp
+     Use [do not use] TCP when querying name servers. The default
+     behavior is to use UDP unless an AXFR or IXFR query is requested,
+     in which case a TCP connection is used.
+<p>+[no]vc<br>
+Use [do not use] TCP when querying name servers. This alternate<br>
+syntax to +[no]tcp is provided for backwards compatibility. The<br>
+&quot;vc&quot; stands for “virtual circuit”.</p>
+<p>+[no]ignore<br>
+Ignore truncation in UDP responses instead of retrying with TCP. By<br>
+default, TCP retries are performed.</p>
+<p>+domain=somename<br>
+Set the search list to contain the single domain somename, as if<br>
+specified in a domain directive in /etc/resolv.conf, and enable<br>
+search list processing as if the +search option were given.</p>
+<p>+[no]search<br>
+Use [do not use] the search list defined by the searchlist or<br>
+domain directive in resolv.conf (if any). The search list is not<br>
+used by default.</p>
+<p>+[no]showsearch<br>
+Perform [do not perform] a search showing intermediate results.</p>
+<p>+[no]defname<br>
+Deprecated, treated as a synonym for +[no]search</p>
+<p>+[no]aaonly<br>
+Sets the “aa” flag in the query.</p>
+<p>+[no]aaflag<br>
+A synonym for +[no]aaonly.</p>
+<p>+[no]adflag<br>
+Set [do not set] the AD (authentic data) bit in the query. This<br>
+requests the server to return whether all of the answer and<br>
+authority sections have all been validated as secure according to<br>
+the security policy of the server. AD=1 indicates that all records<br>
+have been validated as secure and the answer is not from a OPT-OUT<br>
+range. AD=0 indicate that some part of the answer was insecure or<br>
+not validated.</p>
+<p>+[no]cdflag<br>
+Set [do not set] the CD (checking disabled) bit in the query. This<br>
+requests the server to not perform DNSSEC validation of responses.</p>
+<p>+[no]cl<br>
+Display [do not display] the CLASS when printing the record.</p>
+<p>+[no]ttlid<br>
+Display [do not display] the TTL when printing the record.</p>
+<p>+[no]recurse<br>
+Toggle the setting of the RD (recursion desired) bit in the query.<br>
+This bit is set by default, which means dig normally sends<br>
+recursive queries. Recursion is automatically disabled when the<br>
++nssearch or +trace query options are used.</p>
+<p>+[no]nssearch<br>
+When this option is set, dig attempts to find the authoritative<br>
+name servers for the zone containing the name being looked up and<br>
+display the SOA record that each name server has for the zone.</p>
+<p>+[no]trace<br>
+Toggle tracing of the delegation path from the root name servers<br>
+for the name being looked up. Tracing is disabled by default. When<br>
+tracing is enabled, dig makes iterative queries to resolve the name<br>
+being looked up. It will follow referrals from the root servers,<br>
+showing the answer from each server that was used to resolve the<br>
+lookup.</p>
+<p>+[no]cmd<br>
+Toggles the printing of the initial comment in the output<br>
+identifying the version of dig and the query options that have been<br>
+applied. This comment is printed by default.</p>
+<p>+[no]short<br>
+Provide a terse answer. The default is to print the answer in a<br>
+verbose form.</p>
+<p>+[no]identify<br>
+Show [or do not show] the IP address and port number that supplied<br>
+the answer when the +short option is enabled. If short form answers<br>
+are requested, the default is not to show the source address and<br>
+port number of the server that provided the answer.</p>
+<p>+[no]comments<br>
+Toggle the display of comment lines in the output. The default is<br>
+to print comments.</p>
+<p>+[no]stats<br>
+This query option toggles the printing of statistics: when the<br>
+query was made, the size of the reply and so on. The default<br>
+behavior is to print the query statistics.</p>
+<p>+[no]qr<br>
+Print [do not print] the query as it is sent. By default, the query<br>
+is not printed.</p>
+<p>+[no]question<br>
+Print [do not print] the question section of a query when an answer<br>
+is returned. The default is to print the question section as a<br>
+comment.</p>
+<p>+[no]answer<br>
+Display [do not display] the answer section of a reply. The default<br>
+is to display it.</p>
+<p>+[no]authority<br>
+Display [do not display] the authority section of a reply. The<br>
+default is to display it.</p>
+<p>+[no]additional<br>
+Display [do not display] the additional section of a reply. The<br>
+default is to display it.</p>
+<p>+[no]all<br>
+Set or clear all display flags.</p>
+<p>+time=T<br>
+Sets the timeout for a query to T seconds. The default timeout is 5<br>
+seconds. An attempt to set T to less than 1 will result in a query<br>
+timeout of 1 second being applied.</p>
+<p>+tries=T<br>
+Sets the number of times to try UDP queries to server to T instead<br>
+of the default, 3. If T is less than or equal to zero, the number<br>
+of tries is silently rounded up to 1.</p>
+<p>+retry=T<br>
+Sets the number of times to retry UDP queries to server to T<br>
+instead of the default, 2. Unlike +tries, this does not include the<br>
+initial query.</p>
+<p>+ndots=D<br>
+Set the number of dots that have to appear in name to D for it to<br>
+be considered absolute. The default value is that defined using the<br>
+ndots statement in /etc/resolv.conf, or 1 if no ndots statement is<br>
+present. Names with fewer dots are interpreted as relative names<br>
+and will be searched for in the domains listed in the search or<br>
+domain directive in /etc/resolv.conf.</p>
+<p>+bufsize=B<br>
+Set the UDP message buffer size advertised using EDNS0 to B bytes.<br>
+The maximum and minimum sizes of this buffer are 65535 and 0<br>
+respectively. Values outside this range are rounded up or down<br>
+appropriately. Values other than zero will cause a EDNS query to be<br>
+sent.</p>
+<p>+edns=#<br>
+Specify the EDNS version to query with. Valid values are 0 to 255.<br>
+Setting the EDNS version will cause a EDNS query to be sent.<br>
++noedns clears the remembered EDNS version.</p>
+<p>+[no]multiline<br>
+Print records like the SOA records in a verbose multi-line format<br>
+with human-readable comments. The default is to print each record<br>
+on a single line, to facilitate machine parsing of the dig output.</p>
+<p>+[no]fail<br>
+Do not try the next server if you receive a SERVFAIL. The default<br>
+is to not try the next server which is the reverse of normal stub<br>
+resolver behavior.</p>
+<p>+[no]besteffort<br>
+Attempt to display the contents of messages which are malformed.<br>
+The default is to not display malformed answers.</p>
+<p>+[no]dnssec<br>
+Requests DNSSEC records be sent by setting the DNSSEC OK bit (DO)<br>
+in the OPT record in the additional section of the query.</p>
+<p>+[no]sigchase<br>
+Chase DNSSEC signature chains. Requires dig be compiled with<br>
+-DDIG_SIGCHASE.</p>
+<p>+trusted-key=####<br>
+Specifies a file containing trusted keys to be used with +sigchase.<br>
+Each DNSKEY record must be on its own line.</p>
+<pre><code> If not specified, dig will look for /etc/trusted-key.key then
+ trusted-key.key in the current directory.
+
+ Requires dig be compiled with -DDIG_SIGCHASE.
+</code></pre>
+<p>+[no]topdown<br>
+When chasing DNSSEC signature chains perform a top-down validation.<br>
+Requires dig be compiled with -DDIG_SIGCHASE.</p>
+<p>+[no]nsid<br>
+Include an EDNS name server ID request when sending a query.</p></pre><p></p>
+<p class="quote"><i> "A prediction is worth twenty explanations" - K. Brecher</i></p>
+<p><b>Related:</b></p>
+<p><a href="dig.html">dig main page </a></p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/dig-queryopt.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

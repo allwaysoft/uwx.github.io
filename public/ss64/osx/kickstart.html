@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="kickstart 
+/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources
+Quickly uninstall, install, activate, configure, and/or restart
+components of Apple Remote Desktop without a re">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/kickstart.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="kickstart 
+/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources
+Quickly uninstall, install, activate, configure, and/or restart
+components of Apple Remote Desktop without a re">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="kickstart 
+/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources
+Quickly uninstall, install, activate, configure, and/or restart
+components of Apple Remote Desktop without a re">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>kickstart</h1> 
+<p>/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources</p>
+<p>Quickly uninstall, install, activate, configure, and/or restart
+components of Apple Remote Desktop without a reboot.</p>
+<pre>Syntax
+      kickstart <i>option(s)</i></pre>
+<p>The 7 'top level' features can be selected independently, but will always be done in the order: uninstall, install, deactivate, activate, configure, stop, restart.</p>
+<pre>Options:
+<p>-uninstall           ## Enable the “uninstall” options<br>
+-uninstall -files    ## Uninstall all ARD-related files<br>
+-uninstall -settings ## Remove access privileges in System Preferences<br>
+-uninstall -prefs    ## Remove Remote Desktop administrator preferences</p>
+<p>-install -package <i>path</i> ##  Specify the path to an installer package to run</p>
+<p>-deactivate            ## Deactivate ARD agent in Sys Prefs to run at startup<br>
+-activate              ## Activate ARD agent in Sys Prefs to run at startup</p>
+<p>-configure -users <i>user1,user2…</i>.  ## Specify users to set privs or access (default is all users)</p>
+<p>-configure -access -on             ## Grant access<br>
+-configure -access -off            ## Deny access</p>
+<p>-configure -privs -all             ## Grant all privileges (default)<br>
+-configure -privs -none            ## Disable all privileges for specified user<br>
+-configure -privs -DeleteFiles<br>
+-configure -privs -ControlObserve  ## Control AND observe (unless ObserveOnly is also specified)<br>
+-configure -privs -TextMessages    ## Send a text message<br>
+-configure -privs -ShowObserve     ## Show client when being observed or controlled<br>
+-configure -privs -OpenQuitApps    ## Open and quit applications<br>
+-configure -privs -GenerateReports ## Generate reports (and search hard drive)<br>
+-configure -privs -RestartShutDown<br>
+-configure -privs -SendFiles       ## Send <em>and/or</em> retrieve files<br>
+-configure -privs -ChangeSettings  ## Change system settings<br>
+-configure -privs -ObserveOnly     ## Modify ControlObserve option to allow Observe mode only<br>
+-configure -privs -mask <i>mask_no </i>   ## Specify “naprivs” mask numerically instead (advanced)</p>
+<p>-configure -allowAccessFor -allUsers [-privs <i>priv_options</i>]  ## Grant access to all local users<br>
+-configure -allowAccessFor -specifiedUsers           ## Only grant access to users with privileges</p>
+<p>-configure -computerinfo -set1 -1 <i>text</i>  ## Specify all four computer info fields (default for each is empty)<br>
+-configure -computerinfo -set2 -2 <i>text</i><br>
+-configure -computerinfo -set3 -3 <i>text</i><br>
+-configure -computerinfo -set4 -4 <i>text</i></p>
+<p>-configure -clientopts -setmenuextra -menuextra  yes        ## Set whether menu extra appears in menu bar<br>
+-configure -clientopts -setdirlogins -dirlogins  yes        ## Set whether directory logins are allowed<br>
+-configure -clientopts -setdirgroups -dirgroups  grp1,grp2  ## Set directory groups allowed<br>
+-configure -clientopts -setreqperm   -reqperm    yes|no     ## Allow VNC guests to request permission<br>
+-configure -clientopts -setvnclegacy -vnclegacy  yes|no     ## Allow VNC Legacy password mode<br>
+-configure -clientopts -setvncpw     -vncpw      mynewpw    ## Set VNC Legacy PW<br>
+-configure -clientopts -setwbem      -wbem       yes|no     ## Allow incoming WBEM requests over IP</p>
+<p>-stop              ## Stop the agent and/or console program (N/A if targetdisk is not /)</p>
+<p>-restart           ## Enable the “restart” options: (N/A if targetdisk is not /)<br>
+-restart -agent    ## Restart the ARD Agent and helper<br>
+-restart -console  ## Restart the console application<br>
+-restart -menu     ## Restart the menu extra</p>
+<p>-targetdisk <i>mountpoint</i> ## Disk on which to operate, specified as a mountpoint in<br>
+## the current filesystem.  Defaults to the current boot volume: “/”.<br>
+## NOTE: Disables the -restart options (does not affect currently<br>
+## running processes).</p>
+<p>-verbose    ## Print (non-localizable) output from installer tool (if used)<br>
+-quiet      ## No feedback; just run.<br>
+-help       ## Show verbose documentation</p>
+</pre>
+<p> 
+The default location of kickstart is shown at the top of this page, copy it to any location you prefer (e.g. /usr/bin/local/)<br>Use kickstart at your own risk.  Read and understand the help first!<br>
+Log in as an administrator (you must have sudo privileges)<br>
+Avoid running multiple instances of kickstart at the same time.<br>
+kickstart will start and stop Apple Remote Desktop (ARD) components: Agent &amp; daemons as needed.<br>
+kickstart can be used to grant very permissive incoming access permissions. Do not use the -activate and -configure features unless you know exactly what you're doing. </p>
+<p>Standard Apple Remote Desktop groups:</p>
+<p class="code">ard_admin<br>
+ard_manage<br>
+ard_interact<br>
+ard_reports</p>
+<p>ard_admin is equivalent to ard_manage + ard_interact </p>
+<p>On many versions of OSX you will need to create ard_admin as
+a <b>local</b> group, you will then be able  to nest any Active Directory  group in
+the local ard_admin group.</p>
+<p><b>Examples</b></p>
+<p>- Uninstall program files (but not preferences and settings), install the given package, and then restart the service.<br>  
+<span class="code">kickstart -uninstall -files -install -package RD_Admin_Install.pkg -restart -console</span><br>
+<br>
+- Install the given package and then restart the ARD agent.<br>  
+<span class="code">kickstart -install -package RD_Client_Install.pkg -restart -agent</span><br>
+<br>
+- On 10.4 and earlier, stop the Remote Management service but, if activated, it will start after the next computer restart.<br>
+- On 10.5 and later, use kickstart -deactivate instead.<br>  
+<span class="code">kickstart -stop</span><br>
+<br>
+- Stop the Remote Management service and deactivate it so it will not start after the next computer restart.<br>  
+<span class="code">kickstart -deactivate -stop</span> <br>
+<br>
+- Restart the agent.<br>  
+<span class="code">kickstart -restart -agent -console</span><br>
+<br>
+- Activate the Remote Management service and then restart the agent.<br>  
+<span class="code">kickstart -activate -restart -agent -console</span><br>
+<br>
+- Activate the Remote Management service, enable access, and restart the agent.<br>  
+<span class="code">kickstart -activate -configure -access -on -restart -agent</span><br>
+<br>
+- Disable user access.<br>  
+<span class="code">kickstart -configure -access -off</span><br>
+<br>
+- Give admin and bob all access.<br>  
+<span class="code">kickstart -configure -access -on -privs -all -users admin,bob</span><br>
+<br>
+- Use Directory Server accounts for authentication. Users must be a member of one of the directory<br>
+- groups to authenticate.<br>  
+<span class="code">kickstart -configure -clientopts -setdirlogins -dirlogins yes -setdirgroups -dirgroups ardadmin,ardcontrol</span><br>
+<br>
+- Disable the Remote Management menu extra.<br>  
+<span class="code">kickstart -configure -clientopts -setmenuextra -menuextra no</span><br>
+<br>
+The following examples are only for Mac OS X 10.5 and later.<br>
+<br>
+- Allow access for only these users (the users must be specified in a separate command).<br>  
+<span class="code">kickstart -configure -allowAccessFor -specifiedUsers</span><br>
+<br>
+- Allow access for all users and give all users full access.<br>  
+<span class="code">kickstart -configure -allowAccessFor -allUsers -privs -all</span><br>
+<br>
+- Start the Remote Management service.<br>  
+<span class="code">kickstart -activate</span></p>
+<p class="quote"><i>“And I thought how unpleasant it is to be locked out; and I thought how it is worse, perhaps, to be locked in” ~ Virginia Woolf</i></p>
+<p><b>Related:</b></p>
+<p><a href="screen.html">screen</a> - Multiplex terminal, run remote shells via ssh<br>
+<a href="http://docs.info.apple.com/article.html?path=RemoteDesktop/3.0/en/ARDC56.html" target="_blank" rel="external">Enabling Directory Services Group Authorization</a> </p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="kickstart.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/kickstart.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

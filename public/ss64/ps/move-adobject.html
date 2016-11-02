@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Move-ADObject 
+Move an AD object or a container of objects to a different container or domain.
+Syntax
+      Move-ADObject [-Identity] ADObject [-TargetPath] string 
+         [-AuthType {Negotiate | Ba">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/move-adobject.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Move-ADObject 
+Move an AD object or a container of objects to a different container or domain.
+Syntax
+      Move-ADObject [-Identity] ADObject [-TargetPath] string 
+         [-AuthType {Negotiate | Ba">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.033Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Move-ADObject 
+Move an AD object or a container of objects to a different container or domain.
+Syntax
+      Move-ADObject [-Identity] ADObject [-TargetPath] string 
+         [-AuthType {Negotiate | Ba">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Move-ADObject</h1> 
+<p>Move an AD object or a container of objects to a different container or domain.</p>
+<pre>Syntax
+      Move-ADObject [-Identity] <i>ADObject</i> [-TargetPath] <i>string</i> 
+         [-AuthType {<u>Negotiate</u> | Basic}] [-Credential <i>PSCredential</i>]
+            [-Partition <i>string</i>] [-PassThru] [-Server <i>string</i>] [-TargetServer <i>string</i>]
+               [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<p>Key<br>
+-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-Credential <i>PSCredential</i><br>
+The user account credentials to use to perform this task.<br>
+The default credentials are those of the currently logged on user unless the<br>
+cmdlet is run from an Active Directory PowerShell provider drive.<br>
+If the cmdlet is run from such a provider drive, the account associated with the drive is the default.</p>
+<pre><code>   Type a user name, such as &quot;User64&quot; or &quot;Domain64\User64&quot; or specify a
+   PSCredential object such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt; 
+
+   If a user name is specified, the cmdlet will prompt for a password.
+</code></pre>
+<p>-Identity <i>ADObject</i><br>
+An AD object. Most often this will be a Distinguished Name (e.g. CN=sample1,OU=demo,DC=SS64,DC=com)<br>
+The identity may also be given as a GUID.</p>
+<pre><code>   Derived types, such as the following are also accepted:
+      [Microsoft.ActiveDirectory.Management.]
+        ADGroup,ADUser,ADComputer,ADServiceAccount,ADFineGrainedPasswordPolicy,ADDomain
+
+   The cmdlet searches the default naming context or partition to find the object.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   The ADObject may also be passed through the pipeline or set via a variable.
+</code></pre>
+<p>-Partition <i>string</i><br>
+The distinguished name of an AD partition.<br>
+<i>string</i> must be one of the naming contexts on the current directory server.<br>
+The cmdlet searches this partition to find the object defined by the -Identity parameter.<br>
+Examples:<br>
+-Partition “CN=Configuration,DC=EUROPE,DC=TEST,DC=SS64,DC=COM”<br>
+-Partition “CN=Schema,CN=Configuration,DC=EUROPE,DC=TEST,DC=SS64,DC=COM”</p>
+<pre><code>   In many cases, a &lt;a href=&quot;partition-defaults.html&quot;&gt;default value&lt;/a&gt; will be used for -Partition if no value is specified.
+</code></pre>
+<p>-PassThru <i>switch</i><br>
+Return the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)</p>
+<p>-TargetPath <i>string</i><br>
+The new location for the object.<br>
+This location must be the path to a container or organizational unit (OU).</p>
+<p>-TargetServer <i>string</i><br>
+The AD instance to use (domain name or directory server).<br>
+Eg:<br>
+<a href="http://SS64.com" target="_blank" rel="external">SS64.com</a><br>
+<a href="http://server64.europe.SS64.com" target="_blank" rel="external">server64.europe.SS64.com</a><br>
+<a href="http://server64.europe.SS64.com:3268" target="_blank" rel="external">server64.europe.SS64.com:3268</a></p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command without actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Move-ADObject  moves an object or a container of objects from one container to another or from one domain
+to another. <br>
+<br>
+The <span class="code">-Identity</span> parameter specifies the AD object or container to move. This may be identified by a distinguished name (DN), a GUID , an object variable or set through the <a href="syntax-pipeline.html">pipeline</a>. e.g. by using <a href="get-adobject.html">Get-ADObject</a>, <a href="get-adgroup.html">Get-ADGroup</a>, <a href="get-aduser.html">Get-ADUser</a>, <a href="get-adcomputer.html">Get-ADComputer</a>, Get-ADServiceAccount, Get-ADOrganizationalUnit or <a href="get-adfinegrainedpasswordpolicy.html">Get-ADFineGrainedPasswordPolicy</a>.<br>
+<br>
+The <span class="code">-TargetPath</span> parameter must  specify the new location for the object or container.</p>
+<p><b>Examples</b></p>
+<p>Move the OU 'Strasbourg' to a new location. For the move to be successful, the OU 'Strasbourg' must NOT be protected from 
+accidental deletion:</p>
+<p><span class="code">PS C:\&gt; Move-ADObject -Identity "OU=Strasbourg,DC=SS64,DC=Com" -TargetPath "OU=Paris,DC=SS64,DC=Com"</span></p>
+<p>Move an object identified by its GUID to a new location:</p>
+<p><span class="code">PS C:\&gt; Move-ADObject "4d0bcc44-c425-4dd8-af3c-2c66760fbd21" -TargetPath "OU=Paris,DC=SS64,DC=Com"</span></p>
+<p>Move an object to a different domain:</p>
+<p class="code">PS C:\&gt; Move-ADObject -Identity "CN=Mary Vick,OU=Accounting,DC=SS64,DC=com" -TargetPath "OU=Accounting,DC=Europe,DC=SS64,DC=com" -TargetServer "server64.europe.SS64.com"</p>
+<p class="quote"><i>“Success seems to be connected with action. Successful people keep moving. They make mistakes, but they don't quit” ~ Conrad Hilton</i></p>
+<p><b>Related:</b></p>
+<p><a href="get-adobject.html">Get-adObject</a> - Get one or more AD objects<br>
+<a href="new-adobject.html">New-adObject</a> - Create an AD object. <br>
+<a href="remove-adobject.html">Remove-adObject</a> - Remove an AD object.<br>
+<a href="rename-adobject.html">Rename-adObject</a> - Change the name of an AD object. <br>
+<a href="restore-adobject.html">Restore-adObject</a> - Restore an AD object.<br>
+<a href="set-adobject.html">Set-adObject</a> - Modify an AD object.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/move-adobject.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

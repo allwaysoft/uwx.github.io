@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="awk 
+Find and Replace text within file(s) 
+Pattern-directed scanning and processing language.
+Syntax
+      awk  [ -F fs ] [ -v var=value ] [ &apos;prog&apos; | -f progfile ] [ file ...  ]
+Options
+-F fs        D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/awk.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="awk 
+Find and Replace text within file(s) 
+Pattern-directed scanning and processing language.
+Syntax
+      awk  [ -F fs ] [ -v var=value ] [ &apos;prog&apos; | -f progfile ] [ file ...  ]
+Options
+-F fs        D">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.054Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="awk 
+Find and Replace text within file(s) 
+Pattern-directed scanning and processing language.
+Syntax
+      awk  [ -F fs ] [ -v var=value ] [ &apos;prog&apos; | -f progfile ] [ file ...  ]
+Options
+-F fs        D">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>awk</h1> 
+<p>Find and Replace text within file(s) <br>
+Pattern-directed scanning and processing language.</p>
+<pre>Syntax
+      awk  [ -F <i>fs</i> ] [ -v <i>var</i>=<i>value</i> ] [ '<i>prog</i>' | -f <i>progfile</i> ] [ <i>file</i> ...  ]
+<p>Options</p>
+<p>-F <i>fs</i>        Define the input field separator = regular expression <i>fs</i>.<i></i></p>
+<p>-v<i> var=value </i>Assign values before prog is executed,<br>
+any number of -v options can be present.</p>
+<p>-f <i>progfile</i>  Specify a pattern to match within progfile<br>
+rather then on the command line.</p>
+<p>-mr          Set the maximum size of the input record (MaxRows)</p>
+<p>-mf          Set the maximum number of fields (MaxFields)</p></pre><p></p>
+<p><b>Description<br>
+</b>Awk scans each input file for lines that match any of a set of patterns specified literally in <span class="code">prog</span> or in one or more files specified as <span class="code">-f <i>progfile</i></span>. 
+With each pattern there can be an associated action that will be performed when a line of a <span class="code">file</span> matches the pattern. </p>
+<p>Each line is matched against the pattern portion of every pattern-action statement; the associated action is performed for each matched pattern. </p>
+<p>The file name<span class="code"> - </span>means the standard input. </p>
+<p>Any file of the form <span class="code">var=value</span> is treated as an assignment, not a filename, and is executed at the time it would have been opened if it were a filename.</p>
+<p>An input line is normally made up of fields separated by white space, or by regular expression FS. The fields are denoted $1, $2, ..., while $0 refers to the entire line. If FS is null, the input line is split into one field per character. To compensate for inadequate implementation of storage  management, the -mr option can be used to set the maximum size of the input record, and the -mf option to set the maximum number of fields.</p>
+<p>A pattern-action statement has the form <span class="code"> <i>pattern</i> { <i>action</i> }</span></p>
+<p>A  missing <span class="code">{ action } </span>means print the line; a missing <span class="code">pattern</span> always matches.<br>  
+Pattern-action statements are  separated by newlines or semicolons.<br>
+<br>
+An action is a sequence of statements.  A statement can be one of the following:</p>
+<pre>   if( <i>expression</i> ) <i>statement</i> [ else <i>statement</i> ]
+<p>while( <i>expression</i> ) <i>statement</i></p>
+<p>for( <i>expression</i> ; <i>expression</i> ; <i>expression</i> ) <i>statement</i></p>
+<p>for( <i>var</i> in <i>array</i> ) <i>statement</i></p>
+<p>do <i>statement</i> while( <i>expression</i> )</p>
+<p>break<br>
+continue</p>
+<p>{ [ <i>statement</i> … ] }</p>
+<p><i>expression</i>              # commonly <i>var</i> = <i>expression</i></p>
+<p>print [ <i>expression-list</i> ] [ &gt; <i>expression</i> ]<br>
+printf <i>format</i> [ ,<i> expression-list</i> ] [ &gt; <i>expression</i> ]</p>
+<p>next                    # skip remaining patterns on this input line</p>
+<p>nextfile                # skip rest of this file, open next, start at top</p>
+<p>delete <i>array</i>[ <i>expression</i> ]  # delete an array element<br>
+delete <i>array</i>            # delete all elements of array<br>
+exit [ <i>expression</i> ]     # exit immediately; status is expression</p>
+</pre>
+<p>Statements are terminated by semicolons, newlines or right braces.   An  empty expression-list stands for $0.  String constants are quoted " ", with the usual C escapes  recognized  within.  Expressions take on string or numeric values as appropriate, and are built using the operators +  -       
+*  / % ^ (exponentiation), and concatenation (indicated by white space).</p>
+<p>The operators <span class="code">! ++ -- += -= *= /= %=  ^= &gt;&gt;= &lt; &lt;= == != ?: </span>are also available in expressions.  Variables can be scalars, array  elements  (denoted  x[i])  or
+fields.   Variables  are  initialized  to the null string. Array  subscripts  can  be  any  string,  not  necessarily numeric;  this  allows  for  a form of associative memory.<br>
+Multiple subscripts such as  [i,j,k]  are  permitted;  the constituents  are  concatenated, separated by the value of SUBSEP.<br><br>
+The print statement prints its arguments on  the  standard output (or on a file if &gt;file or &gt;&gt;file is present or on a pipe if |cmd is present), separated by the current  output field separator, and terminated by the output record separator.  file and cmd can be literal names or parenthesized expressions;  identical  string values in different statements denote the same open  file. The  printf statement formats its expression list according to the format (see <a href="printf.html">printf</a>).  The built-in function<span class="code"> close(expr) </span>closes the file or pipe expr. The built-in function <span class="code">fflush(expr)</span>flushes any buffered output for the file or pipe expr.</p>
+<pre>       The mathematical functions <b>exp, log, sqrt, sin,  cos</b>,  and
+       <b>atan2</b> are built in.  Other built-in functions:
+<pre><code>   &lt;b&gt;length&lt;/b&gt; the length of its argument taken as a string, or of
+          $0 if no argument.
+
+   &lt;b&gt;rand&lt;/b&gt;   random number on (0,1)
+
+   &lt;b&gt;srand&lt;/b&gt;  sets seed for rand and returns the previous seed.
+
+   &lt;b&gt;int&lt;/b&gt;    truncates to an integer value
+
+   &lt;b&gt;substr&lt;/b&gt;(s, m, n)
+          the n-character substring of s that begins at posi-
+          tion m counted from 1.
+
+   &lt;b&gt;index&lt;/b&gt;(s, t)
+          the  position  in s where the string t occurs, or 0
+          if it does not.
+
+   &lt;b&gt;match&lt;/b&gt;(s, r)
+          the position in s where the  regular  expression  r
+          occurs,  or 0 if it does not.  The variables RSTART
+          and RLENGTH are set to the position and  length  of
+          the matched string.
+
+   &lt;b&gt;split&lt;/b&gt;(s, a, fs)
+          splits the string s into array elements a[1], a[2],
+          ..., a[n], and returns n.  The separation  is  done
+          with  the  regular  expression fs or with the field
+          separator FS if fs is not given.  An  empty  string
+          as field separator splits the string into one array
+          element per character.
+
+   &lt;b&gt;sub&lt;/b&gt;(r, t, s)
+          substitutes t for the first occurrence of the regu-
+          lar  expression  r  in  the  string s.  If s is not
+          given, $0 is used.
+
+   &lt;b&gt;gsub&lt;/b&gt;   same as sub except that all occurrences of the reg-
+          ular  expression  are replaced; sub and gsub return
+          the number of replacements.
+
+   &lt;b&gt;sprintf&lt;/b&gt;(fmt, expr, ... )
+          the  string  resulting  from  formatting  expr  ...
+          according to the printf(3) format fmt
+
+   &lt;b&gt;system&lt;/b&gt;(cmd)
+          executes cmd and returns its exit status
+
+   &lt;b&gt;tolower&lt;/b&gt;(str)
+          returns a copy of str with all upper-case characters
+          translated to their corresponding lower-case equivalents.
+
+   &lt;b&gt;toupper&lt;/b&gt;(str)
+          returns a copy of str with all lower-case characters
+          translated to their corresponding upper-case equivalents.
+</code></pre>
+</pre>
+<p>The `function' <span class="code">getline</span> sets $0 to the next input record from the current input file; <span class="code">getline &lt;file</span> sets $0 to the next record from file. <span class="code">getline x</span> sets variable x instead.<br>
+Finally, <span class="code">cmd | getline</span> pipes the output of cmd  into  getline; each call of getline returns the next line of output from cmd.<br>
+In all cases, getline returns 1 for a  successful input, 0 for end of file, and -1 for an error.<br><br>
+Patterns are arbitrary Boolean combinations (with ! || &amp;&amp;) of regular expressions and relational expressions. Regular  expressions  are  as in egrep; see <a href="grep.html">grep</a>.<br><br>
+Isolated regular expressions in a pattern apply to the entire line. Regular expressions can also be used as a regular expression, except in the position of an isolated regular expression in a pattern.</p>
+<p><br>       
+A  pattern can consist of two patterns separated by a comma; in this case, the action is performed for all lines  from  an  occurrence of the first pattern though an occurrence of the second.<br>
+<br>A relational expression is one of the following:</p>
+<pre>              expression <i>matchop</i> regular-expression
+              expression <i>relop</i> expression
+              expression in array-name
+              (expr,expr,...) in array-name
+</pre>
+<p>Where a <i>relop</i> is any of the six relational operators in C, and  a <i>matchop</i> is  either  ~  (matches)  or !~ (does not match).  A conditional  is  an  arithmetic  expression, a relational  expression, or a Boolean combination of these.<br><br>
+The special patterns BEGIN and END can be used to  capture control  before the first input line is read and after the last.  BEGIN and END do not combine with other patterns.<br>
+<br>
+Variable names with special meanings:</p>
+<pre>     CONVFMT  conversion  format  used  when  converting  numbers
+              (default %.6g)
+<pre><code> FS       regular  expression  used  to separate fields; also
+          settable by option -Ffs.
+
+ NF       number of fields in the current record
+
+ NR       ordinal number of the current record
+
+ FNR      ordinal number of the current record in the current
+          file
+
+ FILENAME the name of the current input file
+
+ RS       input record separator (default newline)
+
+ OFS      output field separator (default blank)
+
+ ORS      output record separator (default newline)
+
+ OFMT     output format for numbers (default %.6g)
+
+ SUBSEP   separates multiple subscripts (default 034)
+
+ ARGC     argument count, assignable
+
+ ARGV     argument  array,  assignable;  non-null members are
+          taken as filenames
+
+ ENVIRON  array  of  environment  variables;  subscripts  are
+          names.
+</code></pre>
+</pre>
+<p><b>Examples</b></p>
+<p>Print the Row Number (NR), then a dash and space <span class="code">("- "</span>) and then the first item ($1) from each line in samplefile.txt: </p>
+<p class="code">$ awk '{print NR "- " $1 }' samplefile.txt</p>
+<p>Print the first item ($1) and then the third last item<span class="code"> $(NF-2)</span> from each line in samplefile.txt: </p>
+<p class="code">$ awk '{print $1, $(NF-2) }' samplefile.txt</p>
+<p>Comparison with <a href="grep.html">grep</a>:</p>
+<blockquote>
+<p>Using <span class="code">grep Dec</span> against the following file listing would return all 3 rows as it matches text in different places: </p>
+<p><span class="code">-rw-r--r-- 7 simon simon 12043 31 Jan 2010 09:36 <b>Dec</b>ember.pdf<br>
+-rw-r--r-- 3 simon simon 1024 01 <b>Dec</b> 2010 11:59 README<br>
+-rw-r--r-- 3 simon simon 5096 14 Nov 2010 18:22 <b>Dec</b>ision.txt </span></p>
+<p>Running <span class="code">awk '$7 == "Dec"'</span>against the same file listing, $7 matches the exact field (column 7 = Month) so it will list only the December file:</p>
+<p class="code"> $ ls -l /tmp/demo | awk '$7 == "Dec"'</p>
+</blockquote>
+<p>Print lines longer than 72 characters:</p>
+<pre>       length($0) &gt; 72
+<p>Print first two fields in opposite order:<br>
+{ print $2, $1 }</p>
+<p>Same, with input fields separated by  comma  and/or blanks and tabs:<br>
+BEGIN { FS = “,[ \t]*|[ \t]+” }<br>
+{ print $2, $1 }</p>
+<p>Add up first column, print sum and average:<br>
+{ s += $1 }<br>
+END  { print “sum is”, s, &quot; average is&quot;, s/NR }</p>
+<p>Print all lines between start/stop pairs:<br>
+/start/, /stop/</p>
+<pre><code>   BEGIN     {    # Simulate echo(1)
+        for (i = 1; i &amp;lt; ARGC; i++) printf &quot;%s &quot;, ARGV[i]
+        printf &quot;\n&quot;
+        exit }&lt;/pre&gt;
+</code></pre>
+<p class="quote"><i>“Alcohol: the cause of and solution to; all of life's problems” - Homer Simpson</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/awk.1.html" target="_blank" rel="external">awk man page</a> - Apple.com<br>
+<a href="http://www.cs.princeton.edu/courses/archive/spr08/cos333/awk.help" target="_blank" rel="external">AWK Help page</a> - Brian Kernighan<br>
+<a href="http://blog.bignerdranch.com/3799-a-crash-course-in-awk/" target="_blank" rel="external">A Crash Course In AWK</a> - Bill Phllips<br>
+<a href="http://www.grymoire.com/Unix/Awk.html" target="_blank" rel="external">AWK tutorial and introduction</a> - Bruce Barnett <br>
+<a href="http://www.gnu.org/software/gawk/manual/gawk.html" target="_blank" rel="external">GNU Awk User Guide</a> - Full guide with examples<br>
+<a href="http://sparky.rice.edu/%7Ehartigan/awk.html" target="_blank" rel="external"> Patrick Hartigan</a> - How to use awk<br>
+<a href="http://gregable.com/2010/09/why-you-should-know-just-little-awk.html" target="_blank" rel="external">Gregable</a> - Why you should know just a little Awk<br>
+<a href="http://www.pement.org/awk/awk1line.txt" target="_blank" rel="external">awk one liners</a> - Eric Pement<br>
+<a href="http://www.catonmat.net/blog/awk-one-liners-explained-part-one/" target="_blank" rel="external">awk one liners explained</a> &amp; <a href="http://www.catonmat.net/blog/awk-one-liners-explained-part-two/" target="_blank" rel="external">pt2</a> - Peteris Krumin (CatOnMat.net)<br>
+<a href="for.html">for</a> - Loop, expand <var>words</var>, and execute <var>commands</var><br>
+<a href="tr.html">tr</a> - Translate, squeeze, and/or delete characters</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="awk.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/awk.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

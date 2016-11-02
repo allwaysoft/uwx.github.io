@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="WMIC.exe 
+ Windows Management Instrumentation Command. 
+Read a huge range of information about local or remote computers. Also provides a way to make configuration changes to multiple remote machines.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/wmic.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="WMIC.exe 
+ Windows Management Instrumentation Command. 
+Read a huge range of information about local or remote computers. Also provides a way to make configuration changes to multiple remote machines.">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:56.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="WMIC.exe 
+ Windows Management Instrumentation Command. 
+Read a huge range of information about local or remote computers. Also provides a way to make configuration changes to multiple remote machines.">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>WMIC.exe</h1> 
+<p> Windows Management Instrumentation Command. <br>
+Read a huge range of information about local or remote computers. Also provides a way to make configuration changes to multiple remote machines. WMIC is available on Vista/Windows 7, Windows XP Professional, but not Windows XP Home.</p>
+<pre>Syntax
+   Retrieve information about <i>&lt;Alias&gt;</i>:
+      WMIC [<a href="wmicglobal.html"><i>global_switches</i></a>] [<a href="wmicglobal.html">/locale</a>:ms_409] &lt;<i>alias</i>&gt; [<i><a href="#alias_options">options</a></i>] [<a href="#format_specifiers">format</a>]
+<p>Interactive mode:<br>
+WMIC</p>
+<p>Aliases:<br>
+ALIAS               - Access local system aliases [CALL]</p>
+<p>BASEBOARD           - Base board management (motherboard or system board)<br>
+BIOS                - BIOS management (Basic input/output services)<br>
+BOOTCONFIG          - Boot configuration</p>
+<p>CDROM               - CD-ROM<br>
+COMPUTERSYSTEM      - Computer system [CALL/SET]<br>
+CPU                 - CPU<br>
+CSPRODUCT           - Computer system product information from SMBIOS.</p>
+<p>DATAFILE            - DataFiles [CALL]<br>
+DCOMAPP             - DCOM Applications.<br>
+DESKTOP             - User’s Desktop<br>
+DESKTOPMONITOR      - Desktop Monitor<br>
+DEVICEMEMORYADDRESS - Device memory addresses<br>
+DISKDRIVE           - Physical disk drive<br>
+DISKQUOTA           - Disk space usage for NTFS volumes.[SET]<br>
+DMACHANNEL          - Direct memory access (DMA) channel</p>
+<p>ENVIRONMENT         - System environment settings [SET]<br>
+FSDIR               - Filesystem directory entry [CALL]</p>
+<p>GROUP               - Group account [CALL]</p>
+<p>IDECONTROLLER       - IDE Controller<br>
+IRQ                 - Interrupt request line</p>
+<p>JOB                 - Jobs scheduled using the schedule service.[CALL]</p>
+<p>LOADORDER           - System services that define execution dependencies.<br>
+LOGICALDISK         - Local storage devices [CALL/SET]<br>
+LOGON               - LOGON Sessions.</p>
+<p>MEMCACHE            - Cache memory<br>
+MEMLOGICAL          - System memory, layout and availability<br>
+MEMPHYSICAL         - Physical memory management</p>
+<p>NETCLIENT           - Network Client management.<br>
+NETLOGIN            - Network login information for a particular user.<br>
+NETPROTOCOL         - Protocols (and their network characteristics).<br>
+NETUSE              - Active network connection.<br>
+NIC                 - Network Interface Controller (NIC)<br>
+NICCONFIG           - Network adapter. [CALL]<br>
+NTDOMAIN            - NT Domain. [SET]<br>
+NTEVENT             - NT Event Log.<br>
+NTEVENTLOG          - NT eventlog file [CALL/SET]</p>
+<p>ONBOARDDEVICE       - Common adapter devices built into the motherboard.<br>
+OS                  - Operating System/s [CALL/SET]</p>
+<p>PAGEFILE            - Virtual memory file swapping<br>
+PAGEFILESET         - Page file settings [SET]<br>
+PARTITION           - Partitioned areas of a physical disk.<br>
+PORT                - I/O ports<br>
+PORTCONNECTOR       - Physical connection ports<br>
+PRINTER             - Printer device [CALL/SET]<br>
+PRINTERCONFIG       - Printer device configuration<br>
+PRINTJOB            - Print job [CALL]<br>
+PROCESS             - Processes [CALL]*<br>
+PRODUCT             - Windows Installer [CALL]</p>
+<p>QFE                 - Quick Fix Engineering (patches)<br>
+QUOTASETTING        - Setting information for disk quotas on a volume. [SET]</p>
+<p>REGISTRY            - Computer system registry [SET]</p>
+<p>SCSICONTROLLER      - SCSI Controller [CALL]<br>
+SERVER              - Server information<br>
+SERVICE             - Service application [CALL]<br>
+SHARE               - Shared resourcees [CALL]<br>
+SOFTWAREELEMENT     - Elements of a software product*<br>
+SOFTWAREFEATURE     - Subsets of SoftwareElement. [CALL]*<br>
+SOUNDDEV            - Sound Devices<br>
+STARTUP             - Commands that run automatically when users logon<br>
+SYSACCOUNT          - System account<br>
+SYSDRIVER           - System driver for a base service. [CALL]<br>
+SYSTEMENCLOSURE     - Physical system enclosure<br>
+SYSTEMSLOT          - Physical connection points including ports,<br>
+slots and peripherals, and proprietary connections points.</p>
+<p>TAPEDRIVE           - Tape drives<br>
+TEMPERATURE         - Temperature sensor (electronic thermometer).<br>
+TIMEZONE            - Time zone data</p>
+<p>UPS                 - Uninterruptible power supply (UPS)<br>
+USERACCOUNT         - User accounts [CALL/SET]</p>
+<p>VOLTAGE             - Voltage sensor (electronic voltmeter) data<br>
+VOLUME              - Local storage volume [CALL/SET]<br>
+VOLUMEQUOTASETTING  - Associates the disk quota setting with a specific disk volume. [SET]</p>
+<p>WMISET              - WMI service operational parameters [SET]</p>
+<p>New aliases in Windows 2003:<br>
+MEMORYCHIP          - Memory chip information.<br>
+RDACCOUNT           - Remote Desktop connection permission [CALL]<br>
+RDNIC               - Remote Desktop connection on a specific network adapter [CALL/SET]<br>
+RDPERMISSIONS       - Permissions to a specific Remote Desktop connection [CALL]<br>
+RDTOGGLE            - Turn Remote Desktop listener on or off remotely[CALL]<br>
+RECOVEROS           - Blue Screen Information [SET]<br>
+SHADOWCOPY          - Shadow copy management [CALL]<br>
+SHADOWSTORAGE       - Shadow copy storage areas [CALL/SET]<br>
+VOLUMEUSERQUOTA     - Per user storage volume quotas  [SET]</p>
+</pre>
+<p><span class="code"><b>Options</b></span><b><a id="alias_options"></a></b>  </p>
+<p> By default an alias will return a standard LIST of information, you can also choose to GET one or more specific properties.</p>
+<p>Configuration changes can be made, where indicated above with: [CALL or SET ]</p>
+<p>The CREATE and DELETE options allow you to change the WMI schema itself.</p>
+<pre>   <i>alias</i> 
+   <i>alias</i> <u>LIST</u> [BRIEF | <u>FULL</u> | INSTANCE | STATUS |SYSTEM | WRITEABLE]
+                [/TRANSLATE:BasicXml<i>|</i>NoComma ]
+                   [/EVERY:<i>no_secs</i>] [/FORMAT:<i>format</i>]
+   <i>alias</i> GET [<i>property list</i>]
+                [/VALUE ] [/<u>ALL</u> ] [/TRANSLATE:BasicXml<i>|</i>NoComma<i> </i>]
+                   [/EVERY:<i>no_secs</i>] [/FORMAT:<i>format</i>]
+   <i>alias</i> CALL <i>method_name</i> [<i>parameters</i>]
+   <i>alias</i> SET [<i>assignments</i>]
+   <i>alias</i> CREATE 
+   <i>alias</i> DELETE
+   <i>alias</i> ASSOC [/RESULTCLASS:<i>classname</i>] [/RESULTROLE:<i>rolename</i>][/ASSOCCLASS:<i>assocclass</i>]
+<p>For more help<br>
+WMIC /<i>alias</i> /?<br>
+WMIC /<i>alias option</i> /?<br>
+e.g.<br>
+WMIC /BIOS /CALL /?<br>
+WMIC /MEMLOGICAL /SET /?</p></pre><p></p>
+<p>The order of the /FORMAT and /TRANSLATE switches is significant: if /TRANSLATE follows /FORMAT, the output is formatted first and then translated. </p>
+<h2>Where</h2>
+<blockquote>
+<p>The options above can  be extended with a WHERE clause:</p>
+<p><span class="code">Where <i>item</i>='<i>string value</i>' </span># Test if Equal<br>
+<span class="code">Where <i>item</i>!='<i>string value</i>' </span>#
+NOT EQUAL </p>
+<p>Use single quotes to delimit spaces or special characters, do not add spaces to either side of the<span class="code"> = </span>or<span class="code"> != </span><br>
+See further examples below.</p>
+</blockquote>
+<pre><b>Format</b><a id="format_specifiers"></a>:</pre>
+<p>Format defines the layout of the information, XML output is automatically formatted using a default style sheet, while other formats (HTML, Table, MOF, Raw XML etc) can be  specified  using <span class="code"><a href="wmicstylesheets.html">/FORMAT: <i>stylesheet_name</i></a></span></p>
+<p>Stylesheets supplied with WMIC: </p>
+<pre>    csv.xsl, hform.xsl, htable-sortby.xsl, htable.xsl<br>    texttable.xsl, textvaluelist.xsl, xml.xsl
+</pre>
+<p>All output files are unicode text (convert to ASCII with <a href="type.html">TYPE</a>)  
+Tab Separated Values (.tsv) can be opened in excel </p>
+<p>  The PROCESS alias can be used to start a new installation process, if doing this across the network, place the installer files on a share with permissions EVERYONE : Read Only. This is because network credentials will be dropped when jumping from one remote machine to another (unless you have kerberos configured).</p>
+<h2>Notes</h2>
+<blockquote>
+<p>To run WMIC requires administrator rights.</p>
+<p>The last element returned by WMIC is  a single <span class="code">&lt;CR&gt;</span> character (an empty line), when running WMIC in a FOR loop you might need to <a href="http://stackoverflow.com/questions/8015489/why-is-the-for-f-loop-in-this-batch-script-evaluating-a-blank-line" target="_blank" rel="external">remove</a> this, particularly if <a href="delayedexpansion.html">delayed expansion</a> is involved.</p>
+<p>The number of WMI properties that can be monitored (and the number of WMI providers) has increased with every new version of Windows.</p>
+<p>When you type WMIC for the first time  all the aliases are compiled. The second, and subsequent times you run WMIC, it will start  immediately. </p>
+<p>Running WMIC within a batch file it can sometimes hang, possible workarounds for this:<br>
+<span class="code">START "" /W CMD /C WMIC <i>options</i>...<br>
+WMIC <i>options</i>... &lt;NUL</span></p>
+<p> The WMI information  for installed software packages (PACKAGE and SOFTWAREFEATURE) is often incomplete  and inconsistent for a variety of historical reasons. A more reliable method is to retrieve a list of installed programs directly
+from the Add/Remove list in the registry, with a WSH script like <a href="installed.txt">this</a> from Torgeir Bakken.</p>
+</blockquote>
+<p><b>Examples</b></p>
+<pre>WMIC <b>OS</b> 
+<p>WMIC <b>OS</b> LIST BRIEF</p>
+<p>WMIC <b>OS</b> GET csname, locale, bootdevice</p>
+<p>WMIC <b>OS</b> GET osarchitecture /value</p>
+<p>WMIC <b>OS</b> GET localdatetime</p>
+<p>WMIC <b>LOGICALDISK</b> where drivetype!=4 get deviceid, description</p>
+<p>WMIC <b>LOGICALDISK</b> where description=‘Local Fixed Disk’ get deviceid, volumename</p>
+<p>WMIC <b>NTEVENT</b> where LogFile=‘system’</p>
+<p>WMIC <b>NTEVENT</b> where “LogFile=‘system’ and Type&gt;‘0’”</p>
+<p>WMIC <b>SERVICE</b> where (state=”running”) GET caption, name, state &gt; services.tsv</p>
+<p>WMIC <b>SERVICE</b> where caption=‘TELNET’ CALL STARTSERVICE</p>
+<p>WMIC <b>PRINTER</b> LIST STATUS</p>
+<p>WMIC <b>PRINTER</b> where PortName=“LPT1:” GET PortName, Name, ShareName</p>
+<p>WMIC <a href="wmicglobal.html">/INTERACTIVE</a>:ON <b>PRINTER</b> where PortName=“LPT1:” DELETE</p>
+<p>WMIC <b>PROCESS</b> where name=‘evil.exe’ delete</p>
+<p>WMIC <a href="wmicglobal.html">/output</a>:&quot;%computername%.txt&quot; <b>MEMORYCHIP</b> where “memorytype=17” get Capacity</p>
+<p>WMIC <a href="wmicglobal.html">/node</a>:remote_computer <b>PROCESS</b> call create <b>“</b>netstat.exe -ano &gt; C:\output.txt<b>”</b></p>
+<p>WMIC <a href="wmicglobal.html">/node</a>:@workstns.txt <a href="wmicglobal.html">/failfast</a>:on <b>PROCESS</b> call create <b>“</b>\server\share\installer.cmd<b>”</b></p>
+<p>Interactive mode:<br>
+<span class="prompt">C:&gt;</span> WMIC<br>
+<span class="prompt"></span><span class="prompt">wmic:root\cli&gt;</span><b> OS</b> get csname<br>
+<span class="prompt">wmic:root\cli&gt; </span>quit</p></pre><p></p>
+<p><br>
+<br>
+<i class="quote">“Life is like a game of cards. The hand you are dealt is determinism; the way you play it is free will” ~ Jawaharial Nehru</i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="systeminfo.html">SYSTEMINFO</a> - List system configuration<br>
+<a href="http://isc.sans.edu/diary.html?storyid=2376" target="_blank" rel="external">The Grammar of WMIC</a> - ISC<br>
+<a href="http://www.microsoft.com/en-us/download/details.aspx?id=7684" target="_blank" rel="external">WMI Diagnosis Utility</a> - Microsoft<br>
+<a href="../ps/get-wmiobject.html">Get-WMIobject</a> - Get WMI class information (Powershell)<br>
+MOF (Managed Object Format) - A language that describes management information.<br>
+<a href="https://support.microsoft.com/kb/824223" target="_blank" rel="external">Q824223</a> - WMIC command runs slowly with /FAILFAST switch.<br>
+<a href="https://support.microsoft.com/kb/875605" target="_blank" rel="external">Q875605 </a>- Troubleshoot WMI-related issues<br>
+<a href="http://support.microsoft.com/servicedesks/webcasts/wc072402/listofsampleusage.asp" target="_blank" rel="external">Sample commands</a> - Windows 2003<br>
+<a href="http://msdn.microsoft.com/en-us/library/Aa394572" target="_blank" rel="external">MSDN full WMI reference</a> - Classes, providers etc</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/wmic.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

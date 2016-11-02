@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-ADComputer
+Modify an  AD computer object.
+Syntax
+      Set-ADComputer [-Identity] ADComputer [-AccountExpirationDate [System.DateTime]]
+         [-AccountNotDelegated [bool]] [-Add hashtable]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-adcomputer.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-ADComputer
+Modify an  AD computer object.
+Syntax
+      Set-ADComputer [-Identity] ADComputer [-AccountExpirationDate [System.DateTime]]
+         [-AccountNotDelegated [bool]] [-Add hashtable]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.109Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-ADComputer
+Modify an  AD computer object.
+Syntax
+      Set-ADComputer [-Identity] ADComputer [-AccountExpirationDate [System.DateTime]]
+         [-AccountNotDelegated [bool]] [-Add hashtable]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-ADComputer</h1>
+<p>Modify an  AD computer object.</p>
+<pre>Syntax
+      Set-ADComputer [-Identity] <i>ADComputer</i> [-AccountExpirationDate <i>[System.DateTime]</i>]
+         [-AccountNotDelegated <i>[bool]</i>] [<b>-Add</b><i> hashtable</i>]
+            [-AllowReversiblePasswordEncryption <i>[bool]</i>] [-AuthType {<u>Negotiate</u> | Basic}]
+               [-CannotChangePassword <i>[bool]</i>] [-Certificates <i>hashtable</i>]
+                  [-ChangePasswordAtLogon <i>[bool]</i>] [-Credential <i>PSCredential</i>] [<b>-Clear</b> <i>string[]</i>]
+                     [-Description <i>string</i>] [-DisplayName <i>string</i>] [-DNSHostName <i>string</i>]
+                        [-Enabled <i>[bool]</i>] [-HomePage <i>string</i>]
+                           [-Location <i>string</i>] [-ManagedBy <i>ADPrincipal</i>] 
+                              [-OperatingSystem <i>string</i>] [-OperatingSystemHotfix <i>string</i>] 
+                                 [-OperatingSystemServicePack <i>string</i>] [-OperatingSystemVersion <i>string</i>]
+                                    [-PasswordNeverExpires <i>[bool]</i>] [-PasswordNotRequired <i>[bool]</i>]
+                                       [<b>-Remove</b> <i>hashtable</i>] [<b>-Replace</b> <i>hashtable</i>]
+                                          [-ServicePrincipalNames <i>hashtable</i>] [-SAMAccountName <i>string</i>]
+                                             [-Server <i>string</i>] [-TrustedForDelegation <i>[bool]</i>]
+                                                [-UserPrincipalName <i>string</i>]
+                                                   [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<p>Key<br>
+-AccountExpirationDate <i>[System.DateTime]</i><br>
+The expiry date for the account. (0=never expires)<br>
+Use PowerShell <a href="syntax-dateformats.html">DateTime syntax</a><br>
+Time is assumed to be local time unless otherwise specified.<br>
+The default time is 12:00 (Midday) local time.<br>
+The default date is the current date.<br>
+Examples using GMT, UTC and local time:<br>
+-AccountExpirationDate “Mon, 17 Apr 2011 21:22:48 GMT”<br>
+-AccountExpirationDate “2011-04-17T14:22:48.0000000”<br>
+-AccountExpirationDate &quot;04/17/2011 2:22:48 PM&quot;<br>
+The LDAP Display name (ldapDisplayName) for this property is accountExpires.</p>
+<p>-AccountNotDelegated <i>bool</i><br>
+Security delegation. When True, the security context of the account is not<br>
+delegated to a service even when the service account is set as trusted for<br>
+Kerberos delegation. Sets the AccountNotDelegated property for an AD account.<br>
+This parameter also sets the ADS_UF_NOT_DELEGATED flag of the AD User Account<br>
+Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Add <i>hashtable</i><br>
+Add values to add to an object property.<br>
+Use this for properties that cannot be modified using a cmdlet parameter.<br>
+To modify an object property, use the LDAP display name.<br>
+Specify multiple values as a comma-separated list of values<br>
+Specify more than one property by separating them with a semicolon<br>
+The format for this parameter is<br>
+-Add @<b>{</b><i>Attribute1LDAPDisplayName</i>=<i>value1</i>, <i>value2</i>,… ; <i>Attribute2LDAPDisplayName</i>=<i>value1</i>, <i>value2</i>,… <b>}</b></p>
+<pre><code>   If the -Add, -Remove, -Replace and -Clear parameters are used together, the operations
+   will always be performed in the order: &lt;b&gt;-Remove&lt;/b&gt; then &lt;b&gt;-Add&lt;/b&gt; then &lt;b&gt;-Replace&lt;/b&gt; then &lt;b&gt;-Clear&lt;/b&gt;
+</code></pre>
+<p>-AllowReversiblePasswordEncryption <i>bool</i><br>
+Whether reversible password encryption is allowed for the account.<br>
+This parameter sets the AllowReversiblePasswordEncryption property of the account.<br>
+This also sets the ADS_UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED flag of<br>
+the AD User Account Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-AuthType <i>ADAuthType</i><br>
+The authentication method to use:<br>
+<u>Negotiate</u> or 0<br>
+Basic or 1<br>
+A Secure Sockets Layer (SSL) connection is required for the Basic authentication method.</p>
+<p>-CannotChangePassword <i>bool</i><br>
+Whether the account password can be changed.<br>
+Sets the ‘CannotChangePassword’ property of an account.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Certificates <i>X509Certificate[]</i><br>
+Modifies the DER-encoded X.509v3 certificates of the account.<br>
+These certificates include the public key certificates issued to<br>
+this account by the Microsoft Certificate Service.<br>
+Sets the Certificates property of the account object.<br>
+The LDAP Display Name for this property is “userCertificate”.</p>
+<pre><code>   Syntax to add/remove/replace/clear:
+     -Certificates @{Add=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+     -Certificates @{Remove=&lt;i&gt;value3&lt;/i&gt;,&lt;i&gt;value4&lt;/i&gt;,...}
+     -Certificates @{Replace=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+     -Certificates $null
+
+   Multiple operations may be specified by using a list separated by semicolons.
+     -Certificates @{Add=value1,value2,...};@{Remove=value3,value4,...}
+
+   Example - creating a certificate:
+
+     $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate cert1.cer &lt;i&gt;certPassword&lt;/i&gt;
+     Set-ADUser saradavis  -Certificates @{Add=$cert}
+</code></pre>
+<p>-ChangePasswordAtLogon <i>bool</i><br>
+Whether a password must be changed during the next logon attempt.<br>
+Values for this parameter: $false or 0, $true or 1<br>
+This cannot be set to $true for an account that also has PasswordNeverExpires set.</p>
+<p>-Clear <i>string[]</i><br>
+An array of object properties that will be cleared.<br>
+Use this parameter to clear properties that cannot be modified using a cmdlet parameter.<br>
+To modify an object property, use the LDAP display name.<br>
+Modify more than one property by specifying a comma-separated list.</p>
+<pre><code>   Example: Clear the value for the Phone-Office-Other attribute (LDAP display name 'otherTelephone')
+
+      -Clear otherTelephone
+
+   If the -Add, -Remove, -Replace and -Clear parameters are used together, the operations
+   will always be performed in the order: &lt;b&gt;-Remove&lt;/b&gt; then &lt;b&gt;-Add&lt;/b&gt; then &lt;b&gt;-Replace&lt;/b&gt; then &lt;b&gt;-Clear&lt;/b&gt;
+</code></pre>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default is the current user unless the cmdlet is run from an AD PowerShell provider drive<br>
+in which case the account associated with the drive is the default.</p>
+<pre><code>   &quot;User64&quot; or &quot;Domain01\User64&quot; or a &lt;a href=&quot;get-credential.html&quot;&gt;PSCredential&lt;/a&gt; object.
+</code></pre>
+<p>-Description <i>string</i><br>
+A description of the object.</p>
+<p>-DisplayName <i>string</i><br>
+The display name of the object.</p>
+<p>-DNSHostName <i>string</i><br>
+The fully qualified domain name (FQDN) of the computer.<br>
+This parameter sets the DNSHostName property for a computer object.<br>
+The LDAP Display Name for this property is “dNSHostName”.</p>
+<pre><code>-Enabled &lt;i&gt;bool&lt;/i&gt;
+   Is the account enabled.
+   An enabled account requires a password.
+   This parameter sets the Enabled property for an account object.
+   Also sets the ADS_UF_ACCOUNTDISABLE flag of the AD User Account Control (UAC) attribute.
+   Values for this parameter: $false or 0, $true or 1
+</code></pre>
+<p>-HomePage <i>string</i><br>
+The URL of the home page of the object.</p>
+<p>-Identity <i>ADComputer</i><br>
+An AD computer object:</p>
+<pre><code>      Distinguished Name
+         Example: CN=PC1234,CN=Europe,CN=Users,DC=SS64,DC=com
+      GUID  (objectGUID)
+         Example: 579c4d2e-f62d-4d20-8a88-030d97495f10
+      Security Identifier (objectSid)
+         Example: S-1-5-21-3164297828-301567370-526410523-1153
+      Security Accounts Manager Account Name (sAMAccountName)
+         Example: PC1234
+
+   The identifier in parentheses is the LDAP display name for the attribute.
+
+   The cmdlet searches the default naming context or partition to find the object.
+   If the identifier given is a DN, the partition to search will be computed from that DN.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   This parameter can also accept an object through the pipeline.
+</code></pre>
+<p>-Instance <i>ADComputer</i><br>
+Specifies a modified copy of a computer object to use to update the actual AD computer object.<br>
+When this parameter is used, any modifications made to the modified copy of the object are<br>
+also made to the corresponding AD object. This will only update the object properties that have changed.</p>
+<pre><code>   The -Instance parameter can only update computer objects that have been retrieved with &lt;a href=&quot;get-adcomputer.html&quot;&gt;Get-ADComputer&lt;/a&gt;
+   you cannot specify other parameters that set properties on the object.
+
+   Example
+      # Retrieve a local instance of the object.
+      $computerInstance = Get-ADComputer  -Identity PC001
+      # Modify one or more properties of the object instance.
+      $computerInstance.Description = &quot;Graphic Design Computer&quot;
+      # Save the changes
+      Set-ADComputer -Instance $computerInstance
+</code></pre>
+<p>-Location <i>string</i><br>
+The location of the computer, such as an office number.</p>
+<p>-ManagedBy <i>ADPrincipal</i><br>
+The user or group that manages the object.<br>
+Note: The identifier in parentheses is the LDAP display name for the property.<br>
+Examples:<br>
+Distinguished Name: CN=SaraDavis,OU=Europe,CN=Users,DC=corp,DC=ss64,DC=com<br>
+GUID (objectGUID) : 599c3d2e-f72d-4d20-8a88-030d99495f20<br>
+Security Identifier (objectSid) : S-1-5-21-3165297888-301567370-576410423-1103<br>
+SAM Account Name (sAMAccountName): JDoe</p>
+<pre><code>   This parameter sets the Active Directory attribute with an LDAP Display Name of &quot;managedBy&quot;. 
+</code></pre>
+<p>-OperatingSystem <i>string</i><br>
+An operating system name. e.g. “Windows Server 2008 Enterprise”</p>
+<p>-OperatingSystemHotfix <i>string</i><br>
+An operating system hotfix name.</p>
+<p>-OperatingSystemServicePack <i>string</i><br>
+The name of an operating system service pack.</p>
+<p>-OperatingSystemVersion <i>string</i><br>
+An operating system version.</p>
+<pre><code>-Partition &lt;i&gt;string&lt;/i&gt;
+   The distinguished name of an AD partition.
+   The distinguished name must be one of the naming contexts on the current directory server.
+   The cmdlet searches this partition to find the object defined by the -Identity parameter.
+   examples:
+      -Partition &quot;CN=Configuration,DC=EUROPE,DC=TEST,DC=SS64,DC=COM&quot;
+
+      -Partition &quot;CN=Schema,CN=Configuration,DC=EUROPE,DC=TEST,DC=SS64,DC=COM&quot;
+
+   In many cases, a &lt;a href=&quot;partition-defaults.html&quot;&gt;default value&lt;/a&gt; will be used for -Partition if no value is specified.
+</code></pre>
+<p>-PassThru<br>
+Returns the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-PasswordNeverExpires <i>bool</i><br>
+Whether the password of an account can expire.<br>
+This parameter also sets the ADS_UF_DONT_EXPIRE_PASSWD flag of the AD UAC attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<pre><code>   Note: This parameter cannot be set to $true for an account that also has the ChangePasswordAtLogon property set.
+</code></pre>
+<p>-PasswordNotRequired <i>bool</i><br>
+Whether the account requires a password.<br>
+This parameter also sets the ADS_UF_PASSWD_NOTREQD flag of the AD UAC attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Remove <i>hashtable</i><br>
+Remove values from an object property.<br>
+Use this for properties that cannot be modified using a cmdlet parameter.<br>
+To modify an object property, use the LDAP display name.<br>
+Specify multiple values as a comma-separated list of values<br>
+Specify more than one property by separating them with a semicolon<br>
+The format for this parameter is<br>
+-Remove @<b>{</b><i>Attribute1LDAPDisplayName</i>=<i>value1</i>, <i>value2</i>,… ; <i>Attribute2LDAPDisplayName</i>=<i>value1</i>, <i>value2</i>,… <b>}</b></p>
+<pre><code>   If the -Add, -Remove, -Replace and -Clear parameters are used together, the operations
+   will always be performed in the order: &lt;b&gt;-Remove&lt;/b&gt; then &lt;b&gt;-Add&lt;/b&gt; then &lt;b&gt;-Replace&lt;/b&gt; then &lt;b&gt;-Clear&lt;/b&gt;
+</code></pre>
+<p>-Replace <i>hashtable</i><br>
+Replace values for an object property.<br>
+Use this for properties that cannot be modified using a cmdlet parameter.<br>
+To modify an object property, use the LDAP display name.<br>
+Specify multiple values as a comma-separated list of values<br>
+Specify more than one property by separating them with a semicolon<br>
+The format for this parameter is<br>
+-Replace @<b>{</b><i>Attribute1LDAPDisplayName</i>=<i>value1</i>, <i>value2</i>,… ; <i>Attribute2LDAPDisplayName</i>=<i>value1</i>, <i>value2</i>,… <b>}</b></p>
+<pre><code>   If the -Add, -Remove, -Replace and -Clear parameters are used together, the operations
+   will always be performed in the order: &lt;b&gt;-Remove&lt;/b&gt; then &lt;b&gt;-Add&lt;/b&gt; then &lt;b&gt;-Replace&lt;/b&gt; then &lt;b&gt;-Clear&lt;/b&gt;
+</code></pre>
+<p>-SAMAccountName <i>string</i><br>
+The Security Account Manager (SAM) account name of the user, group, computer, or service account.<br>
+The maximum length of the description is 256 characters.<br>
+To be compatible with older operating systems use 20 characters or less.<br>
+Note: If the SAMAccountName string provided, does not end with a ‘$’, one will be appended if needed.</p>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)  or AD Snapshot instance.</p>
+<pre><code>   Examples: demo.SS64.com  demo  demoDC02.demo.ss64.com  demoDC02.demo.ss64.com:3268
+</code></pre>
+<p>-ServicePrincipalNames <i>string[]</i><br>
+The service principal names for the account.<br>
+Use the following syntax to add remove, replace or clear service principal name values:</p>
+<pre><code>      -ServicePrincipalNames @{Add=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+      -ServicePrincipalNames @{Remove=&lt;i&gt;value3&lt;/i&gt;,&lt;i&gt;value4&lt;/i&gt;,...}
+      -ServicePrincipalNames @{Replace=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+      -ServicePrincipalNames $null
+
+   Multiple operations may be specified by using a list separated by semicolons.
+     -ServicePrincipalNames @{Add=value1,value2,...};@{Remove=value3,value4,...}
+
+   Example:
+     -ServicePrincipalNames @{Add=&quot;SQLservice\NewService.ss64.com:1456&quot;};{Remove=&quot;SQLservice\demo.ss64.com:1456&quot;}
+</code></pre>
+<p>-TrustedForDelegation <i>bool</i><br>
+Whether an account is trusted for Kerberos delegation.<br>
+A service that runs under an account that is trusted for Kerberos delegation can<br>
+assume the identity of a client requesting the service.<br>
+This value also sets the ADS_UF_TRUSTED_FOR_DELEGATION flag of the AD UAC attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-UserPrincipalName <i>string</i><br>
+Each user account has a user principal name (UPN) in the format<br>
+<i>user</i>@<i>DNS-domain-name</i><br>
+A UPN is a friendly name assigned by an administrator that is shorter than the LDAP<br>
+distinguished name used by the system and easier to remember.<br>
+The UPN is independent of the user object’s DN, so a user object can be moved or<br>
+renamed without affecting the user logon name. When logging on using a UPN, users<br>
+no longer have to choose a domain from a list on the logon dialog box.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<pre><code>-WhatIf
+   Describe what would happen if you executed the command, without actually executing the command.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Set-ADComputer modifies the properties of an AD computer object. Commonly used property values can be modified  using the cmdlet parameters. Property values that are not associated with cmdlet parameters 
+can be modified by using the <span class="code">-Add, -Replace, -Clear</span> and <span class="code">-Remove</span> parameters.<br>
+<br>
+The <span class="code">-Identity</span> parameter specifies the AD computer to modify. Identify a computer by its distinguished name Members (DN), GUID, security identifier (SID) or Security Accounts Manager (SAM) account name. The -Identity parameter can also be set to an object <a href="syntax-variables.html">variable</a>, or you can pass an object through the PowerShell <a href="syntax-pipeline.html">pipeline</a>. For example, from <a href="get-adcomputer.html">Get-ADComputer</a>.<br>
+<br>The <span class="code">-Instance</span> parameter provides a way to update a computer by applying the changes made to a copy of the computer object. When you specify the -Instance parameter you should not pass the -identity parameter. <br>
+<br>Three ways to modify the Location property of a computer object:</p>
+<blockquote>
+<p>Method 1: Set-ADComputer  -Identity PC00189  -Location "London"<br>
+<br>Method 2: Get-ADComputer PC00189 | Set-ADcomputer -Location "London"<br>
+<br>Method 3:<br>
+$computer = Get-ADcomputer PC00189<br>
+$computer.Location= "London"<br>
+Set-ADComputer -Instance $computer</p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>Modify the SPN value for a given computer:</p>
+<p class="code">PS C:\&gt; Set-ADComputer "SRV251" -ServicePrincipalName @{Replace="MSSQLSVC/SRV251.ss64.com:1456","MS OLAPSVC.3/SRV251.ss64.com:analyze"}</p>
+<p>Modify the location for a given computer to "Stavanger, Norway":</p>
+<p class="code">PS C:\&gt; Set-ADComputer "SRV251" -Location "Stavanger, Norway"</p>
+<p>Set the 'managed by' attribute value for a given computer using the SAM account name of the user:</p>
+<p class="code">PS C:\&gt; Set-ADComputer "SRV251" -ManagedBy "CN=SQL Administrator 01,OU=UserAccounts,OU=Managed,DC=ss64,DC=com"</p>
+<p>Set the 'location' and 'managed-by' attributes of a given computer using the instance parameter set:</p>
+<p class="code">PS C:\&gt; $comp = Get-ADComputer "SRV251"; $comp.Location = "Stavanger, Norway"<br>
+PS C:\&gt; $comp.ManagedBy = "CN=SQL Administrator 01,OU=UserAccounts,OU=Managed,DC=ss64,DC=com"<br>
+PS C:\&gt;  Set-ADComputer -Instance $comp</p>
+<p class="quote"><i>“A happy person is not a person in a certain set of circumstances, but rather a person with a certain set of attitudes” ~ Hugh Downs</i></p>
+<p><b>Related:</b></p>
+<p><a href="get-adcomputer.html">Get-ADComputer</a> - Get one or more AD computers. <a href="new-adcomputer.html"><br>
+New-ADComputer</a> - Create a new AD computer.<br>
+<a href="remove-adcomputer.html">Remove-ADComputer</a> - Remove an AD computer</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set-adcomputer.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-adcomputer.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

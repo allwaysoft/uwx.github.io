@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SETX.exe (Resource Kit, Windows 7)
+ Set environment variables permanently,
+SETX can be used to set Environment Variables for the machine (HKLM) or currently logged on user (HKCU):
+Syntax
+SETX [/s Comp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/setx.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="SETX.exe (Resource Kit, Windows 7)
+ Set environment variables permanently,
+SETX can be used to set Environment Variables for the machine (HKLM) or currently logged on user (HKCU):
+Syntax
+SETX [/s Comp">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="SETX.exe (Resource Kit, Windows 7)
+ Set environment variables permanently,
+SETX can be used to set Environment Variables for the machine (HKLM) or currently logged on user (HKCU):
+Syntax
+SETX [/s Comp">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>SETX.exe (<a href="../links/windows.html#kits">Resource Kit</a>, Windows 7)</h1>
+<p> Set environment variables permanently,
+SETX can be used to set Environment Variables for the machine (HKLM) or currently logged on user (HKCU):</p>
+<pre>Syntax
+<p>SETX [/s <i>Computer</i> [<i>Credentials</i>]] <i>Variable</i> <i><b>Value</b></i> [/m]</p>
+<p>SETX [/s <i>Computer</i> [<i>Credentials</i>]] [<i>Variable</i>] /k <i><b>RegistryPath</b></i> [/m]</p>
+<p>SETX [/s <i>Computer</i> [<i>Credentials</i>]] /f <i><b>FileName</b></i> {[<i>Variable</i>] {/a <i>L</i>,<i>T</i> | /r <i>oL</i>,oT “<i>SearchString</i>”}<br>
+[/m] | /x} [/d <i>Delimiters</i>]</p>
+<p>Key:</p>
+<p>/s <i>Computer<br>
+</i>      The name or IP address of a remote computer.<br>
+Do not use backslashes. (default = the local computer)</p>
+<p><i>Credentials</i><br>
+The username and password used to connect to <i>Computer</i>:<br>
+/u [<i>Domain</i>]<i>UserName</i> [/p [<i>Password</i>]]]</p>
+<p>/u [<i>Domain</i>]<i>UserName</i><br>
+Run the script with the credentials of the specified user account.<br>
+The default value is the system permissions.</p>
+<p>/p [<i>Password</i>]<br>
+The password of the user account that is specified in the /u parameter.</p>
+<p><i>Variable<br>
+</i>      The name of the environment variable that you want to set.</p>
+<p><i>Value</i><br>
+The value to which you want to set the environment variable.</p>
+<p>/k<i> RegistryPath</i><br>
+Set the variable based on information from a registry key.<br>
+The registry path consists of: \HIVE\KEY…\Value<br>
+For example:<br>
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName</p>
+<p>/f <i>FileName</i><br>
+The file that you want to read.</p>
+<p>/a <i>L,T</i><br>
+Get token <i>T</i> from line <i>L</i> in the file.<br>
+The L (line) and T (token) coordinates are numbered starting from 0.</p>
+<p>/r <i>oL,oT</i> &quot;<i>SearchString</i>&quot;<br>
+Search the file for a token that matches <i>SearchString</i>, case insensitive.<br>
+The offset <i>oL</i> (line) and <i>oT</i> (token) coordinates are numbered starting from 0.<br>
+Negative numbers for oL &amp; oT will count upwards and left respectively.<br>
+If the token is not found, %errorlevel% will be set to 1.</p>
+<p>/m<br>
+Set the variable in the system environment HKLM.<br>
+(The default is the local environment HKCU)</p>
+<p>/x<br>
+Display the file with coordinates against each token.</p>
+<p>/d <i>Delimiters</i><br>
+Specifies delimiters such as “,” or “” to be used <i>in addition</i> to the four<br>
+built-in delimiters: SPACE, TAB, CR, and LINEFEED.<br>
+Valid delimiters include any ASCII character.<br>
+The maximum number of delimiters is 15, including built-in delimiters.</p></pre><p></p>
+<p>Because SETX writes variables to the master environment in the registry, edits will only take effect when a new command window is opened - they do not affect the current CMD or PowerShell session. </p>
+<p>Environment variables are stored in the registry:</p>
+<p> User Variables: <span class="code">HKEY_CURRENT_USER\Environment</span><br>
+System Variables: <span class="code">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment</span></p>
+<p>Machine variables are stored on the machine and will not follow a users roaming profile. To set a machine variable (<span class="code">/m</span>) requires Administrator rights. </p>
+<p>User variables are stored in the user profile and will follow the users roaming profile. </p>
+<p>If  variables with the same name are stored as both  User and Machine Environment variables, the user variable will take precedence. If a <a href="set.html">Session</a> variable is created   that will take precedence over any User and/or Machine Environment variable with the same name.</p>
+<p>To edit environment variables in the Windows GUI:<span class="code"> Control Panel | System | Advanced | Environment Variables</span> </p>
+<p>To delete an environment variable either use the GUI (recommended) or delete the value from the registry with <span class="code"><a href="reg.html">REG</a> delete HKCU\Environment /V <i>_myvar</i><br>
+</span>Deleting a variable with REG will not take effect until next logon due to caching of registry data. <br>
+Setting value of <span class="code">""</span> (empty quotes) will appear to delete the variable - it's not shown by SET but the variable name will remain in the registry.</p>
+<p>SETX can be used to set environment variables from one of three sources (modes): String Value Mode, Registry Mode, or File Mode.</p>
+<h2>String Value Mode</h2>
+<p>Setting environment variables equal to a simple string is the most basic and common usage of SetX.</p>
+<p><b>Examples:</b> (String Value mode)<br>
+</p>
+<p>Set the variable <span class="code">_car_park</span> to be 'South' in the users  environment:<br>
+<br>
+<span class="code">SetX _car_park South</span></p>
+<p>Set the variable <span class="code">_car_park</span> to be 'North' in the MACHINE  environment:<br>
+<br>
+<span class="code">SetX _car_park North /m</span><br>
+<br>
+</p><p>Store the value of _car_park in a second environment variable<br><br>
+<span class="code">SetX _oldcarpark %_car_park% </span><br><br>
+<br><br>
+Set the <span class="code">_car_park</span> environment variable in the local environment to ‘West’ on a remote computer named Computer64:</p><p></p>
+<p class="code">SetX /s computer64 /u ss64dom\user64 /p P7BmqgWZ1a _car_park West </p>
+<p>Set the _MyPath environment variable in the local environment to use the search path defined in the %PATH% environment variable:</p>
+<p class="code">SetX _MyPath %PATH%</p>
+<p>Set the _MyPath environment variable in the local environment to use the search path defined in the %PATH% environment variable after replacing ~ with %:</p>
+<p class="code">SetX _MyPath ~PATH~ </p>
+<p>Set the _MyPath environment variable in the local environment to use the search path defined in the PATH environment variable on a remote computer named Computer64:</p>
+<p class="code">SetX /s computer64 /u ss64dom\user64 /p pa55w0rd _MyPath %PATH%</p>
+<h2>Registry Mode</h2>
+<p>In registry mode, SetX is an alternative to the REG QUERY command.</p>
+<p>The only supported hives are: HKEY_CURRENT_USER and HKEY_LOCAL_MACHINE. </p>
+<p>REG_DWORD, REG_EXPAND_SZ, REG_SZ, and REG_MULTI_SZ are the valid RegKey data types.<br>
+When reading REG_MULTI_SZ values from the registry, only the first item will be extracted and used.<br>
+REG_DWORD registry values are extracted and used in hexadecimal mode.</p>
+<p><b>Examples: </b>(Registry mode)</p>
+<p>Set the _TZone environment variable in the local environment to the value found in the HKLM...\StandardName registry key:</p>
+<pre>SetX _TZone /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName </pre>
+<p>Set the _Build environment variable in the system environment to the value found in the HKLM\...\CurrentBuildNumber registry key:</p>
+<pre>SetX _Build /k "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber" /m</pre>
+<h2>File Mode</h2>
+<p> File mode supports the parsing of plain text files only, (with CR/LF line endings).</p>
+<p><b>Examples:</b> (File mode)<b> </b></p>
+<p>Display the tokens in a file:</p>
+<p class="code">C:&gt; SetX /f filename.txt /x<br>
+(0,0 demo1)(0,1 demo2)(0,2 demo3)<br>
+(1,0 demoA)(1,1 demoB)(1,2 demoC)</p>
+<p>Set the _ipaddr  variable in the local environment to the value found at the coordinate 5,11 in the file Ipconfig.out, the variable will only be visible in a new command shell:</p>
+<p class="code">SetX _ipaddr /f ipconfig.out /a 5,11</p>
+<p>When using SetX to extract values from a file, we can ignore the variable that is set and instead use FOR /F to grab the extracted token text into the current session. In this way we are using the SetX command more like <a href="findstr.html">Findstr</a>.<br>
+So to obtain the fourth token in the 1st line of example.txt:</p>
+<pre>For /F "tokens=3" %%G in ('setx /F example.txt dummyVar /A 1^,4 ^|find "Extracted value"') do set _result=%%G
+:: remove the trailing period
+set _result=%result:~0,1%
+Echo %_result%</pre>
+<p>Thanks to Aacini for suggesting improvements to this page over in the <a href="http://ss64.org/viewtopic.php?id=1788" target="_blank" rel="external">forum</a>.</p>
+<p>Early versions of SETX (XP) do not support the options <span class="code">/k,/u,/p</span> or <span class="code">/s</span> and have options  prefixed with <span class="code">-</span> instead of <span class="code">/</span>.</p>
+<p class="quote">  <i>"You are never dedicated to something you have complete confidence in.   No-one is fanatically shouting that the sun is going to rise tomorrow. When people are fanatically devoted to political or religious faiths or any other kind of dogmas or goals, its always because these dogmas or goals are in doubt" ~ <a href="http://en.wikipedia.org/wiki/Robert_M._Pirsig" target="_blank" rel="external">Robert 
+M Pirsig</a></i> </p>
+<p><b> Related:</b></p>
+<p><a href="syntax-variables.html">Syntax - Environment Variables</a> - List of default variables<b> <br>
+</b><a href="set.html">SET</a> - Display, set, or remove   environment variables for a session <br>
+<a href="reg.html">REG</a> - Delete keys or values from the registry <br>
+<a href="https://support.microsoft.com/kb/104011" target="_blank" rel="external">Q104011</a> - Modify variables by editing the Registry<br>
+<a href="http://stackoverflow.com/questions/6379619/explain-how-dos-batch-newline-variable-hack-works" target="_blank" rel="external">StackOverflow</a> - Storing a Newline in a variable<br>
+<a href="http://barnyard.syr.edu/%7Evefatica/#SETENV" target="_blank" rel="external">SETENV</a> - Vincent Fatica's improved version<br>
+Powershell: <a href="../ps/set-variable.html">Set-Variable</a> - Set a variable and a value (set/sv)<br>
+Equivalent bash command (Linux): <a href="../bash/env.html">setenv</a> - Display, set, or remove environment variables.</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="setx.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/setx.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

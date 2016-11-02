@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ls 
+List information about files.
+Syntax
+      ls [Options]... [File]...
+Key
+Sort entries alphabetically if none of -cftuSUX nor --sort.
+-a, --all                  List all entries including those sta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ls.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ls 
+List information about files.
+Syntax
+      ls [Options]... [File]...
+Key
+Sort entries alphabetically if none of -cftuSUX nor --sort.
+-a, --all                  List all entries including those sta">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:40.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ls 
+List information about files.
+Syntax
+      ls [Options]... [File]...
+Key
+Sort entries alphabetically if none of -cftuSUX nor --sort.
+-a, --all                  List all entries including those sta">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>ls</h1> 
+<p>List information about files.</p>
+<pre>Syntax
+      ls [<i>Options</i>]... [<i>File</i>]...
+<p>Key<br>
+Sort entries alphabetically if none of -cftuSUX nor --sort.</p>
+<p>-a, --all                  List all entries including those starting with a dot .</p>
+<p>-A, --almost-all           List all entries including those starting with a dot .<br>
+Except for . and … (implied)</p>
+<p>-b, --escape               Print octal escapes for nongraphic characters</p>
+<pre><code>  --block-size=&lt;i&gt;SIZE&lt;/i&gt;      Use &lt;i&gt;SIZE&lt;/i&gt;-byte blocks
+</code></pre>
+<p>-B, --ignore-backups       Do not list implied entries ending with ~</p>
+<p>-c                         Sort by change time; with -l: show ctime</p>
+<p>-C                         List entries by columns</p>
+<pre><code>  --color[=&lt;i&gt;WHEN&lt;/i&gt;]         Control whether color is used to distinguish file
+                         types. WHEN can be <code>never', </code>always', or `auto'
+</code></pre>
+<p>-d, --directory            List directory entries instead of contents</p>
+<p>-D, --dired                Generate output designed for Emacs’ dired mode</p>
+<p>-f                         Do not sort, enable -aU, disable -lst</p>
+<p>-F, --classify             Append indicator (one of */=@|) to entries</p>
+<pre><code>  --format=&lt;i&gt;WORD&lt;/i&gt;          Across -x, commas -m, horizontal -x, long -l,
+                         single-column -1, verbose -l, vertical -C
+
+  --full-time            List both full date and full time
+</code></pre>
+<p>-g                         (ignored)</p>
+<p>-G, --no-group             Inhibit display of group information</p>
+<p>-h, --human-readable       Print sizes in human readable format (e.g., 1K 234M 2G)<br>
+-H, --si                   Likewise, but use powers of 1000 not 1024</p>
+<pre><code>  --indicator-style=&lt;i&gt;WORD&lt;/i&gt; Append indicator with style &lt;i&gt;WORD&lt;/i&gt; to entry names:
+                         none (default), classify (-F), file-type (-p)
+</code></pre>
+<p>-i, --inode                Print index number of each file</p>
+<p>-I, --ignore=<i>PATTERN</i>       Do not list implied entries matching shell <i>PATTERN</i></p>
+<p>-k, --kilobytes            Like --block-size=1024</p>
+<p>-l                         Use a long listing format</p>
+<p>-L, --dereference          List entries pointed to by symbolic links</p>
+<p>-m                         Fill width with a comma separated list of entries</p>
+<p>-n, --numeric-uid-gid      List numeric UIDs and GIDs instead of names</p>
+<p>-N, --literal              Print raw entry names (don’t treat e.g. control<br>
+characters specially)</p>
+<p>-o                         Use long listing format without group info</p>
+<p>-p, --file-type            Append indicator (one of /=@|) to entries</p>
+<p>-q, --hide-control-chars   Print ? instead of non graphic characters</p>
+<pre><code>  --show-control-chars   Show non graphic characters as-is (default)
+</code></pre>
+<p>-Q, --quote-name           Enclose entry names in double quotes<br>
+–quoting-style=<i>WORD</i>   Use quoting style <i>WORD</i> for entry names:<br>
+literal, shell, shell-always, c, escape</p>
+<p>-r, --reverse              Reverse order while sorting</p>
+<p>-R, --recursive            List subdirectories recursively</p>
+<p>-s, --size                 Print size of each file, in blocks</p>
+<p>-S                         Sort by file size</p>
+<pre><code>  --sort=&lt;i&gt;WORD&lt;/i&gt;            time -t, version -v, status -c 
+                         size -S, extension -X, none -U
+                         atime -u, access -u, use -u
+                         
+  --time=&lt;i&gt;WORD&lt;/i&gt;            Show time as &lt;i&gt;WORD&lt;/i&gt; instead of modification time:
+                           atime, access, use, ctime or status; 
+                           also use this as a sort key if --sort=time
+</code></pre>
+<p>-t                         sort by modification time</p>
+<p>-T, --tabsize=<i>COLS</i>         assume tab stops at each <i>COLS</i> instead of 8</p>
+<p>-u                         sort by last access time; with -l: show atime</p>
+<p>-U                         do not sort; list entries in directory order</p>
+<p>-v                         sort by version</p>
+<p>-w, --width=<i>COLS</i>           assume screen width instead of current value</p>
+<p>-x                         list entries by lines instead of by columns</p>
+<p>-X                         sort alphabetically by entry extension</p>
+<p>-1                         list one file per line</p>
+<pre><code>  --help                 display help and exit
+
+  --version              output version information and exit&lt;/pre&gt;
+</code></pre>
+<p>The most common options are <span class="code">-a</span> (all files) and <span class="code">-l</span> (long 
+or details)</p>
+<p>Tab completion is supported and can be configured with <a href="syntax-inputrc.html">.inputrc</a> <br>
+  <br>
+  When output to file the files are listed one per line. <br>
+  <br>
+  By default, colour is not used to distinguish types of files. That is equivalent 
+  to using --color=none. <br>
+  Using the --color option without the optional WHEN argument is equivalent to 
+  using --color=always. <br>
+  With --color=auto, color codes are output only if standard output is connected 
+to a terminal (tty).</p>
+<p><b>Examples</b></p>
+<pre># List the contents of your home directory
+<b>$ ls ~</b>
+<h1>list everything in a vertical list:</h1>
+<p><b>$ ls -al</b></p>
+<p>total 109<br>
+drwxr-xr-x  18 root     root         4096 Jun  9 21:12 ./<br>
+drwxr-xr-x  18 root     root         4096 Jun  9 21:12 …/<br>
+drwxr-xr-x   2 root     root         4096 Jun  9 21:14 bin/<br>
+drwxr-xr-x   3 root     root         1024 Jun  9 20:32 boot/<br>
+drwxr-xr-x   6 root     root        36864 Jul 12 10:26 dev/<br>
+drwxr-xr-x  34 root     root         4096 Jul 12 10:25 etc/<br>
+^<br>
+the first column is the file type<br>
+d = directory<br>
+f = file</p>
+<h1>List the directories in the current directory:</h1>
+<p><b>$ ls -d */</b></p>
+<h1>list ALL subdirectories</h1>
+<p><b>$ ls *</b></p></pre><p></p>
+<p>The default behaviour of <span class="code">ls</span> is to only pass color control codes to tty output <span class="code">--color=auto</span>.<br>
+To pipe the output to a second command complete with color codes then set <span class="body">--color=always</span></p>
+<p class="code"><b>$ ls -lAXh --color=auto</b>|less -R</p>
+<p>A list of <a href="lsenv.html">environment variables that affect ls</a> (colour, column width, blocksize etc) </p>
+<p class="quote"><i> "If the doors of perception were cleansed every thing would appear to man as it is, infinite" ~ William Blake</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="dir.html">dir</a> - Briefly list directory contents<br>
+<a href="dircolors.html">dircolors</a> - Colour setup for `ls' <br>
+<a href="dirname.html">dirname</a> - Convert a full pathname to just a path<br>
+<a href="lsblk.html">lsblk</a> - List block devices<br>
+lspci - List PCI devices
+<br>
+<a href="quota.html">quota</a> - Display disk usage and limits <br>
+<a href="rm.html">rm</a> - Remove files <br>
+<a href="rmdir.html">rmdir</a> - Remove folder(s) <br>
+<a href="wc.html">wc</a> - Print byte, word, and line counts <br>
+Equivalent Windows command: <a href="../nt/dir.html">
+DIR</a> - Display a list of files and folders</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ls.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ls.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

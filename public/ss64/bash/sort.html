@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sort 
+Sort text files.
+  Sort, merge, or compare all the lines from the files given (or standard input.)
+Syntax
+      sort [options] [file...]
+      sort --help
+      sort --version
+Options
+sort has t">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/sort.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="sort 
+Sort text files.
+  Sort, merge, or compare all the lines from the files given (or standard input.)
+Syntax
+      sort [options] [file...]
+      sort --help
+      sort --version
+Options
+sort has t">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:42.159Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="sort 
+Sort text files.
+  Sort, merge, or compare all the lines from the files given (or standard input.)
+Syntax
+      sort [options] [file...]
+      sort --help
+      sort --version
+Options
+sort has t">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>sort</h1> 
+<p>Sort text files.<br>
+  Sort, merge, or compare all the lines from the files given (or standard input.)</p>
+<pre>Syntax
+      sort [<i>options</i>] [<i>file</i>...]
+      sort --help
+      sort --version
+<p>Options<br>
+sort has three modes of operation:<br>
+Sort (the default), Merge (-m), and Check(-c)</p>
+<p>-c    Check whether the given files are already sorted: if  they  are<br>
+not all sorted, print an error message and exit with a status of 1.</p>
+<p>-m    Merge the given files by sorting them as a group. Each input<br>
+file should already be individually sorted.  It always works to<br>
+sort instead of merge; merging is provided because it is faster,<br>
+in the case where it works.</p>
+</pre>
+<p>The following options affect the <b>ordering</b> of output lines. They can be
+specified globally or as part of a  specific key field.<br>
+If no key
+fields are specified, global options apply to comparison of entire lines;
+otherwise the global options are inherited by key fields that do not
+specify any special options of their own.
+<br>
+The <code>-b', </code>-d', <code>-f' and </code>-i' options classify characters according to
+the `LC_CTYPE' locale.</p>
+<pre>  -b
+     Ignore leading blanks when finding sort keys in each line.
+<p>-d<br>
+Sort in “phone directory” order: ignore all characters except<br>
+letters, digits and blanks when sorting.</p>
+<p>-f<br>
+Fold lowercase characters into the equivalent uppercase characters<br>
+when sorting so that, for example, <code>b' and</code>B’ sort as equal.</p>
+<p>-g<br>
+Sort numerically, using the standard C function <code>strtod' to convert a prefix of each line to a double-precision floating point number. This allows floating point numbers to be specified in scientific notation, like</code>1.0e-34’ and `10e100’.  Do not report overflow,<br>
+underflow, or conversion errors.  Use the following collating<br>
+sequence:</p>
+<pre><code>    * Lines that do not start with numbers (all considered to be
+      equal).
+
+    * NaNs (&quot;Not a Number&quot; values, in IEEE floating point
+      arithmetic) in a consistent but machine-dependent order.
+
+    * Minus infinity.
+
+    * Finite numbers in ascending numeric order (with -0 and +0
+      equal).
+
+    * Plus infinity.
+
+ Use this option only if there is no alternative; it is much slower
+ than `-n' and it can lose information when converting to floating
+ point.
+</code></pre>
+<p>-i<br>
+Ignore unprintable characters.</p>
+<p>-M<br>
+An initial string, consisting of any amount of whitespace, followed<br>
+by a month name abbreviation, is folded to UPPER case and compared<br>
+in the order <code>JAN' &amp;lt;</code>FEB’ &lt; … &lt; <code>DEC'. Invalid names compare low to valid names. The</code>LC_TIME’ locale determines the month<br>
+spellings.</p>
+<p>-n<br>
+Sort numerically: the number begins each line; specifically, it<br>
+consists of optional whitespace, an optional <code>-' sign, and zero or more digits possibly separated by thousands separators, optionally followed by a radix character and zero or more digits. The</code>LC_NUMERIC’ locale specifies the radix character and thousands<br>
+separator.</p>
+<pre><code> `sort -n' uses what might be considered an unconventional method
+ to compare strings representing floating point numbers.  Rather
+ than first converting each string to the C `double' type and then
+ comparing those values, sort aligns the radix characters in the two
+ strings and compares the strings a character at a time.  One
+ benefit of using this approach is its speed.  In practice this is
+ much more efficient than performing the two corresponding
+ string-to-double (or even string-to-integer) conversions and then
+ comparing doubles.  In addition, there is no corresponding loss of
+ precision.  Converting each string to `double' before comparison
+ would limit precision to about 16 digits on most systems.
+
+ Neither a leading `+' nor exponential notation is recognized.  To
+ compare such strings numerically, use the `-g' option.
+</code></pre>
+<p>-r<br>
+Reverse the result of comparison, so that lines with greater key<br>
+values appear earlier in the output instead of later.</p>
+<p><b>Other options</b>:</p>
+<p>-o <i>OUTPUT-FILE</i><br>
+Write output to <i>OUTPUT-FILE</i> instead of standard output.  If<br>
+<i>OUTPUT-FILE</i> is one of the input files, `sort’ copies it to a<br>
+temporary file before sorting and writing the output to<br>
+<i>OUTPUT-FILE</i>.</p>
+<p>-t <i>SEPARATOR</i><br>
+Use character <i>SEPARATOR</i> as the field separator when finding the<br>
+sort keys in each line.  By default, fields are separated by the<br>
+empty string between a non-whitespace character and a whitespace<br>
+character.  That is, given the input line <code>foo bar',</code>sort’<br>
+breaks it into fields <code>foo' and</code> bar’.  The field separator is<br>
+not considered to be part of either the field preceding or the<br>
+field following.</p>
+<p>-u<br>
+For the default case or the <code>-m' option, only output the first of a sequence of lines that compare equal. For the</code>-c’ option,<br>
+check that no pair of consecutive lines compares equal.</p>
+<p>-k <i>POS1</i>[,<i>POS2</i>]<br>
+The recommended, POSIX, option for specifying a sort field.  The<br>
+field consists of the part of the line between POS1 and POS2 (or<br>
+the end of the line, if POS2 is omitted), <em>inclusive</em>.  Fields and<br>
+character positions are numbered starting with 1.  So to sort on<br>
+the second field, you’d use `-k 2,2’ See below for more examples.</p>
+<p>-z<br>
+Treat the input as a set of lines, each terminated by a zero byte<br>
+(ASCII NUL (Null) character) instead of an ASCII LF (Line Feed).<br>
+This option can be useful in conjunction with <code>perl -0' or</code>find<br>
+-print0’ and `xargs -0’ which do the same in order to reliably<br>
+handle arbitrary pathnames (even those which contain Line Feed<br>
+characters.)</p>
+<p>`+<i>POS1</i>[-<i>POS2</i>]<br>
+The obsolete, traditional option for specifying a sort field.<br>
+The field consists of the line between POS1 and up to but <em>not<br>
+including</em> POS2 (or the end of the line if POS2 is omitted).<br>
+Fields and character positions are numbered starting with 0.<br>
+See below.</p>
+<p>–help</p>
+<p>–version</p></pre><br>
+<h2>How lines are compared</h2><p></p>
+<blockquote>
+<p> A pair of lines is compared as follows: if any key fields have been specified, `sort' compares each pair of fields, in the order specified
+on the command line, according to the associated ordering options, until a difference is found or no fields are left.  Unless otherwise
+specified, all comparisons use the character collating sequence specified by the `LC_COLLATE' locale.<br>
+<br>
+If any of the global options <code>Mbdfinr' are given but no key fields are specified, </code>sort' compares the entire lines according to the global options.<br>
+<br>
+Finally, as a last resort when all keys compare equal (or if no ordering options were specified at all), <code>sort' compares the entire lines.  The last resort comparison honors the </code>-r' global option.  The <code>-s' (stable) option disables this last-resort comparison so that lines in which all fields compare equal are left in their original relative order.  If no fields or global options are specified, </code>-s' has no effect.<br>
+<br>
+GNU <code>sort' (as specified for all GNU utilities) has no limits on input line length or restrictions on bytes allowed within lines.  In addition, if the final byte of an input file is not a newline, GNU </code>sort' silently supplies one.  A line's trailing newline is part of the line for comparison purposes; for example, with no options in an ASCII
+locale, a line starting with a tab sorts before an empty line because tab precedes newline in the ASCII collating sequence.<br>
+<br>
+Upon any error, <code>sort' exits with a status of </code>2'.<br>
+<br>
+If the environment variable <code>TMPDIR' is set, </code>sort' uses its value as the directory for temporary files instead of <code>/tmp'.  The </code>-T TEMPDIR' option in turn overrides the environment variable.</p>
+</blockquote>
+<h2>Notes</h2>
+<blockquote>
+<p> Historical (BSD and System V) implementations of <code>sort' have differed in their interpretation of some options, particularly </code>-b', <code>-f', and </code>-n'.  GNU sort follows the POSIX behavior, which is usually (but not always!) like the System V behavior.  According to POSIX, <code>-n' no longer implies </code>-b'.  For consistency, `-M' has been changed in the
+same way.  This can affect the meaning of character positions in field specifications in obscure cases.  The only fix is to add an explicit
+`-b'.<br>
+<br>
+A position in a sort field specified with the <code>-k' or </code>+' option has the form <code>F.C', where F is the number of the field to use and C is the number of the first character from the beginning of the field (for </code>+POS') or from the end of the previous field (for <code>-POS').  If the </code>.C' is omitted, it is taken to be the first character in the field.  If the
+<code>-b' option was specified, the </code>.C' part of a field specification is counted from the first nonblank character of the field (for <code>+POS') or from the first nonblank character following the previous field (for </code>-POS').<br>
+<br>
+A sort key option can also have any of the option letters <code>Mbdfinr' appended to it, in which case the global ordering options are not used for that particular field.  The </code>-b' option can be independently attached to either or both of the <code>+POS' and </code>-POS' parts of a field specification, and if it is inherited from the global options it will be attached to both.  Keys can span multiple fields.</p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>Character sort:<br>
+<br>
+<span class="code">$ sort countries.txt <br>
+<br>
+</span>Numeric sort:<span class="code"><br>
+<br>
+$ sort -n numbers.txt</span><br>
+<br>
+To sort the file below on the third field (area code):</p>
+<p>Jim Alchin  212121 Seattle<br>
+Bill Gates 404404 Seattle<br>
+Steve Jobs 246810 Nevada <br>
+Scott Neally 212277 Los Angeles </p>
+<pre>$ sort -k 3,3 people.txt&gt; sorted.txt
+<p>or using the ‘old’ syntax:<br>
+$ sort +2 -3 people.txt&gt; sorted2.txt</p>
+<p>To sort the same file on the 4th column and supress duplicates: (should return 3 rows)<br>
+$ sort -u -k 4,4 people.txt&gt; sorted3.txt</p>
+</pre>
+<p> In the remaining examples, the POSIX `-k' option is used to specify sort keys rather than
+the obsolete `+POS1-POS2' syntax.</p>
+<p>Sort in descending (reverse) numeric order:<br>
+<br>
+<span class="code">$ sort -nr</span><br>
+<br>
+Sort alphabetically, omitting the first and second fields.  This<br>
+uses a single key composed of the characters beginning at the<br>
+start of field three and extending to the end of each line:<br>
+<br>
+<span class="code">$ sort -k3</span><br>
+<br>
+Sort numerically on the second field and resolve ties by sorting<br>
+alphabetically on the third and fourth characters of field five.<br>
+Use `:' as the field delimiter:<br>
+<span class="code"><br>
+$ sort -t : -k 2,2n -k 5.3,5.4</span></p>
+<p>
+Note that if you had written <code>-k 2' instead of </code>-k 2,2' `sort' would have used all characters beginning in the second field and extending to the end of the line as the primary _numeric_ key. 
+For the large majority of applications, treating keys spanning more than one field as numeric will not do what you expect.<br>
+<br>
+Also note that the <code>n' modifier was applied to the field-end specifier for the first key.  It would have been equivalent to specify </code>-k 2n,2' or <code>-k 2n,2n'.  All modifiers except </code>b' apply to the associated _field_, regardless of whether the modifier character is attached to the field-start and/or the field-end part<br>
+of the key specifier.</p>
+<p>Sort the password file on the fifth field and ignore any leading white space.<br>
+Sort lines with equal values in field five on the numeric user ID in field three:<br>
+<br>
+<span class="code">$ sort -t : -k 5b,5 -k 3,3n /etc/passwd</span><br>
+<br>
+An alternative is to use the global numeric modifier `-n':<br>
+<br>
+<span class="code">$ sort -t : -n -k 5b,5 -k 3,3 /etc/passwd</span><br>
+<br>
+Generate a tags file in case insensitive sorted order:<br>
+<br>
+<span class="code">$ find src -type f -print0 | sort -t / -z -f | xargs -0 etags --append</span></p>
+<p>The use of <code>-print0', </code>-z', and `-0' in this case mean that
+pathnames that contain Line Feed characters will not get broken up
+by the sort operation.<br>
+<br>     
+Finally, to ignore both leading and trailing white space, you     
+could have applied the `b' modifier to the field-end specifier for     
+the first key,</p>
+<p><span class="code">$ sort -t : -n -k 5b,5b -k 3,3 /etc/passwd</span><br>
+<br>
+or by using the global <code>-b' modifier instead of </code>-n' and an<br>
+explicit `n' with the second key specifier:<br>
+<span class="code"><br>
+$ sort -t : -b -k 5,5 -k 3,3n /etc/passwd</span></p>
+<p>A file name of `-' means standard input. </p>
+<p>By default, sort writes the results to the standard output.</p>
+<p class="quote"><i>"We never sit anything out. We are cups, constantly and quietly 
+  being filled. The trick is, knowing how to tip ourselves over and let the Beautiful 
+  Stuff out" ~ Ray 
+Bradbury</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="head.html">head</a> - Output the first part of file(s) <br>
+<a href="nl.html">nl</a> - Number lines and write files<br>
+<a href="printf.html">printf</a> - Format and print data<br>
+Equivalent Windows commands: 
+<a href="../nt/sort.html">SORT</a> - Sort input</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="sort.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/sort.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

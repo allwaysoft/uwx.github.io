@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-EventLog 
+ Get eventlog data, list the event logs.
+Syntax
+      Get-EventLog [-logName] string [-newest int]
+        [CommonParameters]
+  Get-EventLog [-list] [-asString]
+    [&amp;lt;i&amp;gt;CommonParam">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-eventlog.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-EventLog 
+ Get eventlog data, list the event logs.
+Syntax
+      Get-EventLog [-logName] string [-newest int]
+        [CommonParameters]
+  Get-EventLog [-list] [-asString]
+    [&amp;lt;i&amp;gt;CommonParam">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.937Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-EventLog 
+ Get eventlog data, list the event logs.
+Syntax
+      Get-EventLog [-logName] string [-newest int]
+        [CommonParameters]
+  Get-EventLog [-list] [-asString]
+    [&amp;lt;i&amp;gt;CommonParam">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-EventLog</h1> 
+<p> Get eventlog data, list the event logs.</p>
+<pre>Syntax
+      Get-EventLog [-logName] <i>string</i> [-newest <i>int</i>]
+        [<i>CommonParameters</i>]
+<pre><code>  Get-EventLog [-list] [-asString]
+    [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key:<br>
+-logName <i>string</i><br>
+Name of the log file from which to get log events.</p>
+<p>-list<br>
+Return a list of the log files available.</p>
+<p>-asString<br>
+Send the output as a string, instead of object(s).</p>
+<p>-newest<br>
+Gets the newest ‘n’ event log entries, where<br>
+’n’ represents a numerical value for the newest<br>
+entries in the eventlog.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>
+  Get-EventLog only works against the 'classic' event logs  - it is compatible with Windows XP and 2003.  </p>
+<p>To query the new style event logs first introduced in Windows Vista use <a href="get-winevent.html">Get-WinEvent</a>.</p>
+<p>Event logs often contain tens of thousands of event log entries,  so consider using<span class="code"> -Newest </span>parameter to limit the number of entries returned.</p>
+<p><b>Examples</b></p>
+<p>Display the 50 most recent entries in the Application event log:</p>
+<p><span class="code">PS C:\&gt; get-eventlog -newest 50 -logname application</span><br>
+  <br>
+  Get the 100  recent entries from the System event log and store in $MyEvents.<br>
+Then pipeline the results to <a href="group-object.html">group-object </a>to group them by event id.</p>
+<p class="code">PS C:\&gt; $events = get-eventlog -logname system -newest 100
+    <br>
+PS C:\&gt; $events | group-object eventid</p>
+<p>Write a new message to the Application eventlog:</p>
+<p class="code">PS C:\&gt; $log = Get-EventLog -List | Where-Object { $_.Log -eq "Application" }<br>
+PS C:\&gt; $log.Source = "Test"<br>
+PS C:\&gt; $log.WriteEntry("Test message")<br>
+<br>
+PS C:\&gt; Get-EventLog Application -Newest 1 | Select Message</p>
+<p class="quote"><i>"The Statesman who yields to war fever must realize that once the signal is given, he is no longer the master of policy but the slave of unforeseeable and uncontrollable events" ~ Sir Winston Spencer Churchill</i></p>
+<p><b>Related:</b></p>
+<p>  <a href="get-winevent.html">Get-WinEvent</a> - Get event log data (Vista+)<br>
+<a href="get-event.html">Get-Event</a> - Get events in the event queue<br>
+<a href="show-eventlog.html">Show-EventLog</a> - Display an event log</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-eventlog.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-eventlog.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

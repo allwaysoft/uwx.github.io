@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SUBINACL.exe (Windows 2003 Resource kit)
+Download
+    latest version (2004)
+  Display or modify Access Control
+  Entries (ACEs) for file and folder Permissions, Ownership and Domain.
+  
+  Access Contr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/subinacl.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="SUBINACL.exe (Windows 2003 Resource kit)
+Download
+    latest version (2004)
+  Display or modify Access Control
+  Entries (ACEs) for file and folder Permissions, Ownership and Domain.
+  
+  Access Contr">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.668Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="SUBINACL.exe (Windows 2003 Resource kit)
+Download
+    latest version (2004)
+  Display or modify Access Control
+  Entries (ACEs) for file and folder Permissions, Ownership and Domain.
+  
+  Access Contr">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>SUBINACL.exe (<a href="/links/windows.html#news">Windows 2003 Resource kit</a>)</h1>
+<p><a href="http://go.microsoft.com/fwlink/?LinkID=23418" target="_blank" rel="external">Download
+    latest version</a> (2004)<br>
+  Display or modify Access Control
+  Entries (ACEs) for file and folder Permissions, Ownership and Domain.<br>
+  <br>
+  Access Control Lists apply only to files stored on an NTFS formatted drive, 
+  each ACL determines which users (or groups of users) can read or edit the file. 
+  When a new file is created it normally inherits ACL's from the folder where 
+it was created.</p>
+<pre>Syntax
+      SUBINACL [/noverbose] /<i>object_type</i> <i>object_name</i> [/<i>action</i>=<i>parameter</i>] [/help]
+<p>Key<br>
+object_type: <b> service</b>        e.g.  /service Messenger \ServerName\Messenger<br>
+<b>keyreg</b>         e.g.  /keyreg HKEY_CURRENT_USER\Software<br>
+/keyreg \Srv\HKEY_LOCAL_MACHINE\KeyPath<br>
+<b>file</b>           e.g.  /file *.obj  /file c:\test.txt<br>
+/file \ServerName\Share\Path<br>
+<b>subdirectories</b> manipulate files in specified directory and all subdirectories</p>
+<p>object_name : This will vary according to the object_type - see the examples above</p>
+<p>action      : <b>setowner</b>=owner<br>
+will change the owner of the object e.g. /setowner=MyDomain\Administrators</p>
+<pre><code>             &lt;b&gt;replace&lt;/b&gt;=SamName\OldAccount=DomainName\New_Account
+             will replace all ACE (Audit and Permissions) in the object
+             e.g. /replace=MyOldDomain\Finance=NEWDOM\Finance
+
+             &lt;b&gt;changedomain&lt;/b&gt;=OldDomainName=NewDomainName
+             will replace all ACEs with a Sid from OldDomainName
+             with the equivalent Sid found in NewSamServer 
+             e.g. /changedomain=MyOldDomain=NEWDOMAIN
+             This option requires a trust relationship with the server containing the object.
+</code></pre>
+<p>Help           Run SUBINACL /Help (or SUBINACL /Help /<i>action</i>) for more<br>
+detail on the many other options.</p></pre><p></p>
+<p>SUBINACL is a powerful command that can do everything cacls and xcacls can do and more besides.</p>
+<p>When running subinacl against a subfolder, its important to include the trailing backslash, (or <span class="code">\*.*</span>) if this is missed out subinacl will interpret the path as a filename and search the entire drive for it, this can be very slow!</p>
+<p><b>Examples:</b><br>
+<br>
+<span class="body">Save permissions to a log file:</span><br>
+<span class="code">subinacl /noverbose /nostatistic /outputlog=SS64.log /subdirectories "C:\Program Files\My Folder\*.*" /display</span></p>
+<p class="code"><span class="body">Restore Permissions from a log file:</span><br>
+subinacl /nostatistic /playfile SS64.log </p>
+<p>Change owner :<br>
+<span class="code">subinacl /file C:\demofile.doc /setowner=SS64Dom\AliceT</span><br>
+</p>
+<p class="quote"><i>“It's easier to ask forgiveness than it is to get permission” ~ Rear Admiral Grace Hopper</i></p>
+<p><b>Related:</b></p>
+<p><a href="takeown.html">TAKEOWN</a> - Take ownership of a file<br>
+<a href="attrib.html">ATTRIB</a> - Display or change file attributes<br>
+<a href="cacls.html">CACLS</a> - Change file permissions<br>
+<a href="xcacls.html">XCACLS</a> - Display or modify Access Control Lists (ACLs) for files and folders<br>
+<a href="perms.html">PERMS</a> - Show permissions for a user<br>
+FIXACLS - Restore default privs (Resource Kit supplement 2)<br>
+SHOWACL - Show file Access Control Lists (Windows 2000)<br>
+<a href="xcacls.html">XCACLS</a> - Display or modify Access Control Lists (ACLs) for files and folders<br>
+<a href="https://support.microsoft.com/kb/288129" target="_blank" rel="external">Q288129</a> - Grant users the right to manage services<br>
+Powershell: <a href="../ps/set-acl.html">Set-Acl</a> - Set permissions<br>
+Equivalent bash command (Linux): <a href="../bash/chmod.html">chmod</a> - Change access permissions</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/subinacl.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

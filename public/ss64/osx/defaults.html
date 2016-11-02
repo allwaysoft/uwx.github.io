@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="defaults 
+Set preferences, the OS X  user defaults system works with both the OS and with individual applications. 
+Syntax
+      defaults [host] Actions Options
+  defaults help
+
+Actions:
+read [domain">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/defaults.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="defaults 
+Set preferences, the OS X  user defaults system works with both the OS and with individual applications. 
+Syntax
+      defaults [host] Actions Options
+  defaults help
+
+Actions:
+read [domain">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="defaults 
+Set preferences, the OS X  user defaults system works with both the OS and with individual applications. 
+Syntax
+      defaults [host] Actions Options
+  defaults help
+
+Actions:
+read [domain">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>defaults</h1> 
+<p>Set preferences, the OS X  user defaults system works with both the OS and with individual applications. </p>
+<pre>Syntax
+      defaults [<i>host</i>] <i>Actions Options</i>
+<pre><code>  defaults help
+</code></pre>
+<p>Actions:<br>
+read [<i>domain</i> [<i>key</i>]]      Print defaults to standard output</p>
+<p>read-type <i>domain key</i>     Print the plist type</p>
+<p>write <i>domain</i> <i>key</i> ‘<i>value</i>’ Save a default <i>value</i></p>
+<p>write <i>domain</i> ‘plist’     Save <i>plist </i>(a property list) as a default:</p>
+<p>rename <i>domain old_key new_key  </i>Rename a domain key.</p>
+<p>delete [<i>domain</i> [<i>key</i>]]    Remove key.<br>
+(for most applications this will return the behaviour<br>
+to the original default values)</p>
+<p>domains                  Print all the domains in the user’s defaults system.</p>
+<p>defaults [<i>host</i>] find <i>word</i><br>
+Search for <i>word</i> in the user’s defaults, and<br>
+print a list of matches.</p>
+<p><i>Host</i>  Optionally you can restrict changes to a specific host<br>
+by default changes will apply to any host.<br>
+[-host <i>hostname</i>] Restrict to a remote machine.<br>
+[-currentHost]   Restrict to the host the user is currently logged into.</p>
+<p>Options: See below</p></pre><p></p>
+<p> If you change a default  that belongs to a running application, the application won't see the change and might even overwrite the default.</p>
+<p>In general you should close an application before changing its defaults, in the case of  Dock and Finder defaults - restart them after applying the default with the <span class="code">killall</span> command : <br>
+Restart the Dock: <span class="code">killall Dock</span> 
+<br>
+Restart the Finder: <span class="code">killall Finder</span></p>
+<p>Preferences are stored in a set of files under<span class="code"> ~/Library/Preferences</span>, however using the <span class="code">defaults</span> command is much safer than manually editing a .plist file. Beginning in Mavericks, the <span class="code">cfprefsd</span> daemon  manages and caches updates to preference files. If you  modify the file directly, the changes will not  propagate through the cache managed by the daemon.</p>
+<p><b>Examples</b>:</p>
+<p><span class="body">Disable the OS X Crash reporter (quit dialog after an application crash)<br>
+$</span> <span class="code">defaults write com.apple.CrashReporter DialogType none</span></p>
+<p><span class="body"> To re-enable the crash reporter (default)</span><br>
+<span class="body">$</span> <span class="code">defaults write com.apple.CrashReporter DialogType prompt</span><br>
+</p>
+<p>A long list of <a href="syntax-defaults.html">preferences that can be set in OS X and OS X applications</a> can be found over in the syntax section.<br>
+</p>
+<pre><b>Options:</b>
+     Specifying domains:
+<pre><code> &lt;i&gt;domain&lt;/i&gt;    A full domain name of the form com.companyname.appname. 
+
+                 defaults read com.apple.TextEdit
+
+ -app &lt;i&gt;application&lt;/i&gt;
+           The name of an application:
+
+                 defaults read -app TextEdit
+
+ &lt;i&gt;filepath&lt;/i&gt;  Domains can also be specified as a path to an arbitrary plist
+           file, omitting the '.plist' extension. For example:
+
+                 defaults read ~/Library/Preferences/com.apple.TextEdit
+
+           normally gives the same result as the two previous examples.
+
+           In the following example:
+
+                 defaults write ~/Desktop/TestFile foo bar
+
+           will write the key 'foo' with the value 'bar' into the plist
+           file 'TestFile.plist' that is on the user's desktop. If the
+           file does not exist, it will be created. If it does exist, the
+           key-value pair will be added, overwriting the value of 'foo' if
+           it already existed.
+
+           WARNING: The defaults command will be changed in an upcoming
+           major release to only operate on preferences domains. General
+           plist manipulation utilities will be folded into a different
+           command-line program.
+
+ -g | -globalDomain | NSGlobalDomain
+           Specify the global domain.
+           '-g' and '-globalDomain' can be used as synonyms for NSGlobalDomain.
+
+ Specifying value types for preference keys:
+
+             If no type flag is provided, defaults will assume the value
+             is a string. For best results, use one of the type flags,
+             listed below.
+
+ -string     Allows the user to specify a string as the value for the
+             given preference key.
+
+ -data       Allows the user to specify a bunch of raw data bytes as the
+             value for the given preference key.  The data must be provided
+             in hexadecimal.
+
+ -int[eger]  Allows the user to specify an integer as the value for the
+             given preference key.
+
+ -float      Allows the user to specify a floating point number as the
+             value for the given preference key.
+
+ -bool[ean]  Allows the user to specify a boolean as the value for the
+             given preference key.  Value must be TRUE, FALSE, YES, or NO.
+
+ -date       Allows the user to specify a date as the value for the given
+             preference key.
+
+ -array      Allows the user to specify an array as the value for the
+             given preference key:
+
+                   defaults write somedomain preferenceKey -array element1 element2 element3
+
+             The specified array overwrites the value of the key if the
+             key was present at the time of the write. If the key was not
+             present, it is created with the new value.
+
+ -array-add  Allows the user to add new elements to the end of an array
+             for a key which has an array as its value. Usage is the same
+             as -array above. If the key was not present, it is created
+             with the specified array as its value.
+
+ -dict       Allows the user to add a dictionary to the defaults database
+             for a domain.  Keys and values are specified in order:
+
+                   defaults write somedomain preferenceKey -dict key1 value1 key2 value2
+
+             The specified dictionary overwrites the value of the key if
+             the key was present at the time of the write. If the key was
+             not present, it is created with the new value.
+
+ -dict-add   Allows the user to add new key/value pairs to a dictionary
+             for a key which has a dictionary as its value. Usage is the
+             same as -dict above. If the key was not present, it is cre-ated created
+             ated with the specified dictionary as its value.&lt;/pre&gt;
+</code></pre>
+<p>Defaults allows users to read, write, and delete Mac OS X user defaults from a command-line shell. Mac OS X applications and other programs use the defaults system to record user preferences and other information that
+must be maintained when the applications aren't running (such as default font for new documents, or the position of an Info panel). Many settings can be changed through an application’s Preferences, but many settings are not shown in the GUI but can still bechanged using <span class="code">defaults</span>. </p>
+<p>In most cases the current value can be read with <span class="code">defaults read…</span> it is worth checking the current setting before writing a new default (with <span class="code">defaults write…</span>) just in case you want to revert to the old settings. If <span class="code">defaults read…</span> returns 'does not exist' that means there is no setting currently stored, you can remove a setting with <span class="code">defaults delete…</span></p>
+<p>User defaults belong to domains, which typically correspond to individual applications. Each domain has a dictionary of keys and values represent-ing representing
+ ing its defaults; for example, "Default Font" = "Helvetica". Keys are always strings, but values can be complex data structures comprising
+ arrays, dictionaries, strings, and binary data. These data structures are stored as XML Property Lists. </p>
+<p>Though all applications, system services, and other programs have their own domains, they also share a domain named NSGlobalDomain.  If a default
+ isn't specified in the application's domain, but is specified in NSGlobalDomain, then the application uses the value in that domain.</p>
+<pre>A property list (or plist) can contain multiple values                  
+<p>e.g. to write a single value:<br>
+defaults write com.ss64.myapp “Default Color” ‘(255, 0, 0)’</p>
+<p>to write two values (plist)<br>
+defaults write com.ss64.myapp ‘{ “Default Color” = (255, 0, 0);<br>
+“Default Font” = Helvetica; }’;</p></pre><p></p>
+<p> Defaults can be structured in very complex ways, making it difficult for the user to decipher or modify them.</p>
+<p class="quote"><i>“I am a leader by default, only because nature does not allow a vacuum” ~ Desmond Tutu</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/defaults.1.html" target="_blank" rel="external">defaults man page</a> - Apple.com<br>  
+<a href="defaults-show-hidden_scpt.txt">Show hidden files.scpt</a> - Toggle the display of hidden files in Finder (will restart finder)</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/defaults.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

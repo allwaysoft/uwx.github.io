@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ps Keywords 
+Keywords for the ps command. 
+  Multiple keywords can be space or comma separated.
+
+     %cpu    The cpu utilization of the process; this is a decaying average
+             over up to a m">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/ps_keywords.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ps Keywords 
+Keywords for the ps command. 
+  Multiple keywords can be space or comma separated.
+
+     %cpu    The cpu utilization of the process; this is a decaying average
+             over up to a m">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ps Keywords 
+Keywords for the ps command. 
+  Multiple keywords can be space or comma separated.
+
+     %cpu    The cpu utilization of the process; this is a decaying average
+             over up to a m">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>ps Keywords</h1> 
+<p>Keywords for the <a href="ps.html">ps command</a>. <br>
+  Multiple keywords can be space or comma separated.<br>
+</p>
+<pre>     %cpu    The cpu utilization of the process; this is a decaying average
+             over up to a minute of previous (real) time.  Since the time base
+             over which this is computed varies (since processes can be very
+             young) it is possible for the sum of all %CPU fields to exceed 100%.
+<pre><code> %mem    The percentage of real memory used by this process.
+
+ flags   The flags associated with the process as in the include file:
+
+   P_ADVLOCK     0x00001     Process might hold a POSIX advisory lock
+   P_CONTROLT    0x00002     Has a controlling terminal
+   P_INMEM       0x00004     Loaded into memory
+   P_NOCLDSTOP   0x00008     No SIGCHLD when children stop
+   P_PPWAIT      0x00010     Parent is waiting for child to exec/exit
+   P_PROFIL      0x00020     Has started profiling
+   P_SELECT      0x00040     Selecting; wakeup/waiting danger
+   P_SINTR       0x00080     Sleep is interruptible
+   P_SUGID       0x00100     Had set id privileges since last exec
+   P_SYSTEM      0x00200     System proc: no sigs, stats or swapping
+   P_TIMEOUT     0x00400     Timing out during sleep
+   P_TRACED      0x00800     Debugged process being traced
+   P_WAITED      0x01000     Debugging process has waited for child
+   P_WEXIT       0x02000     Working on exiting
+   P_EXEC        0x04000     Process called exec
+   P_NOSWAP      0x08000     Another flag to prevent swap out
+   P_PHYSIO      0x10000     Doing physical I/O
+   P_OWEUPC      0x20000     Owe process an addupc() call at next ast
+   P_SWAPPING    0x40000     Process is being swapped
+
+ lim     The soft limit on memory used, specified via a call to
+         setrlimit(2).
+
+ lstart  The exact time the command started, using the <code></code>%c'' format
+         described in strftime(3).
+
+ nice    The process scheduling increment (see setpriority(2)).
+
+ rss     the real memory (resident set) size of the process (in 1024 byte
+         units).
+
+ start   The time the command started.  If the command started less than
+   24 hours ago, the start time is displayed using the <code></code>%l:ps.1p''
+   format described in strftime(3).  If the command started less
+   than 7 days ago, the start time is displayed using the
+   <code></code>%a6.15p'' format.  Otherwise, the start time is displayed using
+   the <code></code>%e%b%y'' format.
+
+ state   The state is given by a sequence of letters, for example,
+         'RWNA''.  The first letter indicates the run state of the process:
+
+   D       Marks a process in disk (or other short term, uninterruptible) wait.
+   I       Marks a process that is idle (sleeping for longer than about 20 seconds).
+   R       Marks a runnable process.
+   S       Marks a process that is sleeping for less than about 20 seconds.
+   T       Marks a stopped process.
+   Z       Marks a dead process (a <code></code>zombie'').
+
+   Additional characters after these, if any, indicate additional
+   state information:
+
+   +       The process is in the foreground process group of its control terminal.
+   &amp;lt;       The process has raised CPU scheduling priority.
+   &amp;gt;       The process has specified a soft limit on memory requirements and is currently
+           exceeding that limit; such a process is (necessarily) not swapped.
+   A       the process has asked for random page replacement
+           (VA_ANOM, from vadvise(2), for example, lisp(1) in a garbage collect).
+   E       The process is trying to exit.
+   L       The process has pages locked in core (for example, for raw I/O).
+   N       The process has reduced CPU scheduling priority (see setpriority(2)).
+   S       The process has asked for FIFO page replacement (VA_SEQL,
+           from vadvise(2), for example, a large image processing
+           program using virtual memory to sequentially address
+           voluminous data).
+   s       The process is a session leader.
+   V       The process is suspended during a vfork.
+   W       The process is swapped out.
+   X       The process is being traced or debugged.
+
+ tt        An abbreviation for the pathname of the controlling terminal, if
+           any.  The abbreviation consists of the three letters following
+           /dev/tty, or, for the console, <code></code>con''.  This is followed by a
+           '-' if the process can no longer reach that controlling termi-
+           nal (i.e., it has been revoked).
+
+ wchan     The event (an address in the system) on which a process waits.
+   When printed numerically, the initial part of the address is
+   trimmed off and the result is printed in hex, for example,
+   0x80324000 prints as 324000.
+
+ When printing using the command keyword, a process that has exited and
+ has a parent that has not yet waited for the process (in other words, a
+ zombie) is listed as <code></code>&lt;defunct&gt;'', and a process which is blocked while
+ trying to exit is listed as <code></code>&lt;exiting&gt;''.   Ps makes an educated guess as
+ to the file name and arguments given when the process was created by
+ examining memory or the swap area.   The method is inherently somewhat
+ unreliable and in any event a process is entitled to destroy this infor-
+ mation, so the names cannot be depended on too much.
+ The ucomm (accounting) keyword can, however, be depended on.
+</code></pre>
+<p>KEYWORDS</p>
+<pre><code> The following is a complete list of the available keywords and their
+ meanings.  Several of them have aliases (keywords which are synonyms).
+
+ %cpu  percentage cpu usage (alias pcpu)
+ %mem  percentage memory usage (alias pmem)
+ acflag  accounting flag (alias acflg)
+ command  command and arguments
+ cpu  short-term cpu usage factor (for scheduling)
+ flags  the process flags, in hexadecimal (alias f)
+ gid  the effective gid
+ inblk  total blocks read (alias inblock)
+ jobc  job control count
+ ktrace  tracing flags
+ ktracep  tracing vnode
+ lim  memoryuse limit
+ logname  login name of user who started the process
+ lstart  time started
+ majflt  total page faults
+ minflt  total page reclaims
+ msgrcv  total messages received (reads from pipes/sockets)
+ msgsnd  total messages sent (writes on pipes/sockets)
+ nice  nice value (alias ni)
+ nivcsw  total involuntary context switches
+ nsigs  total signals taken (alias nsignals)
+ nswap  total swaps in/out
+ nvcsw  total voluntary context switches
+ nwchan  wait channel (as an address)
+ oublk  total blocks written (alias oublock)
+ p_ru  resource usage (valid only for zombie)
+ paddr  swap address
+ pagein  pageins (same as majflt)
+ pgid  process group number
+ pid  process ID
+ poip  pageouts in progress
+ ppid  parent process ID
+ pri  scheduling priority
+ re    core residency time (in seconds; 127 = infinity)
+ rgid  real group ID
+ rlink  reverse link on run queue, or 0
+ rss  resident set size
+ rsz  resident set size + (text size / text use count) (alias rssize)
+ rtprio  realtime priority (101 = not a realtime process)
+ ruid  real user ID
+ ruser  user name (from ruid)
+ sess  session pointer
+ sig  pending signals (alias pending)
+ sigcatch  caught signals (alias caught)
+ sigignore  ignored signals (alias ignored)
+ sigmask  blocked signals (alias blocked)
+ sl    sleep time (in seconds; 127 = infinity)
+ start  time started
+ state  symbolic process state (alias stat)
+ svgid  saved gid from a setgid executable
+ svuid  saved uid from a setuid executable
+ tdev  control terminal device number
+ time  accumulated cpu time, user + system (alias cputime)
+ tpgid  control terminal process group ID
+ tsess  control terminal session pointer
+ tsiz  text size (in Kbytes)
+ tt    control terminal name (two letter abbreviation)
+ tty  full name of control terminal
+ uprocp  process pointer
+ ucomm  name to be used for accounting
+ uid  effective user ID
+ upr  scheduling priority on return from system call (alias usrpri)
+ user  user name (from uid)
+ vsz  virtual size in Kbytes (alias vsize)
+ wchan  wait channel (as a symbolic name)
+ xstat  exit or stop status (valid only for stopped or zombie process)&lt;/exiting&gt;&lt;/defunct&gt;&lt;/pre&gt;
+</code></pre>
+<p><b>Related:</b></p>
+<p>
+<a href="kill.html">kill</a> - Stop a process from running<br>
+<a href="ps.html">ps</a> - Process status</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ps_keywords.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/ps_keywords.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Fetch and Close a REF Cursor 
+FETCH a REF cursor:
+
+  FETCH {cursor_name | :host_cursor_variable_name}
+     INTO {variable1[, variable2,...] | record_name};
+
+The variables must match (both in number an">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/oraplsql/ref_cursor_fetch_close.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Fetch and Close a REF Cursor 
+FETCH a REF cursor:
+
+  FETCH {cursor_name | :host_cursor_variable_name}
+     INTO {variable1[, variable2,...] | record_name};
+
+The variables must match (both in number an">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:32.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Fetch and Close a REF Cursor 
+FETCH a REF cursor:
+
+  FETCH {cursor_name | :host_cursor_variable_name}
+     INTO {variable1[, variable2,...] | record_name};
+
+The variables must match (both in number an">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orapl.lbi" --><!-- #EndLibraryItem --><h1>Fetch and Close a REF Cursor</h1> 
+<pre><b>FETCH</b> a REF cursor:
+
+  FETCH {<i>cursor_name</i> | :<i>host_cursor_variable_name</i>}
+     INTO {<i>variable1</i>[, <i>variable2</i>,...] | <i>record_name</i>};
+
+The variables must match (both in number and positionally) the 
+columns listed in the REF cursor OPEN statement.
+Also the data types must either match or be compatible.
+
+A fetch statement retrieves rows one at a time from
+the result set of a multi-row query - in other words it
+advances the cursor to the next row.
+
+<b>CLOSE</b> a REF cursor:
+
+  CLOSE {<i>cursor_name</i> | :<i>host_cursor_variable_name</i>};
+
+Closing a cursor releases the context area. 
+
+REF Cursor Attributes:
+
+cursor<b>%ROWCOUNT</b> - int - number of rows fetched so far
+cursor<b>%ROWTYPE</b>  - returns the datatype of the underlying table
+cursor<b>%FOUND</b>    - bool - TRUE if &gt;1 row returned
+cursor<b>%NOTFOUND</b> - bool - TRUE if 0 rows returned
+cursor<b>%ISOPEN</b>   - bool - TRUE if cursor still open
+</pre>
+<p><span class="body">    <b>Notes:</b><br>
+    Typically the REF CURSOR definition and the OPEN FOR SELECT will be in a packaged procedure on the server<br>
+    <br>
+  A client-side application will then call the procedure - thus obtaining a valid open cursor with the correct SQL<br>
+  The client-side application will then perform further 
+  processing, FETCH into variables etc<br>
+    <br>
+  Note that the cursor variable must be the same TYPE
+  for both the packaged procedure on the server and
+  in the DECLARE section of the client-side application.<br>
+    <br>
+  The way to be sure of this is to declare the TYPE in a
+PACKAGE</span></p>
+<p>Cursor<b>%ROWCOUNT</b> will display the number of rows retrieved so far. <br>
+Until Oracle has retrieved all the rows then by definition it does not have an accurate record of how many there are. Of course <a href="../orad/USER_TABLES.html">user_tables </a>or <a href="../orad/DBA_TABLES.html">dba_tables</a> will have a count of the number of rows (NUM_ROWS), but this is only as up to date as the statistics.</p>
+<p><b>Example:</b></p>
+<pre>CREATE PACKAGE my_cursor_types AS
+<p>TYPE MyCursor IS REF CURSOR;<br>
+…<br>
+END my_cursor_types;</p>
+<p>CREATE PROCEDURE GetCarter ( proc_cv IN OUT my_cursor_types.MyCursor,<br>
+emp_name VARCHAR2(50) )<br>
+…</p>
+<p>Then the client-side application code would start like</p>
+<p>DECLARE<br>
+local_cv        my_cursor_types.MyCursor;<br>
+carter_record   carter%ROWTYPE<br>
+BEGIN<br>
+GetCarter(local_cv,:employee)    – employee is a host variable<br>
+FETCH local_cv INTO carter_record;<br>
+…</p></pre><p></p>
+<p> <span class="body"><b> 
+  Related:</b></span></p>
+<p><span class="body"><a href="cursor_fetch_close.html">Fetch and CLOSE a normal 
+  cursor</a></span></p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ref_cursor_fetch_close.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/oraplsql/ref_cursor_fetch_close.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NETDOM Query   (Windows Server 2003/2008/R2/2012 + Windows 7/8)
+Query the domain for information.
+Syntax
+      NETDOM QUERY [/Domain:domain] [/Server:server]
+         [/UserD:user] [/PasswordD:[passwo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/netdom-query.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="NETDOM Query   (Windows Server 2003/2008/R2/2012 + Windows 7/8)
+Query the domain for information.
+Syntax
+      NETDOM QUERY [/Domain:domain] [/Server:server]
+         [/UserD:user] [/PasswordD:[passwo">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.238Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="NETDOM Query   (Windows Server 2003/2008/R2/2012 + Windows 7/8)
+Query the domain for information.
+Syntax
+      NETDOM QUERY [/Domain:domain] [/Server:server]
+         [/UserD:user] [/PasswordD:[passwo">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1><a href="netdom.html">NETDOM</a> Query   (Windows Server 2003/2008/R2/2012 + Windows 7/8)</h1>
+<p>Query the domain for information.</p>
+<pre>Syntax
+      <a href="netdom.html">NETDOM</a> QUERY [/Domain:<i>domain</i>] [/Server:<i>server</i>]
+         [/UserD:<i>user</i>] [/PasswordD:[<i>password</i> | *]]
+            [/Verify] [/RESEt] [/Direct] [/SecurePasswordPrompt]
+               WORKSTATION | SERVER | DC | OU | PDC | FSMO | TRUST
+<p>Key:</p>
+<p>/Domain     The domain on which to query for the information</p>
+<p>/UserD      User account used to make the connection with the Domain<br>
+specified by the /Domain argument</p>
+<p>/PasswordD  Password of the user account specified By /UserD.<br>
+Specifying a * will prompt for the password.</p>
+<p>/Server     Name of a specific domain controller that should be used to<br>
+perform the query.</p>
+<p>/Verify     For computers, verify that the secure channel between the<br>
+computer and the domain controller is operating properly.<br>
+For trusts, verify that the the trust between domains is<br>
+operating properly. Only outbound trust will be verified.<br>
+The user must have domain administrator credentials to get<br>
+correct verification results.</p>
+<p>/RESEt      Reset the secure channel between the computer and the domain<br>
+controller; valid only for computer enumeration</p>
+<p>/Direct     For a TRUST query: list only the direct trust links and<br>
+omit the domains indirectly trusted through transitive<br>
+links. Do not use with /Verify.</p>
+<p>/SecurePasswordPrompt<br>
+Use secure credentials popup to specify credentials. This<br>
+option should be used when smartcard credentials need to be<br>
+specified. This option is only in effect when the password<br>
+value is supplied as *</p>
+<p>WORKSTATION  Query the domain for the list of workstations<br>
+SERVER       Query the domain for the list of servers<br>
+DC           Query the domain for the list of Domain Controllers<br>
+OU           Query the domain for the list of Organizational Units under<br>
+which the specified user can create a machine object<br>
+PDC          Query the domain for the current Primary Domain Controller<br>
+FSMO         Query the domain for the current list of <abbr title="Flexible Single Master Operations">FSMO</abbr> owners<br>
+TRUST        Query the domain for the list of its trusts</p></pre><p></p>
+<p>The trust verify command checks only direct, outbound, Windows trusts. To
+verify an inbound trust, use the <a href="netdom-trust.html">NETDOM TRUST</a> command which allows you to
+specify credentials for the trusting domain.</p>
+<p>Netdom options can be abbreviated to just the UPPER case letters, e.g. <span class="code">/PasswordD</span> can be supplied as just <span class="code">/PD</span> </p>
+<p><i class="quote">“I do not seek, I find” ~ Pablo Picasso</i><br>
+<br>
+<b> Related:</b></p>
+<p><a href="netdom-add.html">NETDOM ADD</a> - Add a workstation or server account to the domain<br>
+<a href="netdom-remove.html">NETDOM REMOVE</a> - Remove a workstation or server from the domain.<br>
+PowerShell: <a href="../ps/get-adcomputer.html">Get-ADComputer</a> - Get one or more computers from Active Directory.</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="netdom-query.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/netdom-query.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

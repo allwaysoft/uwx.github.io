@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SHORTCUT.exe (Windows 95 support tools and NT 4 Server Resource Kit)
+Create a windows shortcut (.LNK file)
+Syntax
+      SHORTCUT [options]
+Key
+   Source options
+-t target    : The path and file name o">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/shortcut.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="SHORTCUT.exe (Windows 95 support tools and NT 4 Server Resource Kit)
+Create a windows shortcut (.LNK file)
+Syntax
+      SHORTCUT [options]
+Key
+   Source options
+-t target    : The path and file name o">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.532Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="SHORTCUT.exe (Windows 95 support tools and NT 4 Server Resource Kit)
+Create a windows shortcut (.LNK file)
+Syntax
+      SHORTCUT [options]
+Key
+   Source options
+-t target    : The path and file name o">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>SHORTCUT.exe (Windows 95 support tools and <a href="../links/windows.html#kits">NT 4 Server Resource Kit</a>)</h1>
+<p>Create a windows shortcut (.LNK file)</p>
+<pre>Syntax
+      SHORTCUT [<i>options</i>]
+<p>Key<br>
+<i>   Source options</i><br>
+-t <i>target</i>    : The path and file name of the application/document to open.<br>
+-a <i>arguments</i> : The arguments passed when the shortcut is used.<br>
+-d <i>directory</i> : The folder to start the application in.<br>
+-i <i>iconfile</i>  : The file the icon is in.<br>
+-x <i>index</i>     : The index into the icon file.</p>
+<p><i>   options for the shortcut file to be created</i></p>
+<p>-n <i>name</i>      : The path and file name (.LNK) of the shortcut file.<br>
+-c           : Change existing shortcut.<br>
+-r           : Resolve broken shortcut.<br>
+-f           : Force overwrite of an existing short cut.<br>
+-s           : Make shortcut simple (don’t use LinkResolve)</p>
+<p><i>   Export options</i><br>
+-u [<i>spec</i>]    : ECHO the contents of an existing shortcut.<br>
+‘all’ is the same as ‘natdix’ but the letters<br>
+of ‘natdix’ specify the <i>options</i> to be exported<br>
+(the same option can be specified more than once<br>
+e.g. -u natn)<br>
+-l <i>logfile</i>   : Save any error messages in the specified file</p>
+</pre>
+<p>If shortcut.exe fails to create a new shortcut, it does NOT set 
+  an errorlevel.<br>
+  <br>
+  <b>Example</b></p>
+<pre>   @ECHO off 
+   MD %userprofile%"\start menu\programs\MY APP"
+   SHORTCUT -f -t C:\MyApp.exe -n %userprofile%"\start menu\programs\MY APP\MY APP"</pre>
+<p>An alternative, is to use <a href="../vb/index.html">VBScript</a>, call the  VB script with cscript like so: <br> 
+<span class="code">CSCRIPT C:\batch\myshortcut.vbs</span> </p>
+<p>Optional sections in the VBscript below are commented out:</p>
+<pre>   Set oWS = WScript.CreateObject("WScript.Shell")
+   sLinkFile = "C:\MyShortcut.LNK"
+   Set oLink = oWS.CreateShortcut(sLinkFile)
+<p>oLink.TargetPath = “C:\Program Files\MyApp\MyProgram.EXE”<br>
+’  oLink.Arguments = “”<br>
+’  oLink.Description = “MyProgram”<br>
+’  oLink.HotKey = “ALT+CTRL+F”<br>
+’  oLink.IconLocation = “C:\Program Files\MyApp\MyProgram.EXE, 2”<br>
+’  oLink.WindowStyle = “1”<br>
+’  oLink.WorkingDirectory = &quot;C:\Program Files\MyApp&quot;<br>
+oLink.Save</p></pre><br>
+<h2>Shortcut NTFS file system tracking</h2><p></p>
+<p> If a shortcut to a file breaks because the destination file has moved, then by default Windows will attempt to <a href="http://technet.microsoft.com/en-gb/magazine/2009.10.windowsconfidential.aspx" target="_blank" rel="external">automatically locate the shortcut destination</a> by performing a  search or matching file properties. This 
+can be turned on or off in the registry:<br>
+<br>
+<span class="code">HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer<br>
+NoResolveTrack</span></p>
+<p> 0 = disabled, 1 = enabled (REG_DWORD)</p>
+<h2> Shortcut Auto LinkResolve</h2>
+<p>By default shortcuts will include the destination machine, even for a target like <span class="code">C:\MyFile.doc</span> <br>
+This is not immediately visible until the shortcut.LNK file is copied to another machine,  the shortcut target will then be automatically updated to point 
+back to <span class="code">\\Machine1\c$\MyFile.doc</span><br>
+To turn this behaviour off use <span class="code">shortcut.exe -s </span>or  add a  DWORD value of 1 to the registry (before creating the shortcut):<br>
+<br>
+<span class="code">HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer<br>
+"LinkResolveIgnoreLinkInfo"=1</span></p>
+<h2>Internet Shortcuts</h2>
+<p>Unlike file/folder shortcuts, Internet Explorer Favourite (.URL) files are simple text files which you can create with a couple of ECHO statements:</p>
+<p><span class="code">Echo [InternetShortcut] &gt; demo.url <br>
+Echo URL=http://ss64.com/ &gt;&gt; demo.url</span><br>
+<br>
+<i class="quote">“The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man” ~ George Bernard Shaw</i></p>
+<p><b> Related:</b><br>
+<br>
+<a href="md.html">MD</a> - Create folder(s)<br>
+<a href="slow_browsing.html">Slow Network browsing</a> (XP)<br>
+<a href="fsutil.html">FSUTIL</a> - Create a Hardlink <br>
+<a href="https://support.microsoft.com/kb/158682" target="_blank" rel="external">Q158682</a> - Shortcuts 
+created resolve to UNC Path (Link Tracking)<br>
+<a href="https://support.microsoft.com/kb/150215" target="_blank" rel="external">Q150215</a> - Disable Automatic 
+Shortcut Resolution <br>
+<a href="https://support.microsoft.com/kb/254493" target="_blank" rel="external">Q254493</a> - Shortcut.exe fails with sub-folder names.<br>
+<a href="https://support.microsoft.com/kb/263324" target="_blank" rel="external">Q263324</a> - Shortcut.exe  truncates path names. <br>
+Equivalent bash command (Linux): <a href="../bash/symlink.html">symlink</a> - Make a new name for a file, <a href="../bash/ln.html">ln</a> - Make links between files </p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="shortcut.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/shortcut.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

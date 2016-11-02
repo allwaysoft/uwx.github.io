@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="join 
+Relational database operator. 
+  Performs an `equality join&apos; on the specified files and writes the result 
+  to the standard output. The `join field&apos; is the field in each file by which 
+  the fi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/join.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="join 
+Relational database operator. 
+  Performs an `equality join&apos; on the specified files and writes the result 
+  to the standard output. The `join field&apos; is the field in each file by which 
+  the fi">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="join 
+Relational database operator. 
+  Performs an `equality join&apos; on the specified files and writes the result 
+  to the standard output. The `join field&apos; is the field in each file by which 
+  the fi">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>join</h1> 
+<p>Relational database operator. <br>
+  Performs an `equality join' on the specified <i>files </i>and writes the result 
+  to the standard output. The `join field' is the field in each file by which 
+  the files are compared. The first field in each line is used by default. </p>
+<p>There is one line in the output for each pair of lines in file1 
+  and file2 which have identical join fields. Each output line consists of the 
+  join field, the remaining fields from file1 and then the remaining fields from 
+file2.</p>
+<pre>Syntax
+      join [-a file_number | -v <i>file_number</i>]
+              [-e <i>string</i>] [-j <i>file_number</i> <i>field</i>]
+                 [-o <i>list</i>] [-t <i>char</i>] [-1 <i>field</i>] [-2 <i>field</i>]<i> file1 file2</i>
+Options
+<pre><code> -a &lt;i&gt;file_number&lt;/i&gt;
+             In addition to the default output, produce a line for each
+             unpairable line in file file_number. (The argument to -a must
+             not be preceded by a space; see the COMPATIBILITY section.)
+
+ -e &lt;i&gt;string&lt;/i&gt;   Replace empty output fields with &lt;i&gt;string&lt;/i&gt;.
+
+ -o &lt;i&gt;list&lt;/i&gt;     The -o option specifies the fields that will be output from
+             each file for each line with matching join fields.  Each ele-
+             ment of list has the form `file_number.field', where
+             file_number is a file number and field is a field number.
+             The elements of list must be either comma (<code></code>,'') or whites-
+             pace separated.  (The latter requires quoting to protect it
+             from the shell, or, a simpler approach is to use multiple -o
+             options.)
+
+ -t &lt;i&gt;char&lt;/i&gt;     Use character char as a field delimiter for both input and
+             output.  Every occurrence of char in a line is significant.
+
+ -v &lt;i&gt;file_number&lt;/i&gt;
+             Do not display the default output, but display a line for
+             each unpairable line in file &lt;i&gt;file_number&lt;/i&gt;. The options -v 1
+             and -v 2 can be specified at the same time.
+
+ -1 &lt;i&gt;field&lt;/i&gt;    Join on the field'th field of file 1.
+
+ -2 &lt;i&gt;field&lt;/i&gt;    Join on the field'th field of file 2.&lt;/pre&gt;
+</code></pre>
+<p> The default field separators are tab and space characters. </p>
+<p>In this case, multiple tabs and spaces count as a single field separator, and leading tabs and spaces are ignored. </p>
+<p>The default output field separator is a single space character.</p>
+<p>Many of the options use file and field numbers. Both file numbers and field numbers are 1 based, i.e. the first file on the command line is file number 1 and the first field is field number 1.</p>
+<p class="quote"><i>"Work like you don't need the money, love like you've never been hurt, and dance like nobodys watching" ~ Satchel 'Satchmo' Paige</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/join.1.html" target="_blank" rel="external">join man page</a> - Apple.com<br>
+<a href="fmt.html">fmt</a> - Reformat paragraph text <br>
+<a href="fold.html">fold</a> - Wrap input lines to fit in specified width<br>
+<a href="head.html">head</a> - Output the first part of file(s) <br>
+<a href="split.html">split</a> - Split a file into fixed-size pieces<br>
+<a href="tail.html">tail</a> - Output the last part of files</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="join.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/join.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

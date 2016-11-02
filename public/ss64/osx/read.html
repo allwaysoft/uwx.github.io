@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="read 
+Read one line from the standard input, (or from a file) and assign the word(s) to variable name(s).
+Syntax
+      read [-ers] [-u fd] [-t timeout] [-a aname] [-p prompt]
+              [-n nchars]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/read.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="read 
+Read one line from the standard input, (or from a file) and assign the word(s) to variable name(s).
+Syntax
+      read [-ers] [-u fd] [-t timeout] [-a aname] [-p prompt]
+              [-n nchars]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="read 
+Read one line from the standard input, (or from a file) and assign the word(s) to variable name(s).
+Syntax
+      read [-ers] [-u fd] [-t timeout] [-a aname] [-p prompt]
+              [-n nchars]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>read</h1> 
+<p>Read one line from the standard input, (or from a file) and assign the word(s) to variable name(s).</p>
+<pre>Syntax
+      read [-ers] [-u <i>fd</i>] [-t <i>timeout</i>] [-a <i>aname</i>] [-p <i>prompt</i>]
+              [-n <i>nchars</i>] [-d <i>delim</i>] [<i>name</i> ...]
+<p>Key<br>
+-a <i>aname</i><br>             The <i>words</i> are assigned to sequential indices of the array variable <i>aname</i>, starting at 0.<br>             aname is unset before any new values are assigned.  Other name arguments are ignored.<br><br>   -d <i>delim</i><br>             The first character of <i>delim</i> is used to terminate the input line, rather than newline.<br>
+<br>   -e        If the standard input is coming from a terminal, readline is used to obtain the line.<br>
+<br>   -n <i>nchars</i><br>             read returns after reading <i>nchars</i> characters rather than waiting for a complete line of<br>             input.<br>   -p <i>prompt</i><br>             Display <i>prompt</i> on standard error, without a trailing newline, before attempting to read<br>             any input. The prompt is displayed only if input is coming from a terminal.<br>
+<br>   -r        Backslash  does not act as an escape character.  The backslash is considered to be part<br>             of the line. In particular, a backslash-newline pair can not be used as a line continuation.<br><br>   -s        Silent mode. If input is coming from a terminal, characters are not echoed.<br>
+<br>   -t <i>timeout</i><br>             Cause read to time out and return failure if a complete line of input is not read<br>             within <i>timeout</i> seconds. This option has no effect if read is not reading input from<br>             the terminal or a pipe.<br>
+<br>   -u <i>fd</i>     Read input from file descriptor <i>fd</i>.</p></pre><p></p>
+<p>One line is read from the standard input, or from the file descriptor <i>fd</i> supplied as an  argument to the -u option, and the first word is assigned to the first name, the second word to the second name, and so on, with leftover words and their intervening separators assigned to the last name. </p>
+<p>If there are fewer words read from the input stream than names, the remaining names are assigned empty values. The characters in IFS are used to split the line into words. The backslash character (\) can be used to remove any special meaning for the next character read and for line continuation.</p>
+<p>If no <i>names</i> are supplied, the line read is assigned to the variable REPLY. </p>
+<p>The return code is zero, unless end-of-file is encountered, read times out, or an invalid file descriptor is supplied as the argument to -u.<br>
+read is a bash builtin command.</p>
+<p class="quote"><i>“Let us read and let us dance - two amusements that will never do any harm to the world”  ~ Voltaire</i></p>
+<p><b>Related:</b></p>
+<p><a href="expr.html">expr</a> - Evaluate expressions</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="read.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/read.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

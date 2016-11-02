@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Remove-Job 
+Delete a PowerShell background job.
+Syntax
+      Remove-Job [-Id] Int32[] [-Force] [-Confirm] [-WhatIf] [CommonParameters]
+  Remove-Job [-Command &amp;lt;i&amp;gt;string&amp;lt;/i&amp;gt;[]] [-Confirm] [-">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/remove-job.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Remove-Job 
+Delete a PowerShell background job.
+Syntax
+      Remove-Job [-Id] Int32[] [-Force] [-Confirm] [-WhatIf] [CommonParameters]
+  Remove-Job [-Command &amp;lt;i&amp;gt;string&amp;lt;/i&amp;gt;[]] [-Confirm] [-">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.081Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Remove-Job 
+Delete a PowerShell background job.
+Syntax
+      Remove-Job [-Id] Int32[] [-Force] [-Confirm] [-WhatIf] [CommonParameters]
+  Remove-Job [-Command &amp;lt;i&amp;gt;string&amp;lt;/i&amp;gt;[]] [-Confirm] [-">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Remove-Job</h1> 
+<p>Delete a PowerShell background job.</p>
+<pre>Syntax
+      Remove-Job [-Id] <i>Int32</i>[] [-Force] [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<pre><code>  Remove-Job [-Command &lt;i&gt;string&lt;/i&gt;[]] [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Remove-Job [[-InstanceId] &lt;i&gt;Guid&lt;/i&gt;[]] [-Force] [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Remove-Job [-Job] &lt;i&gt;Job&lt;/i&gt;[] [-Force] [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Remove-Job [[-Name] &lt;i&gt;string&lt;/i&gt;[]] [-Force] [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Remove-Job [-State {NotStarted | Running | Completed | Failed | Stopped | Blocked}]
+     [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-Command <i>string</i>[]<br>
+Remove jobs that include the specified words in the command.</p>
+<p>-Force<br>
+Delete the job even if the status is “Running”.<br>
+Without -Force, Remove-Job will not delete a running job.</p>
+<p>-Id <i>Int32</i>[]<br>
+Delete background jobs with the specified IDs.</p>
+<pre><code>   The ID is an integer that uniquely identifies the job within the current session.
+   It is easier to remember and to type than the instance ID, but it is unique only
+   within the current session. You can type one or more IDs (separated by commas).
+   To find the ID of a job, type &quot;Get-Job&quot; without parameters.
+</code></pre>
+<p>-InstanceId <i>Guid</i>[]<br>
+Delete jobs with the specified instance IDs.</p>
+<pre><code>   An instance ID is a GUID that uniquely identifies the job on the computer.
+   To find the instance ID of a job, use Get-Job.
+</code></pre>
+<p>-Job <i>Job</i>[]<br>
+The the jobs to be deleted.<br>
+Enter a variable that contains the job or a command that gets the job.<br>
+You can also pipe a job object to Receive-Job.</p>
+<p>-Name <i>string</i>[]<br>
+Delete only the jobs with the specified friendly names.<br>
+Wildcards are permitted.<br>
+Because the friendly name is not guaranteed to be unique, even within<br>
+the session, use -WhatIf and -Confirm parameters when deleting jobs by name.</p>
+<p>-State <i>JobState</i><br>
+Delete only jobs with the specified status.<br>
+Valid values are NotStarted, Running, Completed, Stopped, Failed, and Blocked.<br>
+To delete jobs with a status of Running, use -Force.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if the command was executed without actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug,r -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Remove-Job:<span class="code"> rjb</span></p>
+<p>Remove-Job  deletes  PowerShell background jobs that were started by using <a href="start-job.html">Start-Job</a> or the -AsJob parameter of any cmdlet. </p>
+<p> When  a PowerShell background job is started, the results do not appear immediately. Instead, the command returns an object representing the background job. The job object contains useful information about the job, but it does not contain the results.<br>
+<br>To get the results of the command, use  <span class="code">Receive-Job</span>. Receive-Job gets the results that have been generated by the time that the Receive-Job command is submitted. If the results are not yet complete, you can run additional Receive-Job commands to get the remaining results. <br>
+<br>By default, job results are deleted from the system when you receive them, the <span class="code">-Keep</span> parameter can use used to save the results. To delete the job results, receive them again (without <span class="code">-Keep</span>), close the session, or use  <a href="remove-job.html">Remove-Job</a>  to delete the job from the session.</p>
+<p><b>Examples</b></p>
+<p>Delete a background job named BatchJob from the current session:</p>
+<p><span class="code">PS C:\&gt; $batch = get-job -name BatchJob<br>
+PS C:\&gt; $batch | remove-job</span></p>
+<p>Delete all  jobs in the current session:</p>
+<p><span class="code">PS C:\&gt; get-job | remove-job</span></p>
+<p>Delete all jobs from the current session that have not yet been started:</p>
+<p><span class="code">PS C:\&gt; remove-job -state NotStarted </span><br>
+<br>
+Remove a job that was started on a remote computer with
+<span class="code">Invoke-Command -AsJob</span>:</p>
+<p class="code">PS C:\&gt; $j = invoke-command -computername Server64 -scriptblock {get-process} -asJob<br>
+PS C:\&gt; $j | remove-job</p>
+<p>Remove a job that was started by using <span class="code">Invoke-Command</span> to run a <span class="code">Start-Job</span> command:</p>
+<p class="code">PS C:\&gt; $sess = new-pssession -computername Server64<br>
+</p><p>PS C:&amp;gt; invoke-command -session $sess -scriptblock {start-job -scriptblock {get-process} -name MyJob}<br></p>
+<p>PS C:&amp;gt; invoke-command -session $sess -scriptblock {remove-job -name MyJob}</p><p></p>
+<p>Find the instance ID of a job :</p>
+<p><span class="code">PS C:\&gt; $myjob = start-job -script {get-process powershell}<br>
+PS C:\&gt; $myjob | format-list -property *</span></p>
+<p class="quote"><i>“The beautiful thing about learning is nobody can take it away from you” ~ B. B. King</i></p>
+<p><b>Related:</b><br><br>
+<a href="get-job.html">Get-Job</a> - Get PowerShell background jobs that are running<br> 
+<a href="invoke-command.html">Invoke-Command</a>        -   Run command
+<!-- #BeginLibraryItem "/Library/foot_ps.lbi" --></p><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/remove-job.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

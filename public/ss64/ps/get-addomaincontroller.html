@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-ADDomainController 
+Gets one or more AD domain controllers based on discoverable services criteria, search parameters or 
+by providing a domain controller identifier.
+Syntax
+      Get-ADDomainCont">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-addomaincontroller.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-ADDomainController 
+Gets one or more AD domain controllers based on discoverable services criteria, search parameters or 
+by providing a domain controller identifier.
+Syntax
+      Get-ADDomainCont">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.916Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-ADDomainController 
+Gets one or more AD domain controllers based on discoverable services criteria, search parameters or 
+by providing a domain controller identifier.
+Syntax
+      Get-ADDomainCont">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-ADDomainController</h1> 
+<p>Gets one or more AD domain controllers based on discoverable services criteria, search parameters or 
+by providing a domain controller identifier.</p>
+<pre>Syntax
+      Get-ADDomainController [[-Identity] <i>ADDomainController</i>]
+         [-Credential <i>PSCredential</i>] [-Server <i>string</i>]
+            [-AuthType {<u>Negotiate</u> | Basic}] [<i>CommonParameters</i>]
+<pre><code>  Get-ADDomainController &lt;b&gt;-Discover&lt;/b&gt; [-AvoidSelf] [-DomainName &lt;i&gt;string&lt;/i&gt;]
+     [-ForceDiscover] [-MinimumDirectoryServiceVersion {Windows2000 | Windows2008}]
+        [-NextClosestSite &lt;i&gt;string&lt;/i&gt;] [-Service &lt;i&gt;ADDiscoverableService&lt;/i&gt;[]]
+           [-SiteName &lt;i&gt;string&lt;/i&gt;] [-Writable ]
+              [-AuthType {&lt;u&gt;Negotiate&lt;/u&gt; | Basic}] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-ADDomainController &lt;b&gt;-Filter&lt;/b&gt; &lt;i&gt;string&lt;/i&gt; [-Credential &lt;i&gt;PSCredential&lt;/i&gt;]
+     [-Server &lt;i&gt;string&lt;/i&gt;] [-AuthType {&lt;u&gt;Negotiate&lt;/u&gt; | Basic}] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-AvoidSelf<br>
+Don’t return the current computer as a domain controller.<br>
+If the current computer is not a domain controller, this parameter is ignored.<br>
+Specify this parameter to get the name of another domain controller in the domain.</p>
+<p>-Credential <i>PSCredential</i><br>
+The user account credentials to use to perform this task.<br>
+The default credentials are those of the currently logged on user unless the<br>
+cmdlet is run from an Active Directory PowerShell provider drive.<br>
+If the cmdlet is run from such a provider drive, the account associated with the drive is the default.</p>
+<pre><code>   Type a user name, such as &quot;User64&quot; or &quot;Domain64\User64&quot; or specify a
+   PSCredential object such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt; 
+
+   If a user name is specified, the cmdlet will prompt for a password.
+</code></pre>
+<p>-Discover<br>
+Return a discoverable domain controller that meets the conditions specified by the<br>
+cmdlet parameters. To get a domain controller by using the discovery mechanism of<br>
+DCLocator, use -Discover. This parameter also requires search criteria to be set by<br>
+setting parameters such as Service, SiteName, DomainName, NextClosestSite, AvoidSelf, and ForceDiscover.</p>
+<pre><code>     e.g. To get a live DC that has Web Services enabled in a specific site with name &quot;RODC-Site&quot;
+
+     Get-ADDomainController -Discover -Services ADWS -SiteName RODC-Site
+</code></pre>
+<p>-DomainName <i>string</i><br>
+The domain to search.<br>
+The cmdlet locates a discoverable domain controller in this domain.<br>
+Specify the domain with the NetBIOS name or Fully Qualified Domain Name (FQDN) of the domain.</p>
+<p>-Filter <i>string</i><br>
+A query string that retrieves Active Directory objects.<br>
+This string uses the PowerShell Expression Language syntax:</p>
+<pre><code>   &lt;i&gt;filter&lt;/i&gt; ::= &quot;{&quot; FilterComponentList&quot;}&quot;
+   &lt;i&gt;FilterComponentList&lt;/i&gt; ::= &lt;i&gt;FilterComponent&lt;/i&gt; | &lt;i&gt;FilterComponent JoinOperator FilterComponent&lt;/i&gt; | &lt;i&gt;NotOperator FilterComponent&lt;/i&gt;
+   &lt;i&gt;FilterComponent&lt;/i&gt; ::= &lt;i&gt;attr FilterOperator value&lt;/i&gt; | &quot;(&quot; &lt;i&gt;FilterComponent&lt;/i&gt;&quot;)&quot;
+   &lt;i&gt;FilterOperator&lt;/i&gt; ::= &quot;-eq&quot; | &quot;-le&quot; | &quot;-ge&quot; | &quot;-ne&quot; | &quot;-lt&quot; | &quot;-gt&quot;| &quot;-approx&quot; | &quot;-bor&quot; | &quot;-band&quot; | &quot;-recursivematch&quot; | &quot;-like&quot; | &quot;-notlike&quot;
+   &lt;i&gt;JoinOperator&lt;/i&gt; ::= &quot;-and&quot; | &quot;-or&quot;
+   &lt;i&gt;NotOperator&lt;/i&gt; ::= &quot;-not&quot;
+   &lt;i&gt;attr&lt;/i&gt; ::= &lt;i&gt;PropertyName&lt;/i&gt; | &lt;i&gt;LDAPDisplayName_of_the_attribute&lt;/i&gt;
+   &lt;i&gt;value&lt;/i&gt;::= &amp;lt;compare this value with an &lt;i&gt;attr&lt;/i&gt; by using the specified &lt;i&gt;FilterOperator&lt;/i&gt;&amp;gt;
+</code></pre>
+<p>-ForceDiscover<br>
+Force the cmdlet to clear any cached domain controller information and perform a new discovery.<br>
+If this parameter is not specified the cmdlet may return cached domain controller information.</p>
+<p>-Identity <i>ADDomainController</i><br>
+An AD Domain Controller object.<br>
+The identity may also be given as a DNS Host Name, GUID, IPV4Address, Global IPV6Address,<br>
+Name of the server object or DN of the NTDS Settings object.</p>
+<pre><code>   The cmdlet searches the default naming context or partition to find the object.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   The &lt;i&gt;ADDomainController&lt;/i&gt; object may also be passed through the pipeline or set via a variable.
+</code></pre>
+<p>-MinimumDirectoryServiceVersion <i>ADMinimumDirectoryServiceVersion</i><br>
+When getting a DC using -Discover, only return DCs that are are running this OS or later:<br>
+Possible values:<br>
+Windows2000 or 1<br>
+Windows2008 or 2</p>
+<p>-NextClosestSite<br>
+Return a domain controller in the next closest site when a domain controller is not found<br>
+in the site that contains the client. The next closest site is the site with the lowest site<br>
+link cost with respect to the current site.<br>
+Costs between sites are based on factors such as bandwidth, as well as physical proximity.</p>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)</p>
+<p>-Service <i>ADDiscoverableService</i>[]<br>
+The types of domain controllers to get.<br>
+More than one type may be specified by using a comma-separated list.<br>
+Possible values:<br>
+PrimaryDC or 1<br>
+GlobalCatalog or 2<br>
+KDC or 3<br>
+TimeService or 4<br>
+ReliableTimeService or 5<br>
+ADWS or 6</p>
+<pre><code>   Example showing how to get a live DC that has Web Services enabled:
+      Get-ADDomainController -Discover -Services ADWS
+</code></pre>
+<p>-SiteName <i>string</i><br>
+The name of a site to search in to find the domain controller.<br>
+If this parameter is not set, the cmdlet searches for domain controllers in the<br>
+same site as the client. The name of the site is defined by the Name property of the site object.</p>
+<pre><code>    The following example shows how to use this parameter to specify a site.
+      -SiteName &quot;SS64&quot;
+</code></pre>
+<p>-Writable<br>
+Return only read/write domain controllers.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Get-ADDomainController  gets the domain controllers specified by the -Identity, -Filter or -Discover parameters.<br>
+<br>The <span class="code">-Identity</span> parameter specifies the domain controller to get. Identify a domain controller by its GUID, IP
+V4Address, global IPV6Address, or DNS host name. You can also identify a domain controller by the name of the server object that represents the domain controller, the Distinguished Name (DN) of the NTDS settings object or the server object, the GUID of the NTDS settings object or the server object under the configuration partition, or the DN of the computer object that represents the domain controller. You can also set the Identity parameter to an object variable or  through the <a href="syntax-pipeline.html">pipeline</a>.<br>
+<br>To search for and retrieve more than one domain controller, use the <span class="code">-Filter</span> parameter. The Filter parameter uses the
+PowerShell Expression Language to write query strings for Active Directory. For more information  see about_ActiveDirectory_Filter. <br>
+You cannot use an LDAP query string with this cmdlet.<br>
+<br>To get a domain controller by using the discovery mechanism of DCLocator, use the <span class="code">-Discover</span> parameter.</p>
+<p><b>Examples</b></p>
+<p>Get the domain controller in the user's current session (the current default).</p>
+<p class="code">PS C:\&gt; Get-ADDomainController</p>
+<p>Get a domain controller using its IP address: </p>
+<p class="code">PS C:\&gt; Get-ADDomainController -Identity "10.5.12.64"</p>
+<p>Get one available DC in a given site using Discovery: </p>
+<p class="code">PS C:\&gt; Get-ADDomainController -Discover -Site "SS64"</p>
+<p>Get a global catalog in the current forest using Discovery: </p>
+<p class="code">PS C:\&gt; Get-ADDomainController -Discover -Service "GlobalCatalog"</p>
+<p>Get all read only DC's: </p>
+<p class="code">PS C:\&gt; Get-ADDomainController -filter {isreadonly -eq $true}</p>
+<p>Get all ROGCs in the child domain to which the client is connected: </p>
+<p class="code">PS C:\&gt; Get-ADDomainController -Server "research.SS64.com" -Filter { isGlobalCatalog -eq $true -and isReadOnly -eq $true }</p>
+<p class="quote"><i>“Being powerful is like being a lady. If you have to tell people you are, you aren't” ~ Margaret Thatcher </i></p>
+<p><b>Related:</b></p>
+<p><a href="set-addomain.html">Set-adDomain</a> - Modify an AD domain.<br> 
+<a href="set-addomainmode.html">Set-adDomainMode</a> - Set the domain functional level for an AD domain.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-addomaincontroller.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-addomaincontroller.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

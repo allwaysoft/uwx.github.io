@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="grep Programs and Regular expressions  
+grep searches input files for lines that match a given pattern.
+  grep programs
+
+  `grep&apos; searches the named input files (or standard input if no files are name">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/grep-regex.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="grep Programs and Regular expressions  
+grep searches input files for lines that match a given pattern.
+  grep programs
+
+  `grep&apos; searches the named input files (or standard input if no files are name">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.816Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="grep Programs and Regular expressions  
+grep searches input files for lines that match a given pattern.
+  grep programs
+
+  `grep&apos; searches the named input files (or standard input if no files are name">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #EndLibraryItem --><h1><a href="grep.html">grep</a> Programs and Regular expressions </h1> 
+<p>grep searches input files for lines that match a given pattern.</p>
+<h2>  grep programs</h2>
+<blockquote>
+<p>  `grep' searches the named input files (or standard input if no files are named, 
+  or the file name `-' is given) for lines containing a match to the given pattern. 
+  By default, `grep' prints the matching lines. There are three major variants 
+  of `grep', controlled by the following options.</p>
+<pre>   -G
+   --basic-regexp
+        Interpret <i>PATTERN</i> as a basic regular expression.  This is the default.
+   -E
+   --extended-regexp
+        Interpret <i>PATTERN</i> as an extended regular expression.
+   -F
+   --fixed-strings
+        Interpret <i>PATTERN</i> as a list of fixed strings, separated by
+        newlines, any of which is to be matched.
+<p>In addition, two variant programs <a href="egrep.html">EGREP</a> and <a href="fgrep.html">FGREP</a> are available.<br>
+EGREP is the same as <code>grep -E'. FGREP is the same as</code>grep -F’.</p></pre><p></p>
+</blockquote>
+<p></p><h2> Regular Expressions</h2><p></p>
+<blockquote>
+<p>  A regular expression is a pattern that describes a set of strings.<br>
+  <br>
+  Regular expressions are constructed analogously to arithmetic expressions, by 
+  using various operators to combine smaller expressions.<br>
+  <br>
+  `grep' understands two different versions of regular expression syntax: "basic" 
+  and "extended". In GNU `grep', there is no difference in available functionality 
+  using either syntax. In other implementations, basic regular expressions are 
+  less powerful. The following description applies to extended regular expressions; 
+  differences for basic regular expressions are summarized afterwards.<br>
+  <br>
+  The fundamental building blocks are the regular expressions that match a single 
+  character. Most characters, including all letters and digits, are regular expressions 
+  that match themselves. Any metacharacter with special meaning can be quoted 
+  by preceding it with a backslash. 
+A <i>bracket expression</i> is a list of characters enclosed by <b>[</b> and <b>]</b>. It matches any single character in that list; if the first character
+of the list is the caret <b>^</b> then it matches any character <i>not</i> in the list. For example, the regular expression <b>[0123456789]</b> matches any
+single digit.
+</p>
+<p>Within a bracket expression, a <i>range expression</i> consists of two characters separated by a hyphen. It matches any single character that sorts between
+the two characters, inclusive, using the locale's collating sequence and character set. For example, in the default C locale, <b>[a-d]</b> is equivalent
+to <b>[abcd]</b>. Many locales sort characters in dictionary order, and in these locales <b>[a-d]</b> is typically not equivalent to <b>[abcd]</b>; it
+might be equivalent to <b>[aBbCcDd]</b>, for example. To obtain the traditional interpretation of bracket expressions, you can use the C locale by setting the
+<b>LC_ALL</b> environment variable to the value <b>C</b>.
+</p>
+<p>Finally, certain named classes of characters are predefined within bracket expressions, as follows. Their names are self explanatory, and they are
+<b>[:alnum:]</b>, <b>[:alpha:]</b>, <b>[:cntrl:]</b>, <b>[:digit:]</b>, <b>[:graph:]</b>, <b>[:lower:]</b>, <b>[:print:]</b>, <b>[:punct:]</b>,
+</p><p><b>[:space:]</b>, <b>[:upper:]</b>, and <b>[:xdigit:].</b> For example, <b>[[:alnum:]]</b> means <b>[0-9A-Za-z]</b>, except the latter form<br>
+depends upon the C locale and the <small>ASCII</small> character encoding, whereas the former is independent of locale and character set. (Note that the<br>
+brackets in these class names are part of the symbolic names, and must be included in addition to the brackets delimiting the bracket list.) Most<br>
+metacharacters lose their special meaning inside lists. To include a literal <b>]</b> place it first in the list. Similarly, to include a literal <b>^</b></p>
+<p>place it anywhere but first. Finally, to include a literal <b>-</b> place it last.</p>
+<p></p>
+<p>The period <b>.</b> matches any single character. The symbol <b>\w</b> is a synonym for <b>[[:alnum:]]</b> and <b>\W</b> is a synonym for
+</p><p><b>[<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>]</b>.</p>
+<p></p>
+<p>The caret <b>^</b> and the dollar sign <b>$</b> are metacharacters that respectively match the empty string at the beginning and end of a line. The symbols
+<b>\&lt;</b> and <b>\&gt;</b> respectively match the empty string at the beginning and end of a word. The symbol <b>\b</b> matches the empty string at the edge
+of a word, and <b>\B</b> matches the empty string provided it's <i>not</i> at the edge of a word.
+</p>
+<pre>A regular expression can be followed by one of several repetition operators:
+<p>?   The preceding item is optional and will be matched at most once.</p>
+<ul>
+<li>The preceding item will be matched zero or more times.</li>
+</ul>
+<ul>
+<li>The preceding item will be matched one or more times.<br>
+{N}  The preceding item is matched exactly N times.<br>
+{N,}  The preceding item is matched n or more times.<br>
+{N,M}  The preceding item is matched at least N times, but not more than M times.</li>
+</ul>
+</pre>
+<p><br>
+Two regular expressions can be concatenated; the resulting regular
+expression matches any string formed by concatenating two substrings
+that respectively match the concatenated subexpressions.<br>
+<br>
+Two regular expressions can be joined by the infix operator `|'; the
+resulting regular expression matches any string matching either
+subexpression.<br>
+<br>
+Repetition takes precedence over concatenation, which in turn takes
+precedence over alternation.  A whole subexpression can be enclosed in
+parentheses to override these precedence rules.<br>
+<br>
+The backreference `\N', where N is a single digit, matches the
+substring previously matched by the Nth parenthesized subexpression of
+the regular expression.</p>
+<pre>In basic regular expressions the metacharacters 
+  ? , + , { , | , ( , and  )
+lose their special meaning; instead use the backslashed versions:
+ \? ,\+ ,\{ ,\| ,\( , and \)</pre>
+<p>Traditional <code>egrep' did not support the </code>{' metacharacter, and some
+<code>egrep' implementations support </code>\{' instead, so portable scripts
+should avoid <code>{' in </code>egrep' patterns and should use `[{]' to match a
+literal `{'.<br>
+<br>
+GNU `egrep' attempts to support traditional usage by assuming that
+`{' is not special if it would be the start of an invalid interval
+specification.  For example, the shell command `egrep '{1'' searches
+for the two-character string `{1' instead of reporting a syntax error
+in the regular expression.  POSIX.2 allows this behavior as an
+extension, but portable scripts should avoid it.</p>
+</blockquote>
+<h2> Usage<br>
+</h2>
+<pre>   Here is an example shell command that invokes GNU `grep':
+<pre><code> grep -i 'hello.*world' menu.h main.c&lt;/pre&gt;
+</code></pre>
+<blockquote>
+<p>This lists all lines in the files <code>menu.h' and </code>main.c' that contain
+the string <code>hello' followed by the string </code>world'; this is because `.*'
+matches zero or more characters within a line.  *Note Regular
+Expressions::.  The <code>-i' option causes </code>grep' to ignore case, causing
+it to match the line `Hello, world!', which it would not otherwise
+match.  *Note Invoking::, for more details about how to invoke `grep'.</p>
+</blockquote>
+<pre>   Here are some common questions and answers about `grep' usage.
+<ol>
+<li>
+<p>How can I list just the names of matching files?</p>
+<pre><code> grep -l 'main' *.c
+</code></pre>
+<p>lists the names of all C files in the current directory whose<br>
+contents mention `main’.</p>
+</li>
+<li>
+<p>How do I search directories recursively?</p>
+<pre><code> grep -r 'hello' /home/gigi
+</code></pre>
+<p>searches for <code>hello' in all files under the directory</code>/home/gigi’.  For more control of which files are searched, use<br>
+<code>find',</code>grep’ and `xargs’.  For example, the following command<br>
+searches only C files:</p>
+<pre><code> find /home/gigi -name '*.c' -print | xargs grep 'hello' /dev/null
+</code></pre>
+</li>
+<li>
+<p>What if a pattern has a leading `-’?</p>
+<pre><code> grep -e '--cut here--' *
+</code></pre>
+<p>searches for all lines matching <code>--cut here--'. Without</code>-e’,<br>
+<code>grep' would attempt to parse</code>–cut here–’ as a list of options.</p>
+</li>
+<li>
+<p>Suppose I want to search for a whole word, not a part of a word?</p>
+<pre><code> grep -w 'hello' *
+</code></pre>
+<p>searches only for instances of <code>hello' that are entire words; it does not match</code>Othello’.  For more control, use <code>\&amp;lt;' and</code>&amp;gt;’ to<br>
+match the start and end of words.  For example:</p>
+<pre><code> grep 'hello\&amp;gt;' *
+</code></pre>
+<p>searches only for words ending in <code>hello', so it matches the word</code>Othello’.</p>
+</li>
+<li>
+<p>How do I output context around the matching lines?</p>
+<pre><code> grep -C 2 'hello' *
+</code></pre>
+<p>prints two lines of context around each matching line.</p>
+</li>
+<li>
+<p>How do I force grep to print the name of the file?</p>
+<p>Append `/dev/null’:</p>
+<pre><code> grep 'eli' /etc/passwd /dev/null
+</code></pre>
+</li>
+<li>
+<p>Why do people use strange regular expressions on `ps’ output?</p>
+<pre><code> ps -ef | grep '[c]ron'
+</code></pre>
+<p>If the pattern had been written without the square brackets, it<br>
+would have matched not only the <code>ps' output line for</code>cron’, but<br>
+also the <code>ps' output line for</code>grep’.</p>
+</li>
+<li>
+<p>Why does `grep’ report “Binary file matches”?</p>
+<p>If <code>grep' listed all matching &quot;lines&quot; from a binary file, it would probably generate output that is not useful, and it might even muck up your display. So GNU</code>grep’ suppresses output from files<br>
+that appear to be binary files.  To force GNU <code>grep' to output lines even from files that appear to be binary, use the</code>-a’ or<br>
+`–text’ option.</p>
+</li>
+<li>
+<p>Why doesn’t `grep -lv’ print nonmatching file names?</p>
+<p><code>grep -lv' lists the names of all files containing one or more lines that do not match. To list the names of all files that contain no matching lines, use the</code>-L’ or `–files-without-match’<br>
+option.</p>
+</li>
+<li>
+<p>I can do OR with `|’, but what about AND?</p>
+<pre><code> grep 'paul' /etc/motd | grep 'franc,ois'
+</code></pre>
+<p>finds all lines that contain both <code>paul' and</code>franc,ois’.</p>
+</li>
+<li>
+<p>How can I search in both standard input and in files?</p>
+<p>Use the special file name `-’:</p>
+<pre><code> cat /etc/passwd | grep 'alain' - /etc/motd&lt;/pre&gt;
+</code></pre>
+</li>
+</ol>
+<p></p><h2>Bugs</h2><p></p>
+<blockquote>
+<p> Large repetition counts in the <code>{m,n}' construct can cause </code>grep' to
+use lots of memory.  In addition, certain other obscure regular
+expressions require exponential time and space, and might cause grep to
+run out of memory.  Backreferences are very slow, and can require
+exponential time.</p>
+</blockquote>
+<p class="quote"><i>"I stand for freedom of expression, doing what you believe in, and going after your dreams" ~ Madonna Ciccone</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="egrep.html">egrep</a> - Search file(s) for lines that match an extended 
+expression<br>
+<a href="fgrep.html">fgrep</a> - Search file(s) for lines that match a fixed 
+string<br>
+<a href="awk.html">gawk</a> - Find and Replace text within file(s)<br>
+<a href="grep.html">grep</a> - Search file(s) for lines that match a given pattern 
+<br>
+<a href="tr.html">tr</a> - Translate, squeeze, and/or delete characters <br>
+Equivalent Windows command: <a href="../nt/findstr.html">FINDSTR</a> - Search for strings in files </p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="grep-regex.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>:alnum <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+</pre></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/grep-regex.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

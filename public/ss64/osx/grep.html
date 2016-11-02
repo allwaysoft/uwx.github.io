@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="grep 
+Search file(s) for specific text.
+Syntax
+      grep &amp;lt;options&amp;gt; &quot;Search String&quot; [filename]
+  grep &amp;amp;lt;options&amp;amp;gt; [-e &amp;lt;i&amp;gt;PATTERN&amp;lt;/i&amp;gt;] [&amp;lt;i&amp;gt;FILE&amp;lt;/i&amp;gt;...]
+
+  grep">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/grep.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="grep 
+Search file(s) for specific text.
+Syntax
+      grep &amp;lt;options&amp;gt; &quot;Search String&quot; [filename]
+  grep &amp;amp;lt;options&amp;amp;gt; [-e &amp;lt;i&amp;gt;PATTERN&amp;lt;/i&amp;gt;] [&amp;lt;i&amp;gt;FILE&amp;lt;/i&amp;gt;...]
+
+  grep">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.110Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="grep 
+Search file(s) for specific text.
+Syntax
+      grep &amp;lt;options&amp;gt; &quot;Search String&quot; [filename]
+  grep &amp;amp;lt;options&amp;amp;gt; [-e &amp;lt;i&amp;gt;PATTERN&amp;lt;/i&amp;gt;] [&amp;lt;i&amp;gt;FILE&amp;lt;/i&amp;gt;...]
+
+  grep">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>grep</h1> 
+<p>Search file(s) for specific text.</p>
+<pre>Syntax
+      grep &lt;options&gt; "Search String" [<i>filename</i>]
+<pre><code>  grep &amp;lt;options&amp;gt; [-e &lt;i&gt;PATTERN&lt;/i&gt;] [&lt;i&gt;FILE&lt;/i&gt;...]
+
+  grep &amp;lt;options&amp;gt; [-f &lt;i&gt;FILE&lt;/i&gt;] [&lt;i&gt;FILE&lt;/i&gt;...]
+</code></pre>
+<p>A simple example<br>
+grep   “Needle in a Haystack”  /etc/*</p></pre><p></p>
+<p>Grep searches the named input FILEs (or standard input if no files 
+  are named, or the file name - is given) for lines containing a match to the 
+  given PATTERN. By default, grep prints the matching lines. </p>
+<p>In addition, two 
+  variant programs <span class="code">egrep</span> and <span class="code">fgrep</span> are available. Egrep is the same as <span class="code">grep -E</span>. 
+  Fgrep is the same as <span class="code">grep -F</span>. </p>
+<pre>Options
+   -A <i>NUM</i>
+   --after-context=<i>NUM</i>
+       Print <i>NUM</i> lines of trailing context after matching lines.
+       Places a line containing -- between contiguous groups of matches. 
+   -a
+   --text
+       Process a binary file as if it were text; this is equivalent
+       to the --binary-files=text option.
+<p>-B <i>NUM<br>
+</i> --before-context=<i>NUM</i><br>
+Print <i>NUM</i> lines of leading context before matching lines.<br>
+Places a line containing – between contiguous groups of matches.</p>
+<p>-b<br>
+–byte-offset<br>
+Print the byte offset within the input file before each line of output.</p>
+<p>–colour[=<i>WHEN</i>]<br>
+–color[=<i>WHEN</i>]<br>
+Surround the matching string with the marker from the GREP_COLOR environment variable.<br>
+WHEN can be ‘never’, ‘always’, or ‘auto’ e.g. --color=always<br>       By default the matched text will be colored red.<br>
+If grep is made to match several strings, all of the matches will be colored, one exception<br>
+is the regex ^ (match beginning of every line), the beginning of a line has no length so will<br>
+not be coloued.<br>
+So to return all lines and colour only matches: egrep --color=always ‘^|string1|string2’</p>
+<p>-C <i>NUM</i><br>
+–context=<i>NUM</i><br>
+Print NUM lines of output context.<br>
+Print num lines of leading and trailing context surrounding each match.<br>
+The default is 2 and is equivalent to -A 2 -B 2.<br>
+Note: no whitespace may be given between the option and its argument.</p>
+<p>-c<br>
+–count<br>
+Suppress normal output; instead print a count of matching lines for each input file.<br>
+With the -v, --invert-match option (see below), count non-matching lines.</p>
+<p>-D <i>ACTION</i><br>
+–devices=<i>ACTION</i><br>
+If an input file is a device, FIFO or socket, use <i>ACTION</i> to process it.<br>
+By default, <i>ACTION</i> is read, which means that devices are read just as if they were<br>
+ordinary files. If <i>ACTION</i> is skip, devices are silently skipped.</p>
+<p>-d <i>ACTION</i><br>
+–directories=<i>ACTION</i><br>
+If an input file is a directory, use <i>ACTION</i> to process it.<br>
+By default, <i>ACTION</i> is read, which means that directories are read just as if they<br>
+were ordinary files. If <i>ACTION</i> is skip, directories are silently skipped.<br>
+If <i>ACTION</i> is recurse, grep reads all files under each directory, recursively; this<br>
+is equivalent to the -R and -r option.</p>
+<p>-E<br>
+–extended-regexp<br>
+Interpret <a href="grep_pattern.html">PATTERN</a> as an extended regular expression</p>
+<p>-e <i>PATTERN</i><br>
+–regexp=<i>PATTERN</i><br>
+Use<a href="grep_pattern.html"> PATTERN </a>as the pattern; useful to protect patterns beginning with -</p>
+<p>-F<br>
+–fixed-strings<br>
+Interpret<a href="grep_pattern.html"> PATTERN </a>as a list of fixed strings, separated by newlines,<br>
+any of which is to be matched.</p>
+<p>-f <i>FILE</i><br>
+–file=<i>FILE</i><br>
+Obtain patterns from <i>FILE</i>, one per line. The empty file contains zero<br>
+patterns, and therefore matches nothing.</p>
+<p>-G<br>
+–basic-regexp<br>
+Interpret<a href="grep_pattern.html"> PATTERN </a>as a basic regular expression This is the default.</p>
+<p>-H<br>
+–with-filename<br>
+Print the filename for each match.<br>
+-h<br>
+–no-filename<br>
+Suppress the prefixing of filenames on output when multiple files are searched.<br>
+–help<br>
+Output a brief help message.</p>
+<p>-I<br>
+Process a binary file as if it did not contain matching data; this is<br>
+equivalent to the --binary-files=without-match option.<br>
+-i<br>
+–ignore-case<br>
+Ignore case distinctions in both the <i>PATTERN</i> and the input files.</p>
+<p>–include<br>
+If specified, only files matching the given filename pattern are searched.<br>
+Note that --exclude patterns take priority over --include patterns.  Patterns are<br>
+matched to the full path specified, not only to the filename component.</p>
+<p>–include-dir<br>
+If -R is specified, only directories matching the given filename pattern are searched.<br>
+Note that --exclude-dir patterns take priority over --include-dir patterns.</p>
+<p>-L<br>
+–files-without-match<br>
+Suppress normal output; instead print the name of each input file from which<br>
+no output would normally have been printed. The scanning will stop on the first match.<br>
+-l<br>
+–files-with-matches<br>
+Suppress normal output; instead print the name of each input file from which<br>
+output would normally have been printed. The scanning will stop on the first match.</p>
+<p>-m <i>NUM</i><br>
+–max-count=<i>NUM</i><br>
+Stop reading a file after NUM matching lines.<br>
+If the input is standard input from a regular file, and NUM matching lines are<br>
+output, grep ensures that the standard input is positioned to just after the last<br>
+matching line before exiting, regardless of the presence of trailing context lines.<br>
+This enables a calling process to resume a search. When grep stops after <i>NUM</i> matching<br>
+lines, it outputs any trailing context lines.<br>
+When the -c or --count option is also used, grep does not output a count greater<br>
+than <i>NUM</i>. When the -v or --invert-match option is also used, grep stops after<br>
+outputting <i>NUM</i> non-matching lines.</p>
+<p>-n<br>
+–line-number<br>
+Prefix each line of output with the line number within its input file.</p>
+<p>–null   Print a zero-byte after the file name.</p>
+<p>-O<br>
+If -R is specified, follow symbolic links only if they were explicitly listed on the<br>
+command line.  The default is not to follow symbolic links.</p>
+<p>-o<br>
+–only-matching<br>
+Show only the part of a matching line that matches <i>PATTERN</i>.</p>
+<p>-p<br>
+If -R is specified, no symbolic links are followed.  This is the default.</p>
+<p>-q<br>
+–quiet<br>
+–silent<br>
+Quiet mode: suppress normal output.  grep will only search a file until a match<br>
+has been found, making searches potentially less expensive.</p>
+<p>-R<br>
+-r<br>
+–recursive<br>
+Read all files under each directory, recursively<br>
+This is equivalent to the <b>-d recurse</b> option.</p>
+<p>-s<br>
+–no-messages<br>
+Silent mode.  Nonexistent and unreadable files are ignored<br>
+(i.e. their error messages are suppressed).</p>
+<p>-U<br>
+–binary<br>
+Search binary files, but do not attempt to print them.</p>
+<p>-V<br>
+–version<br>
+Display version information and exit.</p>
+<p>-v<br>
+–invert-match<br>
+Selected lines are those not matching any of the specified patterns.</p>
+<p>-w<br>
+–word-regexp<br>
+The expression is searched for as a word<br>
+(as if surrounded by <code>[[:&amp;lt;:]]' and</code>[[:&gt;:]]’; see re_format(7)).</p>
+<p>-x<br>
+–line-regexp<br>
+Only input lines selected against an entire fixed string or regular expression<br>
+are considered to be matching lines.</p>
+<p>-y      Equivalent to -i.  Obsoleted.</p>
+<p>-Z<br>
+-z<br>
+–decompress<br>
+Force grep to behave as zgrep.</p>
+<p>–binary-files=<i>value</i><br>
+Controls searching and printing of binary files.  Options are <u>binary</u>, the<br>
+default: search binary files but do not print them; <u>without-match</u>: do not search<br>
+binary files; and <u>text</u>: treat all files as text.</p>
+<p>–context[=<i>num</i>]<br>
+Print <i>num</i> lines of leading and trailing context.  The default is 2.</p>
+<p>–line-buffered<br>
+Force output to be line buffered.  By default, output is line buffered<br>
+when standard output is a terminal and block buffered otherwise.</p></pre><p></p>
+<p> If no file arguments are specified, the standard input is used.</p>
+<h2> Environment variables</h2>
+<blockquote>
+<p> Grep's behavior can be affected by setting the following environment variables<br>
+</p>
+<pre>GREP_OPTIONS                 - default options
+LC_ALL, LC_MESSAGES, LANG    - language for messages
+LC_CTYPE                     - foreign characters
+POSIXLY_CORRECT              - Posix behaviour
+_N_GNU_nonoption_argv_flags_ - ignore an operand
+<p>see `info grep’ for more</p></pre><p></p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>Search the file example.txt, including binary data (-a) for the string 'hunting the snark':</p>
+<p class="code">$ sudo grep -a  'hunting the snark' example.txt</p>
+<p>Search the whole partition (/disk0), including binary data (-a) for the string 'hunting the snark' return all the lines<br>
+starting 25 <b>B</b>efore the text found and 50 lines <b>A</b>fter the matching text found, this can be a way to discover fragments of deleted files:</p>
+<p><span class="code">$ sudo grep -a -B 25 -A 50 'hunting the snark' /dev/disk0</span>&gt; results.txt</p>
+<p>Search the file <span class="code">wordlist.txt</span> for any lines that <b>don't </b>include at least one vowel:</p>
+<p class="code">$ grep -v [aeiou] wordlist.txt</p>
+<p>Remove lines from <span class="code">invoices.txt</span> if they appear in <span class="code">paid.txt</span>:</p>
+<p class="code">$ grep -F -x -v -f paid.txt invoices.txt &gt;paidinvoices.txt</p>
+<p>Searching an entire hard drive with grep can be very slow, using <a href="mdfind.html">mdfind</a> to identify files containing text is orders of magnitude <a href="http://hints.macworld.com/article.php?story=20100320112701285" target="_blank" rel="external">faster</a>. </p>
+<p class="quote"><i> "The most dangerous of all falsehoods is a slightly distorted truth" ~ G. C. Lichtenberg </i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/grep.1.html" target="_blank" rel="external">grep man page</a> - Apple.com<br>
+<a href="pkill.html">pgrep</a> - List processes by a full or partial name<br>  
+<a href="awk.html">awk</a> - Find and Replace text within file(s)<br>
+<a href="mdfind.html">mdfind</a> - 
+Spotlight search<br>
+<a href="tr.html">tr</a> - Translate, squeeze, and/or delete characters </p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="grep.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/grep.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

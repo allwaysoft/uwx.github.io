@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="top 
+List running processes on the system, in sorted order.
+Periodically displays a list of processes on the system in sorted order. The default key for sorting is pid, but other keys can be used inst">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/top.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="top 
+List running processes on the system, in sorted order.
+Periodically displays a list of processes on the system in sorted order. The default key for sorting is pid, but other keys can be used inst">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:03.240Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="top 
+List running processes on the system, in sorted order.
+Periodically displays a list of processes on the system in sorted order. The default key for sorting is pid, but other keys can be used inst">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>top</h1> 
+<p>List running processes on the system, in sorted order.<br>
+Periodically displays a list of processes on the system in sorted order. The default key for sorting is pid, but other keys can be used instead. </p>
+<pre>Syntax
+      top    [-a | -d | -e | -c <i>mode</i>]
+             [-F | -f]
+             [-h]
+             [-i <i>interval</i>]
+             [-l <i>samples</i>]
+             [-ncols <i>columns</i>]
+             [-o <i>key</i>] [-O <i>skey</i>]
+             [-R | -r]
+             [-S]
+             [-s <i>delay</i>]
+             [-n <i>nprocs</i>]
+             [-stats <i>keys</i>]
+             [-pid <i>processid</i>]
+             [-user <i>username</i>]
+             [-U <i>username</i>]
+             [-u]
+<p>Options</p></pre><p></p>
+<blockquote>
+<p>Command line option specifications are processed from left to right. Options can be specified more than once.  If conflicting options  are specified, later specifications override earlier ones. This makes it viable to create a shell alias for top with preferred defaults specified, then override those preferred defaults as desired on the command
+line.</p>
+</blockquote>
+<pre>       -a     Equivalent to -c a.
+<pre><code>   -c &lt;i&gt;mode&lt;/i&gt;
+   Set event counting mode to &lt;i&gt;mode&lt;/i&gt;.  The supported modes are:
+
+       a  Accumulative mode. Count events  cumulatively,  starting
+          at the launch of top. Calculate CPU usage and CPU time
+          since the launch of top.
+
+       d  Delta mode. Count events relative to the previous sample.
+          Calculate CPU usage since the previous sample.
+
+       e  Absolute mode. Count events using absolute counters.
+
+       n  Non-event mode (default).  Calculate CPU usage since the
+          previous sample.
+
+   -d   Equivalent to -c d.
+   -e   Equivalent to -c e.
+
+   -F   Do not calculate statistics on shared libraries, also  known  as
+        frameworks.   This substantially reduces the amount of processor
+        time top consumes.
+
+   -f   Calculate statistics on shared libraries, also known  as frame-
+        works (default).
+
+   -h   Print command line usage information and exit.
+
+   -i &lt;i&gt;interval&lt;/i&gt;&lt;br&gt;            Update framework (-f) info every &lt;i&gt;interval&lt;/i&gt; samples
+
+   -l &lt;i&gt;samples&lt;/i&gt;
+        Use logging mode and display &lt;i&gt;samples&lt;/i&gt; samples, even if standard
+        output  is  a  terminal. 0 is treated as infinity.  Rather than
+        redisplaying, output is periodically printed in raw form.
+
+   -ncols  &lt;i&gt;columns&lt;/i&gt;
+        Display &lt;i&gt;columns&lt;/i&gt; when using logging mode.  The default is infinite.
+        The number must be &amp;gt; 0 or an error will occur.
+
+   -n &lt;i&gt;nprocs&lt;/i&gt;
+        Only display up to &lt;i&gt;nprocs&lt;/i&gt; processes.  nprocs can  be specified
+        as the last command line argument without the -n flag preceding it.
+        However, doing so is deprecated command line usage.
+
+   -O &lt;i&gt;skey&lt;/i&gt;
+        Use skey as a secondary &lt;i&gt;key&lt;/i&gt; when ordering the process display.
+        See -o for key names (pid is default).
+
+   -o &lt;i&gt;key&lt;/i&gt;
+        Order the process display by sorting on &lt;i&gt;key&lt;/i&gt; in descending  order.
+        A +  or - can be prefixed to the key name to specify ascending or
+        descending order, respectively.
+
+        Some supported keys (see 'man top' for a full list):
+
+          command  Command name.
+          cpu      CPU usage.
+          cpu_me   CPU time charged to me by other processes.
+          cpu_others   CPU time charged to other processes by me.
+          csw      Number of context switches.
+          pid      Process ID (default).
+          prt      Number of Mach ports.
+          reg      Number of memory regions.
+          rprvt    Resident private address space size.
+          rshrd    Resident shared address space size.
+          rsize    Resident memory size.
+          th       Number of threads.
+          time     Execution time.
+          threads  alias: th   No. of threads (total/running).
+          uid      User ID.
+          username Username.
+          vprvt    Private address space size.
+          vsize    Total memory size.
+
+   -R   Do not traverse and report the memory object map for each process.
+        This substantially reduces the amount of processor time top consumes.
+
+   -r   Traverse and report the memory object map for each process (default).
+
+   -S   Display information about swap usage and purgeable memory.
+
+   -s &lt;i&gt;delay&lt;/i&gt;
+        Set the delay between updates to &lt;i&gt;delay&lt;/i&gt; seconds. The default
+        delay between updates is 1 second.
+   -stats &lt;i&gt;keys&lt;/i&gt;
+        Only display the comma separated statistics. See the -o flag for the valid &lt;i&gt;keys&lt;/i&gt;.
+
+   -pid &lt;i&gt;processid&lt;/i&gt;   Only display &lt;i&gt;processid&lt;/i&gt; in top.
+
+   -U &lt;i&gt;user&lt;/i&gt;
+   -user &lt;i&gt;user&lt;/i&gt;
+        Only  display processes owned by &lt;i&gt;user&lt;/i&gt;. Either the username or
+        uid number can be specified.
+
+   -u   This is an alias equivalent to: -o cpu -O time.&lt;/pre&gt;
+</code></pre>
+<p></p><h2>Performance vs. Accuracy</h2><p></p>
+<blockquote>
+<p> Calculating detailed memory statistics is fundamentally resource-inten-        sive.  To reduce the cpu usage in top, the -i parameter has been introduced to allow the user to tune this tradeoff.  With the default  value        of 10, framework stats will be updated once every 10 samples.  Specify-        ing -i 1 will result in the most accurate display, at  the  expense  of        system resources.</p>
+</blockquote>
+<p><b>Examples</b><br>
+<br>
+Display processes sorted by CPU usage, updating every 5 seconds:<br>
+<span class="code">$ top -ocpu -s 5</span><br class="code">
+<br>
+Run top in delta mode:<br>
+<span class="code">$ top -c d </span></p>
+<p>Run top in event counter mode:<br>
+<span class="code">$ top -ce</span><br>
+<br>
+Show deltas for network and paging activity, updating every 10 seconds:<br>
+<span class="code">$ top -d -u -s 10</span></p>
+<p class="quote"><i>“Venice is like eating an entire box of chocolate liqueurs at one go” ~ Truman Capote </i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/top.1.html" target="_blank" rel="external">top man page</a> - Apple.com<br>
+<a href="kill.html">  kill</a> - Stop a process from running<br>
+signal(3) - software signal facilities</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/top.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

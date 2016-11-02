@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PsPing (PsTools)
+Measure network performance. In addition to standard ICMP ping  functionality, PsPing can report the latency of connecting to TCP ports, the  latency of TCP round-trip communication b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/psping.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PsPing (PsTools)
+Measure network performance. In addition to standard ICMP ping  functionality, PsPing can report the latency of connecting to TCP ports, the  latency of TCP round-trip communication b">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:53.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PsPing (PsTools)
+Measure network performance. In addition to standard ICMP ping  functionality, PsPing can report the latency of connecting to TCP ports, the  latency of TCP round-trip communication b">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>PsPing (<abbr title="Download the PsTools suite"><a href="http://technet.microsoft.com/en-us/sysinternals" target="_blank" rel="external">PsTools</a></abbr>)</h1>
+<p>Measure network performance. In addition to standard ICMP ping  functionality, PsPing can report the latency of connecting to TCP ports, the  latency of TCP round-trip communication between systems, and the TCP  bandwidth available to a connection between systems. Besides obtaining  min, max, and average values in 0.01ms resolution, you can also use PsPing to generate histograms of the results that are easy to import into a spreadsheet.</p>
+<pre>Syntax (ICMP ping)
+      psping [[-6]|[-4]] [-h [<i>buckets</i>]] [-i <i>interval</i>] [-l <i>requestsize</i>
+        [-q] [-t|-n <i>count</i>] [-w <i>count</i>] <i>destination</i>
+<p>Key<br>
+-h   Print histogram (default bucket count is 20).<br>
+-i   Interval in seconds. Specify 0 for fast ping.<br>
+-l   Request size.<br>
+-n   Number of pings.<br>
+-q   Don’t output during pings.<br>
+-t   Ping until stopped with Ctrl+C and type Ctrl+Break for statistics.<br>
+-w   Warmup with the specified number of iterations (default is 1).<br>
+-4   Force using IPv4.<br>
+-6   Force using IPv6. For high-speed ping tests use -q and -i 0.<br>
+-? I Usage for ICMP ping.</p>
+<p>Syntax (TCP ping)<br>
+psping [[-6]|[-4]] [-h [<i>buckets</i>]] [-i <i>interval</i>] [-l <i>requestsize</i><br>
+[-q] [-t|-n <i>count</i>] [-w <i>count</i>] <i>destination</i>:<i>destport<br>
+</i>Key<br>
+-h   Print histogram (default bucket count is 20).<br>
+-i   Interval in seconds. Specify 0 for fast ping.<br>
+-l   Request size.<br>
+-n   Number of pings.<br>
+-q   Don’t output during pings.<br>
+-t   Ping until stopped with Ctrl+C and type Ctrl+Break for statistics.<br>
+-w   Warmup with the specified number of iterations (default is 1).<br>
+-4   Force using IPv4.<br>
+-6   Force using IPv6. For high-speed ping tests use -q and -i 0.<br>
+-? T Usage for TCP ping.</p>
+<p>Syntax (TCP latency)<br>
+server: psping [[-6]|[-4]] -s <i>source:sourceport</i> client: psping<br>
+[[-6]|[-4]] [-h [buckets]] [-r] -l <i>requestsize</i>]<br>
+-n <i>count</i> [-w <i>count</i>] <i>destination:destport</i><br>
+Key<br>
+-h   Print histogram (default bucket count is 20).<br>
+-l   Request size.<br>
+-n   Number of sends/receives.<br>
+-r   Receive from the server instead of sending.<br>
+-w   Warmup with the specified number of iterations (default is 5).<br>
+-4   Force using IPv4.<br>
+-6   Force using IPv6.<br>
+-? L Usage for Latency test.<br>
+The server can serve both latency and bandwidth tests and remains active until you terminate it with Control-C.</p>
+<p>Syntax (TCP bandwidth)<br>
+server: psping [[-6]|[-4]] -s <i>source:sourceport</i> client: psping<br>
+[[-6]|[-4]] -b [-h [<i>buckets</i>]] [-r] -l <i>requestsize</i> -n <i>count</i><br>
+[-i <i>outstanding</i>] [-w <i>count</i>] <i>destination:destport</i><br>
+Key<br>
+-b   Bandwidth test.<br>
+-h   Print histogram (default bucket count is 20).<br>
+-i   Number of outstanding I/Os (default is min of 16 and 2x CPU cores).<br>
+-l   Request size.<br>
+-n   Number of sends/receives.<br>
+-r   Receive from the server instead of sending.<br>
+-w   Warmup for the specified iterations (default is 2x CPU cores).<br>
+-4   Force using IPv4.<br>
+-6   Force using IPv6.<br>
+-? B Usage for Bandwidth test.<br>
+The server can serve both latency and bandwidth tests and remains active until you terminate it with Control-C.</p>
+<p>-accepteula Suppress the display of the license dialog.</p></pre><p></p>
+<p>Installation: Copy PsPing onto your executable <a href="path.html">path</a>. Typing "psping" will display help.</p>
+<p>When launched for the first time, PsPing will create the regkey <br>
+<span class="code">HKCU\Software\Sysinternals\PsPing\EulaAccepted=0x01</span></p>
+<p><b>Examples:</b><br><br>
+Execute an ICMP ping test for 10 iterations with 3 warmup iterations:</p>
+<p class="code">psping -n 10 -w 3 workstation64</p>
+<p>To  execute a TCP connect test, specify the port number. The following  command executes connect attempts against the target as quickly as  possible, only printing a summary when finished with the 100 iterations  and 1 warmup iteration:</p>
+<p class="code">psping -n 100 -i 0 -q workstation64:80</p>
+<p>To  configure a server for latency and bandwidth tests, simply specify the  -s option and the source address and port the server will bind to:</p>
+<p class="code">psping -s 10.5.2.2:5000</p>
+<p>A  buffer size is required to perform a TCP latency test. This example  measures the round trip latency of sending an 8KB packet to the target  server, printing a histogram with 100 buckets when completed:</p>
+<p class="code">psping -l 8192 -n 10000 -h 100 192.168.2.2:5000</p>
+<p>This  is the same command except with a -b option, which executed against the  same server performs a bandwidth test. Note that the test must run for  at least one second after warmup for a histogram to generate:</p>
+<p class="code">psping -b -l 8192 -n 10000 -h 100 192.168.2.2:5000</p>
+<p class="quote"><i>“You may poke a man's fire after you've known him for seven years” ~ English Proverb</i></p>
+<p><b>Related:</b></p>
+<p><a href="http://forum.sysinternals.com/faq-common-pstools-issues_topic15920.html" target="_blank" rel="external">FAQ: Common PSTools Issues</a><br>
+<a href="tracert.html">TRACERT</a> - Trace route to a remote host<br>
+<a href="ipconfig.html">IPCONFIG</a> - IP Configuration<br>
+<a href="pathping.html">PATHPING</a> - Trace route and provide network latency and packet loss for each router and link in the path.<br>
+Powershell equivalent: <a href="../ps/test-connection.html">Test-Connection</a> - Ping one or more computers, <a href="../ps/syntax-psping.html">psp</a> function<br>
+Equivalent bash command (Linux):
+ping - Test a network connection</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="psping.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/psping.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

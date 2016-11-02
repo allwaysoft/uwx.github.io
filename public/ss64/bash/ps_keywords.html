@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ps Sort Keys, Format descriptors and Env Variables 
+Options for the Process Status command.
+   SORT KEYS
+       Values used in sorting are the internal values ps uses (not `cooked&apos; values).
+       If">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ps_keywords.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ps Sort Keys, Format descriptors and Env Variables 
+Options for the Process Status command.
+   SORT KEYS
+       Values used in sorting are the internal values ps uses (not `cooked&apos; values).
+       If">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:41.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ps Sort Keys, Format descriptors and Env Variables 
+Options for the Process Status command.
+   SORT KEYS
+       Values used in sorting are the internal values ps uses (not `cooked&apos; values).
+       If">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>ps Sort Keys, Format descriptors and Env Variables</h1> 
+<p>Options for the <a href="ps.html">Process Status</a> command.</p>
+<pre>   SORT KEYS
+       Values used in sorting are the internal values ps uses (not `cooked' values).
+       If you want to sort by a `cooked' value pipe the output into <a href="sort.html">sort</a> .
+<pre><code>   c     cmd          simple name of executable
+   C     cmdline      full command line
+   f     flags        flags as in long format F field
+   g     pgrp         process group ID
+   G     tpgid        controlling tty process group ID
+   j     cutime       cumulative user time
+   J     cstime       cumulative system time
+   k     utime        user time
+   K     stime        system time
+   m     min_flt      number of minor page faults
+   M     maj_flt      number of major page faults
+   n     cmin_flt     cumulative minor page faults
+   N     cmaj_flt     cumulative major page faults
+   o     session      session ID
+   p     pid          process ID
+   P     ppid         parent process ID
+   r     rss          resident set size
+   R     resident     resident pages
+   s     size         memory size in kilobytes
+   S     share        amount of shared pages
+   t     tty          the minor device number of tty
+   T     start_time   time process was started
+   U     uid          user ID number
+   u     user         user name
+   v     vsize        total VM size in bytes
+   y     priority     kernel scheduling priority
+</code></pre>
+<p>AIX FORMAT DESCRIPTORS<br>
+This ps supports AIX format descriptors, which work somewhat<br>
+like the formatting codes of <a href="printf.html">printf</a>.<br>
+For example, the normal default  output  can  be  produced<br>
+with this:   ps -eo “%p %y %x %c”</p>
+<p><b>       CODE   NORMAL   HEADER</b><br>
+%C     pcpu     %CPU<br>
+%G     group    GROUP<br>
+%P     ppid     PPID<br>
+%U     user     USER<br>
+%a     args     COMMAND<br>
+%c     comm     COMMAND<br>
+%g     rgroup   RGROUP<br>
+%n     nice     NI<br>
+%p     pid      PID<br>
+%r     pgid     PGID<br>
+%t     etime    ELAPSED<br>
+%u     ruser    RUSER<br>
+%x     time     TIME<br>
+%y     tty      TTY<br>
+%z     vsz      VSZ</p>
+<pre><code>   These can be used to control both output format and sorting.
+   For example:  ps -eo pid,user,args --sort user
+</code></pre>
+<p><b>       CODE          HEADER</b><br>
+%cpu          %CPU<br>
+%mem          %MEM<br>
+alarm         ALARM<br>
+args          COMMAND<br>
+blocked       BLOCKED<br>
+bsdstart      START<br>
+bsdtime       TIME<br>
+c             C<br>
+caught        CAUGHT<br>
+cmd           CMD<br>
+comm          COMMAND<br>
+command       COMMAND<br>
+cputime       TIME<br>
+drs           DRS<br>
+dsiz          DSIZ<br>
+egid          EGID<br>
+egroup        EGROUP<br>
+eip           EIP<br>
+esp           ESP<br>
+etime         ELAPSED<br>
+euid          EUID<br>
+euser         EUSER<br>
+f             F<br>
+fgid          FGID<br>
+fgroup        FGROUP<br>
+flag          F<br>
+flags         F<br>
+fname         COMMAND<br>
+fsgid         FSGID<br>
+fsgroup       FSGROUP<br>
+fsuid         FSUID<br>
+fsuser        FSUSER<br>
+fuid          FUID<br>
+fuser         FUSER<br>
+gid           GID<br>
+group         GROUP<br>
+ignored       IGNORED<br>
+intpri        PRI<br>
+lim           LIM<br>
+longtname     TTY<br>
+lstart        STARTED<br>
+m_drs         DRS<br>
+m_trs         TRS<br>
+maj_flt       MAJFL<br>
+majflt        MAJFLT<br>
+min_flt       MINFL<br>
+minflt        MINFLT<br>
+nice          NI<br>
+nwchan        WCHAN<br>
+opri          PRI<br>
+pagein        PAGEIN<br>
+pcpu          %CPU<br>
+pending       PENDING<br>
+pgid          PGID<br>
+pgrp          PGRP<br>
+pid           PID<br>
+pmem          %MEM<br>
+ppid          PPID<br>
+pri           PRI<br>
+rgid          RGID<br>
+rgroup        RGROUP<br>
+rss           RSS<br>
+rssize        RSS<br>
+rsz           RSZ<br>
+ruid          RUID<br>
+ruser         RUSER<br>
+s             S<br>
+sess          SESS<br>
+session       SESS<br>
+sgi_p         P<br>
+sgi_rss       RSS<br>
+sgid          SGID<br>
+sgroup        SGROUP<br>
+sid           SID<br>
+sig           PENDING<br>
+sig_block     BLOCKED<br>
+sig_catch     CATCHED<br>
+sig_ignore    IGNORED<br>
+sig_pend      SIGNAL<br>
+sigcatch      CAUGHT<br>
+sigignore     IGNORED<br>
+sigmask       BLOCKED<br>
+stackp        STACKP<br>
+start         STARTED<br>
+start_stack   STACKP<br>
+start_time    START<br>
+stat          STAT<br>
+state         S<br>
+stime         STIME<br>
+suid          SUID<br>
+suser         SUSER<br>
+svgid         SVGID<br>
+svgroup       SVGROUP<br>
+svuid         SVUID<br>
+svuser        SVUSER<br>
+sz            SZ<br>
+time          TIME<br>
+timeout       TMOUT<br>
+tmout         TMOUT</p>
+<pre><code>   tpgid         TPGID
+   trs           TRS
+   trss          TRSS
+   tsiz          TSIZ
+   tt            TT
+   tty           TT
+   tty4          TTY
+   tty8          TTY
+   ucomm         COMMAND
+   uid           UID
+   uid_hack      UID
+   uname         USER
+   user          USER
+   vsize         VSZ
+   vsz           VSZ
+   wchan         WCHAN
+</code></pre>
+<p>ENVIRONMENT VARIABLES<br>
+The following environment variables could affect ps:<br>
+COLUMNS              Override default display width<br>
+LINES                Override default display height<br>
+PS_PERSONALITY       Set to one of posix,old,linux,bsd,sun,digital<br>
+CMD_ENV              Set to one of posix,old,linux,bsd,sun,digital<br>
+I_WANT_A_BROKEN_PS   Force obsolete command line interpretation<br>
+LC_TIME              Date format<br>
+PS_FORMAT            Default output format override<br>
+PS_SYSMAP            Default namelist (System.map) location<br>
+PS_SYSTEM_MAP        Default namelist (System.map) location<br>
+POSIXLY_CORRECT      Don’t find excuses to ignore bad &quot;features&quot;<br>
+UNIX95               Don’t find excuses to ignore bad “features”<br>
+_XPG                 Cancel CMD_ENV=irix non-standard behavior</p>
+<pre><code>   In general, it is a bad idea to set these  variables.  The
+   two exceptions are CMD_ENV (or PS_PERSONALITY), to set the
+   desired  default  personality,  and  POSIXLY_CORRECT   (or
+   UNIX95),  which  should be set for Unix98 standard compliance.
+
+ &lt;b&gt;  PS_PERSONALITY   Description&lt;/b&gt;
+   none             &quot;Do the right thing&quot;
+   aix              like AIX ps
+   bsd              like FreeBSD ps
+   compaq           like Digital Unix ps
+   debian           like the old Debian ps
+   digital          like Digital Unix ps
+   gnu              like the old Debian ps
+   hp               like HP-UX ps
+   hpux             like HP-UX ps
+   irix             like Irix ps
+   linux            deviate from Unix98 for convenience only
+   old              like the original Linux ps
+   sco              like SCO ps
+   sgi              like Irix ps
+   sun              like SunOS 4 ps
+   sunos            like SunOS 4 ps
+   sysv             standard
+   unix             standard
+   unix95           standard
+   unix98           standard&lt;/pre&gt;
+</code></pre>
+<p class="quote"><i>"Life is a process of becoming, a combination of states we have to go through. Where people fail is that they wish to elect a state and remain in it. This is a kind of death" ~ Anaïs Nin</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="ps.html">ps </a>- Process status<br>
+top(1) pstree(1) proc(5)<br>
+Equivalent Windows command:<a href="../nt/pslist.html"> pslist </a> - List processes</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ps_keywords.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ps_keywords.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

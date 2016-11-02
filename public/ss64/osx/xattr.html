@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="xattr 
+Display and manipulate extended attributes of one      or more files, including directories and symbolic links.
+Syntax
+   List attributes
+      xattr [-lrsvx] file ...
+Print the value associate">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/xattr.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="xattr 
+Display and manipulate extended attributes of one      or more files, including directories and symbolic links.
+Syntax
+   List attributes
+      xattr [-lrsvx] file ...
+Print the value associate">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:03.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="xattr 
+Display and manipulate extended attributes of one      or more files, including directories and symbolic links.
+Syntax
+   List attributes
+      xattr [-lrsvx] file ...
+Print the value associate">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>xattr</h1> 
+<p>Display and manipulate extended attributes of one      or more files, including directories and symbolic links.</p>
+<pre>Syntax
+   List attributes
+      xattr [-lrsvx] <i>file</i> ...
+<p>Print the value associated with the given attribute:<br>
+xattr -p [-lrsvx] <i>attr_name file</i> …</p>
+<p>Write a given attribute name with a value:<br>
+xattr -w [-rsx] <i>attr_name attr_value file</i> …</p>
+<p>Delete the given attribute from <i>file</i>:<br>
+xattr -d [-rsv] <i>attr_name file</i> …</p>
+<p>Clear all attributes including their associated values:<br>
+xattr -c [-rsv] <i>file</i> …</p>
+<p>Display help:<br>
+xattr -h | --help</p>
+<p>Key<br>
+-l  By default, the first two command forms either display just the attribute names or<br>
+values, respectively. The -l option causes both the attribute names and corresponding<br>
+values to be displayed. For hex display of values, the output is preceeded with the hex<br>
+offset values and followed by ASCII display, enclosed by ‘|’.</p>
+<p>-r  If a file argument is a directory, act as if the entire contents of the directory<br>
+recursively were also specified (so that every file in the directory tree is acted upon).</p>
+<p>-s  If a file argument is a symbolic link, act on the symbolic link itself, rather than<br>
+the file that the symbolic link points at.</p>
+<p>-v  Force the the file name to be displayed, even for a single file.</p>
+<p>-x  Force the attribute value to be displayed in the hexadecimal representation.       </p></pre><p></p>
+<p>Extended attributes are arbitrary metadata stored with a file, but separate from the filesystem attributes (such as      modification time or file size).  The metadata is often a null-terminated UTF-8 string,      but can also be arbitrary binary data.<br>
+One or more files may be specified on the command line.</p>
+<p> In OS X, extended attributes are most often seen in the <b>'iPhoto Library'</b> and <b>'Photo Booth Library'</b> - these are folders with a bundle bit applied so that they appear in the Apple Finder as a single file, this is done to hide the files so that they can be managed by a single application.</p>
+<p>For the first two forms of the      command, if there is more than one file, the file name is displayed along with the      actual results.  When only one file is specified, the display of the file name is       suppressed unless the -v option, is also specified.</p>
+<p>In the first form of the command ( <span class="code">-w</span> with no other mode option specified), the names of <b>all</b> extended attributes are listed. </p>
+<p>In the second form,  the <span class="code">-p</span> option (print), the value associated with the given attribute name      is displayed.  </p>
+<p>Attribute values are usually displayed as strings.  However, if nils are detected in the      data, the value is displayed in a hexadecimal representation.</p>
+<p>The <span class="code">-w</span> option normally assumes the input attribute value is a string.  Specifying the -x option
+         causes xattr to expect the input in hexadecimal (whitespace is ignored).  The <a href="xxd.html">xxd</a> command can be
+used to create hexadecimal representations from exising binary data, to pass to xattr.</p>
+<p> As an alternative to <span class="code">xattr -w</span> attribute names can also be displayed using <span class="code"><a href="ls.html">ls</a> -l@</span></p>
+<p>xattr exits with zero status on success.  On error, non-zero is returned, and a message      is printed to  standard error. </p>
+<p><b>Examples</b></p>
+<p>Remove the  bundle bit from the MyApp folder and convert it back to a normal folder.</p>
+<p class="code">$ xattr -d com.apple.FinderInfo ~/MyApp</p>
+<p>Copy the<span class="code"> com.apple.FinderInfo</span> attribute from the<span class="code"> /usr</span> directory to the <span class="code">MyDir</span> directory: </p>
+<pre>$ xattr -px com.apple.FinderInfo /usr
+  00 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+<p>$ xattr -l MyDir</p>
+<p>$ xattr -wx com.apple.FinderInfo <br>
+“<code>xattr -px com.apple.FinderInfo /usr</code>” MyDir</p>
+<p>$ xattr -l MyDir<br>
+com.apple.FinderInfo:<br>
+00000000  00 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00  |…@…|<br>
+00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |…|<br>
+00000020</p></pre><p></p>
+<p class="quote"><i>“I think too much. I think ahead. I think behind. I think sideways. I think it all” ~ Winona Ryder</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/xattr.1.html" target="_blank" rel="external">xattr man page</a> - Apple.com<br>
+<a href="ls.html">ls</a> - List information about file(s)<br>
+<a href="http://apple.stackexchange.com/questions/6525/editing-iphoto-specific-metadata" target="_blank" rel="external">apple.stackexchange.com</a> - Editing iPhoto-specific metadata</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="xattr.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/xattr.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

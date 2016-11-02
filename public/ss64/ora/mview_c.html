@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CREATE MATERIALIZED VIEW 
+Create a materialized view. - The word &quot;snapshot&quot; is synonymous 
+  with &quot;materialized view&quot;. 
+  
+  Syntax:
+   CREATE MATERIALIZED VIEW [schema.]mview
+      Mview_Options">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/mview_c.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="CREATE MATERIALIZED VIEW 
+Create a materialized view. - The word &quot;snapshot&quot; is synonymous 
+  with &quot;materialized view&quot;. 
+  
+  Syntax:
+   CREATE MATERIALIZED VIEW [schema.]mview
+      Mview_Options">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:30.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="CREATE MATERIALIZED VIEW 
+Create a materialized view. - The word &quot;snapshot&quot; is synonymous 
+  with &quot;materialized view&quot;. 
+  
+  Syntax:
+   CREATE MATERIALIZED VIEW [schema.]mview
+      Mview_Options">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>CREATE MATERIALIZED VIEW</h1> 
+<p>Create a materialized view. - The word "snapshot" is synonymous 
+  with "materialized view". <br>
+  <br>
+  Syntax:</p>
+<pre>   CREATE MATERIALIZED VIEW [schema.]<i>mview
+      </i><i>Mview_Options</i>
+         [USING INDEX <i>storage_options</i>]
+            [{REFRESH [<i>refresh_options</i>] | NEVER REFRESH]
+               [FOR UPDATE] [{ENABLE|DISABLE} QUERY REWRITE]
+                  AS <i>subbquery</i>;
+<p>CREATE MATERIALIZED VIEW [schema.]<i>mview</i><i><br>
+</i>ON PREBUILT TABLE [{WITH | WITHOUT}<i> </i>REDUCED PRECISION]<i><br>
+</i>[USING INDEX <i>storage_options</i><i></i>]<br>
+[{REFRESH [<i>refresh_options</i>] | NEVER REFRESH]<br>
+[FOR UPDATE] [{ENABLE|DISABLE} QUERY REWRITE]<br>
+AS <i>subbquery</i>;</p></pre><p></p>
+<p>Mview_Options: </p>
+<pre>   <b>ORGANIZATION {HEAP</b> [<i><a href="mview_c.html#storage_options">storage_options</a></i>] [COMPRESS <i>int</i>|NOCOMPRESS]
+                | <b>INDEX</b> <i><a href="mview_c.html#idx_organized_tbl_clause">idx_organized_tbl_clause</a></i>
+                | <b>EXTERNAL</b> <i><a href="mview_c.html#external_table_clause">external_table_clause </a></i><b>}</b>
+or
+   <i><a href="mview_c.html#storage_options">storage_options</a></i> 
+      [<a href="mview_c.html#nested_storage_clause">nested_storage_clause</a>]
+      [<a href="clause_lob.html">LOB/Modify LOB Storage clause</a>] [<i><a href="clause_lob_ptn.html">lob_partition_storage</a></i>]
+      [<a href="clause_varray2.html">varray_clause</a>] [<i><a href="clause_lob_ptn.html">lob_partition_storage</a></i>]
+          [COMPRESS <i>int</i>|NOCOMPRESS]
+             [<a href="clause_partition.html">Partitioning clause</a>] [LOGGING | NOLOGGING]
+                [CACHE | NOCACHE][PARALLEL <i>int</i> | NOPARALLEL]
+                   [BUILD {IMMEDIATE|DEFERRED}]
+or
+   <b>CLUSTER</b> cluster (column,…) [<a href="clause_partition.html">Partitioning clause</a>]
+      [PARALLEL <i>int</i> | NOPARALLEL] [BUILD {IMMEDIATE|DEFERRED}]
+<p><i>storage_options</i><a id="storage_options"></a>:<br>
+PCTFREE <i>int</i><br>
+PCTUSED <i>int</i><br>
+INITRANS <i>int</i><br>
+MAXTRANS <i>int</i><br>
+STORAGE <a href="clause_storage.html">storage_clause</a><br>
+TABLESPACE tablespace</p>
+<p><i>refresh_options</i>:<br>
+FAST | COMPLETE | <u>FORCE</u><br>
+ON [DEMAND | COMMIT]<br>
+{NEXT | START WITH} <i>date</i><br>
+WITH {PRIMARY KEY | ROWID}<br>
+USING DEFAULT {MASTER|LOCAL} ROLLBACK SEGMENT<br>
+USING {MASTER|LOCAL} ROLLBACK SEGMENT <i>rb_segment</i></p>
+<p><i>idx_organized_tbl_clause</i><a id="idx_organized_tbl_clause"></a>:<br>
+<i>storage_option(s)<br>
+</i>{MAPPING TABLE | NOMAPPING}<br>
+[PCTTHRESHOLD <i>int</i>]<br>
+[COMPRESS <i>int</i>|NOCOMPRESS]<br>
+[ [INCLUDING <i>column_name</i>] OVERFLOW [<i>storage_option(s)</i>] ]</p>
+<p><i>external_table_clause</i><a id="external_table_clause"></a>:<br>
+([TYPE <i>access_driver_type</i>]<br>
+DEFAULT DIRECTORY <i>directory</i> [ACCESS PARAMETERS {USING CLOB <i>subquery</i> | (<i>opaque_format_spec</i>) }]<br>
+LOCATION (<i>directory</i>:‘<i>location_specifier</i>’ [,<i>directory</i>2:‘<i>location_specifier</i>2’…)<br>
+) [REJECT LIMIT {<i>int</i>|UNLIMITED}]</p>
+<p><i>nested_storage_clause</i><a id="nested_storage_clause"></a>:<br>
+NESTED TABLE {<i>nested_item</i> | COLUMN_VALUE}<br>
+[ [ELEMENT] IS OF TYPE (ONLY <i>type</i>) ]] |  [ [NOT] SUBSTITUTABLE AT ALL LEVELS ]]<br>
+STORE AS <i>storage_table</i><br>
+[RETURN AS {LOCATOR|VALUE} ]</p></pre><p></p>
+<p>Missing from this page are the options for SCOPE REF Constraints (OBJECT Tables)  - see the Oracle docs for this.</p>
+<p><b>Related Commands:<br>
+  </b><br>
+  DIMENSION - <a href="dimension_c.html">CREATE DIMENSION</a><b><a href="dimension_c.html"><br>
+  </a></b><a href="grant.html"> GRANT</a> ALTER ANY MATERIALIZED VIEW<br>
+  MVIEW - <a href="mview_a.html">ALTER MATERIALIZED VIEW</a> <br>
+  MVIEW - <a href="mview_d.html">DROP MATERIALIZED VIEW</a><br>
+  MVIEW LOG - <a href="mview_log_c.html">CREATE MATERIALIZED VIEW LOG</a> <br>
+  <br>
+  <b>Related Views:</b></p>
+<p class="code">&nbsp;<a href="../orad/DBA_MVIEWS.html">DBA_MVIEWS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEWS.html">ALL_MVIEWS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_MVIEWS.html">USER_MVIEWS</a><br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_AGGREGATES.html">DBA_MVIEW_AGGREGATES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEW_AGGREGATES.html">ALL_MVIEW_AGGREGATES</a>&nbsp;<a href="../orad/USER_MVIEW_AGGREGATES.html">USER_MVIEW_AGGREGATES</a><br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_ANALYSIS.html">DBA_MVIEW_ANALYSIS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEW_ANALYSIS.html">ALL_MVIEW_ANALYSIS</a>&nbsp;&nbsp;&nbsp;<a href="../orad/USER_MVIEW_ANALYSIS.html">USER_MVIEW_ANALYSIS</a><br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_DETAIL_RELATIONS.html">DBA_MVIEW_DETAIL_RELATIONS</a>  <a href="../orad/ALL_MVIEW_DETAIL_RELATIONS.html">ALL_MVIEW_DETAIL_RELATIONS</a> <a href="../orad/USER_MVIEW_DETAIL_RELATIONS.html">USER_MVIEW_DETAIL_RELATIONS</a><br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_JOINS.html">DBA_MVIEW_JOINS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEW_JOINS.html">ALL_MVIEW_JOINS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_MVIEW_JOINS.html">USER_MVIEW_JOINS</a><br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_KEYS.html">DBA_MVIEW_KEYS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEW_KEYS.html">ALL_MVIEW_KEYS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_MVIEW_KEYS.html">USER_MVIEW_KEYS</a><br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_LOGS.html">DBA_MVIEW_LOGS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEW_LOGS.html">ALL_MVIEW_LOGS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_MVIEW_LOGS.html">USER_MVIEW_LOGS</a> <br> 
+ &nbsp;<a href="../orad/DBA_MVIEW_LOG_FILTER_COLS.html">DBA_MVIEW_LOG_FILTER_COLS</a><br> 
+&nbsp;<a href="../orad/DBA_MVIEW_REFRESH_TIMES.html">DBA_MVIEW_REFRESH_TIMES</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_MVIEW_REFRESH_TIMES.html">ALL_MVIEW_REFRESH_TIMES</a>&nbsp;<a href="../orad/USER_MVIEW_REFRESH_TIMES.html">USER_MVIEW_REFRESH_TIMES</a>   </p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="mview_c.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/mview_c.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

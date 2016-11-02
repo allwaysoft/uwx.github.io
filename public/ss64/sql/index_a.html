@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ALTER INDEX 
+Modify an existing index on a  table or view.
+Syntax      ALTER INDEX {index | ALL} ON object DISABLE [;]
+      ALTER INDEX {index | ALL} ON object REORGANIZE          [PARTITION = partit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/index_a.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ALTER INDEX 
+Modify an existing index on a  table or view.
+Syntax      ALTER INDEX {index | ALL} ON object DISABLE [;]
+      ALTER INDEX {index | ALL} ON object REORGANIZE          [PARTITION = partit">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ALTER INDEX 
+Modify an existing index on a  table or view.
+Syntax      ALTER INDEX {index | ALL} ON object DISABLE [;]
+      ALTER INDEX {index | ALL} ON object REORGANIZE          [PARTITION = partit">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>ALTER INDEX </h1>
+<p>Modify an existing index on a  table or view.</p>
+<pre>Syntax<br>      ALTER INDEX {<i>index</i> | ALL} ON <i>object</i> <b>DISABLE</b> [;]
+<br>      ALTER INDEX {<i>index</i> | ALL} ON <i>object</i> <b>REORGANIZE</b> <br>         [PARTITION = <i>partition_number</i> ]<br>            [WITH ( LOB_COMPACTION = {<u>ON</u> | OFF} ) ] [;]
+<pre><code>  ALTER INDEX {&lt;i&gt;index&lt;/i&gt; | ALL} ON object &lt;b&gt;REBUILD&lt;/b&gt;&lt;br&gt;         [ [WITH ( &lt;i&gt;rebuild_index_option&lt;/i&gt; [ ,...n ] ) ] &lt;br&gt;           | [PARTITION = &lt;i&gt;partition_number&lt;/i&gt; &lt;br&gt;                [ WITH ( &lt;i&gt;single_ptn_rebuild_index_option&lt;/i&gt;&lt;br&gt;                    [ ,...n ] )&lt;br&gt;                ] &lt;br&gt;           ]&lt;br&gt;         ] [;]
+</code></pre>
+<p><br>      ALTER INDEX {<i>index</i> | ALL} ON <i>object</i> <b>SET</b> ( <i>set_index_option</i> [ ,…n ] ) <br><br>
+Object:<br>
+<i>database</i>.[<i>schema</i>].<i>table_or_view<br>
+schema.table_or_view</i></p>
+<p>rebuild_index_option:<br>
+PAD_INDEX  = {ON | <u>OFF</u>}<br>
+FILLFACTOR = <i>fillfactor</i><br>
+SORT_IN_TEMPDB = {ON | <u>OFF</u>}<br>
+IGNORE_DUP_KEY = {ON | <u>OFF</u>}<br>
+STATISTICS_NORECOMPUTE = {ON | <u>OFF</u>}<br>
+ONLINE = {ON | <u>OFF</u>}<br>
+ALLOW_ROW_LOCKS = {<u>ON</u> | OFF}<br>
+ALLOW_PAGE_LOCKS = {<u>ON</u> | OFF}<br>
+MAXDOP = <i>max_degree_of_parallelism</i></p>
+<p>single_partition_rebuild_index_option:<br>
+SORT_IN_TEMPDB = {ON | <u>OFF</u> }<br>
+MAXDOP = <i>max_degree_of_parallelism</i></p>
+<p>set_index_option:<br>
+ALLOW_ROW_LOCKS = {<u>ON</u> | OFF}<br>
+ALLOW_PAGE_LOCKS = {<u>ON</u> | OFF}<br>
+IGNORE_DUP_KEY = {ON | <u>OFF</u>}<br>
+STATISTICS_NORECOMPUTE = {ON | <u>OFF</u>}</p>
+<p>Key:<br>
+ALL          All indexes associated with the table or view<br>
+ASC/DESC     The sort direction for the index column.<br>
+PARTITION    Only rebuild/reorganize one partition of the index.<br>
+<i>partition_number</i>  The number of an existing index partition to rebuild/reorganize.<br>
+LOB_COMPACTION  Compacting large object (LOB) data can reduce the disk space used.<br>
+fillfactor   Percentage of each index page to fill during index creation/rebuild.<br>
+1-100, default=0  (values 0 and 100 are identical=Full)<br>
+SET          Change index options without a rebuild/reorg, the index must be enabled.<br>
+ONLINE       In enterprise edition, index operations may be performed online.</p></pre><p></p>
+<p>In a default (nonclustered) index, the physical order of the data is independent of the index order.</p>
+<p>Reindexing should be scheduled during system down-time as it is likely to very severely affect performance.</p>
+<p>The options ONLINE and IGNORE_DUP_KEY are not valid when you rebuild an XML index.</p>
+<p>A unique clustered index must be created on a view before any nonclustered index is created.</p>
+<p><b>Examples</b></p>
+<pre>ALTER INDEX MyIndex01 ON MySchema.MyTable
+REBUILD;
+GO
+<p>ALTER INDEX MyIndex02 ON MySchema.MyTable<br>
+REBUILD Partition = 5;<br>
+GO</p>
+<p>ALTER INDEX ALL ON MySchema.MyTable<br>REBUILD WITH (SORT_IN_TEMPDB = ON, STATISTICS_NORECOMPUTE = ON);<br>GO</p>
+<p>–<br>
+Script to rebuild all the indexes for a database:<br>
+USE SS64_db --Change this to the name of your database</p>
+<p>DECLARE @TableName varchar(255)<br>
+DECLARE TableCursor CURSOR FOR<br>
+SELECT table_name FROM information_schema.tables<br>
+WHERE table_type = ‘base table’</p>
+<p>OPEN TableCursor</p>
+<p>FETCH NEXT FROM TableCursor INTO @TableName<br>
+WHILE @@FETCH_STATUS = 0<br>
+BEGIN<br>
+ALTER INDEX ON schema.table REBUILD/REORGANIZE<br>
+FETCH NEXT FROM TableCursor INTO @TableName<br>
+END</p>
+<p>CLOSE TableCursor<br>
+DEALLOCATE TableCursor</p></pre><p></p>
+<p class="quote"><i>"Anything you build on a large scale or with intense passion invites
+chaos" ~ Francis Ford Coppola </i></p>
+<p><b>Related commands:</b></p>
+<p>  <a href="index_c.html">CREATE INDEX</a><br>
+  <a href="ptnscheme_c.html">CREATE PARTITION SCHEME</a><br>
+  Data Types<br>
+  <a href="dbcc_showstats.html">DBCC SHOW_STATISTICS</a><br>
+  <a href="index_d.html">DROP INDEX</a><br>
+DBCC DBREINDEX - use to re-index with older versions (SQL Server 2000 and earlier) <br>
+  sys.indexes<br>
+  sys.index_columns<br>
+  sys.dm_db_index_physical_stats  <br>
+  sys.xml_indexes<br>
+  EVENTDATA<br>
+Equivalent Oracle command: <a href="../ora/index_a.html">ALTER INDEX</a></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="index_a.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/index_a.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

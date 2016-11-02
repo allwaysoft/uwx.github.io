@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BITSADMIN
+Manage the Background Intelligent Transfer Service (BITS). The BITS Service can be used to transfer large files from remote hosts. BITS supports throttled and asynchronous transfer of files">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/bitsadmin.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="BITSADMIN
+Manage the Background Intelligent Transfer Service (BITS). The BITS Service can be used to transfer large files from remote hosts. BITS supports throttled and asynchronous transfer of files">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:48.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="BITSADMIN
+Manage the Background Intelligent Transfer Service (BITS). The BITS Service can be used to transfer large files from remote hosts. BITS supports throttled and asynchronous transfer of files">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>BITSADMIN</h1>
+<p>Manage the Background Intelligent Transfer Service (BITS). The BITS Service can be used to transfer large files from remote hosts. BITS supports throttled and asynchronous transfer of files between machines using idle network bandwidth. This service is used by Windows Update, SUS, SMS and many third party packages.</p>
+<p>BITSADMIN is deprecated in Windows 7 and 2008 R2, it is superceeded by the new PowerShell <a href="../ps/bits.html">BITS cmdlets</a>.</p>
+<pre>Syntax
+      BITSADMIN [/RAWRETURN] [/WRAP | /NOWRAP] <i>command</i>
+<p>The following commands are available:</p>
+<p>/UTIL /?          Print the list of utilities commands<br>
+/PEERCACHING /?   Print the list of commands to manage Peercaching<br>
+/CACHE /?         Print the list of cache management commands<br>
+/PEERS /?         Print the list of peer management commands</p>
+<p>/LIST    [/ALLUSERS] [/VERBOSE]     List the jobs<br>
+/MONITOR [/ALLUSERS] [/REFRESH sec] Monitor the copy manager<br>
+/RESET   [/ALLUSERS]                Delete all jobs in the manager</p>
+<p>/TRANSFER <i>job name</i> [type] [/PRIORITY priority] [/ACLFLAGS <i>flags</i>]<br>
+<i>remote_url local_name</i><br>
+Transfer one of more files.<br>
+[type] can be /DOWNLOAD or /UPLOAD; default is download<br>
+Multiple URL/file pairs can be specified.<br>
+Unlike most commands, <i>job name</i> can only be a name and not a GUID.</p>
+<p>/CREATE [type] <i>job name</i>             Create a job<br>
+[type] can be /DOWNLOAD, /UPLOAD, or /UPLOAD-REPLY; default is download<br>
+Unlike most commands, <i>job name</i> can only be a name and not a GUID.</p>
+<p>/INFO <i>job</i> [/VERBOSE]                Display information about the job</p>
+<p>/ADDFILE <i>job remote_url local_name</i>  Add a file to the job</p>
+<p>/ADDFILESET <i>job textfile</i>            Add multiple files to the job<br>
+Each line of <i>textfile</i> lists a file’s remote name and local name, separated<br>
+by spaces.  A line beginning with ‘#’ is treated as a comment.<br>
+Once the file set is read into memory, the contents are added to the job.</p>
+<p>/ADDFILEWITHRANGES  <i>job remote_url local_name range_list</i><br>
+Like /ADDFILE, but BITS will read only selected byte ranges of the URL.<br>
+<i>range_list</i> is a comma-delimited series of offset and length pairs.<br>
+For example,</p>
+<pre><code>   0:100,2000:100,5000:eof
+
+  instructs BITS to read 100 bytes starting at offset zero, 100 bytes starting
+  at offset 2000, and the remainder of the URL starting at offset 5000.
+</code></pre>
+<p>/REPLACEREMOTEPREFIX <i>job old_prefix new_prefix</i><br>
+All files whose URL begins with <i>old_prefix</i> are changed to use <i>new_prefix</i></p>
+<pre><code>  Note that BITS currently supports HTTP/HTTPS downloads and uploads.
+  It also supports UNC paths and file:// paths as URLS
+</code></pre>
+<p>/LISTFILES <i>job</i>                     List the files in the job<br>
+/SUSPEND <i>job</i>                       Suspend the job<br>
+/RESUME <i>job</i>                        Resume the job<br>
+/CANCEL <i>job</i>                        Cancel the job<br>
+/COMPLETE <i>job</i>                      Complete the job</p>
+<p>/GETTYPE <i>job</i>                       Retrieve the job type<br>
+/GETACLFLAGS <i>job</i>                   Retrieve the ACL propagation flags</p>
+<p>/SETACLFLAGS <i>job ACL_flags</i>         Set the ACL propagation flags for the job<br>
+O - OWNER       G - GROUP<br>
+D - DACL        S - SACL</p>
+<pre><code> Examples:
+     bitsadmin /setaclflags MyJob OGDS
+     bitsadmin /setaclflags MyJob OGD
+</code></pre>
+<p>/GETBYTESTOTAL <i>job</i>                 Retrieve the size of the job<br>
+/GETBYTESTRANSFERRED <i>job</i>           Retrieve the number of bytes transferred<br>
+/GETFILESTOTAL <i>job</i>                 Retrieve the number of files in the job<br>
+/GETFILESTRANSFERRED <i>job</i>           Retrieve the number of files transferred<br>
+/GETCREATIONTIME <i>job</i>               Retrieve the job creation time<br>
+/GETMODIFICATIONTIME <i>job</i>           Retrieve the job modification time<br>
+/GETCOMPLETIONTIME <i>job</i>             Retrieve the job completion time<br>
+/GETSTATE <i>job</i>                      Retrieve the job state<br>
+/GETERROR <i>job</i>                      Retrieve detailed error information<br>
+/GETOWNER <i>job</i>                      Retrieve the job owner<br>
+/GETDISPLAYNAME <i>job</i>                Retrieve the job display name<br>
+/SETDISPLAYNAME <i>job display_name</i>   Set the job display name<br>
+/GETDESCRIPTION <i>job</i>                Retrieve the job description<br>
+/SETDESCRIPTION <i>job description</i>    Set the job description<br>
+/GETPRIORITY    <i>job</i>                Retrieve the job priority<br>
+/SETPRIORITY    <i>job priority</i>       Set the job priority<br>
+Priority usage choices:<br>
+FOREGROUND<br>
+HIGH<br>
+NORMAL<br>
+LOW<br>
+/GETNOTIFYFLAGS <i>job</i>                Retrieve the notify flags<br>
+/SETNOTIFYFLAGS <i>job notify_flags</i>   Set the notify <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa363044%28v=vs.85%29.aspx" target="_blank" rel="external">flags</a><br>
+/GETNOTIFYINTERFACE <i>job</i>            Determines if notify interface is registered<br>
+/GETMINRETRYDELAY <i>job</i>              Retrieve the retry delay in seconds<br>
+/SETMINRETRYDELAY <i>job retry_delay</i>  Set the retry delay in seconds<br>
+/GETNOPROGRESSTIMEOUT <i>job</i>          Retrieve the no progress timeout in seconds<br>
+/SETNOPROGRESSTIMEOUT <i>job timeout</i>  Set the no progress timeout in seconds<br>
+/GETMAXDOWNLOADTIME <i>job</i>            Retrieve the download timeout in seconds<br>
+/SETMAXDOWNLOADTIME <i>job timeout</i>    Set the download timeout in seconds<br>
+/GETERRORCOUNT <i>job</i>                 Retrieve an error count for the job</p>
+<p>/SETPROXYSETTINGS <i>job usage</i>        Set the proxy usage<br>
+usage choices:<br>
+PRECONFIG   - Use the owner’s IE defaults.<br>
+AUTODETECT  - Force autodetection of proxy.<br>
+NO_PROXY    - Do not use a proxy server.<br>
+OVERRIDE    - Use an explicit proxy list and bypass list.<br>
+Must be followed by a proxy list and a proxy bypass list.<br>
+NULL or “” can be used for an empty proxy bypass list.</p>
+<p>Examples:<br>
+bitsadmin /setproxysettings MyJob PRECONFIG<br>
+bitsadmin /setproxysettings MyJob AUTODETECT<br>
+bitsadmin /setproxysettings MyJob NO_PROXY<br>
+bitsadmin /setproxysettings MyJob OVERRIDE proxy1:80 &quot;<i>local</i>&quot;<br>
+bitsadmin /setproxysettings MyJob OVERRIDE proxy1,proxy2,proxy3 NULL</p>
+<p>/GETPROXYUSAGE <i>job</i>                 Retrieve the proxy usage setting<br>
+/GETPROXYLIST <i>job</i>                  Retrieve the proxy list<br>
+/GETPROXYBYPASSLIST <i>job</i>            Retrieve the proxy bypass list</p>
+<p>/TAKEOWNERSHIP <i>job</i>                 Take ownership of the job</p>
+<p>/SETNOTIFYCMDLINE <i>job program_name</i> [program_parameters]<br>
+Sets a program to execute for notification, and optionally parameters.<br>
+The program name and parameters can be NULL.<br>
+IMPORTANT: if parameters are non-NULL, then the program name should be the<br>
+first parameter.</p>
+<pre><code> Examples:
+   bitsadmin /SetNotifyCmdLine MyJob c:\windows\system32\notepad.exe  NULL
+   bitsadmin /SetNotifyCmdLine MyJob c:\foo.exe &quot;c:\foo.exe parm1 parm2&quot;
+   bitsadmin /SetNotifyCmdLine MyJob NULL NULL
+</code></pre>
+<p>/GETNOTIFYCMDLINE <i>job</i>               Return the job’s notification command line</p>
+<p>/SETCREDENTIALS <i>job target scheme username password</i><br>
+Adds credentials to a job.<br>
+<i>target</i> can be either SERVER or PROXY<br>
+<i>scheme</i> can be BASIC, DIGEST, NTLM, NEGOTIATE, or PASSPORT.</p>
+<p>/REMOVECREDENTIALS <i>job target scheme</i><br>
+Removes credentials from a job.<br>
+/GETCUSTOMHEADERS <i>job</i>                        Get the Custom HTTP Headers<br>
+/SETCUSTOMHEADERS <i>job header1 header2 …</i>    Set the Custom HTTP Headers<br>
+/GETCLIENTCERTIFICATE <i>job</i>                    Get the job’s Client Certificate Information<br>
+/SETCLIENTCERTIFICATEBYID <i>job store_location store_name hexa-decimal_cert_id</i><br>
+Set a client authentication certificate to a job.<br>
+<i>store_location</i>    can be<br>
+1(CURRENT_USER), 2(LOCAL_MACHINE), 3(CURRENT_SERVICE),<br>
+4(SERVICES), 5(USERS), 6(CURRENT_USER_GROUP_POLICY),<br>
+7(LOCAL_MACHINE_GROUP_POLICY) or 8(LOCAL_MACHINE_ENTERPRISE).</p>
+<p>/SETCLIENTCERTIFICATEBYNAME <i>job store_location store_name subject_name</i><br>
+Set a client authentication certificate to a job.<br>
+<i>store_location</i> can be<br>
+1(CURRENT_USER), 2(LOCAL_MACHINE), 3(CURRENT_SERVICE),<br>
+4(SERVICES), 5(USERS), 6(CURRENT_USER_GROUP_POLICY),<br>
+7(LOCAL_MACHINE_GROUP_POLICY) or 8(LOCAL_MACHINE_ENTERPRISE).</p>
+<p>/REMOVECLIENTCERTIFICATE <i>job</i>                Remove the Client Certificate Information from the job</p>
+<p>/SETSECURITYFLAGS <i>job value</i><br>
+Set the HTTP security flags for URL redirection and checks performed on the server cert. during the transfer.<br>
+The value is an unsigned integer with the following interpretation for the bits in the binary representation.<br>
+Enable CRL Check                                 : Set the least significant bit<br>
+Ignore invalid common name in server certificate : Set the 2nd bit from right<br>
+Ignore invalid date in  server certificate       : Set the 3rd bit from right<br>
+Ignore invalid certificate authority in server<br>
+certificate                                    : Set the 4th bit from right<br>
+Ignore invalid usage of certificate              : Set the 5th bit from right<br>
+Redirection policy                               : Controlled by the 9th-11th bits from right<br>
+0,0,0  - Redirects will be automatically allowed.<br>
+0,0,1  - Remote name in the IBackgroundCopyFile interface will be updated if a redirect occurs.<br>
+0,1,0  - BITS will fail the job if a redirect occurs.</p>
+<pre><code>    Allow redirection from HTTPS to HTTP             : Set the 12th bit from right
+</code></pre>
+<p>/GETSECURITYFLAGS <i>job</i><br>
+Report the HTTP security flags for URL redirection and checks performed on the server certificate during the transfer.</p>
+<p>/SETVALIDATIONSTATE <i>job file-index true|false</i><br>
+<file-index> starts from 0<br>
+Set the content-validation state of the given file within the job.</file-index></p>
+<p>/GETVALIDATIONSTATE  <i>job file-index</i><br>
+<file-index> starts from 0<br>
+Report the content-validation state of the given file within the job.</file-index></p>
+<p>/GETTEMPORARYNAME  <i>job file-index</i><br>
+<i>file-index</i> starts from 0<br>
+Report the temporary filename of the given file within the job.</p>
+<p>The following options control peercaching of a particular job:</p>
+<p>/SETPEERCACHINGFLAGS  <i>job value</i><br>
+Sets the flags for the job’s peercaching behavior.<br>
+The value is an unsigned integer with the following interpretation for the bits in the binary representation.<br>
+Allow the job’s data to be downloaded from a peer : Set the least significant bit<br>
+Allow the job’s data to be served to peers        : Set the 2nd bit from right</p>
+<p>/GETPEERCACHINGFLAGS  <i>job</i><br>
+Report the flags for the job’s peercaching behavior.</p>
+<p>The following options are valid for UPLOAD-REPLY jobs only:</p>
+<p>/GETREPLYFILENAME <i>job</i>        Get the path of the file containing the server reply<br>
+/SETREPLYFILENAME <i>job path</i>   Set the path of the file containing the server reply<br>
+/GETREPLYPROGRESS <i>job</i>        Get the size and progress of the server reply<br>
+/GETREPLYDATA     <i>job</i>        Dump the server’s reply data in hex format</p>
+<p>The following options can be placed before the command:<br>
+/RAWRETURN                     Return data more suitable for parsing<br>
+/WRAP                          Wrap output around console (default)<br>
+/NOWRAP                        Don’t wrap output around console</p>
+<p>The /RAWRETURN option strips new line characters and formatting.<br>
+It is recognized by the /CREATE and /GET* commands.<br>
+</p></pre><p></p>
+<p><br>
+Commands that take a <i>job</i> parameter will accept either a job name or a job ID
+GUID inside braces.  </p>
+<p>BITSADMIN reports an error if a name is ambiguous.</p>
+<p>BITSADMIN does not work with relative paths.<br>
+<br>
+Many commands are only compatible with Microsoft IIS servers (e.g. upload).</p>
+<p>BITSADMIN is deprecated in Windows 7 and 2008 R2, it is superceeded by the new PowerShell <a href="../ps/bits.html">BITS cmdlets</a>.<br>
+<br>
+<b>Examples</b><br>
+<br>
+Create a new download job:<br>
+<span class="code">C:\&gt; Bitsadmin /create /download SS64</span><br>
+<br>
+Add a file that we want to download  to the job and specify a location where the downloaded file will be stored:<br>
+<span class="code">C:\&gt; Bitsadmin /addfile SS64 http://download.sysinternals.com/files/PSTools.zip c:\PSTools.zip<br>
+C:\&gt; Bitsadmin /resume SS64</span><br>
+<br>
+Check if a download job has finished and if so complete the job:<br>
+<span class="code">C:\&gt; Bitsadmin /info SS64 /verbose | find "STATE: TRANSFERRED"<br>
+C:\&gt; IF %ERRORLEVEL% EQU 0 bitsadmin /complete SS64</span></p>
+<p class="quote">“Downloading is definitely on the rise, but not because it's free - that's probably third on the list - but because it's immediate and the selection is virtually unlimited” ~ Don Rose</p>
+<p><b>Related:</b><br>
+<br>
+<a href="robocopy.html">ROBOCOPY</a> - Robust File and Folder Copy<br> 
+<a href="ftp.html">FTP</a>- File Transfer Protocol<br>
+Powershell: <a href="../ps/bits.html">Bits cmdlets</a><br>
+Equivalent bash command (Linux): wget - Retrieve web pages or files, curl - Transfer data to or from  a server</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="bitsadmin.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/bitsadmin.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

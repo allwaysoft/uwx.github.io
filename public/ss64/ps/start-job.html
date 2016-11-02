@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Start-Job 
+Start a PowerShell background job.
+Syntax
+      Start-Job [-ScriptBlock] scriptblock [[-InitializationScript] scriptblock]
+         [-ArgumentList Object[]] [-Authentication AuthenticationM">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/start-job.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Start-Job 
+Start a PowerShell background job.
+Syntax
+      Start-Job [-ScriptBlock] scriptblock [[-InitializationScript] scriptblock]
+         [-ArgumentList Object[]] [-Authentication AuthenticationM">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Start-Job 
+Start a PowerShell background job.
+Syntax
+      Start-Job [-ScriptBlock] scriptblock [[-InitializationScript] scriptblock]
+         [-ArgumentList Object[]] [-Authentication AuthenticationM">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Start-Job</h1> 
+<p>Start a PowerShell background job.</p>
+<pre>Syntax
+      Start-Job [<b>-ScriptBlock</b>] <i>scriptblock</i> [[-InitializationScript] <i>scriptblock</i>]
+         [-ArgumentList <i>Object</i>[]] [-Authentication <i>AuthenticationMechanism</i>]
+            [-Credential <i>PSCredential</i>] [-InputObject <i>psobject</i>]
+               [-Name <i>string</i>] [-RunAs32] [<i>CommonParameters</i>]
+<pre><code>  Start-Job [[&lt;b&gt;-FilePath&lt;/b&gt;] &lt;i&gt;string&lt;/i&gt;] [[-InitializationScript] &lt;i&gt;scriptblock&lt;/i&gt;]
+     [-ArgumentList &lt;i&gt;Object&lt;/i&gt;[]] [-Authentication &lt;i&gt;AuthenticationMechanism&lt;/i&gt;]
+        [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-InputObject &lt;i&gt;psobject&lt;/i&gt;]
+           [-Name &lt;i&gt;string&lt;/i&gt;] [-RunAs32] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-ArgumentList <i>Object</i>[]<br>
+The arguments (parameter values) for the script specified by the -FilePath parameter.<br>
+Because all of the values that follow -ArgumentList are interpreted as being values<br>
+of ArgumentList, the ArgumentList parameter should be the last parameter in the command.</p>
+<p>-Authentication <i>AuthenticationMechanism</i><br>
+The mechanism that is used to authenticate the user’s credentials.<br>
+Valid values are Default, Basic, Credssp, Digest, Kerberos, Negotiate, and<br>
+NegotiateWithImplicitCredential.  The default value is Default.<br>
+CredSSP authentication is available only in Vista, Windows Server 2008, and later.</p>
+<pre><code>   &lt;a href=&quot;http://www.google.co.uk/search?q=msdn+System.Management.Automation.Runspaces.AuthenticationMechanism&quot;&gt;MSDN description&lt;/a&gt;.
+   CAUTION: Accessing a remote resource via CredSSP) authentication presents
+   a security risk if the remote computer is compromised.
+</code></pre>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default is the current user.<br>
+Type a user name, such as “User01” or “Domain01\User01”, or enter a PSCredential<br>
+object, such as one from <a href="get-credential.html">Get-Credential</a>.</p>
+<p>-FilePath <i>string</i><br>
+Run the specified local script as a background job.<br>
+Enter the path and file name of the script or pipe a script path<br>
+to Start-Job. The script must reside on the local computer or in a directory that<br>
+the local computer can access.<br>
+PowerShell will convert the contents of the script file to a script block<br>
+and run it as a background job.</p>
+<p>-InitializationScript <i>scriptblock</i><br>
+Specify commands that run before the job starts.<br>
+Enclose the commands in braces { } to create a script block.<br>
+Use this parameter to prepare the session in which the job runs.<br>
+For example, use it to add functions, snap-ins, and modules to the session.</p>
+<p>-InputObject <i>psobject</i><br>
+Input to the command.<br>
+Enter a variable that contains the objects, or type a command or expression that<br>
+generates the objects.<br>
+In the value of the ScriptBlock parameter, use the $input automatic variable to<br>
+represent the input objects.</p>
+<p>-Name <i>string</i><br>
+A friendly name for the new job.<br>
+This name can be used toidentify the job to other job cmdlets, such as Stop-Job.<br>
+The default friendly name is Job#, where “#” is an ordinal number that is incremented for each job.</p>
+<p>-RunAs32<br>
+Run the job in a 32-bit process.<br>
+Use this parameter to force the job to run in a 32-bit process on a 64-bit operating system.</p>
+<p>-ScriptBlock <i>scriptblock</i><br>
+The commands to run in the background job.<br>
+Enclose the commands in braces { } to create a script block.<br>
+This parameter is required.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p> Standard <a href="get-alias.html">Aliases</a> for Start-Job:<span class="code"> <b>sajb</b></span></p>
+<p>Start-Job  starts a  PowerShell background job on the local computer.</p>
+<p>When a background job is started, a job object is returned immediately, even if the job takes an extended time to complete. You can continue to work in the session without interruption while the job runs. <br>
+<br>
+The job object contains useful information about the job, but it does not contain the job results. When the job completes, use <a href="receive-job.html">Receive-Job</a> to get the results of the job. For more information about background jobs, see about_Jobs.<br>
+<br>
+To run a background job on a remote computer, use the AsJob parameter that is available on many cmdlets, or use 
+<a href="invoke-command.html">Invoke-Command</a>  to run a Start-Job command on the remote computer. For more information, see about_Remote_Jobs.</p>
+<p>In PowerShell 3.0 and above, jobs can be scheduled using the PowerShell <a href="scheduler.html">Scheduling cmdlets</a>.</p>
+<p><b>Examples</b></p>
+<p>Start a background job that runs a Get-Process command:</p>
+<p><span class="code">PS C:\&gt; start-job -scriptblock {get-process}<br>
+</span>or<span class="code"><br>
+PS C:\&gt; start-job -command "get-process"</span></p>
+<p>Start a background job (using <span class="code">Invoke-Command... -AsJob</span>) that runs "get-service winrm" on numerous computers. To limit the number of concurrent commands to 16, the -ThrottleLimit parameter is used:</p>
+<p><span class="code">PS C:\&gt; $jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 <b>-AsJob</b></span></p>
+<p>Get all events from the System log in Event Viewer, then use Receive-Job to get the results and store in a variable:</p>
+<p><span class="code">PS C:\&gt; $myjob = start-job -scriptblock {get-eventlog -log system}<br>
+PS C:\&gt; $results = receive-job -job $</span><span class="code">myjob</span><br>
+<br>
+Run a PowerShell script as a background job:</p>
+<p class="code">PS C:\&gt; start-job -filepath c:\scripts\ss64.ps1</p>
+<p>Run a PowerShell cmdlet (Get-Process) as a background job:</p>
+<p class="code">PS C:\&gt; start-job -name WinRm -scriptblock {get-process winrm}</p>
+<p class="quote"><i>“The beautiful thing about learning is nobody can take it away from you” ~ B. B. King</i></p>
+<p><b>Related:</b><br><br>
+<a href="get-job.html">Get-Job</a> - Get PowerShell background jobs that are running<br> 
+<a href="invoke-command.html">Invoke-Command</a>        -   Run command<br>
+<a href="http://support.microsoft.com/kb/2009703" target="_blank" rel="external">Q2009703</a> - 
+Possible deadlock  when trying to manage jobs called with Start-Job (WinXP/2003 only)
+<!-- #BeginLibraryItem "/Library/foot_ps.lbi" --></p><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="start-job.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/start-job.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

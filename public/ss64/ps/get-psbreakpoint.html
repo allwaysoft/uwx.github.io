@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-PSBreakpoint 
+Get the breakpoints that are set in the current session, for debugging a .ps1 script.
+Syntax
+      Get-PSBreakpoint [[-Script] string[]] [CommonParameters]
+  Get-PSBreakpoint -Comman">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-psbreakpoint.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-PSBreakpoint 
+Get the breakpoints that are set in the current session, for debugging a .ps1 script.
+Syntax
+      Get-PSBreakpoint [[-Script] string[]] [CommonParameters]
+  Get-PSBreakpoint -Comman">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-PSBreakpoint 
+Get the breakpoints that are set in the current session, for debugging a .ps1 script.
+Syntax
+      Get-PSBreakpoint [[-Script] string[]] [CommonParameters]
+  Get-PSBreakpoint -Comman">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-PSBreakpoint</h1> 
+<p>Get the breakpoints that are set in the current session, for debugging a .ps1 script.</p>
+<pre>Syntax
+      Get-PSBreakpoint [[-Script] <i>string</i>[]] [<i>CommonParameters</i>]
+<pre><code>  Get-PSBreakpoint -Command &lt;i&gt;string&lt;/i&gt;[] [-Script &lt;i&gt;string&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-PSBreakpoint [-Id] &lt;i&gt;Int32&lt;/i&gt;[] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-PSBreakpoint [-Type] &lt;i&gt;BreakpointType&lt;/i&gt;[] [-Script &lt;i&gt;string&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-PSBreakpoint -Variable &lt;i&gt;string&lt;/i&gt;[] [-Script &lt;i&gt;string&lt;/i&gt;[]]  [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-Command <i>string</i>[]<br>
+Get command breakpoints that are set on the specified command names.<br>
+Enter the command names, such as the name of a cmdlet or function.</p>
+<p>-Id <i>Int32</i>[]<br>
+Get the breakpoints with the specified breakpoint IDs.<br>
+Enter the IDs in a comma-separated list.<br>
+You can pipe breakpoint IDs to Get-PSBreakpoint.</p>
+<p>-Script <i>string</i>[]<br>
+Get only the breakpoints in the specified scripts.<br>
+Enter the  path (optional) and names of one or more script<br>
+files. The default location is the current directory.</p>
+<pre><code>-Type &lt;i&gt;BreakpointType&lt;/i&gt;[]
+    Get only breakpoints of the specified types.
+    Enter one or more types. Valid values are Line, Command, 
+    and Variable. You can also pipe breakpoint types to Get-PSBreakpoint.
+    
+-Variable &lt;i&gt;string&lt;/i&gt;[]
+    Get variable breakpoints that are set on the specified variable names. 
+    Enter the variable names without dollar signs.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p> Standard <a href="get-alias.html">Aliases</a> for Get-PSBreakpoint:<span class="code"> <b>gbp</b></span></p>
+<p>A breakpoint is a point in a command or script where execution stops temporarily so that you can examine the instructions.</p>
+<p><b>Examples</b></p>
+<p>Get all breakpoints set on all scripts and functions in the current session: </p>
+<pre>PS C:&gt; get-psbreakpoint</pre>
+<p>Get the breakpoint with breakpoint ID 2:</p>
+<pre>PS C:&gt; get-psbreakpoint -Id 2</pre>
+<p>Get a breakpoint on the ss64 function in demo.ps1 by piping a breakpoint ID:</p>
+<pre>PS C:&gt; $brk = set-psbreakpoint -script demo.ps1 -function ss64<br>PS C:&gt; $brk.Id | get-psbreakpoint
+</pre>
+<p>Get all breakpoints for the scripts Demo1 and Demo2.ps1:</p>
+<pre>PS C:&gt; get-psbreakpoint -script Demo1.ps1, Demo2.ps1
+</pre>
+<p>Get all breakpoints that are set on Read-Host or Write-Host commands in the Demo1.ps1 file:</p>
+<pre>PS C:&gt; get-psbreakpoint -command Read-Host, Write-Host -script Demo1.ps1
+</pre>
+<p>Get  all the <i>Command </i>breakpoints in Demo1.ps1:</p>
+<pre>PS C:&gt; get-psbreakpoint -type Command -script Demo1.ps1</pre>
+<p>Get breakpoints that are set on the <span class="code">$var1</span> and <span class="code">$var2</span> variables in the current session.:</p>
+<pre>PS C:&gt; get-psbreakpoint -variable var1, var2</pre>
+<p>Get all <i>line</i> and <i>variable</i> breakpoints in Demo1.ps1:</p>
+<pre>PS C:&gt; get-psbreakpoint -type line, variable -script Demo1.ps1</pre>
+<p class="quote"><i>“Better bend than break” ~ Scottish Proverb</i></p>
+<p><b>Related:</b></p>
+<p>  <a href="enable-psbreakpoint.html">Enable-PSBreakpoint</a>   -   Enable breakpoints in the current console</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-psbreakpoint.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

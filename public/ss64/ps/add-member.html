@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Add-Member 
+Add a user-defined custom member to a  PowerShell object instance.
+Syntax
+      Add-Member -inputObject PSObject [-TypeName &amp;lt;String&amp;gt;]
+         [-force] [-passThru] [CommonParameters]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/add-member.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Add-Member 
+Add a user-defined custom member to a  PowerShell object instance.
+Syntax
+      Add-Member -inputObject PSObject [-TypeName &amp;lt;String&amp;gt;]
+         [-force] [-passThru] [CommonParameters]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.810Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Add-Member 
+Add a user-defined custom member to a  PowerShell object instance.
+Syntax
+      Add-Member -inputObject PSObject [-TypeName &amp;lt;String&amp;gt;]
+         [-force] [-passThru] [CommonParameters]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Add-Member</h1> 
+<p>Add a user-defined custom member to a  PowerShell object instance.</p>
+<pre>Syntax
+      Add-Member -inputObject <i>PSObject</i> [-TypeName &lt;String&gt;]
+         [-force] [-passThru] [<i>CommonParameters</i>]
+<pre><code>  Add-Member [&lt;b&gt;-NotePropertyName&lt;/b&gt;] &lt;i&gt;String&lt;/i&gt; [-NotePropertyValue] &lt;i&gt;Object&lt;/i&gt;
+      -inputObject&lt;i&gt; PSObject&lt;/i&gt; [-TypeName &lt;i&gt;String&lt;/i&gt;]
+         [-force] [-passThru] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+ Add-Member [&lt;b&gt;-NotePropertyMembers&lt;/b&gt;] &lt;i&gt;IDictionary&lt;/i&gt;
+     [-TypeName &lt;i&gt;String&lt;/i&gt;] -InputObject &lt;i&gt;PSObject&lt;/i&gt; 
+         [-Force] [-PassThru] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Add-Member [&lt;b&gt;-memberType&lt;/b&gt; &lt;i&gt;PSMemberType&lt;/i&gt;] [-name] &lt;i&gt;string&lt;/i&gt; 
+     [[-value] &lt;i&gt;Object&lt;/i&gt;] [[-secondValue] &lt;i&gt;Object&lt;/i&gt;]
+         -inputObject&lt;i&gt; PSObject &lt;/i&gt;[-TypeName &lt;i&gt;String&lt;/i&gt;]
+             [-force] [-passThru] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-memberType <i>PSMemberType</i><br>
+The type of the member to add. Valid values for this are:<br>
+{AliasProperty | CodeProperty| Property | NoteProperty | ScriptProperty<br>
+| Properties | PropertySet | Method | CodeMethod | ScriptMethod | Methods<br>
+| ParameterizedProperty | MemberSet | All}</p>
+<p>-inputObject <i>psobject</i><br>
+The object to which the new member is added. (Required)<br>
+Enter a variable that contains the objects or type a command or<br>
+expression that gets the objects.</p>
+<p>-MemberType <i>PSMemberTypes</i><br>
+The type of the member to add. (mandatory.)<br>
+Valid values for this parameter are: “NoteProperty,AliasProperty,ScriptProperty,<br>
+CodeProperty,ScriptMethod,CodeMethod” AliasProperty, CodeMethod, CodeProperty,<br>
+Noteproperty, ScriptMethod, and ScriptProperty.<br>
+Not all objects have every type of member. If you specify a member type that<br>
+the object does not have, PowerShell returns an error.</p>
+<p>-name <i>string</i><br>
+The name of the member to be added.</p>
+<p>-value <i>Object</i><br>
+The initial value of the added member. If you add an AliasProperty, CodeProperty<br>
+ScriptProperty or CodeMethod member, you can supply optional, additional information with ‘-SecondValue’.</p>
+<p>-SecondValue <i>Object</i><br>
+Optional additional information about AliasProperty, ScriptProperty, CodeProperty, or CodeMethod members.<br>
+If used when adding an AliasProperty, this parameter must be a data type.<br>
+A conversion (cast) to the specified data type is added to the value of the AliasProperty.<br>
+For example, if you add an AliasProperty that provides an alternate name for a string property,<br>
+you can also specify a SecondValue parameter of System.Int32 to indicate that the value of that string<br>
+property should be converted to an integer when accessed by using the corresponding AliasProperty.</p>
+<pre><code>   You can use -SecondValue to specify an additional ScriptBlock when adding a ScriptProperty member.
+   In that case, the first ScriptBlock, specified in the Value parameter, is used to get the value of a
+   variable. The second ScriptBlock, specified in -SecondValue, is used to set the value of a variable.
+</code></pre>
+<p>-NotePropertyMembers <i>IDictionary</i><br>
+A hash table or ordered dictionary of note property names and values. (PowerShell 3.0+)<br>
+Type a <a href="syntax-hash-tables.html">hash table</a> or dictionary in which the <i>keys</i> are note property names and the <i>values</i> are note property values.</p>
+<p>-NotePropertyName <i>String</i><br>
+Add a note property with the specified name. (PowerShell 3.0+)<br>
+Use this parameter with -NotePropertyValue.</p>
+<p>-NotePropertyValue <i>Object</i><br>
+Add a note property with the specified value. (PowerShell 3.0+)<br>
+Use this parameter with -NotePropertyName.</p>
+<p>-TypeName <i>String</i><br>
+A name for the type.<br>
+When the type is a class in the System namespace or a type that has a type accelerator, you can enter the<br>
+short name of the type. Otherwise, the full type name is required.  (PowerShell 3.0+)<br>
+This parameter is effective only when the input object is a PSObject.</p>
+<p>-force <i>SwitchParameter</i><br>
+Adds a new member even if one with the same name already exists. Does not<br>
+work for core members of a type.</p>
+<p>-passThru <i>SwitchParameter</i><br>
+Pass the newly-extended object created by this cmdlet along the pipeline.<br>
+For most objects, Add-Member adds the new members to the input object. However,<br>
+when the input object is a string, Add-Member cannot add the member to the input object.<br>
+For these objects, use the PassThru parameter to create an output object.<br>
+In PowerShell 2.0, Add-Member added members only to the PSObject wrapper of objects, not to the object.<br>
+Use -PassThru to create an output object for any object that has a PSObject wrapper.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p><b>Notes:</b><br>
+You can only add members to PSObjects. For example, you can add a NoteProperty member that contains a description of the object or a ScriptMethod member that runs a script to change the object.</p>
+<p>To use Add-Member, pipe the object to Add-Member, or use the -InputObject parameter to specify the object. Use the      -MemberType parameter to specify the type of member that you want to add, use the -Name parameter to assign a name      to the new member, and use the -Value parameter to set the value of the member.</p>
+<p>The properties and methods that you add are added only to the particular instance of the object that you specify.      Add-Member does not change the object type. To create a new object type, use the Add-Type cmdlet. You can also use      the <a href="export-clixml.html">Export-Clixml</a> cmdlet to save the instance of the object, including the additional members, in a file. Then you      can use the <a href="import-clixml.html">Import-Clixml</a> cmdlet to re-create the instance of the object from the information that is stored in      the exported file. </p>
+<p>Beginning in  PowerShell 3.0, Add-Member has new features that make it easier to add note properties to      objects. You can use the -NotePropertyName and -NotePropertyValue parameters to define a note property or use the      -NotePropertyMembers parameter, which takes a hash table of note property names and values.          </p>
+<p>Also, beginning in  PowerShell 3.0, the -PassThru parameter, which generates an output object, is needed      less frequently. Add-Member now adds the new members directly to the input object of more types. For more      information, see the -PassThru parameter description.</p>
+<p>To determine if a object is a PS Object, use the 'is' operator. <br>
+For example, to test an object stored in the $obj variable, type "<span class="code">$obj -is [PSObject]</span>".</p>
+<p>The names of the -MemberType, -Name, -Value, and -SecondValue parameters are optional. If you include the parameter names, the parameters can appear in any order. If you omit the parameter names, the unnamed parameter values must appear in this order: MemberType, Name, Value, SecondValue. </p>
+<p>When specifying multiple values for a parameter, use commas to separate the values: "parameter-name value1, value2".</p>
+<p><b>MemberTypes:</b></p>
+<p>AliasProperty: A property that defines a new name for an existing property.<br>
+CodeMethod: A method that references a static method of a Microsoft .NET Framework class.<br>
+CodeProperty: A property that references a static property of a .NET Framework class.<br>
+MemberSet: A predefined collection of properties and methods, such as PSBase, PSObject, and PSTypeNames.<br>
+Method: A method of the underlying .NET Framework object. <br>
+NoteProperty: A property with a static value.<br>
+ParameterizedProperty: A property that takes parameters and parameter values. <br>
+Property: A property of the underlying .NET Framework object.<br>
+PropertySet: A predefined collection of object properties.<br>
+ScriptMethod: A method whose value is the output of a script.<br>
+ScriptProperty: A property whose value is the output of a script.<br>
+<br>
+Methods: Gets all types of <b>methods</b> of the object<br>
+Properties: Gets all types of <b>properties</b> of the object</p>
+<p><b>Example</b></p>
+<p>Add a note property to a DirectoryInfo object returned by Get -ChildItem.</p>
+<pre>PS C:&gt; $a = get-childitem c:\ps-test\test.txt     
+PS C:&gt; $a | add-member -membertype noteproperty -name MyNote -value SomeSampleText 
+PS C:&gt; $a | get-member MyNote<br>PS C:&gt; $a.MyNote
+SomeSampleText</pre>
+<p> The above names a new property MyNote and assigns it the value:  SomeSampleText.<br> 
+Piping the updated object to Get-Member  demonstrates that the property has been added.<br>
+For more examples run <span class="code">get-help Add-Member -detailed</span></p>
+<p class="quote"><i>"What we think, we become" ~ Siddhartha Gautama (Buddha)</i></p>
+<p><b>Related:</b></p>
+<p><a href="get-member.html">Get-Member</a><br>
+<a href="export-clixml.html">Export-Clixml</a> - Produce a clixml representation of PowerShell objects<br> 
+<a href="http://msdn.microsoft.com/en-us/library/system.management.automation.psmembertypes%28v=vs.85%29.aspx" target="_blank" rel="external">PSMemberTypes</a> - MSDN</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/add-member.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

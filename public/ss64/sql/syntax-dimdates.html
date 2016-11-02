@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Create Date Dimension
+The script below creates and populates a date table containing records 
+at one day intervals for a range of years.
+The table contains a single datetime
+column and many other colu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/syntax-dimdates.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Create Date Dimension
+The script below creates and populates a date table containing records 
+at one day intervals for a range of years.
+The table contains a single datetime
+column and many other colu">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Create Date Dimension
+The script below creates and populates a date table containing records 
+at one day intervals for a range of years.
+The table contains a single datetime
+column and many other colu">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>Create Date Dimension</h1>
+<p>The script below creates and populates a date table containing records 
+at one day intervals for a range of years.
+</p><p>The table contains a single datetime<br>
+column and many other columns created with calculated attributes. All the additional columns are PERSISTED in the table for better performance.<br>
+This make it convenient to get various commonly<br>
+used date attributes from the data warehouse without having to program and test<br>
+the same logic in many reports/applications.</p><p></p>
+<p>First create an empty table (called dimDates) with this <a href="syntax-dimdates-create.html">Create Table script</a></p>
+<pre>USE [SS64_DATA_WAREHOUSE]
+GO
+Delete FROM DimDates
+-- declare variables to hold the start and end date
+DECLARE @StartDate datetime
+DECLARE @EndDate datetime
+DECLARE @LoopDate datetime
+-- Assign values to the start date and end date we want our reports to 
+-- cover, take into account future reporting needs.
+SET @StartDate = CAST('<b>1995</b>-01-01T00:00:00.000' AS datetime)
+SET @EndDate = CAST('<b>2025</b>-12-31T00:00:00.000' AS datetime)
+SET @LoopDate = @StartDate
+<p>– Use a while loop to increment from the start to the end date<br>
+WHILE @LoopDate &lt;= @EndDate<br>
+BEGIN<br>
+– add a record into the date dimension table for this date<br>
+INSERT INTO DimDates (ActualDate) VALUES (@LoopDate)<br>
+– increment the LoopDate by 1 day<br>
+SET @LoopDate = DateAdd(day, 1, @LoopDate)<br>
+END</p>
+<p>– check how this looks in the table<br>
+SELECT * FROM DimDates order by [ActualDate]</p></pre><p></p>
+<p class="quote"><i>“I don't understand how a woman can leave the house without fixing herself up a little - if only out of politeness. And then, you never know, maybe that's the day she has a date with destiny. And it's best to be as pretty as possible for destiny” ~ Coco Chanel</i></p>
+<p><b>Related</b></p>
+<p><a href="syntax-dimtimes.html">Time Dimension</a><br>
+<a href="http://www.made2mentor.com/2011/04/calendar-tables-why-you-need-one/" target="_blank" rel="external">Calendar Table</a> - with Year, Month, Week, weekday etc<br>
+Sources/Linkage: <a href="http://stackoverflow.com/questions/1803561/deterministic-scalar-function%20%20-to-get-day-of-week-for-a-date" target="_blank" rel="external">weekday calculation</a>, <a href="http://msmvps.com/blogs/robfarley/archive/2009/12/08/t-sql-tuesday-a-date-dimension-table-with-computed-columns.aspx" target="_blank" rel="external">persisted columns</a>, <a href="http://www.bidn.com/blogs/DevinKnight/ssis/1243/date-dimension-using-computed-columns" target="_blank" rel="external">computed columns</a> <br>
+</p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-dimdates.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/syntax-dimdates.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

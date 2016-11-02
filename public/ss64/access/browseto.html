@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DoCmd.BrowseTo
+ Navigate between objects. (Access 2010) 
+Syntax
+      DoCmd.BrowseTo(ObjectType, ObjectName, PathtoSubformControl,
+                           WhereCondition, Page, DataMode)
+Key
+Object">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/browseto.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DoCmd.BrowseTo
+ Navigate between objects. (Access 2010) 
+Syntax
+      DoCmd.BrowseTo(ObjectType, ObjectName, PathtoSubformControl,
+                           WhereCondition, Page, DataMode)
+Key
+Object">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:58.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DoCmd.BrowseTo
+ Navigate between objects. (Access 2010) 
+Syntax
+      DoCmd.BrowseTo(ObjectType, ObjectName, PathtoSubformControl,
+                           WhereCondition, Page, DataMode)
+Key
+Object">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>DoCmd.BrowseTo</h1>
+<p> Navigate between objects. (Access 2010) </p>
+<pre>Syntax
+      DoCmd.BrowseTo(<i>ObjectType</i>, <i>ObjectName</i>, <i>PathtoSubformControl</i>,
+                           <i>WhereCondition, Page, DataMode</i>)
+<p>Key<br>
+<i>ObjectType</i>   The object type to browse:<br>
+acBrowseToForm (2) or acBrowseToReport (3)</p>
+<p><i>   ObjectName</i>   The object that loads inside the subform control referenced<br>
+by the <i>PathtoSubformControl</i> argument.</p>
+<p><i>PathtoSubformControl</i><br>
+If specified, the path from the main form of the<br>
+application to the target subform control that loads the<br>
+object specified by <i>ObjectName</i>.</p>
+<p><i>WhereCondition</i><br>
+If specified, replaces the Where condition of the<br>
+object record source.</p>
+<p><i>Page</i>         If specified, sets the page of the continuous form that will be made the current page. This argument is Web only.</p>
+<p><i>DataMode</i>     If specified, the data entry mode of the form <a href="acformopendatamode.html">AcFormOpenDataMode</a>.</p></pre><p></p>
+<p>BrowseTo can be used to  navigate between objects in place e.g. navigate from form1 to form2 without opening  a new window. You can also change the source object of a subform control by specifying <span class="code"><i>PathToSubFormControl</i></span>. </p>
+<p>The <span class="code"><i>PathToSubFormControl</i></span> argument must include the parent form/control names as in the following example:</p>
+<p class="code">frmMainForm.SubFormCtrl1&gt;Form2.SubFormCtrl2&gt;Form3.SubFormCtrl3</p>
+<p><b>Example</b></p>
+<p>Opens frmSales in Add-Data mode in the "sfrNavigation" subform control on the form "frmMain".</p>
+<p class="code">DoCmd.BrowseTo ObjectType:=acBrowseToForm, _ <br>
+ObjectName:="frmSales", _ <br>
+PathToSubformControl:="frmMain.sfrNavigation", _ <br>
+WhereCondition:="", _ <br>
+Page:="", _ <br>
+DataMode:=acFormAdd</p>
+<p class="quote"><i>“A careful driver is one who honks his horn when he goes through a red light” ~ Henry Morgan</i></p>
+<p><b>Related:</b></p>
+<p><a href="setparameter.html">SetParameter</a> - Set a parameter before opening a Form or Report.<br>
+<a href="syntax-references.html">Syntax - Form references </a><br>
+.NavigateTo - Display a database object in the Navigation Pane.</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="browseto.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/browseto.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

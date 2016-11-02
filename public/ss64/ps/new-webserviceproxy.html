@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="New-WebServiceProxy
+Create a Web service proxy object for managing the Web Service in  PowerShell.
+Syntax
+      New-WebServiceProxy [-URI] Uri [[-Class] string]
+         [[-Namespace] string] [-Creden">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/new-webserviceproxy.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="New-WebServiceProxy
+Create a Web service proxy object for managing the Web Service in  PowerShell.
+Syntax
+      New-WebServiceProxy [-URI] Uri [[-Class] string]
+         [[-Namespace] string] [-Creden">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="New-WebServiceProxy
+Create a Web service proxy object for managing the Web Service in  PowerShell.
+Syntax
+      New-WebServiceProxy [-URI] Uri [[-Class] string]
+         [[-Namespace] string] [-Creden">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>New-WebServiceProxy</h1>
+<p>Create a Web service proxy object for managing the Web Service in  PowerShell.</p>
+<pre>Syntax
+      New-WebServiceProxy [-URI] <i>Uri</i> [[-Class] <i>string</i>]
+         [[-Namespace] <i>string</i>] [-Credential <i>PSCredential</i>] [<i>CommonParameters</i>]<br>    <br>      New-WebServiceProxy [-URI] <i>Uri</i> [[-Class] <i>string</i>]
+         [[-Namespace] <i>string</i>] [-UseDefaultCredential] [<i>CommonParameters</i>]
+<p>Key<br>
+-Class <i>string</i><br>
+A name for the proxy class that the cmdlet creates for the Web service.<br>
+This is used with -Namespace to provide a fully qualified name for the class.<br>
+The default value is generated from the URI.<br>        <br>   -Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default is the current user. This is an alternative to using -UseDefaultCredential.<br>        <br>       Type a user name, such as “User64” or “Domain64\User64”. Or, enter a PSCredential object,<br>
+such as one generated by <a href="get-credential.html">Get-Credential</a>. If you type a user name, you will be prompted for a password.<br>        <br>   -Namespace <i>string</i><br>
+A namespace for the new class. <br>        <br>       The value of this parameter is used with -Class to generate a fully<br>
+qualified name for the class.<br>
+The default value is  Microsoft.PowerShell.Commands.NewWebserviceProxy.AutogeneratedTypes<br>
+plus a type that is generated from the URI.<br>        <br>       The value of -Namespace may be set so that multiple Web services can be accessed<br>
+with the same name.<br>        <br>   -URI <i>Uri</i><br>       The URI of the Web service.<br>
+Enter a URI or the path and file name of a file that contains a service description.<br>        <br>       The URI must refer to an .asmx page or to a page that returns a service description.<br>
+To return a service description of a Web service that was created by using <a href="http://ASP.NET" target="_blank" rel="external">ASP.NET</a>,<br>
+append “?WSDL” to the URL of the Web service (for example,  <a href="http://www.ss64.com/MyWebService.asmx?WSDL" target="_blank" rel="external">http://www.ss64.com/MyWebService.asmx?WSDL</a>).<br>        <br>   -UseDefaultCredential<br>
+Set the -UseDefaultCredential parameter in the resulting proxy object to True.<br>
+This is an alternative to using the -Credential parameter.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>New-WebServiceProxy  can connect to a Web service and create a Web service proxy object in  PowerShell. Use the proxy object to manage the Web service.<br>
+<br>
+A Web service is an XML-based program that exchanges data over a network, particularly over the Internet. The Microsoft .NET Framework provides Web service proxy objects that represent the Web service as a .NET Framework object.</p>
+<p><b>Example</b></p>
+<p>Create a .NET Framework proxy of the US Zip Web service in PowerShell:</p>
+<p><span class="code">PS C:\&gt; $zip = New-WebServiceProxy -uri http://www.webservicex.net/uszip.asmx?WSDL</span><br>
+<br>
+or storing the URI of the Web service in a variable:</p>
+<p><span class="code">PS C:\&gt; $URI = "http://www.webservicex.net/uszip.asmx?WSDL"<br>
+PS C:\&gt; $zip = New-WebServiceProxy -uri $URI -namespace WebServiceProxy -class ZipClass<br>
+<br>
+PS C:\&gt; $zip | get-member -type method</span></p>
+<pre>TypeName: WebServiceProxy.USZip
+<pre><code>Name                      MemberType Definition
+----                      ---------- ----------
+Abort                     Method     System.Void Abort(
+BeginGetInfoByAreaCode    Method     System.IAsyncResul
+BeginGetInfoByCity        Method     System.IAsyncResul
+BeginGetInfoByState       Method     System.IAsyncResul
+BeginGetInfoByZIP         Method     System.IAsyncResul
+CreateObjRef              Method     System.Runtime.Rem
+Discover                  Method     System.Void Discov
+Dispose                   Method     System.Void Dispos
+EndGetInfoByAreaCode      Method     System.Xml.XmlNode
+EndGetInfoByCity          Method     System.Xml.XmlNode
+EndGetInfoByState         Method     System.Xml.XmlNode
+EndGetInfoByZIP           Method     System.Xml.XmlNode
+Equals                    Method     System.Boolean Equ
+GetHashCode               Method     System.Int32 GetHa
+GetInfoByAreaCode         Method     System.Xml.XmlNode
+GetInfoByCity             Method     System.Xml.XmlNode
+GetInfoByState            Method     System.Xml.XmlNode
+GetInfoByZIP              Method     System.Xml.XmlNode...
+</code></pre>
+<p>PS C:&amp;gt; $zip.getinfobyzip(20500).table</p>
+<pre><code>CITY      : Washington
+STATE     : DC
+ZIP       : 20500
+AREA_CODE : 202
+TIME_ZONE : E&lt;/pre&gt;
+</code></pre>
+<p class="quote"><i>“Web users ultimately want to get at data quickly and easily. They don't care as much about attractive sites and pretty design” ~ Tim Berners-Lee</i></p>
+<p><b>Related:</b></p>
+<p><a href="select-xml.html">Select-XML</a> - Find text in an XML string or document</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="new-webserviceproxy.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/new-webserviceproxy.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

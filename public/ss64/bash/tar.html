@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tar 
+Store, list or extract files in an archive (originally on tape - Tape ARchiver).
+Syntax
+      tar [[-]function] [options] filenames...
+  tar [[-]&amp;lt;i&amp;gt;function&amp;lt;/i&amp;gt;] [&amp;lt;i&amp;gt;options&amp;lt;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/tar.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="tar 
+Store, list or extract files in an archive (originally on tape - Tape ARchiver).
+Syntax
+      tar [[-]function] [options] filenames...
+  tar [[-]&amp;lt;i&amp;gt;function&amp;lt;/i&amp;gt;] [&amp;lt;i&amp;gt;options&amp;lt;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:42.853Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="tar 
+Store, list or extract files in an archive (originally on tape - Tape ARchiver).
+Syntax
+      tar [[-]function] [options] filenames...
+  tar [[-]&amp;lt;i&amp;gt;function&amp;lt;/i&amp;gt;] [&amp;lt;i&amp;gt;options&amp;lt;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>tar</h1> 
+<p>Store, list or extract files in an archive (originally on tape - Tape ARchiver).</p>
+<pre>Syntax
+      tar [[-]<i>function</i>] [<i>options</i>] <i>filenames</i>...
+<pre><code>  tar [[-]&lt;i&gt;function&lt;/i&gt;] [&lt;i&gt;options&lt;/i&gt;] -C &lt;i&gt;directory-name&lt;/i&gt;...
+</code></pre>
+<p>Command-line arguments that specify files to add to, extract from,<br>
+or list from an archive can be given as shell pattern matching strings.</p>
+<p>Functions:<br>
+Exactly one of the following functions (shown in bold) must be specified:<br>
+<b>-A</b><br>
+<b>–catenate</b><br>
+<b>–concatenate</b>  Append the contents of named file, which must itself be a<br>
+gnutar archive, to the end of the archive (erasing the old<br>
+end-of-archive block).  This has the effect of adding the<br>
+files contained in the named file to the first archive,<br>
+rather than adding the second archive as an element of the<br>
+first.  <i>Note</i>: This option requires a rewritable <i>tarfile</i>,<br>
+and therefore does not work on quarter-inch cartridge<br>
+tapes.  (see notes below)<br>
+<b>-c</b><br>
+<b>–create</b>     Create a new archive (or truncate an old one) and write<br>
+the named files to it.<br>
+<b>-d</b><br>
+<b>–diff</b><br>
+<b>–compare</b>     Find differences between files in the archive and<br>
+corresponding files in the file system.</p>
+<pre><code> &lt;b&gt;--delete&lt;/b&gt;     Delete named files from the archive.
+              (Does not work on quarter-inch tapes).
+ &lt;b&gt;-r&lt;/b&gt;
+ &lt;b&gt;--append&lt;/b&gt;     Append files to the end of an archive.
+              (Does not work on quarter-inch tapes).
+ &lt;b&gt;-t&lt;/b&gt;
+ &lt;b&gt;--list&lt;/b&gt;     List the contents of an archive; if &lt;i&gt;filename&lt;/i&gt; arguments are
+               given, only those files are listed, otherwise the entire
+               table of contents is listed.
+
+ &lt;b&gt;--test-label&lt;/b&gt;     test the archive volume label and exit
+
+ &lt;b&gt;-u&lt;/b&gt;
+ &lt;b&gt;--update&lt;/b&gt;     Append the named files if the on-disk version has a 
+               modification date more recent than their copy in the 
+               archive(if any).  Does not work on quarter-inch tapes.
+ &lt;b&gt;-x&lt;/b&gt;
+ &lt;b&gt;--extract&lt;/b&gt;
+ &lt;b&gt;--get&lt;/b&gt;         Extract files from an archive.  The owner, modification
+               time, and file permissions are restored, if possible.  If
+               no &lt;i&gt;file&lt;/i&gt; arguments are given, extract all the files in the
+               archive.  If a &lt;i&gt;filename&lt;/i&gt; argument matches the name of a
+               directory on the tape, that directory and its contents are
+               extracted (as well as all directories under that direc-
+               tory).  If the archive contains multiple entries corre-
+               sponding to the same file (see the &lt;b&gt;--append&lt;/b&gt; command
+               above), the last one extracted will overwrite all earlier
+               versions.
+
+ &lt;b&gt;-C, --directory&lt;/b&gt;=&lt;i&gt;DIR&lt;/i&gt;     change to directory &lt;i&gt;DIR&lt;/i&gt;
+
+ &lt;b&gt;-f, --file&lt;/b&gt;=&lt;i&gt;ARCHIVE&lt;/i&gt;     use archive file or device &lt;i&gt;ARCHIVE&lt;/i&gt;
+
+ &lt;b&gt;-j, --bzip2&lt;/b&gt;     filter the archive through &lt;a href=&quot;bzip2.html&quot;&gt;bzip2&lt;/a&gt;
+
+ &lt;b&gt;-J, --xz&lt;/b&gt;     filter the archive through &lt;a href=&quot;xz.html&quot;&gt;xz&lt;/a&gt;
+
+ &lt;b&gt;-p, --preserve-permissions&lt;/b&gt;     extract information about file permissions (default for superuser)
+
+ &lt;b&gt;-v, --verbose&lt;/b&gt;     verbosely list files processed.
+
+ &lt;b&gt;-z, --gzip&lt;/b&gt;     filter the archive through gzip &lt;/pre&gt;
+</code></pre>
+<blockquote>
+  <p> You can specify an argument for  `<span class="code">--file</span> (or <span class="code">-f</span> ) whenever you use tar; this option determines 
+    the name of the archive file that `tar' will work on.<br>
+    <br>
+    If you don't specify this argument, then `tar' will use a default, usually 
+    some physical tape drive attached to your machine. If there is no tape drive 
+    attached, or the default is not meaningful, then `tar' will print an error 
+  message like one of the following:</p>
+</blockquote>
+<pre>     tar: can't open /dev/rmt8 : No such device or address
+     tar: can't open /dev/rsmt0 : I/O error</pre>
+<blockquote>
+  <p><span class="body"> To avoid confusion, we recommend that you always specify 
+    an archive file name by using <code>--file=ARCHIVE-NAME' (or </code>-f ARCHIVE-NAME') when 
+    writing your `tar' commands. </span> </p>
+</blockquote>
+<pre>     --verbose' (<code>-v') shows details about the results of running </code>tar'.</pre>
+<blockquote>
+  <p><span class="body"> This can be especially useful when the results might 
+    not be obvious. For example, if you want to see the progress of `tar' as it 
+    writes files into the archive, you can use the `--verbose' option. In the 
+    beginning, you might find it useful to use `--verbose' at all times; when you 
+    are more accustomed to `tar', you will likely want to use it at certain times 
+    but not at others. <br>
+    <br>
+    Sometimes, a single instance of `--verbose' on the command line will show 
+    a full, `ls' style listing of an archive or files, giving sizes, owners, and 
+    similar information. Other times, `--verbose' will only show files or members 
+    that the particular operation is operating on at the time. In the latter case, 
+    you can use `--verbose' twice in a command to get a listing such as that in 
+    the former case.</span> </p>
+</blockquote>
+<p><b>Options</b></p>
+<pre>--absolute-names
+-P
+     Normally when creating an archive, <code>tar' strips an initial </code>/' from
+     member names.  This option disables that behavior.
+<p>–after-date<br>
+(See --newer.)</p>
+<p>–atime-preserve<br>
+Tells `tar’ to preserve the access time field in a file’s inode<br>
+when dumping it.</p>
+<p>–backup=<i>BACKUP-TYPE</i><br>
+Rather than deleting files from the file system, `tar’ will back<br>
+them up using simple or numbered backups, depending upon<br>
+BACKUP-TYPE.</p>
+<p>–block-number<br>
+-R<br>
+With this option present, `tar’ prints error messages for read<br>
+errors with the block number in the archive file.</p>
+<p>–blocking-factor=<i>BLOCKING</i><br>
+-b <i>BLOCKING</i><br>
+Sets the blocking factor `tar’ uses to BLOCKING x 512 bytes per<br>
+record.</p>
+<p>–bzip2<br>
+-I<br>
+This option tells <code>tar' to read or write archives through</code>bzip2’.</p>
+<p>–checkpoint<br>
+This option directs <code>tar' to print periodic checkpoint messages as it reads through the archive. Its intended for when you want a visual indication that</code>tar’ is still running, but don’t want to<br>
+see --verbose’ output.</p>
+<p>–compress<br>
+–uncompress<br>
+-Z<br>
+<code>tar' will use the</code>compress’ program when reading or writing the<br>
+archive.  This allows you to directly act on archives while saving<br>
+space.</p>
+<p>–confirmation<br>
+(See --interactive.)</p>
+<p>–dereference<br>
+-h<br>
+When creating a <code>tar' archive,</code>tar’ will archive the file that a<br>
+symbolic link points to, rather than archiving the symlink.</p>
+<p>–directory=<i>DIR</i><br>
+-C <i>DIR</i><br>
+When this option is specified, `tar’ will change its current<br>
+directory to DIR before performing any operations.  When this<br>
+option is used during archive creation, it is order sensitive.</p>
+<p>–exclude=<i>PATTERN</i><br>
+When performing operations, `tar’ will skip files that match<br>
+PATTERN.</p>
+<p>–exclude-from=<i>FILE</i><br>
+-X <i>FILE</i><br>
+Similar to --exclude, except `tar’ will use the list of patterns<br>
+in the file <i>FILE</i>.</p>
+<p>–file=<i>ARCHIVE</i><br>
+-f <i>ARCHIVE</i><br>
+<code>tar' will use the file &lt;i&gt;ARCHIVE&lt;/i&gt; as the</code>tar’ archive it performs<br>
+operations on, rather than tar’s compilation dependent default.</p>
+<p>–files-from=<i>FILE</i><br>
+-T <i>FILE</i><br>
+`tar’ will use the contents of <i>FILE</i> as a list of archive members<br>
+or files to operate on, in addition to those specified on the<br>
+command-line.</p>
+<p>–force-local<br>
+Forces `tar’ to interpret the filename given to --file as a local<br>
+file, even if it looks like a remote tape drive name.</p>
+<p>–group=<i>GROUP</i><br>
+Files added to the `tar’ archive will have a group id of GROUP,<br>
+rather than the group from the source file.  <i>GROUP</i> is first decoded<br>
+as a group symbolic name, but if this interpretation fails, it has<br>
+to be a decimal numeric group ID.</p>
+<pre><code> Also see the comments for the --owner=USER option.
+</code></pre>
+<p>–gzip<br>
+–gunzip<br>
+–ungzip<br>
+-z<br>
+This option tells <code>tar' to read or write archives through</code>gzip’,<br>
+allowing `tar’ to directly operate on several kinds of compressed<br>
+archives transparently.</p>
+<p>–help<br>
+<code>tar' will print out a short message summarizing the operations and options to</code>tar’ and exit.</p>
+<p>–ignore-failed-read<br>
+Instructs `tar’ to exit successfully if it encounters an<br>
+unreadable file.</p>
+<p>–ignore-umask<br>
+(See --preserve-permissions’; *note Writing::…)</p>
+<p>–ignore-zeros<br>
+-i<br>
+With this option, `tar’ will ignore zeroed blocks in the archive,<br>
+which normally signals EOF.  *Note Reading::.</p>
+<p>–incremental<br>
+-G<br>
+Used to inform `tar’ that it is working with an  old GNU-format<br>
+incremental backup archive.  It is intended primarily for backwards<br>
+compatibility only.</p>
+<p>–info-script=<i>SCRIPT-FILE</i><br>
+–new-volume-script=<i>SCRIPT-FILE</i><br>
+-F <i>SCRIPT-FILE</i><br>
+When `tar’ is performing multi-tape backups, <i>SCRIPT-FILE</i> is run at<br>
+the end of each tape.</p>
+<p>–interactive<br>
+–confirmation<br>
+-w<br>
+Specifies that `tar’ should ask the user for confirmation before<br>
+performing potentially destructive options, such as overwriting<br>
+files.</p>
+<p>–keep-old-files<br>
+-k<br>
+When extracting files from an archive, `tar’ will not overwrite<br>
+existing files if this option is present.  *Note Writing::.</p>
+<p>–label=<i>NAME</i><br>
+-V <i>NAME</i><br>
+When creating an archive, instructs <code>tar' to write NAME as a name record in the archive. When extracting or listing archives,</code>tar’<br>
+will only operate on archives that have a label matching the<br>
+pattern specified in NAME.</p>
+<p>–listed-incremental=<i>SNAPSHOT-FILE</i><br>
+-g <i>SNAPSHOT-FILE</i><br>
+During a --create’ operation, specifies that the archive that<br>
+<code>tar' creates is a new GNU-format incremental backup, using SNAPSHOT-FILE to determine which files to backup. With other operations, informs</code>tar’ that the archive is in incremental<br>
+format.</p>
+<p>–mode=<i>PERMISSIONS</i><br>
+When adding files to an archive, <code>tar' will use &lt;i&gt;PERMISSIONS&lt;/i&gt; for the archive members, rather than the permissions from the files. The program</code>chmod’ and this `tar’ option share the same syntax<br>
+for what <i>PERMISSIONS</i> might be.  *Note Permissions: (fileutils)File<br>
+permissions.  This reference also has useful information for those<br>
+not being overly familiar with the Unix permission system.</p>
+<pre><code> Of course, &lt;i&gt;PERMISSIONS&lt;/i&gt; might be plainly specified as an octal
+ number.  However, by using generic symbolic modifications to mode
+ bits, this allows more flexibility.  For example, the value `a+rw'
+ adds read and write permissions for everybody, while retaining
+ executable bits on directories or on any other file already marked
+ as executable.
+</code></pre>
+<p>–multi-volume<br>
+-M<br>
+Informs <code>tar' that it should create or otherwise operate on a multi-volume</code>tar’ archive.</p>
+<p>–new-volume-script<br>
+(see -info-script)</p>
+<p>–newer=<i>DATE</i><br>
+–after-date=<i>DATE</i><br>
+-N<br>
+When creating an archive, `tar’ will only add files that have<br>
+changed since <i>DATE</i>.</p>
+<p>–newer-mtime<br>
+In conjunction with --newer’, `tar’ will only add files whose<br>
+contents have changed (as opposed to just --newer’, which will<br>
+also back up files for which any status information has changed).</p>
+<p>–no-recursion<br>
+With this option, <code>tar' will not recurse into directories unless a directory is explicitly named as an argument to</code>tar’.</p>
+<p>–null<br>
+When <code>tar' is using the --files-from' option, this option instructs</code>tar’ to expect filenames terminated with <code>NUL', so</code>tar’ can correctly work with file names that contain newlines.</p>
+<p>–numeric-owner<br>
+This option will notify <code>tar' that it should use numeric user and group IDs when creating a</code>tar’ file, rather than names.</p>
+<p>–old-archive<br>
+(See --portability.)</p>
+<p>–one-file-system<br>
+-l<br>
+Used when creating an archive.  Prevents `tar’ from recursing into<br>
+directories that are on different file systems from the current<br>
+directory.</p>
+<p>–owner=<i>USER</i><br>
+Specifies that `tar’ should use <i>USER</i> as the owner of members when<br>
+creating archives, instead of the user associated with the source<br>
+file.  USER is first decoded as a user symbolic name, but if this<br>
+interpretation fails, it has to be a decimal numeric user ID.</p>
+<pre><code> There is no value indicating a missing number, and `0' usually
+ means <code>root'.  Some people like to force </code>0' as the value to offer
+ in their distributions for the owner of files, because the `root'
+ user is anonymous anyway, so that might as well be the owner of
+ anonymous archives.
+</code></pre>
+<p>–portability<br>
+–old-archive<br>
+-o<br>
+Tells <code>tar' to create an archive that is compatible with Unix V7</code>tar’.</p>
+<p>–posix<br>
+Instructs <code>tar' to create a POSIX compliant</code>tar’ archive.</p>
+<p>–preserve<br>
+Synonymous with specifying both --preserve-permissions’ and<br>
+–same-order.</p>
+<p>–preserve-order<br>
+(See --same-order; *note Reading::…)</p>
+<p>–preserve-permissions<br>
+–same-permissions<br>
+-p<br>
+When <code>tar' is extracting an archive, it normally subtracts the users' umask from the permissions specified in the archive and uses that number as the permissions to create the destination file. Specifying this option instructs</code>tar’ that it should use<br>
+the permissions directly from the archive.  *Note Writing::.</p>
+<p>–read-full-records<br>
+-B<br>
+Specifies that `tar’ should reblock its input, for reading from<br>
+pipes on systems with buggy implementations.  *Note Reading::.</p>
+<p>–record-size=<i>SIZE</i><br>
+Instructs `tar’ to use SIZE bytes per record when accessing the<br>
+archive.</p>
+<p>–recursive-unlink<br>
+Similar to the --unlink-first option, removing existing<br>
+directory hierarchies before extracting directories of the same<br>
+name from the archive.  *Note Writing::.</p>
+<p>–remove-files<br>
+Directs `tar’ to remove the source file from the file system after<br>
+appending it to an archive.</p>
+<p>–rsh-command=<i>CMD</i><br>
+Notifies `tar’ that is should use CMD to communicate with remote<br>
+devices.</p>
+<p>–same-order<br>
+–preserve-order<br>
+-s<br>
+This option is an optimization for <code>tar' when running on machines with small amounts of memory. It informs</code>tar’ that the list of<br>
+file arguments has already been sorted to match the order of files<br>
+in the archive.  *Note Reading::.</p>
+<p>–same-owner<br>
+When extracting an archive, <code>tar' will attempt to preserve the owner specified in the</code>tar’ archive with this option present.</p>
+<p>–same-permissions<br>
+(See --preserve-permissions; *note Writing::…)</p>
+<p>–show-omitted-dirs<br>
+Instructs <code>tar' to mention directories its skipping over when operating on a</code>tar’ archive.</p>
+<p>–sparse<br>
+-S<br>
+Invokes a GNU extension when adding files to an archive that<br>
+handles sparse files efficiently.</p>
+<p>–starting-file=<i>NAME</i><br>
+-K <i>NAME</i><br>
+This option affects extraction only; `tar’ will skip extracting<br>
+files in the archive until it finds one that matches NAME.  *Note<br>
+Scarce::.</p>
+<p>–suffix=<i>SUFFIX</i><br>
+Alters the suffix <code>tar' uses when backing up files from the default</code>~’.</p>
+<p>–tape-length=<i>NUM</i><br>
+-L <i>NUM</i><br>
+Specifies the length of tapes that `tar’ is writing as being<br>
+NUM x 1024 bytes long.</p>
+<p>–to-stdout<br>
+-O<br>
+During extraction, `tar’ will extract files to stdout rather than<br>
+to the file system.  *Note Writing::.</p>
+<p>–totals<br>
+Displays the total number of bytes written after creating an<br>
+archive.</p>
+<p>–touch<br>
+-m<br>
+Sets the modification time of extracted files to the extraction<br>
+time, rather than the modification time stored in the archive.<br>
+*Note Writing::.</p>
+<p>–uncompress<br>
+(See --compress.)</p>
+<p>–ungzip<br>
+(See --gzip.)</p>
+<p>–unlink-first<br>
+-U<br>
+Direct `tar’ to remove the corresponding file from the file system<br>
+before extracting it from the archive.  *Note Writing::.</p>
+<p>–use-compress-program=<i>PROG</i><br>
+Instruct `tar’ to access the archive through <i>PROG</i>, which is<br>
+presumed to be a compression program of some sort.</p>
+<p>–verbose<br>
+-v<br>
+Be more verbose about the operation.<br>
+This option can be specified multiple times (for some operations)<br>
+to increase the amount of information displayed.</p>
+<p>–verify<br>
+-W<br>
+Verify that the archive was correctly written.</p>
+<p>–version<br>
+`tar’ will print an informational message about what version it is<br>
+and a copyright message, some credits, and then exit.</p>
+<p>–volno-file=FILE<br>
+Used in conjunction with --multi-volume’.  `tar’ will keep track<br>
+of which volume of a multi-volume archive its working in FILE.</p></pre><p></p>
+<p><b>Examples</b></p>
+<p>Create a  tar and zip the  file (using the <i>create function</i>)</p>
+<pre>  tar -czvf MyArchive Source_file 
+or
+  tar --<b>c</b>reate --g<b>z</b>ip --<b>v</b>erbose --<b>f</b>ile=MyArchive.gz Source_file</pre>
+<p>Extract the zip file created above:</p>
+<pre>  tar <b>-x</b>zvf MyArchive Destination_file 
+or
+  tar --e<b>x</b>tract --gun<b>z</b>ip --<b>v</b>erbose --<b>f</b>ile=MyArchive.gz Destination_file</pre>
+<p>Extract a file, autodetecting the format, in this case an xz archive:</p>
+<pre>  tar -xf some.tar.xz
+or
+  tar --e<b>x</b>tract --<b>f</b>ile=some.tar.xz</pre>
+<p>Create a  tar in zip format with the  file named as todays date/time:</p>
+<pre>tar czvf my_backup.$(date +%Y%m%d-%H%M%S).tgz /users/simon
+</pre>
+<p>A simple shell script for the above:</p>
+<pre>#!/bin/bash<br>tar czvf $1.$(date +%Y%m%d-%H%M%S).tgz $1<br>exit $?</pre>
+<p>Save the script as 'arc',  use chmod to make it executable and then run it passing a single file or foldername:</p>
+<pre>chmod 700 arc
+./arc /users/simon</pre>
+<h2>Notes</h2>
+<blockquote>
+<p>Always <b>tar -t </b>before<b> tar -x </b>to check if the archive contents have been placed inside one subdirectory or will just spill all over the current directory.</p>
+<p>The -C feature does not work like historical gnutar programs, and is probably 
+    untrustworthy.</p>
+<p> The -A command should work to join an arbitrary number of gnutar 
+  archives together, but it does not; attempting to do so leaves the end-of-archive 
+  blocks in place for the second and subsequent archives. </p>
+<p>The gnutar file format is a semi fixed width field format, and 
+  the field for device numbers were designed for 16 bit (8 major, 8 minor) and 
+  can not absorb our 32 bit (8 major, 16+8 minor) numbers. </p>
+</blockquote>
+<p class="quote"><i>"To disarm the bomb simply enter a valid tar command on your first try. No Googling" ~ <a href="http://xkcd.com/1168/" target="_blank" rel="external">XKCD</a></i></p>
+<p> <b> Related:</b><br>
+<br>
+<a href="gzip.html">gzip</a> - Compress or decompress named file(s)<br>
+<a href="sum.html">sum</a> - Print a checksum for a file <br>
+<a href="unshar.html">unshar</a> - Unpack shell archive scripts <br>
+<a href="xz.html">xz</a> - Compress or decompress .xz and .lzma files<br>
+<a href="zip.html">zip</a> - Package and compress (archive) files.<br>
+Equivalent Windows command:  ZIP - compress files</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="tar.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/tar.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

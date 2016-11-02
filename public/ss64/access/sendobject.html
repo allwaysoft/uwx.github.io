@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DoCmd.SendObject
+ Send an email with a database object attached.
+Syntax
+      DoCmd.SendObject(ObjectType, ObjectName, OutputFormat,
+                       To, Cc, Bcc, Subject, MessageText,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/sendobject.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DoCmd.SendObject
+ Send an email with a database object attached.
+Syntax
+      DoCmd.SendObject(ObjectType, ObjectName, OutputFormat,
+                       To, Cc, Bcc, Subject, MessageText,">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:04:00.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DoCmd.SendObject
+ Send an email with a database object attached.
+Syntax
+      DoCmd.SendObject(ObjectType, ObjectName, OutputFormat,
+                       To, Cc, Bcc, Subject, MessageText,">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>DoCmd.SendObject</h1>
+<p> Send an email with a database object attached.</p>
+<pre>Syntax
+      DoCmd.SendObject(<i>ObjectType, ObjectName, OutputFormat,
+                       To, Cc, Bcc, Subject, MessageText,
+                       EditMessage, TemplateFile</i>)
+<p>Key<br>
+<i>ObjectType</i> An <a href="acsendobjecttype.html">AcSendObjectType</a> constant that specifies<br>
+the type of object to send.<i></i></p>
+<p>ObjectName The name of an object to email, of the type selected by<br>
+the <i>objecttype</i> argument. To include the active<br>
+object in the email, specify the object’s type<br>
+with <i>ObjectType</i> and leave this argument blank.<br>
+If both <i>ObjectType</i> and <i>ObjectName</i> are blank<br>
+Access will send an email without an included database object.</p>
+<p><i>OutputFormat<br>
+</i>     An <a href="acformattype.html">AcFormatType </a>constant that specifies the<br>
+The output format of the object being sent.</p>
+<p><i>To    </i>     Names to put in the To line of the email.</p>
+<p><i>CC</i>         Names to put in the CC line of the email.</p>
+<p><i>Bcc</i>        Names to put in the BCC line of the email.</p>
+<p><i>Subject</i>    The email subject line.</p>
+<p><i>MessageText</i> Text to include in the body of the email</p>
+<p><i>EditMessage</i>  Use <u>True</u> (-1) to open an email application<br>
+so the message can be edited.<br>
+Use False (0) to send immediately without editing.</p>
+<p><i>TemplateFile<br>
+</i>  The full pathname of an HTML file to<br>
+use as a template for the email.</p>
+</pre>
+<p> Use SendObject() to include the specified Access datasheet, form, report, or module in an email.</p>
+<p>Access will change much of the formatting when converting to email, forms will display as if in datasheet view, Yes no fields will appear as -1 or 0. When you send a datasheet, form, or data access page in HTML format, one .html file is created. When you send a report in HTML format, one .html file is created for each page in the report.</p>
+<p>If you send a report, the only controls that are included in the object are text boxes (for .xls files), or text boxes and labels (for .rtf, .txt, and .html files). All other controls are ignored. Header and footer information is also not included. The only exception to this is sending a report in Excel format, a text box in a <i>group footer</i> containing an expression with the <span class="code">Sum</span> function will be included in the object.</p>
+<p>The message text of the email will be in plain text, in many email clients this will by default, render in the <a href="http://en.wikipedia.org/wiki/Courier_%28typeface%29#Courier_New" target="_blank" rel="external">Courier New</a> font but the choice of font for plain text emails can be configured under<span class="code"> Tools | Options</span>. </p>
+<p><b>Example</b></p>
+<p>'email the table T_Sales to two people in a spreadsheet format:<br>
+<span class="code">DoCmd.SendObject acSendTable, "T_Sales", acFormatXLS, _<br>
+"Sergio Buzio; fiona@example.com", , ,_<br>
+"Spreadsheet of sales"</span></p>
+<p class="quote"><i>“Email is a wonderful thing for people whose role in life is to be on top of things. But not for me; my role is to be on the bottom of things. What I do takes long hours of studying and uninterruptible concentration” ~ Donald Knuth (<a href="http://www-cs-faculty.stanford.edu/%7Eknuth/email.html" target="_blank" rel="external">Knuth versus Email</a>)</i></p>
+<p><b>Related:</b></p>
+<p><a href="http://www.fmsinc.com/microsoftaccess/email/sendobject.html" target="_blank" rel="external">Total Access Emailer</a> - Utility from FMSinc that extends the functionality of SendObject() </p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/sendobject.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

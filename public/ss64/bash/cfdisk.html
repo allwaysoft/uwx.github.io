@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cfdisk 
+Curses based disk partition table manipulator for Linux 
+Syntax
+      cfdisk [ -agvz ] [ -c cylinders ] [ -h heads ]
+                [ -s sectors-per-track ] [ -P opt ] [ device ]  
+Options
+-a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/cfdisk.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="cfdisk 
+Curses based disk partition table manipulator for Linux 
+Syntax
+      cfdisk [ -agvz ] [ -c cylinders ] [ -h heads ]
+                [ -s sectors-per-track ] [ -P opt ] [ device ]  
+Options
+-a">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="cfdisk 
+Curses based disk partition table manipulator for Linux 
+Syntax
+      cfdisk [ -agvz ] [ -c cylinders ] [ -h heads ]
+                [ -s sectors-per-track ] [ -P opt ] [ device ]  
+Options
+-a">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>cfdisk</h1> 
+<p>Curses based disk partition table manipulator for Linux </p>
+<pre>Syntax
+      cfdisk [ -agvz ] [ -c <i>cylinders</i> ] [ -h <i>heads</i> ]
+                [ -s <i>sectors-per-track</i> ] [ -P <i>opt</i> ] [ <i>device</i> ]  
+<p>Options<br>
+-a  Use an arrow cursor instead of reverse video<br>
+for highlighting the current partition.</p>
+<p>-g  Do not use the geometry given by the disk driver,<br>
+but try to guess a geometry from the partition table.</p>
+<p>-v  Print the version number and copyright.</p>
+<p>-z  Start with zeroed partition table.<br>
+This option is useful when you want to repartition your entire disk.<br>
+<i>Note:</i> this option does not zero the partition table on the disk;<br>
+rather, it simply starts the program without reading the existing partition table.<br>
+-c<i> cylinders</i></p>
+<p>-h<i> heads</i></p>
+<p>-s<i> sectors-per-track</i><br>
+Override the number of cylinders, heads and sectors per track read from the BIOS.<br>
+If your BIOS or adapter does not supply this information or if it supplies incorrect<br>
+information, use these options to set the disk geometry values.<br>
+-P<i> opt</i><br>
+Prints the partition table in specified formats.<br>
+<i>opt</i> can be one or more of “r”, “s” or “t”.<br>
+See the <b>p</b>rint command (below) for more information on the print formats.</p>
+<p><i>   device<br>
+</i>Typical values:<br>
+/dev/hda [<i>default</i>]<br>
+/dev/hdb<br>
+/dev/sda<br>
+/dev/sdb<br>
+/dev/sdc<br>
+/dev/sdd</p></pre><p></p>
+<p>In order to write the partition table
+<b>cfdisk </b>needs something called the `geometry' of the disk: the number
+of <code>heads' and the number of </code>sectors per track'. Linux does not
+use any geometry, so if the disk will not be accessed by other
+operating systems, you can safely accept the defaults that
+<b>cfdisk</b>
+</p><p>chooses for you. The geometry used by<br>
+<b>cfdisk</b></p>
+<p>is found as follows. First the partition table is examined,<br>
+to see what geometry was used by the previous program that<br>
+changed it. If the partition table is empty, or contains garbage,<br>
+or does not point at a consistent geometry, the kernel is<br>
+asked for advice. If nothing works 255 heads and 63 sectors/track<br>
+is assumed. The geometry can be overridden on the command line<br>
+or by use of the `g’ command. When partitioning an empty large modern<br>
+disk, picking 255 heads and 63 sectors/track is always a good idea.<br>
+There is no need to set the number of cylinders, since<br>
+<b>cfdisk</b></p>
+<p>knows the disk size.</p>
+<p></p><p>
+Next,
+<b>cfdisk</b>
+</p><p>tries to read the current partition table from the disk drive.  If it<br>
+is unable to figure out the partition table, an error is displayed and<br>
+the program will exit.  This might also be caused by incorrect<br>
+geometry information, and can be overridden on the command line.<br>
+Another way around this problem is with the<br>
+<b>-z</b></p>
+<p>option.  This will ignore the partition table on the disk.</p>
+<p></p><p>
+The main display is composed of four sections, from top to bottom: the
+header, the partitions, the command line and a warning line.  The
+header contains the program name and version number followed by the
+disk drive and its geometry.  The partitions section always displays
+the current partition table.  The command line is the place where
+commands and text are entered.  The available commands are usually
+displayed in brackets.  The warning line is usually empty except when
+there is important information to be displayed.  The current partition
+is highlighted with reverse video (or an arrow if the
+<b>-a</b>
+</p><p>option is given).  All partition specific commands apply to the<br>
+current partition.</p>
+<p></p><p>
+The format of the partition table in the partitions section is, from
+left to right: Name, Flags, Partition Type, Filesystem Type and Size.
+The name is the partition device name.  The flags can be
+<i>Boot</i>,
+</p><p>which designates a bootable partition or<br>
+<i>NC</i>,</p>
+<p>which stands for “Not Compatible with DOS or OS/2”.  DOS, OS/2 and<br>
+possibly other operating systems require the first sector of the first<br>
+partition on the disk and all logical partitions to begin on the<br>
+second head.  This wastes the second through the last sector of the<br>
+first track of the first head (the first sector is taken by the<br>
+partition table itself).<br>
+<b>cfdisk</b></p>
+<p>allows you to recover these “lost” sectors with the maximize command<br>
+(<b>m</b>).</p>
+<p><i>Note:</i></p>
+<p><b><a href="fdisk.html">fdisk</a></b>(8)</p>
+<p>and some early versions of DOS create all partitions with the number<br>
+of sectors already maximized.  For more information, see the maximize<br>
+command below.  The partition type can be one of<br>
+<i>Primary</i> or <i>Logical</i>.</p>
+<p>For unallocated space on the drive, the partition type can also be<br>
+<i>Pri/Log</i>,</p>
+<p>or empty (if the space is unusable).  The filesystem type section<br>
+displays the name of the filesystem used on the partition, if known.<br>
+If it is unknown, then<br>
+<i>Unknown</i></p>
+<p>and the hex value of the filesystem type are displayed.  A special<br>
+case occurs when there are sections of the disk drive that cannot be<br>
+used (because all of the primary partitions are used).  When this is<br>
+detected, the filesystem type is displayed as<br>
+<i>Unusable</i>.</p>
+<p>The size field displays the size of the partition in megabytes (by<br>
+default).  It can also display the size in sectors and cylinders (see<br>
+the change units command below).  If an asterisks<br>
+(<b>*</b>)</p>
+<p>appears after the size, this means that the partition is not aligned<br>
+on cylinder boundaries.</p>
+<p></p><h2>DOS 6.x WARNING</h2>
+<p>
+The DOS 6.x FORMAT command looks for some information in the first
+sector of the data area of the partition, and treats this information
+as more reliable than the information in the partition table.  DOS
+FORMAT expects DOS FDISK to clear the first 512 bytes of the data area
+of a partition whenever a size change occurs.  DOS FORMAT will look at
+this extra information even if the /U flag is given -- we consider
+this a bug in DOS FORMAT and DOS FDISK.
+</p><p>
+The bottom line is that if you use cfdisk or fdisk to change the size of a
+DOS partition table entry, then you must also use
+<b>dd</b>
+</p><p>to zero the first 512 bytes of that partition before using DOS FORMAT to<br>
+format the partition.  For example, if you were using cfdisk to make a DOS<br>
+partition table entry for /dev/hda1, then (after exiting fdisk or cfdisk<br>
+and rebooting Linux so that the partition table information is valid) you<br>
+would use the command “dd if=/dev/zero of=/dev/hda1 bs=512 count=1” to zero<br>
+the first 512 bytes of the partition. Note:</p>
+<p></p><p>
+<b>BE EXTREMELY CAREFUL</b>
+</p><p>if you use the<br>
+<b>dd</b></p>
+<p>command, since a small typo can make all of the data on your disk useless.</p>
+<p></p><p>
+For best results, you should always use an OS-specific partition table
+program.  For example, you should make DOS partitions with the DOS FDISK
+program and Linux partitions with the Linux fdisk or Linux cfdisk program.
+</p><p><b>Commands</b>
+<b>cfdisk</b>
+</p><p>commands can be entered by pressing the desired key (pressing</p>
+<p><i>Enter</i></p>
+<p>after the command is not necessary).  Here is a list of the available<br>
+commands:</p>
+<p></p><dl compact="">
+<dt><b>b</b>
+</dt><dd>
+Toggle bootable flag of the current partition.  This allows you to
+select which primary partition is bootable on the drive.
+</dd><dt><b>d</b>
+</dt><dd>
+Delete the current partition.  This will convert the current partition
+into free space and merge it with any free space immediately
+surrounding the current partition.  A partition already marked as free
+space or marked as unusable cannot be deleted.
+</dd><dt><b>g</b>
+</dt><dd>
+Change the disk geometry (cylinders, heads, or sectors-per-track).
+<b>WARNING:</b>
+<p>This option should only be used by people who know what they are<br>
+doing.  A command line option is also available to change the disk<br>
+geometry.  While at the change disk geometry command line, you can<br>
+choose to change cylinders<br>
+(<b>c</b>),</p>
+<p>heads<br>
+(<b>h</b>),</p>
+<p>and sectors per track<br>
+(<b>s</b>).</p>
+<p>The default value will be printed at the prompt which you can accept<br>
+by simply pressing the<br>
+<i>Enter</i></p>
+<p>key, or you can exit without changes by pressing the</p>
+<p><i>ESC</i></p>
+<p>key.  If you want to change the default value, simply enter the<br>
+desired value and press<br>
+<i>Enter</i>.</p>
+<p>The altered disk parameter values do not take effect until you return<br>
+the main menu (by pressing<br>
+<i>Enter</i> or <i>ESC</i></p>
+<p>at the change disk geometry command line.  If you change the geometry<br>
+such that the disk appears larger, the extra sectors are added at the<br>
+end of the disk as free space.  If the disk appears smaller, the<br>
+partitions that are beyond the new last sector are deleted and the<br>
+last partition on the drive (or the free space at the end of the<br>
+drive) is made to end at the new last sector.</p>
+</dd><dt><b>h</b>
+</dt><dd>
+<p>Print the help screen.</p>
+</dd><dt><b>m</b>
+</dt><dd>
+Maximize disk usage of the current partition.  This command will
+recover the the unused space between the partition table and the
+beginning of the partition, but at the cost of making the partition
+incompatible with DOS, OS/2 and possibly other operating systems.
+This option will toggle between maximal disk usage and DOS, OS/2,
+etc. compatible disk usage.  The default when creating a partition is
+to create DOS, OS/2, etc. compatible partitions.
+</dd><dt><b>n</b>
+</dt><dd>
+Create new partition from free space.  If the partition type is
+<i>Primary</i> or <i>Logical</i>,
+<p>a partition of that type will be created, but if the partition type is<br>
+<i>Pri/Log</i>,</p>
+<p>you will be prompted for the type you want to create.  Be aware that<br>
+(1) there are only four slots available for primary partitions and (2)<br>
+since there can be only one extended partition, which contains all of<br>
+the logical drives, all of the logical drives must be contiguous (with<br>
+no intervening primary partition).</p>
+<p><b>cfdisk</b></p>
+<p>next prompts you for the size of the partition you want to create.<br>
+The default size, equal to the entire free space of the current<br>
+partition, is display in megabytes.  You can either press the<br>
+<i>Enter</i></p>
+<p>key to accept the default size or enter a different size at the<br>
+prompt.<br>
+<b>cfdisk</b></p>
+<p>accepts size entries in megabytes<br>
+(<b>M</b>)</p>
+<p>[default], kilobytes<br>
+(<b>K</b>),</p>
+<p>cylinders<br>
+(<b>C</b>)</p>
+<p>and sectors<br>
+(<b>S</b>)</p>
+<p>by entering the number immediately followed by one of<br>
+(<b>M</b>, <b>K</b>, <b>C</b> or <b>S</b>).</p>
+<p>If the partition fills the free space available, the partition is<br>
+created and you are returned to the main command line.  Otherwise, the<br>
+partition can be created at the beginning or the end of the free<br>
+space, and</p>
+<p><b>cfdisk</b></p>
+<p>will ask you to choose where to place the partition.  After the<br>
+partition is created,<br>
+<b>cfdisk</b></p>
+<p>automatically adjusts the other partition’s partition types if all of<br>
+the primary partitions are used.</p>
+</dd><dt><b>p</b>
+</dt><dd>
+Print the partition table to the screen or to a file. There are
+several different formats for the partition that you can choose from:
+<p>
+</p><dl compact="">
+  <dd>
+<dl compact="">
+<dt><b>r</b>
+</dt><dd>
+Raw data format (exactly what would be written to disk)
+</dd><dt><b>s</b>
+</dt><dd>
+Partition table in sector order format
+</dd><dt><b>t</b>
+</dt><dd>
+Partition table in raw format
+</dd></dl>
+</dd></dl>
+<dl compact="">
+  <dd>
+      <p>
+        The
+          <i>raw data format</i>
+</p><p>will print the sectors that would be written to disk if a<br>
+<b>w</b>rite</p>
+<p>command is selected.  First, the primary partition table is printed,<br>
+followed by the partition tables associated with each logical<br>
+partition.  The data is printed in hex byte by byte with 16 bytes per<br>
+line.<br>
+</p><p></p>
+  </dd><dd>
+      <p>
+          The
+            <i>partition table in sector order format</i>
+</p><p>will print the partition table ordered by sector number.  The fields,<br>
+from left to right, are the number of the partition, the partition<br>
+type, the first sector, the last sector, the offset from the first<br>
+sector of the partition to the start of the data, the length of the<br>
+partition, the filesystem type (with the hex value in parenthesis),<br>
+and the flags (with the hex value in parenthesis).  In addition to the<br>
+primary and logical partitions, free and unusable space is printed and<br>
+the extended partition is printed before the first logical partition.<br>
+</p><p><br>
+If a partition does not start or end on a cylinder boundary or if the<br>
+partition length is not divisible by the cylinder size, an asterisks<br>
+(<b>*</b>)</p>
+<p>is printed after the non-aligned sector number/count.  This usually<br>
+indicates that a partition was created by an operating system that<br>
+either does not align partitions to cylinder boundaries or that used<br>
+different disk geometry information.  If you know the disk geometry of<br>
+the other operating system, you could enter the geometry information<br>
+with the change geometry command<br>
+(<b>g</b>).</p>
+<pre><code>  &lt;/p&gt;&lt;p&gt;
+      For the first partition on the disk and for all logical partitions, if
+      the offset from the beginning of the partition is not equal to the
+      number of sectors per track (i.e., the data does not start on the
+      first head), a number sign
+      (&lt;b&gt;#&lt;/b&gt;)
+</code></pre>
+<p>is printed after the offset.  For the remaining partitions, if the<br>
+offset is not zero, a number sign will be printed after the offset.<br>
+This corresponds to the<br>
+<i>NC</i></p>
+<p>flag in the partitions section of the main display.<br>
+</p><p><br>
+The<br>
+<i>partition table in raw format</i></p>
+<p>will print the partition table ordered by partition number.  It will<br>
+leave out all free and unusable space.  The fields, from left to<br>
+right, are the number of the partition, the flags (in hex), the<br>
+starting head, sector and cylinder, the filesystem ID (in hex), the<br>
+ending head, sector and cylinder, the starting sector in the partition<br>
+and the number of sectors in the partition.  The information in this<br>
+table can be directly translated to the<br>
+<i>raw data format</i>.</p>
+<p></p><p>
+</p><p>The partition table entries only have 10 bits available to represent<br>
+the starting and ending cylinders.  Thus, when the absolute starting<br>
+(ending) sector number is on a cylinder greater than 1023, the maximal<br>
+values for starting (ending) head, sector and cylinder are printed.<br>
+This is the method used by OS/2, and thus fixes the problems<br>
+associated with OS/2’s fdisk rewriting the partition table when it is<br>
+not in this format.  Since Linux and OS/2 use absolute sector counts,<br>
+the values in the starting and ending head, sector and cylinder are<br>
+not used.</p>
+<p></p></dd></dl>
+</dd><dt><b>q</b>
+</dt><dd>
+Quit program.  This will exit the program without writing any data to
+disk.
+</dd><dt><b>t</b>
+</dt><dd>
+Change the filesystem type.  By default, new partitions are created as
+<i>Linux</i>
+<p>partitions, but since</p>
+<p><b>cfdisk</b></p>
+<p>can create partitions for other operating systems, change partition<br>
+type allows you to enter the hex value of the filesystem you desire.<br>
+A list of the know filesystem types is displayed.  You can type in the<br>
+filesystem type at the prompt or accept the default filesystem type<br>
+[<i>Linux</i>].</p>
+</dd><dt><b>u</b>
+</dt><dd>
+Change units of the partition size display.  It will rotate through
+megabytes, sectors and cylinders.
+</dd><dt><b>W</b>
+</dt><dd>
+Write partition table to disk (must enter an upper case W).  Since
+this might destroy data on the disk, you must either confirm or deny
+the write by entering <code>yes' or </code>no'.  If you enter `yes',
+<b>cfdisk</b>
+<p>will write the partition table to disk and the tell the kernel to<br>
+re-read the partition table from the disk.  The re-reading of the<br>
+partition table works is most cases, but I have seen it fail.  Don’t<br>
+panic.  It will be correct after you reboot the system.  In all cases,<br>
+I still recommend rebooting the system–just to be safe.</p>
+</dd><dt><i>Up Arrow</i>
+</dt><dt><i>Down Arrow</i>
+</dt><dd>
+Move cursor to the previous or next partition.  If there are more
+partitions than can be displayed on a screen, you can display the next
+(previous) set of partitions by moving down (up) at the last (first)
+partition displayed on the screen.
+</dd><dt><i>CTRL-L</i>
+</dt><dd>
+Redraws the screen.  In case something goes wrong and you cannot read
+anything, you can refresh the screen from the main command line.
+</dd><dt><b>?</b>
+</dt><dd>
+Print the help screen.
+<p>
+</p><p>All of the commands can be entered with either upper or lower case<br>
+letters (except for<br>
+<b>W</b>rites).</p>
+<p>When in a sub-menu or at a prompt to enter a filename, you can hit the<br>
+<i>ESC</i></p>
+<p>key to return to the main command line.</p>
+<p></p></dd></dl>
+<p></p><h2>EXIT STATUS</h2><p></p>
+<p>0: No errors; 1: Invocation error; 2: I/O error;<br>
+3: cannot get geometry; 4: bad partition table on disk.</p>
+<p></p><h2>BUGS</h2><p></p>
+<p>The current version does not support multiple disks.</p>
+<p class="quote"><i>"When I'm reading material, if I'm a little bit afraid of a 
+    part and I'm willing to admit that to myself, then I'll do it, definitely. If 
+    I'm worried about being able to do it, to get it - I absolutely just love it" ~ Jack 
+    Lemmon</i>
+</p>
+<p><b>R</b><b>elated</b>:<br>
+  <br>
+  <a href="fdisk.html">fdisk</a> - disk partition table manipulator<br>
+  <a href="fdformat.html">fdformat</a> - Low-level format a floppy disk<br>
+  mkfs - <br>
+  parted -<br>
+  sfdisk -  <br>
+Equivalent Windows command:  <a href="../nt/format.html">FORMAT</a> - Format a disk</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="cfdisk.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/cfdisk.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

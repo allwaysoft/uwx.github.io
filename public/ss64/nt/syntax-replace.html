@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Variable Edit/Replace
+Use the syntax below to edit and replace the characters assigned to a string 
+  variable.
+Syntax
+      %variable:StrToFind=NewStr%
+  %~[&amp;lt;i&amp;gt;param_ext&amp;lt;/i&amp;gt;]$&amp;lt;i&amp;gt;var">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/syntax-replace.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Variable Edit/Replace
+Use the syntax below to edit and replace the characters assigned to a string 
+  variable.
+Syntax
+      %variable:StrToFind=NewStr%
+  %~[&amp;lt;i&amp;gt;param_ext&amp;lt;/i&amp;gt;]$&amp;lt;i&amp;gt;var">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:55.390Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Variable Edit/Replace
+Use the syntax below to edit and replace the characters assigned to a string 
+  variable.
+Syntax
+      %variable:StrToFind=NewStr%
+  %~[&amp;lt;i&amp;gt;param_ext&amp;lt;/i&amp;gt;]$&amp;lt;i&amp;gt;var">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ntsyntax.lbi" --><!-- #EndLibraryItem --><h1>Variable Edit/Replace</h1>
+<p>Use the syntax below to edit and replace the characters assigned to a string 
+  variable.</p>
+<pre>Syntax
+      %<i>variable</i>:<i>StrToFind</i>=<i>NewStr</i>%
+<pre><code>  %~[&lt;i&gt;param_ext&lt;/i&gt;]$&lt;i&gt;variable&lt;/i&gt;:&lt;i&gt;Param&lt;/i&gt;
+</code></pre>
+<p>Key<br>
+StrToFind    : The characters we are looking for<br>
+NewStr       : The chars to replace with (if any)<br>
+variable     : The environment variable<br>
+param_ext    : Any filename <a href="syntax-args.html">Parameter Extension</a><br>
+Param        : A command line parameter (e.g. 1)</p></pre><p></p>
+<p>This Edit/Replace syntax can be used anywhere that you would use the <span class="code">%variable%</span> such as ECHOing the variable to screen or setting one variable = another</p>
+<p>param_ext cannot be<span class="code"> %* </span>which typically represents a whole set of parameters, but this is easily worked around by setting a variable<span class="code">=%*</span><br>
+  <br>
+"StrToFind" can <b>begin</b> with an asterisk, in which case it will replace 
+  all characters to the left of "StrToFind". <br>
+  By leaving <span class="code">NewStr</span> blank, you can  delete characters.<br>
+  <br>
+  Using both an asterisk and <span class="code">NewStr=null</span> effectively provides a left$() or right$() function.<br>
+  <br>
+<b>Examples:<br>
+</b>The variable <span class="code">_test</span> containing <span class="code">12345abcabc</span> is
+used for all the following examples: </p>
+<pre>::Replace '12345' with 'Hello '
+   SET _test=<span class="code">12345abcabc</span>
+   SET _result=%_test:12345=Hello %
+   ECHO %_result%          =<span class="code">Hello abcabc</span>
+<p>::Replace the character string ‘ab’ with 'xy’<br>
+SET _test=<span class="code">12345abcabc</span><br>
+SET _result=%_test:ab=xy%<br>
+ECHO %_result%          =<span class="code">12345xycxyc</span></p>
+<p>::Delete the character string 'ab’<br>
+SET _test=<span class="code">12345abcabc</span><br>
+SET _result=%_test:ab=%<br>
+ECHO %_result%          =<span class="code">12345cc</span></p>
+<p>::Delete the character string ‘ab’ and everything before it<br>
+SET _test=<span class="code">12345abcabc</span><br>
+SET _result=%_test:*ab=%<br>
+ECHO %_result%          =<span class="code">cabc</span></p>
+<p>::Replace the character string ‘ab’ and everything before it with 'XY’<br>
+SET _test=<span class="code">12345abcabc</span><br>
+SET _result=%_test:*ab=XY%<br>
+ECHO %_result%          =<span class="code">XYcabc</span></p>
+<p>:: To remove characters from the right hand side of a string is<br>
+:: a two step process and requires the use of a <a href="call.html">CALL</a> statement<br>
+:: e.g.</p>
+<p>SET _test=<span class="code">The quick brown fox jumps over the lazy dog</span></p>
+<p>:: To delete everything <i>after</i> the string ‘brown’<br>
+:: first delete ‘brown’ and everything before it<br>
+SET _endbit=%_test:<span class="code">*brown</span>=%<br>
+Echo We dont want: [%_endbit%]</p>
+<p>::Now remove this from the original string<br>
+CALL SET _result=<b>%%</b>_test:%_endbit%=<b>%%</b><br>
+echo %_result% </p></pre><p></p>
+<p>  <b>Remove spaces from a text string</b><br>
+  <br>
+  To delete  space characters use the same syntax as above:<br>
+  <br>
+  <span class="code">SET _no_spaces=%_some_var: =%</span><br>
+  <br>
+  <b>Boolean Test "does string exist ?"</b><br>
+  <br>
+  To test for the existence of a value we can use a temporary variable, delete the string we are looking for (if it exists) and then compare the two variables with <a href="if.html">EQU</a><br>
+  <br>
+</p><p>Example: test for the existence of the string &quot;<span class="code">London</span>&quot;<br>
+in a variable containing text (that could be in any order)  &quot;<span class="code">Aberdeen, London, Edinburgh</span>&quot;<br><br>
+<br><br>
+<span class="code">Set _cities=“Aberdeen, London, Edinburgh”<br></span></p>
+
+<span class="code">:: Remove London if found<br>
+Set _dummy=%_cities:London=%<br>
+IF NOT %_dummy% == %_cities% (ECHO London was found.) ELSE (ECHO London was not found.)</span><br>
+  <br>
+  <b>Finding items within the PATH environment variable</b><br>
+  <br>
+  The %PATH% variable contains a list of folder names.<br>
+  <br>
+  If you have a parameter containing a valid 'folder' this can be compared with 
+  the PATH variable.<br>
+  <br>
+  This is done using the syntax: 
+  $variable:parameter <br>
+  <br>
+Example<p></p>
+<p>  %PATH% =
+  <span class="code">C:\Windows\system32;C:\Windows;C:\utils\jdk\bin</span><br>
+  batch parameter %1 =
+  <span class="code">C:\utils\jdk\bin</span><br>
+  <br>
+  To get the drive and Path<br>
+  <span class="code">ECHO %~dp$PATH:1</span><br>
+  This will either return "C:\utils\jdk\bin" or a NULL if the item is 
+  not found in the  %PATH%<br>
+  <br>
+  If the batch parameter was supplied as %2 then this would be:
+  <span class="code">ECHO %~dp$PATH:2</span><br>
+  <br>
+This syntax can be applied where: </p>
+<ul>
+  <li> 
+    <p>The parameter is any valid parameter (%1 %2 %G) but it must contain a Full 
+      <a href="path.html">Path</a> (not a pathname)</p>
+  </li>
+  <li> 
+    <p>The variable is %PATH% or any other variable that contains one or more 
+      Paths or pathnames separated by semicolons ;</p>
+  </li>
+  <li> 
+    <p>If nothing is found by the search, then this will return an empty string 
+      (NULL)</p>
+  </li>
+</ul>
+<p>Be wary of using the syntax on this page to <b>modify</b> the PATH - the User path can be edited, but the System path remains read-only for most 
+users.</p>
+<p><i class="quote">“A phony smile will never replace honest integrity” ~ Bob Martinelli </i><br>
+  <br>
+  <b>Related:</b><br>
+  <br>
+  <a href="syntax-substring.html">SUBSTRING</a> of a variable :~<br>
+  <a href="syntax-args.html">PARAMETERS</a> - Filename Parameter Extensions.<br>
+<a href="syntax-strlen.html">strlen.cmd</a> - Get string length.<br>
+  PATHMAN - This Resource Kit utility allows quick modification of both the system 
+  and user paths. Pathman can resolve many problems such as duplicate characters, 
+  and can improve performance by removing duplicate paths. For details see Pathman.wri 
+in the resource kit.</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-replace.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/syntax-replace.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

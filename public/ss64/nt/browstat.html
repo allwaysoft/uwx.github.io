@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BROWSTAT.exe (NT4/2000 Resource Kit)
+Get NetBIOS browser and PDC information. 
+NetBIOS was deprecated in Windows 2000 and above, BROWSTAT is not supported on Server 2008 R2. 
+Syntax
+      BROWSTAT opt">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/browstat.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="BROWSTAT.exe (NT4/2000 Resource Kit)
+Get NetBIOS browser and PDC information. 
+NetBIOS was deprecated in Windows 2000 and above, BROWSTAT is not supported on Server 2008 R2. 
+Syntax
+      BROWSTAT opt">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:48.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="BROWSTAT.exe (NT4/2000 Resource Kit)
+Get NetBIOS browser and PDC information. 
+NetBIOS was deprecated in Windows 2000 and above, BROWSTAT is not supported on Server 2008 R2. 
+Syntax
+      BROWSTAT opt">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>BROWSTAT.exe (<a href="../links/windows.html#kits">NT4/2000 Resource Kit</a>)</h1>
+<p>Get NetBIOS browser and PDC information. <br>
+NetBIOS was deprecated in Windows 2000 and above, BROWSTAT is not supported on Server 2008 R2.</p> 
+<pre>Syntax
+      BROWSTAT <i>option</i>
+<p>Options:</p>
+<p>BROWSTAT Dumpnet<br>
+BROWSTAT dn                  : Display the transports bound to browser</p>
+<p>BROWSTAT GetPdc <i>Transport Domain</i><br>
+BROWSTAT gp <i>Transport Domain</i> : List the PDC name (via NetBIOS)</p>
+<p>BROWSTAT GetMaster <i>Transport Domain</i><br>
+BROWSTAT gm <i>Transport Domain</i> : List the remote Master Browser name(via NetBIOS)</p>
+<p>BROWSTAT Getblist <i>Transport</i><br>
+BROWSTAT gb <i>Transport</i>        : List the backup DNS Servers.</p>
+<p>BROWSTAT ListWfw<br>
+BROWSTAT wfw                 : WindowsForWorkgroups servers running browser.</p>
+<p>BROWSTAT Stats \<i>ServerName</i><br>
+BROWSTAT sts \<i>ServerName</i>    : List all browser statistics</p>
+<p>BROWSTAT Status              : Display Transport,Primary DNS<br>
+BROWSTAT sta                   and Backup DNS servers.</p>
+<p>BROWSTAT Status -v <i>domain</i>    : Verbose Status Display<br>
+BROWSTAT sta -v <i>domain</i>         include Server OS and active browsers.</p>
+<p>BROWSTAT Tickle<br>
+BROWSTAT Tic                 : Force remote master to stop.</p>
+<p>BROWSTAT Elect<br>
+BROWSTAT el                  : Force election on remote domain</p>
+<p>BROWSTAT View <i>Transport</i><br>
+BROWSTAT vw <i>Transport</i><br>
+BROWSTAT vw <i>Transport ‹domain›</i><br>
+BROWSTAT vw <i>Transport \Server</i><br>
+BROWSTAT vw <i>Transport \‹Server›</i> /DOMAIN ‹<i>DomainToQuery</i>›</p>
+</pre>
+<p>The VIEW options can enumerate server services running across a server or domain. Other Browstat features will only work only within a single
+network subnet. To span subnets/routers
+across a domain, run browstat via <a href="psexec.html">psexec</a>.<br>
+<br>
+In the list displays, the following flags are used:</p>
+<pre> W  = <i>Workstation</i>             NT  = Windows NT
+ S  = Server                  W95 = Windows95
+SQL = SQLServer               WFW = WindowsForWorkgroups
+SS  = StandardServer          MFPN= MS Netware
+PDC = PrimaryDomainController NV  = Novell
+BDC = BackupDomainController  XN  = Xenix
+<p>TS  = Time Source<br>
+MBC = Member Server<br>
+PQ  = Print Queue Server<br>
+DL  = Dial-in Server<br>
+AFP = AFP Server<br>
+OSF = OSF Server<br>
+VMS = VMS Server</p>
+<p>PBR = Potential Browser<br>
+BBR = Backup Browser,<br>
+MBR = Master Browser<br>
+DMB = DomainMaster Browser<br>
+DFS = Distributed File System</p></pre><p></p>
+<p><b>Examples</b></p>
+<p>Display transports:</p>
+<p class="code">C:\&gt;browstat dn<br>
+<br>
+List of transports currently bound to the browser<br>
+<br>
+1 \Device\NetBT_Tcpip_{B1AFFCA2-6410-4644-9FE7-BA6C274FD4F3} </p>
+<p>List the backup DNS servers for transport #1:</p>
+<p class="code">C:\&gt;browstat gb 1
+</p>
+<p class="code">Browser: \\PC00096<br>
+Browser: \\PC00082
+</p>
+<p>List Print queues for transport #1: <br>
+<br>
+<span class="code">C:\&gt; BROWSTAT vw 1 |find "PQ"</span></p>
+<p class="quote"><i> “If your experiment needs statistics, you ought to have done a better experiment” - Ernest Rutherford</i></p>
+<p><b>  Related:<br>
+  </b><br>
+  <a href="https://support.microsoft.com/kb/188305" target="_blank" rel="external">Q188305</a> - Troubleshooting
+   the Browser Service<br>
+  DNSSTAT - DNS Statistics<br>
+  <a href="netstat.html">NETSTAT</a> - Display networking statistics (TCP/IP) <br>
+</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="browstat.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/browstat.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

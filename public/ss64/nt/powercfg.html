@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PowerCFG (Vista/Windows7/Server 2008) 
+Control power settings,  configure Hibernate/Standby modes. See also the Windows XP SP2 version of PowerCfg. 
+Syntax
+      powercfg [Options]
+Options
+-l
+-list
+Li">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/powercfg.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PowerCFG (Vista/Windows7/Server 2008) 
+Control power settings,  configure Hibernate/Standby modes. See also the Windows XP SP2 version of PowerCfg. 
+Syntax
+      powercfg [Options]
+Options
+-l
+-list
+Li">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.966Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PowerCFG (Vista/Windows7/Server 2008) 
+Control power settings,  configure Hibernate/Standby modes. See also the Windows XP SP2 version of PowerCfg. 
+Syntax
+      powercfg [Options]
+Options
+-l
+-list
+Li">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>PowerCFG (Vista/Windows7/Server 2008) </h1>
+<p>Control power settings,  configure Hibernate/Standby modes. See also the Windows <a href="powercfg-xp.html">XP SP2 version of PowerCfg</a>. </p>
+<pre>Syntax
+      powercfg [<i>Options</i>]
+<p>Options</p>
+<p>-l<br>
+-list<br>
+List the current user’s power schemes (GUIDs)</p>
+<p>-query [<i>Scheme_GUID</i>] [<i>Sub_GUID</i>]<br>
+-q [<i>Scheme_GUID</i>] [<i>Sub_GUID</i>]<br>
+Display the contents of a power scheme.</p>
+<p>-change <i>settingvalue</i><br>
+-x <i>setting value</i><br>
+Modify one of the following settings in the current power scheme:<br>
+-monitor-timeout-ac <i>minutes</i><br>
+-monitor-timeout-dc <i>minutes</i><br>
+-disk-timeout-ac <i>minutes</i><br>
+-disk-timeout-dc <i>minutes</i><br>
+-standby-timeout-ac <i>minutes</i><br>
+-standby-timeout-dc <i>minutes</i><br>
+-hibernate-timeout-ac <i>minutes</i><br>
+-hibernate-timeout-dc <i>minutes</i><br>
+Setting any value to 0 will set the timeout=Never<br>
+AC settings are used when the system is on AC power. DC settings on battery power.</p>
+<p>-changename <i>GUID PowerSchemeName </i>[<i>scheme_description</i>]<br>
+Modify the name of a power scheme and, optionally, the scheme description.</p>
+<p>-duplicatescheme <i>GUID [DestinationGUID]</i><br>
+Duplicate a power scheme. The GUID of the new scheme will be displayed.<br>
+If DestinationGUID is omitted, then a new GUID will be created for the duplicated scheme.</p>
+<p>-delete <i>GUID</i><br>
+-d <i>GUID</i><br>
+Delete the power scheme with the specified GUID.</p>
+<p>-deletesetting <i>Sub_GUID Setting_GUID</i><br>
+Delete a power setting.</p>
+<p>-setactive <i>Scheme_GUID</i><br>
+-s <i>Scheme_GUID</i><br>
+Make the specified power scheme active on the computer.</p>
+<p>-getactivescheme<br>
+Retrieve the currently active power scheme.</p>
+<p>-setacvalueindex <i>Scheme_GUID Sub_GUID Setting_GUID SettingIndex</i><br>
+Set a value associated with a specified power setting while the<br>
+computer is powered by AC power. Use the -l and -q options to discover the GUIDs<br>
+<i>SettingIndex</i> Specifies which value in the list to set, so 3 = 3rd in the list</p>
+<p>-setdcvalueindex <i>Scheme_GUID Sub_GUID Setting_GUID SettingIndex</i><br>
+Set a value associated with a specified power setting while the<br>
+computer is powered by DC power.<br>
+<i>SettingIndex</i> Specifies which value in the list to set, so 3 = 3rd in the list</p>
+<p>-hibernate [on|off]<br>
+-h [on|off]<br>
+Enable or disable the hibernate feature. Hibernate timeout is not supported on all computers.</p>
+<p>-availablesleepstates<br>
+-a<br>
+Report the sleep states available on the computer.<br>
+Will also attempt to report reasons why sleep states are unavailable.</p>
+<p>-devicequery <i>query_flags</i><br>
+Return a list of devices that meet the specified flags:<br>
+wake_from_S1_supported – Waking the computer from a light sleep state.<br>
+wake_from_S2_supported – Waking the computer from a deeper sleep state.<br>
+wake_from_S3_supported – Waking the computer from the deepest sleep state.<br>
+wake_from_any   – Support waking the computer from any sleep state.<br>
+S1_supported    – Light sleep.<br>
+S2_supported    – Deeper sleep.<br>
+S3_supported    – Deepest sleep.<br>
+S4_supported    – Hibernation.<br>
+wake_programmable – User-configurable to wake the computer from a sleep state.<br>
+wake_armed      – Currently configured to wake the computer from any sleep state.<br>
+all_devices     – Present in the computer.<br>
+all_devices_verbose – Verbose list of devices.</p>
+<p>-deviceEnableWake <i>devicename</i><br>
+Enable the device to wake the computer from a sleep state.</p>
+<p>-deviceDisableWake <i>devicename</i><br>
+Disable the device from waking the computer from a sleep state.</p>
+<p>-import <i>filename</i> [<i>GUID</i>]<br>
+Import all power settings from the specified file.<br>
+<i>filename</i> is the path to a file generated with powercfg -export</p>
+<p>-export <i>filename GUID</i><br>
+Export a power scheme, represented by <i>GUID</i>, into <i>filename</i>.</p>
+<p>-lastwake<br>
+Report information about the last event that woke the computer.</p>
+<p>-energy<br>
+Create energy-report.html in the current directory, Windows7 only.</p>
+<p>-help<br>
+-?<br>
+Display help</p>
+<p>-aliases<br>
+Display all aliases and their corresponding GUIDs.<br>
+These can be used in place of a GUID at the command prompt</p>
+<p>-setsecruitydescriptor [<i>GUID</i>|<i>Action</i>] <i>SDDL</i><br>
+Set a security descriptor associated with a specified power setting, power scheme, or action.<br>
+<i>Action</i> Is one of: ActionSetActive, ActionCreate, ActionDefault<br>
+<i>SDDL </i>is a valid security descriptor string in SDD format.<br>
+Call powercfg -getsecuritydescriptor to see an example SDDL STRING.</p>
+<p>-getsecuritydescriptor [<i>GUID</i>|<i>Action</i>]<br>
+Get a security descriptor associated with a specified power setting, power scheme, or action.<br>
+<i>Action </i>is one of: ActionSetActive, ActionCreate, ActionDefault</p>
+</pre>
+<p>Powercfg must be run from an elevated command prompt.</p>
+<p>The most common cause of problems with power saving/hibernation is an incompatible device driver, diagnose this by disabling each device in turn (with <span class="code">-deviceDisableWake</span>) </p>
+<p>When activating Power Saving across an organisation, it is important to ensure that software updates (security patches and antivirus) are not disrupted.<br>
+<a href="http://technet.microsoft.com/en-us/windowsserver/bb332157.aspx" target="_blank" rel="external">WSUS</a> can be configured to install updates when workstations are available and <a href="schtasks.html">Scheduled Tasks</a> can be set to Wake the machine when needed. </p>
+<h2>Power scheme GUIDs</h2>
+<blockquote>
+<p>The use of <a href="http://en.wikipedia.org/wiki/Globally_Unique_Identifier" target="_blank" rel="external">GUIDs</a> avoids any problems with internationalisation when applying Power Saving to non-english versions of Windows. The three built-in power schemes have the  GUIDs listed below: </p>
+<p>SCHEME_MAX = Power saver (Max power saving) <br>
+SCHEME_BALANCED = Balanced (Typical)<br>
+SCHEME_MIN = High performance (Min power saving) </p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>List all Aliases:</p>
+<p class="code">C:\&gt; powercfg -aliases<br>a1841308-3541-4fab-bc81-f71556f20b4a SCHEME_MAX<br>
+8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c SCHEME_MIN<br>
+381b4222-f694-41f0-9685-ff5bb260df2e SCHEME_BALANCED<br>
+fea3413e-7e05-4911-9a71-700331f1c294 SUB_NONE<br>
+238c9fa8-0aad-41ed-83f4-97be242c8f20 SUB_SLEEP<br>
+29f6c1db-86da-48c5-9fdb-f2b67b1f44da STANDBYIDLE<br>
+9d7815a6-7ee4-497e-8888-515a05f02364 HIBERNATEIDLE<br>
+94ac6d29-73ce-41a6-809f-6363ba21b47e HYBRIDSLEEP<br>
+d4c1d4c8-d5cc-43d3-b83e-fc51215cb04d REMOTEFILESLEEP<br>
+7516b95f-f776-4464-8c53-06167f40cc99 SUB_VIDEO</p>
+<p>Retrieve the currently active power scheme<br>
+<span class="code">C:\&gt; Powercfg -getactivescheme</span><br>
+<br>
+Set the Monitor and disc timeouts for the current Power saver scheme<span class="code"><br>
+C:\&gt; Powercfg -Change -monitor-timeout-ac 20<br>
+C:\&gt; Powercfg -Change -disk-timeout-ac 30</span></p>
+<p>Enable the mouse to wake from sleep<span class="code"> <br>
+C:\&gt; Powercfg -deviceEnableWake "Microsoft USB IntelliMouse Explorer"</span><br><br>
+Set the 'Power saver' scheme<br>
+<span class="code">C:\&gt; Powercfg -SETACTIVE SCHEME_MAX<br>
+<br>
+</span>Create a Custom Power  scheme and set it as active<span class="code"> <br>
+Set _Custom_Power=B1234567-SS64-SS64-SS64-F00000111AAA<br>
+Powercfg -DUPLICATESCHEME SCHEME_MAX
+%_Custom_Power%<br>
+Powercfg -CHANGENAME %_Custom_Power% "SS64 Power Scheme "<br>
+Powercfg -SETACTIVE %_Custom_Power%</span></p>
+<p>Disable the sleep button (for the users current power scheme) <span class="code"><br>
+For /f "tokens=2 delims=:(" %%G in ('powercfg -getActiveScheme') do (<br>
+Powercfg -setAcValueIndex %%G sub_buttons sButtonAction 0<br>
+Powercfg -setActive %%G<br>
+)</span></p>
+<p>Disable the sleep button (for all available power 
+schemes):<br>
+<span class="code">For /f "skip=2 tokens=2,4 delims=:()" %%G in ('powercfg -list') do (<br>
+Powercfg -setAcValueIndex %%G sub_buttons sButtonAction 0<br>
+if "%%H" == " *" Powercfg -setActive %%G<br>
+)</span></p>
+<p><i class="quote">“The fact that you have to choose between nine different ways of turning off your computer... produces just a little bit of unhappiness every time” - <a href="http://www.joelonsoftware.com/items/2006/11/21.html" target="_blank" rel="external">Joel on Software</a> </i><br>
+<br>
+<b> Related:</b></p>
+<p><a href="powercfg-xp.html">PowerCfg</a> for 
+Windows XP SP2<br>
+<a href="https://support.microsoft.com/kb/915160" target="_blank" rel="external">Q915160</a> - Create a Group Policy object for power schemes<br>
+<a href="https://support.microsoft.com/kb/324347" target="_blank" rel="external">Q324347</a> - How to use Powercfg.exe in Windows Server 2003<br>
+<a href="http://www.energystar.gov/index.cfm?c=power_mgt.pr_power_mgt_comm_packages" target="_blank" rel="external">3rd party Power Management tools</a> - EnergyStar.gov</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="powercfg.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/powercfg.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

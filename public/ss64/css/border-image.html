@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Border-Image
+Specify an image as the border around a div element:
+      border-image: ImageSource Slice Width Outset Repeat;
+border-image  is a shorthand property for setting all the following CSS3 pr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/css/border-image.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Border-Image
+Specify an image as the border around a div element:
+      border-image: ImageSource Slice Width Outset Repeat;
+border-image  is a shorthand property for setting all the following CSS3 pr">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/flag.png">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:27.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Border-Image
+Specify an image as the border around a div element:
+      border-image: ImageSource Slice Width Outset Repeat;
+border-image  is a shorthand property for setting all the following CSS3 pr">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/flag.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_css.lbi" --><!-- #EndLibraryItem --><h1>Border-Image</h1>
+<p>Specify an image as the border around a div element:</p>
+<pre>      border-image:<i> ImageSource Slice Width Outset Repeat</i>;</pre>
+<p>border-image  is a shorthand property for setting all the following CSS3 properties</p>
+<pre>border-image-source  Use an image as a border.           url('...') or <u>none</u>
+border-image-slice   Inward offsets of the image-border. <i>number</i> | % | fill;
+border-image-width   Width of the image-border.          <i>number </i>| % | auto;
+border-image-outset  Extend the image beyond the border. <i>number</i>
+border-image-repeat  Repeat, round or stretch the image. <u>stretch</u> | repeat | round;</pre>
+<p>Default:<span class="code"> none 100% 100% stretch</span></p>
+<p>The <span class="code"><a href="border-style.html">border-style</a></span> property must be set for the border-image properties to have any effect. If the size of the image is not the same as the combined size of the borders (plus the element itself) then it will either be stretched or tiled &amp; repeated according to the image-repeat property.</p>
+<p>Examples:<br>
+  <span class="code">h1 { border-image: url('../images/grad.png') 100% auto ; }<br>
+    .ss64class { border-image: thick; }</span><br>
+    <span class="code">#SS64id { border-image: 2em;  }</span>    <br>
+</p>
+<p>Try it:</p><input type="button" onclick="ApplyStyle()" value="Apply Changes">
+<table>
+  <tbody><tr>
+    <td><textarea name="tryit" id="trycode" cols="60" rows="6" onfocus="this.style.background='#fff';" onblur="this.style.background='#eee';" tabindex="1">border: 30px solid ;
+border-image: url('../images/flag.png') 30 30 round;
+</textarea></td>
+    <td><div id="tryresult">This is a sample of text with a CSS border image. The size of the border and the size of the border image will determine how the result appears on screen.</div></td>
+  </tr>
+</tbody></table>
+<p>Sample flag.png image:<br>
+<img src="../images/flag.png" width="90" height="90" alt="Flag sample image"></p>
+<p>Browser Support: (CSS3) Firefox, Safari, Chrome, IE11.<br>
+None of the major web browsers support the individual (non-shortcut) properties.<br>
+</p>
+<p class="quote"><i>“Growing up, I never imagined a girl from a border town could one day become a governor” ~ Susana Martinez</i></p><p><b>Related:</b></p>
+<p><a href="border-color.html">border-color</a> - Color of the four borders.</p><!-- #BeginLibraryItem "/Library/foot_css.lbi" --><p>
+<!-- CSS -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="2739097502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="border-image.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/css/border-image.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

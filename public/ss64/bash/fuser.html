@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="fuser   
+Identify processes using files or sockets, optionally: Kill the process that is accessing the file.
+Syntax
+      fuser [-a|-s|-c] [-4|-6] [-n space ] [-k [-i] [-signal ] ] [-muvf] name
+  fuse">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/fuser.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="fuser   
+Identify processes using files or sockets, optionally: Kill the process that is accessing the file.
+Syntax
+      fuser [-a|-s|-c] [-4|-6] [-n space ] [-k [-i] [-signal ] ] [-muvf] name
+  fuse">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.796Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="fuser   
+Identify processes using files or sockets, optionally: Kill the process that is accessing the file.
+Syntax
+      fuser [-a|-s|-c] [-4|-6] [-n space ] [-k [-i] [-signal ] ] [-muvf] name
+  fuse">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>fuser </h1>  
+<p>Identify processes using files or sockets, optionally: Kill the process that is accessing the file.</p>
+<pre>Syntax
+      fuser [-a|-s|-c] [-4|-6] [-n <i>space</i> ] [-k [-i] [-<i>signal</i> ] ] [-muvf] <i>name</i>
+<pre><code>  fuser -l
+
+  fuser -V 
+</code></pre>
+<p>Options:</p>
+<p>-a   Show all files specified on the command line.<br>
+By default, only files that are accessed by at least one process are shown.</p>
+<p>-c   Same as -m option, used for POSIX compatibility.</p>
+<p>-f   Silently ignored, used for POSIX compatibility.</p>
+<p>-k   Kill processes accessing the file.<br>
+Unless changed with -signal, SIGKILL is sent.<br>
+An fuser process never kills itself, but can kill other fuser processes.<br>
+The effective user ID of the process executing fuser is set to its real<br>
+user ID before attempting to kill.</p>
+<p>-i   Ask the user for confirmation before killing a process.<br>
+This option is silently ignored if -k (kill) is not present too.</p>
+<p>-l   List all known signal names.</p>
+<p>-m <i>name</i> Specifies a file on a mounted file system or a block device that is mounted.<br>
+All processes accessing files on that file system are listed.<br>
+If a directory file is specified, it is automatically changed to name/.<br>
+to use any file system that might be mounted on that directory.</p>
+<p>-n <i>space</i>   Select a different name space.<br>
+The name spaces file (file names, the default), udp (local UDP ports),<br>
+and tcp (local TCP ports) are supported. For ports, either the port number or<br>
+the symbolic name can be specified.<br>
+If there is no ambiguity, the shortcut notation name/Ispace (e.g. 80/tcp ) can be used.</p>
+<p>-s   Silent operation. -u and -v are ignored in this mode.<br>
+-a must not be used with -s.</p>
+<p>-signal  Use the specified signal instead of SIGKILL when killing processes.<br>
+Signals can be specified either by name (e.g. -HUP) or by number (e.g. -1).<br>
+This option is silently ignored if the -k (kill)option is not used.</p>
+<p>-u   Append the user name of the process owner to each PID.</p>
+<p>-v   Verbose mode. Processes are shown in a ps-like style.<br>
+The fields PID, USER and COMMAND are similar to ps.<br>
+ACCESS shows how the process accesses the file. If the access is by the kernel<br>
+(e.g. in the case of a mount point, a swap file, etc.), kernel is shown instead of the PID.</p>
+<p>-V   Display version information.</p>
+<p>-4   Search only for IPv4 sockets.<br>
+This option must not be used with the -6 option and only has an effect with the tcp and udp namespaces.</p>
+<p>-6   Search only for IPv6 sockets.<br>
+This option must not be used with the -4 option and only has an effect with the tcp and udp namespaces.</p>
+<ul>
+<li>Reset all options and set the signal back to SIGKILL. </li></ul></pre>
+
+<p>fuser returns a non-zero return code if none of the specified files is accessed or in case of a fatal error. <br>
+If at least one access has been found, fuser returns zero.</p>
+<p>In order to look up processes using TCP and UDP sockets, the corresponding name space has to be selected with the -n option. By default fuser will look in both IPv6 and IPv4 sockets. To change the default, behavior, use the -4 and -6 options. The socket(s) can be specified by the local and remote port, and the remote address. All fields are optional, but commas in front of missing fields must be present:</p>
+<p class="code">[lcl_port][,[rmt_host][,[rmt_port]]]</p>
+<p>Either symbolic or numeric values can be used for IP addresses and port numbers.</p>
+<p>fuser outputs only the PIDs to stdout, everything else is sent to stderr. </p>
+<p>fuser displays the PIDs of processes using the specified files or file systems. In the default display mode, each file name is followed by a letter denoting the type of access:</p>
+<blockquote>
+<p class="code"> c   &nbsp;current directory.<br>
+e   &nbsp;executable being run.<br>
+f   &nbsp;open file. f is omitted in default display mode.<br>
+F   &nbsp;open file for writing. F is omitted in default display mode.<br>
+r   &nbsp;root directory.<br>
+m   &nbsp;mmap'ed file or shared library. </p>
+</blockquote>
+<h2>Restrictions</h2>
+<blockquote>
+<p>Processes accessing the same file or file system several times in the same way are only shown once.</p>
+<p>If the same object is specified several times on the command line, some of those entries can be ignored.</p>
+<p>fuser will only be able to gather partial information unless run with privileges. As a consequence, files opened by processes belonging to other users might not be listed and executables will be classified as mapped only.</p>
+<p>Installing fuser SUID root will avoid problems associated with partial information, but is undesirable for security and privacy reasons.</p>
+<p>udp and tcp name spaces, and UNIX domain sockets can't be searched with kernels older than 1.3.78.</p>
+<p>udp and tcp currently work with IPv6 and IPv4, but the address fields can only be IPv4 addresses.</p>
+<p>Accesses by the kernel are only shown with the <span class="code">-v</span> option.</p>
+<p>The<span class="code"> -k</span> option only works on processes. If the user is the kernel, fuser will print an advice, but take no action beyond that.</p>
+</blockquote>
+<h2>Files</h2>
+<blockquote>
+<p>Location of the proc file system:<br>
+<span class="code">/proc</span><br>
+</p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>Kill all processes accessing the file system /home in any way:<br> 
+<span class="code">$ 
+fuser -km /home</span></p>
+<p>List the process (or processes) that are locking a file:<br>
+<span class="code">$ 
+fuser -f <i>file_to_check</i></span></p>
+<p>Invoke <i>something </i>only if no other process is using /dev/ttyS1:<br>
+<span class="code">$ if fuser -s /dev/ttyS1; then :; else <i>something</i>; fi </span></p>
+<p>Show all processes at the (local) TELNET port:<br>
+<span class="code">$ fuser telnet/tcp</span></p>
+<h2>Bugs</h2>
+<blockquote>
+<p><span class="code">fuser -m /dev/sgX</span> will show (or kill with the -k flag) all processes, even if you don't have that device configured. There can be other devices it does this for too.</p>
+<p>fuser cannot report on any processes that it doesn't have permission to look at the file descriptor table for. <br>
+The most common time this problem occurs is when looking for TCP or UDP sockets when running fuser as a non-root user. In this case fuser will report no access.</p>
+</blockquote>
+<p class="quote"><i>"A bank is a place where they lend you an umbrella in fair weather and ask for it back  when it begins to rain" ~ Robert Frost</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="ps.html">ps</a> - List running processes (returns PID)<br>
+<a href="kill.html">kill</a> - Stop a process from running<br>
+<a href="../osx/killall.html">killall</a> - Kill processes by name<br>
+<a href="lsof.html">lsof</a> - List open files<br>
+<a href="../osx/top.html">top</a> - display Linux tasks <br>
+Equivalent Windows command: <a href="../nt/openfiles.html">OPENFILES</a> - List or disconnect open files</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="fuser.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/fuser.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

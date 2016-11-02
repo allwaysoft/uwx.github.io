@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-WinEvent (Vista and above) 
+ Get events from event logs and event tracing log files on local and remote computers.
+Syntax
+      Get-WinEvent [-LogName] string[] [-ComputerName string]
+         [-C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-winevent.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-WinEvent (Vista and above) 
+ Get events from event logs and event tracing log files on local and remote computers.
+Syntax
+      Get-WinEvent [-LogName] string[] [-ComputerName string]
+         [-C">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-WinEvent (Vista and above) 
+ Get events from event logs and event tracing log files on local and remote computers.
+Syntax
+      Get-WinEvent [-LogName] string[] [-ComputerName string]
+         [-C">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-WinEvent (Vista and above)</h1> 
+<p> Get events from event logs and event tracing log files on local and remote computers.</p>
+<pre>Syntax
+      Get-WinEvent [-LogName] <i>string</i>[] [-ComputerName <i>string</i>]
+         [-Credential <i>PSCredential</i>] [-FilterXPath <i>string</i>]
+            [-Force] [-MaxEvents <i>int64</i>] [-Oldest] [<i>CommonParameters</i>]
+<pre><code>  Get-WinEvent [-Path] &lt;i&gt;string&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;]
+     [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-FilterXPath &lt;i&gt;string&lt;/i&gt;]
+        [-Force] [-MaxEvents &lt;i&gt;int64&lt;/i&gt;] [-Oldest] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-WinEvent [-ProviderName] &lt;i&gt;string&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;]
+     [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-FilterXPath &lt;i&gt;string&lt;/i&gt; ]
+        [-Force] [-MaxEvents &lt;i&gt;int64&lt;/i&gt;] [-Oldest] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-WinEvent -FilterHashTable &lt;i&gt;Hashtable&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;]
+     [-Credential &lt;i&gt;PSCredential&lt;/i&gt;]
+        [-Force] [-MaxEvents &lt;i&gt;int64&lt;/i&gt;] [-Oldest] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-WinEvent [-ListLog] &lt;i&gt;string&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;]
+     [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-WinEvent [-ListProvider] &lt;i&gt;string&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;]
+     [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-WinEvent -FilterXml &lt;i&gt;XmlDocument&lt;/i&gt; [-ComputerName &lt;i&gt;string&lt;/i&gt;]
+     [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-Force] [-MaxEvents &lt;i&gt;int64&lt;/i&gt;] [-Oldest] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key:<br>
+-ComputerName <i>string</i><br>
+Get events from the event logs on the specified computer.<br>
+Type the NetBIOS name, IP address, or the fully qualified domain name.<br>
+The default is the local computer.</p>
+<pre><code>   This parameter accepts only one computer name at a time.
+   To find event logs or events on multiple computers, use a &lt;a href=&quot;foreach.html&quot;&gt;ForEach&lt;/a&gt; statement. 
+
+   To get events and event logs from remote computers, the firewall port
+   for the event log service must be configured to allow remote access.
+
+   This parameter does not rely on PowerShell remoting.
+</code></pre>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default value is the current user.</p>
+<pre><code>   Type a user name, such as User64 or Domain64\User23.
+   Or, enter a PSCredential object, such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt;.
+   If no password is entered, you will be prompted for one.
+   If only -Credential is typed, you will be prompted for a user name &amp;amp; password.
+
+-FilterHashTable &lt;i&gt;Hashtable&lt;/i&gt;[]
+   Use a query in hash table format to select events from one or more event logs.
+   The query contains a hash table with one or more key-value pairs.
+
+   Hash table queries have the following rules:
+    - Keys and values are case-insensitive.
+    - Wildcard characters are valid only in the values associated with the LogName and ProviderName keys.
+    - Each key can be listed only once in each hash-table.
+    - The Path value takes paths to .etl, .evt, and .evtx log files.
+    - The LogName, Path, and ProviderName keys can be used in the same query. 
+    - The UserID key can take a valid security identifier (SID) or a domain account
+      name that can be used to construct a valid System.Security.Principal.NTAccount object.
+    - The Data value takes event data in an unnamed field. This is for events in classic event logs.
+    - The * key represents a named event data field.
+    When Get-WinEvent cannot interpret a key-value pair, it interprets the key as a
+    case-sensitive name for the event data in the event.
+
+    The valid key-value pairs are as follows:
+    -- LogName=&lt;i&gt;String&lt;/i&gt;[]
+    -- ProviderName=&lt;i&gt;String&lt;/i&gt;[]
+    -- Path=&lt;i&gt;String&lt;/i&gt;[]
+    -- Keywords=&lt;i&gt;Long&lt;/i&gt;[]
+    -- ID=&lt;i&gt;Int32&lt;/i&gt;[]
+    -- Level=&lt;i&gt;Int32&lt;/i&gt;[]
+    -- StartTime=&lt;i&gt;DateTime&lt;/i&gt;
+    -- EndTime=&lt;i&gt;DateTime&lt;/i&gt;
+    -- UserID=&lt;i&gt;SID&lt;/i&gt;
+    -- Data=&lt;i&gt;String&lt;/i&gt;[]
+    -- *=&lt;i&gt;String&lt;/i&gt;[]
+</code></pre>
+<p>-FilterXml <i>XmlDocument</i><br>
+Use a structured XML query to select events from one or more event logs.</p>
+<pre><code>   To generate a valid XML query, use the &lt;i&gt;Create Custom View&lt;/i&gt; and
+   &lt;i&gt;Filter Current Log&lt;/i&gt; features in Event Viewer.
+   Use the items in the dialog box to create a query, and click the XML tab to view the XML query. 
+
+   Typically, you use an &lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkId=143685&quot;&gt;XML query&lt;/a&gt; to create a &lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkID=143608&quot;&gt;complex query&lt;/a&gt; that contains several XPath statements. 
+   The XML format also allows you to use a &quot;Suppress&quot; XML element that excludes events from the query.
+</code></pre>
+<p>-FilterXPath <i>string<br>
+</i>       Use an XPath query to select events from one or more logs.</p>
+<p>-Force<br>
+Get debug and analytic logs, in addition to other event logs.<br>
+The Force parameter is required to get a debug or analytic log when the value of -name<br>
+includes wildcard characters.</p>
+<pre><code>   By default, Get-WinEvent excludes these logs unless you specify the full name of a debug or analytic log.
+</code></pre>
+<p>-ListLog <i>string</i>[]<br>
+Gets the specified event logs. Enter the event log names in a comma-separated list.<br>
+Wildcards are permitted. To get all the logs, enter a value of *.</p>
+<p>-ListProvider <i>string</i>[]<br>
+Get the specified event log providers.<br>
+An event log provider is a program or service that writes events to the event log.</p>
+<pre><code>   Enter the provider names in a comma-separated list. Wildcards are permitted.
+   To get the providers of all the event logs on the computer, enter a value of *.
+</code></pre>
+<p>-LogName <i>string</i>[]<br>
+Gets events from the specified event logs. Enter the event log names in a comma-separated list.<br>
+Wildcards are permitted. You can also pipe log names to Get-WinEvent.</p>
+<p>-MaxEvents <i>int64</i><br>
+The maximum number of events that Get-WinEvent returns.<br>
+Enter an integer. The default is to return all the events in the logs or files.</p>
+<p>-Oldest<br>
+Return the events in oldest-first order.<br>
+By default, events are returned in newest-first order.</p>
+<pre><code>   This parameter is required to get events from .etl and .evt files and from debug and analytic logs.
+   In these files, events are recorded in oldest-first order, and the events can be returned only
+   in oldest-first order.
+</code></pre>
+<p>-Path <i>string</i>[]<br>
+Get events from the specified event log files.<br>
+Enter the paths to the log files in a comma-separated list, or use wildcards.</p>
+<pre><code>   Get-WinEvent supports files with the .evt, .evtx, and .etl file name extensions.
+</code></pre>
+<p>-ProviderName <i>string</i>[]<br>
+Get events written by the specified event log providers.<br>
+Enter the provider names in a comma-separated list, or use wildcard characters.</p>
+<pre><code>   An event log provider is a program or service that writes events to the event log.
+   It is not a PowerShell provider.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p> Get-WinEvent  gets events from event logs, including classic logs, such as the System and Application logs, and the event logs that are generated by the new Windows Event Log technology introduced in Windows Vista. It also gets events in log files generated by Event Tracing for Windows (ETW).<br>
+<br>
+Without parameters, a Get-WinEvent command gets all the events from all the event logs on the computer. </p>
+<p>To interrupt the command, press CTRL + C.<br>
+<br>
+Get-WinEvent also lists event logs and event log providers. You can get events from selected logs or from logs generated by selected event providers. And, you can combine events from multiple sources in a single command. Get-WinEvent allows you to filter events by using XPath queries, structured XML queries, and simplified hash-table queries.<br>
+<br>
+Get-WinEvent requires Windows Vista, Windows Server 2008 R2, or later versions of Windows. And, it requires the Microsoft .NET Framework 3.5 or a later version.</p>
+<p><b>Examples</b></p>
+<p>Get all the logs on the local computer:</p>
+<p><span class="code">PS C:\&gt; get-winevent -listlog  *</span></p>
+<p>Get  an object that represents the classic System log on the local computer. Returns the size, event log provider, file path, and whether enabled:</p>
+<p><span class="code">PS C:\&gt; get-winevent -listlog Setup | format-list -property *</span></p>
+<p>Get  only event logs on the Server64 computer that contain events:</p>
+<p><span class="code">PS C:\&gt; get-winevent -listlog * -computername Server64| where {$_.recordcount}</span></p>
+<p>Get  objects that represent   PowerShell event logs on several servers (Foreach is required here because <span class="code">-ComputerName </span>takes only one value):</p>
+<p><span class="code">PS C:\&gt; $s = "Server64", "Server65", "Server66"<br>
+<p>PS C:&amp;gt; foreach ($server in $s) <br><br>
+{$server; get-winevent -listlog “Windows PowerShell” -computername $server}</p></span></p><p></p>
+<p>Get the event log providers on the local computer and the logs to which they write, if any:</p>
+<p><span class="code">PS C:\&gt; get-winevent -listprovider *</span></p>
+<p>Get all  the providers that write to the Application log on the local computer:</p>
+<p><span class="code">PS C:\&gt; (get-winevent -listlog Application).providernames</span></p>
+<p>Get  event log providers whose names include the word "policy":</p>
+<p><span class="code">PS C:\&gt; get-winevent -listprovider *policy*</span></p>
+<p>List the event IDs that the Microsoft-Windows-GroupPolicy event provider generates along with the event description.:</p>
+<p><span class="code">PS C:\&gt; (get-winevent -listprovider microsoft-windows-grouppolicy).events | format-table id, description -auto</span></p>
+<p>Use the properties of the event objects that Get-WinEvent returns to learn about the events in an event log.:</p>
+<p><span class="code">PS C:\&gt; $events = get-winevent -logname "Windows PowerShell"<br>
+PS C:\&gt; $events.count<br>
+PS C:\&gt; $events | group-object id -noelement | sort-object count -desc<br>
+PS C:\&gt; $events | group-object leveldisplayname -noelement</span></p>
+<p>Get the error events whose names include "disk" from all of the event logs on the computer and from the Microsoft-Windows-Kernel-WHEA event log:</p>
+<p><span class="code">PS C:\&gt; get-winevent -logname *disk*, Microsoft-Windows-Kernel-WHEA</span></p>
+<p>Get the events from an event trace log file (<span class="code">.etl</span>) and from a copy of the PowerShell log file (<span class="code">.evtx</span>) that was saved to a test directory.<br>
+</p><p>This combines multiple file types in a single command. Because the files contain the same type of .NET Framework<br>
+object (an EventLogRecord object), the same properties can be used to filter them:</p><p></p>
+<p><span class="code">PS C:\&gt; get-winevent -path "c:\tracing\tracelog.etl", "c:\Logs\Windows PowerShell.evtx" -oldest | where {$_.id -eq "103"}</span></p>
+<p>Get events that occurred in the last 24 hours from the  PowerShell event log (a filter is more efficient than using <a href="where-object.html">Where-Object</a>):</p>
+<p><span class="code">PS C:\&gt; $yesterday = (get-date) - (new-timespan -day 1)<br>
+PS C:\&gt; get-winevent -FilterHashTable @{LogName='Windows PowerShell'; Level=3; StartTime=$yesterday}</span></p>
+<p>Get <a href="http://www.microsoft.com/download/en/details.aspx?id=15201" target="_blank" rel="external">account lockout</a> events for a 2 second window from the Security event log:</p>
+<p><span class="code">PS C:\&gt; $auditStart = get-date "20/12/2011 09:14:30"<br>
+PS C:\&gt; $auditEnd = $auditStart.AddSeconds(2)<br>
+PS C:\&gt; Get-WinEvent -ComputerName "ServerDC64" -FilterHashtable @{logname="Security"; id=4740; StartTime=$auditStart; EndTime=$auditEnd} | fl TimeCreated, Message</span></p>
+<p>Use a filter hash table to find Internet Explorer application errors that occurred within the last week.:</p>
+<p><span class="code">PS C:\&gt; $starttime = (get-date).adddays(-7)<br>
+PS C:\&gt; $events = Get-WinEvent -FilterHashtable @{logname="application"; providername="Application Error"; data="iexplore.exe"; starttime=$starttime}</span></p>
+<p class="quote"><i>“What old people say you cannot do, you try and find that you can. Old deeds for old people, and new deeds for new” ~  Henry David Thoreau</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="get-eventlog.html">Get-Eventlog</a> - Get event log data (2003)<br>
+<a href="syntax-eventids.html">List of Windows Event IDs.</a><br>
+<a href="../nt/wevtutil.html">WEVTUTIL</a> - Clear event logs, enable/disable logs, (Vista+)<br>
+eventquery.vbs - VBScript for 2003<br>
+<a href="http://blogs.technet.com/b/heyscriptingguy/archive/2013/10/02/the-admin-s-first-steps-scan-multiple-event-logs.aspx" target="_blank" rel="external">Scan Multiple Event Logs</a> -  Hey, Scripting Guy! Blog</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-winevent.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-winevent.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-ADOrganizationalUnit 
+Get one or more Active Directory organizational units.
+Syntax
+      Get-ADOrganizationalUnit [-Identity] ADOrganizationalUnit
+         [-AuthType {Negotiate | Basic}] [-Crede">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-adorganizationalunit.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-ADOrganizationalUnit 
+Get one or more Active Directory organizational units.
+Syntax
+      Get-ADOrganizationalUnit [-Identity] ADOrganizationalUnit
+         [-AuthType {Negotiate | Basic}] [-Crede">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.922Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-ADOrganizationalUnit 
+Get one or more Active Directory organizational units.
+Syntax
+      Get-ADOrganizationalUnit [-Identity] ADOrganizationalUnit
+         [-AuthType {Negotiate | Basic}] [-Crede">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-ADOrganizationalUnit</h1> 
+<p>Get one or more Active Directory organizational units.</p>
+<pre>Syntax
+      Get-ADOrganizationalUnit [<b>-Identity</b>] <i>ADOrganizationalUnit</i>
+         [-AuthType {<u>Negotiate</u> | Basic}] [-Credential <i>PSCredential</i>]
+            [-Partition <i>string</i>] [-Properties <i>string</i>[]]
+               [-Server <i>string</i>] [<i>CommonParameters</i>]
+<pre><code>  Get-ADOrganizationalUnit &lt;b&gt;-Filter&lt;/b&gt; &lt;i&gt;string&lt;/i&gt;
+     [-ResultPageSize &lt;i&gt;int&lt;/i&gt;] [-ResultSetSize &lt;i&gt;Int32&lt;/i&gt;] [-SearchBase &lt;i&gt;string&lt;/i&gt;]
+        [-SearchScope {Base | OneLevel | Subtree}] [-AuthType {&lt;u&gt;Negotiate&lt;/u&gt; | Basic}]
+           [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-Partition &lt;i&gt;string&lt;/i&gt;] [-Properties &lt;i&gt;string&lt;/i&gt;[]]
+              [-Server &lt;i&gt;string&lt;/i&gt;] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-ADOrganizationalUnit &lt;b&gt;-LDAPFilter&lt;/b&gt; &lt;i&gt;string&lt;/i&gt;
+     [-ResultPageSize &lt;i&gt;int&lt;/i&gt;] [-ResultSetSize &lt;i&gt;Int32&lt;/i&gt;] [-SearchBase &lt;i&gt;string&lt;/i&gt;]
+        [-SearchScope {Base | OneLevel | Subtree}] [-AuthType {&lt;u&gt;Negotiate&lt;/u&gt; | Basic}]
+           [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-Partition &lt;i&gt;string&lt;/i&gt;] [-Properties &lt;i&gt;string&lt;/i&gt;[]]
+              [-Server &lt;i&gt;string&lt;/i&gt;] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-Credential <i>PSCredential</i><br>
+The user account credentials to use to perform this task.<br>
+The default credentials are those of the currently logged on user unless the<br>
+cmdlet is run from an Active Directory PowerShell provider drive.<br>
+If the cmdlet is run from such a provider drive, the account associated with the drive is the default.</p>
+<pre><code>   Type a user name, such as &quot;User64&quot; or &quot;Domain64\User64&quot; or specify a
+   PSCredential object such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt; 
+
+   If a user name is specified, the cmdlet will prompt for a password.
+</code></pre>
+<p>-Filter <i>string</i><br>
+A query string that retrieves Active Directory objects.<br>
+This string uses the PowerShell Expression Language syntax:</p>
+<pre><code>   &lt;i&gt;filter&lt;/i&gt; ::= &quot;{&quot; FilterComponentList&quot;}&quot;
+   &lt;i&gt;FilterComponentList&lt;/i&gt; ::= &lt;i&gt;FilterComponent&lt;/i&gt; | &lt;i&gt;FilterComponent JoinOperator FilterComponent&lt;/i&gt; | &lt;i&gt;NotOperator FilterComponent&lt;/i&gt;
+   &lt;i&gt;FilterComponent&lt;/i&gt; ::= &lt;i&gt;attr FilterOperator value&lt;/i&gt; | &quot;(&quot; &lt;i&gt;FilterComponent&lt;/i&gt;&quot;)&quot;
+   &lt;i&gt;FilterOperator&lt;/i&gt; ::= &quot;-eq&quot; | &quot;-le&quot; | &quot;-ge&quot; | &quot;-ne&quot; | &quot;-lt&quot; | &quot;-gt&quot;| &quot;-approx&quot; | &quot;-bor&quot; | &quot;-band&quot; | &quot;-recursivematch&quot; | &quot;-like&quot; | &quot;-notlike&quot;
+   &lt;i&gt;JoinOperator&lt;/i&gt; ::= &quot;-and&quot; | &quot;-or&quot;
+   &lt;i&gt;NotOperator&lt;/i&gt; ::= &quot;-not&quot;
+   &lt;i&gt;attr&lt;/i&gt; ::= &lt;i&gt;PropertyName&lt;/i&gt; | &lt;i&gt;LDAPDisplayName_of_the_attribute&lt;/i&gt;
+   &lt;i&gt;value&lt;/i&gt;::= &amp;lt;compare this value with an &lt;i&gt;attr&lt;/i&gt; by using the specified &lt;i&gt;FilterOperator&lt;/i&gt;&amp;gt;
+</code></pre>
+<p>-Identity <i>ADOrganizationalUnit</i><br>
+An AD organizational unit object. Most often this will be a Distinguished Name (e.g. OU=demo,DC=SS64,DC=com)<br>
+The identity may also be given as a GUID, Security Identifier or sAMAccountName.</p>
+<pre><code>   The cmdlet searches the default naming context or partition to find the object.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   The ADGroup object may also be passed through the pipeline or set via a variable.
+</code></pre>
+<p>-LDAPFilter <i>string</i><br>
+An LDAP query string that is used to filter AD objects.<br>
+Use this parameter to run existing LDAP queries.<br>
+See also Help about_ActiveDirectory_Filter.</p>
+<pre><code>   For example to search an OU for names beginning with &quot;Teresa&quot;.
+   -LDAPFilter &quot;(name=Teresa*)&quot; -SearchScope Subtree -SearchBase &quot;DC=demo,DC=SS64,DC=com&quot;
+</code></pre>
+<p>-Partition <i>string</i><br>
+The distinguished name of an AD partition.<br>
+<i>string</i> must be one of the naming contexts on the current directory server.<br>
+The cmdlet searches this partition to find the object defined by the -Identity parameter.<br>
+Examples:<br>
+-Partition “CN=Configuration,DC=Europe,DC=Test,DC=SS64,DC=COM”<br>
+-Partition “CN=Schema,CN=Configuration,DC=Europe,DC=Test,DC=SS64,DC=COM”</p>
+<pre><code>   In many cases, a &lt;a href=&quot;partition-defaults.html&quot;&gt;default value&lt;/a&gt; will be used for -Partition if no value is specified.
+</code></pre>
+<p>-Properties <i>string</i>[]<br>
+The properties of the output object to retrieve from the server (comma-separated list).<br>
+Use this parameter to retrieve properties that are not included in the default set.</p>
+<pre><code>   To discover the properties available, use &lt;a href=&quot;get-member.html&quot;&gt;Get-Member&lt;/a&gt;
+   To display all of the attributes that are set on the object, specify * (asterisk).
+
+   Specify the property Name or for non default/extended properties, the LDAP Display Name of the attribute.
+</code></pre>
+<p>-ResultPageSize <i>int</i><br>
+The number of objects to include in each page for an AD Domain Services query.<br>
+default = 256</p>
+<p>-ResultSetSize <i>Int32</i><br>
+The maximum number of objects to return for an AD Domain Services query.<br>
+To receive all objects, set this to $null. Ctrl+c will stop the query and return of objects.<br>
+default = $null.</p>
+<p>-SearchBase <i>string</i><br>
+An Active Directory path to search under.<br>
+e.g.<br>
+-SearchBase “ou=training,dc=demo,dc=ss64,dc=com”</p>
+<p>-SearchScope<br>
+The scope of an AD search.<br>
+Possible values for this parameter are:<br>
+Base or 0        Search only the current path or object.<br>
+OneLevel or 1    Search the immediate children<br>
+Subtree or 2     Search the current path/object and all children</p>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Get-ADOrganizationalUnit  gets an OU object or performs a search to retrieve multiple OUs.<br>
+<br>The <span class="code">-Identity</span> parameter specifies the AD OU to retrieve. Identify an organizational unit by its distinguished name (DN) or GUID. Alternatively set the parameter to an organizational unit object
+<a href="syntax-variables.html">variable</a> or pass an organizational unit object through the <a href="syntax-pipeline.html">pipeline</a>.<br>
+<br>To search for and retrieve more than one organizational unit, use the <span class="code">-Filter</span> or <span class="code">-LDAPFilter</span> parameters. The Filter parameter uses the PowerShell Expression Language to write query strings for Active Directory. For more information about the Filter parameter syntax, see <a href="get-help.html">help</a> about_ActiveDirectory_Filter. If you have existing LDAP query strings, you can use the LDAPFilter parameter.<br>
+<br>This cmdlet retrieves a default set of organizational unit object properties. To retrieve additional properties use the <span class="code">-Properties</span> parameter. </p>
+<p><b>Examples</b></p>
+<p>Get all the Organizational Units in the domain:</p>
+<p><span class="code">PS C:\&gt; Get-ADOrganizationalUnit -Filter 'Name -like "*"' | <a href="format-table.html">FT</a> Name, DistinguishedName -A</span></p>
+<p>Gets the Organizational Unit with DistinguishedName 'OU=Sydney,OU=Demo,DC=SS64,DC=COM':</p>
+<p><span class="code">PS C:\&gt; Get-ADOrganizationalUnit -Identity 'OU=Sydney,OU=Demo,DC=SS64,DC=COM' | <a href="format-table.html">FT </a>Name,Country,PostalCode,City,StreetAddress,State -A</span></p>
+<p>Gets OUs underneath the 'Sydney' Organizational Unit using an LDAP filter:</p>
+<p class="code">PS C:\&gt; Get-ADOrganizationalUnit -LDAPFilter '(name=*)' -SearchBase 'OU=Sydney,OU=Demo,DC=SS64,DC=COM' -SearchScope OneLevel | <a href="format-table.html">FT</a> Name,Country,PostalCode,City,StreetAddress,State</p>
+<p class="quote"><i>“Go where he will, the wise man is at home” ~ Ralph Waldo Emerson</i></p>
+<p><b>Related:</b></p>
+<p><a href="new-adorganizationalunit.html">New-adOrganizationalUnit</a> - Create a new AD OU<br>
+<a href="remove-adorganizationalunit.html">Remove-adOrganizationalUnit</a> - Remove an AD OU<br>
+<a href="set-adorganizationalunit.html">Set-adOrganizationalUnit</a> - Modify an AD OU</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-adorganizationalunit.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-adorganizationalunit.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

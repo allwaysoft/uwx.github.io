@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DoCmd.TransferText
+ Import or export data to/from a text file (Delimited, fixed width or HTML).
+Syntax
+      DoCmd.TransferText(TransferType, SpecificationName, TableName,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/transfertext.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DoCmd.TransferText
+ Import or export data to/from a text file (Delimited, fixed width or HTML).
+Syntax
+      DoCmd.TransferText(TransferType, SpecificationName, TableName,">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:04:00.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DoCmd.TransferText
+ Import or export data to/from a text file (Delimited, fixed width or HTML).
+Syntax
+      DoCmd.TransferText(TransferType, SpecificationName, TableName,">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>DoCmd.TransferText</h1>
+<p> Import or export data to/from a text file (Delimited, fixed width or HTML).</p>
+<pre>Syntax
+      DoCmd.TransferText(<i>TransferType, SpecificationName, TableName,
+                            FileName, HasFieldNames, HTMLTableName, CodePage</i>)
+<p>Key<br>
+<i>   TransferType</i>    The type of transfer to make. <a href="actexttransfertype.html">AcTextTransferType</a></p>
+<p><i>SpecificationName</i> The name of an import or export specification<br>
+previously created and saved in the database.<br>
+For a fixed-width text file, either specify an<br>
+argument or use a schema.ini file, stored in the<br>
+same folder as the imported, linked, or exported<br>
+text file.<br>
+(To create a schema file, use the text import/export wizard.)</p>
+<pre><code>               For delimited text files and Word mail merge files,
+               you can leave this argument blank to select the
+               default import/export specifications.
+</code></pre>
+<p><i>TableName</i>       The full pathname, of the text file to import from,<br>
+export to, or link to.</p>
+<p><i>FileName</i>        The full pathname of the file to output to.</p>
+<p><i>HasFieldNames</i>   Use True (-1) to use the first row of the text file<br>
+as field names when importing, exporting, or linking.<br>
+Use <u>False</u> (0) to treat the first row of the text file<br>
+as normal data.<br>
+This argument is ignored for Word mail merge data files,<br>
+which must always contain the field names in the first row.<i></i></p>
+<p>HTMLTableName   The name of the table or list in the HTML file to<br>
+import or link. (string)<br>
+This argument is ignored unless the TransferType argument<br>
+is set to acImportHTML or acLinkHTML.<br>
+If left blank, the first table or list in the HTML file<br>
+is imported or linked.<br>
+The name of the table or list in the HTML file is<br>
+determined by the text specified by the &lt;CAPTION&gt; tag,<br>
+If there’s no &lt;CAPTION&gt; tag, the name is determined by the<br>
+text specified by the &lt;TITLE&gt; tag. If more than one table<br>
+or list has the same name, Access distinguishes them by<br>
+adding a number to the end of each table or list name;<br>
+for example, Employees1 and Employees2.</p>
+<p><i>CodePage</i>        A Long value indicating the character set of the code page.</p></pre><p></p>
+<p>Use TransferText to import or export text between the current Access database or Access project (.adp) and a text file. You can also link the data in a text file to the current Access database.</p>
+<p><b>Examples</b></p>
+<p><span class="code"></span>'Output the T_Patients table as a delimited text file <span class="code"><br>
+DoCmd.TransferText acExportDelim, "Standard Output", _ <br>
+"T_Patients", "C:\demo\patients.txt"</span></p>
+<p class="quote"><i>“An Asian can't help but love China and take pride in it. China doesn't export tanks and men. It exports dignity and respect” ~ Norodom Sihanouk</i></p>
+<p><b>Related:</b></p>
+<p><a href="outputto.html">OutputTo</a> - Export to a Text/CSV/Spreadsheet file.</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/transfertext.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

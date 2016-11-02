@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="XCACLS.exe (NT 4 Resource Kit, Windows XP and 2003  - download from Q825751)
+Display or modify Access Control Lists (ACLs) for files and folders. For Vista and greater use icacls.
+Syntax
+      XCACLS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/xcacls.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="XCACLS.exe (NT 4 Resource Kit, Windows XP and 2003  - download from Q825751)
+Display or modify Access Control Lists (ACLs) for files and folders. For Vista and greater use icacls.
+Syntax
+      XCACLS">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:56.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="XCACLS.exe (NT 4 Resource Kit, Windows XP and 2003  - download from Q825751)
+Display or modify Access Control Lists (ACLs) for files and folders. For Vista and greater use icacls.
+Syntax
+      XCACLS">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>XCACLS.exe (NT 4 Resource Kit, Windows XP and 2003  - download from <a href="https://support.microsoft.com/kb/825751" target="_blank" rel="external">Q825751</a>)</h1>
+<p>Display or modify Access Control Lists (ACLs) for files and folders. For Vista and greater use <a href="icacls.html">icacls</a>.</p>
+<pre>Syntax
+      XCACLS <i>filename</i> [<i>options</i>]
+<pre><code>  XCACLS &lt;i&gt;filename&lt;/i&gt;&lt;br&gt;
+</code></pre>
+<p>Key<br>
+If no <i>options</i> are specified XCACLS will display the ACLs for the file(s)</p>
+<p><i>options</i> can be any combination of:</p>
+<p>/T       Traverse all subfolders and change all matching files found.<br>
+<br>   /E       Edit ACL instead of replacing it.</p>
+<p>/x       Edit ACL instead of replacing it; affect only ACEs that this user already owns*</p>
+<p>/R <i>user</i>  Revoke all access rights from the given user.</p>
+<p>/D <i>user</i>  Deny specified user access, this will over-ride<br>
+all other permissions the user has.</p>
+<p>/C       Continue on access denied errors.<br>
+/Y       Replace user’s rights without verify</p>
+<p>/P <i>user</i>:<i>permision</i>[;<i>FolderSpec</i>]<br>
+Replace user’s rights. see /G option below</p>
+<p>/G <i>user</i>:<i>permision</i>[;<i>FolderSpec</i>]<br>
+Grant specified user access rights, <i>permision</i> can be:<br>
+r  Read<br>
+c  Change (write)<br>
+f  Full control<br>
+p  Change Permissions (Special access)<br>
+o  Take Ownership (Special access)<br>
+x  EXecute (Special access)<br>
+e  REad (Special access)<br>
+w  Write (Special access)<br>
+d  Delete (Special access)<br>
+t  Used only by <i>FolderSpec</i>. see below</p>
+<p><b>*</b> Option only valid in Windows 2003</p></pre><p></p>
+<p><span class="code">FolderSpec</span> is a permission applied to a folder.  
+If <span class="code">FolderSpec</span> is not specified then <span class="code">permission</span> will apply to both files and folders. <br>
+This allows you to set different permissions that will apply (through inheritance) when new files are added to the folder.<br>
+<br>
+<span class="code">FolderSpec = ;T@</span> where @ is one of the rights above, when this is specified new files will  inherit <span class="code">FolderSpec</span> instead of <span class="code">permission</span>. At least one folder access right must follow the T For example <span class="code">;TF</span> will apply full control (but <span class="code"> ;FT</span> is not valid)<br>
+<br>
+Wildcards can be used to specify more that one file in a command. You can specify more than one <i>user</i> in a command. You can combine access rights.</p>
+<p>Although taking ownership is listed as an option it does not work, use <a href="subinacl.html">SUBINACL</a> for this.</p>
+<p><b>Inheritance Errors</b></p>
+<p> "<i>Permissions incorrectly ordered</i>"  - the quickest way to resolve or avoid these  errors is to use the newer <a href="icacls.html">iCACLS</a> command instead of XCACLS.</p>
+<p>Inherited folder permissions are displayed as:</p>
+<pre> OI - Object inherit    - This folder and files. (no inheritance to subfolders)
+ CI - Container inherit - This folder and subfolders.
+ IO - Inherit only      - The ACE does not apply to the current file/directory
+<p>These can be combined as folllows:<br>
+(OI)(CI)      This folder, subfolders, and files.<br>
+(OI)(CI)(IO)  Subfolders and files only.<br>
+(CI)(IO)  Subfolders only.<br>
+(OI)    (IO)  Files only. </p></pre><p></p>
+<p>So BUILTIN\Administrators:(OI)(CI)F means that both files and Subdirectories will inherit 'F' (Fullcontrol) <br>
+similarly (CI)R means Directories will inherit 'R' (Read folders only = List permission)</p>
+<p>When xcacls is applied to the current folder only there is no inheritance and so no output.</p>
+<p><b>Versions:</b><br>
+NTFS standards have changed with different versions of Windows and XCACLS has been updated to suit, early versions  of Xcacls can give unpredictable results against an NTFS v5 partition.</p>
+<p>  xcacls<b>.vbs</b> is described in <a href="http://support.microsoft.com/?id=825751" target="_blank" rel="external">Q825751</a> and can be <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=0ad33a24-0616-473c-b103-c35bc2820bda&amp;DisplayLang=en" target="_blank" rel="external">downloaded here</a> -
+xcacls.vbs is an unsupported utility released in 2004 that addresses a limitation with the original xcacls.exe, specifically the inability to append permissions to a folder whose child objects have the inheritance flag set. The .vbs version does not suppport unc paths and is very slow to update multiple ACLs.<br>
+xcacls.vbs includes a version check function <span class="code">"IsOsSupported()"</span>  and so will not run under Windows 2008.</p>
+<p><b>Examples:</b><br>
+<br>
+Allow <i>guests</i> the right to read and execute in MyFolder<br>
+<span class="code">XCACLS MyFolder /E /G guests:rx</span><br>
+<br>
+Allow <i>guests</i> the Full Control permission in MyFolder and all subfolders<br>
+<span class="code">XCACLS MyFolder /T /E /G  guests:f</span><br>
+<br>
+Grant <i>guests</i> only read access to all files in and below MyFolder, <br>
+new folders created will be Read Access only, new files will not inherit any rights.<br>
+<span class="code">XCACLS MyFolder /T /P guests:R;Tr </span><br>
+<br>
+Grant <i>guests</i> only execute access to all files in and below MyFolder<br>
+<span class="code">XCACLS MyFolder /T /P guests:x </span></p>
+<p><i class="quote">“I spent most of the eighties, most of my life, riding around in somebody else's car, in possession of, or ingested of, something illegal, on my way from something illegal to something illegal with many illegal things happening all around me” - Iggy Pop </i> <br>
+<br>
+<b>Related:</b></p>
+<p><a href="attrib.html">ATTRIB</a> - Display or change file attributes<br>
+<a href="cacls.html">CACLS</a> - Change file and folder permissions (ACLs)<br>
+<a href="icacls.html">iCACLS</a> - Change file and folder permissions (ACLs) <br>
+<a href="subinacl.html">SUBINACL</a> - Edit file and folder Permissions, Ownership and/or Domain<br>
+<a href="dir.html">DIR /Q</a> - Display the owner for a list of files (try it for Program files) <br>
+<a href="http://technet.microsoft.com/en-US/sysinternals/bb897332.aspx" target="_blank" rel="external">AccessEnum</a> - SysInternals utility to browse a tree view of user privileges.<br>
+<a href="ntrights.html">NTRIGHTS</a> - Edit user account rights      <br>
+<a href="perms.html">PERMS</a> - Show permissions for a user<br>
+ SHOWACCS - Show ACLs on the registry, file system, file and print shares <br>
+<a href="subinacl.html">SUBINACL</a> - Change an ACL's user/domain<br>
+<a href="takeown.html">TAKEOWN</a> - Take ownership of files<br>
+<a href="syntax-permissions.html">Permissions &amp; Local/Global Workgroups </a>  <br>
+<a href="http://go.microsoft.com/fwlink/?LinkId=48679" target="_blank" rel="external">Permissions explained</a> - Microsoft.com<br>
+<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=04A563D9-78D9-4342-A485-B030AC442084&amp;displaylang=en" target="_blank" rel="external">Access-based Enumeration</a> - Set file listing to only display files you can read (Win 2003)<br>
+<a href="https://support.microsoft.com/kb/318754" target="_blank" rel="external">Q318754</a> - How to use Xcacls (includes download) <br>
+<a href="https://support.microsoft.com/kb/245031" target="_blank" rel="external">Q245031</a> - Change Registry Permissions from the command line <br>
+<a href="https://support.microsoft.com/kb/822790" target="_blank" rel="external">Q822790</a> - Xcacls /E - Objects do not inherit permissions as expected.<br>
+<a href="https://helgeklein.com/setacl/" target="_blank" rel="external">SetAcl</a> - ACL util<br>
+Powershell: <a href="../ps/set-acl.html">Set-Acl</a> - Set permissions<br>
+Equivalent bash command (Linux):<a href="../bash/chmod.html">chmod</a> - Change access permissions,  <a href="../bash/chown.html">chown</a> - Change file owner and group</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="xcacls.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/xcacls.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

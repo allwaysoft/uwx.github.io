@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-acl 
+Set  Access Control List permissions from on a file (or object).
+Syntax
+      Set-Acl [-path] string[] [-aclObject] ObjectSecurity
+                 [-Include String] [-Exclude String]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-acl.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-acl 
+Set  Access Control List permissions from on a file (or object).
+Syntax
+      Set-Acl [-path] string[] [-aclObject] ObjectSecurity
+                 [-Include String] [-Exclude String]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.106Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-acl 
+Set  Access Control List permissions from on a file (or object).
+Syntax
+      Set-Acl [-path] string[] [-aclObject] ObjectSecurity
+                 [-Include String] [-Exclude String]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-acl</h1> 
+<p>Set  Access Control List permissions from on a file (or object).</p>
+<pre>Syntax
+      Set-Acl [-path] <i>string</i>[] [-aclObject] <i>ObjectSecurity</i>
+                 [-Include <i>String</i>] [-Exclude <i>String</i>]
+                    [-filter <i>string</i>] [-passThru] [-whatIf]
+                       [-confirm] [-UseTransaction] [<i>CommonParameters</i>]
+<p>Key<br>
+-Path <i>path</i><br>
+Path to the item to be changed {accepts wildcards}</p>
+<pre><code>   If a security object is passed to Set-Acl (either via -AclObject 
+   or by passing an object from Get-Acl), and -Path is omitted,
+   Set-Acl will use the path that is included in the security object.
+</code></pre>
+<p>-AclObject <i>ObjectSecurity</i><br>
+An ACL with the desired property values.<br>
+Often the output of a Get-Acl command saved in a variable.</p>
+<p>-Filter <i>string</i><br>
+A filter in the provider’s format or language.<br>
+The exact syntax of the filter (wildcard support etc) depends on the provider.<br>
+Filters are more efficient than -include/-exclude, because the provider<br>
+applies the filter when retrieving the objects, rather than having<br>
+PowerShell filter the objects after they are retrieved.</p>
+<p>-include <i>string</i><br>
+Include only the specified items from the Path. e.g. &quot;May*&quot;<br>
+This qualifies the -Path parameter and normally includes a wildcard.</p>
+<p>-Exclude <i>string</i><br>
+Omit the specified items from the Path e.g. &quot;<em>SS64</em>&quot;<br>
+This qualifies the -Path parameter and normally includes a wildcard.</p>
+<p>-PassThru<br>
+Pass the object created by Set-Acl through the pipeline.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command without<br>
+actually executing the command.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-UseTransaction<br>
+Include the command in the active <a href="syntax-transactions.html">transaction</a>.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>To apply a new rule to an ACL, requires an AccessRule Object of Type <span class="code">System.Security.AccessControl.<a href="https://msdn.microsoft.com/en-us/library/system.security.accesscontrol.filesystemaccessrule%28v=vs.110%29.aspx" target="_blank" rel="external">FileSystemAccessRule</a></span></p>
+<p>Inherited folder permissions:</p>
+<pre> Object inherit    - This folder and files. (no inheritance to subfolders)
+ Container inherit - This folder and subfolders.
+ Inherit only      - The ACE does not apply to the current file/directory</pre>
+<p><b>Examples</b></p>
+<p>Copy the security settings from Dog.txt to Cat.txt</p>
+<p><span class="code">PS C:\&gt; $DogACL = get-acl c:\dog.txt</span><br>
+<span class="code">PS C:\&gt; set-acl -path C:\cat.txt -AclObject $DogACL</span></p>
+<p>Or the same thing with a pipeline: </p>
+<p><span class="code">PS C:\&gt; get-acl c:\dog.txt | set-acl -path C:\cat.txt</span><br>
+<br>
+Apply the same $Dog ACL to all the  files in  C:\Temp\ and all of its subdirectories:</p>
+<p class="code">PS C:\&gt; get-childitem c:\temp -recurse -force | set-acl -aclobject $DogACL -whatif</p>
+<p>Disable inheritance for the folder 'C:\DemoFolder' (If inheritance is left in place the folder will inherit all the permissions of the parent folder.)</p>
+<p class="code">PS C:\&gt; $acl = Get-Acl -Path 'C:\DemoFolder'<br>
+PS C:\&gt; $acl.<a href="https://msdn.microsoft.com/en-us/library/system.security.accesscontrol.objectsecurity.setaccessruleprotection%28v=vs.110%29.aspx" target="_blank" rel="external">SetAccessRuleProtection</a>($true, $false)<br>
+PS C:\&gt; $acl | Set-Acl -Path 'C:\DemoFolder'</p>
+<p>Add a new permission for the current user:</p>
+<pre>PS C:\&gt; $acl = Get-Acl -Path 'C:\DemoFolder'
+PS C:\&gt; $perm = <b>$env:username</b>, 'Read,Modify', 'ContainerInherit, ObjectInherit', 'None', 'Allow' 
+PS C:\&gt; $rule = New-Object -TypeName System.Security.AccessControl.<a href="https://msdn.microsoft.com/en-us/library/system.security.accesscontrol.filesystemaccessrule%28v=vs.110%29.aspx" target="_blank" rel="external">FileSystemAccessRule</a> -ArgumentList $perm
+PS C:\&gt; $acl.SetAccessRule($rule) 
+PS C:\&gt; $acl | Set-Acl -Path 'C:\DemoFolder'</pre>
+<p class="quote"><i>“If it's a good idea - go ahead and do it. It’s easier to ask forgiveness than it is to get permission” ~ <a href="http://en.wikipedia.org/wiki/Grace_Hopper" target="_blank" rel="external">Grace Murray Hopper</a></i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="get-acl.html">Get-Acl</a> - Get permission settings for a file or registry key<br>
+<a href="../nt/cacls.html">CACLS</a> - 
+Display or modify Access Control Lists (ACLs) for files and folders.<br>
+<a href="https://gallery.technet.microsoft.com/scriptcenter/1abd77a5-9c0b-4a2b-acef-90dbb2b84e85" target="_blank" rel="external">NTFS Security  Module</a> - Raimund Andrée MSFT<br>
+Equivalent bash command: <a href="../bash/chmod.html">chmod</a> - Change access permissions</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-acl.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

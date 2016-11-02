@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ip address add | del 
+The ip address add and del commands, add new addresses or delete old ones. 
+address can be abbreviated to a or addr
+
+ip address add - Add new protocol address.
+ip address delete">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ip-address.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ip address add | del 
+The ip address add and del commands, add new addresses or delete old ones. 
+address can be abbreviated to a or addr
+
+ip address add - Add new protocol address.
+ip address delete">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:40.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ip address add | del 
+The ip address add and del commands, add new addresses or delete old ones. 
+address can be abbreviated to a or addr
+
+ip address add - Add new protocol address.
+ip address delete">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1><a href="ip.html">ip address</a> add | del</h1> 
+<p>The ip address add and del commands, add new addresses or delete old ones.<br> 
+<span class="code">address</span> can be abbreviated to <span class="code">a</span> or <span class="code">addr</span><br>
+<br>
+<span class="code">ip address add</span> - Add new protocol address.<br>
+<span class="code">ip address delete</span> - Delete protocol address<br>
+<br>
+The device name is a required argument. The rest are optional. If no arguments are given, the first address is added/deleted.</p>
+<pre>Syntax
+      <b>ip address</b> { add | del } <i>IFADDR</i> dev <i>STRING</i>
+<p>Key<br>
+dev <i>NAME</i><br>
+The name of the device to add the address to.<br>
+local <i>ADDRESS</i> (default)<br>
+The address of the interface. The format of the address depends on the protocol.<br>
+It is a dotted quad for IP and a sequence of hexadecimal halfwords separated by colons for IPv6.<br>
+The ADDRESS may be followed by a slash and a decimal number which encodes the network prefix length.<br>
+peer <i>ADDRESS</i><br>
+The address of the remote endpoint for pointopoint interfaces.<br>
+Again, the ADDRESS may be followed by a slash and a decimal number, encoding the network prefix<br>
+length. If a peer address is specified, the local address cannot have a prefix length.<br>
+The network prefix is associated with the peer rather than with the local address.<br>
+broadcast <i>ADDRESS</i><br>
+The broadcast address on the interface.<br>
+It is possible to use the special symbols ‘+’ and ‘-’ instead of the broadcast address.<br>
+In this case, the broadcast address is derived by setting/resetting the host bits of the interface prefix.<br>
+label <i>NAME</i><br>
+Each address may be tagged with a label string.<br>
+In order to preserve compatibility with Linux-2.0 net aliases, this string must coincide<br>
+with the name of the device or must be prefixed with the device name followed by colon.<br>
+scope <i>SCOPE_VALUE</i><br>
+The scope of the area where this address is valid.<br>
+The available scopes are listed in file /etc/iproute2/rt_scopes.<br>
+Predefined scope values are:</p>
+<pre><code>     global - the address is globally valid.
+     site - (IPv6 only) the address is site local, i.e. it is valid inside this site.
+     link - the address is link local, i.e. it is valid only on this device.
+     host - the address is valid only inside this host.&lt;/pre&gt;
+</code></pre>
+<p>The address is a protocol (IP or IPv6) address attached to a network device. Each device must have at least one address to use the corresponding protocol. It is possible to have several different addresses attached to one device. These addresses are not discriminated, so that the term alias is not quite appropriate for them and we do not use it in this document. </p>
+<p><b>Examples</b>:</p>
+<p>List and show all ip address associated on on all network interfaces:<br>
+<span class="code">$ 
+ip address</span><br>
+or just<br>
+<span class="code">$ ip a</span></p>
+<p>Remove and flush all IP v4 addresses on all the Ethernet interfaces:</p>
+<p class="code">$ ip -4 address flush label "eth*"</p>
+<p>Assign the IP address 192.168.1.200/255.255.255.0 to device eth0:</p>
+<p class="code"> $ ip address add 192.168.1.200/255.255.255.0 dev eth0</p>
+<p>Delete the IP address 192.168.1.200/255.255.255.0 from device eth0: </p>
+<p class="code">$ ip address del 192.168.1.200/255.255.255.0 dev eth0</p>
+<p class="quote">“It is remarkable how easily and insensibly we fall into a particular route, and make a beaten track for ourselves” ~ Henry David Thoreau</p>
+<p><b>Related:</b></p>
+<p>
+<a href="ip.html">ip</a> - Routing, devices and tunnels<br>
+<a href="ifconfig.html">ifconfig</a> - Configure a network interface.<br>
+Equivalent Windows  command: <a href="../nt/route.html">ROUTE</a> - Manipulate network routing tables</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ip-address.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

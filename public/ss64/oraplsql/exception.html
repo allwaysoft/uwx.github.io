@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The BEGIN section  
+Can contain variable assignments, Embedded SQL and calls to other functions and procedures. 
+ 
+A BEGIN-END block can contain nested DECLARE-BEGIN-END sub blocks. 
+The use of nested">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/oraplsql/exception.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="The BEGIN section  
+Can contain variable assignments, Embedded SQL and calls to other functions and procedures. 
+ 
+A BEGIN-END block can contain nested DECLARE-BEGIN-END sub blocks. 
+The use of nested">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:31.911Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="The BEGIN section  
+Can contain variable assignments, Embedded SQL and calls to other functions and procedures. 
+ 
+A BEGIN-END block can contain nested DECLARE-BEGIN-END sub blocks. 
+The use of nested">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orapl.lbi" --><!-- #EndLibraryItem --><h1>The BEGIN section </h1> 
+<p>Can contain variable assignments, Embedded SQL and calls to other functions and procedures.<br> 
+<br> 
+A BEGIN-END block can contain nested DECLARE-BEGIN-END sub blocks.<br> 
+The use of nested sub-blocks allows the use of local variables with limited scope.<br> 
+<br> 
+Each plsql block should be terminated with / on a line by itself.</p>
+<pre>BEGIN
+<i>   code block</i>
+   /
+EXCEPTION
+   <i>code block</i>
+   /
+END;</pre>
+<h1>Exceptions </h1>
+<p>Oracle includes about 20 predefined exceptions (errors) - we can 
+  allow Oracle to raise these implicitly.<br>
+  <br>
+  For errors that don't fall into the predefined categories - declare in advance 
+  and allow oracle to raise an exception.<br>
+  <br>
+  For problems that are not recognised as an error by Oracle - but still cause 
+  some difficulty within your application - declare a User Defined Error and raise 
+  it explicitly<br>
+  i.e <span class="code">IF x &gt;20 then RAISE ...</span><br>
+  <br>
+  Syntax:</p>
+<pre>EXCEPTION
+   WHEN exception1 [OR exception2...]] THEN
+   ...
+   [WHEN exception3 [OR exception4...] THEN
+   ...]
+   [WHEN OTHERS THEN
+   ...]</pre>
+<p>Where exception is the exception_name e.g.
+WHEN NO_DATA_FOUND...
+Only one handler is processed before leaving the block.<br>
+<br>
+Trap non-predefined errors by declaring them
+You can also associate the error no. with a name so that you
+can write a specific handler. <br>
+This is done with the PRAGMA EXCEPION_INIT pragma.<br>
+<br>
+PRAGMA (pseudoinstructions) indicates that an item is 
+a 'compiler directive' Running this has no immediate effect
+but causes all subsequent references to the exception name 
+to be interpreted as the associated Oracle Error.</p>
+<pre>-
+<p>Trapping a non-predefined Oracle server exception</p>
+<p>DECLARE<br>
+– name for exception<br>
+e_emps_remaining EXCEPTION<br>
+PRAGMA_EXCEPTION_INIT (<br>
+e_emps_remaining, -2292);<br>
+v_deptno dept.deptno%TYPE :=&amp;p_deptno;</p>
+<p>BEGIN<br>
+DELETE FROM dept<br>
+WHERE deptno = v_deptno<br>
+COMMIT;<br>
+EXCEPTION<br>
+WHEN e_emps_remaining THEN<br>
+DBMS_OUTPUT.PUT_LINE ('Cannot remove dept '||<br>
+TO_CHAR(v_deptno) || '. Employees exist. ');<br>
+END;</p>
+</pre>
+<p>
+When an exception occurs you can identify the 
+associated error code/message with two supplied 
+functions SQLCODE and SQLERRM</p>
+<pre>SQLCODE - Number
+SQLERRM - message
+<p>An example of using these:<br>
+DECLARE<br>
+v_error_code NUMBER;<br>
+v_error_message VARCHAR2(255);</p>
+<p>BEGIN</p>
+<p>…</p>
+<p>EXCEPTION<br>
+WHEN OTHERS THEN<br>
+ROLLBACK;<br>
+v_error_code := SQLCODE<br>
+v_error_message := SQLERRM<br>
+INSERT INTO t_errors<br>
+VALUES ( v_error_code, v_error_message);<br>
+END;</p></pre><p></p>
+<p>Trapping user-defined exceptions</p>
+<pre>DECLARE the exception
+RAISE the exception
+Handle the raised exception
+<p>e.g.<br>
+DECLARE<br>
+e_invalid_product EXCEPTION<br>
+BEGIN<br>
+update PRODUCT<br>
+SET descrip = ‘&amp;prod_descr’<br>
+WHERE prodid = &amp;prodnoumber’;<br>
+IF SQL%NOTFOUND THEN<br>
+RAISE e_invalid_product;<br>
+END IF;<br>
+COMMIT;<br>
+EXCEPTION<br>
+WHEN e_invalid_product THEN<br>
+DBMS_OUTPUT.PUT_LINE (‘INVALID PROD NO’);<br>
+END;</p>
+</pre>
+<p>
+Propagation of Exception handling in sub blocks<br>
+<br>
+If a sub block does not have a handler for a 
+particular error it will propagate to the 
+enclosing block - where it can be caught by 
+more general exception handlers.</p>
+<pre>RAISE_APPLICATION_ERROR (error_no, message[,{TRUE|FALSE}]);
+<p>This procedure  allows user defined error<br>
+messages from stored sub programs - call only from stored sub prog.<br>
+error_no = a user defined no (between -20000 and -20999)</p>
+<p>TRUE = stack errors<br>
+FALSE = keep just last</p>
+<p>This can either be used in the executable section of code or<br>
+the exception section</p>
+<p>e.g.<br>
+EXCEPTION<br>
+WHEN NO_DATA_FOUND THEN<br>
+RAISE_APPLICATION_ERROR (-2021,<br>
+‘manager not a valid employee’);<br>
+END;</p></pre><p></p>
+<p>Standard Exceptions, from the the STANDARD package</p>
+<pre><code>      &lt;table border=&quot;1&quot; cellpadding=&quot;3&quot; cellspacing=&quot;0&quot;&gt;
+        &lt;tbody&gt;&lt;tr&gt;
+          &lt;th&gt;Oracle Exception Name&lt;/th&gt;
+          &lt;th&gt;Oracle Error&lt;/th&gt;
+          &lt;th&gt;Explanation&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;DUP_VAL_ON_INDEX&lt;/td&gt;
+          &lt;td&gt;ORA-00001&lt;/td&gt;
+          &lt;td&gt;You attempted to create a duplicate value in a field restricted by a unique index.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;TIMEOUT_ON_RESOURCE&lt;/td&gt;
+
+          &lt;td&gt;ORA-00051&lt;/td&gt;
+          &lt;td&gt;A resource timed out, took too long.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;TRANSACTION_BACKED_OUT&lt;/td&gt;
+          &lt;td&gt;ORA-00061&lt;/td&gt;
+          &lt;td&gt;The remote portion of a transaction has rolled back.&lt;/td&gt;
+
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;INVALID_CURSOR&lt;/td&gt;
+          &lt;td&gt;ORA-01001&lt;/td&gt;
+          &lt;td&gt;The cursor does not yet exist. The cursor must be OPENed before any FETCH cursor or CLOSE cursor operation.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+
+          &lt;td&gt;NOT_LOGGED_ON&lt;/td&gt;
+          &lt;td&gt;ORA-01012&lt;/td&gt;
+          &lt;td&gt;You are not logged on.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;LOGIN_DENIED&lt;/td&gt;
+          &lt;td&gt;ORA-01017&lt;/td&gt;
+
+          &lt;td&gt;Invalid username/password.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;NO_DATA_FOUND&lt;/td&gt;
+          &lt;td&gt;ORA-01403&lt;/td&gt;
+          &lt;td&gt;No data was returned &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;TOO_MANY_ROWS&lt;/td&gt;
+          &lt;td&gt;ORA-01422&lt;/td&gt;
+
+          &lt;td&gt;You tried to execute a SELECT INTO statement and more than one row was returned.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;ZERO_DIVIDE&lt;/td&gt;
+          &lt;td&gt;ORA-01476&lt;/td&gt;
+          &lt;td&gt;Divide by zero error.&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+          &lt;td&gt;INVALID_NUMBER&lt;/td&gt;
+          &lt;td&gt;ORA-01722&lt;/td&gt;
+          &lt;td&gt;Converting a string to a number was unsuccessful.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;STORAGE_ERROR&lt;/td&gt;
+
+          &lt;td&gt;ORA-06500&lt;/td&gt;
+          &lt;td&gt;Out of memory.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;PROGRAM_ERROR&lt;/td&gt;
+          &lt;td&gt;ORA-06501&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;Generic &quot;Contact Oracle support&quot; message.&lt;br&gt;
+</code></pre>
+<p></p>
+
+<pre><code>        &lt;/tr&gt;
+</code></pre>
+<tr>
+  <td>VALUE_ERROR</td>
+  <td>ORA-06502</td>
+  <td>You tried to perform an operation and there was a error on a conversion, truncation, or invalid constraining of numeric or character data.</td>
+            </tr>
+            <tr>
+<td>ROWTYPE_MISMATCH</td>
+<td>ORA-06504</td>
+<td>&nbsp;</td>
+</tr>
+            <tr>
+<pre><code>          &lt;td&gt;CURSOR_ALREADY_OPEN&lt;/td&gt;
+          &lt;td&gt;ORA-06511&lt;/td&gt;
+          &lt;td&gt;The cursor is already open.&lt;/td&gt;
+        &lt;/tr&gt;
+</code></pre>
+</tr><tr>
+<td>ACCESS_INTO_NULL</td>
+<td>ORA-06530</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>COLLECTION_IS_NULL</td>
+<td>ORA-06531</td>
+<td>&nbsp;</td>
+</tr>
+          
+<p><b> </b></p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="exception.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/oraplsql/exception.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

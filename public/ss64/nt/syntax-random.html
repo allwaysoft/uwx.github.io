@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Random Numbers
+The Windows CMD shell contains a dynamic variable called %RANDOM% that can be used to generate random numbers.
+ %RANDOM% generates a random integer from 0 to 32,767 (inclusive)
+
+ &amp;nbsp;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/syntax-random.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Random Numbers
+The Windows CMD shell contains a dynamic variable called %RANDOM% that can be used to generate random numbers.
+ %RANDOM% generates a random integer from 0 to 32,767 (inclusive)
+
+ &amp;nbsp;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:55.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Random Numbers
+The Windows CMD shell contains a dynamic variable called %RANDOM% that can be used to generate random numbers.
+ %RANDOM% generates a random integer from 0 to 32,767 (inclusive)
+
+ &amp;nbsp;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ntsyntax.lbi" --><!-- #EndLibraryItem --><h1>Random Numbers</h1>
+<p>The Windows CMD shell contains a <a href="syntax-variables.html#dynamicvariables">dynamic variable</a> called <span class="code">%RANDOM%</span> that can be used to generate random numbers.</p>
+<p> %RANDOM% generates a random integer from 0 to 32,767 (inclusive)<br>
+<br>
+<span class="code"> &nbsp;0 ≤ %RANDOM% ≤ 32767 </span></p>
+<p>The range of numbers can be made smaller than 32767 with a little arithmetic,<br>
+for example to generate a range between 1 and 500:</p>
+<p class="code">@ECHO OFF<br>
+SET /a _rand=(%RANDOM%*<b>500</b>/32768)+1 <br>
+ECHO Random number %_rand% </p>
+<p>(The <a href="set.html">Set /a</a> will always round down)</p>
+<p>If you try, it may look as though a larger range than 32767 will work, but doing this will produce gaps, for example changing 500 in the above to 65536 will result in a sequence of "random" numbers which only consists of odd numbers.</p>
+<p>The distribution of numbers returned will be a determined by both the range and the quantity of numbers drawn. </p>
+<p>For example if you are drawing random integer numbers where each number is between 0 and 100 then on average: </p>
+<ul>
+<li> If you draw 10 numbers then you should expect around 6% to be duplicates. </li>
+<li> If you draw 100 numbers then just over 63% will be duplicates i.e. matching one or more of the other 99 numbers. </li>
+<li> If you draw 1,000 numbers then almost all will be duplicates as there are only 100 possible values.</li>
+</ul>
+<h2 id="firstHeading">Random vs <a href="http://en.wikipedia.org/wiki/PRNG" target="_blank" rel="external">Pseudorandom</a> numbers</h2>
+<blockquote>
+<p>A pseudorandom  sequence is not truly random but is determined by a small set of initial values (state), the initial seed is often based on the clock time. In the case of the CMD <span class="code">%RANDOM%</span> the seed is based on the clock time when the CMD session started. This can be problematic when running a batch file, if the script always takes about the same time to run before calling <span class="code">%RANDOM%</span> then the number returned will always lie within a small predictable range. </p>
+<p>As an example create a file <span class="code">numbers.cmd:</span></p>
+<p class="code">@Echo off<br>
+Echo %RANDOM%</p>
+<p>Then call the above with</p>
+<p class="code">CMD /c numbers.cmd<br>
+CMD /c numbers.cmd<br>
+CMD /c numbers.cmd</p>
+</blockquote>
+<p>Johannes Baagøe has published a comparison of <a href="https://web.archive.org/web/20120802042822/http://baagoe.org/en/w/index.php/Better_random_numbers_for_javascript" target="_blank" rel="external">better</a> random numbers for javascript. The <a href="http://jsperf.com/pseudo-random-number-generators" target="_blank" rel="external">fastest</a> of these is Alea(), which you can find a copy of below. This has a number of advantages, you can create much larger numbers, it will create a lot of numbers quickly and if you call it passing a seed number then the results become repeatable - you can create exactly the same sequence of random numbers again at a later date.</p>
+<pre>// random.js
+// call this from the command line with:
+// <a href="../vb/cscript.html">cscript</a> //E:jscript random.js
+<p>// Calling without a seed, the current time will be used as a seed<br>
+var srandom=Alea();</p>
+<p>// Calling with a seed will return the same value for the same seed<br>
+//var seed=1234<br>
+//var srandom=Alea(seed);</p>
+<p>var i=0</p>
+<p>// Return 10 random numbers<br>
+while ( i &lt; 10 ) {<br>
+// Return a number between 1 and 500 million<br>
+WScript.echo(Math.floor((srandom()*500000000)+1) );<br>
+i++;<br>
+}</p>
+<p>function Mash() {<br>
+var n = 0xefc8249d;</p>
+<p>var mash = function(data) {<br>
+data = data.toString();<br>
+for (var i = 0; i &lt; data.length; i++) {<br>
+n += data.charCodeAt(i);<br>
+var h = 0.02519603282416938 * n;<br>
+n = h &gt;&gt;&gt; 0;<br>
+h -= n;<br>
+h *= n;<br>
+n = h &gt;&gt;&gt; 0;<br>
+h -= n;<br>
+n += h * 0x100000000; // 2^32<br>
+}<br>
+return (n &gt;&gt;&gt; 0) * 2.3283064365386963e-10; // 2^-32<br>
+};</p>
+<p>mash.version = ‘Mash 0.9’;<br>
+return mash;<br>
+}</p>
+<p>function Alea() {<br>
+return (function(args) {<br>
+// Johannes Baagoe &lt;<a href="mailto:baagoe@baagoe.com" target="_blank" rel="external">baagoe@baagoe.com</a>&gt;, 2010<br>
+var s0 = 0;<br>
+var s1 = 0;<br>
+var s2 = 0;<br>
+var c = 1;</p>
+<pre><code>if (args.length == 0) {
+  args = [+new Date];
+}
+var mash = Mash();
+s0 = mash(' ');
+s1 = mash(' ');
+s2 = mash(' ');
+
+for (var i = 0; i &amp;lt; args.length; i++) {
+  s0 -= mash(args[i]);
+  if (s0 &amp;lt; 0) {
+    s0 += 1;
+  }
+  s1 -= mash(args[i]);
+  if (s1 &amp;lt; 0) {
+    s1 += 1;
+  }
+  s2 -= mash(args[i]);
+  if (s2 &amp;lt; 0) {
+    s2 += 1;
+  }
+}
+mash = null;
+
+var random = function() {
+  var t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32
+  s0 = s1;
+  s1 = s2;
+  return s2 = t - (c = t | 0);
+};
+random.uint32 = function() {
+  return random() * 0x100000000; // 2^32
+};
+random.fract53 = function() {
+  return random() + 
+    (random() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
+};
+random.version = 'Alea 0.9';
+random.args = args;
+return random;
+</code></pre>
+<p>} (Array.prototype.slice.call(arguments)));<br>
+};</p>
+<p>/* licensed according to the <a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank" rel="external">MIT - Expat license</a>:</p>
+<p>Copyright © 2010 by Johannes Baagoe &lt;<a href="mailto:baagoe@baagoe.org" target="_blank" rel="external">baagoe@baagoe.org</a>&gt;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy<br>
+of this software and associated documentation files (the “Software”), to deal<br>
+in the Software without restriction, including without limitation the rights<br>
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br>
+copies of the Software, and to permit persons to whom the Software is<br>
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in<br>
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br>
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br>
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br>
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br>
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br>
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br>
+THE SOFTWARE. */</p></pre><p></p>
+<p class="quote"><i>“Anyone who attempts to generate random numbers by deterministic means is, of course, living in a state of sin” ~ John von Neumann</i>
+</p><p><b>Related:</b></p><p>PowerShell Equivalent: <a href="../ps/get-random.html">Get-Random</a><br>
+VBScript: <a href="../vb/rnd.html">Rnd</a> - Return a pseudorandom number.<br>
+<a href="http://www.random.org/" target="_blank" rel="external">Random.org</a> - Generate true random numbers online.<!-- #BeginLibraryItem "/Library/foot_nt.lbi" --></p><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-random.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/syntax-random.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

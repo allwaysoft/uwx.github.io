@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DISKSHADOW (Windows 2008 )
+Volume Shadow Copy Service. By default, DiskShadow uses an interactive command interpreter similar to that of DiskRAID or DiskPart. DiskShadow also includes a scriptable mod">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/diskshadow.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DISKSHADOW (Windows 2008 )
+Volume Shadow Copy Service. By default, DiskShadow uses an interactive command interpreter similar to that of DiskRAID or DiskPart. DiskShadow also includes a scriptable mod">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:49.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DISKSHADOW (Windows 2008 )
+Volume Shadow Copy Service. By default, DiskShadow uses an interactive command interpreter similar to that of DiskRAID or DiskPart. DiskShadow also includes a scriptable mod">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>DISKSHADOW (Windows 2008 )</h1>
+<p>Volume Shadow Copy Service. By default, DiskShadow uses an interactive command interpreter similar to that of DiskRAID or DiskPart. DiskShadow also includes a scriptable mode. </p>
+<pre>Syntax
+   Start interactive mode:
+      diskshadow
+<p>Execute a script:<br>
+diskshadow -s <i>script</i>.txt</p>
+<p>Commands to run interactively or through a script file:</p>
+<pre><code>  &lt;abbr title=&quot;display the volumes added and current aliases&quot;&gt;add&lt;/abbr&gt;
+  add volume &lt;abbr title=&quot;a volume to add to the Shadow Copy Set&quot;&gt;&lt;i&gt;Volume&lt;/i&gt;&lt;/abbr&gt; [provider &lt;i&gt;ProviderID&lt;/i&gt;]
+  add alias &lt;i&gt;AliasName AliasValue&lt;/i&gt;
+  &lt;abbr title=&quot;Start a full backup session&quot;&gt;begin backup&lt;/abbr&gt;
+  &lt;abbr title=&quot;Start a restore session and issue a PreRestore event to involved writers&quot;&gt;begin restore&lt;/abbr&gt;
+  &lt;abbr title=&quot;display help&quot;&gt;break&lt;/abbr&gt;
+  &lt;abbr title=&quot;Disassociate a shadow copy volume from VSS and make it accessible as a regular volume&quot;&gt;break&lt;/abbr&gt; [&lt;abbr title=&quot;Enable read/write access on the volume&quot;&gt;writable&lt;/abbr&gt;] &lt;i&gt;&lt;abbr title=&quot;The ID of the shadow copy set&quot;&gt;SetID&lt;/abbr&gt;&lt;/i&gt;
+  &lt;abbr title=&quot;Start the shadow copy creation process, using the current context and option settings&quot;&gt;create&lt;/abbr&gt;
+  delete shadows [&lt;abbr title=&quot;Delete all shadow copies&quot;&gt;all&lt;/abbr&gt; | &lt;abbr title=&quot;Delete all shadow copies of the given volume.&quot;&gt;volume &lt;i&gt;Volume&lt;/i&gt;&lt;/abbr&gt; | &lt;abbr title=&quot;Delete the oldest shadow copy of the given volume&quot;&gt;oldest &lt;i&gt;Volume&lt;/i&gt; &lt;/abbr&gt;
+                      | &lt;abbr title=&quot;Delete the shadow copies in the Shadow Copy Set of the given ID. You can specify an alias by using the % symbol if the alias exists in the current environment&quot;&gt;set&lt;/abbr&gt; &lt;i&gt;SetID&lt;/i&gt; | &lt;abbr title=&quot;Delete a shadow copy of the given ID. You can specify an alias by using the % symbol if the alias exists in the current environment&quot;&gt;id &lt;i&gt;ShadowID&lt;/i&gt;&lt;/abbr&gt;
+                      | &lt;abbr title=&quot;Delete the shadow copy exposed at the specified drive letter or mount point. Specify mount points as c:\mountPoint or by the drive letter such as S:&quot;&gt;exposed&lt;/abbr&gt; {&lt;i&gt;Drive&lt;/i&gt; | &lt;i&gt;MountPoint&lt;/i&gt;}]
+  &lt;abbr title=&quot;End a full backup session and issue a BackupComplete event with the appropriate writer state, if needed&quot;&gt;end backup&lt;/abbr&gt;
+  &lt;abbr title=&quot;End a restore session and issue a PostRestore event to involved writers&quot;&gt;end restore&lt;/abbr&gt;
+  &lt;abbr title=&quot;Execute a file on the local computer. The file can be a cmd script&quot;&gt;exec &lt;i&gt;ScriptFile.cmd&lt;/i&gt;&lt;/abbr&gt;
+  &lt;abbr title=&quot;Exit DiskShadow&quot;&gt;exit&lt;/abbr&gt;
+  &lt;abbr title=&quot;Expose a persistent shadow copy as a drive letter, share, or mount point.&quot;&gt;expose&lt;shadowid&gt;&lt;/shadowid&gt;&lt;/abbr&gt; {&lt;i&gt;Drive&lt;/i&gt;: | &lt;i&gt;Share&lt;/i&gt; | &lt;i&gt;&lt;abbr title=&quot;e.g. C:\shadowcopy\&quot;&gt;MountPoint&lt;/abbr&gt;&lt;/i&gt;}
+  &lt;abbr title=&quot;Import a transportable shadow copy from a loaded metadata file into the system.&quot;&gt;import&lt;/abbr&gt;
+  &lt;abbr title=&quot;display help&quot;&gt;list&lt;/abbr&gt;
+  list &lt;u&gt;&lt;abbr title=&quot;List the identity and status of writers, and display metadata such as component details and excluded files&quot;&gt;writers&lt;/abbr&gt;&lt;/u&gt; [metadata | &lt;abbr title=&quot;include the full file list for all components&quot;&gt;detailed&lt;/abbr&gt; | &lt;abbr title=&quot;List only the identity and status of registered writers&quot;&gt;status&lt;/abbr&gt;]
+  list &lt;abbr title=&quot;List persistent and existing non-persistent shadow copies that are on the system&quot;&gt;shadows&lt;/abbr&gt; {all | &lt;abbr title=&quot;List shadow copies that belong to the specified Shadow Copy Set ID&quot;&gt;set&lt;/abbr&gt; &lt;i&gt;SetID&lt;/i&gt; | &lt;abbr title=&quot;List any shadow copy with the specified shadow copy ID&quot;&gt;id&lt;/abbr&gt; &lt;i&gt;ShadowID&lt;/i&gt;}
+  list &lt;abbr title=&quot;Lists shadow copy providers that are currently registered on the system&quot;&gt;providers&lt;/abbr&gt;
+  &lt;abbr title=&quot;display help&quot;&gt;load metadata&lt;/abbr&gt;
+  load &lt;abbr title=&quot;Location of the metadata file to load&quot;&gt;metadata&lt;/abbr&gt; [&lt;i&gt;Drive&lt;/i&gt;:][&lt;i&gt;Path&lt;/i&gt;]&lt;i&gt;MetaData.cab&lt;/i&gt;
+  &lt;abbr title=&quot;Remove hardware shadow copies that were imported by using the import command&quot;&gt;mask&lt;/abbr&gt; &lt;i&gt;ShadowSetID&lt;/i&gt;
+  &lt;abbr title=&quot;Reset DiskShadow.exe to the default state. Reset is useful for separating compound DiskShadow operations such as create, import, backup, or restore&quot;&gt;reset&lt;/abbr&gt;
+  &lt;abbr title=&quot;Display help&quot;&gt;revert&lt;/abbr&gt;
+  &lt;abbr title=&quot;Revert a volume back to a specified shadow copy. This is supported only for shadow copies in the CLIENTACCESSIBLE context. These shadow copies are persistent and can only be made by the system provider&quot;&gt;revert&lt;/abbr&gt; &lt;i&gt;ShadowCopyID&lt;/i&gt;
+  &lt;abbr title=&quot;List all current settings&quot;&gt;set&lt;/abbr&gt;
+  set &lt;abbr title=&quot;Set the context for shadow copy creation.&quot;&gt;context&lt;/abbr&gt; {&lt;abbr title=&quot;the shadow copy is usable by client versions of Windows&quot;&gt;clientaccessible&lt;/abbr&gt; | &lt;abbr title=&quot;the shadow copy persists across program exit, reset, or restart&quot;&gt;persistent&lt;/abbr&gt; [&lt;abbr title=&quot;all writers are excluded&quot;&gt;nowriters&lt;/abbr&gt;] | &lt;abbr title=&quot;Delete the shadow copy on exit or reset.&quot;&gt;volatile&lt;/abbr&gt; [&lt;abbr title=&quot;all writers are excluded&quot;&gt;nowriters&lt;/abbr&gt;]}
+  set option {[&lt;abbr title=&quot;Specifies to the provider the type of shadow copy to create&quot;&gt;differential | plex&lt;/abbr&gt;]
+                 [&lt;abbr title=&quot;Specifies that the shadow copy is not to be imported yet. The metadata .cab file can later be used to import the shadow copy to the same or a different computer&quot;&gt;transportable&lt;/abbr&gt;]
+                    &lt;b&gt;[&lt;/b&gt; [&lt;abbr title=&quot;Signals writers to use autorecover during the PostSnapshot event. This is useful if the shadow copy will be used for rollback (for example, with data mining)&quot;&gt;rollbackrecover&lt;/abbr&gt;] [&lt;abbr title=&quot;Requests VSS to make the shadow copy transactionally consistent during creation&quot;&gt;txfrecover&lt;/abbr&gt;]
+                        | [&lt;abbr title=&quot;Stop writers and the file system from performing any recovery changes to the shadow copy to a transactionally consistent state. Noautorecover cannot be used with txfrecover or rollbackrecover&quot;&gt;noautorecover&lt;/abbr&gt;] &lt;b&gt;]&lt;/b&gt;}
+  set &lt;abbr title=&quot;Provide verbose output during shadow copy creation&quot;&gt;verbose&lt;/abbr&gt; {on|off}
+  set &lt;abbr title=&quot;Set the name and location of the shadow creation metadata file used to transfer shadow copies from one computer to another.&quot;&gt;metadata&lt;/abbr&gt; &lt;i&gt;MetaData.cab&lt;/i&gt;
+  &lt;abbr title=&quot;Test writer involvement in restore sessions on the computer, after loading a DiskShadow metadata file but without issuing PreRestore or PostRestore events to writers&quot;&gt;simulate restore&lt;/abbr&gt;
+  &lt;abbr title=&quot;Unexpose a shadow copy that was exposed by using the expose command&quot;&gt;unexpose&lt;/abbr&gt; {&lt;i&gt;&lt;abbr title=&quot;Unexpose the shadow copy specified by the given Shadow ID&quot;&gt;ShadowID&lt;/abbr&gt;&lt;/i&gt; | &lt;i&gt;&lt;abbr title=&quot;Unexpose the shadow copy associated with the specified drive letter&quot;&gt;Drive&lt;/abbr&gt;&lt;/i&gt;: | &lt;i&gt;&lt;abbr title=&quot;Unexpose the shadow copy associated with the specified share&quot;&gt;Share&lt;/abbr&gt;&lt;/i&gt; | &lt;i&gt;&lt;abbr title=&quot;Unexpose the shadow copy associated with the specified mount point (for example, C:\shadowcopy\)&quot;&gt;MountPoint&lt;/abbr&gt;&lt;/i&gt;}
+  writer &lt;abbr title=&quot;Verifies that the specified writer or component is included in the backup or restore procedure. The backup or restore procedure will fail if the writer or component is not included.&quot;&gt;verify&lt;/abbr&gt; [&lt;i&gt;Writer&lt;/i&gt; | &lt;i&gt;Component&lt;/i&gt;]
+  writer &lt;abbr title=&quot;Exclude the specified writer or component from the backup or restore procedure. &quot;&gt;exclude&lt;/abbr&gt; [&lt;i&gt;Writer&lt;/i&gt; | &lt;i&gt;Component&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+See hover text above.</p></pre><p></p>
+<p>DiskShadow.exe replaces vshadow in Windows Server 2008 onwards (vshadow is still available for backwards compatibility). DiskShadow is not supported on Windows Server 2003 or Vista.</p>
+<p>A shadow copy allows you to take manual or automatic backup copies or snapshots of data  at a specific point in time over regular intervals. Using a shadow copy avoids problems with file locking, by creating a <b>read-only</b> copy of the volume, backup programs are able to access every file with no other programs able to lock those same files, this simplifies the creation of consistent backup.</p>
+<p>A shadow copy is not created every time a file is changed; backup copies are created automatically once per day, or manually when triggered by a backup  or installer application.</p>
+<p><b><abbr title="The shadow copy is not deleted following the termination of a backup operation">Persistent</abbr></b> shadow copies can only be made  for NTFS volumes.<br> 
+Nonpersistent (volatile) shadow copies can be made for NTFS and non-NTFS volumes.</p>
+<p>In Windows 8 the ability to create persistent shadow copies (<i>Previous Versions</i>) will be removed. The Shadow Copy service will only be able to create <b>volatile</b> shadow copies for backup purposes.</p>
+<p>Shadow copies on an NTFS volume will be deleted if the NTFS volume is subsequently mounted on an older operating system,  either by dual booting or by moving the hard drive.</p>
+<p>Use DiskShadow to:</p>
+<ul>
+<li> Create a hardware or software shadow copy that can be subsequently exposed as a read-only volume.</li>
+<li> Create a hardware transportable shadow copy that can be imported on a different computer - used for backups or data mining.</li>
+<li> Import a shadow copy created earlier to replace a volume that has become corrupt.</li>
+<li> Convert a shadow copy into a read-write volume.</li>
+</ul>
+<p><b>Examples:</b><br>
+<br>
+List all shadows, including their aliases:<br>
+<span class="code">list shadows all</span></p>
+<p>Remove the imported shadow copy %Import_1%:<br>
+<span class="code">mask %Import_1%</span></p>
+<p>Create a VSS snapshop of  drive D: and expose it as Read-Only drive  S: <br>
+<span class="code">diskshadow.exe<br>
+Set context persistent<br>
+ADD volume D: alias ddrive<br>
+Set verbose on<br>
+CREATE<br>
+expose %ddrive% S:</span><br>
+Now backup the contents of S: (with copy or robocopy)<br>
+When no longer needed, delete the snapshop and remove S:<br>
+<span class="code">DELETE shadows volume D:<br>
+unexpose S:<br>
+</span></p>
+<p>Create a VSS snapshop of drive D: <br>
+<span class="code">diskshadow.exe<br>
+Set context persistent<br>
+Set option TRANSPORTABLE<br>
+Set metadata C:\docs\ss64.cab<br>
+</span><span class="code">
+ADD VOLUME D:<br>
+CREATE<br>
+END BACKUP<br>
+</span>#The (transportable) shadow copy is not in the system yet.<br>
+#You can reset or exit now if you wish.<br>
+# Import the diskshadow <br>
+<span class="code"> Load metadata C:\docs\ss64.cab<br>
+IMPORT</span><br>
+#The shadow copy will now be loaded into the system.</p>
+<p><i class="quote">“I don't need a friend who changes when I change and who nods when I nod; my shadow does that much better” ~&nbsp;Plutarch</i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="diskpart.html">DISKPART</a> - Disk Administration<br>
+Vssadmin - Volume Shadow Copy (Windows 2003)<br>
+<a href="http://blogs.technet.com/b/askcore/archive/2011/04/13/where-s-my-disk-space.aspx" target="_blank" rel="external">Where’s my disk space</a> - Jeff Hughes [MSFT]</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/diskshadow.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

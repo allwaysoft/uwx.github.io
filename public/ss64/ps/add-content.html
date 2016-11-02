@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Add-Content 
+Append content to a specified item or file. You can specify the content by typing the content in the command or by specifying an object that contains the content.
+Syntax
+      Add-Content">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/add-content.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Add-Content 
+Append content to a specified item or file. You can specify the content by typing the content in the command or by specifying an object that contains the content.
+Syntax
+      Add-Content">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Add-Content 
+Append content to a specified item or file. You can specify the content by typing the content in the command or by specifying an object that contains the content.
+Syntax
+      Add-Content">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Add-Content </h1>
+<p>Append content to a specified item or file. You can specify the content by typing the content in the command or by specifying an <i>object</i> that contains the content.</p>
+<pre>Syntax
+      Add-Content <b>[</b> [-path] <b>|</b> -literalPath <b>]</b> <i>string</i>[] [-value] <i>Object</i>[] 
+         [-include <i>string</i>[]] [-exclude <i>string</i>[]]
+            [-filter <i>string</i>] [-Encoding <i>CharSet</i>]
+               [-passThru] [-force] [-credential <i>PSCredential</i>]
+                  [-confirm] [-whatIf] [-UseTransaction] [<a href="common.html"><i>CommonParameters</i></a>]
+<pre><code>  Add-Content [&lt;b&gt;-Encoding&lt;/b&gt; {Unknown | String | Unicode | Byte | BigEndianUnicode
+                        | UTF8 | UTF7 | UTF32 | Ascii | Default | Oem}]
+     [-Force] [-Stream &lt;i&gt;string&lt;/i&gt;]
+        [-Confirm] [-WhatIf] [-UseTransaction] [&lt;a href=&quot;common.html&quot;&gt;&lt;i&gt;CommonParameters&lt;/i&gt;&lt;/a&gt;]
+</code></pre>
+<p>Key<br>
+-Path <i>path</i><br>
+The path to the item {may be piped} Wildcards are permitted.<br>
+If you specify multiple paths, use commas to separate the paths.</p>
+<p>-LiteralPath <i>string</i>[]<br>
+Path to the items. No wildcards.<br>
+The value is used exactly as typed.<br>
+If the path includes escape characters, enclose it in single quotation marks.</p>
+<p>-Include <i>string</i>[]<br>
+Qualify the Path parameter. Enter a path or wildcard pattern: “*.txt”</p>
+<p>-Exclude <i>string</i>[]<br>
+Omit the specified items. Enter a path or wildcard pattern: “*.txt”</p>
+<p>-Filter <i>string</i>[]<br>
+A filter in the provider’s format or language.<br>
+The exact syntax of the filter (wildcard support etc) depends on the provider.<br>
+Filters are more efficient than -include/-exclude, because the provider<br>
+applies the filter when retrieving the objects, rather than having<br>
+PowerShell filter the objects after they are retrieved.</p>
+<p>-Value <i>Object</i>[]<br>
+The content to be added. Type a quoted string, such as &quot;Sample text&quot;<br>
+or specify an object that contains content, such as the DateTime object<br>
+that Get-Date generates.<br>
+You cannot specify the contents of a file by typing its path, because<br>
+the path is just a string, but you can use a <a href="get-content.html">Get-Content</a> command to get<br>
+the content and pass it to the Value parameter.</p>
+<p>-PassThru<br>
+Pass the object created by this cmdlet through the pipeline.</p>
+<p>-Force<br>
+Override restrictions that prevent the command from succeeding, just<br>
+so the changes do not compromise security. For example, Force will<br>
+override the read-only attribute or create directories to complete a<br>
+file path, but it will not attempt to change file permissions.</p>
+<p>-Credential <i>PSCredential</i><br>
+Present a user/password credential to validate access to the file.<br>
+This is not yet supported in any Windows PowerShell core commands.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command without actually executing it.</p>
+<p>-UseTransaction<br>
+Include the command in the active <a href="syntax-transactions.html">transaction</a>.</p>
+<p>-Encoding <i>CharSet</i>[<b>Dynamic Parameter (FileSystem Only)</b>]<br>
+Encode in a specific character set:<br>
+Unknown           Unknown or invalid. The data can be treated as binary.<br>
+String            Use the encoding type for a string.<br>
+Unicode           UTF-16 format little-endian byte order.<br>
+Byte              Encode characters as a sequence of bytes.<br>
+BigEndianUnicode  UTF-16 format big-endian byte order.<br>
+UTF8              UTF-8 format.<br>
+UTF7              UTF-7 format.<br>
+ASCII             ASCII (7-bit) character set.</p>
+<p>-Stream <i>string</i><br>
+Add the content to the specified <a href="http://en.wikipedia.org/wiki/NTFS#Alternate_data_streams_.28ADS.29" target="_blank" rel="external">alternate data stream</a>.<br>
+If the stream does not yet, exist, Add-Content creates it.<br>
+Enter the stream name. Wildcards are not supported.<br>
+Stream is a dynamic FileSystem parameter (PowerShell 3.0+)</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Add-Content: <b><span class="code">ac</span></b></p>
+<p><b>Examples</b></p>
+<p>Add a text string to the end of every .TXT file in the current  directory:</p>
+<p><span class="code">C:\PS&gt; add-content -path *.txt -value "This is the end"</span></p>
+<p> Add the content of the file Cats.txt to the end of the file Pets.txt: </p>
+<p><span class="code">C:\PS&gt; add-content -path pets.txt -value (get-content c:\docs\cats.txt)</span></p>
+<blockquote>
+<p>The parentheses above insure  <span class="code">Get-Content</span>  can complete before the <span class="code">Add-Content</span> starts. <br>
+We specify <span class="code"> -value</span> to pass the contents of the file (rather than an object.)</p>
+</blockquote>
+<p>Add the current date to a logfile: </p>
+<p><span class="code">C:\PS&gt; add-content -Path MyLogfile.txt -Value (get-date) -passthru</span><br>
+<br>The -passthru option will <b>display</b> the  content as it is added, it actually passes an <i>object</i> through the pipeline, which by default is passed back to the command line.</p>
+<p><i>“Content is king” - Webmonkey @Wired.com circa 1996 </i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="get-content.html">Get-Content</a> - Get content from item (specific location)<a href="set-content.html"><br>
+Set-Content</a> - Set content in the item (specific location) <a href="clear-content.html"><br>
+Clear-Content</a> - Remove content from a file/item<br>
+<a href="syntax-esc.html">Escape characters, Delimiters and Quotes</a> - Add special characters (newlines, tabs etc) <br>
+<a href="get-item.html">Get-Item</a> - Get a file object or get a registry (or other namespace) object<br>
+<a href="get-help.html">get-help</a> - about_namespace</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/add-content.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

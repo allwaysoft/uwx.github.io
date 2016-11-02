@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mount 
+mount a file system
+  All files accessible in a Unix system are arranged in one big tree, the file 
+  hierarchy, rooted at /. These files can be spread out over several devices. 
+  The mount co">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/mount.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="mount 
+mount a file system
+  All files accessible in a Unix system are arranged in one big tree, the file 
+  hierarchy, rooted at /. These files can be spread out over several devices. 
+  The mount co">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="mount 
+mount a file system
+  All files accessible in a Unix system are arranged in one big tree, the file 
+  hierarchy, rooted at /. These files can be spread out over several devices. 
+  The mount co">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>mount</h1> 
+<p>mount a file system<span class="body"><br>
+  All files accessible in a Unix system are arranged in one big tree, the file 
+  hierarchy, rooted at /. These files can be spread out over several devices. 
+  The mount command serves to attach the file system found on some device to the 
+  big file tree.</span><br>
+  The system maintains a list of currently mounted file systems. If no arguments 
+are given to mount, this list is printed. </p>
+<pre>Syntax
+      mount [-adfruvw] [-t <i>ufs</i> | <i>lfs</i> | <i>external_type</i>]
+<pre><code>  mount [-dfruvw] special | node
+
+  mount [-dfruvw] [-o &lt;i&gt;options&lt;/i&gt;] [-t &lt;i&gt;ufs&lt;/i&gt; | &lt;i&gt;lfs&lt;/i&gt; | &lt;i&gt;external_type&lt;/i&gt;] special node
+</code></pre>
+<p>Options<br>
+<b>-a</b>  All the filesystems described in <b>fstab(5)</b> are mounted.  Excep-<br>
+tions are those marked as <code></code>noauto’’ or are excluded by the <b>-t</b><br>
+flag (see below).</p>
+<p><b>-d</b>  Causes everything to be done except for the actual system call.<br>
+This option is useful in conjunction with the <b>-v</b> flag to deter-<br>
+mine what the <b>mount</b> command is trying to do.</p>
+<p><b>-f</b>  Forces the revocation of write access when trying to downgrade a<br>
+filesystem mount status from read-write to read-only.</p>
+<p><b>-o</b>  Options are specified with a <b>-o</b> flag followed by a comma sepa-<br>
+rated string of options.  The following options are available:</p>
+<pre><code>   async   All I/O to the file system should be done asynchronously.
+     This can be somewhat dangerous with respect to losing
+     data when faced with system crashes and power outages.
+     This is also the default.  It can be avoided with the
+     &lt;i&gt;noasync&lt;/i&gt; option.
+
+   force   The same as &lt;b&gt;-f&lt;/b&gt;; forces the revocation of write access
+     when trying to downgrade a filesystem mount status from
+     read-write to read-only.
+
+   noasync
+     This filesystem should not force all I/O to be written
+     asynchronously.
+
+   noauto  This filesystem should be skipped when mount is run with
+     the &lt;b&gt;-a&lt;/b&gt; flag.
+
+   nodev   Do not interpret character or block special devices on
+     the file system.  This option is useful for a server that
+     has file systems containing special devices for architec-
+     tures other than its own.
+
+   noexec  Do not allow execution of any binaries on the mounted
+     file system.  This option is useful for a server that has
+     file systems containing binaries for architectures other
+     than its own.
+
+   nosuid  Do not allow set-user-identifier or set-group-identifier
+     bits to take effect.
+
+   rdonly  The same as &lt;b&gt;-r&lt;/b&gt;; mount the file system read-only (even the
+     super-user can not write it).
+
+   sync    All I/O to the file system should be done synchronously.
+
+   update  The same as &lt;b&gt;-u&lt;/b&gt;; indicate that the status of an already
+     mounted file system should be changed.
+
+   union   Causes the namespace at the mount point to appear as the
+     union of the mounted filesystem root and the existing
+     directory.   Lookups will be done in the mounted filesys-
+     tem first.   If those operations fail due to a non-exis-
+     tent file the underlying directory is then accessed.  All
+     creates are done in the mounted filesystem.
+
+   Any additional options specific to a filesystem type that is not
+   one of the internally known types (see the &lt;b&gt;-t&lt;/b&gt; option) can be
+   passed as a comma separated list; these options are distinguished
+   by a leading <code></code>-'' (dash).   Options that take a value are speci-
+   fied using the syntax -option=value.  For example, the mount com-
+   mand:
+   mount -t hfs -o nosuid,-w,-m=755 /dev/disk2s9 /tmp
+
+   causes &lt;b&gt;mount&lt;/b&gt; to execute the equivalent of:
+
+   /sbin/mount_hfs -o nosuid -w -m 755 /dev/disk2s9 /tmp
+</code></pre>
+<p><b>-r</b>  The file system is to be mounted read-only.  Mount the file sys-<br>
+tem read-only (even the super-user can not write it).  The same<br>
+as the <code></code>rdonly’’ argument to the <b>-o</b> option.</p>
+<p><b>-t</b> <i>ufs</i> | <i>lfs</i> | <i>external</i> <i>type</i></p>
+<p>The argument following the <b>-t</b> is used to indicate the file system<br>
+type.  The type <i>ufs</i> is the default.  The <i>-t</i> option can be used to<br>
+indicate that the actions should only be taken on filesystems of<br>
+the specified type.  More than one type can be specified in a<br>
+comma separated list.  The list of filesystem types can be pre-<br>
+fixed with <code></code>no’’ to specify the filesystem types for which<br>
+action should <i>not</i> be taken.  For example, the <b>mount</b> command:</p>
+<pre><code> mount -a -t nonfs,hfs
+</code></pre>
+<p>mounts all filesystems except those of type NFS and HFS.</p>
+<p>If the type is not one of the internally known types, mount will<br>
+attempt to execute a program in <i>/sbin/mount</i><b><em></em></b><i>XXX</i> where <i>XXX</i> is<br>
+replaced by the type name.   For example, nfs filesystems are<br>
+mounted by the program <i>/sbin/mount</i><b></b><i>nfs</i>.</p>
+<p><b>-u</b>  The <b>-u</b> flag indicates that the status of an already mounted file<br>
+system should be changed.  Any of the options discussed above<br>
+(the <b>-o</b> option) can be changed; also a file system can be changed<br>
+from read-only to read-write or vice versa.  An attempt to change<br>
+from read-write to read-only will fail if any files on the<br>
+filesystem are currently open for writing unless the <b>-f</b> flag is<br>
+also specified.  The set of options is determined by first<br>
+extracting the options for the file system from the fstab table,<br>
+then applying any options specified by the <b>-o</b> argument, and<br>
+finally applying the <b>-r</b> or <b>-w</b> option.</p>
+<p><b>-v</b>  Verbose mode.</p>
+<p><b>-w</b>  The file system object is to be read and write.</p>
+<p>The options specific to NFS filesystems are described in the<br>
+<b>mount_nfs(8)</b> manual page.</p></pre><p></p>
+<p>The mount command calls the mount(2) system call to prepare and graft a special device or the remote node (rhost:path) on to the file system tree at the point node. If either <span class="code">special</span> or <span class="code">node</span> are not 
+provided, the appropriate information is taken from the fstab(5) file.<b><br><br>
+</b><i class="quote">“The Ten Commandments and the Sermon on the Mount contain my religion” ~ John Adams</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man8/mount.8.html" target="_blank" rel="external">mount man page</a> - Apple.com<br>
+<a href="bless.html">  bless</a> - Set volume bootability and startup disk options.<br>
+<a href="diskutil.html">diskutil</a> - Disk utilities - Format, Verify, Repair<br>
+<a href="df.html">df</a> - Display free disk space<br>
+<a href="hdiutil.html">hdiutil</a> - manipulate disk images<br>
+<a href="sharing.html">sharing</a> - Create share points for afp, ftp and smb services<br>
+<a href="umount.html"><span class="body">umount</span></a><span class="body"> - detach/u</span>nmount a device</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="mount.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/mount.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

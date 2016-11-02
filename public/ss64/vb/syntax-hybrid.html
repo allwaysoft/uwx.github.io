@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hybrid Batch and VBscript 
+ If you need to run both a batch file and a VBScript, the most simple method is to have, two separate files and run one from another, but that does require both the scripts">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/vb/syntax-hybrid.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Hybrid Batch and VBscript 
+ If you need to run both a batch file and a VBScript, the most simple method is to have, two separate files and run one from another, but that does require both the scripts">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:19.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Hybrid Batch and VBscript 
+ If you need to run both a batch file and a VBScript, the most simple method is to have, two separate files and run one from another, but that does require both the scripts">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_vbsyntax.lbi" --><!-- #EndLibraryItem --><h1>Hybrid Batch and VBscript</h1> 
+<p> If you need to run both a batch file and a VBScript, the most simple method is to have, two separate files and <a href="syntax-run.html">run one from another</a>, but that does require both the scripts to be in the same folder (or in some known location)</p>
+<p>A hybrid script is a single script containing both batch commands and VBscript commands, the way this normally works is to use redirection to create a temporary vbscript file.</p>
+<p>For example to generate a one line VBScript containing <span class="code">wscript.echo "Hello world"</span>, you can do<br>
+<span class="code"><b>Echo  </b>wscript.echo "Hello world" <b>&gt; %temp%\~hi.vbs</b><br>
+cscript //nologo %temp%\~hi.vbs
+</span></p>
+<p>The variable <span class="code">%temp%</span> will expand to the users temporary files folder.</p>
+<p>Writing  longer hybrid scripts can involve a lot of Echo and redirection commands, one for every line, so there are several techniques which can be used to make this less verbose, using variables to hold the repeated commands/options, or as below using a comment (<span class="code">'VBS</span>) at the end of every VBScript line and then using Findstr to extract the VBScript. <br>
+The expression <span class="code">%~f0</span> resolves to the full path of the batch file, so this allows the script to search itself:</p>
+<pre>@Echo off
+Setlocal
+Echo This is a Batch file
+FINDSTR /E "<b>'VBS</b>" "%~f0 &gt;%temp%\~temp.vbs
+cscript //nologo %temp%\~temp.vbs
+Del %temp%\~temp.vbs
+Echo All Done.
+EXIT
+<p>Sub Demo <b>'VBS</b><br>
+wscript.echo “Welcome to VBScript” <b>'VBS</b><br>
+End Sub <b>'VBS</b></p>
+<p>demo <b>'VBS</b><br>
+wscript.quit 0 <b>'VBS</b></p></pre><p></p>
+<p><span class="quote">“I've actually made a prediction that within 30 years a majority of new cars made in the United States will be electric. And I don't mean hybrid, I mean fully electric” ~ Elon Musk</span></p>
+<p><b>Related</b></p>
+<p> <a href="http://stackoverflow.com/questions/9074476/is-it-possible-to-embed-and-execute-vbscript-within-a-batch-file-without-using-a" target="_blank" rel="external">Hybrid scripts <i>without</i> a temporary file</a> - StackOverflow<br>
+<a href="syntax-run.html">Run a script from VBScript</a><br>
+<a href="../ps/syntax-run.html">Run a script from PowerShell </a><br>
+<a href="../nt/syntax-run.html">Run a script from the CMD shell</a></p><!-- #BeginLibraryItem "/Library/foot_vb.lbi" --><p>
+<!-- VB300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1683739502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-hybrid.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/vb/syntax-hybrid.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

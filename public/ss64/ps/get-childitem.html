@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-ChildItem 
+Get  the items and child items in a folder or registry key. (dir / ls / gci)
+Syntax
+      Get-ChildItem [ [-path] string[] | [-literalPath] string[] ] 
+         [[-filter] string] [-inc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-childitem.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-ChildItem 
+Get  the items and child items in a folder or registry key. (dir / ls / gci)
+Syntax
+      Get-ChildItem [ [-path] string[] | [-literalPath] string[] ] 
+         [[-filter] string] [-inc">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-ChildItem 
+Get  the items and child items in a folder or registry key. (dir / ls / gci)
+Syntax
+      Get-ChildItem [ [-path] string[] | [-literalPath] string[] ] 
+         [[-filter] string] [-inc">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-ChildItem</h1> 
+<p>Get  the items and child items in a folder or registry key. (dir / ls / gci)</p>
+<pre>Syntax
+      Get-ChildItem <b>[</b> [-path] <i>string</i>[] <b>|</b> [-literalPath] <i>string</i>[] <b>]</b> 
+         [[-filter] <i>string</i>] [-include <i>string</i>[]]  [-exclude <i>string</i>[]] [-name] 
+            [-recurse] [-force] [-UseTransaction] [<i>CommonParameters</i>]
+<p>Key<br>
+-path <i>string</i><br>
+The paths to the items from which content is to be retrieved.<br>
+Wildcards are permitted. Default is the current directory (.)</p>
+<p>-literalPath <i>string</i><br>
+Like Path above, only the value is used exactly as typed.<br>
+No characters are interpreted as wildcards. If the path includes any<br>
+escape characters then enclose the path in single quotation marks.</p>
+<p>-include <i>string</i><br>
+Include only the specified items from the Path. e.g. ‘May*’</p>
+<p>-exclude <i>string</i><br>
+Omit the specified items from the Path e.g. ‘<em>SS64</em>’</p>
+<p>-filter <i>string</i><br>
+A filter in the provider’s format or language.<br>
+The exact syntax of the filter (wildcard support etc) depends on the provider.<br>
+Filters are more efficient than -include/-exclude, because the provider<br>
+applies the filter when retrieving the objects, rather than having<br>
+PowerShell filter the objects after they are retrieved.</p>
+<p>-name<br>
+Retrieve only the names of the items.<br>
+This is useful when piping the names of the child items to another command.</p>
+<p>-recurse<br>
+Get the items plus all child items of the location(s).<br>
+Only for paths that point to a container such as C:\Windows or C:\Windows*<br>
+A path such as *.txt will not have any child items.</p>
+<p>-force<br>
+Get all items including hidden or system files, but will not override<br>
+security/file permissions.</p>
+<p>-UseTransaction<br>
+Include the command in the active <a href="syntax-transactions.html">transaction</a>.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Get-ChildItem:<span class="code"> dir, list, ls, <b>gci</b></span></p>
+<p>When listing files and sub-directories, get-childitem will return the mode (attributes), last write time, file size (length), and the filename.<br>
+Valid modes (attributes) are: <span class="code">d</span> (directory), <span class="code">a</span> (archive), <span class="code">r</span> (read-only), <span class="code">h</span> (hidden), and <span class="code">s</span> (system).</p>
+<p>The default path is the current directory  ' . ' <br>
+To specify all  the items in the current directory use '<span class="code">*</span>'</p>
+<p><b>Wildcards</b></p>
+<p>When listing a single folder (without recursion), you can do
+<span class="code">get-childitem c:\music\*.mp3</span><br>
+Unlike  the CMD shell, in PowerShell the path filter of <span class="code">c:\music\*.mp3</span> is applied only to files not folders (or other containers)<br>
+The way 
+to apply a wildcard recursively to a whole tree of items in PowerShell is to use the -include parameter:<br> 
+<span class="code">get-childitem c:\music\ -include *.mp3 -recurse</span><br>
+<br>
+This change in syntax was required because some providers (such as the registry provider) allow backslashes in a value name, separating the -path from the -include string makes it possible to use <span class="code">get-childitem</span> against any provider: files, registry, processes etc.</p>
+<p><b>Examples</b></p>
+<p>Get   the child items in the current location:<br>
+<span class="code">PS C:\&gt; get-childitem</span><br>
+<br>
+List all the .XLS files in a folder and all sub-folders:<br>
+<span class="code">PS C:\&gt; $a = get-childitem \\Server64\Work\ -Include *.xls -Recurse</span><br>
+<span class="code">PS C:\&gt; $a.Count</span></p>
+<p> List all the .XLS files in a folder:<br>
+<span class="code">PS C:\&gt; get-childitem \\Server64\Work\* -Include *.xls</span></p>
+<p>List all the files owned by BillG:<span class="code"><br>
+PS C:\&gt; PS C:\&gt; get-childitem C:\Work\ -recurse | get-acl | where {$_.Owner -match "BillG"}</span></p>
+<p>Get a list of sub-folder names and store in $folders<span class="code"><br>
+PS C:\&gt; $folders = gci 'C:\YourDir' | Where-Object{($_.PSIsContainer)} | foreach-object{$_.Name}</span></p>
+<p>Measure the size of a folder:<br>
+<span class="code">PS C:\&gt; Get-ChildItem C:\Work\ -Recurse -Force |
+<a href="measure-object.html">Measure-Object</a> -property length -sum </span></p>
+<p>Get all the certificates in the certificate store, use the dynamic parameter <span class="code">-codesigningcert</span> to get only certificates with code-signing authority. ( see "get-help certificate" for more)<br>
+<span class="code">PS C:\&gt; get-childitem cert:\. -recurse -codesigningcert</span></p>
+<p class="quote"><i>“You [humans] think that you an insignificant, while there is a great universe contained in you” ~ Ali ibn Abi Talib</i></p>
+<p><b>Related:</b></p>
+<p><a href="syntax-wildcards.html">Wildcards</a> - Match multiple items.<br>
+<a href="get-item.html">Get-Item</a> - Get a file object or get a registry (or other namespace) object.<br>    
+<a href="get-location.html">Get-Location</a> - Display the current location.<br>    
+<a href="join-path.html">Join-Path -resolve</a> - Combine a path and child-path.</p>
+<!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-childitem.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-childitem.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

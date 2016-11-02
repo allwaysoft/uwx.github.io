@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ALTER ENDPOINT
+Alter an endpoint - set properties.
+Syntax
+      ALTER ENDPOINT endPoint [AUTHORIZATION login]
+         [STATE = {STARTED | STOPPED | DISABLED} ]
+            AS {HTTP | TCP } (protocol">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/endpoint_a.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ALTER ENDPOINT
+Alter an endpoint - set properties.
+Syntax
+      ALTER ENDPOINT endPoint [AUTHORIZATION login]
+         [STATE = {STARTED | STOPPED | DISABLED} ]
+            AS {HTTP | TCP } (protocol">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.682Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ALTER ENDPOINT
+Alter an endpoint - set properties.
+Syntax
+      ALTER ENDPOINT endPoint [AUTHORIZATION login]
+         [STATE = {STARTED | STOPPED | DISABLED} ]
+            AS {HTTP | TCP } (protocol">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1> ALTER ENDPOINT</h1>
+<p>Alter an endpoint - set properties.</p>
+<pre>Syntax
+      ALTER ENDPOINT <i>endPoint</i> [AUTHORIZATION <i>login</i>]
+         [STATE = {STARTED | <u>STOPPED</u> | DISABLED} ]
+            AS {HTTP | TCP } (<i>protocol_specific_arguments</i>)
+               FOR {SOAP | TSQL | SERVICE_BROKER | DATABASE_MIRRORING} (<i>language_specific_arguments</i>)
+<p><i>AS HTTP_protocol_specific_arguments</i><br>
+AS HTTP (<br>
+PATH = ‘url’<br>
+[[ , ] AUTHENTICATION = ( { BASIC | DIGEST | INTEGRATED | NTLM | KERBEROS } [ ,…<i>n</i> ] )<br>
+[[ , ] PORTS = ( { CLEAR | SSL} [ ,…<i>n</i> ] )<br>
+[[ , ] [SITE = {’*’ | ‘+’ | ‘<i>webSite</i>’ },]<br>
+[[ , ] CLEAR_PORT = clearPort ]<br>
+[[ , ] SSL_PORT = SSLPort ]<br>
+[[ , ] AUTH_REALM = { ‘realm’ | <u>NONE</u> } ]<br>
+[[ , ] DEFAULT_LOGON_DOMAIN = { ‘domain’ | <u>NONE</u> } ]<br>
+[[ , ] COMPRESSION = { ENABLED | <u>DISABLED</u> } ]<br>
+)<br>
+<i><br>
+AS TCP_protocol_specific_arguments</i><br>
+AS TCP (<br>
+LISTENER_PORT = listenerPort<br>
+[[ , ] LISTENER_IP = <u>ALL</u> | ( 4-part-ip ) | ( “ip_address_v6” ) ]<br>
+)<br>
+<i><br>
+FOR SOAP_language_specific_arguments</i><br>
+FOR SOAP(<br>
+[{ WEBMETHOD [ ‘<i>namespace</i>’ .] ‘<i>method_alias</i>’<br>
+(   NAME = ‘<i>database.schema.name</i>’<br>
+[[ , ] SCHEMA = { NONE | STANDARD | DEFAULT } ]<br>
+[[ , ] FORMAT = { <u>ALL_RESULTS</u> | ROWSETS_ONLY | NONE } ]<br>
+)<br>
+}[ ,…<i>n</i> ] ]</p>
+<p>[ { ALTER WEBMETHOD [ ‘<i>namespace</i>’ .] ‘<i>method_alias</i>’ <br>    (   NAME = ‘<i>database.owner.name</i>’<br>      [ , SCHEMA = {NONE | STANDARD | DEFAULT} ]<br>      [ , FORMAT = { ALL_RESULTS | ROWSETS_ONLY } ]<br>    )  <br>  } [ ,…n] <br>]<br>
+[[ , ] { DROP WEBMETHOD [ ‘namespace’ .] ‘method_alias’ } [ ,…n ] ]<br>
+[[ , ] BATCHES = { ENABLED | <u>DISABLED</u> } ]<br>
+[[ , ] WSDL = { NONE | DEFAULT | ‘sp_name’ } ]<br>
+[[ , ] SESSIONS = { ENABLED | <u>DISABLED</u> } ]<br>
+[[ , ] LOGIN_TYPE = { MIXED | <u>WINDOWS</u> } ]<br>
+[[ , ] SESSION_TIMEOUT = <i>timeoutInterval</i> | NEVER ]<br>
+[[ , ] DATABASE = { ‘<i>database</i>’ | DEFAULT }<br>
+[[ , ] NAMESPACE = { ‘<i>namespace</i>’ | DEFAULT } ]<br>
+[[ , ] SCHEMA = { NONE | STANDARD } ]<br>
+[[ , ] CHARACTER_SET = { SQL | <u>XML</u> } ]<br>
+[[ , ] HEADER_LIMIT = <i>int</i> ]<br>
+)</p>
+<i>
+FOR SERVICE_BROKER_language_specific_arguments</i>
+  FOR SERVICE_BROKER (
+     [AUTHENTICATION = { 
+              WINDOWS [ { NTLM | KERBEROS | <u>NEGOTIATE</u> } ] 
+        | CERTIFICATE <i>certificate</i> 
+        | WINDOWS [ { NTLM | KERBEROS | <u>NEGOTIATE</u> } ] CERTIFICATE <i>certificate</i> 
+        | CERTIFICATE <i>certificate</i> WINDOWS [ { NTLM | KERBEROS | <u>NEGOTIATE</u> } ] 
+      }]
+     [[ , ] ENCRYPTION = { DISABLED | { { SUPPORTED | <u>REQUIRED</u> } 
+         [ ALGORITHM { <u>RC4</u> | AES | AES RC4 | RC4 AES } ] } 
+     ]
+     [[ , ] MESSAGE_FORWARDING = { ENABLED | DISABLED* } ]
+     [[ , ] MESSAGE_FORWARD_SIZE = <i>forward_size</i> ]
+  )
+<i>
+FOR DATABASE_MIRRORING_language_specific_arguments</i>
+FOR DATABASE_MIRRORING (
+   [ AUTHENTICATION = { 
+            WINDOWS [ { NTLM | KERBEROS | NEGOTIATE } ] 
+      | CERTIFICATE <i>certificate</i> 
+      | WINDOWS [ { NTLM | KERBEROS | NEGOTIATE } ] CERTIFICATE <i>certificate</i> 
+      | CERTIFICATE <i>certificate</i> WINDOWS [ { NTLM | KERBEROS | NEGOTIATE } ] 
+   [ [ [ , ] ] ENCRYPTION = { DISABLED | { { SUPPORTED | REQUIRED } 
+       [ ALGORITHM { RC4 | AES | AES RC4 | RC4 AES } ] } 
+<pre><code>] 
+</code></pre>
+<p>[ , ] ROLE = { WITNESS | PARTNER | ALL }<br>
+)</p>
+</pre>
+<p>The options above allow a choice of transport protocol - either TCP or HTTP &amp; listening port number,<br>
+and the payload language - SOAP, Transact-SQL, service broker or database mirroring.</p>
+<p>Key:</p>
+<p> AUTHORIZATION - A valid SQL Server or Windows login that is assigned ownership of the newly created endpoint object.</p>
+<p>STATE - The state of the endpoint when it is created, to change, use ALTER ENDPOINT</p>
+<p>PATH = 'url' - For a URL like http://Server01/Folder02, The Path URL is /Folder02</p>
+<p>SITE = <i>webSite</i> a specific host name for the computer.<br>
+  SITE = + all possible host names for the computer.<br>
+SITE = * all possible host names for the computer that are not otherwise explicitly reserved.</p>
+<p>COMPRESSION - If  enabled, SQL Server will honor requests where gzip encoding is accepted.</p>
+<p>BATCHES - Support for ad hoc SQL requests on the endpoint.</p>
+<p>LOGIN_TYPE - SQL or WINDOWS authentication.</p>
+<p>SESSIONS -  If ENABLED, multiple SOAP request/response message pairs can be identified as part of a single SOAP session.</p>
+<p>SESSION_TIMEOUT - Time in Seconds before a SOAP session expires.</p>
+<p>NAMESPACE - The namespace for the endpoint. The default is http://tempuri.org</p>
+<p>HEADER_LIMIT - Max size, in bytes, of the SOAP envelope header.</p>
+<p>ENCRYPTION - Negotiate for an encryption algorithm, AES RC4 = give preference to AES while RC4 AES = give preference to RC4.</p>
+<p> The default clear port number is 80, the default SSL port number is 443. <br>
+Listener port = any number between 1024 and 32767, by convention, 4022.</p>
+<p class="quote"><i>"La vie est vaine:
+Un peu d'amour,
+Un peu de haine,
+Et puis - Bonjour!" ~ Leon Montenaeken</i></p>
+<p><b>Related:</b></p>
+<p>  <a href="endpoint_c.html">CREATE ENDPOINT</a><br>
+  <a href="endpoint_d.html">DROP ENDPOINT </a><br>
+  EVENTDATA</p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="endpoint_a.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/endpoint_a.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

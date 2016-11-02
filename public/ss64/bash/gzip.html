@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="gzip 
+Compress or decompress named file(s)
+SYNTAX
+     gzip options ...
+OPTIONS
+–stdout
+–to-stdout
+-c
+Write output on standard output; keep original files unchanged.
+If there are several input files,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/gzip.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="gzip 
+Compress or decompress named file(s)
+SYNTAX
+     gzip options ...
+OPTIONS
+–stdout
+–to-stdout
+-c
+Write output on standard output; keep original files unchanged.
+If there are several input files,">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.873Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="gzip 
+Compress or decompress named file(s)
+SYNTAX
+     gzip options ...
+OPTIONS
+–stdout
+–to-stdout
+-c
+Write output on standard output; keep original files unchanged.
+If there are several input files,">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #EndLibraryItem --><h1>gzip</h1> 
+<p>Compress or decompress named file(s)</p>
+<pre>SYNTAX
+     gzip <i>options</i> ...
+<p>OPTIONS</p>
+<p>–stdout<br>
+–to-stdout<br>
+-c<br>
+Write output on standard output; keep original files unchanged.<br>
+If there are several input files, the output consists of a<br>
+sequence of independently compressed members. To obtain better<br>
+compression, concatenate all input files before compressing them.</p>
+<p>–decompress<br>
+–uncompress<br>
+-d<br>
+Decompress.</p>
+<p>–force<br>
+-f<br>
+Force compression or decompression even if the file has multiple<br>
+links or the corresponding file already exists, or if the<br>
+compressed data is read from or written to a terminal. If the<br>
+input data is not in a format recognized by <code>gzip', and if the option --stdout is also given, copy the input data without change to the standard ouput: let</code>zcat’ behave as <code>cat'. If</code>-f’ is not<br>
+given, and when not running in the background, `gzip’ prompts to<br>
+verify whether an existing file should be overwritten.</p>
+<p>–help<br>
+-h<br>
+Print a help message describing the options, then quit.</p>
+<p>–list<br>
+-l<br>
+For each compressed file, list the following fields:</p>
+<pre><code>      compressed size: size of the compressed file
+      uncompressed size: size of the uncompressed file
+      ratio: compression ratio (0.0% if unknown)
+      uncompressed_name: name of the uncompressed file
+
+      The uncompressed size is given as `-1' for files not
+       in `gzip' format.
+</code></pre>
+<p>–license<br>
+-L<br>
+Display the `gzip’ license then quit.</p>
+<p>–no-name<br>
+-n<br>
+When compressing, do not save the original file name and time<br>
+stamp by default. (The original name is always saved if the name<br>
+had to be truncated.) When decompressing, do not restore the<br>
+original file name if present (remove only the `gzip’ suffix from<br>
+the compressed file name) and do not restore the original time<br>
+stamp if present (copy it from the compressed file). This option<br>
+is the default when decompressing.</p>
+<p>–name<br>
+-N<br>
+When compressing, always save the original file name and time<br>
+stamp; this is the default. When decompressing, restore the<br>
+original file name and time stamp if present. This option is<br>
+useful on systems which have a limit on file name length or when<br>
+the time stamp has been lost after a file transfer.</p>
+<p>–quiet<br>
+-q<br>
+Suppress all warning messages.</p>
+<p>–recursive<br>
+-r<br>
+Travel the directory structure recursively. If any of the file<br>
+names specified on the command line are directories, <code>gzip' will descend into the directory and compress all the files it finds there (or decompress them in the case of</code>gunzip’).</p>
+<p>–suffix <i>SUF</i><br>
+-S <i>SUF</i><br>
+Use suffix <code>SUF' instead of</code>.gz’. Any suffix can be given, but<br>
+suffixes other than <code>.z' and</code>.gz’ should be avoided to avoid<br>
+confusion when files are transferred to other systems.  A null<br>
+suffix forces gunzip to try decompression on all given files<br>
+regardless of suffix, as in:</p>
+<pre><code>      gunzip -S &quot;&quot; *        (*.* for MSDOS)
+
+ Previous versions of gzip used the `.z' suffix. This was changed
+ to avoid a conflict with `pack'.
+</code></pre>
+<p>–test<br>
+-t<br>
+Test. Check the compressed file integrity.</p>
+<p>–verbose<br>
+-v<br>
+Verbose. Display the name and percentage reduction for each file<br>
+compressed.</p>
+<p>–version<br>
+-V<br>
+Version. Display the version number and compilation options, then<br>
+quit.</p>
+<p>–fast<br>
+–best<br>
+-N<br>
+Regulate the speed of compression using the specified digit N,<br>
+where <code>-1' or</code>–fast’ indicates the fastest compression method<br>
+(less compression) and <code>--best' or</code>-9’ indicates the slowest<br>
+compression method (optimal compression).  The default<br>
+compression level is `-6’ (that is, biased towards high<br>
+compression at expense of speed).</p></pre><p></p>
+<p><code>gunzip' can currently decompress files created by </code>gzip', `zip', 
+  <code>compress' or </code>pack'. The detection of the input format is automatic. <br>
+  <br>
+  <code>gzip' is designed as a complement to </code>tar', not as a replacement. </p>
+<p class="quote"><i>"There is no passion to be found playing small - in settling for a life that is less than the one you are capable of living" ~ Nelson Mandela</i></p>
+<p><b>Related:</b></p>
+<p><a href="bzip2.html">bzip2</a> - Compress or decompress named file(s)<br>
+<a href="sum.html">sum</a> - Print a checksum for a file <br>
+<a href="tar.html">tar</a> - Store, list or extract files in an archive<br>
+<a href="unrar.html">unrar</a> - Extract files from rar archives.<br>
+<a href="unshar.html">unshar</a> - Unpack shell archive scripts <br>
+Equivalent Windows command: 
+<a href="../nt/expand.html">EXPAND</a> - Uncompress files</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="gzip.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/gzip.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

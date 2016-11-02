@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Import-Counter 
+Import performance counter log files (.blg, .csv, .tsv) and create the objects that represent each counter sample in the log.
+Syntax
+      Import-Counter [-Path] string[] [-Counter str">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/import-counter.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Import-Counter 
+Import performance counter log files (.blg, .csv, .tsv) and create the objects that represent each counter sample in the log.
+Syntax
+      Import-Counter [-Path] string[] [-Counter str">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.020Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Import-Counter 
+Import performance counter log files (.blg, .csv, .tsv) and create the objects that represent each counter sample in the log.
+Syntax
+      Import-Counter [-Path] string[] [-Counter str">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Import-Counter</h1> 
+<p>Import performance counter log files (.blg, .csv, .tsv) and create the objects that represent each counter sample in the log.</p>
+<pre>Syntax
+      Import-Counter [-Path] <i>string</i>[] [-Counter <i>string</i>[]] [-EndTime <i>DateTime</i>]
+        [-MaxSamples <i>Int64</i>] [-StartTime <i>DateTime</i>] [<i>CommonParameters</i>]
+<pre><code>  Import-Counter [-Path] &lt;i&gt;string&lt;/i&gt;[] -ListSet &amp;lt;string[]&amp;gt; [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Import-Counter [-Path] &lt;i&gt;string&lt;/i&gt;[] -Summary [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key:<br>
+-Counter <i>string</i>[]<br>
+Import data only for the specified performance counters.<br>
+By default, Import-Counter imports all data from all counters in the input files.<br>
+Enter one or more counter paths. Wildcards are permitted in the Instance part of<br>
+the path.<br>
+Each counter path has the following format. Notice that the ComputerName value is<br>
+required in the path, even on the local computer.</p>
+<pre><code>           &quot;\\&lt;i&gt;ComputerName&lt;/i&gt;\&lt;i&gt;CounterSet&lt;/i&gt;(&lt;i&gt;Instance&lt;/i&gt;)\&lt;i&gt;CounterName&lt;/i&gt;&quot;
+
+    For example: 
+            &quot;\\Server64\Processor(2)\% User Time&quot;
+            &quot;\Processor(*)\% Processor Time
+</code></pre>
+<p>-EndTime <i>DateTime</i><br>
+Imports only counter data with a timestamp &lt;= <i>DateTime</i><br>
+Enter a DateTime object, such as one created by <a href="get-date.html">Get-Date</a><br>
+By default, Import-Counter imports all counter data in the files specified by -Path.</p>
+<p>-ListSet <i>string</i>[]<br>
+Get the performance counter sets that are represented in the exported files.<br>
+Commands with this parameter do not import any data.</p>
+<pre><code>   Enter one or more counter set names. Wildcards are permitted.
+   To get all counter sets in the file, type &quot;import-counter -listset *&quot;
+</code></pre>
+<p>-MaxSamples <i>Int64</i><br>
+The maximum number of samples of each counter to import.<br>
+By default, all counter data will be imported from the files specified by -Path.</p>
+<p>-Path <i>string</i>[]<br>
+The file paths of the files to be imported. This parameter is required.</p>
+<pre><code>   Enter the path and file name of a, .csv,, .tsv, or .blg file that was
+   exported with &lt;a href=&quot;export-counter.html&quot;&gt;Export-Counter&lt;/a&gt;.
+   Specify one .csv or .tsv file, or multiple .blg files (up to 32) in each command.
+
+   The file path strings (in quotation marks) can also be piped to Import-Counter.
+</code></pre>
+<p>-StartTime <i>DateTime</i><br>
+Import only counter data with a timestamp &gt;= <i>DateTime</i><br>
+Enter a DateTime object, such as one created by <a href="get-date.html">Get-Date</a>.<br>
+By default, all counter data will be imported from the files specified by -Path.</p>
+<p>-Summary<br>
+Get a summary of the imported data, instead of getting individual counter data samples.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>
+  When using .blg files, you can import up to 32 different files in 
+each command. The data being imported can be filtered.</p>
+<p><b>Examples</b></p>
+<p>Import all  the counter data from services.csv file into the $svc variable.:</p>
+<p class="code">PS C:&gt; $svc = import-counter -path C:\services.csv</p>
+<p>Import  only the <span class="code">Processor(_total)\Interrupts\sec</span> counter data  into the $i variable:</p>
+<p><span class="code">PS C:&gt; $i = import-counter -path C:\ProcessorData.blg -counter "\\SERVER64\Processor(_Total)\Interrupts/sec"</span><br>
+  <br>
+Select data from a performance counter log file (.blg) and then export to a .csv file.:</p>
+<p class="code">PS C:&gt; $mycpu = import-counter C:\CPUdata.blg<br>
+PS C:&gt; $mycpu[0].countersamples | format-table path<br>
+PS C:&gt; $CounterPaths = $data[0].countersamples | where {$_.path -like "*interrupts/sec"} | foreach {$_.path}<br>
+PS C:&gt; $CounterPaths<br>
+PS C:&gt; $i = import-counter -path .\CPUdata.blg -counter $CounterPaths<br>
+PS C:&gt; $i | export-counter -path .\interrupts.csv -format CSV</p>
+<p>Display all the counter paths in a group of imported counter sets.:</p>
+<p class="code">PS C:&gt; import-counter -path cpudata.csv -listset *<br>
+PS C:&gt; import-counter -path cpudata.csv -listset * | foreach {$_.paths}</p>
+<p>List the time stamps of all of the data in the <span class="code">disc.blg</span> file:</p>
+<p class="code">PS C:&gt; import-counter -path .\disk.blg | format-table timestamp</p>
+<p>Import only counter data from <span class="code">disc.blg</span> that has a time stamp between a given start / end:</p>
+<p class="code">PS C:&gt; $start = [datetime]"7/12/2010 3:47:00 PM"<br>
+PS C:&gt; $end = [datetime]"7/12/2010 3:47:59 PM"<br>
+PS C:&gt; $timedata = import-counter -path disk.blg -starttime $start -endtime $end</p>
+<p>Summarise the counter data in Memory.blg:</p>
+<p class="code">PS C:&gt; import-counter D:\memory.blg -summary</p>
+<p>Update a performance counter log file with fresh data:</p>
+<p class="code">PS C:&gt; $counters = import-counter c:\olddata.blg -ListSet * | foreach {$_.PathsWithInstances}<br>
+PS C:&gt; get-counter -counter $counters -maxSamples 20 | export-counter c:\newdata.blg</p>
+<p>Import two performance logs and save the data in a variable. Then pipe this to Import-Counter:</p>
+<p class="code">PS C:&gt; $counters = "d:\pdata.blg", "d:\netlog.blg" | import-counter</p>
+<p class="quote"><i>“Actors should be overheard, not listened to, and the audience is 50 percent of the performance” ~ Shirley Booth</i></p>
+<p><b>Related:</b></p>
+<p>  <a href="get-counter.html">Get-Counter</a>             - Get performance counter data<br>
+<a href="export-counter.html">Export-Counter</a> - Export Performance Counter data to log files</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/import-counter.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

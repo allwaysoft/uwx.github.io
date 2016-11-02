@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="FOR 
+Conditionally perform a command on several files. 
+Syntax
+      FOR %%parameter IN (set) DO command
+Key
+set         : A set of one or more files, separated by any standard delimiter.
+Wildcards ca">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/for2.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="FOR 
+Conditionally perform a command on several files. 
+Syntax
+      FOR %%parameter IN (set) DO command
+Key
+set         : A set of one or more files, separated by any standard delimiter.
+Wildcards ca">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="FOR 
+Conditionally perform a command on several files. 
+Syntax
+      FOR %%parameter IN (set) DO command
+Key
+set         : A set of one or more files, separated by any standard delimiter.
+Wildcards ca">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>FOR</h1> 
+<p>Conditionally perform a command on several files. </p>
+<pre>Syntax
+      FOR %%parameter IN (<i>set</i>) DO <i>command</i>
+<p>Key<br>
+<i>set</i>         : A set of one or more files, separated by any standard <a href="syntax-esc.html#delimiters">delimiter</a>.<br>
+<a href="syntax-wildcards.html">Wildcards</a> can be used.</p>
+<p><i>  command</i>     : The command to carry out, including any command-line parameters.</p>
+<p>%%parameter : A replaceable parameter:<br>
+e.g. in a batch file use %%G<br>
+(on the command line %G)</p></pre><p></p>
+<p> <b>Examples</b><br>
+  <br>
+  Copy a single file<br>
+  <span class="code">FOR %%G IN (MyFile.txt) DO copy %%G d:\backups\</span><br>
+  <br>
+  Copy a list of several files<br>
+<span class="code">FOR %%G IN (Myfile.txt SecondFile.txt) DO copy %%G d:\backups\</span></p>
+<p><span class="code">FOR %%G IN ("C:\demo files\file1.txt" "C:\demo files\File2.txt") DO copy %%G d:\backups\</span><br>
+  <br>
+  The FOR command is mostly used to process files, but you can also process a text string:<br>
+  <span class="code">FOR %%G IN ("Hello World") DO Echo %%G</span><br>
+This is not really useful being much the same as <span class="code">Echo Hello World</span><br>
+<br>
+  Although wildcards can be used, an alternative method of processing files is 
+  to let <a href="for_f.html">FOR /F</a> process the output of the command <a href="dir.html">'DIR /b'</a>  This can be useful when you want to use   DIR 
+options like sorting.</p>
+<h2>Errorlevels</h2>
+<blockquote>
+<p>The FOR command does not generally set any <a href="errorlevel.html">errorlevels</a>, leaving that to the <i>command</i> being called. <br>
+One exception is  using a wildcard, if the wildcard does not match any files, then FOR will return %ERRORLEVEL% = 5</p>
+</blockquote>
+<p>FOR is an <a href="syntax-internal.html">internal</a> command.</p>
+<p><span class="quote"><i>"Darkness reigns at the foot of the lighthouse" ~ Japanese Proverb</i></span><i><br>
+  </i><br>
+  <b>Related:</b><br>
+  <br>
+  <a href="for.html">FOR</a> - Loop commands<br>
+  <a href="for_r.html">FOR /R</a> - Loop through files (recurse subfolders) <a href="for_d.html"><br>
+  FOR /D</a> - Loop through several folders<br>
+  <a href="for_l.html">FOR /L</a> - Loop through a range of numbers<br>
+  <a href="for_f.html">FOR /F</a> - Loop through items in a text file<br>
+  <a href="for_cmd.html">FOR /F</a> - Loop through the output of a command<br>
+  <a href="forfiles.html">FORFILES</a> - Batch process multiple files<br>
+  <a href="goto.html">GOTO</a> - Direct a batch program to jump to a labelled
+    line<br>
+  <a href="if.html">IF</a> - Conditionally perform a command <br>
+  Equivalent bash command (Linux): 
+<a href="../bash/for.html">for</a> - Expand <var>words</var>, and execute <var>commands</var></p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/for2.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

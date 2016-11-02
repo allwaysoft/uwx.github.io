@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IF 
+Conditionally perform a command.
+File syntax
+   IF [NOT] EXIST filename command 
+IF [NOT] EXIST filename (command) ELSE (command)
+String syntax
+IF [/I] [NOT] item1==item2 command
+IF [/I] item1 com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/if.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="IF 
+Conditionally perform a command.
+File syntax
+   IF [NOT] EXIST filename command 
+IF [NOT] EXIST filename (command) ELSE (command)
+String syntax
+IF [/I] [NOT] item1==item2 command
+IF [/I] item1 com">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="IF 
+Conditionally perform a command.
+File syntax
+   IF [NOT] EXIST filename command 
+IF [NOT] EXIST filename (command) ELSE (command)
+String syntax
+IF [/I] [NOT] item1==item2 command
+IF [/I] item1 com">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>IF</h1> 
+<p>Conditionally perform a command.</p>
+<pre><b>File syntax</b>
+   IF [NOT] EXIST <i>filename command</i> 
+<p>IF [NOT] EXIST <i>filename</i> (<i>command</i>) ELSE (<i>command</i>)</p>
+<p><b>String syntax</b><br>
+IF [/I] [NOT] <b><i>item1</i></b>==<b><i>item2</i></b> <i>command</i></p>
+<p>IF [/I] <b><i>item1</i></b> <i>compare-op</i> <b><i>item2</i></b> <i>command</i></p>
+<p>IF [/I] <b><i>item1</i></b> <i>compare-op</i> <b><i>item2</i></b> (<i>command</i>) ELSE (<i>command</i>)</p>
+<p><b>Error Check Syntax</b><br>
+IF [NOT] DEFINED <i>variable command</i></p>
+<p>IF [NOT] <a href="errorlevel.html">ERRORLEVEL</a> <i>number command</i></p>
+<p>IF CMDEXTVERSION <i>number command</i></p>
+<p><b>key</b><br>
+<i>item</i>        A text string or environment variable, for more complex<br>
+comparisons, a variable can be modified using<br>
+either <a href="syntax-substring.html">Substring</a> or <a href="syntax-replace.html">Search syntax</a>.</p>
+<p><i>command</i>     The command to perform.</p>
+<p><i>filename</i>    A file to test or a <a href="syntax-wildcards.html">wildcard</a> pattern.</p>
+<p>NOT         perform the command if the condition is false.</p>
+<p><b>==</b>          perform the command if the two strings are equal.</p>
+<p>/I          Do a case Insensitive string comparison.</p>
+<p><i>compare-op</i>  can be one of<br>
+EQU : Equal<br>
+NEQ : Not equal</p>
+<pre><code>            LSS : Less than &amp;lt;
+            LEQ : Less than or Equal &amp;lt;=
+
+            GTR : Greater than &amp;gt;
+            GEQ : Greater than or equal &amp;gt;=
+
+            This 3 digit syntax is necessary because the &amp;gt; and &amp;lt;
+            symbols are recognised as redirection operators&lt;/pre&gt;
+</code></pre>
+<p> IF will only parse numbers when one of (<a href="equ.html">EQU</a>,  <a href="neq.html">NEQ</a>, <a href="lss.html">LSS</a>, <a href="leq.html">LEQ</a>, <a href="gtr.html">GTR</a>, <a href="geq.html">GEQ</a>) is used. <br>
+The <span class="code">==</span> comparison operator always results in a string comparison.</p>
+<p><span class="code">IF ERRORLEVEL <i>n </i></span>statements should be read as IF <i>Errorlevel</i> <span class="code">&gt;=</span> <i>number</i><br>
+i.e.<br>
+<span class="code">IF ERRORLEVEL 0 </span>will return TRUE when the errorlevel is 64 </p>
+<p>A more precise method of checking Errorlevels is to use the  <span class="code">%ERRORLEVEL%</span> variable:</p>
+<p><span class="code">IF %ERRORLEVEL% GTR 0 Echo An error was found<br>
+IF %ERRORLEVEL% LSS 0 Echo An error was found<br>
+<br>
+IF %ERRORLEVEL% EQU 0 Echo No error  found<br>
+</span><span class="code">IF %ERRORLEVEL% EQU 0 (Echo No error found) ELSE (Echo An error was found)<br>
+</span><span class="code">IF %ERRORLEVEL% EQU 0 Echo No error found <a href="syntax-conditional.html">||</a> Echo An error was found</span></p>
+<p>Note some errors are negative numbers.<br>
+When working with errorlevels in a batch file it's a good idea to also use <a href="setlocal.html">SETLOCAL</a> so that  the %ERRORLEVEL% variable is reset each time the batch file runs. </p>
+<p><span class="code">IF EXIST <i>filename</i></span> will return true if the file exists (this is not case sensitive). <br>
+<br>
+<b>Examples:</b></p>
+<pre>IF EXIST C:\logs\*.log (Echo Log file exists)
+<p>IF EXIST C:\logs\install.log (Echo Complete) ELSE (Echo failed)</p>
+<p>IF DEFINED _department ECHO Got the _department variable</p>
+<p>IF DEFINED _commission SET /A _salary=%_salary% + %_commission%</p>
+<p>IF CMDEXTVERSION 1 GOTO start_process</p>
+<p>IF %ERRORLEVEL% EQU 2 goto sub_problem2</p></pre><br>
+<h2><a id="exist"></a>Test if a variable is empty</h2><p></p>
+<blockquote>
+<p>To test for the existence of a <a href="syntax-args.html">command line parameter</a> - use empty brackets like this<br>
+<span class="code"><br>IF [%1]==[] ECHO Value Missing</span><br>
+or<br>
+<span class="code">IF [%1] EQU [] ECHO Value Missing </span><br>
+<br>
+In the case of a variable that might be NULL - a null variable will remove the variable definition altogether, so testing for a NULL becomes:<br>
+<br>
+<span class="code">IF NOT DEFINED <i>_example</i> ECHO Value Missing</span><br>
+<br>
+IF DEFINED will return true if the variable contains any value (even if the value is just a space)
+</p>
+</blockquote>
+<h2>Test the existence of files and folders </h2>
+<blockquote>
+<p><span class="code">IF EXIST <i>name</i></span> &nbsp;&nbsp;Will detect the existence of a file or a folder, the script <a href="empty.html">empty.cmd</a> will show if the folder is empty or not.</p>
+</blockquote>
+<h2>  Parenthesis</h2>
+<blockquote>
+<p>  <a href="syntax-brackets.html">Parenthesis</a> can be used to split commands  across multiple lines. This enables  writing more complex IF… ELSE…  commands:</p>
+<pre>IF EXIST filename.txt <b>(</b>
+    Echo deleting filename.txt
+    Del filename.txt
+ <b>)</b> ELSE <b>( </b>
+    Echo The file was not found.
+ <b>)</b></pre>
+<p>When using parenthesis the CMD shell will expand [read] all the <a href="syntax-variables.html">variables</a> at the beginning of the code block and use those values even if the variables value has just been changed. Turning on <a href="delayedexpansion.html">DelayedExpansion</a> will force the shell to read variables at the start of every line.</p>
+</blockquote>
+<h2>Pipes</h2>
+<blockquote>
+<p>When <a href="syntax-redirection.html">piping</a> commands, the expression is evaluated from left to right, so </p>
+<p><span class="code"> IF <i>SomeCondition</i> <i>Command1 | Command2</i></span>is equivalent to:</p>
+<p><span class="code">(IF <i>SomeCondition</i> <i>Command1 </i>) | <i>Command2</i></span><br>
+The pipe is always created and <i class="code">Command2</i> is always run, regardless whether <i class="code">SomeCondition</i> is TRUE or FALSE</p>
+<p>You can  use brackets and <a href="syntax-redirection.html">conditionals</a> around the <i>command</i> with this syntax:</p>
+<p><span class="code">IF <i>SomeCondition</i> (<i>Command1</i> | <i>Command2</i>)</span><br>
+If the condition is met then Command1 will run, and its output will be piped to Command2.
+</p>
+<p>The IF command will interpret brackets around a <i><b>condition</b></i> as just another character to compare (like # or @) for example:<br>
+<span class="code">IF <b>(</b>%_var1%==<b>(</b>demo Echo the variable _var1 contains the text demo</span></p>
+<p>Placing an IF command on the right hand side of a pipe is also possible but the CMD shell is buggy in this area and can swallow one of the delimiter characters causing unexpected results.<br>
+A simple example that does work:</p>
+<p class="code">Echo Y | IF red==blue del *.log</p>
+</blockquote>
+<h2>Chaining IF  commands (AND).</h2>
+<blockquote>
+<p>The only logical operator directly supported by <span class="code">IF</span> is <span class="code">NOT</span>, so to perform an <span class="code">AND</span> requires chaining multiple IF statements: </p>
+<pre>IF <i>SomeCondition</i> (
+   IF <i>SomeOtherCondition</i> (
+     <i>Command_if_both_are_true</i>
+   )
+)</pre>
+</blockquote>
+<h2>If either condition is true (OR)</h2>
+<blockquote>
+<p>This can be tested  using a temporary variable:</p>
+<p class="code">Set "_tempvar="<br>
+If <i>SomeCondition</i> Set _tempvar=1<br>
+If <i>SomeOtherCondition</i> Set _tempvar=1<br>
+if %_tempvar% EQU 1 <i>Command_to_run_if_either_is_true</i></p>
+</blockquote>
+<h2>Delimiters</h2>
+<blockquote>
+<p>If the string being compared by an IF command includes <a href="syntax-esc.html">delimiters</a> such as [Space] or [Comma], then either the delimiters must be escaped with a caret ^ or the whole string must be "quoted".<br>
+This is so that the IF statement will treat the string as a single item and not as several separate strings.</p>
+</blockquote>
+<h2>Test Numeric values </h2>
+<blockquote>
+<p>IF only parses <i>numbers</i> when one of the <span class="code">compare-op </span>operators (<span class="code">EQU, NEQ, LSS, LEQ, GTR, GEQ</span>) is used. <br>
+The <span class="code">==</span> comparison operator always results in a <i>string</i> comparison.
+</p>
+<p>This is an important difference because if you  compare numbers as  strings it can lead to unexpected results: "2" will be greater than "19" and "026" will be greater than "26".
+</p>
+<p>Correct numeric comparison:<br>
+  <span class="code">IF 2 GEQ 15 echo "bigger" </span>
+</p>
+<p>Using parenthesis or quotes will force a string comparison:<br>
+  <span class="code">IF (2) GEQ (15) echo "bigger"</span><br>
+  <span class="code">IF "2" GEQ "15" echo "bigger"</span><br>
+</p>
+<p>This behaviour is exactly opposite to the <a href="set.html">SET</a> /a command where quotes are required.
+</p>
+</blockquote>
+<h2>Wildcards</h2>
+<blockquote>
+<p>Wildcards are not supported by IF, so <span class="code">%COMPUTERNAME%==SS6*</span> will not match SS64 <br><br>
+A workaround is to  retrieve the substring and compare just those characters: <br>
+<span class="code">SET _prefix=%COMPUTERNAME:~0,3% 
+<br>
+IF  %_prefix%==SS6 GOTO they_matched</span></p>
+</blockquote>
+<h2>ERRORLEVEL
+</h2>
+<blockquote>
+<p>To deliberately raise an ERRORLEVEL in a batch script use the <a href="exit.html">EXIT /B </a> command.
+</p>
+<p>It is possible (though not a good idea) to create a string variable called %ERRORLEVEL% (user variable)<br>
+if present such a variable will prevent the real ERRORLEVEL (a system variable) from being used by commands such as ECHO and IF.</p>
+<p>To test for the existence of a user variable use <span class="code"><a href="set.html">SET</a> errorlevel</span>, or<span class="code"> IF DEFINED ERRORLEVEL</span></p>
+<p>If <a href="cmd.html">Command Extensions</a> are disabled IF will only support  direct comparisons: IF ==, IF EXIST, IF ERRORLEVEL <br>
+also the system variable <span class="code">CMDEXTVERSION</span> will be disabled.</p>
+</blockquote>
+<p>IF is an <a href="syntax-internal.html">internal</a> command.</p>
+<p class="quote"><i>You see things; and you say 'Why?' But I dream things that never were; and I say 'why not?' ~ George  Bernard Shaw </i></p>
+<p> <b>Related:</b><br>
+</p>
+<p><a href="syntax-brackets.html">Using parenthesis </a>to group and expand expressions.<br>
+<a href="syntax-conditional.html">Conditional execution</a> syntax (AND / OR)<br>
+<a href="set.html">SET</a> - Display or Edit  environment variables<br>
+<a href="echo.html">ECHO</a> - Display message on screen<br>
+<a href="exit.html">EXIT</a> - Set a specific ERRORLEVEL<br>
+<a href="ifmember.html">IFMEMBER</a> - group member (Resource kit)<br>
+<a href="sc.html">SC</a> - Is a Service running (Resource kit)<br>
+Powershell: <a href="../ps/if.html">if</a> - Conditionally perform a command<br>
+Equivalent bash command (Linux): 
+<a href="../bash/if.html">if</a> - Conditionally perform a command</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="if.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/if.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

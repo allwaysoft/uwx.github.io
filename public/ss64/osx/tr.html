@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tr 
+Translate, squeeze, and/or delete characters. Copies the standard 
+input to the standard output with substitution or deletion of selected characters.
+Syntax
+      tr [-Ccsu] string1 string2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/tr.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="tr 
+Translate, squeeze, and/or delete characters. Copies the standard 
+input to the standard output with substitution or deletion of selected characters.
+Syntax
+      tr [-Ccsu] string1 string2">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:03.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="tr 
+Translate, squeeze, and/or delete characters. Copies the standard 
+input to the standard output with substitution or deletion of selected characters.
+Syntax
+      tr [-Ccsu] string1 string2">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>tr</h1> 
+<p>Translate, squeeze, and/or delete characters. Copies the standard 
+input to the standard output with substitution or deletion of selected characters.</p>
+<pre>Syntax
+      tr [-Ccsu] <i>string1 string2</i>
+      tr [-Ccu] -d <i>string1</i>
+      tr [-Ccu] -s <i>string1</i>
+      tr [-Ccu] -ds <i>string1 string2</i>
+<p>Options<i><br>
+</i>   <b>-C</b>     Complement the set of characters in <i>string1</i>, that is '-C ab’<br>
+includes every character except for ‘a’ and ‘b’.</p>
+<p><b>-c</b>     Same as <b>-C</b> but complement the set of byte values in <i>string1</i>.</p>
+<p><b>-d </b>    Delete characters in <i>string1</i> from the input.</p>
+<p><b>-s</b>     Squeeze multiple occurrences of the characters listed in the last<br>
+operand (either <i>string1</i> or <i>string2</i>) in the input into a single<br>
+instance of the character.  This occurs after all deletion and<br>
+translation is completed.</p>
+<p><b>-u</b>     Guarantee that any output is unbuffered.</p>
+<pre><code> In the first synopsis form, the characters in &lt;i&gt;string1&lt;/i&gt; are translated into
+ the characters in &lt;i&gt;string2&lt;/i&gt; where the first character in &lt;i&gt;string1&lt;/i&gt; is trans-
+ lated into the first character in &lt;i&gt;string2&lt;/i&gt; and so on.  If &lt;i&gt;string1&lt;/i&gt; is
+ longer than &lt;i&gt;string2&lt;/i&gt;, the last character found in &lt;i&gt;string2&lt;/i&gt; is duplicated
+ until &lt;i&gt;string1&lt;/i&gt; is exhausted.
+
+ In the second synopsis form, the characters in &lt;i&gt;string1&lt;/i&gt; are deleted from
+ the input.
+
+ In the third synopsis form, the characters in &lt;i&gt;string1&lt;/i&gt; are compressed as
+ described for the &lt;b&gt;-s&lt;/b&gt; option.
+
+ In the fourth synopsis form, the characters in &lt;i&gt;string1&lt;/i&gt; are deleted from
+ the input, and the characters in &lt;i&gt;string2&lt;/i&gt; are compressed as described for
+ the &lt;b&gt;-s&lt;/b&gt; option.
+
+ The following conventions can be used in &lt;i&gt;string1&lt;/i&gt; and &lt;i&gt;string2&lt;/i&gt; to specify
+ sets of characters:
+
+ character Any character not described by one of the following conven-
+ tions represents itself.
+
+ \octal A backslash followed by 1, 2 or 3 octal digits represents a
+ character with that encoded value.  To follow an octal
+ sequence with a digit as a character, left zero-pad the octal
+ sequence to the full 3 octal digits.
+
+ \character
+ A backslash followed by certain special characters maps to
+ special values.
+
+ \a    &amp;lt;alert character&amp;gt;
+ \b    &amp;lt;backspace&amp;gt;
+ \f    &amp;lt;form-feed&amp;gt;
+ \n    &amp;lt;newline&amp;gt;
+ \r    &amp;lt;carriage return&amp;gt;
+ \t    &amp;lt;tab&amp;gt;
+ \v    &amp;lt;vertical tab&amp;gt;
+
+ A backslash followed by any other character maps to that character.
+
+ c-c Represents the range of characters between the range end-points, inclusively.
+
+ [:class:] Represents all characters belonging to the defined character
+ class. Class names are:
+
+ alnum   &amp;lt;alphanumeric characters&amp;gt;
+ alpha   &amp;lt;alphabetic characters&amp;gt;
+ cntrl   &amp;lt;control characters&amp;gt;
+
+ digit   &amp;lt;numeric characters&amp;gt;
+ graph   &amp;lt;graphic characters&amp;gt;
+ lower   &amp;lt;lower-case alphabetic characters&amp;gt;
+ print   &amp;lt;printable characters&amp;gt;
+ punct   &amp;lt;punctuation characters&amp;gt;
+
+ space   &amp;lt;space characters&amp;gt;
+ upper   &amp;lt;upper-case characters&amp;gt;
+ xdigit   &amp;lt;hexadecimal characters&amp;gt;
+
+ With the exception of the <code>upper' and </code>lower' classes,
+ characters in the classes are in unspecified order.  In the
+ <code>upper' and </code>lower' classes, characters are entered in
+ ascending order.
+
+ For specific information as to which ASCII characters are
+ included in these classes, see &lt;b&gt;ctype(3)&lt;/b&gt; and related manual
+ pages.
+
+ [=equiv=] Represents all characters belonging to the same equivalence
+ class as &lt;i&gt;equiv&lt;/i&gt;, ordered by their encoded values.
+
+ [#*n] Represents &lt;i&gt;n&lt;/i&gt; repeated occurrences of the character represented
+ by &lt;i&gt;#&lt;/i&gt;.  This expression is only valid when it occurs in
+ &lt;i&gt;string2&lt;/i&gt;.  If &lt;i&gt;n&lt;/i&gt; is omitted or is zero, it is be interpreted as
+ large enough to extend &lt;i&gt;string2&lt;/i&gt; sequence to the length of
+ &lt;i&gt;string1&lt;/i&gt;.  If &lt;i&gt;n&lt;/i&gt; has a leading zero, it is interpreted as an
+ octal value, otherwise, it's interpreted as a decimal value.&lt;/pre&gt;
+</code></pre>
+<p></p><h2>ENVIRONMENT</h2><p></p>
+<pre>     The LANG, LC_ALL, LC_CTYPE and LC_COLLATE environment variables affect
+     the execution of <b>tr</b> as described in <b>environ(7)</b>.
+</pre>
+<p>The <span class="code">tr</span> utility has historically been extremely forgiving of syntax errors, 
+  for example, the -c and -s options were ignored unless two strings were specified. 
+  This implementation will not permit illegal syntax.</p>
+<p>The <span class="code">tr</span> utility has historically not permitted the manipulation 
+  of NUL bytes in its input and, additionally, stripped NUL's from its input stream. 
+  This implementation has removed this behavior as a bug. </p>
+<p>Exits 0 on success, and &gt;0 if an error occurs</p>
+<h2>Examples</h2>
+<p># Swap case<span class="code"><br>
+$ echo "Hello World" | tr "A-Za-z" "a-zA-Z"<br>
+hELLO wORLD</span></p>
+<p># Make lower case<span class="code"><br>
+$ echo "Hello World" | tr "[:upper:]" "[:lower:]"<br>
+hello world </span></p>
+<p># As a function<span class="code"><br>
+$ toLower() {<br>
+&nbsp;echo $1 | tr "[:upper:]" "[:lower:]" <br>
+} </span></p>
+<p class="code">$ toLower SomeMixEDCaseText<br>
+somemixedcasetext</p>
+<p># Split the path into its elements<span class="code"><br>
+$ echo $PATH | tr ":" "\n" | sort</span></p>
+<p>Create a list of the words in file1, one per line, where a word is taken
+     to be a maximal string of letters.<span class="code"><br>
+$ tr -cs "[:alpha:]" "\n" &lt; file1
+<p></p></span></p><p></p>
+<p>Translate the contents of file1 to upper-case.
+<pre><code>&lt;span class=&quot;code&quot;&gt;&lt;br&gt;
+</code></pre>
+</p><p>$ tr “[:lower:]” “[:upper:]” &lt; file1</p><p></p>
+<p>Strip out non-printable characters from file1.
+<pre><code>&lt;span class=&quot;code&quot;&gt;&lt;br&gt;
+</code></pre>
+</p><p>$<br>
+tr -cd “[:print:]” &lt; file1</p><p></p>
+<p>Remove diacritical marks from all accented variants of the letter 'e':
+<br>
+<span class="code">$ tr "[=e=]" "e"</span></p>
+<p class="quote"><i>“Chance is always powerful. - Let your hook be always cast; in the pool where you least expect it, there will be a fish” ~ Ovid</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/tr.1.html" target="_blank" rel="external">tr man page</a> - Apple.com<br>
+<a href="awk.html">awk</a> - Find and Replace text within file(s)<br>
+<a href="grep.html">grep</a> - Search file(s) for lines that match a given pattern</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="tr.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/tr.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

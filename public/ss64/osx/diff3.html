@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="diff3 
+Show differences among three files. 
+When two people have made independent changes to a common original, `diff3&apos; can report the differences between the original and the two changed versions, an">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/diff3.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="diff3 
+Show differences among three files. 
+When two people have made independent changes to a common original, `diff3&apos; can report the differences between the original and the two changed versions, an">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.080Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="diff3 
+Show differences among three files. 
+When two people have made independent changes to a common original, `diff3&apos; can report the differences between the original and the two changed versions, an">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>diff3</h1> 
+<p>Show differences among three files. <br>
+When two people have made independent changes to a common original, `diff3' can report the differences between the original and the two changed versions, and can produce a merged file that contains both persons' changes together with 
+warnings about conflicts. <br>
+The files to compare are <i>mine</i>, <i>older</i>, and <i>yours</i>. At most one of these three file names can be -, which tells diff3 to read the standard input for that file.</p>
+<pre>Syntax
+      diff3 [<i>options</i>] <i>mine older yours</i>
+<p>Options<br>
+-a     Treat all files as text and compare them line-by-line,<br>
+even if they do not appear to be text.</p>
+<pre><code>   -A     Incorporate all changes from &lt;i&gt;older&lt;/i&gt; to &lt;i&gt;yours&lt;/i&gt; into &lt;i&gt;mine&lt;/i&gt;, 
+          surrounding all conflicts with bracket lines.
+
+   -e     Generate an ed script  that  incorporates  all  the
+          changes from &lt;i&gt;older&lt;/i&gt; to &lt;i&gt;yours&lt;/i&gt; into &lt;i&gt;mine&lt;/i&gt;.
+
+   -E     Like  -e,  except  bracket  lines  from overlapping
+          changes' first and third files.  With -e, an  over-
+          lapping change looks like this:
+
+          &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; mine
+          lines from mine
+          =======
+          lines from yours
+          &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; yours
+
+   --ed   Generate  an  ed  script  that incorporates all the
+          changes from &lt;i&gt;older&lt;/i&gt; to &lt;i&gt;yours&lt;/i&gt; into &lt;i&gt;mine&lt;/i&gt;.
+
+   --easy-only
+          Like -e, except output only the nonoverlapping changes.
+
+   -i     Generate w and q commands at the end of the ed
+          script for System V compatibility. This option
+          must be combined with one of the -AeExX3 options,
+          and can not be combined with -m.
+
+   --initial-tab
+          Output a tab rather than two spaces before the text
+          of a line in normal format.  This causes the alignment
+          of tabs in the line to look normal.
+
+   -L &lt;i&gt;label&lt;/i&gt;
+   --label=&lt;i&gt;label&lt;/i&gt;
+          Use the label &lt;i&gt;label&lt;/i&gt; for the brackets output by  the
+          -A, -E and -X options.  This option can be given up
+          to three times,  one  for  each  input  file.   The
+          default  labels  are  the names of the input files.
+          Thus diff3 -L X -L Y -L Z -m A B C acts like  diff3
+          -m  A  B  C  , except that the output looks like it
+          came from files named X, Y and Z rather  than  from
+          files named A, B and C.
+
+   -m
+   --merge
+          Apply the edit script to the first file and send
+          the result to standard output.  Unlike piping the
+          output from diff3 to ed, this works even for binary
+          files and incomplete lines.  -A is assumed if no
+          edit script option is specified.
+
+   --overlap-only
+          Like  -e, except output only the overlapping changes.
+
+   --show-all
+          Incorporate all unmerged changes from older  to
+          yours into mine, surrounding all overlapping
+          changes with bracket lines.
+
+   --show-overlap
+          Like -e,  except  bracket lines from overlapping
+          changes' first and third files.
+
+   -T     Output a tab rather than two spaces before the text
+          of a line in normal format.  This causes the align-
+          ment of tabs in the line to look normal.
+
+   --text Treat all files as text and compare them line-by-
+          line, even if they do not appear to be text.
+
+   -v
+   --version
+          Output the version number of diff3.
+
+   -x     Like  -e, except output only the overlapping
+          changes.
+
+   -X     Like -E, except output only the overlapping changes.
+          In other words, like -x, except bracket changes as in -E.
+
+   -3     Like  -e, except output only the nonoverlapping
+          changes.&lt;/pre&gt;
+</code></pre>
+<p><b>Notes<br></b>Multiple single letter options (unless they take an argument) can be combined into a single command line argument.</p>
+<p>`diff3' normally compares three input files line by line, finds groups of lines that differ, and reports each group of differing lines. Its output is designed to make it easy to inspect two different sets of changes 
+to the same file. </p>
+<p>An exit status of 0 means diff3 was successful, 1 means some conflicts were found, and 2 means trouble.</p>
+<p class="quote"><i> “One person can make a difference and every person must try” ~ John F. Kennedy</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/diff3.1.html" target="_blank" rel="external">diff3 man page</a> - Apple.com<br>
+<a href="cmp.html">cmp</a> - Compare two files<br>
+<a href="comm.html">comm</a> - Compare two sorted files line by line<br>
+<a href="diff.html">diff</a> - Display the differences between two files<br>
+ed(1)<br>
+patch(1)<br>
+<a href="sdiff.html">sdiff</a> - merge two files interactively</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="diff3.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/diff3.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="rar 
+Archive files with compression.
+Syntax
+      rar command [-switch_1 -switch_N] archive [files...]
+A summary of commands is  below.
+Every command/switch must be separated by  whitespace.
+Commands:">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/rar.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="rar 
+Archive files with compression.
+Syntax
+      rar command [-switch_1 -switch_N] archive [files...]
+A summary of commands is  below.
+Every command/switch must be separated by  whitespace.
+Commands:">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:41.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="rar 
+Archive files with compression.
+Syntax
+      rar command [-switch_1 -switch_N] archive [files...]
+A summary of commands is  below.
+Every command/switch must be separated by  whitespace.
+Commands:">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>rar</h1> 
+<p>Archive files with compression.</p>
+<pre>Syntax
+      rar <i>command</i> [-<i>switch_1</i> -<i>switch_N</i>] <i>archive </i>[<i>files</i>...]</pre>
+<p>A summary of commands is  below.
+Every command/switch must be separated by  whitespace.</p>
+<pre>Commands:
+<p>a      Add files to archive.</p>
+<p>c      Add archive comment. Comment length is limited to 62000 bytes.</p>
+<p>cf     Add files comment. File comments are displayed when  the  ’v’<br>
+command is given. File comment length is limited to 32767 bytes.</p>
+<p>cw     Write archive comment to a specified file.</p>
+<p>d      Delete files from archive.</p>
+<p>e      Extract files to current directory. Does not create any<br>
+subdirectories.</p>
+<p>f      Freshen files in archive. Updates those files changed since they<br>
+were packed to the archive. This command will not add new to the<br>
+archive.</p>
+<p>k      Lock  archive. Any command which intend to change the archive<br>
+will be ignored.</p>
+<p>l[t]   List content of archive [technical]. Files are listed as the ’v’<br>
+command with the exception of the file path. i.e.  the file name<br>
+is displayed. Optional technical information displayed when  ’t’<br>
+modifier is used.</p>
+<p>m[f]   Move to archive [files only]. Directories will not be removed if<br>
+’f’ modifier is used and/or ’-ed’ switch is applied.</p>
+<p>p      Print file to stdout.</p>
+<p>r      Repair archive. For further details look in rar.txt.</p>
+<p>rc     Reconstruct missing volumes using recovery volumes (.rev files).<br>
+You need to specify any existing volume as the archive name, for<br>
+example, ’rar rc backup.part03.rar’.</p>
+<p>rr[N]  Add data  recovery  record.  Optionally, redundant information<br>
+(recovery record) can be added to an archive.</p>
+<p>rv[N]  Create recovery volumes (.rev files), which can be later used to<br>
+reconstruct missing files in a volume set. This command has sense<br>
+only for multivolume archives. For further details look in rar.txt</p>
+<p>s[name|-]<br>
+Convert archive to or from SFX. The archive is merged with  SFX-<br>
+module in the user’s home directory.</p>
+<p>t      Test archive files.</p>
+<p>u      Update  files  in archive. Adds files not already in the archive<br>
+and updates files changed since they were packed to the archive.</p>
+<p>v[t]   Verbosely list archive [technical]</p>
+<p>x      Extract files with full path.</p>
+<p><b>Switches</b><span class="body"></span>:</p>
+<p>-ac    Clear Archive attribute after compression or extraction (Windows<br>
+version only).</p>
+<p>-ag[format]<br>
+Generate archive name using the current date and time. Appends<br>
+the current date string to an  archive name when creating  an<br>
+archive. Useful for daily backups. For further details look in<br>
+rar.txt.</p>
+<p>-ao    Add files with Archive attribute set (Windows version only).</p>
+<p>-ap    Set path inside archive. This path is merged to file names  when<br>
+adding  files to an archive and removed from file names when<br>
+extracting.</p>
+<p>-as    Synchronize archive contents. If this switch is used  when<br>
+archiving, those archived files which are not present in the<br>
+list of the currently added files, will be deleted from archive.<br>
+It is convenient to use this switch in combination with -u<br>
+(update) to synchronize contents of an archive and an  archiving<br>
+directory.</p>
+<p>-av    Put authenticity verification (registered  versions  only).<br>
+Details in register.txt.</p>
+<p>-av-   Disable AV checking or adding.</p>
+<p>-cfg-  Disable read configuration and environment.</p>
+<p>-cl    Convert file names to lower case.</p>
+<p>-cu    Convert file names to upper case.</p>
+<p>-c-    Disable comments show.</p>
+<p>-df    Delete files after archiving. This switch  in  combination  with<br>
+the command “A” performs the same action as the command “M”.</p>
+<p>-dh    Open shared files. Allows to process files opened by other<br>
+applications for writing.</p>
+<p>-ds    Do not sort files while adding to a solid archive.</p>
+<p>-ed    Do not add empty directories.</p>
+<p>-ee    Do not process extended attributes. Only for OS/2 versions.</p>
+<p>-en    Do not add “end of archive” block.</p>
+<pre><code>      This switch cannot be used with volumes, because the end of
+      archive  block contains information important for correct volume
+      processing.
+</code></pre>
+<p>-ep    Exclude paths from names.</p>
+<p>-ep1   Exclude base dir from names.</p>
+<p>-ep2   Expand paths to full. Store full file paths (except a drive<br>
+letter and leading path separator) when archiving.</p>
+<p>-e<b>A<i>ttr</i></b><br>
+Specifies file exclude attributes mask.</p>
+<p>-f     Freshen files. Can be used with archive extraction or creation.</p>
+<p>-hp<b><i>password</i></b><br>
+Encrypt both file data and headers. The password is case sensitive.<br>
+If you omit the password on the command line, you will be prompted<br>
+with message “Enter password”.</p>
+<p>-idp   Disable percentage indicator.</p>
+<p>-ieml[.][addr]<br>
+Send archive by email. Win32 version only.</p>
+<p>-ierr  Send all messages to stderr.</p>
+<p>-ilog  Log errors to file (registered versions only).</p>
+<p>-inul  Disable all messages.</p>
+<p>-isnd  Enable sound.</p>
+<p>-k     Lock archive. Any command which intends to change the archive<br>
+will be ignored.</p>
+<p>-kb    Keep broken extracted files.</p>
+<p>-m 0…5<br>
+Set compression level (0-store…3-default…5-best). By default<br>
+rar uses -m3 method (Normal compression).</p>
+<p>-mc<b><i>par</i></b><br>
+Set advanced compression parameters. For further details look<br>
+in rar.txt.</p>
+<p>-md<b><i>size</i></b><br>
+Set dictionary size in Kb (64,128,256,512,1024,2048,4097 or<br>
+a,b,c,d,e,f,g)</p>
+<p>-ms[list]<br>
+Specify file types to store.</p>
+<p>-o+    Overwrite existing files.</p>
+<p>-o-    Do not overwrite existing files.</p>
+<p>-ol    Save symbolic links as the link instead of the file.</p>
+<p>-os    Save NTFS streams. Win32 version only.</p>
+<p>-ow    Save file owner and group.</p>
+<p>-p<b><i>password</i></b><br>
+Encrypt files with the string <i>password</i> as password while<br>
+archiving.   The password  is  case-sensitive. If you omit the<br>
+password on the command line, you will be prompted with message<br>
+&quot;Enter password&quot;.</p>
+<p>-p-    Do not query password.</p>
+<p>-r     Recurse subdirectories.</p>
+<p>-r0    Similar to -r, but when used with the commands ’a’, ’u’, ’f’,</p>
+<p>-ri<i>p</i>[:<i>s</i>]<br>
+Set  priority and sleep time. Available only in RAR for Windows.</p>
+<p>-rr[N] Add data recovery record.</p>
+<p>-rv[N] Create recovery volumes.</p>
+<p>-s     Create solid archive.</p>
+<p>-s<i><b>N</b></i>    Create solid groups using file count. Similar to -s, but reset<br>
+solid statistics after compressing <i><b>N</b></i> files.</p>
+<p>-se    Create solid groups using extension. Similar to -s, but reset<br>
+solid statistics if file extension is changed.</p>
+<p>-sv    Create independent solid volumes. Similar to -s, but reset solid<br>
+statistics as soon as possible when starting a new volume.</p>
+<p>-sv-   Create dependent solid volumes. Similar to -s, but reset of<br>
+solid statistics is disabled.</p>
+<p>-s-    Disable solid archiving.</p>
+<p>-sfx[name]<br>
+Create SFX archives. The archive is merged with SFX-module in<br>
+the user’s home directory.</p>
+<p>-t     Test  files after archiving. This switch is especially useful in<br>
+combination with the move command, so files will be deleted only<br>
+if archive had been successfully tested.</p>
+<p>-tk    Keep  original  archive  time.  Prevents  rar from modifying the<br>
+archive date when changing an archive.</p>
+<p>-tl    Set archive time to latest file. Forces rar to set the date of a<br>
+changed archive to the date of the newest file in the archive.</p>
+<p>-u     Update files.</p>
+<p>-v<b><i>size</i></b>[M|k|b|f]<br>
+Create volumes with size=<i>size</i>*1000 [*1024, *1].</p>
+<p>-vd    Erase disk contents before creating  volume. All files and<br>
+directories on the target disk will be erased when ’-vd’ is<br>
+used. The switch applies only to removable media, the hard disk<br>
+cannot be erased using this switch.</p>
+<p>-w<b><i>path</i></b><br>
+Assign work directory.</p>
+<p>-x<b><i>file</i></b><br>
+Exclude specified file.  Wildcards can be used and you may<br>
+specify the switch ’-x’ several times.</p>
+<p>-x@<b><i>list</i></b><br>
+Exclude files in specified list file.</p>
+<p>-x@    Read file names to exclude from stdin.</p>
+<p>-y     Assume Yes on all queries.</p>
+<p>-z<b><i>file</i></b><br>
+Read archive comment from file.</p>
+<p>-?     Display help on commands and switches. The same as when none  or<br>
+an illegal command line option is entered.</p>
+<p>–     This switch tells RAR that there are no more switches in the<br>
+command line. This can be useful if either archive or file name<br>
+starts  from  a ’-’ character. Using the ’–’ switch will ensure<br>
+that the name is not treated as switch.</p></pre><p></p>
+<p>For a complete description, run <span class="code">rar</span> without options. </p>
+<p><b>Examples</b></p>
+<p>Create a new rar archive archive.rar containing file1.dat, file2.dat, file3.dat:</p>
+<p class="code"> $ rar a archive.rar file1.dat file2.dat file3.dat</p>
+<p>Create a new rar archive ss64.rar containing the directory music:</p>
+<p class="code">$ rar a ss64.rar music/</p>
+<p>Create  a rar archive that splits the file/files into multiple parts of equal size (50MB):</p>
+<p class="code">$ rar a -v<b>50M</b> -R ss64.rar music/</p>
+<p><i class="quote">“Talent is hitting a target no-one else can hit, genius is hitting a target no-one else can see” - Schopenhauer</i><br>
+<br>
+<b>Related:</b></p>
+<p><a href="bzip2.html">bzip2</a> - Compress or decompress named file(s)<br>
+<a href="gzip.html">gzip</a> - Compress or decompress named file(s)<br>
+<a href="tar.html">tar</a> - Store, list or extract files in an archive<br>
+<a href="unrar.html">unrar</a> - Extract files from a rar archive<br>
+Alternative free unrar programme <a href="http://home.gna.org/unrar/" target="_blank" rel="external">http://home.gna.org/unrar/</a><br>
+</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/rar.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

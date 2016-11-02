@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Import-GPO 
+Import Group Policy settings into a specified GPO from a GPO backup.
+Syntax
+      Import-GPO -BackupId Guid [-TargetGuid Guid] [-TargetName string] -Domain string
+         [-CreateIfNeede">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/import-gpo.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Import-GPO 
+Import Group Policy settings into a specified GPO from a GPO backup.
+Syntax
+      Import-GPO -BackupId Guid [-TargetGuid Guid] [-TargetName string] -Domain string
+         [-CreateIfNeede">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.021Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Import-GPO 
+Import Group Policy settings into a specified GPO from a GPO backup.
+Syntax
+      Import-GPO -BackupId Guid [-TargetGuid Guid] [-TargetName string] -Domain string
+         [-CreateIfNeede">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem -->
+<h1>Import-GPO</h1> 
+<p>Import Group Policy settings into a specified GPO from a GPO backup.</p>
+<pre>Syntax
+      Import-GPO <b>-BackupId <i>Guid</i></b> [-TargetGuid <i>Guid</i>] [-TargetName <i>string</i>] -Domain <i>string
+        </i> [-CreateIfNeeded] [-MigrationTable <i>string</i>] [-Path <i>string</i>] [-Server <i>string</i>] [<i>CommonParameters</i>]
+<pre><code>  Import-GPO [-BackupGpoName &lt;i&gt;string&lt;/i&gt;] [-TargetGuid &lt;i&gt;Guid&lt;/i&gt;] [-TargetName &lt;i&gt;string&lt;/i&gt;] -Domain &lt;i&gt;string&lt;/i&gt;
+</code></pre>
+<p><i>        </i> [-CreateIfNeeded] [-MigrationTable <i>string</i>] [-Path <i>string</i>] [-Server <i>string</i>] [<i>CommonParameters</i>]</p>
+<p>Key<br>
+-BackupGpoName<br>
+The display name of the backed-up GPO from which to import the settings.</p>
+<p>-BackupId <i>Guid</i><br>
+The backup ID of a GPO backup. Use this to specify a particular version of a backed-up GPO.</p>
+<p>-CreateIfNeeded<br>
+Create a new GPO from the backup if the specified target GPO does not exist.</p>
+<p>-Domain string<br>
+The domain containing the GPOs to restore, requires a trust relationship if not the current domain.</p>
+<p>-MigrationTable<br>
+Specifies the path to a migration table file. You can use a migration table to map security<br>
+principals and UNC paths across domains.</p>
+<p>-Path <i>string</i><br>
+The path to the backup directory; for example, “C:\Backups” or “\Server64\Backups”.</p>
+<p>-Server <i>string</i><br>
+The name of the domain controller that should complete the operation.<br>
+Specify either a fully qualified domain name (FQDN) or the host name.<br>
+For example:<br>
+FQDN:      <a href="http://DomainController1.europe.ss64.com" target="_blank" rel="external">DomainController1.europe.ss64.com</a><br>
+Host Name: DomainController1</p>
+<p>-TargetGuid <i>Guid</i><br>
+Specifies the GUID of the GPO into which the settings are to be imported.<br>
+You must specify either the -TargetGuid or -TargetName.</p>
+<p>-TargetName <i>string</i><br>
+The display name of the GPO into which the settings are to be imported.<br>
+You must specify either the -TargetGuid or -TargetName.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>The current/default domain is that of the user that is running the session or, for startup and shutdown scripts, the computer.</p>
+<p><b>Examples</b></p>
+<p>Import the settings from the most recent backup of the GPO named  "SS64" from  the C:\GpoBackups directory and restore as DemoGPO:</p>
+<p><span class="code">PS C:\&gt; import-gpo -BackupGpoName SS64 -TargetName DemoGPO -path C:\Gpobackups</span></p>
+<p>Import the settings from the specified backup in the C:\Gpobackups directory into a GPO that is named DemoGPO in the current domain. The <span class="code">-BackupId</span> parameter is used to specify the GUID of the GPO backup to import:</p>
+<p class="code">PS C:\&gt; import-gpo -BackupId A641D730-F2E3-464C-B8C9-F64562C536AF -TargetName DemoGPO -path c:\Gpobackups -CreateIfNeeded </p>
+<p> Import the settings from the specified backup in the C:\Gpobackups directory into a GPO  named DemoGPO in the current domain. The -BackupId parameter is used to specify the GUID of the GPO backup to use. </p>
+<p class="code">PS C:\&gt; import-gpo -BackupId A641D730-F2EC-464C-B8C1-F50564C536AF -TargetName DemoGPO -path c:\Gpobackups -CreateIfNeeded</p>
+<p class="quote"><i>“Everybody thinks that when new technologies come along that they're transparent and you can just do your job well on it. But technologies always import a whole new set of values with them” ~ </i><i>Brian Eno </i></p>
+<p><b>Related:</b></p>
+<p><a href="backup-gpo.html">Backup-GPO</a> - Backup group policy objects (GPOs)<br>
+<a href="restore-gpo.html">Restore-GPO</a> - Restore one or all GPOs  from a GPO backup.</p>
+<!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="import-gpo.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/import-gpo.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

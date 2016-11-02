@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DBA_SEGMENTS  Storage allocated for all database segments  
+Columns
+   ___________________________
+ 
+   OWNER
+      Username of the segment owner
+   SEGMENT_NAME
+      Name,if any,of the segment
+   PA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/orad/DBA_SEGMENTS.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DBA_SEGMENTS  Storage allocated for all database segments  
+Columns
+   ___________________________
+ 
+   OWNER
+      Username of the segment owner
+   SEGMENT_NAME
+      Name,if any,of the segment
+   PA">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:52.558Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DBA_SEGMENTS  Storage allocated for all database segments  
+Columns
+   ___________________________
+ 
+   OWNER
+      Username of the segment owner
+   SEGMENT_NAME
+      Name,if any,of the segment
+   PA">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orad.lbi" --><!-- #EndLibraryItem --><h1>DBA_SEGMENTS </h1><p> Storage allocated for all database segments </p> 
+<pre>Columns
+   ___________________________
+ 
+   OWNER
+      Username of the segment owner
+   SEGMENT_NAME
+      Name,if any,of the segment
+   PARTITION_NAME
+      Partition/Subpartition Name,if any,of the segment
+   SEGMENT_TYPE
+      "Type of segment: "TABLE","CLUSTER","INDEX","ROLLBACK","DEFERRED
+   TABLESPACE_NAME
+      Name of the tablespace containing the segment
+   HEADER_FILE
+      ID of the file containing the segment header
+   HEADER_BLOCK
+      ID of the block containing the segment header
+   BYTES
+      Size,in bytes of the segment
+   BLOCKS
+      Size,in Oracle blocks of the segment
+   EXTENTS
+      Number of extents allocated to the segment
+   INITIAL_EXTENT
+      Size,in bytes,of the initial extent of the segment
+   NEXT_EXTENT
+      Size,in bytes,of the next extent to be allocated to the segment
+   MIN_EXTENTS
+      Minimum number of extents allowed in the segment
+   MAX_EXTENTS
+      Maximum number of extents allowed in the segment
+   PCT_INCREASE
+      Percent by which to increase the size of the next extent to be allocated
+   FREELISTS
+      Number of process freelists allocated in this segment
+   FREELIST_GROUPS
+      Number of freelist groups allocated in this segment
+   RELATIVE_FNO
+      Relative number of the file containing the segment header
+   BUFFER_POOL
+      The default buffer pool to be used for segments blocks</pre>
+<p><b>Example sql:</b></p>
+<p>-- Total size allocated for each tablespace: </p>
+<p class="code">COLUMN tablespace_name FORMAT A21<br>
+COLUMN Sum(bytes/(1024*1024)) FORMAT 999,999,999,999<br>
+<br>
+Select tablespace_name,<br>
+Sum(bytes/(1024*1024)) TotalMB<br>
+From dba_segments<br>
+Group By tablespace_name;</p>
+<p> -- Total space allocated by Owner:</p>
+<pre>Select owner,
+sum(blocks) Totalblocks,
+sum<span class="code">(bytes/(1024*1024))</span> TotalMB
+From <span class="code">dba_segments</span>
+Group By owner</pre>
+<p>-- Total space allocated by Tablespace:</p>
+<pre>Select tablespace_name,
+sum(blocks) Totalblocks,
+sum<span class="code">(bytes/(1024*1024))</span> TotalMB
+From <span class="code">dba_segments</span>
+Group By tablespace_name 
+</pre>
+<p>-- Space used in each Segment:</p>
+<p class="code">SET LINESIZE 150<br>
+COLUMN tablespace_name FORMAT A15<br>
+COLUMN owner FORMAT A10<br>
+COLUMN segment_name FORMAT A35<br>
+COLUMN segment_type FORMAT A10<br>
+COLUMN extents FORMAT 9,999<br>
+COLUMN blocks FORMAT 999,999<br>
+COLUMN bytes FORMAT 999,999,999,999</p>
+<p class="code">Select tablespace_name, <br>
+owner, <br>
+segment_name, <br>
+segment_type, /* TABLE,INDEX */ <br>
+extents, /* No. of extents in the segment*/ <br>
+blocks, /* No. of db blocks in the segment*/ <br>
+bytes /* No. of bytes in the segment*/ <br>
+From dba_segments<br>
+Where owner NOT IN('SYSTEM','DBSNMP', 'ORDSYS', 'OUTLN','SYS')<br>
+Order By bytes ;</p>
+<p><b>Related</b></p>
+<p><a href="DBA_FREE_SPACE.html">DBA_FREE_SPACE</a><br>
+<a href="DBA_DATA_FILES.html">DBA_DATA_FILES</a><br>
+<a href="DBA_EXTENTS.html">DBA_EXTENTS</a><br>
+<a href="DBA_ROLLBACK_SEGS.html">DBA_ROLLBACK_SEGS</a><br>
+DBA_SEGMENTS_OLD<br>
+<a href="DBA_TABLESPACES.html">DBA_TABLESPACES</a><br>
+Storage - <a href="../ora/syntax-storage.html">Blocks, Extents, Segments</a></p><!-- #BeginLibraryItem "/Library/foot_orad.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="DBA_SEGMENTS.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div>
+<!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/orad/DBA_SEGMENTS.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

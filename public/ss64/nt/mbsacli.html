@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MBSACLI (download v2.3)
+Baseline Security Analyzer.
+Syntax
+      mbsacli [/c|/i|/r|/d domainname|ipaddress|ipaddressrange]
+                 [/n option] [/sus SUS server|SUS filename]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/mbsacli.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="MBSACLI (download v2.3)
+Baseline Security Analyzer.
+Syntax
+      mbsacli [/c|/i|/r|/d domainname|ipaddress|ipaddressrange]
+                 [/n option] [/sus SUS server|SUS filename]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="MBSACLI (download v2.3)
+Baseline Security Analyzer.
+Syntax
+      mbsacli [/c|/i|/r|/d domainname|ipaddress|ipaddressrange]
+                 [/n option] [/sus SUS server|SUS filename]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>MBSACLI (<a href="http://www.microsoft.com/en-us/download/details.aspx?id=7558" target="_blank" rel="external">download v2.3</a>)</h1>
+<p>Baseline Security Analyzer.</p>
+<pre>Syntax
+      mbsacli [/c|/i|/r|/d <i>domainname</i>|<i>ipaddress</i>|<i>ipaddressrange</i>]
+                 [/n <i>option</i>] [/sus <i>SUS server</i>|SUS <i>filename</i>]
+                    [/s level] [/nosum] [/nvc] [/o <i>filename</i>] [/e] [/l] [/ls]
+                       [/lr <i>report name</i>] [/ld <i>report name</i>] [/v] [/?]
+                          [/qp] [/qe] [/qr] [/q] [/f] [/unicode]
+<p>Options<br>
+The Computer to Scan:<br>
+no option           - Scan the local computer.<br>
+/c <i>domainname</i>&lt;i&gt;computername - Scan the named computer.<br>
+/i <a href="http://xxx.xxx.xxx.xxx" target="_blank" rel="external">xxx.xxx.xxx.xxx</a>         - Scan the specified IP address.<br>
+/r <a href="http://xxx.xxx.xxx.xxx" target="_blank" rel="external">xxx.xxx.xxx.xxx</a> - <a href="http://xxx.xxx.xxx.xxx" target="_blank" rel="external">xxx.xxx.xxx.xxx</a> - Scan the specified range of IP addresses.<br>
+/d <i>domainname</i>              - Scan the named domain.</p>
+<p>Items NOT to update</p>
+<p>/n IIS       - Skip IIS checks.<br>
+/n OS        - Skip Windows operating system, IE, Office and Outlook checks.<br>
+/n Password  - Skip password checks.<br>
+/n SQL       - Skip SQL checks.<br>
+/n Updates   - Skip security update checks.<br>
+The above can be combined, for example:<br>
+/n OS + IIS + Updates   -  skip IIS, Windows, and security update checks.</p>
+<p>Security Update Scan Options<br>
+/sus <i>SUS server </i>| SUS <i>filename</i> - Check only for security updates that are approved<br>
+at the specified SUS server, or at the file path of the Approveditems.txt file.<br>
+e.g. <a href="http://server" target="_blank" rel="external">http://server</a> or <a href="http://server/Approveditems.txt" target="_blank" rel="external">http://server/Approveditems.txt</a>.<br>
+If neither is specified, the value will default from the registry (set via Group Policy)<br>
+/s 1    - Suppress security update check note messages.<br>
+/s 2    - Suppress security update check note and warning messages.<br>
+/s 3    - Suppress warnings except for service packs.<br>
+/nosum  - Security update checks will not test file checksums.</p>
+<p>Output File Name<br>
+/o <i>filename</i>    By default, the output filename uses the format “domain - computername (date)”</p>
+<p>Display the Results<br>
+/e              - List the errors from the latest scan.<br>
+/l              - List all the reports that are available.<br>
+/ls             - List the reports from the latest scan.<br>
+/lr <i>report name </i>- Display an overview report.<br>
+/ld <i>report name</i> - Display a detailed report.<br>
+/v              - Display security update reason codes.</p>
+<p>Miscellaneous Options<br>
+/?       - Usage help.<br>
+/qp      - Do not display progress.<br>
+/qe      - Do not display error list.<br>
+/qr      - Do not display report list.<br>
+/q       - Do not display progress, error list, or report list.<br>
+/f       - Redirect the output to a file.<br>
+/unicode - Generate unicode output, useful for Japanese versions of Windows.</p>
+</pre>
+<p>Early versions of this command were known as HFNETCHK.<br>
+<b><i><br>
+</i></b><i class="quote">“It's completely intuitive; it just takes a few days to learn, but then it's completely intuitive” ~ Terry Pratchett.</i><b><br>
+<br>Related:</b></p>
+<p><a href="https://support.microsoft.com/kb/320454/" target="_blank" rel="external">Q320454</a> - Microsoft Baseline Security Analyzer (MBSA) version 1.2.1<br>
+<a href="https://support.microsoft.com/kb/296861" target="_blank" rel="external">Q296861</a> - Use QCHAIN to install multiple hotfixes with only one reboot.<br>
+<a href="https://support.microsoft.com/kb/310747" target="_blank" rel="external">Q310747</a> - System File Checker (Sfc.exe) <br>
+Equivalent bash command (Linux): <a href="http://www.rpm.org/" target="_blank" rel="external">rpm</a> - Remote Package Manager</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="mbsacli.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/mbsacli.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

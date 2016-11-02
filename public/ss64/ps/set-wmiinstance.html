@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-WmiInstance 
+Create or update an instance of an existing Windows Management Instrumentation (WMI) class.
+Syntax
+      Set-WmiInstance [ [-Class] string [-Arguments] hashtable] ]
+        [-Authenti">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-wmiinstance.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-WmiInstance 
+Create or update an instance of an existing Windows Management Instrumentation (WMI) class.
+Syntax
+      Set-WmiInstance [ [-Class] string [-Arguments] hashtable] ]
+        [-Authenti">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-WmiInstance 
+Create or update an instance of an existing Windows Management Instrumentation (WMI) class.
+Syntax
+      Set-WmiInstance [ [-Class] string [-Arguments] hashtable] ]
+        [-Authenti">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-WmiInstance</h1> 
+<p>Create or update an instance of an existing Windows Management Instrumentation (WMI) class.</p>
+<pre>Syntax
+      Set-WmiInstance <b>[</b> <b>[-Class] <i>string</i></b> [-Arguments] <i>hashtable</i>] <b>]</b>
+        [-Authentication {Default | None | Connect | Call | Packet | PacketIntegrity | PacketPrivacy | Unchanged}]
+           [-Authority <i>string</i>] [-ComputerName <i>string</i>[]] [-Credential <i>PSCredential</i>] [-EnableAllPrivileges]
+              [-Impersonation {Default | Anonymous | Identify | Impersonate | Delegate}]
+                 [-Locale <i>string</i>] [-Namespace <i>string</i>] [-AsJob] [-PutType {None | UpdateOnly | CreateOnly | UpdateOrCreate}]
+                    [-ThrottleLimit <i>int</i>] [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<pre><code>  Set-WmiInstance &lt;b&gt;-InputObject &lt;i&gt;ManagementObject&lt;/i&gt;&lt;/b&gt; [-Arguments &lt;i&gt;hashtable&lt;/i&gt;]
+    [-AsJob] [-PutType {None | UpdateOnly | CreateOnly | UpdateOrCreate}]
+       [-ThrottleLimit &lt;i&gt;int&lt;/i&gt;] [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Set-WmiInstance &lt;b&gt;-Path &lt;i&gt;string&lt;/i&gt;&lt;/b&gt; [-Arguments &lt;i&gt;hashtable&lt;/i&gt;]
+    [-Authentication {Default | None | Connect | Call | Packet | PacketIntegrity | PacketPrivacy | Unchanged}]
+       [-Authority &lt;i&gt;string&lt;/i&gt;] [-ComputerName &lt;i&gt;string&lt;/i&gt;[]] [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-EnableAllPrivileges]
+          [-Impersonation {Default | Anonymous | Identify | Impersonate | Delegate}]
+             [-Locale &lt;i&gt;string&lt;/i&gt;] [-Namespace &lt;i&gt;string&lt;/i&gt;] [-AsJob] [-PutType {None | UpdateOnly | CreateOnly | UpdateOrCreate}]
+                [-ThrottleLimit &lt;i&gt;int&lt;/i&gt;] [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-Arguments <i>hashtable</i><br>
+The name of the property to be changed and the new value for that property.<br>
+The name-value pair must be passed on the command-line as a <a href="syntax-arrays.html">hash table</a>. For example:<br>
+-argument @{Setting1=1; Setting2=5; Setting3=“test”}.</p>
+<p>-AsJob<br>
+Run the command as a background job. Use this to run commands that take a long time to finish.<br>
+When -AsJob is used, the command will return an object representing the background job and<br>
+then display the command prompt. You can continue to work in the session while the job finishes.<br>
+If Set-WmiObject is used against a remote computer, the job is created on the local computer, and<br>
+the results from remote computers are automatically returned to the local computer.<br>
+To manage the job, use the job- cmdlets. To get the job results, use <a href="receive-job.html">Receive-Job</a>.</p>
+<pre><code>   Note: To use this parameter with remote computers, the local and remote computers must be configured
+   for remoting. Additionally, you must start Windows PowerShell by using the &quot;Run as administrator&quot; option
+   in Windows Vista and later versions of Windows. For more information, see about_Remote_Requirements.
+    For more information about Windows PowerShell background jobs, see  about_Jobs and about_Remote_Jobs.
+</code></pre>
+<p>-Authentication <i>Authentication</i><br>
+The authentication mechanism to be used with the WMI connection. Possible values are:</p>
+<pre><code>   -1: Unchanged
+    0: Default
+    1: None (No authentication in performed.)
+    2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
+    3: Call (Authentication is performed only at the beginning of each call when
+             the application receives the request.)
+    4: Packet (Authentication is performed on all the data that is received from the client.)
+    5: PacketIntegrity (All the data that is transferred between the client and the application is
+                        authenticated and verified.)
+    6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
+</code></pre>
+<p>-Authority <i>string</i><br>
+The authority to use to authenticate the WMI connection.<br>
+Specify standard NTLM or Kerberos authentication. To use NTLM, set the authority setting to<br>
+ntlmdomain:<i>DomainName</i>, where <i>DomainName</i> identifies a valid NTLM domain name.<br>
+To use Kerberos, specify kerberos:<i>DomainName</i>&lt;i&gt;ServerName&quot;.<br>
+You cannot include the authority setting when you connect to the local computer.</p>
+<p>-Class <i>string</i><br>
+The name of a WMI class.</p>
+<p>-ComputerName <i>string</i>[]<br>
+The computer against which you want to run the management operation.<br>
+A fully qualified domain name, NetBIOS name, or an IP address.<br>
+Use the local computer name, localhost, or a dot (.) to specify the local computer.<br>
+The local computer is the default. When the remote computer is in a different domain,<br>
+use a fully qualified domain name. You can pipe a value for ComputerName.<br>
+(This parameter does not rely on Windows PowerShell remoting)</p>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action. default=current user.<br>
+e.g. “User01”, “Domain01\User01”, or <a href="mailto:%22User@Domain.com" target="_blank" rel="external">&quot;User@Domain.com</a>&quot;. Or a PSCredential object, such as<br>
+returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password.<br>
+-EnableAllPrivileges [&lt;SwitchParameter&gt;]<br>
+Enables all the privileges of the current user before the command makes the WMI call .</p>
+<p>-Impersonation <i>ImpersonationLevel</i><br>
+The impersonation level to use. Valid values are:</p>
+<pre><code>    0: Default (Reads the local registry for the default impersonation level, which is usually set to &quot;3: Impersonate&quot;.)
+    1: Anonymous (Hides the credentials of the caller.)
+    2: Identify (Allows objects to query the credentials of the caller.)
+    3: Impersonate (Allows objects to use the credentials of the caller.)
+    4: Delegate (Allows objects to permit other objects to use the credentials of the caller.)
+</code></pre>
+<p>-InputObject <i>ManagementObject</i><br>
+A ManagementObject object to use as input.<br>
+When this parameter is used, all other parameters ,except for -Arguments, are ignored.</p>
+<p>-Locale <i>string</i><br>
+The preferred locale for WMI objects.<br>
+The Locale parameter is specified in an array in the MS_<i>LCID</i>  format in the preferred order.</p>
+<p>-Namespace <i>string</i><br>
+When used with -Class, this specifies the WMI repository namespace where the referenced<br>
+WMI class is located.</p>
+<p>-Path <i>string</i><br>
+A WMI object path to the instance that you want to create or update.</p>
+<p>-PutType <i>PutType</i><br>
+Indicates whether the WMI instance should be created or updated. Valid values are:</p>
+<pre><code>    UpdateOnly      Update an existing WMI instance.
+    CreateOnly      Create a new WMI instance.
+    UpdateOrCreate  Update the WMI instance if it exists or else create a new instance.
+</code></pre>
+<p>-ThrottleLimit <i>int</i><br>
+Allow the user to specify a throttling value for the number of WMI operations that can be executed simultaneously.<br>
+This parameter is used together with the AsJob parameter.<br>
+The throttle limit applies only to the current command, not to the session or to the computer.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command without actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Set-WmiInstance:<span class="code"> <b>swmi</b></span></p>
+<p>Connect-WSMan  establishes a <i>persistent</i> connection to the remote computer. You can  connect to the WinRM service on a remote computer before or after you change to the WS-Management provider. The remote computer will appear in the root directory of the WS-Management provider.</p>
+<p><b>Examples</b></p>
+<p>Set the WMI logging level to 2, (    note the the property to be set and the value are passed together as a value pair): </p>
+<p><span class="code">PS C:\&gt;    Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}</span></p>
+<p>Create the testvar environment variable that has the value "testvalue" (you may need to restart Windows PowerShell to see the new environment variable): </p>
+<p><span class="code">PS C:\&gt; set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="&lt;SYST<br>
+EM&gt;"}</span></p>
+<p>Set the WMI logging level to 2 on Server64 and Server65: </p>
+<p><span class="code">PS C:\&gt; Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername server64, server65 </span></p>
+<p class="quote"><i>“From now on, I'll connect the dots my own way” ~ Bill Watterson</i></p>
+<p><b>Related:</b><br>
+<br>
+  <a href="get-wmiobject.html">Get-WmiObject</a> - Get WMI class information</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set-wmiinstance.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-wmiinstance.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

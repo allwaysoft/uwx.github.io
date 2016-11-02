@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="uuencode / uudecode 
+ uuencode - encode a binary file 
+  
+uudecode - decode a file created by uuencode
+Syntax
+       uuencode [-m] [ file ] name
+   uudecode [-o &amp;lt;i&amp;gt;outfile&amp;lt;/i&amp;gt;] [ &amp;lt;i&amp;gt;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/uuencode.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="uuencode / uudecode 
+ uuencode - encode a binary file 
+  
+uudecode - decode a file created by uuencode
+Syntax
+       uuencode [-m] [ file ] name
+   uudecode [-o &amp;lt;i&amp;gt;outfile&amp;lt;/i&amp;gt;] [ &amp;lt;i&amp;gt;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:43.483Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="uuencode / uudecode 
+ uuencode - encode a binary file 
+  
+uudecode - decode a file created by uuencode
+Syntax
+       uuencode [-m] [ file ] name
+   uudecode [-o &amp;lt;i&amp;gt;outfile&amp;lt;/i&amp;gt;] [ &amp;lt;i&amp;gt;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>uuencode / uudecode</h1> 
+<p> uuencode - encode a binary file <br>
+  <br>
+uudecode - decode a file created by uuencode</p>
+<pre>Syntax
+       uuencode [-m] [ <i>file</i> ] <i>name</i>
+<pre><code>   uudecode [-o &lt;i&gt;outfile&lt;/i&gt;] [ &lt;i&gt;file&lt;/i&gt; ]...
+</code></pre>
+</pre>
+<p> Uuencode  and  uudecode  are used to transmit binary files over transmission mediums that do not support  other  than
+simple ASCII data.</p>
+<p>Debian/Ubuntu users can install uuencode as part of the ’<a href="http://packages.ubuntu.com/search?keywords=sharutils" target="_blank" rel="external">sharutils</a>’ group of Unix utilities with <span class="code"><a href="apt-get.html">apt-get</a> install sharutils</span><br>
+  <br>
+  Uuencode reads <i>file</i> (or by default the standard input) and
+  writes an encoded version to  the  standard  output.   The
+  encoding  uses only printing ASCII characters and includes
+  the mode of the file and the operand name for use by uude
+code.</p>
+<p>By default the standard  UU  encoding       
+  format  will  be  used. If the option -m is given on the       
+      command line base64 encoding is used instead.</p>
+<p>Uudecode transforms uuencoded files (or  by  default,  the
+      standard  input)  into  the  original form.  The resulting       
+      file is named <i>name</i> (or outfile if the -o option is  given)       
+      and  will  have  the mode of the original file except that       
+setuid and execute bits are not retained. </p>
+<p>If  outfile  or       
+        <i>name</i> is <span class="code">/dev/stdout</span> the result will be written to standard       
+        output.  Uudecode ignores any leading and trailing  lines.       
+        The  program  can  automatically  decide which of the both       
+        supported encoding schemes are used.</p>
+<p><b>Examples</b><br>       
+The following example packages  up  a  source  tree,  compresses it, uuencodes it and mails it to a user on another     
+system.  When uudecode is run on the  target  system,  the file  `src_tree.tar.Z' will be created which can then be       
+uncompressed and extracted into the original tree.</p>
+<pre>      tar  cf  -   src_tree   |   compress   |   uuencode
+      src_tree.tar.Z | mail sys1!sys2!user</pre>
+<p><i class="quote">"One of the main causes of the fall of the Roman Empire was that, lacking zero, they had no way to indicate successful termination of their 
+C programs" ~ Robert Firth</i><br>
+<br>
+<b> Related:</b><br>
+<br>
+<a href="iconv.html">iconv</a> - Convert the character set of a file<br>compress(1) - <br>
+mail(1) - <br>
+uucp(1) - <br>
+Equivalent Windows command: NTUUCODE.EXE - UUEncode/Decode utility</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/uuencode.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

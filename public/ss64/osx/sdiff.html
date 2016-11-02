@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sdiff 
+Merge two files interactively. (Show differences) with output 
+to outfile.
+Syntax
+      sdiff -o outfile [options] from-file to-file
+Options
+Multiple single letter options (unless they take an">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/sdiff.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="sdiff 
+Merge two files interactively. (Show differences) with output 
+to outfile.
+Syntax
+      sdiff -o outfile [options] from-file to-file
+Options
+Multiple single letter options (unless they take an">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.192Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="sdiff 
+Merge two files interactively. (Show differences) with output 
+to outfile.
+Syntax
+      sdiff -o outfile [options] from-file to-file
+Options
+Multiple single letter options (unless they take an">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>sdiff</h1> 
+<p>Merge two files interactively. (Show differences) with output 
+to <i>outfile</i>.</p>
+<pre>Syntax
+      sdiff -o <i>outfile</i> [<i>options</i>] <i>from-file to-file</i>
+<p>Options</p>
+<p>Multiple single letter options (unless they take an argument)<br>
+can be combined into a single command line argument.</p>
+<pre><code>   &lt;b&gt;-a&lt;/b&gt;     Treat all files as text and compare them line-by-line,
+          even if they do not appear to be text.
+
+   &lt;b&gt;-b&lt;/b&gt;     Ignore changes in amount of white space.
+
+   &lt;b&gt;-B&lt;/b&gt;     Ignore changes that just insert or delete blank
+          lines.
+
+   &lt;b&gt;-d&lt;/b&gt;     Change the algorithm to perhaps find a smaller set
+          of changes. This makes &lt;i&gt;sdiff&lt;/i&gt; slower (sometimes
+          much slower).
+
+   &lt;b&gt;-H&lt;/b&gt;     Use heuristics to speed handling of large files
+          that have numerous scattered small changes.
+
+   &lt;b&gt;--expand-tabs&lt;/b&gt;
+
+          Expand tabs to spaces in the output, to preserve
+          the alignment of tabs in the input files.
+
+   &lt;b&gt;-i&lt;/b&gt;     Ignore changes in case; consider upper- and  lower-
+          case to be the same.
+
+   &lt;b&gt;-I&lt;/b&gt; &lt;i&gt;regexp&lt;/i&gt;
+          Ignore changes that just insert or delete lines
+          that match &lt;i&gt;regexp&lt;/i&gt;.
+
+   &lt;b&gt;--ignore-all-space&lt;/b&gt;
+          Ignore white space when comparing lines.
+
+   &lt;b&gt;--ignore-blank-lines&lt;/b&gt;
+
+          Ignore changes that just insert or delete blank
+          lines.
+
+   &lt;b&gt;--ignore-case&lt;/b&gt;
+          Ignore  changes in case; consider upper- and lower-
+          case to be the same.
+
+   &lt;b&gt;--ignore-matching-lines=&lt;/b&gt;&lt;i&gt;regexp&lt;/i&gt;
+          Ignore changes that just insert or delete lines
+          that match &lt;i&gt;regexp&lt;/i&gt;.
+
+   &lt;b&gt;--ignore-space-change&lt;/b&gt;
+          Ignore changes in amount of white space.
+
+   &lt;b&gt;-l&lt;/b&gt;
+
+   &lt;b&gt;--left-column&lt;/b&gt;
+          Print only the left column of two common lines.
+
+   &lt;b&gt;--minimal&lt;/b&gt;
+          Change  the algorithm to perhaps find a smaller set
+          of changes.  This  makes  &lt;i&gt;sdiff&lt;/i&gt;  slower  (sometimes
+          much slower).
+
+   &lt;b&gt;-o&lt;/b&gt; &lt;i&gt;file&lt;/i&gt;
+   &lt;b&gt;--output=&lt;/b&gt;&lt;i&gt;file&lt;/i&gt;
+
+          Put  merged  output  into  &lt;i&gt;file&lt;/i&gt;. This option is
+          required for merging.
+
+   &lt;b&gt;-s&lt;/b&gt;
+   &lt;b&gt;--suppress-common-lines&lt;/b&gt;
+          Do not print common lines.
+
+   &lt;b&gt;--speed-large-files&lt;/b&gt;
+          Use heuristics to speed  handling  of  large  files
+          that have numerous scattered small changes.
+
+   &lt;b&gt;-t&lt;/b&gt;     Expand  tabs  to  spaces in the output, to preserve
+          the alignment of tabs in the input files.
+
+   &lt;b&gt;--text&lt;/b&gt; Treat all files as text and compare  them  line-by-
+          line, even if they do not appear to be text.
+
+   &lt;b&gt;-v&lt;/b&gt;
+
+   &lt;b&gt;--version&lt;/b&gt;
+          Output the version number of &lt;i&gt;sdiff&lt;/i&gt;.
+
+   &lt;b&gt;-w&lt;/b&gt; &lt;i&gt;columns&lt;/i&gt;
+   &lt;b&gt;--width=&lt;/b&gt;&lt;i&gt;columns&lt;/i&gt;
+          Use an output width of &lt;i&gt;columns&lt;/i&gt;.  Note that for his-
+          torical reasons, this option is &lt;b&gt;-W&lt;/b&gt; in &lt;i&gt;diff&lt;/i&gt;,  &lt;b&gt;-w&lt;/b&gt;  in
+          &lt;i&gt;sdiff&lt;/i&gt;.
+
+   &lt;b&gt;-W&lt;/b&gt;     Ignore horizontal white space when comparing lines.
+          Note that for historical reasons, this option is &lt;b&gt;-w&lt;/b&gt;
+
+          in &lt;i&gt;diff&lt;/i&gt;, &lt;b&gt;-W&lt;/b&gt; in &lt;i&gt;sdiff&lt;/i&gt;.  &lt;/pre&gt;
+</code></pre>
+<p><b>Notes<br>
+  </b>Long named options can be abbreviated to any unique prefix of their name.</p>
+<p> If <i>from-file</i> is a directory and <i>to-file</i> is not, 
+  <i>sdiff</i> compares the file in <i>from-file</i> whose file name is that of 
+  <i>to-file</i>, and vice versa. <i>from-file</i> and <i>to-file</i> may not 
+  both be directories.</p>
+<p> <i>sdiff</i> options begin with <b>-</b>, so normally <i>from-file</i> 
+  and <i>to-</i><i>file</i> may not begin with <b>-</b>. However, <b>--</b> as 
+  an argument by itself treats the remaining arguments as file names even if they 
+  begin with <b>-</b>. </p>
+<p>You may not use <b>-</b> as an input file. </p>
+<p><i>sdiff</i> without <b>-o</b> (or <b>--output</b>) produces a 
+  side-by-side difference. This usage is obsolete; use <b>diff</b> <b>--side-by-side</b> 
+  instead.</p>
+<p>An exit status of 0 means no differences were found, 1 means some 
+  differences were found, and 2 means trouble.</p>
+<p class="quote"><i>“The more the merrier” ~ John Heywood</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/sdiff.1.html" target="_blank" rel="external">sdiff man page</a> - Apple.com<br>
+<a href="cmp.html">cmp</a> - Compare two files<br>
+<a href="comm.html">comm</a> - Compare two sorted files line by line<br>
+<a href="diff.html">diff</a> - Display the differences between two files<br>
+<a href="diff3.html">diff3</a> - Show differences among three files </p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="sdiff.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/sdiff.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

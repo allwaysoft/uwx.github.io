@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Invoke-WmiMethod 
+Call Windows Management Instrumentation (WMI) methods.
+Syntax
+    Invoke-WmiMethod [-Class] string [[-ArgumentList] Object[]] [-Authentication AuthenticationLevel]
+       [-Authority">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/invoke-wmimethod.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Invoke-WmiMethod 
+Call Windows Management Instrumentation (WMI) methods.
+Syntax
+    Invoke-WmiMethod [-Class] string [[-ArgumentList] Object[]] [-Authentication AuthenticationLevel]
+       [-Authority">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.027Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Invoke-WmiMethod 
+Call Windows Management Instrumentation (WMI) methods.
+Syntax
+    Invoke-WmiMethod [-Class] string [[-ArgumentList] Object[]] [-Authentication AuthenticationLevel]
+       [-Authority">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Invoke-WmiMethod</h1> 
+<p>Call Windows Management Instrumentation (WMI) methods.</p>
+<pre>Syntax
+    Invoke-WmiMethod <b>[-Class] <i>string</i></b> [[-ArgumentList] <i>Object</i>[]] [-Authentication <i>AuthenticationLevel</i>]
+       [-Authority <i>string</i>] [-ComputerName &lt;string[]&gt;] [-Credential <i>PSCredential</i>]
+          [-EnableAllPrivileges] [-Impersonation <i>ImpersonationLevel</i>] [-Locale <i>string</i>]
+             [-Namespace <i>string</i>] [-Name] <i>string</i> [-AsJob] [-ThrottleLimit <i>int</i>]
+                [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<pre><code>Invoke-WmiMethod &lt;b&gt;-InputObject &lt;i&gt;ManagementObject&lt;/i&gt;&lt;/b&gt; [-ArgumentList &lt;i&gt;Object&lt;/i&gt;[]] [-Name] &lt;i&gt;string&lt;/i&gt;
+   [-AsJob] [-ThrottleLimit &lt;i&gt;int&lt;/i&gt;]
+      [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+Invoke-WmiMethod &lt;b&gt;-Path &lt;i&gt;string&lt;/i&gt;&lt;/b&gt; [-ArgumentList &lt;i&gt;Object&lt;/i&gt;[]] [-Authentication &lt;i&gt;AuthenticationLevel&lt;/i&gt;]
+   [-Authority &lt;i&gt;string&lt;/i&gt;] [-ComputerName &lt;i&gt;string&lt;/i&gt;[]] [-Credential &lt;i&gt;PSCredential&lt;/i&gt;]
+      [-EnableAllPrivileges] [-Impersonation &lt;i&gt;ImpersonationLevel&lt;/i&gt;] [-Locale &lt;i&gt;string&lt;/i&gt;]
+         [-Namespace &lt;i&gt;string&lt;/i&gt;] [-Name] &lt;i&gt;string&lt;/i&gt; [-AsJob] [-ThrottleLimit &lt;i&gt;int&lt;/i&gt;]
+            [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+Invoke-WmiMethod  [-Authentication &lt;i&gt;AuthenticationLevel&lt;/i&gt;]
+   [-Authority &lt;i&gt;string&lt;/i&gt;] [-ComputerName &lt;i&gt;string&lt;/i&gt;[]] [-Credential &lt;i&gt;PSCredential&lt;/i&gt;]
+      [-EnableAllPrivileges] [-Impersonation &lt;i&gt;ImpersonationLevel&lt;/i&gt;] [-Locale &lt;i&gt;string&lt;/i&gt;]
+         [-Namespace &lt;i&gt;string&lt;/i&gt;] [-Name] &lt;i&gt;string&lt;/i&gt; [-AsJob] [-ThrottleLimit &lt;i&gt;int&lt;/i&gt;]
+            [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-ArgumentList <i>Object</i>[]<br>
+The parameters to pass to the called method.<br>
+The value of this parameter must be an array of objects and they must appear in the<br>
+order required by the called method.</p>
+<pre><code>   Important: A second value of $null is required, otherwise the command will generate
+   an error, such as &quot;Unable to cast object of type 'System.Byte' to type 'System.Array'.&quot;.
+
+   An example using an array of objects ($binSD) followed by a null value ($null) follows:
+
+    PS C:\&amp;gt; $acl = get-acl test.txt
+    PS C:\&amp;gt; $binSD = $acl.GetSecurityDescriptorBinaryForm()
+    PS C:\&amp;gt; invoke-wmimethod -class Win32_SecurityDescriptorHelper -Name BinarySDToSDDL -argumentlist $binSD, $null
+</code></pre>
+<p>-AsJob<br>
+Run the command as a background job.<br>
+Results from remote computers are automatically returned to the local computer.<br>
+To get the job results, use -Receive-Job</p>
+<pre><code>   Note: To use this parameter with remote computers, the local and remote
+   computers must be configured for remoting. Additionally, you must start
+   PowerShell in Elevated mode/&quot;Run as administrator&quot;
+</code></pre>
+<p>-Authentication <i>AuthenticationLevel</i><br>
+The authentication level to be used with the WMI connection:</p>
+<pre><code>     Default | None | Connect | Call |  Packet | PacketIntegrity | PacketPrivacy | Unchanged
+
+   -1: Unchanged
+    0: Default
+    1: None            No authentication in performed.
+    2: Connect         Authentication is performed only when the client establishes
+                         a relationship with the application.
+    3: Call            Authentication is performed only at the beginning of each call
+                         when the application receives the request.
+    4: Packet          Authentication is performed on all the data that is received from the client.
+    5: PacketIntegrity All the data that is transferred between the client
+                         and the application is authenticated and verified.
+    6: PacketPrivacy   The properties of the other authentication levels are used,
+                         and all the data is encrypted.)
+</code></pre>
+<p>-Authority <i>string</i><br>
+The authority to use to authenticate a remote WMI connection:<br>
+for NTLM:      ntlmdomain:<i>DomainName</i><br>
+for Kerberos:  kerberos:<i>DomainName</i>&lt;i&gt;ServerName</p>
+<p>-class <i>string</i><br>
+The name of a WMI class (see list below).</p>
+<p>-computerName <i>string</i>[]<br>
+The computer(s) to run against.<br>
+A NETBIOS name, an IP address, full domain name or local (.)<br>
+WMI information is retrieved via the WMI <a href="../nt/syntax-services.html">Service</a> (CIMOM)<br>
+on the specified computers. This does not rely on PowerShell remoting.</p>
+<p>-credential <i>PSCredential</i><br>
+Use the specified credential to authenticate the user. Type a user name<br>
+or submit a credential object (created with <a href="get-credential.html">Get-Credential</a>)<br>
+If you supply a user name, you will be prompted for a password.</p>
+<p>-EnableAllPrivileges<br>
+Enable all the privileges of the current user before the command makes the WMI call.</p>
+<p>-Impersonation <i>ImpersonationLevel</i><br>
+The impersonation level to use:<br>
+Default | Anonymous | Identify | Impersonate | Delegate</p>
+<pre><code>     0: Default (read the registry for the default, which is usually set to &quot;3&quot;.)
+     1: Anonymous (Hide the credentials of the caller.)
+     2: Identify (Allow objects to query the credentials of the caller.)
+     3: Impersonate (Allow objects to use the credentials of the caller.)
+     4: Delegate (Allow objects to permit other objects to use the credentials of the caller.)
+</code></pre>
+<p>-InputObject <i>ManagementObject</i><br>
+A ManagementObject object to use as input.<br>
+When this parameter is used, all other parameters except -Flag and -Argument are ignored.</p>
+<p>-Locale <i>string</i><br>
+The preferred locale for WMI objects.<br>
+Specify as an array in MS_<i>LCID</i> format in the preferred order.</p>
+<p>-Name <i>string</i><br>
+The name of the method to be invoked.<br>
+This parameter is mandatory and cannot be null or empty.</p>
+<p>-namespace <i>string</i><br>
+When used with the -Class parameter, this parameter specifies the WMI repository namespace.</p>
+<p>-Path <i>string</i><br>       The WMI object path of a WMI class, or the WMI object path of an instance of a WMI class.<br>
+The class or the instance specified must contain the method specified in the -Name parameter.</p>
+<p>-ThrottleLimit int<br>
+Allow the user to specify a throttling value for the number of WMI operations<br>
+that can be executed simultaneously. (Used together with -AsJob.)<br>
+-throttlelimit applies only to the current command, not to the session or to the computer.<br>        <br>   -Confirm<br>
+Prompt for confirmation before executing the command.<br>        <br>   -whatIf<br>
+Describe what would happen if you executed the command without<br>
+actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Invoke-WmiMethod:<span class="code"> iwmi</span></p>
+<p>Invoke-WmiMethod calls WMI methods.</p>
+<p>The WMI classes available will vary according to your operating system, to list WMI classes use<span class="code"> <a href="get-wmiobject.html">Get-WmiObject<br>
+</a></span>Some common WMI classes:</p>
+<p class="code"> Win32_computerSystem<br>
+Win32_bios<br>
+Win32_baseboard &nbsp;&nbsp;(Motherboard)<br>
+Win32_processor &nbsp;&nbsp;(32+64 bit processor info) <br>
+Win32_LogicalDisk &nbsp;(hard disk)<br>
+Win32_PhysicalMemory<br>
+Win32_operatingSystem &nbsp;(Virtual Memory)</p>
+<p><b>Examples</b></p>
+<p>Start an instance of Notepad by calling the Create method of the Win32_Process class:</p>
+<p><span class="code">PS C:\&gt; invoke-wmimethod -path win32_process -name create -argumentlist notepad.exe</span></p>
+<p>Rename a file by applying the Rename method to an instance of the CIM_DataFile class:</p>
+<p><span class="code">PS C:\&gt; invoke-wmimethod -path "CIM_DataFile.Name='F:\test.txt'" -Name Rename -ArgumentList "F:\backup.txt"</span><br>
+  <br>
+  <i class="quote">“Drunk with power isn't the same as being drunk with booze” ~ Craig Ferguson</i></p>
+<p><b>Related:</b></p>
+<p><a href="get-wmiobject.html">Get-WmiObject</a> - Get WMI class information<br>
+<a href="get-credential.html">Get-Credential</a> - Get a security credential object based on a user name and password.<br>
+<a href="http://msdn.microsoft.com/en-us/library/aa394606%28VS.85%29.aspx" target="_blank" rel="external">WQL (WMI Query Language)</a> - msdn.microsoft.com</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="invoke-wmimethod.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/invoke-wmimethod.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

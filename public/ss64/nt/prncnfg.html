@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PRNCNFG.vbs (Vista and above or 2003 adminpack.msi)
+Configure a printer (set properties, rename).
+
+Display configuration information about a printer:
+
+    cscript prncnfg.vbs -g [-s RemoteComputer]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/prncnfg.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PRNCNFG.vbs (Vista and above or 2003 adminpack.msi)
+Configure a printer (set properties, rename).
+
+Display configuration information about a printer:
+
+    cscript prncnfg.vbs -g [-s RemoteComputer]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:53.079Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PRNCNFG.vbs (Vista and above or 2003 adminpack.msi)
+Configure a printer (set properties, rename).
+
+Display configuration information about a printer:
+
+    cscript prncnfg.vbs -g [-s RemoteComputer]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>PRNCNFG.vbs (Vista and above or <a href="../links/windows.html">2003 adminpack.msi</a>)</h1>
+<p>Configure a printer (set properties, rename).<br>
+</p>
+<p>Display configuration information about a printer:<br>
+</p>
+<pre>    cscript prncnfg.vbs <b>-g</b> [-s <i>RemoteComputer</i>]
+            -p <i>PrinterName</i> 
+               [-u <i>UserName</i> -w <i>Password</i>] 
+<p><span class="body">Configure a printer:</span></p>
+<pre><code>cscript prncnfg.vbs &lt;b&gt;-t&lt;/b&gt; [-s &lt;i&gt;RemoteComputer&lt;/i&gt;]
+        -p PrinterName [-r &lt;i&gt;PortName&lt;/i&gt;] [-l &lt;i&gt;Location&lt;/i&gt;]
+            [-m Comment] [-h &lt;i&gt;ShareName&lt;/i&gt;] [-f &lt;i&gt;SeparatorText&lt;/i&gt;]
+               [-y &lt;i&gt;DataType&lt;/i&gt;] [-st &lt;i&gt;StartTime&lt;/i&gt;] [-ut &lt;i&gt;EndTime&lt;/i&gt;] [-o &lt;i&gt;Priority&lt;/i&gt;]
+                  [-i DefaultPriority] [{+ | -}shared] [{+ | -}direct]
+                     [{+ | -}published] [{+ | -}hidden] [{+ | -}rawonly]
+                          [{+ | -}queued] [{+ | -}keepprintedjobs]
+                              [{+ | -}workoffline] [{+ | -}enabledevq]
+                                 [{+ | -}docompletefirst][{+ | -}enablebidi]
+</code></pre>
+<p><span class="body">Change the name of a printer</span>:</p>
+<pre><code>cscript prncnfg.vbs &lt;b&gt;-x&lt;/b&gt; [-s &lt;i&gt;RemoteComputer&lt;/i&gt;]
+        -p &lt;i&gt;PrinterName&lt;/i&gt; -z &lt;i&gt;NewPrinterName&lt;/i&gt;
+          [-u &lt;i&gt;UserName&lt;/i&gt; -w &lt;i&gt;Password&lt;/i&gt;] 
+</code></pre>
+<p>Key</p>
+<p>-s <i>RemoteComputer</i><br>
+The name of the remote computer that manages the printer.</p>
+<p>-p <i>PrinterName</i><br>
+The name of the printer.</p>
+<p>-u <i>UserName</i> -w <i>Password</i><br>
+An account with permission to connect WMI services to the computer<br>
+that hosts the printer. e.g. A member of the Administrators group.</p>
+<p>-r <i>PortName</i><br>
+The port to which the printer is connected.<br>
+If this is a parallel or a serial port, then use the ID of the port<br>
+(for example, LPT1 or COM1). If this is a TCP/IP port, then use the<br>
+port name that was specified when the port was added.</p>
+<p>-l <i>Location</i><br>
+The printer location, such as “Copier Room.”</p>
+<p>-m <i>Comment</i><br>
+A comment string.</p>
+<p>-h <i>ShareName</i><br>
+The share name.</p>
+<p>-f <i>SeparatorText</i><br>
+A file that contains the text that appears on the separator page.</p>
+<p>-y <i>DataType</i><br>
+Data types that the printer can accept.</p>
+<p>-st <i>StartTime</i><br>
+Specify a time of the day after which the printer is available.<br>
+If you send a document to a printer when it is unavailable, the<br>
+document is held (spooled) until the printer becomes available.<br>
+Specify time as a 24-hour clock. e.g. 2300</p>
+<p>-ut <i>EndTime</i><br>
+Specify a time of the day after which the printer is no longer available.</p>
+<p>-o <i>Priority</i><br>
+A priority that the spooler uses to route print jobs.<br>
+A print queue with a higher priority receives all its<br>
+jobs before any queue with a lower priority.</p>
+<p>-i <i>DefaultPriority</i><br>
+The default priority assigned to each print job.</p>
+<p>{+ | -}shared<br>
+Is this printer is shared on the network.</p>
+<p>{+ | -}direct<br>
+Is the document to be sent directly to the printer without being spooled.</p>
+<p>{+ | -}published<br>
+Is this printer to be published in Active Directory.<br>
+If you publish a printer, other users can search for it based on its location<br>
+and capabilities, such as color printing and stapling.</p>
+<p>{+ | -}hidden<br>
+Reserved function.</p>
+<p>{+ | -}rawonly<br>
+Are only raw data print jobs to be spooled on this queue.</p>
+<p>{+ | -}queued<br>
+Do not begin to print until after the last page of the document is spooled.<br>
+The printing program is unavailable until the document has finished printing.<br>
+This option ensures that the whole document is available to the printer.</p>
+<p>{+ | -}keepprintedjobs<br>
+Retain documents after they are printed.<br>
+Allows a user to resubmit a document to the printer from the print queue.</p>
+<p>{+ | -}workoffline<br>
+Allow sending print jobs when computer is not connected to the network.</p>
+<p>{+ | -}enabledevq<br>
+Print jobs that do not match the printer setup (for example, PostScript files<br>
+spooled to non-PostScript printers) should be held in the queue rather than<br>
+being printed.</p>
+<p>{+ | -}docompletefirst<br>
+Allocate jobs to a printer as soon as thay are spooled.<br>
+If this option is disabled, the spooler always sends higher priority<br>
+jobs to their respective queues first.<br>
+You should enable this option if you want to maximize printer efficiency<br>
+at the cost of job priority.</p>
+<p>{+ | -}enablebidi<br>
+Send bi-directional status information to the spooler.</p>
+<p>?         Help</p></pre><p></p>
+<p>Prncnfg.vbs is not be included in the Windows <a href="path.html">PATH</a> but will be found at <span class="code">%Windir%\System32\Printing_Admin_Scripts\en-US\prncnfg.vbs</span><br>
+If installed via the 2003 adminpack, it will be located in the \Program files\Windows Resource Kits\ folder.</p>
+<p>Examples</p>
+<pre>   Set _scripts=cscript <span class="code">%Windir%\System32\Printing_Admin_Scripts\en-US</span>
+<p>:: Rename printer<br>
+%_scripts%\prncnfg.vbs -x -p OldPrinter45 -z NewPrinter64</p></pre><p></p>
+<p class="quote"><i>“Without books the development of civilization would have been impossible. They are the engines of change, windows on the world, ''Lighthouses'' as the poet said ''erected in the sea of time'.' They are companions, teachers, magicians, bankers of the treasures of the mind, Books are humanity in print”  ~ Arthur Schopenhauer</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="print.html">PRINT</a> - Print a text file<br>
+<a href="net_share.html">NET VIEW</a> - to view a list of printers<br>
+<a href="net_print.html">NET PRINT</a> - View and Delete print jobs <br>
+PRNDRVR - Add, delete or list printer drivers.<br>
+PRNJOBS - Pause, resume, cancel, or list print jobs<br>
+<a href="prnmngr.html">PRNMNGR</a> - Add, delete, or list printers / connections, set the default printer. 
+<br>
+PRNPORT/PRNQCTL - Manage printer ports &amp; printer queues.<br>
+<a href="rundll32.html">RUNDLL32</a> - Install/Remove Printers (plus advanced options)<br>
+<a href="wmic.html">WMIC PRINTER</a> - Set printing options through WMI. <br>
+<a href="https://support.microsoft.com/kb/246868" target="_blank" rel="external">Q246868</a> - New TCP/IP Printing Options in the Windows Standard Port Monitor <br>
+Add printer - <a href="../vb/addprinterconnection.html">.AddPrinterConnection</a> <br>
+Add Network printer - <a href="../vb/addwindowsprinterconnection.html">.AddWindowsPrinterConnection</a> 
+<br>
+List printers - <a href="../vb/enumprinterconnections.html">.EnumPrinterConnections</a> 
+<br>
+Set default printer - <a href="../vb/setdefaultprinter.html">.SetDefaultPrinter</a><br>
+Equivalent bash command (Linux): 
+<a href="../bash/lpc.html">lpc</a> - Line printer control program</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/prncnfg.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

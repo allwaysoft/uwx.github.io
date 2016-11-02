@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dseditgroup 
+Directory Service group record manipulation tool.
+Syntax
+     dseditgroup [options] [parameters] groupname
+Key:
+options:
+-o operation   perform (read, create, delete, edit, checkmember)
+o">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/dseditgroup.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="dseditgroup 
+Directory Service group record manipulation tool.
+Syntax
+     dseditgroup [options] [parameters] groupname
+Key:
+options:
+-o operation   perform (read, create, delete, edit, checkmember)
+o">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="dseditgroup 
+Directory Service group record manipulation tool.
+Syntax
+     dseditgroup [options] [parameters] groupname
+Key:
+options:
+-o operation   perform (read, create, delete, edit, checkmember)
+o">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>dseditgroup</h1> 
+<p>Directory Service group record manipulation tool.</p>
+<pre>Syntax
+     dseditgroup [<i>options</i>] [<i>parameters</i>] <i>groupname</i>
+<p>Key:<br>
+options:<br>
+-o <i>operation</i>   perform (read, create, delete, edit, checkmember)<br>
+operation with given group-name.<br>
+-p             prompt for authentication password<br>
+-q             disables interactive verification<br>
+-v             verbose logging to stdout</p>
+<pre><code>      parameters:
+         -m &lt;i&gt;member&lt;/i&gt;      username to use for checkmember option
+         -n &lt;i&gt;nodename&lt;/i&gt;    directory node location of group record
+         -u &lt;i&gt;username&lt;/i&gt;    authenticate with admin username
+         -P &lt;i&gt;password&lt;/i&gt;    authentication password
+         -a &lt;i&gt;recordname&lt;/i&gt;  name of the record to add
+         -d &lt;i&gt;recordname&lt;/i&gt;  name of the record to delete
+         -t &lt;i&gt;recordtype&lt;/i&gt;  type of the record to add or delete
+         -T &lt;i&gt;grouptype&lt;/i&gt;   type of group to create or modify
+         -L             maintain ComputerLists in parallel with ComputerGroups 
+         -i &lt;i&gt;gid&lt;/i&gt;         gid to add/replace
+         -g &lt;i&gt;guid&lt;/i&gt;        GUID to add/replace
+         -S &lt;i&gt;sid&lt;/i&gt;         SID to add/replace
+         -r &lt;i&gt;realname&lt;/i&gt;    realname to add/replace
+         -k &lt;i&gt;keyword&lt;/i&gt;     keyword to add
+         -c &lt;i&gt;comment&lt;/i&gt;     comment to add/replace
+         -s &lt;i&gt;timetolive&lt;/i&gt;  seconds to live to add/replace
+         -f n | l       change the group's format - 'n' for the
+                        new group format and 'l' for the legacy
+                        group format&lt;/pre&gt;
+</code></pre>
+<p>dseditgroup allows manipulation of a single named group record on either
+the default local node or the specified DirectoryService node. </p>
+<p>For the "read" operation the authentication search policy (/Search node) is consulted.</p>
+<p> Default behaviour is presented below after a discussion of each operation and the possible parameters.</p>
+<pre>     Options and their descriptions:
+<pre><code> -o &lt;i&gt;operation&lt;/i&gt;
+          If &quot;read&quot; then the parameters of the specified groupname will be
+          displayed. This is the default option. The authentication search
+          policy (/Search node) will be used.
+
+          If &quot;create&quot; then create a group with the specified groupname on
+          either the default local node or the specified DirectoryService
+          node.
+
+          If &quot;delete&quot; then delete a group with the specified groupname on
+          either the default local node or the specified DirectoryService
+          node.
+
+          If &quot;edit&quot; then edit a group with the specified groupname on
+          either the default local node or the specified DirectoryService
+          node.
+
+          If &quot;checkmember&quot; then check if the user specified with -m or
+          current logged in user is a member of the specified groupname.
+          The authentication search policy (/Search node) is used to find
+          the member. The specified node (defaults to the authentication
+          search policy) is used to find the group. If the specified node
+          is not on the authentication search policy the behaviour is
+          undefined.
+
+ -p       You will be prompted for a password to use in conjunction with
+          the specified username.
+
+ -q       This disables interactive verification of replace or delete
+          operations.
+
+ -v       This enables the logging of the DirectoryService API calls and
+          their return codes.
+
+ Parameters and their descriptions:
+
+ -m &lt;i&gt;member&lt;/i&gt;
+          The username of the account to verify group membership when
+          using -o checkmember
+
+ -n &lt;i&gt;nodename&lt;/i&gt;
+          Directory Service node name such as /LDAPv3/ldap.company.com and
+          whose default value is the local node. &quot;.&quot; can also be used to
+          specify the local node.
+
+ -u &lt;i&gt;username&lt;/i&gt;
+          Username of a user that has administrative privileges on this
+          computer.
+
+ -P &lt;i&gt;password&lt;/i&gt;
+          Password to use in conjunction with the specified username.  If
+          this is not specified, you will be prompted for a password.
+
+ -a &lt;i&gt;recordname&lt;/i&gt;
+          The name of the record to be added to the group specified by
+          groupname. This name is related to the first record found on the
+          authentication search policy when a search is made with this
+          recordname and the given recordtype.
+
+ -d &lt;i&gt;recordname&lt;/i&gt;
+          The name of the record to be deleted from the group specified by
+          groupname. This name is related to the first record found on the
+          authentication search policy when a search is made with this
+          recordname and the given recordtype.
+
+ -t &lt;i&gt;recordtype&lt;/i&gt;
+          The type of the record to be added to or deleted from the group
+          specified by groupname. Valid values are user, computer, group,
+          or computergroup.
+
+ -T &lt;i&gt;grouptype&lt;/i&gt;
+          The type of the group record to be created or modified as speci-
+          fied by groupname. Valid values are group or computergroup.
+
+ -L       If used with computergroup will also maintain the computerlist
+          if it exists or create it if a computergroup is created.
+
+ -i &lt;i&gt;gid&lt;/i&gt;   This is a group id. This will be automatically created if not
+          specified for a create.
+
+ -g &lt;i&gt;guid&lt;/i&gt;  This is a text representation of an 128 bit id. This will be
+          automatically created if not specified for a create.
+
+ -r &lt;i&gt;realname&lt;/i&gt;
+          This is a simple text string.
+
+ -k &lt;i&gt;keyword&lt;/i&gt;
+          This is a simple text string.
+
+ -c &lt;i&gt;comment&lt;/i&gt;
+          This is a simple text string.
+
+ -s &lt;i&gt;timetolive&lt;/i&gt;
+          The number of seconds that this record is deemed valid as a
+          cached value. There will be no automatically created default
+          value if not specified for a create.
+</code></pre>
+<p>DEFAULT BEHAVIOUR</p>
+<pre><code> dseditgroup mygroup
+
+ This simple version of the command will default to:
+
+ dseditgroup -o read -n . -u $USER mygroup
+
+ The output will be the parameters of the &quot;mygroup&quot; group record if the
+ shell user has read access to the local node's group record of name
+ &quot;mygroup&quot;.
+</code></pre>
+<p>EXAMPLES</p>
+<pre><code> dseditgroup extragroup
+
+ dseditgroup -o read extragroup
+
+                The attributes of the group extragroup from the local node
+                are displayed.
+
+ dseditgroup -o create -n /LDAPv3/ldap.company.com -u myusername -P
+          mypassword -r &quot;Extra Group&quot; -c &quot;a nice comment&quot; -s 3600 -k &quot;some
+          keyword&quot; extragroup
+
+                The group extragroup is created from the node
+                /LDAPv3/ldap.company.com with the realname, comment,
+                timetolive (instead of default of 14400 = 4 hours), and
+                keyword atttribute values given above if the user
+                myusername has supplied a correct password and has write
+                access.
+
+ dseditgroup -o delete -n /LDAPv3/ldap.company.com -u myusername -P
+          mypassword extragroup
+
+                The group extragroup is deleted from the node
+                /LDAPv3/ldap.company.com if the user myusername has
+                supplied a correct password and has write access.
+
+ dseditgroup -o edit -n /LDAPv3/ldap.company.com -u myusername -p -a
+          username -t user extragroup
+
+                The group extragroup from the node
+                /LDAPv3/ldap.company.com will have the username added if
+                the username is in a user record on the search policy and
+                if the correct password is presented interactively for the
+                user myusername which also need to have write access.
+
+ dseditgroup -o edit -n /LDAPv3/ldap.company.com -u myusername -P -a
+          mysubgroup -t group extragroup
+
+                The group extragroup from the node
+                /LDAPv3/ldap.company.com will have the mysubgroup added if
+                the mysubgroup is in a group record on the search policy
+                and if the user myusername has supplied a correct password
+                and has write access.
+
+ dseditgroup -o edit -n /LDAPv3/ldap.company.com -u myusername -p -d
+          username -t user extragroup
+
+                The group extragroup from the node
+                /LDAPv3/ldap.company.com will have the username deleted if
+                the correct password is presented interactively for the
+                user myusername which also need to have write access.
+
+ dseditgroup -o checkmember extragroup
+
+                Will write out a message specifying if the current user is
+                a member of extragroup on the authentication search
+                policy.
+
+ dseditgroup -o checkmember -n  . extragroup
+
+                Will write out a message specifying if the current user is
+                a member of extragroup on the local node.
+
+ dseditgroup -n /LDAPv3/ldap.company.com -o checkmember -m user extragroup
+
+                Will write out a message specifying if user (found in
+                /Search) is a member of extragroup on the specified node
+                /LDAPv3/ldap.company.com. The specified node
+                /LDAPv3/ldap.company.com needs to be on the authentication
+                search policy for a valid answer.&lt;/pre&gt;
+</code></pre>
+<p><span class="quote"><i>“Don’t waste your crazy” ~ <a href="http://www.elle.com/pop-culture/celebrities/a-new-albumand-lifefor-fiona-apple-656787" target="_blank" rel="external">Fiona Apple</a></i></span></p>
+<p><b>Related:</b></p>
+<p><a href="dscacheutil.html">dscacheutil</a> - Query or flush the Directory Service/DNS cache<br>
+<a href="dsenableroot.html">dsenableroot</a> - Enable root access<br>
+dsmemberutil - View user and groups rights</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/dseditgroup.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

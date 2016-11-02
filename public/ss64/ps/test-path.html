@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Test-Path 
+Return true if the path exists, otherwise return false, determines whether all elements of the path exist.
+Syntax
+      Test-Path { [-path] string[] | [-literalPath] string[] }">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/test-path.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Test-Path 
+Return true if the path exists, otherwise return false, determines whether all elements of the path exist.
+Syntax
+      Test-Path { [-path] string[] | [-literalPath] string[] }">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Test-Path 
+Return true if the path exists, otherwise return false, determines whether all elements of the path exist.
+Syntax
+      Test-Path { [-path] string[] | [-literalPath] string[] }">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Test-Path</h1> 
+<p>Return true if the path exists, otherwise return false, determines whether all elements of the path exist.</p>
+<pre>Syntax
+      Test-Path <b>{</b> [-path] <i>string</i>[] <b>|</b> [-literalPath] <i>string</i>[] <b>}</b>
+            [-pathType <i>TestPathType</i> ] [-isValid]
+               [-include <i>string</i>[]] [-exclude <i>string</i>[]] [-Filter <i>string</i>]
+                  [-credential <i>PSCredential</i>] [-UseTransaction] [<i>CommonParameters</i>]
+<p>Key<br>
+-Path <i>string</i>[]<br>
+The PowerShell path (or paths) to test<br>
+Wildcards are permitted. {may be piped}</p>
+<p>-LiteralPath <i>string</i><br>
+Like Path above, only the value is used exactly as typed.<br>
+No characters are interpreted as wildcards. If the path includes any<br>
+escape characters then enclose the path in single quotation marks.</p>
+<p>-PathType <i>TestPathType</i><br>
+One of: Container, Leaf or Any<br>
+Container  = The parent container of the item (parent folder)<br>
+Leaf    = The last item or container in the path.(filename)<br>
+Any     = Either a container or a leaf.</p>
+<p>-isValid<br>
+Return TRUE if the path syntax is valid, even if elements of the path<br>
+don’t exist.</p>
+<p>-include <i>string</i><br>
+Test only the specified items from the Path. e.g. &quot;May*&quot;<br>
+this only works when the path includes a wildcard character.</p>
+<p>-Exclude <i>string</i><br>
+Omit the specified items from the Path e.g. &quot;<em>SS64</em>&quot;<br>
+this only works when the path includes a wildcard character.</p>
+<p>-Filter <i>string</i><br>
+A filter in the provider’s format or language.<br>
+The value of this parameter qualifies the Path parameter.<br>
+The exact syntax of the filter (wildcard support etc) depends on the provider.<br>
+Filters are more efficient than -include/-exclude, because the provider<br>
+applies the filter when retrieving the objects, rather than having<br>
+PowerShell filter the objects after they are retrieved.</p>
+<p>-Credential <i>PSCredential</i><br>
+Use a credential to validate access to the file. <i>Credential</i> represents<br>
+a user-name, such as “User64” or “Domain64\User64”, or a PSCredential<br>
+object, such as the one retrieved by using the Get-Credential cmdlet.<br>
+If you type a user name, you will be prompted for a password.<br>
+This parameter is not supported by any PowerShell core cmdlets or providers.</p>
+<p>-UseTransaction<br>
+Include the command in the active <a href="syntax-transactions.html">transaction</a>.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Test-Path will either return $true or $false.</p>
+<p> Test-Path will correctly test for the presence or absence of a valid path string, but if you ask it to test a path which is <span class="code">$null</span> or a Zero Length String it will return an error. You capture such null/empty variables with a <span class="code"><a href="try.html">Try</a></span> statement like this:</p>
+<pre>$TestPath = $null
+<p>if ( $<b>(</b>Try { Test-Path $TestPath.trim() } Catch { $false }<b>)</b> ) {<br>
+write-host “Path OK”<br>
+}<br>
+Else {<br>
+write-host “Path not found”<br>
+}</p></pre><br>
+<h2>Bugs</h2><p></p>
+<p>The current version of Test-Path will always return <span class="code">$true</span> for a path that consists of a single space " "<br>
+To prevent this <span class="code">trim()</span> the string you pass to Test-Path.</p>
+<p>Test-Path does not work correctly with all PowerShell providers. For example, you can use Test-Path to test the path to a registry <b>key</b>, but if you use it to test the path to a registry <b>entry</b>, it always returns FALSE, even if the registry entry is present.</p>
+<p><b>Examples</b></p>
+<p>Determine whether all elements (folders) in the path exist:</p>
+<p><span class="code">PS C:\&gt; test-path "F:\MSSQL\BACKUP</span>"<br><br>
+Determine whether  there are any files in the Spreadsheets folder other than .xlsx files:</p>
+<p class="code">PS C:\&gt; test-path C:\Spreadsheets\* -exclude *.xlsx</p>
+<p>Determine whether the path stored in the <a href="syntax-profile.html">$profile</a> variable leads to a directory or a file:</p>
+<p class="code">PS C:\&gt; test-path $profile -pathtype leaf</p>
+<p>If a folder does not exist, then create it:</p>
+<p><span class="code"> $folder = </span><span class="code">"F:\BACKUP"</span></p>
+<p><span class="code">if ( -Not <b>(</b>Test-Path $folder.trim() <b>)</b>)<br>
+{<br>
+&nbsp;<a href="new-item.html">New-Item</a> -Path $folder -ItemType Directory<br>
+}</span></p>
+<p><i class="quote">“I don't want to sound like I'm bragging but I think I've finally managed to play the record at the right speed” ~ John Peel</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="convert-path.html">Convert-Path</a> - Convert a ps path to a provider path.<br>
+<a href="join-path.html">join-path</a> - Combine a path and child-path<br>
+<a href="resolve-path.html">Resolve-Path</a> - Resolves the wildcards in a path <br>
+<a href="split-path.html">Split-Path</a> - Return part of a path.<br>
+<a href="get-help.html">Get-Help</a> about_namespace<br>
+Equivalent bash command: <a href="../bash/test.html">test</a> - Evaluate a conditional expression</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="test-path.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/test-path.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

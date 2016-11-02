@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="lpr 
+off line print - sends a print job to the default system queue.
+SYNTAX
+      lpr [-Pprinter] [-#num] [-C class] [-J job] [-T title] [-U user] [-i [numcols]]
+            [-1234 font] [-wnum] [-cdf">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/lpr.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="lpr 
+off line print - sends a print job to the default system queue.
+SYNTAX
+      lpr [-Pprinter] [-#num] [-C class] [-J job] [-T title] [-U user] [-i [numcols]]
+            [-1234 font] [-wnum] [-cdf">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:40.873Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="lpr 
+off line print - sends a print job to the default system queue.
+SYNTAX
+      lpr [-Pprinter] [-#num] [-C class] [-J job] [-T title] [-U user] [-i [numcols]]
+            [-1234 font] [-wnum] [-cdf">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>lpr</h1> 
+<p>off line print - sends a print job to the default system queue.</p>
+<pre>SYNTAX
+      lpr [-P<i>printer</i>] [-#<i>num</i>] [-C <i>class</i>] [-J <i>job</i>] [-T <i>title</i>] [-U <i>user</i>] [-i [<i>numcols</i>]]
+            [-1234 <i>font</i>] [-w<i>num</i>] [-cdfghlnmprstv] [name ...]
+<p>DESCRIPTION<br>
+Lpr uses a spooling daemon to print the named files when facilities become<br>
+available.  If no names appear, the standard input is assumed.</p>
+<pre><code> The following single letter options are used to notify the line printer
+ spooler that the files are not standard text files. The spooling daemon
+ will use the appropriate filters to print the data accordingly.
+
+ -c      The files are assumed to contain data produced by cifplot(1)
+
+ -d      The files are assumed to contain data from tex (DVI format from
+         Stanford).
+
+ -f      Use a filter which interprets the first character of each line as
+         a standard FORTRAN carriage control character.
+
+ -g      The files are assumed to contain standard plot data as produced
+         by the plot routines (see also plot for the filters used by the
+         printer spooler).
+
+ -l      Use a filter which allows control characters to be printed and
+         suppresses page breaks.
+
+ -n      The files are assumed to contain data from ditroff (device independent
+          troff).
+
+ -p      Use pr(1) to format the files (equivalent to print).
+
+ -t      The files are assumed to contain data from troff(1) (cat photo-
+         typesetter commands).
+
+ -v      The files are assumed to contain a raster image for devices like
+         the Benson Varian.
+
+ These options apply to the handling of the print job:
+
+ -P      Force output to a specific printer.  Normally, the default printer
+         is used (site dependent), or the value of the environment
+         variable PRINTER is used.
+
+ -h      Suppress the printing of the burst page.
+
+ -m      Send mail upon completion.
+
+ -r      Remove the file upon completion of spooling. Can not be used with
+         the -s option, due to security concerns.
+
+ -s      Use symbolic links.  Usually files are copied to the spool directory.
+           The -s option will use symlink(2) to link data files
+         rather than trying to copy them so large files can be printed.
+         This means the files should not be modified or removed until they
+         have been printed.
+
+ The remaining options apply to copies, the page display, and headers:
+
+ -#&lt;i&gt;num&lt;/i&gt;   The quantity num is the number of copies desired of each file
+         named.  For example,
+
+               lpr -#3 foo.c bar.c more.c
+
+         would result in 3 copies of the file foo.c, followed by 3 copies
+         of the file bar.c, etc.  On the other hand,
+
+               cat foo.c bar.c more.c | lpr -#3
+
+         will give three copies of the concatenation of the files. Often a
+         site will disable this feature to encourage use of a photocopier
+         instead.
+
+ -[1234]&lt;i&gt;font&lt;/i&gt;
+         Specifies a font to be mounted on font position i. The daemon
+         will construct a .railmag file referencing the font pathname.
+
+ -C &lt;i&gt;class&lt;/i&gt;
+         Job classification to use on the burst page.  For example,
+
+               lpr -C EECS foo.c
+
+         causes the system name (the name returned by hostname(1))  to be
+         replaced on the burst page by EECS, and the file foo.c to be
+         printed.
+
+ -J &lt;i&gt;job&lt;/i&gt;  Job name to print on the burst page.  Normally, the first file's
+         name is used.
+
+ -T &lt;i&gt;title&lt;/i&gt;
+         Title name for pr(1),  instead of the file name.
+
+ -U &lt;i&gt;user&lt;/i&gt;
+         User name to print on the burst page, also for accounting purposes.
+         This option is only honored if the real user-id is daemon
+         (or that specified in the printcap file instead of daemon), and
+         is intended for those instances where print filters wish to requeue
+          jobs.
+
+ -i [&lt;i&gt;numcols&lt;/i&gt;]
+         The output is indented. If the next argument is numeric
+         (&lt;i&gt;numcols&lt;/i&gt;), it is used as the number of blanks to be printed before
+         each line; otherwise, 8 characters are printed.
+
+ -w&lt;i&gt;num&lt;/i&gt;   Uses &lt;i&gt;num&lt;/i&gt; as the page width for pr(1).
+</code></pre>
+<p>Environment<br>
+If the following environment variable exists, it is used by lpr:</p>
+<pre><code> PRINTER  Specifies an alternate default printer.
+</code></pre>
+<p>Files<br>
+/etc/passwd              Personal identification.<br>
+/etc/printcap            Printer capabilities data base.<br>
+/usr/sbin/lpd*           Line printer daemons.<br>
+/var/spool/output/*      Directories used for spooling.<br>
+/var/spool/output/<em>/cf</em>  Daemon control files.<br>
+/var/spool/output/<em>/df</em>  Data files specified in “cf” files.<br>
+/var/spool/output/<em>/tf</em>  Temporary copies of “cf” files.</p>
+<p>Diagnostics<br>
+If you try to spool too large a file, it will be truncated.  Lpr will object<br>
+to printing binary files.  If a user other than root prints a file<br>
+and spooling is disabled, lpr will print a message saying so and will not<br>
+put jobs in the queue.  If a connection to lpd(1) on the local machine<br>
+cannot be made, lpr will say that the daemon cannot be started.  Diagnostics<br>
+can be printed in the daemon’s log file regarding missing spool<br>
+files by lpd(1).</p>
+<p>Bugs<br>
+Fonts for troff(1) and tex reside on the host with the printer. It is<br>
+currently not possible to use local font libraries.</p></pre><p></p>
+<p class="quote"><i>"There is a thin line that separates laughter and pain, comedy and tragedy, humor and hurt" ~ Erma Bombeck</i></p>
+<p><b>Related:</b><br>
+<br>
+banner - Print a line of text in extra large (poster size)<br>
+cancel - Cancel request to printer<br>
+<a href="lpc.html">lpc</a> - Line printer control program<br>
+lprint - Print a file<br>
+lprintd / lpd(8) - Abort a print job<br>
+lprintq / lpq(1) - List the print queue<br>
+<a href="lprm.html">lprm</a> - Remove jobs from the print queue <br>
+pr(1) - Convert text files for printing <br>
+printcap(5) - Printer Capability database<br>
+<a href="symlink.html">symlink</a> - Make a new name for a file <br>
+Equivalent Windows commands: <a href="../nt/prncnfg.html">PRNCNFG</a> - Display, configure or rename a printer</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="lpr.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/lpr.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="GPRESULT.exe 
+Display Resultant Set of Policy information for a remote user and computer.
+Syntax
+       gpresult [/s Computer [/u [Domain\]UserName [/p [Password]]]]
+          [/user [TargetDomain\]Ta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/gpresult.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="GPRESULT.exe 
+Display Resultant Set of Policy information for a remote user and computer.
+Syntax
+       gpresult [/s Computer [/u [Domain\]UserName [/p [Password]]]]
+          [/user [TargetDomain\]Ta">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="GPRESULT.exe 
+Display Resultant Set of Policy information for a remote user and computer.
+Syntax
+       gpresult [/s Computer [/u [Domain\]UserName [/p [Password]]]]
+          [/user [TargetDomain\]Ta">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>GPRESULT.exe</h1> 
+<p>Display Resultant Set of Policy information for a remote user and computer.</p>
+<pre>Syntax
+       gpresult [/s <i>Computer</i> [/u [<i>Domain</i>\]<i>UserName</i> [/p [<i>Password</i>]]]]
+          [/user [<i>TargetDomain</i>\]<i>TargetUser</i>] [/scope {user | computer}]
+             [/r | /v | /z] [[/x | /h] <i>FileName</i> [/f]]
+<p>Key:<br>
+/s        The name or IP address of a remote computer. Do not use backslashes.<br>
+(default = the local computer)</p>
+<p>/u [<domain>]<username>    Run the command with the credentials of the specified user.<br>
+(default = the currently logged on user)</username></domain></p>
+<p>/p [<password>]     The password of the user account that is provided in the /u parameter.<br>
+If /p is omitted, gpresult prompts for the password.</password></p>
+<p>/user [<targetdomain>] The remote user whose RSoP data is to be displayed.</targetdomain></p>
+<p>/scope {user | computer}<br>
+Displays RSoP data for either the user or the computer.<br>
+If /scope is omitted, gpresult displays RSoP data for both the userand the computer.</p>
+<p>[/x | /h] <filename>Save the report in either XML (/x) or HTML (/h) format at the location and<br>
+with the file name specified by the <i>FileName</i> parameter.<br>
+Cannot be used with /u, /p, /r, /v, or /z.</filename></p>
+<p>/f        Force gpresult to overwrite the file name specified in the /x or /h option.</p>
+<p>/r        Display RSoP summary data.</p>
+<p>/v        Display verbose policy information, including additional detailed settings that<br>
+have been applied with a precedence of 1.</p>
+<p>/z        Display all available information about Group Policy, including detailed settings<br>
+that have been applied with a precedence of 1 and higher.</p>
+<p>/?        Display help</p></pre><p></p>
+<p>The /f and /r options were introduced in Windows Vista/7/2008 </p>
+<p><span class="body"><b>Examples</b></span></p>
+<p><span class="code">C:\&gt; gpresult /z &gt;C:\batch\policy.txt<br>
+</span><span class="code">C:\&gt; gpresult /user targetusername /scope computer /r<br>
+C:\&gt; gpresult /s srvmain /u ss64dom\hiropln /p p@ssW23 /user targetusername /scope user<br>
+C:\&gt; gpresult /s srvmain /u ss64dom\hiropln /p p@ssW23 /user targetusername /z &gt;policy.txt<br>
+C:\&gt; gpresult /s srvmain /u ss64dom\hiropln /p p@ssW23</span></p>
+<p><span class="quote"><i>“The difference between false memories and true ones is the same as for jewels: it is always the false ones that look the most real, the most brilliant” ~ Salvador Dalí</i></span><span class="body"><i><br>
+  </i> <br>
+</span> <b>Related:</b></p>
+<p> <a href="gpupdate.html">GPUPDATE</a> Update Group Policy settings<br>
+<a href="ntrights.html">NTRIGHTS</a> - Edit user account rights</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="gpresult.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/gpresult.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

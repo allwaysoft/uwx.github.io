@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pkill 
+Kill processes by a full  or partial name.
+Syntax
+      pgrep [-Lafilnoqvx] [-F pidfile] [-G gid] [-P ppid] [-U uid] [-d delim]
+            [-g pgrp] [-t tty] [-u euid] pattern ...
+  pkill [-&amp;l">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/pkill.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="pkill 
+Kill processes by a full  or partial name.
+Syntax
+      pgrep [-Lafilnoqvx] [-F pidfile] [-G gid] [-P ppid] [-U uid] [-d delim]
+            [-g pgrp] [-t tty] [-u euid] pattern ...
+  pkill [-&amp;l">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.160Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="pkill 
+Kill processes by a full  or partial name.
+Syntax
+      pgrep [-Lafilnoqvx] [-F pidfile] [-G gid] [-P ppid] [-U uid] [-d delim]
+            [-g pgrp] [-t tty] [-u euid] pattern ...
+  pkill [-&amp;l">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>pkill</h1> 
+<p>Kill processes by a full  or partial name.</p>
+<pre>Syntax
+      pgrep [-Lafilnoqvx] [-F <i>pidfile</i>] [-G <i>gid</i>] [-P <i>ppid</i>] [-U <i>uid</i>] [-d <i>delim</i>]
+            [-g <i>pgrp</i>] [-t <i>tty</i>] [-u <i>euid</i>] <i>pattern</i> ...
+<pre><code>  pkill [-&lt;i&gt;signal&lt;/i&gt;] [-ILafilnovx] [-F &lt;i&gt;pidfile&lt;/i&gt;] [-G &lt;i&gt;gid&lt;/i&gt;] [-P &lt;i&gt;ppid&lt;/i&gt;] [-U &lt;i&gt;uid&lt;/i&gt;]
+        [-g &lt;i&gt;pgrp&lt;/i&gt;] [-t &lt;i&gt;tty&lt;/i&gt;] [-u &lt;i&gt;euid&lt;/i&gt;] &lt;i&gt;pattern&lt;/i&gt; ...
+</code></pre>
+<p>Key<br>
+-F <i>pidfile</i>  Restrict matches to a process whose PID is stored in the<br>
+pidfile file.</p>
+<p>-G <i>gid</i>      Restrict matches to processes with a real group ID in the<br>
+comma-separated list gid.</p>
+<p>-I          Request confirmation before attempting to signal each<br>
+process.</p>
+<p>-L          The pidfile file given for the -F option must be locked with<br>
+the flock(2) syscall or created with pidfile(3).</p>
+<p>-P <i>ppid</i>     Restrict matches to processes with a parent process ID in the<br>
+comma-separated list ppid.</p>
+<p>-U <i>uid</i>      Restrict matches to processes with a real user ID in the<br>
+comma-separated list uid.</p>
+<p>-d <i>delim</i>    Specify a delimiter to be printed between each process ID.<br>
+The default is a newline.  This option can only be used with<br>
+the pgrep command.</p>
+<p>-a          Include process ancestors in the match list.  By default, the<br>
+current pgrep or pkill process and all of its ancestors are<br>
+excluded (unless -v is used).</p>
+<p>-f          Match against full argument lists.  The default is to match<br>
+against process names.</p>
+<p>-g <i>pgrp</i>     Restrict matches to processes with a process group ID in the<br>
+comma-separated list pgrp.  The value zero is taken to mean<br>
+the process group ID of the running pgrep or pkill command.</p>
+<p>-i          Ignore case distinctions in both the process table and the<br>
+supplied pattern.</p>
+<p>-l          Long output.  For pgrep, print the process name in addition<br>
+to the process ID for each matching process.  If used in conjunction<br>
+with -f, print the process ID and the full argument<br>
+list for each matching process.  For pkill, display the kill<br>
+command used for each process killed.</p>
+<p>-n          Select only the newest (most recently started) of the matching<br>
+processes.</p>
+<p>-o          Select only the oldest (least recently started) of the matching<br>
+processes.</p>
+<p>-q          Do not write anything to standard output.</p>
+<p>-t <i>tty</i>      Restrict matches to processes associated with a terminal in<br>
+the comma-separated list tty.  Terminal names can  be of the<br>
+form ttyxx or the shortened form xx.  A single dash (`-’)<br>
+matches processes not associated with a terminal.</p>
+<p>-u <i>euid</i>     Restrict matches to processes with an effective user ID in<br>
+the comma-separated list euid.</p>
+<p>-v          Reverse the sense of the matching; display processes that do<br>
+not match the given criteria.</p>
+<p>-x          Require an exact match of the process name, or argument list<br>
+if -f is given.  The default is to match any substring.</p>
+<p>-<i>signal</i>     A non-negative decimal number or symbolic signal name specifying<br>
+the signal to be sent instead of the default TERM.<br>
+This option is valid only when given as the first argument to<br>
+pkill.</p></pre><p></p>
+<p><span class="code">pgrep</span> searches the process table on the running system and prints the process IDs of all processes that match the criteria given on the command line.</p>
+<p><span class="code">pkill</span> searches the process table on the running system and signals all processes that match the criteria given on the command line.</p>
+<p> If any pattern operands are specified, they are used as regular expressions to match the command name or full argument list of each process.</p>
+<p> A running pgrep or pkill process will never consider itself as a potential match.</p>
+<blockquote>
+<table>
+<caption>
+Common Kill Signals
+</caption>
+<tbody><tr>
+<th scope="col">Signal name</th>
+<th scope="col">Signal value</th>
+<th scope="col">Effect</th>
+</tr>
+<tr>
+<td>SIGHUP</td>
+<td>1</td>
+<td>Hangup</td>
+</tr>
+<tr>
+<td>SIGINT</td>
+<td>2</td>
+<td>Interrupt from keyboard </td>
+</tr>
+<tr>
+<td>SIGQUIT</td>
+<td>3</td>
+<td>Quit</td>
+</tr>
+<tr>
+<td>SIGABRT</td>
+<td>6</td>
+<td>Abort</td>
+</tr>
+<tr>
+<td>SIGKILL</td>
+<td>9</td>
+<td>Kill signal </td>
+</tr>
+<tr>
+<td>SIGTERM</td>
+<td>15</td>
+<td>Termination signal - allow an orderly shutdown</td>
+</tr>
+<tr>
+<td>SIGSTOP</td>
+<td>17,19,23</td>
+<td>Stop the process</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h2>Exit Status</h2>
+<blockquote>
+<p> 0       &nbsp;One or more processes were matched. <br>
+1       &nbsp;No processes were matched. <br>
+2       &nbsp;Invalid options were specified on the command line. <br>
+3       &nbsp;An internal error occurred.</p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>Kill all the processes called com.IconServicesAgent, (<a href="https://discussions.apple.com/thread/6468254?start=0&amp;tstart=0" target="_blank" rel="external">stray processes after a user logout</a> in OS X 10.9.4 and above)</p>
+<p class="code">$ sudo pkill -9 -fx com.IconServicesAgent</p>
+<p><b><i>  </i></b><i class="quote">"Love never dies a natural death. It dies because we don't know how to replenish it's source. It dies of blindness and errors and betrayals.<br>
+It dies of illness and wounds; it dies of weariness, of witherings, of tarnishings" ~ Anais Nin</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/pkill.1.html" target="_blank" rel="external">pkill man page</a> - Apple.com<br>
+<a href="syntax-bashkeyboard.html">ctrl+z /   ctrl+c</a> - Suspend/Interrupt a program<br>
+<a href="kill.html">kill</a> - Kill a process by specifying its PID<br>
+<a href="killall.html">killall</a> - Kill processes by name.<br> 
+flock(2)<br>
+<a href="ps.html">ps</a> - Process status<br>
+</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="pkill.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/pkill.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

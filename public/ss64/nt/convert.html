@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CONVERT.exe 
+Convert a FAT16  or a FAT32 DISK volume to  NTFS.
+Syntax
+      convert [Volume] /fs:ntfs [/v] [/cvtarea:FileName] [/nosecurity] [/x]
+Key   Volume   The drive letter (followed by a colon),">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/convert.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="CONVERT.exe 
+Convert a FAT16  or a FAT32 DISK volume to  NTFS.
+Syntax
+      convert [Volume] /fs:ntfs [/v] [/cvtarea:FileName] [/nosecurity] [/x]
+Key   Volume   The drive letter (followed by a colon),">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:49.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="CONVERT.exe 
+Convert a FAT16  or a FAT32 DISK volume to  NTFS.
+Syntax
+      convert [Volume] /fs:ntfs [/v] [/cvtarea:FileName] [/nosecurity] [/x]
+Key   Volume   The drive letter (followed by a colon),">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>CONVERT.exe</h1> 
+<p>Convert a FAT16  or a FAT32 DISK volume to  NTFS.</p>
+<pre>Syntax
+      convert [<i>Volume</i>] /fs:ntfs [/v] [/cvtarea:<i>FileName</i>] [/nosecurity] [/x]<br>
+Key<br>   <i>Volume</i>   The drive letter (followed by a colon), mount point,
+            or volume name to convert to NTFS.
+<p>/fs:ntfs Convert the volume to NTFS. Required.</p>
+<p>/v       Run convert in verbose mode, which displays all messages<br>
+during the conversion process.</p>
+<p>/cvtarea:<i>FileName</i><br>
+Specifies that the Master File Table (MFT) and other NTFS metadata<br>
+files are written to an existing, contiguous placeholder file.<br>
+This file must be in the root directory of the file system to be converted.<br>
+Use of the /cvtarea parameter can result in a less fragmented<br>
+file system after conversion. For best results, the size of<br>
+this file should be 1 KB multiplied by the number of files and<br>
+directories in the file system, although the convert utility<br>
+accepts files of any size.<br>
+Important You must create the placeholder file by using the<br>
+<a href="fsutil.html">fsutil file createnew</a> command prior to running convert.<br>
+Convert does not create this file for you. Convert overwrites<br>
+this file with NTFS metadata. After conversion, any unused<br>
+space in this file is freed.</p>
+<p>/nosecurity<br>
+The security settings on the converted files and directories allow<br>
+access by all users.</p>
+<p>/x       Dismount the volume, if necessary, before it is converted.<br>
+Any open handles to the volume will no longer be valid.</p>
+<p>/?       Displays help at the command prompt.</p></pre><p></p>
+<p>If convert cannot lock the drive (for example, the drive is the system volume or the current drive), you are given the option to convert the drive the next time you restart the computer. If you cannot restart the computer immediately to complete the conversion, plan a time to restart the computer and allow extra time for the conversion process to complete.</p>
+<p>For volumes converted from FAT or FAT32 to NTFS: <br>
+Due to existing disk usage, the MFT is created in a different location than on a volume originally formatted with NTFS, so volume performance might not be as good as on volumes originally formatted with NTFS. For optimal performance, consider recreating these volumes and formatting them with the NTFS file system. Volume conversion from FAT or FAT32 to NTFS leaves the files intact, but the volume might lack some performance benefits compared to volumes initially formatted with NTFS. For example, the MFT might become fragmented on converted volumes. In addition, on converted boot volumes, convert applies the same default security that is applied during Windows Setup.</p>
+<p><b>Example</b></p>
+<p>Convert the volume on drive E: to NTFS and display all messages during the conversion process:</p>
+<p class="code"> C:\&gt; convert e: /fs:ntfs /v</p>
+<p><span class="quote"><i>"One resolution I have made, and try always to keep, is this: To rise above little things" ~ John Burroughs</i></span><i><br>
+</i> <br>
+<b>Related:</b><br>
+<br>
+<a href="https://support.microsoft.com/kb/307881" target="_blank" rel="external">Q307881</a> - How to convert a FAT16 volume or a FAT32 volume to an NTFS file system <br>
+<a href="fsutil.html">FSUTIL</a> - Change size </p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="convert.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/convert.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

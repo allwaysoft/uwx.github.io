@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ifconfig 
+Interface configurator - display your ip address, network interfaces, transferred and received data information, configure a network interface. On most modern distributions ifconfig has been">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ifconfig.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ifconfig 
+Interface configurator - display your ip address, network interfaces, transferred and received data information, configure a network interface. On most modern distributions ifconfig has been">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ifconfig 
+Interface configurator - display your ip address, network interfaces, transferred and received data information, configure a network interface. On most modern distributions ifconfig has been">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>ifconfig</h1> 
+<p><b>I</b>nter<b>f</b>ace <b>config</b>urator - display your ip address, network interfaces, transferred and received data information, configure a network interface. On most modern distributions <span class="code">ifconfig</span> has been depracated, use <a href="ip.html">ip</a> instead.</p>
+<pre>Syntax
+      ifconfig [<i>interface</i>]
+<pre><code>  ifconfig &lt;i&gt;interface&lt;/i&gt; [&lt;i&gt;aftype&lt;/i&gt;] &lt;i&gt;options&lt;/i&gt; | &lt;i&gt;address &lt;/i&gt;...
+</code></pre>
+<p>Options<br>
+interface    The name of the interface.<br>
+Usually a driver name followed by a unit number, eth0 = 1st Ethernet interface.</p>
+<p>up           This flag causes the interface to be activated.<br>
+It is implicitly specified if an address is assigned to the interface.</p>
+<p>down         This flag causes the driver for this interface to be shut down.</p>
+<p>[-]arp       Enable or disable the use of the ARP protocol on this interface.</p>
+<p>[-]promisc   Enable or disable the promiscuous mode of the interface.<br>
+If selected, all packets on the network will be received by the interface.</p>
+<p>[-]allmulti  Enable or disable all-multicast mode.<br>
+If selected, all multicast packets on the network will be received by the interface.</p>
+<p>metric <i>N</i>     Set the interface metric.</p>
+<p>mtu <i>N</i>        Set the Maximum Transfer Unit (MTU) of an interface.<br>
+To make this change permanent, edit:<br>
+/etc/network/interfaces    Debian / Ubuntu<br>
+/etc/sysconfig/network-scripts/ifcfg-eth0   CentOS/RHEL/Fedora</p>
+<p>dstaddr <i>addr</i>    Set the remote IP address for a point-to-point (PPP)link (obsolete; use pointopoint instead)</p>
+<p>netmask <i>addr</i>    Set the IP network mask for this interface.<br>
+This value defaults to the usual class A, B or C network mask<br>
+(as derived from the interface IP address), but it can be set to any value.</p>
+<p>add <i>addr/prefixlen</i>    Add an IPv6 address to an interface.</p>
+<p>del <i>addr/prefixlen</i>    Remove an IPv6 address from an interface.</p>
+<p>tunnel <i>aa.bb.cc.dd</i>    Create a new SIT (IPv6-in-IPv4) device, tunnelling to the given destination.</p>
+<p>irq <i>addr</i>         Set the interrupt line used by this device.<br>
+Not all devices can dynamically change their IRQ setting.</p>
+<p>io_addr <i>addr</i>    Set the start address in I/O space for this device.</p>
+<p>mem_start <i>addr</i>  Set the start address for shared memory used by this device.<br>
+Only a few devices need this.</p>
+<p>media <i>type</i>      Set the physical port or medium type to be used by the device.<br>
+Not all devices can change this setting, and those that can vary<br>
+in what values they support. Typical values for type are 10base2 (thin Ethernet),<br>
+10baseT (twisted-pair 10Mbps Ethernet), AUI (external transceiver) and so on.<br>
+The special medium type of auto can be used to tell the driver to auto-sense the<br>
+media. Again, not all drivers can do this.</p>
+<p>[-]broadcast [<i>addr</i>]    If the address argument is given, set the protocol broadcast address<br>
+for this interface. Otherwise, set (or clear) the IFF_BROADCAST flag for<br>
+the interface.</p>
+<p>[-]pointopoint [<i>addr</i>]  This keyword enables the point-to-point mode of an interface,meaning that<br>
+it is a direct link between two machines with nobody else listening on it.<br>
+If the address argument is also given, set the protocol address of the other<br>
+side of the link, just like the obsolete dstaddr keyword does.<br>
+Otherwise, set or clear the IFF_POINTOPOINT flag for the interface.</p>
+<p>hw <i>class address</i>    Set the hardware address of this interface, if the device driver supports<br>
+this operation. The keyword must be followed by the name of the hardware class<br>
+and the printable ASCII equivalent of the hardware address. Hardware classes<br>
+currently supported include ether (Ethernet), ax25 (AMPR AX.25), ARCnet and<br>
+netrom (AMPR NET/ROM).</p>
+<p>multicast           Set the multicast flag on the interface. Not normally be needed as<br>
+the drivers set the flag correctly themselves.</p>
+<p>address             The IP address to be assigned to this interface.</p>
+<p>txqueuelen <i>length</i>   Set the length of the transmit queue of the device.<br>
+It is useful to set this to small values for slower devices with a high<br>
+latency (modem links, ISDN) to prevent fast bulk transfers from disturbing<br>
+interactive traffic like telnet too much.</p></pre><p></p>
+<p> ifconfig is used at boot time to set up interfaces as necessary. After that, it is usually only needed when debugging or when system tuning is needed.</p>
+<p>If no arguments are given, ifconfig displays the status of the currently active interfaces. If a single interface argument is given, it displays the status of the given interface only; if a single -a argument is given, it displays the status of all interfaces, even those that are down. Otherwise, it configures an interface.</p>
+<p>If the first argument after the interface name is recognized as the name of a supported address family, that address family is used for decoding and displaying all protocol addresses. Currently supported address families include <b>inet</b> (TCP/IP, default), <b>inet6</b> (IPv6), <b>ax25</b> (AMPR Packet Radio), <b>ddp</b> (Appletalk Phase 2), <b>ipx</b> (Novell IPX) and <b>netrom</b> (AMPR Packet radio). </p>
+<p>All numbers supplied as parts in IPv4 dotted decimal notation can be decimal, octal, or hexadecimal, as specified in the ISO C standard (that is, a leading 0x or 0X implies hexadecimal; otherwise, a leading '0' implies octal; otherwise, the number is interpreted as decimal). Use of hexamedial and octal numbers is not RFC-compliant and therefore its use is discouraged and might go away.</p>
+<p><b>Examples</b>:</p>
+<p>Change the state of the network interface device(s) to UP:<br>
+<span class="code">$ ifconfig eth0 up</span></p>
+<p>Change the state of the network interface device(s) to DOWN: (see also <span class="code">ip link</span>)<br>
+<span class="code">$ ifconfig eth0 dn</span></p>
+<p>Display the mac address for <span class="code">eth0</span> (via <a href="http://stackoverflow.com/questions/245916/best-way-to-extract-mac-address-from-ifconfigs-output" target="_blank" rel="external">StackOverflow</a>)<br>
+<span class="code">$ ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'</span></p>
+<p>Change/spoof the hardware mac address of <span class="code">eth0</span> to  <span class="code">41:5b:8f:64:64:ef</span><br>
+<span class="code"> $
+sudo ifconfig eth0 down hw ether 41:5b:8f:64:64:ef<br>
+$ sudo ifconfig eth0 up</span><br>
+By default the MAC address will be reset when you restart the computer. To make the change permanent, modify the appropriate boot configuration file under <span class="code">/etc/network/interfaces.d/</span> or  <span class="code">/etc/network/interfaces</span></p>
+<p class="quote"><i>“A Connection Manager connection does not connect after being disconnected” ~ Title of Microsoft <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;325331" target="_blank" rel="external">KnowledgeBase</a> article</i></p>
+<p><b>Related:</b><br>
+<br>
+route(8)<br>
+netstat(1) - Networking information<br>
+arp(8), 
+rarp(8)<br>
+<a href="ip.html">ip</a> - Routing, devices and tunnels<br> 
+ipchains(8)<br>
+ Equivalent Windows command: 
+<a href="../nt/netsh.html">NETSH</a> - Configure Interfaces</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ifconfig.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

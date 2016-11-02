@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-ADOrganizationalUnit 
+Modify an Active Directory organizational unit.
+Syntax
+      Set-ADOrganizationalUnit [-Identity] ADOrganizationalUnit
+         [-Add &amp;lt;hashtable&amp;gt;] [-City string] [-Clea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-adorganizationalunit.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-ADOrganizationalUnit 
+Modify an Active Directory organizational unit.
+Syntax
+      Set-ADOrganizationalUnit [-Identity] ADOrganizationalUnit
+         [-Add &amp;lt;hashtable&amp;gt;] [-City string] [-Clea">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-ADOrganizationalUnit 
+Modify an Active Directory organizational unit.
+Syntax
+      Set-ADOrganizationalUnit [-Identity] ADOrganizationalUnit
+         [-Add &amp;lt;hashtable&amp;gt;] [-City string] [-Clea">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-ADOrganizationalUnit</h1> 
+<p>Modify an Active Directory organizational unit.</p>
+<pre>Syntax
+      Set-ADOrganizationalUnit [<b>-Identity</b>] <i>ADOrganizationalUnit</i>
+         [-Add &lt;hashtable&gt;] [-City <i>string</i>] [-Clear <i>string</i>[]] [-Country <i>string</i>]
+            [-Description <i>string</i>] [-DisplayName <i>string</i>] [-ManagedBy <i>ADPrincipal</i>]
+               [-Partition <i>string</i>] [-PostalCode <i>string</i>] [-ProtectedFromAccidentalDeletion <i>bool</i>]
+                  [-Remove <i>hashtable</i>] [-Replace <i>hashtable</i>] [-State <i>string</i>]
+                     [-StreetAddress <i>string</i>] [-AuthType {<u>Negotiate</u> | Basic}]
+                        [-Credential <i>PSCredential</i>] [-PassThru] [-Server <i>string</i>]
+                           [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<pre><code>  Set-ADOrganizationalUnit &lt;b&gt;-Instance&lt;/b&gt; &lt;i&gt;ADOrganizationalUnit&lt;/i&gt;
+     [-AuthType {&lt;u&gt;Negotiate&lt;/u&gt; | Basic}]
+        [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] [-PassThru] [-Server &lt;i&gt;string&lt;/i&gt;]
+           [-Confirm] [-WhatIf] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-Add <i>hashtable</i><br>
+Specify values to add to an object property.<br>
+Use this parameter to add one or more values to a property that cannot be modified<br>
+using a cmdlet parameter. To modify an object property, you must use the LDAP display name.<br>
+Specify multiple values to a property by specifying a comma-separated list of values<br>
+and more than one property by separating them using a semicolon.<br>
+The format for this parameter is</p>
+<pre><code>      &lt;b&gt;-Add @{&lt;/b&gt;Attribute1LDAPDisplayName=value1, value2, ...;
+             Attribute2LDAPDisplayName=value1, value2, ...; AttributeNLDAPDisplayName=value1, value2, ...&lt;b&gt;}&lt;/b&gt;
+
+    For example, to remove the value &quot;555-222-2222&quot; and add the values &quot;555-222-1111&quot; and &quot;555-222-3333
+    &quot; to Phone-Office-Other attribute (LDAP display name 'otherTelephone'), and add the value &quot;555-222-9999&quot; to Pho
+    ne-Mobile-Other (LDAP display name 'otherMobile'), set the Add and Remove parameters as follows.
+
+      &lt;b&gt;-Add @{&lt;/b&gt;otherTelephone='555-222-1111', '555-222-3333'; otherMobile='555-222-9999' &lt;b&gt;} -Remove @{&lt;/b&gt;otherTelephone='
+    555-222-2222'&lt;b&gt;}&lt;/b&gt;
+
+    When you use the -Add, -Remove, -Replace and -Clear parameters together, the operations will be
+    performed in the order: Remove, then Add, then Replace, then clear.
+</code></pre>
+<p>-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-City <i>string</i><br>
+The user’s town or city.<br>
+The LDAP display name (ldapDisplayName) of this property is “l”.</p>
+<p>-Clear <i>string</i>[]<br>
+An array of object properties that will be cleared in the directory.<br>
+Use this parameter to clear one or more values of a property that cannot be modified<br>
+using a cmdlet parameter. To modify an object property, you must use the LDAP display name.<br>
+Modify more than one property by specifying a comma-separated list.<br>
+The format for this parameter is<br>
+-Clear Attribute1LDAPDisplayName, Attribute2LDAPDisplayName</p>
+<pre><code>   For example, to clear the value for the Phone-Office-Other attribute
+   (LDAP display name 'otherTelephone') set the Clear parameter as follows.
+
+      -Clear otherTelephone
+</code></pre>
+<p>-Country <i>string</i><br>
+The country or region code for the user’s language of choice (2 character code ISO 3166).<br>
+The LDAP Display Name (ldapDisplayName) of this property is “c”.</p>
+<p>-Credential <i>PSCredential</i><br>
+The user account credentials to use to perform this task.<br>
+The default credentials are those of the currently logged on user unless the<br>
+cmdlet is run from an Active Directory PowerShell provider drive.<br>
+If the cmdlet is run from such a provider drive, the account associated with the drive is the default.</p>
+<pre><code>   Type a user name, such as &quot;User64&quot; or &quot;Domain64\User64&quot; or specify a
+   PSCredential object such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt; 
+
+   If a user name is specified, the cmdlet will prompt for a password.
+</code></pre>
+<p>-Description <i>string</i><br>
+A description of the object.</p>
+<p>-DisplayName <i>string</i><br>
+The display name of the object.</p>
+<p>-Identity <i>ADOrganizationalUnit</i><br>
+An AD organizational unit object. Most often this will be a Distinguished Name (e.g. OU=demo,DC=SS64,DC=com)<br>
+The identity may also be given as a GUID, Security Identifier or sAMAccountName.</p>
+<pre><code>   The cmdlet searches the default naming context or partition to find the object.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   The AD OU object may also be passed through the pipeline or set via a variable.
+</code></pre>
+<p>-Instance <i>ADOrganizationalUnit</i><br>
+A modified copy of a OU object to use to update the actual AD OU object.<br>
+When this parameter is used, any modifications made to the modified copy of<br>
+the object are also made to the corresponding AD object.<br>
+The cmdlet only updates the object properties that have changed.</p>
+<pre><code>   The -Instance parameter can only update OU objects that have been retrieved
+   by using &lt;a href=&quot;get-adorganizationalunit.html&quot;&gt;Get-ADOrganizationalUnit&lt;/a&gt;. When you specify the -Instance parameter, you
+   cannot specify other parameters that set properties on the object.
+
+   The following is an example of how to use Get-ADOrganizationalUnit to retrieve an
+   instance of the AD OU object. The object is modified by using the PowerShell
+   command line. Then the Set-ADOrganizationalUnit cmdlet saves the changes to the AD object.
+
+    Step 1: Retrieve a local instance of the object.
+        $ouInstance = Get-ADOrganizationalUnit  -Identity &quot;OU=Houston,DC=corp,DC=SS64,DC=com&quot;
+
+    Step 2: Modify one or more properties of the object instance.
+        $ouInstance.ManagedBy= &quot;CN=FlightControl,CN=Users,DC=corp,DC=SS64,DC=com&quot;
+
+    Step3: Save your changes to &quot;Houston&quot;.
+        Set-ADOrganizationalUnit -Instance $ouInstance
+</code></pre>
+<p>-ManagedBy <i>ADPrincipal</i><br>
+The user or group that manages the object by providing one of the following property values.<br>
+Note: The identifier in parentheses is the LDAP display name for the property.<br>
+Distinguished Name<br>
+Example:  CN=demo1,OU=Europe,CN=Users,DC=corp,DC=ss64,DC=com<br>
+GUID (objectGUID)<br>
+Example: 599c3d2e-f72d-4d20-8a88-030d99495f20<br>
+Security Identifier (objectSid)<br>
+Example: S-1-5-64-3265277888-301567356-523410843-1244<br>
+SAM Account Name (sAMAccountName)<br>
+Example: demo1</p>
+<p>-Partition <i>string</i><br>
+The distinguished name of an AD partition.<br>
+<i>string</i> must be one of the naming contexts on the current directory server.<br>
+The cmdlet searches this partition to find the object defined by the -Identity parameter.<br>
+Examples:<br>
+-Partition “CN=Configuration,DC=Europe,DC=Test,DC=SS64,DC=COM”<br>
+-Partition “CN=Schema,CN=Configuration,DC=Europe,DC=Test,DC=SS64,DC=COM”</p>
+<pre><code>   In many cases, a &lt;a href=&quot;partition-defaults.html&quot;&gt;default value&lt;/a&gt; will be used for -Partition if no value is specified.
+</code></pre>
+<p>-PassThru <i>switch</i><br>
+Return the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-PostalCode <i>string</i><br>
+The user’s postal code or zip code.</p>
+<p>-ProtectedFromAccidentalDeletion <i>bool</i><br>
+Whether to prevent the object from being deleted.<br>
+When this property is set to true, you cannot delete the corresponding object without<br>
+first changing the value of this property.<br>
+Possible values: $false or 0, $true or 1</p>
+<p>-Remove <i>hashtable</i><br>
+Remove values of an object property.<br>
+Use this parameter to remove one or more values of a property that cannot be modified<br>
+using a cmdlet parameter. To remove an object property, you must use the LDAP display name.<br>
+You can remove more than one property by specifying a semicolon-separated list.<br>
+The format for this parameter is<br>
+-Remove @{Attribute1LDAPDisplayName=value[];   Attribute2LDAPDisplayName=value[]}</p>
+<pre><code>   For example, to add the values blue and green and remove the value pink from a property with a LDAP
+   display name of FavColors, set the Add and Remove parameters as follows.
+      -Add @{FavColors=Blue,Green} -Remove {FavColors=Pink}
+</code></pre>
+<p>-Replace <i>hashtable</i><br>
+Specify values for an object property that will replace the current values.<br>
+Use this parameter to replace one or more values of a property that cannot be modified<br>
+using a cmdlet parameter. To modify an object property, you must use the LDAP display name.<br>
+You can modify more than one property by specifying a comma-separated list.<br>
+The format for this parameter is<br>
+-Replace @{Attribute1LDAPDisplayName=value[],   Attribute2LDAPDisplayName=value[]}</p>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)</p>
+<p>-State <i>string</i><br>
+The user’s or Organizational Unit’s state or province.</p>
+<p>-StreetAddress <i>string</i><br>
+The organizational unit’s street address.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command without actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Set-ADOrganizationalUnit  modifies the properties of an AD Organizational Unit. You can modify commonly used property values by using the cmdlet parameters. Property values that are not associated with cmdlet parameters can be modified by using the <span class="code">-Add, -Replace, -Clear </span>and<span class="code"> -Remove</span> parameters. <br>
+<br>
+The <span class="code">-Identity</span> parameter specifies the AD organizational unit to modify. Identify an OU by its distinguished name (DN) or GUID. Alternatively set the -Identity parameter to an object <a href="syntax-variables.html">variable</a> or pass an object through the <a href="syntax-pipeline.html">pipeline</a>. e.g. from <a href="get-adorganizationalunit.html">Get-adOrganizationalUnit</a><br>
+<br>
+The <span class="code">-Instance</span> parameter provides a way to update an OU object by applying the changes made to a copy of the object. To get a copy of an object use <a href="get-adorganizationalunit.html">Get-adOrganizationalUnit</a>, then use <span class="code">Set-ADOrganizationalUnit -Instance</span> to save any changes made back to the original OU object. When the -Instance parameter is specified do not also pass the -Identity parameter. 
+</p><p>For more information  see <a href="get-help.html">help</a> about_ActiveDirectory_Instance.<br><br>
+<br><br>
+<b>Examples</b></p><p></p>
+<p>Set the description of an OrganizationalUnit:</p>
+<p><span class="code">PS C:\&gt; Set-ADOrganizationalUnit -Identity "OU=UserAccounts,DC=SS64,DC=com" -Description "This OU holds all of the users accounts of SS64.com"</span></p>
+<p>Set the 'ProtectedFromAccidentalDeletion' property on an OU to $false:</p>
+<p><span class="code">PS C:\&gt; Set-ADOrganizationalUnit -Identity "OU=UserAccounts,DC=SS64,DC=com" -ProtectedFromAccidentalDeletion $false</span></p>
+<p>Sets the Country, City   and co (friendlyCountryName) properties on an OrganizationalUnit:</p>
+<p class="code">PS C:\&gt; Set-ADOrganizationalUnit -Identity "OU=AsiaPacific,OU=Sales,OU=UserAccounts,DC=SS64,DC=com" -Country "AU"
+-StreetAddress "45 Martens Place" -City Balmoral -Replace @{co="Australia"}</p>
+<p>Edit the properties of an  Organizational Unit:</p>
+<p class="code">PS C:\&gt; $WarehouseOU = Get-ADOrganizationalUnit "OU=Warehouse,OU=UserAccounts,DC=SS64,DC=com"<br>
+$EuropeSalesOU.Country = "UK"<br>
+$EuropeSalesOU.StreetAddress = "22 Taylor St."<br>
+$EuropeSalesOU.City = "Seahouses, Northumberland"<br>
+$EuropeSalesOU.PostalCode = "NE68 7RB"<br>
+$EuropeSalesOU.co ="United Kingdom"<br>
+Set-ADOrganizationalUnit -Instance $WarehouseOU</p>
+<p class="quote"><i>“Never trust a man who, when left alone with a tea cosy, doesn't try it on” ~ Billy Connolly</i></p>
+<p><b>Related:</b></p>
+<p> <a href="get-adorganizationalunit.html">Get-adOrganizationalUnit</a> - Get one or more AD OUs<br>
+<a href="new-adorganizationalunit.html">New-adOrganizationalUnit</a> - Create a new AD OU<br>
+<a href="remove-adorganizationalunit.html">Remove-adOrganizationalUnit</a> - Remove an AD OU</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set-adorganizationalunit.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-adorganizationalunit.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

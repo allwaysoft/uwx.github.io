@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="bind 
+Display current readline key and function bindings, bind a key sequence to a readline function or macro, or set a readline variable. 
+Syntax
+      bind [-m keymap] [-lpsvPSV] 
+      bind [-m ke">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/bind.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="bind 
+Display current readline key and function bindings, bind a key sequence to a readline function or macro, or set a readline variable. 
+Syntax
+      bind [-m keymap] [-lpsvPSV] 
+      bind [-m ke">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.057Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="bind 
+Display current readline key and function bindings, bind a key sequence to a readline function or macro, or set a readline variable. 
+Syntax
+      bind [-m keymap] [-lpsvPSV] 
+      bind [-m ke">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem -->
+<h1>bind</h1> 
+<p>Display current readline key and function bindings, bind a key sequence to a readline function or macro, or set a readline variable. </p>
+<pre>Syntax
+      bind [-m <i>keymap</i>] [-lpsvPSV] 
+      bind [-m <i>keymap</i>] [-q <i>function</i>] [-u <i>function</i>] [-r <i>keyseq</i>] 
+      bind [-m <i>keymap</i>] -f <i>filename</i> 
+      bind [-m <i>keymap</i>] -x <i>keyseq</i>:<i>shell-command</i> 
+      bind [-m <i>keymap</i>] <i>keyseq</i>:<i>function-name</i> or <i><a href="https://www.gnu.org/software/bash/manual/html_node/Bindable-Readline-Commands.html" target="_blank" rel="external">readline-command</a></i>
+</pre>
+<p> Each non-option argument is a command as it would appear in <span class="code">.inputrc</span>, but each binding or command must be passed as a separate argument; e.g., <span class="code">'"\C-x\C-r": re-read-init-file'</span>. <br>
+</p>
+<pre>Key
+<p>-m <i>keymap</i>    Use <i>keymap</i> as the keymap to be affected by the subsequent bindings.<br>
+Acceptable keymap names are emacs, emacs-standard, emacs-meta, emacs-ctlx, vi,<br>
+vi-move, vi-command, and vi-insert. vi is equivalent to vi-command;<br>
+emacs is equivalent to emacs-standard.</p>
+<p>-l           List the <b>names</b> of all readline functions.</p>
+<p>-p           Display readline function names and bindings in such a way that they can be re-read.</p>
+<p>-P           List current readline function names and bindings.</p>
+<p>-s           Display readline key sequences bound to macros and the strings they output in such a way that<br>
+they can be re-read.</p>
+<p>-S           Display readline key sequences bound to macros and the strings they output.</p>
+<p>-v           Display readline variable names and values in such a way that they can be re-read.</p>
+<p>-V           List current readline variable <b>names</b> and <b>values</b>.</p>
+<p>-f <i>filename</i>  Read key bindings from <i>filename</i>.</p>
+<p>-q <i>function</i>  Query about which keys invoke the named function.</p>
+<p>-u <i>function</i>  Unbind all keys bound to the named function.</p>
+<p>-r <i>keyseq</i>    Remove any current binding for <i>keyseq</i>.</p>
+<p>-x <i>keyseq</i>:<i>shell-command</i>   Cause <i>shell-command</i> to be executed whenever keyseq is entered.<br>
+When shell-command is executed, the shell sets the READLINE_LINE variable to the<br>
+contents of the readline line buffer and the READLINE_POINT variable to the current<br>
+location of the insertion point. If the executed command changes the value of<br>
+READLINE_LINE or READLINE_POINT, those new values will be reflected in the editing state.</p></pre><p></p>
+<p> The return value is 0 unless an unrecognized option is given or an error occurred.</p>
+<p>You can determine the character sequence emitted by a key by pressing <span class="code">Ctrl-v</span> at the command line, then pressing the key you're interested in. Alternatively run the <a href="read.html">read</a> command and then press the key(s) of interest, Control-c will return from the read builtin command.</p>
+<p>The <span class="code">\e</span> is the escape character, displayed as <span class="code">^[</span> in the shell output. </p>
+<p>bind is an internal command; bind key mappings can be abbreviated by ommiting the <span class="code">bind</span> command and the outer set of single quotes.</p>
+<p><b>Examples</b></p>
+<p>Setup the shell to perform a <a href="history.html">history</a> search when the Up and Down arrow keys are used. <br>
+This allows typing part of a command and then using the arrows to select matching commands from history.<br>
+(by default Up and Down will just select previous commands without any matching against history.)</p>
+<p class="code">bind '"\e[A":history-search-backward' <br>
+bind '"\e[B":history-search-forward'<br>
+bind '"\e[C": forward-char'<br>
+bind '"\e[D": backward-char'</p>
+<p>The last two bindings ensure that the left and right keys continue to work correctly.</p>
+<p class="quote"><i>“No cord or cable can draw so forcibly, or bind so fast, as love can do with a single thread” ~ Robert Burton</i></p>
+<p><b>Related:</b></p>
+<p><a href="syntax-bashrc.html">bashrc</a> - Set <span class="code">bind</span> commands at every login.<br>
+<a href="https://www.gnu.org/software/bash/manual/html_node/Bindable-Readline-Commands.html" target="_blank" rel="external">Bindable Readline Commands</a><br>
+<a href="https://en.wikipedia.org/wiki/GNU_Readline" target="_blank" rel="external">Readline keyboard shortcuts</a> Wiki</p>
+<!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="bind.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/bind.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

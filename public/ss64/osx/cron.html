@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cron 
+Daemon to execute scheduled commands (Vixie Cron). 
+Syntax
+      cron [-s] [-o] [-x debugflag[,...]]
+Options
+-o      Disable the special handling of situations when the GMT offset of
+the local t">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/cron.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="cron 
+Daemon to execute scheduled commands (Vixie Cron). 
+Syntax
+      cron [-s] [-o] [-x debugflag[,...]]
+Options
+-o      Disable the special handling of situations when the GMT offset of
+the local t">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.072Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="cron 
+Daemon to execute scheduled commands (Vixie Cron). 
+Syntax
+      cron [-s] [-o] [-x debugflag[,...]]
+Options
+-o      Disable the special handling of situations when the GMT offset of
+the local t">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>cron</h1> 
+<p>Daemon to execute scheduled commands (Vixie Cron). </p>
+<pre>Syntax
+      cron [-s] [-o] [-x <i>debugflag</i>[,...]]
+<p>Options<br>
+-o      Disable the special handling of situations when the GMT offset of<br>
+the local timezone changes, to be compatible with the old (default)<br>
+behavior.</p>
+<pre><code> -s      Enable special handling of situations when the GMT offset of the
+         local timezone changes, such as the switches between the standard
+         time and daylight saving time.
+
+         The jobs run during the GMT offset changes time as intuitively
+         expected.  If a job falls into a time interval that disappears
+         (for example, during the switch from standard time) to daylight
+         saving time or is duplicated (for example, during the reverse
+         switch), then it's handled in one of two ways:
+
+         The first case is for the jobs that run every at hour of a time
+         interval overlapping with the disappearing or duplicated inter-
+         val.  In other words, if the job had run within one hour before
+         the GMT offset change (and cron was not restarted nor the
+         &lt;a href=&quot;crontab.html&quot;&gt;crontab&lt;/a&gt; changed after that) or would run after the change at
+         the next hour.  They work as always, skip the skipped time or run
+         in the added time as usual.
+
+         The second case is for the jobs that run less frequently.  They
+         are executed exactly once, they are not skipped nor executed
+         twice (unless cron is restarted or the user's &lt;a href=&quot;crontab.html&quot;&gt;crontab&lt;/a&gt; is
+         changed during such a time interval).  If an interval disappears
+         due to the GMT offset change, such jobs are executed at the same
+         absolute point of time as they would be in the old time zone.
+         For example, if exactly one hour disappears, this point would be
+         during the next hour at the first minute that is specified for
+         them in &lt;a href=&quot;crontab.html&quot;&gt;crontab&lt;/a&gt;.
+
+ -x &lt;i&gt;debugflag&lt;/i&gt;[,...]
+
+         Enable writing of debugging information to standard output.
+         One or more of the following comma separated debugflag identifiers
+         must be specified:
+
+         bit   currently not used
+         ext   make the other debug flags more verbose
+         load  be verbose when loading crontab files
+         misc  be verbose about miscellaneous one-off events
+         pars  be verbose about parsing individual crontab lines
+         proc  be verbose about the state of the process, including all of
+               its offspring
+         sch   be verbose when iterating through the scheduling algorithms
+         test  trace through the execution, but do not perform any actions
+</code></pre>
+<p>If both options -o and -s are specified, the option specified last wins.</p></pre><p></p>
+<p> Although cron(8) and crontab(5) are officially supported      under Darwin, their functionality has been absorbed into launchd(8),      which provides a more flexible way of automatically executing commands.      See <a href="launchctl.html">launchctl</a> for more information.</p>
+<p>Cron should be started from /etc/rc or /etc/rc.local. It will 
+  return immediately, so you don't need to start it with '&amp;'. </p>
+<p>Cron searches /var/cron/tabs for crontab files which are named 
+  after accounts in /etc/passwd; crontabs found are loaded into memory. Cron also 
+  searches for /etc/crontab which is in a different format (see <a href="crontab.html">crontab</a>). 
+  Cron then wakes up every minute, examining all stored crontabs, checking each 
+  command to see if it should be run in the current minute. When executing commands, 
+  any output is mailed to the owner of the crontab (or to the user named in the 
+  MAILTO environment variable in the crontab, if such exists). </p>
+<p>Additionally, cron checks each minute to see if its spool directory's 
+  modtime (or the modtime on /etc/crontab) has changed, and if it has, cron will 
+  then examine the modtime on all crontabs and reload those which have changed. 
+  Thus cron need not be restarted whenever a crontab file is mod- ified. Note 
+  that the <a href="crontab.html">crontab</a> command updates the modtime of the 
+  spool directory whenever it changes a crontab.</p>
+<p>Directory for personal crontab files:<br>
+<span class="code">/usr/lib/cron/tabs  </span></p>
+<p class="quote"><i>”Time is what prevents everything from happening at once” ~ John Archibald Wheeler</i></p>
+<p><b>Related:</b></p>
+<p>
+<a href="crontab.html">crontab</a> - Schedule a command to run at a later time.<br>
+<a href="http://developer.apple.com/macosx/launchd.html" target="_blank" rel="external">launchd</a> - System startup program (daemon) + <a href="https://www.peterborgapps.com/lingon/" target="_blank" rel="external">Lingon GUI</a></p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="cron.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/cron.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

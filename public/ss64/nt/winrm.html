@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="WINRM 
+Windows Remote Management
+  
+  Secure communication with local and remote computers using web services.
+Syntax
+      winrm g[et] | s[et] | c[reate] | d[elete] | e[numerate] | 
+            i[nvo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/winrm.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="WINRM 
+Windows Remote Management
+  
+  Secure communication with local and remote computers using web services.
+Syntax
+      winrm g[et] | s[et] | c[reate] | d[elete] | e[numerate] | 
+            i[nvo">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:56.757Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="WINRM 
+Windows Remote Management
+  
+  Secure communication with local and remote computers using web services.
+Syntax
+      winrm g[et] | s[et] | c[reate] | d[elete] | e[numerate] | 
+            i[nvo">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>WINRM</h1> 
+<p>Windows Remote Management<br>
+  <br>
+  Secure communication with local and remote computers using web services.</p>
+<pre>Syntax
+      winrm g[et] | s[et] | c[reate] | d[elete] | e[numerate] | 
+            i[nvoke] |  id[entify] | quickconfig |  configSDDL |  helpmsg
+<p>Retrieve instances of <i>RESOURCE_URI</i>:<br>
+<b>winrm get</b> <i>RESOURCE_URI</i> [-SWITCH:<i>VALUE</i> [-SWITCH:<i>VALUE</i>] …]</p>
+<pre><code>  winrm get winrm/config
+  winrm get winrm/config/client
+  winrm get winrm/config/service
+</code></pre>
+<p>Modify settings in <i>RESOURCE_URI</i>:<br>
+<b>winrm set</b> <i>RESOURCE_URI</i> [-SWITCH:<i>VALUE</i> [-SWITCH:<i>VALUE</i>] …]<br>
+[@{KEY=“VALUE”[;KEY=“VALUE”]}]<br>
+[-file:VALUE]</p>
+<p>Spawn an instance of <i>RESOURCE_URI</i>:<br>
+<b>winrm create</b> <i>RESOURCE_URI</i> [-SWITCH:<i>VALUE</i> [-SWITCH:<i>VALUE</i>] …]<br>
+[@{KEY=“<i>VALUE</i>”[;KEY=“<i>VALUE</i>”]}]<br>
+[-file:<i>VALUE</i>]</p>
+<p>Control remote access to WinRM resources, launch a GUI to edit security settings.<br>
+<b>winrm configsddl</b> <i>RESOURCE_URI</i></p>
+<p>Enable this machine for remote management.<br>
+<b>winrm quickconfig</b> [-quiet] [-transport:<i>VALUE</i>]</p>
+<pre><code>  This will start the WinRM service, set the service to auto start, create
+  a listener and enable an http firewall exception for WS-Management traffic
+
+   -q[uiet]          Don’t prompt for confirmation.
+
+   -transport:&lt;i&gt;VALUE&lt;/i&gt;  Perform quickconfig for either http or https.  Default = http.
+</code></pre>
+<p>List instances of <i>RESOURCE_URI</i>:<br>
+<b><a href="winrm-enumerate.html">winrm enumerate</a></b> <i>RESOURCE_URI</i> [-ReturnType:Value] [-Shallow]<br>
+[-BasePropertiesOnly] [-SWITCH:<i>VALUE</i> [-SWITCH:<i>VALUE</i>] …]</p>
+<p>Remove an instance of <i>RESOURCE_URI</i>:<br>
+<b>winrm delete</b> <i>RESOURCE_URI</i> [-SWITCH:<i>VALUE</i> [-SWITCH:<i>VALUE</i>] …]</p>
+<p>Execute method specified by <i>ACTION</i> on target object specified by <i>RESOURCE_URI</i><br>
+<b>winrm invoke</b> <i>ACTION RESOURCE_URI</i> [-SWITCH:<i>VALUE</i> [-SWITCH:<i>VALUE</i>] …]<br>
+[@{KEY=“<i>VALUE</i>”[;KEY=“<i>VALUE</i>”]}]<br>
+[-file:<i>VALUE</i>]</p>
+<p>Display error message associate with the error code.<br>
+<b>winrm helpmsg</b> errorcode</p>
+<p>Key</p>
+<p>-a[uthentication]:<i>VALUE</i><br>
+The authentication mechanism to use when communicating<br>
+with the remote machine.</p>
+<p>-defaultCreds    Allow implicit credentials when Negotiate is used.<br>
+Remote HTTPS operations for trusted machines.</p>
+<p>-dialect:<i>VALUE</i>   Dialect of the filter expression for enumeration or fragment.<br>
+Example: Use a WQL query<br>
+-dialect:<a href="http://schemas.microsoft.com/wbem/wsman/1/WQL" target="_blank" rel="external">http://schemas.microsoft.com/wbem/wsman/1/WQL</a><br>
+Example: Use XPATH for filtering with enumeration or fragment get/set.<br>
+-dialect:<a href="http://www.w3.org/TR/1999/REC-xpath-19991116" target="_blank" rel="external">http://www.w3.org/TR/1999/REC-xpath-19991116</a></p>
+<p>-encoding:<i>VALUE</i>  The encoding type when talking to remote machine (see <a href="winrm-remote.html">-remote</a>).<br>
+Possible options are “utf-8” (the default) or “utf-16”.</p>
+<p>-f[ormat]:<i>FORMAT</i> The format of output. FORMAT can be “xml”,<br>
+“pretty” (better formatted XML), or “text”.</p>
+<p><a href="winrm-remote.html">-r[emote]:<i>VALUE</i></a>  Specify the identifier of a remote endpoint/system.<br>
+This can be a simple host name or a complete URL.</p>
+<p>-skipCAcheck     The certificate issuer need not be a trusted root authority.<br>
+Remote HTTPS operations for trusted machines.</p>
+<p>-skipCNcheck     The certificate common name (CN) of the server need not match<br>
+the hostname of the server. HTTPS operations for trusted machines.</p>
+<p>-skipRevocationcheck  Do not check the revocation status of the server certificate.<br>
+Remote HTTPS operations for trusted machines.</p>
+<p>-SPNPort         Append port number to the Service Principal Name (SPN) of the<br>
+remote server.<br>
+Service principal name is used when Negotiate or Kerberos authentication<br>
+mechanism is in use.</p>
+<p>-timeout:<i>MS</i>      Timeout in milliseconds. Limits duration of corresponding operation.<br>
+Default timeout can be configured by:<br>
+winrm set winrm/config @{MaxTimeoutms=“XXXXXX”}<br>
+Where XXXXXX is an integer indicating milliseconds.</p>
+<p>-file:<i>VALUE</i></p>
+<p>@{KEY=“<i>VALUE</i>”[;KEY=“<i>VALUE</i>”]}<br>
+Input from an XML file or via key/value pairs.<br>
+Applies to set, create, and invoke operations</p>
+<p>-fragment:<i>VALUE</i>  Specify a section inside the instance XML that is to be updated or<br>
+retrieved for the given operation.<br>
+Example: Get the status of the spooler service<br>
+winrm get wmicimv2/Win32_Service?name=spooler -fragment:Status/text()</p>
+<pre><code>                 -options:{KEY=&quot;&lt;i&gt;VALUE&lt;/i&gt;&quot;[;KEY=&quot;&lt;i&gt;VALUE&lt;/i&gt;&quot;]}
+
+                 Key/value pairs for provider-specific options.
+                 
+                 Example:
+                   -options:{key1=&quot;value1&quot;;key2=$null}
+</code></pre>
+</pre>
+<p> WinRM is the Microsoft implementation of <a href="http://en.wikipedia.org/wiki/WS-Management" target="_blank" rel="external">WS-Management Protocol</a>, a standard Simple Object Access Protocol (SOAP)-based, firewall-friendly protocol that allows hardware and operating systems, from different vendors, to interoperate.</p>
+<p>To improve security, WinRM 2.0 uses HTTP/HTTPS ports 5985/5986 by default.</p>
+<p>If the  computer name is passed using <span class="code">r:&lt;Computername&gt;</span> , then the default client port will be used (by default, 5985/5986).<br>
+If the computer name is passed as a  URI, such as <span class="code">r:http://Mycomputer/wsman</span>, then the IE default ports will be used (ports 80/443 by default).</p>
+<p>Files:<br>
+<span class="code">C:\WINDOWS\system32\winrm.vbs</span></p>
+<p><b>Examples</b></p>
+<p>Configure Windows Remote Management on the server (<span class="code">DemoServer2</span>), run this from an elevated CMD (or powershell) prompt:<br>
+<span class="code">C:\&gt; winrm quickconfig</span></p>
+<blockquote>
+<p>On a client you can then open a remote shell connected to <span class="code">DemoServer2</span> with:<br>
+<span class="code"><a href="winrs.html">winrs</a> -r:DemoServer2 cmd</span></p>
+</blockquote>
+<p>Retrieve current configuration in XML format:<br>
+<span class="code">winrm get winrm/config -format:pretty</span></p>
+<p>Retrieve spooler instance of Win32_Service class:<br>
+<span class="code">winrm get wmicimv2/Win32_Service?Name=spooler</span></p>
+<p>Modify a configuration property of WinRM:<br>
+<span class="code">winrm set winrm/config @{MaxEnvelopeSizekb="100"}</span></p>
+<p>Disable a listener on this machine:<br>
+<span class="code">winrm set winrm/config/Listener?Address=*+Transport=HTTPS @{Enabled="false"}</span></p>
+<p>Add  remote machine to the trusted hosts list (used if your computers aren’t on a domain):<br>
+<span class="code">winrm set winrm/config/client '@{TrustedHosts="workstation64,server1"}'</span></p>
+<p>Create instance of HTTP Listener on IPv6 address:<br>
+<span class="code">winrm create winrm/config/Listener?Address=IP:3ffe:8311:ffff:f2c1::5e61+Transport=HTTP</span></p>
+<p>Delete the HTTP listener on this machine for given IP address:<br>
+<span class="code">winrm delete winrm/config/Listener?Address=IP:192.168.2.1+Transport=HTTP</span></p>
+<p>Call StartService method on Spooler service:<br>
+<span class="code">winrm invoke StartService wmicimv2/Win32_Service?Name=spooler</span></p>
+<p>Call Create method of Win32_Process class with specified parameters:<br>
+<span class="code">winrm invoke Create wmicimv2/Win32_Process @{CommandLine="notepad.exe";CurrentDirectory="C:\"}</span></p>
+<p>Display error message associated with the error code 0x5:<br>
+<span class="code">winrm helpmsg 0x5</span></p>
+<p class="quote"><i>“Start where you are. Distant fields always look greener, but opportunity lies right where you are. Take advantage of every opportunity of service” ~ Robert Collier</i></p>
+<p><b>Related:</b></p>
+<p>  <a href="winrs.html">WINRS</a> - Windows Remote Shell<br>
+Powershell: <a href="../ps/enable-psremoting.html">Enable-PSRemoting</a> - Configure the computer to receive remote commands.<br>
+Powershell: <a href="../ps/enter-pssession.html">Enter-PSSession</a> -     Start an interactive session with a remote computer</p>
+<!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="winrm.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/winrm.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

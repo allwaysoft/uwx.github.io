@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="EXPDP 
+Export data with Oracle Data Pump. 
+  
+  Syntax:
+   EXPDP username/password@connect_string ATTACH [=[schema_name.]job_name]
+EXPDP username/password@connect_string FULL=Y options
+EXPDP username/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/expdp.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="EXPDP 
+Export data with Oracle Data Pump. 
+  
+  Syntax:
+   EXPDP username/password@connect_string ATTACH [=[schema_name.]job_name]
+EXPDP username/password@connect_string FULL=Y options
+EXPDP username/">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:29.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="EXPDP 
+Export data with Oracle Data Pump. 
+  
+  Syntax:
+   EXPDP username/password@connect_string ATTACH [=[schema_name.]job_name]
+EXPDP username/password@connect_string FULL=Y options
+EXPDP username/">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>EXPDP</h1> 
+<p>Export data with Oracle Data Pump. <br>
+  <br>
+  Syntax:</p>
+<pre>   EXPDP <i>username</i>/<i>password</i>@<i>connect_string</i> <b><abbr title="Attach to existing job">ATTACH</abbr></b> [=[<i>schema_name</i>.]<i>job_name</i>]
+<p>EXPDP <i>username</i>/<i>password</i>@<i>connect_string</i> <b><abbr title="Export entire database">FULL</abbr></b>=Y <i>options</i></p>
+<p>EXPDP <i>username</i>/<i>password</i>@<i>connect_string</i> <b><abbr title="List of schemas to export">SCHEMAS</abbr></b>=<i>schema_name<br>
+</i> [,<i>schema_name2</i>…] <i>options</i></p>
+<p>EXPDP <i>username</i>/<i>password</i>@<i>connect_string</i> <b><abbr title="A list of tables to export - one schema only">TABLES</abbr></b>=[<i>schema_name</i>.] <i>table_name</i> [:<i>partition_name</i>]<br>
+[,<i>table_name2</i>…] <i>options</i></p>
+<p>EXPDP <i>username</i>/<i>password</i>@<i>connect_string</i> <b><abbr title="A list of tablespaces to export">TABLESPACES</abbr></b>=<i>tablespace_name</i><br>
+[,<i>tablespace_name2</i>…] <i>options</i></p>
+<p>EXPDP <i>username</i>/<i>password</i>@<i>connect_string</i> <b><abbr title="List of tablespaces from which metadata will be unloaded">TRANSPORT_TABLESPACES</abbr></b>=<i>tablespace_name</i><br>
+[,<i>tablespace_name2</i>…] [TRANSPORT_FULL_CHECK={Y|N}] <i>options</i></p>
+<p>Options<br>
+CONTENT    The data to unload: <u>ALL</u>, DATA_ONLY or METADATA_ONLY<br>
+<abbr title="Utilize cluster resources and distribute workers across the Oracle RAC. 11g R2">CLUSTER</abbr>    Utilize cluster and distribute workers across the Oracle RAC. {Y | N }<br>
+COMPRESSION={METADATA_ONLY | NONE}<br>
+COMPRESSION_ALGORITHM Specify the compression algorithm that should be used. Valid keyword values are: [BASIC], LOW, MEDIUM and HIGH.</p>
+<p>CONTENT={ALL | DATA_ONLY | METADATA_ONLY}<br>
+<abbr title="Write XML datatype in CLOB format 11g Release 1">DATA_OPTIONS</abbr> XML_CLOBS<br>
+<b>DIRECTORY</b>=<i>directory_object</i><br>
+DUMP<b>FILE</b>=[<i>directory_object</i>:]<i>file_name</i> [,[<i>directory_object</i>:]<i>file_name…</i>]<br>
+ESTIMATE={ BLOCKS | STATISTICS}<br>
+ESTIMATE_ONLY={Y|N}<br>
+EXCLUDE={<i>object_type </i>[:<i>name_clause</i>]} [,EXCLUDE=…]<br>
+<abbr title="11g R1">ENCRYPTION</abbr> { ALL | DATA_ONLY | METADATA_ONLY }<br>
+ENCRYPTION_PASSWORD=<i>password</i><br>
+<abbr title="11g R1">ENCRYPTION_ALGORITHM</abbr> { AES128 | AES192 | AES256 }<br>
+<abbr title="11g R1">ENCRYPTION_MODE</abbr> { DUAL | PASSWORD | <u>TRANSPARENT</u> }<br>
+<b>FILE</b>SIZE=<i>number_of_bytes</i><br>
+FLASHBACK_SCN=<i>scn_value</i><br>
+FLASHBACK_TIME=<i>timestamp</i><br>
+HELP      Display Help messages (N).<br>
+INCLUDE={<i>object_type </i>[:<i>name_clause</i>]} [,INCLUDE=…]<br>
+JOB_NAME=<i>jobname_string</i><br>
+LOG<b>FILE</b>=[<i>directory_object</i>:]<i>file_name</i><br>
+NOLOG<b>FILE</b>={Y|N}<br>
+NETWORK_LINK=<i>database_link</i><br>
+PARALLEL=<i>int</i><br>
+PAR<b>FILE</b>=[<i>directory_path</i>]<i>file_name</i>        The name of an export parameter file.<br>
+QUERY=[schema_name.][table_name:]<i>query_clause</i><br>
+<abbr title="11g R1">REMAP_DATA</abbr>     Specify a data conversion function, e.g. REMAP_DATA=EMP.EMPNO:REMAPPKG.EMPNO<br>
+<abbr title="11g R1">REUSE_DUMPFILES</abbr>      Overwrite destination dump file if it exists (<u>N</u>)<br>
+SAMPLE=[schema_name.][table_name:]<i>sample_percent</i><br>
+<abbr title="Name of an active Service and associated resource group to constrain Oracle RAC resources. 11g R2">SERVICE_NAME</abbr>  Name of an active Service and associated resource group to constrain Oracle RAC resources.<br>
+<abbr title="Edition to be used for extracting metadata. 11g R2">SOURCE_EDITION</abbr>  Edition to be used for extracting metadata.<br>
+STATUS [=<i>int</i>]<br>
+<abbr title="Transportable method - 11g R1">TRANSPORTABLE</abbr> { ALWAYS | <u>NEVER</u> }<br>
+TRANSPORT_FULL_CHECK   Verify storage segments of all tables (N).<br>
+TRANSPORT_TABLESPACES  List of tablespaces from which metadata will be unloaded.<br>
+USERID=<i>username</i>   The username performing the export, don’t confuse with SCHEMAS=<i>schema_name</i>.<br>
+VERSION={COMPATIBLE | LATEST | <i>version_string</i>}</p>
+</pre>
+<p> Options can be supplied as part of the EXPDP command line or within an export parameter file.<br>
+On the command line, the Username (or USERID) must be the first parameter.<br>
+</p>
+<pre>Interactive mode options:
+  ADD_FILE            Add dumpfile to dumpfile set.
+                      ADD_FILE=dumpfile-name
+  CONTINUE_CLIENT     Return to logging mode. Job will be re-started if idle.
+  EXIT_CLIENT         Quit client session and leave job running.
+  <abbr title="Default filesize (bytes) for subsequent ADD_FILE commands">FILESIZE</abbr>            Default filesize (bytes) for subsequent ADD_FILE commands.
+  HELP                Summarize interactive commands.
+  KILL_JOB            Detach and delete job.
+  PARALLEL            Change the number of active workers for current job.
+                      PARALLEL=.
+  <abbr title="11g R1">REUSE_DUMPFILES</abbr>     Overwrite destination dump file if it exists (<u>N</u>)
+  START_JOB           Start/resume current job.
+  STATUS              Frequency (secs) job status is to be monitored where
+                      the default (0) will show new status when available.
+                      STATUS=[interval]
+  STOP_JOB            Orderly shutdown of job execution and exits the client.
+                      STOP_JOB=IMMEDIATE performs an immediate shutdown of the
+                      Data Pump job.</pre>
+<p>expdp is a server side utility used to unload database data into a set of OS files called a 'dump file set'. The dump file set can be imported only by the Data Pump Import utility <span class="code">impdb</span>. The dump file set can be imported on the same system or it can be moved to another system and loaded there. </p>
+<p>The dump file set is made up of one or more disk files that contain table data, database object metadata, and control information. </p>
+<p>The directory objects must be created  before running expdb.</p>
+<p><b>Examples</b></p>
+<p>Full export:</p>
+<pre>CREATE OR REPLACE DIRECTORY export_dir AS '/u01/app/oracle/oradata/';
+GRANT READ, WRITE ON DIRECTORY export_dir TO demouser;
+EXPDB system/password@sid <b>full</b>=Y directory=export_dir dumpfile=ss64.dmp logfile=exp_ss64.log</pre>
+<p>Export a single schema:</p>
+<pre class="code">EXPDB system/password@sid <b>schemas</b>=SCOTT directory=export_dir dumpfile=ss64.dmp logfile=ss64.log
+</pre>
+<p>Export selected tables:</p>
+<pre class="code">EXPDB system/password@sid <b>schemas</b>=SCOTT <b>include=TABLE</b>:"IN ('EMP', 'DEPT')" directory=export_dir dumpfile=ss64.dmp logfile=ss64.log</pre>
+<p>Export all of a schema except for one table:</p>
+<pre class="code">EXPDB system/password@sid <b>schemas</b>=SCOTT <b>exclude=TABLE</b>:"= 'DEPT'" directory=export_dir dumpfile=ss64.dmp logfile=ss64.log
+</pre>
+<p><i class="quote">"It's part of a trilogy, a musical trilogy that I'm doing in D minor  which I always find is really the saddest of all keys really, I don't know why but it makes people weep instantly..." ~ <a href="http://www.youtube.com/watch?v=NgViOqGJEvM" target="_blank" rel="external">Spinal Tap</a></i><b><br>  
+<br>
+Related:</b>
+</p><p><a href="impdp.html">impdp</a> - Import data with Oracle Data Pump.
+<!-- #BeginLibraryItem "/Library/foot_ora.lbi" --></p><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem --><p></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/expdp.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

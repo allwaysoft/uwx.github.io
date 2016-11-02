@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="date 
+Display or set date and time. 
+  Displays the current date and time when invoked without arguments. Providing 
+  arguments will format the date and time in a user-defined way or set the date. 
+O">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/date.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="date 
+Display or set date and time. 
+  Displays the current date and time when invoked without arguments. Providing 
+  arguments will format the date and time in a user-defined way or set the date. 
+O">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="date 
+Display or set date and time. 
+  Displays the current date and time when invoked without arguments. Providing 
+  arguments will format the date and time in a user-defined way or set the date. 
+O">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>date</h1> 
+<p>Display or set date and time. <br>
+  Displays the current date and time when invoked without arguments. Providing 
+  arguments will format the date and time in a user-defined way or set the date. 
+Only the superuser can set the date. </p>
+<pre>Syntax
+      date [-nu] [-r seconds] [+format]
+      [[[[[cc]yy]mm]dd]hh]mm[.ss]
+<p>Options<br>
+-n     The utility timed(8) is used to synchronize the clocks on groups<br>
+of machines.  By default, if timed is running, date will set the<br>
+time on all of the machines in the local group.  The -n option<br>
+stops date from setting the time for other than the current<br>
+machine.</p>
+<pre><code> -r      Print out the date and time that is seconds from the &lt;a href=&quot;http://en.wikipedia.org/wiki/Unix_time&quot;&gt;Epoch&lt;/a&gt;.
+
+ -u      Display or set the date in UTC (universal) time.&lt;/pre&gt;
+</code></pre>
+<p>An operand with a leading plus (`+') sign signals a user-defined 
+  format string which specifies the format in which to display the date and time.<br>
+  The format string can contain any of the conversion specifications described 
+  in the strftime(3) manual page, as well as any arbitrary text. A <i>newline</i> character 
+is always output after the characters specified by the format string.</p>
+<pre>The format string for the default display is:
+<pre><code> `%a %b %e %H:%M:%S %Z %Y'.
+
+ If an operand does not have a leading plus sign, it is interpreted as a
+ value for setting the system's notion of the current date and time.  The
+ canonical representation for setting the date and time is:
+
+ cc     The first two digits of the year (the century).
+
+ yy     The second two digits of the year.
+               If <code>yy' is specified,but </code>cc' is not, a value for `yy' between 
+   69 and 99 results in a `cc' value of 19.
+   Otherwise, a `cc' value of 20 is used.
+
+ mm     The month of the year, from 1 to 12.
+ dd     The day of the month, from 1 to 31.
+ hh     The hour of the day, from 0 to 23.
+ mm     The minute of the hour, from 0 to 59.
+ ss     The second of the minute, from 0 to 61.
+
+ Everything but the minutes is optional.
+
+ Time changes for Daylight Saving and Standard time and leap seconds and
+ years are handled automatically.&lt;/pre&gt;
+</code></pre>
+<p><b>Examples</b></p>
+<pre>    The command:
+    $ date "+DATE: %m/%d/%y%nTIME: %H:%M:%S"
+<pre><code>will display:
+
+ DATE: 11/21/87
+ TIME: 13:36:16
+
+Set the date to `June 13, 1985, 4:27 PM':
+$ date 8506131627
+
+Set the time to 2:32 PM, without modifying the date.
+$ date 1432
+
+Store the current date in a variable (in year-month-day format)
+$ mydate=<code>date &quot;+%Y-%m-%d&quot;;</code>
+$ echo The date is: ${mydate};
+</code></pre>
+<p>ENVIRONMENT VARIABLE</p>
+<pre><code> TZ   The timezone to use when displaying dates.  See environ(7) for more.
+</code></pre>
+<p>FILES<br>
+/var/log/wtmp  A record of date resets and time changes.<br>
+/var/log/messages  A record of the user setting the time.</p></pre><p></p>
+<p class="quote"><i>“Carpe Diem - Seize the day” - Horace </i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/date.1.html" target="_blank" rel="external">date man page</a> - Apple.com<br>
+timed(8) <br>
+<a href="cal.html">cal</a> - Display a calendar<br>
+<a href="crontab.html">crontab</a> - Schedule a command to run at a later time<br>
+<a href="time.html">time</a> - Measure Program Resource Use <br>
+<a href="touch.html">touch</a> - Change file timestamps </p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="date.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/date.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

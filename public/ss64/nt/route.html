@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ROUTE.exe 
+Manipulate network routing tables. Route packets of network traffic 
+from one subnet to another by modifying the route table.
+Syntax
+Display route details:
+ROUTE [-f] PRINT [destination_hos">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/route.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ROUTE.exe 
+Manipulate network routing tables. Route packets of network traffic 
+from one subnet to another by modifying the route table.
+Syntax
+Display route details:
+ROUTE [-f] PRINT [destination_hos">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ROUTE.exe 
+Manipulate network routing tables. Route packets of network traffic 
+from one subnet to another by modifying the route table.
+Syntax
+Display route details:
+ROUTE [-f] PRINT [destination_hos">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>ROUTE.exe</h1> 
+<p>Manipulate network routing tables. Route packets of network traffic 
+from one subnet to another by modifying the route table.</p>
+<pre>Syntax
+<p>Display route details:<br>
+ROUTE [-f] PRINT [<i>destination_host</i>] [MASK <i>subnet_mask_value</i>] [<i>gateway</i>]<br>
+[METRIC <i>metric</i>] [IF <i>interface_no</i>.]</p>
+<p>Add a route:<br>
+ROUTE [-f] [-p] ADD [<i>destination_host</i>] [MASK <i>subnet_mask_value</i>] [<i>gateway</i>]<br>
+[METRIC <i>metric</i>] [IF <i>interface_no</i>.]</p>
+<p>Change a route:<br>
+ROUTE [-f] CHANGE [destination_host] [MASK <i>subnet_mask_value</i>] [<i>gateway</i>]<br>
+[METRIC <i>metric</i>] [IF <i>interface_no</i>.]</p>
+<p>Delete a route:<br>
+ROUTE [-f] DELETE [destination_host] [MASK <i>subnet_mask_value</i>] [<i>gateway</i>]<br>
+[METRIC <i>metric</i>] [IF <i>interface_no</i>.]</p>
+<p>Key<br>
+-f          Clear (flush) the routing tables of all gateway entries.  If this is<br>
+used in conjunction with one of the commands, the tables are<br>
+cleared prior to running the command.</p>
+<p><i>destination_host</i><br>
+The address (or set of addresses) that you want to reach.</p>
+<p>-p          Create a persistent route - survives system reboots.<br>
+(not supported in Windows 95)</p>
+<p><i>subnet_mask_value</i><br>
+The subnet mask value for this route entry.<br>
+This defines how many addresses are there.<br>
+If not specified, it defaults to 255.255.255.255.</p>
+<p><i>gateway</i>     The gateway.</p>
+<p><i>interface</i>   The interface number (1,2,…) for the specified route.<br>
+If the option <code>IF interface_no</code> is not given, ROUTE will try<br>
+to find the best interface available.</p>
+<p><i>metric</i>      The metric, ie. cost for the destination.</p></pre><p></p>
+<p> Note that routes added to the table are not made persistent 
+unless the -p switch is specified. Non-persistent routes only last until the computer is rebooted.</p>
+<p>Symbolic names used for Destination_Host are looked up in the network database file NETWORKS. <br>
+<br>
+The symbolic names for gateway are looked up in the host name database file HOSTS. <br>
+<br>
+If the command is PRINT or DELETE. Destination or gateway can be a wildcard ('*'), or the gateway argument can be omitted. <br>
+<br>
+An IP address mask of 0.0.0.0 means <i>everything</i>. (rather like the *.* wildcard). In other words it says: When matching this pattern, don’t worry about matching any of the bits - everything matches.<br>
+<br>
+If Destination_Host contains a * or ?, it is treated as a shell pattern, and only matching destination routes are printed. The '*' matches any string, and '?' matches any one char. <br>
+Examples:<br>
+<span class="code">157.*.1<br>
+157.*<br>
+127.*<br>
+*224*</span> <br>
+<i><br>
+<span class="quote">“Get your kicks on ROUTE 66” ~ Jack Kerouac.</span></i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="netstat.html">NETSTAT</a>-rn - Display TCP/IP network connections, 
+routing and protocol statistics<br>
+<a href="tracert.html">TRACERT</a> - Trace route to a remote host<br>
+<a href="https://support.microsoft.com/kb/140859" target="_blank" rel="external">Q140859</a> - Win NT TCP/IP 
+Routing Basics <br>
+Equivalent bash command (Linux): <a href="../bash/ip-route.html">ip route</a> - Manipulate route table entries.</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="route.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/route.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

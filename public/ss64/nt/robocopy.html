@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ROBOCOPY.exe
+Robust File and Folder Copy.
+By default Robocopy will only copy a file if the source and destination have different time stamps or different file sizes. 
+Syntax
+      ROBOCOPY Source_fold">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/robocopy.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ROBOCOPY.exe
+Robust File and Folder Copy.
+By default Robocopy will only copy a file if the source and destination have different time stamps or different file sizes. 
+Syntax
+      ROBOCOPY Source_fold">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.119Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ROBOCOPY.exe
+Robust File and Folder Copy.
+By default Robocopy will only copy a file if the source and destination have different time stamps or different file sizes. 
+Syntax
+      ROBOCOPY Source_fold">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>ROBOCOPY.exe</h1>
+<p>Robust File and Folder Copy.<br>
+By default Robocopy will only copy a file if the source and destination have different time stamps or different file sizes. </p>
+<pre>Syntax
+      ROBOCOPY <i>Source_folder Destination_folder</i> [<i>files_to_copy</i>] [<i>options</i>]
+<p>Key<br>
+file(s)_to_copy : A list of files or a <a href="syntax-wildcards.html">wildcard</a>.<br>
+(defaults to copying <em>.</em>)</p>
+<p><i>Source options</i><br>
+/S : Copy Subfolders.<br>
+/E : Copy Subfolders, including Empty Subfolders.<br>
+/COPY:<i>copyflag</i>[<i>s</i>] : What to COPY (default is /COPY:DAT)<br>
+(copyflags : <b>D</b>=Data, <b>A</b>=Attributes, <b>T</b>=Timestamps<br>
+<b>S</b>=Security=NTFS ACLs, <b>O</b>=Owner info, <b>U</b>=aUditing info).<br>
+/SEC : Copy files with SECurity (equivalent to /COPY:DATS).<br>
+/DCOPY:T : Copy Directory Timestamps.<br>
+/COPYALL : Copy ALL file info (equivalent to /COPY:DATSOU).<br>
+/NOCOPY : Copy NO file info (useful with /PURGE).</p>
+<pre><code>            /A : Copy only files with the Archive attribute set.
+            /M : like /A, but remove Archive attribute from source files.
+        /LEV:&lt;i&gt;n&lt;/i&gt; : Only copy the top &lt;i&gt;n&lt;/i&gt; LEVels of the source tree.
+
+     /MAXAGE:&lt;i&gt;n&lt;/i&gt; : MAXimum file AGE - exclude files older than &lt;i&gt;n&lt;/i&gt; days/date.
+     /MINAGE:&lt;i&gt;n&lt;/i&gt; : MINimum file AGE - exclude files newer than &lt;i&gt;n&lt;/i&gt; days/date.
+                 (If &lt;i&gt;n&lt;/i&gt; &amp;lt; 1900 then &lt;i&gt;n&lt;/i&gt; = no of days, else &lt;i&gt;n&lt;/i&gt; = YYYYMMDD date).
+
+          /FFT : Assume FAT File Times (2-second date/time granularity).
+          /256 : Turn off very long path (&amp;gt; 256 characters) support.
+</code></pre>
+<p><i>Copy options</i><br>
+/L : List only - don’t copy, timestamp or delete any files.<br>
+/MOV : MOVe files (delete from source after copying).<br>
+/MOVE : Move files and dirs (delete from source after copying).<br>
+/sl : Copy symbolic links instead of the target.<br>
+/Z : Copy files in restartable mode (survive network glitch).<br>
+/B : Copy files in Backup mode.<br>
+/J : Copy using unbuffered I/O (recommended for large files). ##<br>
+/NOOFFLOAD : Copy files without using the Windows <a href="https://technet.microsoft.com/en-us/library/hh831628.aspx" target="_blank" rel="external">Copy Offload</a> mechanism. ##<br>
+/ZB : Use restartable mode; if access denied use Backup mode.<br>
+/IPG:<i>n</i> : Inter-Packet Gap (ms), to free bandwidth on slow lines.</p>
+<pre><code>          /R:&lt;i&gt;n&lt;/i&gt; : Number of Retries on failed copies - default is 1 million.
+          /W:&lt;i&gt;n&lt;/i&gt; : Wait time between retries - default is 30 seconds.
+          /REG : Save /R:n and /W:n in the Registry as default settings.
+          /TBD : Wait for sharenames To Be Defined (retry error 67).
+</code></pre>
+<p><i>Destination options</i></p>
+<pre><code>/A+:[RASHCNET] : Set file Attribute(s) on destination files + add.
+/A-:[RASHCNET] : UnSet file Attribute(s) on destination files - remove.
+          /FAT : Create destination files using 8.3 FAT file names only.
+
+       /CREATE : CREATE directory tree structure + zero-length files only.
+          /DST : Compensate for one-hour DST time differences.
+        /PURGE : Delete dest files/folders that no longer exist in source.
+          /MIR : MIRror a directory tree - equivalent to /PURGE plus all subfolders (/E)
+</code></pre>
+<p><i>Logging options</i><br>
+/L : List only - don’t copy, timestamp or delete any files.<br>
+/NP : No Progress - don’t display % copied.<br>
+/unicode : Display the status output as Unicode text.   #<br>
+/LOG:<i>file</i> : Output status to LOG file (overwrite existing log).<br>
+/UNILOG:<i>file</i> : Output status to Unicode Log file (overwrite)<br>
+/LOG+:<i>file</i> : Output status to LOG file (append to existing log).<br>
+/UNILOG+:<i>file</i> : Output status to Unicode Log file (append)<br>
+/TS : Include Source file Time Stamps in the output.<br>
+/FP : Include Full Pathname of files in the output.<br>
+/NS : No Size - don’t log file sizes.<br>
+/NC : No Class - don’t log file classes.<br>
+/NFL : No File List - don’t log file names.<br>
+/NDL : No Directory List - don’t log directory names.<br>
+/TEE : Output to console window, as well as the log file.<br>
+/NJH : No Job Header.<br>
+/NJS : No Job Summary.</p>
+<p><i>Repeated Copy Options</i><br>
+/MON:<i>n</i> : MONitor source; run again when more than <i>n</i> changes seen.<br>
+/MOT:<i>m</i> : MOnitor source; run again in <i>m</i> minutes Time, if changed.</p>
+<pre><code> /RH:&lt;i&gt;hhmm-hhmm&lt;/i&gt; : Run Hours - times when new copies can be started.
+           /PF : Check run hours on a Per File (not per pass) basis.
+</code></pre>
+<p><i>Job Options</i><br>
+/JOB:<i>jobname</i> : Take parameters from the named JOB file.<br>
+/SAVE:<i>jobname</i> : SAVE parameters to the named job file<br>
+/QUIT : QUIT after processing command line (to view parameters).<br>
+/NOSD : NO Source Directory is specified.<br>
+/NODD : NO Destination Directory is specified.<br>
+/IF : Include the following Files.</p>
+<p><i>Advanced options you’ll probably never use</i><br>
+/EFSRAW : Copy any encrypted files using EFS RAW mode.<br>
+/MT[:n] : Multithreaded copying, <i>n</i> = no. of threads to use (1-128)  #<br>
+default = 8 threads, not compatible with /IPG and /EFSRAW<br>
+The use of /LOG is recommended for better performance.<br><br>
+/SECFIX : FIX <a title="mirroring file permissions" href="http://blogs.technet.com/b/filecab/archive/2008/07/31/robocopy-mir-switch-mirroring-file-permissions.aspx" target="_blank" rel="external">file SECurity</a> on all files, even skipped files.<br>
+/TIMFIX : FIX file TIMes on all files, even skipped files.</p>
+<pre><code>           /XO : eXclude Older - if destination file exists and is the same date
+                 or newer than the source - don’t bother to overwrite it.
+           /XC : eXclude Changed files
+           /XN : eXclude Newer files
+           /XL : eXclude &quot;Lonely&quot; files and dirs (present in source but not destination)
+                 This will prevent any new files being added to the destination.
+           /XX : eXclude &quot;eXtra&quot; files and dirs (present in destination but not source)
+                 This will prevent any deletions from the destination. (this is the default)
+</code></pre>
+<p>/XF <i>file</i> [<i>file</i>]… : eXclude Files matching given names/paths/wildcards.<br>
+/XD <i>dirs</i> [<i>dirs</i>]… : eXclude Directories matching given names/paths.<br>
+XF and XD can be used in combination  e.g.<br>
+ROBOCOPY c:\source d:\dest /XF *.doc *.xls /XD c:\unwanted /S</p>
+<p>/IA:[RASHCNETO] : Include files with any of the given Attributes<br>
+/XA:[RASHCNETO] : eXclude files with any of the given Attributes<br>
+/IS : Include Same, overwrite files even if they are already the same.<br>
+/IT : Include Tweaked files.<br>
+/XJ : eXclude Junction points. (normally included by default).<br>
+/XJD : Exclude junction points for directories. #<br>
+/XJF : Exclude junction points for files.      #</p>
+<pre><code>        /MAX:&lt;i&gt;n&lt;/i&gt; : MAXimum file size - exclude files bigger than &lt;i&gt;n&lt;/i&gt; bytes.
+        /MIN:&lt;i&gt;n&lt;/i&gt; : MINimum file size - exclude files smaller than &lt;i&gt;n&lt;/i&gt; bytes.
+     /MAXLAD:&lt;i&gt;n&lt;/i&gt; : MAXimum Last Access Date - exclude files unused since &lt;i&gt;n&lt;/i&gt;.
+     /MINLAD:&lt;i&gt;n&lt;/i&gt; : MINimum Last Access Date - exclude files used since &lt;i&gt;n&lt;/i&gt;.
+                 (If n &amp;lt; 1900 then n = n days, else n = YYYYMMDD date).
+
+        /BYTES : Print sizes as bytes.&lt;br&gt;                /X : Report all eXtra files, not just those selected &amp;amp; copied.
+            /V : Produce Verbose output log, showing skipped files.
+          /ETA : Show Estimated Time of Arrival of copied files.
+        /DEBUG : Show debug volume information (undocumented)&lt;/pre&gt;
+</code></pre>
+<p> # = New Option in Windows 7 and Windows 2008 R2<br>
+## = New Option in Windows 8 and Windows 10<br>
+In Windows XP, Robocopy was only available via the <a href="../links/windows.html#kits">Resource Kit</a> but is a standard/built in command since Windows 7.</p>
+<p>Robocopy <a href="robocopy-exit.html">EXIT CODES</a></p>
+<p><b>File Attributes </b>[<span class="code">RASHCNETO</span>]</p>
+<pre> R – Read only 
+ A – Archive 
+ S – System 
+ H – Hidden
+ C – Compressed 
+ N – Not content indexed
+ E – Encrypted 
+ T – Temporary
+ O - Offline</pre>
+<p>By copying only the files that have changed, robocopy can be used to backup very large volumes. </p>
+<p>If either the source or desination are a "quoted long foldername" <b>do not include a trailing backslash</b> as this will be treated as an <a href="syntax-esc.html">escape</a> character, i.e. <span class="code">"C:\some path\"</span> will fail but <span class="code">"C:\some path\\"</span> or <span class="code">"C:\some path\."</span> or <span class="code">"C:\some path"</span> will work.</p>
+<p>If creating a progress logfile with <span class="code">/LOG</span> , specify a destination <a href="md.html">directory</a> that already exists, robocopy will create the file but will not create a log directory automatically.</p>
+<p>ROBOCOPY will accept UNC pathnames including UNC pathnames over 256 characters long. </p>
+<p><span class="code">/REG</span> Writes to the registry at <span class="code">HKCU\Software\Microsoft\ResKit\Robocopy</span></p>
+<p><span class="code">/XX</span> (exclude extra) If used in conjunction with /Purge or /Mir, this switch will take precedence and prevent any files being deleted from the destination.</p>
+<p>To limit the network bandwidth used by robocopy, specify the Inter-Packet Gap parameter <span class="code">/IPG:<i>n</i> </span><br>
+This will send packets of 64 KB each followed by a delay of <i>n</i> Milliseconds. </p>
+<p>Robocopy will fail to copy files that are locked by other users or applications, so limiting the number of retries with /R:0 will speed up  copying by skipping any in-use files. The Windows Volume Shadow Copy service is the only Windows subsystem that can copy open files. Robocopy does not use the Volume Shadow Copy service, but it can backup a volume shadow that has already been created with VSHADOW or <a href="diskshadow.html">DISKSHADOW</a>.</p>
+<p>All versions of Robocopy will copy security information (ACLs) for directories, version XP010 will <a href="http://blogs.technet.com/b/filecab/archive/2008/07/31/robocopy-mir-switch-mirroring-file-permissions.aspx" target="_blank" rel="external">not copy file security changes</a> unless the file itself has also changed, this greatly improves performance.</p>
+<p><span class="code">/B</span> (backup mode) will allow Robocopy to override file and folder permission settings (ACLs).</p>
+<p><span class="code">ERROR 5 (0x00000005) Changing File Attributes ... Access is denied</span><br>
+This error usually means that  File/Folder permissions or Share permissions on either the source or the destination are preventing the copy, either change the permissions or run the command in backup mode with <span class="code">/B</span>. </p>
+<p>To run ROBOCOPY under a non-administrator account will require <i><a href="ntrights.html">backup files</a></i><a href="ntrights.html"> privilege</a>,  to copy security information <i><a href="ntrights.html">auditing</a></i><a href="ntrights.html"> privilege</a> is also required, plus of course you need at least <i>read </i>access to  the files and folders.</p>
+<h2><a id="examples"></a>Examples:</h2>
+<p>Simple copy of all files from one folder to another:</p>
+<pre>ROBOCOPY \\Server1\reports \\Server2\backup</pre>
+<p>Copy files including subfolders (even empty ones <span class="code">/E</span>) <br>
+If this command is run repeatedly it will  skip any files already in the destination, however it is not a true mirror as any files deleted from the source will remain in the destination. </p>
+<pre>ROBOCOPY \\Server1\reports \\Server2\backup *.* /E</pre>
+<p>List  files over 32 MBytes in size:</p>
+<pre>ROBOCOPY C:\work /MAX:33554432 /L</pre>
+<p>Move files over 14 days old: (note the MOVE option will fail if any files are open and locked.)</p>
+<pre>ROBOCOPY C:\work C:\destination /move /minage:14</pre>
+<p>Backup a Server:<br>   
+The script below copies data from FileServ1 to FileServ2, the destination   holds a full mirror along with file security info. When run regularly to synchronize the source and destination, robocopy will only copy those files that have changed (change in time stamp or  size.)</p>
+<blockquote>
+<p class="code">@ECHO OFF<br>
+SETLOCAL</p>
+<p class="code">SET _source=\\FileServ1\e$\users</p>
+<p class="code">SET _dest=\\FileServ2\e$\BackupUsers</p>
+<p class="code">SET _what=/COPYALL /B /MIR<br>
+  :: /COPYALL :: COPY ALL file info<br>
+  :: /B :: copy files in Backup mode. <br>
+ :: /MIR :: MIRror a directory tree <br><br>
+SET _options=/R:0 /W:0 /LOG:C:\batch\RoboLog.txt /NFL /NDL<br>
+  :: /R:n :: number of Retries<br>
+  :: /W:n :: Wait time between retries<br>
+  :: /LOG :: Output log file<br>
+  :: /NFL :: No file logging<br>
+:: /NDL :: No dir logging<br>
+<br>
+ROBOCOPY %_source% %_dest% %_what% %_options%</p>
+</blockquote>
+<p>Run two robocopy jobs at the same time with <a href="start.html">START</a> /Min</p>
+<pre>Start /Min "Job one" Robocopy \\FileServA\C$\Database1 \\FileServeBackupA\c$\Backups
+Start /Min "Job two" Robocopy \\FileServB\C$\Database2 \\FileServeBackupB\c$\Backups
+</pre>
+<p> Copy only permission changes (additions and removals) assuming we already have a copy of the  data:<br>
+<span class="code">ROBOCOPY \\FileServer\C$ \\SVR-Backups\c$\Backups /E /Copy:S /IS /IT</span></p>
+<h2>Availability</h2>
+<blockquote>
+<p>Robocopy XP027 is a standard command in Windows 7 and above. The <a href="../links/windows.html#kits"> Windows Server 2003 Resource Kit Tools</a> include Robocopy XP010, which can be run on NT 4/ Windows 2000. Robocopy does not run on Windows 95, or NT 3.5. (Robocopy is a Unicode application).<br>
+The Microsoft <a href="http://download.microsoft.com/download/f/d/0/fd05def7-68a1-4f71-8546-25c359cc0842/UtilitySpotlight2006_11.exe" target="_blank" rel="external">Robocopy GUI</a> will install Robocopy XP026 to C:\Windows\system32, this version can can run on older OS's, and includes some features from XP027 (/BYTES) but has competely broken errorlevel handling.</p>
+<p>Robocopy 'Jobs' and the 'MOnitor source' option provide an alternative to setting up a <a href="at.html">Scheduled Task</a> to run a batchfile with a Robocopy command.</p>
+</blockquote>
+<h2>Bugs</h2>
+<blockquote>
+<p> The 
+Windows 7 /Server 2008 R2 version of Robocopy will incorrectly skip some files if the filenames contain East Asian characters, for example Japanese characters. A hotfix is available to correct this <a href="https://support.microsoft.com/kb/2680906" target="_blank" rel="external">KB2680906</a></p>
+<p>Version XP026 returns a success errorlevel even when it fails.</p>
+</blockquote>
+<p class="quote"><i> “One, a robot may not injure a human being, or through inaction, allow a human being to come to harm” - Isaac Asimov, Laws of Robotics from I. Robot, 1950</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="robocopy-exit.html">Robocopy EXIT CODES</a><br>
+<a href="diskshadow.html">DiskShadow</a> - Copy open files (Shadow copies)<br>
+<a href="copy.html">COPY</a> - Copy one or more files to another location<br>
+<a href="http://www.microsoft.com/technet/technetmag/issues/2006/11/UtilitySpotlight/" target="_blank" rel="external">Robocopy GUI</a> - Technet magazine (installs Robocopy <a href="http://www.ss64.org/viewtopic.php?pid=1234#p1234" target="_blank" rel="external">XP026</a>) <br>
+<a href="http://technet.microsoft.com/en-us/magazine/2009.04.utilityspotlight.aspx" target="_blank" rel="external">RichCopy  free GUI copy utility</a> - Ken Tamaru @ Microsoft<br>
+<a href="../convert.html">Convert KB/MB</a> - Bits and Bytes, bandwidth calculations <br>
+Permcopy - Copy share &amp; file ACLs from one share to another. (<a href="../links/windows.html#kits">Win 2K ResKit</a>) <br>
+<a href="https://support.microsoft.com/kb/323275" target="_blank" rel="external">Q323275</a> - Copy Security info without copying files (/SECFIX or /COPY:S)<br>
+Equivalent bash command:<a href="../bash/rsync.html">rsync</a> - Remote file copy (Synchronize file trees)</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="robocopy.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/robocopy.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

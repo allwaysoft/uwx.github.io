@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="complete 
+Edit command specific tab-completions. 
+Syntax
+      complete [-abcdefgjksuv] [-o comp-option] [-A action] [-G globpat] [-W wordlist]
+                  [-P prefix] [-S suffix] suffix] [-X fi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/complete.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="complete 
+Edit command specific tab-completions. 
+Syntax
+      complete [-abcdefgjksuv] [-o comp-option] [-A action] [-G globpat] [-W wordlist]
+                  [-P prefix] [-S suffix] suffix] [-X fi">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.070Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="complete 
+Edit command specific tab-completions. 
+Syntax
+      complete [-abcdefgjksuv] [-o comp-option] [-A action] [-G globpat] [-W wordlist]
+                  [-P prefix] [-S suffix] suffix] [-X fi">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>complete</h1> 
+<p>Edit command specific tab-completions. </p>
+<pre>Syntax
+      complete [-abcdefgjksuv] [-o <i>comp-option</i>] [-A <i>action</i>] [-G <i>globpat</i>] [-W <i>wordlist</i>]
+                  [-P <i>prefix</i>] [-S <i>suffix</i>] <i>suffix</i>] [-X <i>filterpat</i>] [-F <i>function</i>]
+                     [-C <i>command</i>] <i>name</i> [name ...]
+<pre><code>  complete -pr [&lt;i&gt;name&lt;/i&gt; ...]
+</code></pre>
+</pre>
+<p>Specify how arguments to each name should be completed.  If the -p option is supplied,  or  if
+no  options  are supplied, existing completion specifications are printed in a way that allows
+them to be reused as input.  The -r option removes a completion specification for  each  name,
+or, if no names are supplied, all completion specifications.<br>
+<br>
+Other options, if specified, have the following meanings.  The arguments to the -G, -W, and -X
+options  (and,  if  necessary,  the  -P  and -S options) should be quoted to protect them from
+expansion before the complete builtin is invoked.</p>
+<pre>Key:
+   -o <i>comp-option</i>
+                 The <i>comp-option</i> controls several aspects of the compspec's behavior beyond the  simple
+                 generation of completions.  comp-option can be one of:
+                    bashdefault
+                            Perform the rest of the default bash completions if the compspec generates no
+                            matches.
+                    default Use readline's default filename completion if the compspec generates no
+                            matches.
+                    dirnames
+                            Perform directory name completion if the compspec generates no matches.
+                    filenames
+                            Tell  readline  that  the  compspec generates filenames, so it can perform any
+                            filename-specific processing (like adding a slash to directory names or suppressing 
+                            trailing spaces). Intended to be used with shell functions.
+                    nospace Tell readline not to append a space (the default) to words completed at the
+                            end of the line.
+                    plusdirs
+                            After any matches defined by the compspec are generated, directory name completion
+                            is  attempted  and  any matches are added to the results of the other actions.
+<p>-A <i>action</i><br>
+The <i>action</i> can be one of the following to generate a list of possible completions:</p>
+<pre><code>                alias    Alias names.  Can also be specified as -a.
+                arrayvar Array variable names.
+                binding  Readline key binding names.
+                builtin  Names of shell builtin commands.  Can also be specified as -b.
+                command  Command names.  Can also be specified as -c.
+                directory  Directory names.  Can also be specified as -d.
+                disabled   Names of disabled shell builtins.
+                enabled  Names of enabled shell builtins.
+                export   Names of exported shell variables.  Can also be specified as -e.
+                file     File names.  Can also be specified as -f.
+                function Names of shell functions.
+                group    Group names.  Can also be specified as -g.
+                helptopic  Help topics as accepted by the help builtin.
+                hostname   Hostnames, as taken from the file specified by the HOSTFILE shell variable.
+                job      Job names, if job control is active.  Can also be specified as -j.
+                keyword  Shell reserved words.  Can also be specified as -k.
+                running  Names of running jobs, if job control is active.
+                service  Service names.  Can also be specified as -s.
+                setopt   Valid arguments for the -o option to the set builtin.
+                shopt    Shell option names as accepted by the shopt builtin.
+                signal   Signal names.
+                stopped  Names of stopped jobs, if job control is active.
+                user     User names.  Can also be specified as -u.
+                variable Names of all shell variables.  Can also be specified as -v.
+</code></pre>
+<p>-G <i>globpat</i>       The filename expansion pattern globpat is expanded to generate the possible completions.</p>
+<p>-W <i>wordlist</i>      The  <i>wordlist</i> is split using the characters in the IFS special variable as delimiters,<br>
+and each resultant word is expanded.  The possible completions are the members of the<br>
+resultant list which match the word being completed.</p>
+<p>-C <i>command</i>       <i>command</i> is executed in a subshell environment, and its output is used as the possible<br>
+completions.</p>
+<p>-F <i>function</i>      The shell function <i>function</i> is executed in the current shell environment. When it<br>
+finishes, the possible completions are retrieved from the value of the COMPREPLY array<br>
+variable.</p>
+<p>-X <i>filterpat</i>     <i>filterpat</i> is a pattern as used for filename expansion.  It is applied to the list of<br>
+possible  completions  generated by the preceding options and arguments, and each completion<br>
+matching filterpat is removed from the list.  A leading ! in filterpat negates<br>
+the pattern; in this case, any completion not matching filterpat is removed.</p>
+<p>-P <i>prefix</i>        <i>prefix</i> is added at the beginning of each possible completion after all other options<br>
+have been applied.</p>
+<p>-S <i>suffix</i>        <i>suffix</i> is appended to each possible completion after all other options have been<br>
+applied.</p>
+</pre>
+<p>The  return  value is true unless an invalid option is supplied, an option other than <span class="code">-p</span> or <span class="code">-r</span>is supplied without a name argument, an attempt is made to remove a  completion  specification
+for  a name for which no specification exists, or an error occurs adding a completion specification.</p>
+<p>Standard bash Tab Completion:</p>
+<p>Type part of a command (enough to uniquely identify the command) and press Tab once &gt; completes the command. <br>
+Type part of a command (not enough to uniquely identify the command) and press Tab twice &gt; list of commands.</p>
+<p><span class="code">$ le[TAB]</span> </p>
+<p>Type a command + part of a file/folder name (enough to uniquely identify the file) and press Tab once &gt; completes the file or folder name. <br>
+Type a command + part of a file/folder name (not enough to uniquely identify the file) and press Tab twice &gt;  list of  file/folder names.</p>
+<p><span class="code">$ less dem[TAB]</span> </p>
+<p>Type a command + part of a file name (enough to uniquely identify the file) and press Escape and <span class="code">/ </span>&gt; completes the file name. <br>
+<br>
+<span class="code">$ less demo[ESC + /]</span></p>
+<p>Example</p>
+<p>Using complete for the executable <span class="code">SS64</span> to 1) show only files not directories and 2) exclude any files that don't have an extension <span class="code">.dem</span> from the tab-completion:</p>
+<p class="code">$ complete -f -X '!*.dem' SS64<br>
+$ SS64[TAB]</p>
+<p class="quote"><i>“A woman isn't complete without a man. But where do you find a man - a real man - these days?” - Lauren Bacall </i></p>
+<p><b>Related:</b></p>
+<p><a href="http://blog.prb.io/getting-bash-completion-magic-on-os-x.html" target="_blank" rel="external">blog.prb.io</a> - Add full <a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> bash completion to OS X<br>
+<a href="history.html">history</a> - Command History</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="complete.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/complete.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

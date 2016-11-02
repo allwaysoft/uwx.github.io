@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS pseudo-classes and pseudo-elements.
+Pseudo-classes and pseudo-elements allow you to format elements that lie outside the document tree.  A Pseudo-Class can be used to address an element based on">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/css/syntax-pseudo.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="CSS pseudo-classes and pseudo-elements.
+Pseudo-classes and pseudo-elements allow you to format elements that lie outside the document tree.  A Pseudo-Class can be used to address an element based on">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:29.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="CSS pseudo-classes and pseudo-elements.
+Pseudo-classes and pseudo-elements allow you to format elements that lie outside the document tree.  A Pseudo-Class can be used to address an element based on">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_csssyntax.lbi" --><!-- #EndLibraryItem --><h1> CSS pseudo-classes and pseudo-elements.</h1>
+<p>Pseudo-classes and pseudo-elements allow you to format elements that lie outside the document tree.  A Pseudo-Class can be used to address an element based on its dynamic state. A Pseudo-Element can be used to address sub-parts of an element.</p>
+<h2>Anchor/Link Pseudo-Classes</h2>
+<p><span class="code">:link</span> - a link that has not been used, nor is a mouse pointer hovering over it.<br>
+<span class="code">:visited</span> - a link that has been used before, but has no mouse hovering over it.<br>
+<span class="code">:hover</span> - a link that currently has a mouse pointer hovering over it.<br>
+<span class="code">:focus</span> -  an element which has the focus (used when navigating with the keyboard.)<br>
+<span class="code">:active</span> - a link that’s in the process of being clicked.</p>
+<p>The order in which these classes are defined within a CSS stylesheet is important, <span class="code">:hover</span> must come after <span class="code">:link</span> and <span class="code">:visited</span>, and <span class="code">:active</span> must come after <span class="code">:hover</span><br>
+To remember the correct order: <b>L</b>ink - <b>V</b>isited - <b>H</b>over - <b>F</b>ocus - <b>A</b>ctive, use the mnemonic <b>L</b>o<b>V</b>e <b>HA</b>te (or <b>L</b>ord
+<b>V</b>ader’s 
+<b>H</b>andle <b>F</b>ormerly <b>A</b>nakin).</p>
+<p>Pseudo-classes can be stacked, so to address only <span class="code">visited</span> links on <span class="code">hover</span>, use: </p>
+<p><span class="code">a:<b>visited:hover</b> {color: red; text-decoration: underline;}</span></p>
+<p>Examples:</p>
+<p class="code">a:link {color: #00F; text-decoration: none;}<br>
+a:visited {color: #711B8D; text-decoration: none;}<br>
+a:visited:hover {color: #0F0; text-decoration: underline;}<br>
+a:hover {color: #00F; text-decoration: underline;}<br>
+a:focus {color: green;}<br>
+a:active {color: #00F;}</p>
+<p>Mozilla and Webkit have vendor extensions to allow combining pseudo classes, not that there is any great need:
+<span class="code">-webkit-any</span> and <span class="code"> -moz-any</span></p>
+<h2>Other Pseudo-Classes</h2>
+<p><span class="code">:lang(language)</span> - Select elements with a matching lang attribute  determined by a combination of the "lang" attribute, the META element, (and possibly by  HTTP headers).<br>
+<span class="code">:first-child</span> -   Format the first child of the parent element.<br>
+<span class="code">:first-of-type     :last-of-type     :only-of-type     :only-child     :nth-child(<i>n</i>)     :nth-last-child(<i>n</i>) :nth-of-type(<i>n</i>)     :last-child     :root     :empty     :target     :enabled     :disabled     :checked     ::selection</span></p>
+<p>Examples:</p>
+<p>Make the second column of a table red:</p>
+<p class="code">td:nth-child(2) {color: red;}</p>
+<h2>Pseudo-Elements</h2>
+<p><span class="code"> :first-line</span> - Format the first line only.<br>
+<span class="code">:first-letter</span> - Format the first letter only.<br>
+<span class="code">:before</span> - Before the content of the selected element(s)<br>
+<span class="code">:after</span> - After the content of the selected element(s)</p>
+<p>As of CSS 3.0 pseudo-elements use a double colon prefix :: instead of : this is to distinguished them from pseudo-classes. Most browsers will accept either.<br>
+</p>
+<p>Example: Display a drop-cap effect with the first line in small caps, resize the browser window to see the full effect:</p>
+<pre>#dropcap:first-line { font-variant: small-caps; font-family: Verdana, sans;}
+<p>#dropcap:first-letter {<br>
+color: #ff0084;<br>
+float: left;<br>
+font-size: 600%;<br>
+font-family: Times, Serif;<br>
+font-weight: bold;<br>
+left: -3px;<br>
+line-height: 0.8em;<br>
+padding: 0 5px 0 0;<br>
+position: relative;<br>
+}</p></pre><p></p>
+<div id="dropcap"> The Comte de Lamothe, who, in 1815, was an old man seventy-five years of age, had nothing remarkable about him except his silent and sententious air, his cold and angular face, his perfectly polished manners, his coat buttoned up to his cravat, and his long legs always crossed in long, flabby trousers of the hue of burnt sienna. His face was the same color as his trousers.
+<p>This M. de Lamothe was “held in consideration” in this salon on account of his “celebrity” and, strange to say, though true, because of his name of Valois.</p>
+<p>As for M. Gillenormand, his consideration was of absolutely first-rate quality. He had, in spite of his levity, and without its interfering in any way with his dignity, a certain manner about him which was imposing, dignified, honest, and lofty, in a bourgeois fashion; and his great age added to it. One is not a century with impunity. </p></div><p></p>
+<p><span class="code">:first-line</span> and <span class="code">:first-letter</span> are not supported in IE 8 or earlier.</p>
+<p><span class="quote"><i>“Intellectuals are useless, and as a pseudo-intellectual I can't help but envy the practicality of that” ~ Bauvard (The Prince Of Plungers )</i></span></p>
+<p><b>Related:</b></p>
+<p><a href="color.html">color</a> - Text color<br>
+<a href="outline.html">outline</a> - Set outline properties<br>
+<a href="font-style.html">font-style</a> - Font style italic/normal.<a href="font-weight.html"><br>
+font-weight</a> - Normal, bold, bolder.<br>
+<a href="text-decoration.html">text-decoration</a> - Add decoration to text.<br>
+<a href="http://www.cssbakery.com/2010/01/drop-caps-in-css.html" target="_blank" rel="external">CSS Bakery</a> - Methods to create Drop Caps </p><!-- #BeginLibraryItem "/Library/foot_css.lbi" --><p>
+<!-- CSS -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="2739097502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-pseudo.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/css/syntax-pseudo.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

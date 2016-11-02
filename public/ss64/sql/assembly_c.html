@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CREATE  ASSEMBLY
+Upload an assembly that was previously compiled as a .dll file from managed code for use inside an instance of SQL Server.
+An Assemby object is a managed application module, other ob">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/assembly_c.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="CREATE  ASSEMBLY
+Upload an assembly that was previously compiled as a .dll file from managed code for use inside an instance of SQL Server.
+An Assemby object is a managed application module, other ob">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.645Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="CREATE  ASSEMBLY
+Upload an assembly that was previously compiled as a .dll file from managed code for use inside an instance of SQL Server.
+An Assemby object is a managed application module, other ob">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1> CREATE  ASSEMBLY</h1>
+<p>Upload an assembly that was previously compiled as a .dll file from managed code for use inside an instance of SQL Server.</p>
+<p>An Assemby object is a managed application module, other objects may  reference this module -  stored procedures, triggers, CLR functions, user-defined aggregates/types.</p>
+<pre>Syntax
+      CREATE ASSEMBLY <i>assembly_name</i>
+         [ AUTHORIZATION <i>owner_name</i> ]
+             FROM { &lt;<i>client_assembly_specifier</i>&gt; | &lt;<i>assembly_bits</i>&gt; [ ,...n ] }
+               [WITH PERMISSION_SET = { <u>SAFE</u> | EXTERNAL_ACCESS | UNSAFE } ]
+                  [ ; ]
+<p>&lt;client_assembly_specifier&gt; :: =<br>
+’[\computer_name]share_name[path]manifest_file_name’<br>
+| ‘[local_path]manifest_file_name’</p>
+<p>&lt;assembly_bits&gt; :: =<br>
+{ varbinary_literal | varbinary_expression }</p>
+<p>Key:<br>
+<i>assembly_name</i>  The (unique) name of the assembly.<br>
+<i>owner_name</i>     The usernname or role as owner of the assembly.<br>
+<i>client_assembly_specifier</i>  The local path or network location for the assembly being uploaded.<br>
+A fixed string or an expression evaluating to a fixed string. (Assembly manifest filename)<br>
+<i>assembly_bits</i>  List of binary values that make up the assembly and it’s<br>
+dependent assemblies, starting with the root-level assembly.<br>
+PERMISSION_SET SAFE      Restrictive code access permissions, no access to external files/networks.<br>
+PERMISSION_SET EXTERNAL_ACCESS Allow some external system resources, files/networks/Registry<br>
+PERMISSION_SET UNSAFE unrestricted access to resources</p>
+</pre>
+<p><b>Permissions:</b> <br>
+  CREATE ASSEMBLY<br>
+  EXTERNAL ACCESS ASSEMBLY for PERMISSION_SET = EXTERNAL_ACCESS<br>
+SYSADMIN fixed server role for PERMISSION_SET = UNSAFE</p>
+<p><i>owner_name </i>must either be the name of a role of which the current user is a member, or the current user must have IMPERSONATE permission on <i>owner_name</i>. If not specified, ownership is given to the current user.<br>
+  <br>
+    When accessing <i>client_assembly_specifier</i>, SQL Server will impersonate either the security context of the current Windows login or the security context of the SQL Server service account.</p>
+<p><b>Example</b></p>
+<pre class="code" id="ctl00_LibFrame_MainContent_ctl10other" space="preserve">CREATE ASSEMBLY MyDemo<br>FROM 'C:\democode\HelloWorld.dll'<br>WITH PERMISSION_SET = SAFE;</pre>
+<p class="quote"><i>"Until all the powerful are just, the weak will be secure only in the strength of this Assembly" ~ John F. Kennedy, address to the UN General Assembly</i></p>
+<p><b>Related commands:</b><br>
+  <br>
+  <a href="assembly_a.html">ALTER ASSEMBLY</a><br>
+  <a href="assembly_d.html">DROP ASSEMBLY</a><br>
+  <a href="function_c.html">CREATE FUNCTION<br>
+  </a><a href="procedure_c.html">CREATE PROCEDURE</a><br>
+  <a href="trigger_c.html">CREATE TRIGGER</a><br>
+  <a href="type_c.html">CREATE TYPE</a><br>
+<a href="aggregate_c.html">CREATE AGGREGATE</a></p>
+<p>  <b>Equivalent Oracle command</b>:</p>
+<p><a href="../bash/export.html">  </a><a href="../ora/package_c.html">CREATE PACKAGE/BODY</a></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="assembly_c.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/assembly_c.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

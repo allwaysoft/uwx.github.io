@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="List of all Oracle Server Parameters 
+for Oracle 9i and 10g, Green = New in 10g
+        Grey  = Valid in 9i but dropped (or hidden) in 10g
+        Bold  = Static Parameter - change in Pfile/SPfile">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/syntax-initora.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="List of all Oracle Server Parameters 
+for Oracle 9i and 10g, Green = New in 10g
+        Grey  = Valid in 9i but dropped (or hidden) in 10g
+        Bold  = Static Parameter - change in Pfile/SPfile">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:31.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="List of all Oracle Server Parameters 
+for Oracle 9i and 10g, Green = New in 10g
+        Grey  = Valid in 9i but dropped (or hidden) in 10g
+        Bold  = Static Parameter - change in Pfile/SPfile">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orasyntax.lbi" --><!-- #EndLibraryItem --><h1>List of all Oracle Server Parameters </h1>
+<p>for Oracle 9i and 10g, <span class="sty_new"><b>Green</b></span> = New in 10g</p>
+<pre><span class="sty_old"><b>        Grey</b></span>  = Valid in 9i but dropped (or hidden) in 10g
+        <b>Bold</b>  = Static Parameter - <a href="syntax-parameters.html">change</a> in Pfile/SPfile
+        Normal= Dynamic Parameter - <a href="syntax-parameters.html">change</a> in Pfile/SPfile/<a href="system_a.html">ALTER SYSTEM</a>/SESSION
+<p>PARAMETER                       DESCRIPTION</p>
+<hr>
+<p>ACTIVE_INSTANCE_COUNT  = <i>int</i>   Active instances in the cluster<br>
+AQ_TM_PROCESSES = <i>int</i>          Number of AQ Time Managers to start<br>
+ARCHIVE_LAG_TARGET =<i> int</i>       Max no. seconds of redos the standby could lose<br>
+<span class="sty_new"><b>   asm_diskgroups</b></span> = <i>string</i>        Disk groups to mount automatically<br>
+<span class="sty_new">   asm_diskstring</span> = <i>string</i>        Disk set locations for discovery<br>
+<span class="sty_new">   asm_power_limit</span> = <i>int</i>          Number of processes for disk rebalancing<br>
+<b>AUDIT_FILE_DEST</b> =<i> ‘directory’</i>  Directory in which auditing files are to reside<b><br>
+AUDIT_SYS_OPERATIONS </b>= {TRUE|<u>FALSE</u>}<b><br>
+AUDIT_TRAIL </b>= {NONE | FALSE | DB | TRUE | OS} Enable system auditing 9i<br>
+<b>   <span class="sty_new">AUDIT_TRAIL</span> </b>= {NONE | DB | DB_EXTENDED| OS}Enable system auditing 10g<br>
+<b><br>
+BACKGROUND_CORE_DUMP </b>= {<u>PARTIAL</u> | FULL}<br>
+BACKGROUND_DUMP_DEST = 'path or directory’<br>
+BACKUP_TAPE_IO_SLAVES = {TRUE | <u>FALSE</u>} DEFERRED<br>
+<b>   BITMAP_MERGE_AREA_SIZE </b>= <i>int</i> <b>  </b>Memory for BITMAP MERGE<br>
+<b>   BLANK_TRIMMING </b> = {TRUE|<u>FALSE</u>}<br>
+<b>   CIRCUITS </b>= <i>int</i><br>
+<b>CLUSTER_DATABASE</b> = {TRUE|<u>FALSE</u>}    If TRUE startup in cluster database mode<b><br>
+CLUSTER_DATABASE_INSTANCES</b> = <i>int</i><br>
+<b>CLUSTER_INTERCONNECTS</b>  = <i>ipaddr</i> [:<i>ipaddr…</i>] Interconnects for RAC use <b><br>
+COMMIT_POINT_STRENGTH </b>= <i>int</i><br>
+<b>COMPATIBLE</b> = <i>release_number</i>     [CHAR: 9.2.0.0.0]<br>
+CONSTRAINT[S] = { IMMEDIATE | DEFERRED | DEFAULT }<br>
+CONTROL_FILE_RECORD_KEEP_TIME = <i>int</i>   Time in Days<br>
+<b>   CONTROL_FILES </b>=<i>filename</i> [,<i>filename</i> […] ]<br>
+CORE_DUMP_DEST = ‘<i>text</i>’<br>
+<b>   CPU_COUNT = <i>int</i><br>
+CREATE_BITMAP_AREA_SIZE </b>= <i>int</i><br>
+CREATE_STORED_OUTLINES = {TRUE | FALSE | ‘<i>category_name</i>’ } [NOOVERRIDE]<br>
+CURSOR_SHARING = {SIMILAR | <u>EXACT</u> | FORCE}<br>
+<b>   CURSOR_SPACE_FOR_TIME </b>= {TRUE|<u>FALSE</u>}<br>
+CURRENT_SCHEMA = <i>schema</i>        Change the current schema of the session</p>
+<p>DB_2k_cache_size = <i>int </i><a href="syntax-initora.html#notes">bytes</a>         Size of cache for 2K buffers<br>
+DB_4k_cache_size = <i>int </i><a href="syntax-initora.html#notes">bytes</a>         Size of cache for 4K buffers<br>
+DB_8k_cache_size = <i>int </i><a href="syntax-initora.html#notes">bytes</a>         Size of cache for 8K buffers<br>
+DB_16k_cache_size = <i>int </i><a href="syntax-initora.html#notes">bytes</a>        Size of cache for 16K buffers<br>
+DB_32k_cache_size = <i>int </i><a href="syntax-initora.html#notes">bytes</a>        Size of cache for 32K buffers<br>
+<b>   DB_BLOCK_BUFFERS </b>= <i>int</i> Deprecated in favour of DB_CACHE_ SIZE<br>
+DB_BLOCK_CHECKING = {TRUE | FALSE} DEFERRED<br>
+DB_BLOCK_CHECKSUM = {TRUE | FALSE}<br>
+<b>   DB_BLOCK_SIZE </b>= <i>int</i>  [<a href="syntax-initora.html#notes">bytes</a>] Do not alter after db creation<br>
+<b>   DB_CACHE_ADVICE </b>= {ON | READY | OFF}<br>
+DB_CACHE_SIZE = <i>int</i> [<a href="syntax-initora.html#notes">bytes</a>]<br>
+DB_CREATE_FILE_DEST = <i>directory</i><br>
+DB_CREATE_ONLINE_LOG_DEST<i>_n</i> = <i>directory</i>  (where <i>n</i> = 1-5)<br>
+Default locn for Oracle-managed control files and online redo logs.<br>
+<b>   DB_DOMAIN </b>= <i>domain_name</i>   Directory part of global database name<br>
+DB_FILE_MULTIBLOCK_READ_COUNT = <i>int</i><br>
+<b>   DB_FILE_NAME_CONVERT </b>= [(]‘<i>dbfile1</i>’ , ‘<i>dbfile2</i>’…[)]<br>
+Datafile name convert patterns and strings<br>
+for standby/clone db [<i>old string</i>, <i>new string</i>]<br>
+<b>   DB_FILES </b>= <i>int</i><br>
+<b><span class="sty_new">   db_flashback_retention_target</span></b> = <i>int</i>   Max Flashback Database log retention (minutes)<br>
+DB_KEEP_CACHE_SIZE  = <i>int</i> [<a href="syntax-initora.html#notes">bytes</a>]<br>
+<b>   DB_NAME = <i>database_name</i></b><br>
+<span class="sty_new"><b>   db_recovery_file_dest</b></span> = <i>string</i>    Default database recovery file location<br>
+<b><span class="sty_new">   db_recovery_file_dest_size</span></b> = <i>int</i>  Database recovery files size limit<br>
+DB_RECYCLE_CACHE_SIZE = <i>int</i> [<a href="syntax-initora.html#notes">bytes</a>]<br>
+<b><span class="sty_new">   db_unique_name </span></b>= <i>string</i>           Database Unique Name<br>
+<b>   DB_WRITER_PROCESSES </b>= <i>int</i>         Number of background database writer<br>
+processes to start<br>
+<span class="sty_old">   DBLINK_ENCRYPT_LOGIN </span>= {TRUE|<u>FALSE</u>}  Enforce password encryption for distributed login<br>
+<b>   DBWR_IO_SLAVES </b>= <i>int</i><br>
+<b><span class="sty_new">DDL_WAIT_FOR_LOCKS</span></b> = {TRUE|FALSE}  Disable NOWAIT DML lock acquisitions<br>
+DG_BROKER_CONFIG_FILE<i>n</i> = <i>filename</i>  (where <i>n</i> = 1 or 2)<br>
+DG_BROKER_START = {TRUE|<u>FALSE</u>}<br>
+<b>   DISK_ASYNCH_IO </b>= {<u>TRUE</u>|FALSE}<br>
+DISPATCHERS = ‘<i>dispatch_clause</i>’ (see SQL ref manual for detail)(MTS_Dispatchers in Ora 8/9)<br>
+<b>   DISTRIBUTED_LOCK_TIMEOUT </b>= <i>int</i><br>
+<b>   DML_LOCKS </b>= <i>int</i>            One for each table modified in a transaction<br>
+DRS_START = {TRUE|<u>FALSE</u>}   Start DG Broker monitor (DMON process)</p>
+<p>ERROR_ON_OVERLAP_TIME = {TRUE | <u>FALSE</u>}<br>
+<b>   ENQUEUE_RESOURCES </b>= <i>int</i>    Resources for enqueues<br>
+<b>   EVENT </b>= <i>debug_string</i>       Debug event control</p>
+<p>FAL_CLIENT = <i>string</i>        Fetch archive log Client<br>
+FAL_SERVER = string        Fetch archive log Server<br>
+FAST_START_IO_TARGET = <i>int</i>     Upper bound on recovery reads(Deprecated)<br>
+FAST_START_MTTR_TARGET = <i>int</i><br>
+FAST_START_PARALLEL_ROLLBACK = {FALSE | <u>LOW</u> | HIGH}<br>
+Max number of parallel recovery slaves<br>
+FILE_MAPPING = {TRUE|<u>FALSE</u>}<br>
+<b><span class="sty_new"> FILEIO_NETWORK_ADAPTERS</span></b> = <i>char</i>      Network Adapters for File I/O<br>
+FILESYSTEMIO_OPTIONS = {none | setall | directIO | asynch}<br>
+FIXED_DATE = {‘<i>YYYY_MM_DD_HH24_MI-SS</i>’ | ‘<i>date in default format</i>’}<br>
+Fix SYSDATE value for debugging</p>
+<p><b>   GC_FILES_TO_LOCKS </b>= '{<i>file_list</i>=<i>lock_count</i>[!<i>blocks</i>][EACH][:…]}'<br>
+RAC/OPS - lock granularity number of<br>
+global cache locks per file (DFS)<br>
+<b><span class="sty_new">   GCS_SERVER_PROCESSES</span></b> = <i>int</i>     Number of background gcs server processes to start<br>
+<b>   GLOBAL_CONTEXT_POOL_SIZE </b>= {<u>1 MB</u> | <i>int</i> MB}<br>
+GLOBAL_NAMES = {TRUE | <u>FALSE</u>}  Enforce that database links have same<br>
+name as remote database</p>
+<p>HASH_AREA_SIZE = <i>int</i>        Size of in-memory hash work area (Shared Server)<br>
+HASH_JOIN_ENABLED = {<u>TRUE</u>|FALSE}<br>
+<b>   HI_SHARED_MEMORY_ADDRESS</b> = <i>int</i>    SGA starting address (high order 32-bits<br>
+on 64-bit platforms)<br>
+HS_AUTOREGISTER = {<u>TRUE</u> | FALSE}  Enable automatic server DD updates in HS<br>
+agent self-registration<br>
+<b><br>
+IFILE </b>= <i>parameter_file_name </i>      Include file in init.ora<br>
+INSTANCE = <i>int</i>                    Connect to a different RAC instance<b><br>
+INSTANCE_GROUPS</b> = <i>group_name</i> [,<i>group_name</i> … ]<br>
+<b>INSTANCE_NAME </b>=<i> instance_id </i><br>
+<b>INSTANCE_NUMBER </b>= <i>int</i><br>
+<b><span class="sty_new">   INSTANCE_TYPE</span></b> = {RDBMS|ASM}    Type of instance to be executed<br>
+RDBMS or Automated Storage Management<br>
+ISOLATION_LEVEL = {SERIALIZABLE | <u>READ COMMITTED</u>}</p>
+<p><b>   JAVA_MAX_SESSIONSPACE_SIZE </b>= <i>int </i>[<a href="syntax-initora.html#notes">bytes</a>]<br>
+<b>   JAVA_POOL_SIZE</b> = <i>int</i> [<a href="syntax-initora.html#notes">bytes</a>]<b><br>
+JAVA_SOFT_SESSIONSPACE_LIMIT </b>= <i>int</i><br>
+JOB_QUEUE_PROCESSES = <i>int</i></p>
+<p>LARGE_POOL_SIZE = <i>int</i> [<a href="syntax-initora.html#notes">bytes</a>]<br>
+LICENSE_MAX_SESSIONS = <i>int</i>    Maximum number of non-system user sessions<br>
+(concurrent licensing)<br>
+LICENSE_MAX_USERS = <i>int</i>       Maximum number of named users that can be created<br>
+(named user licensing)<br>
+LICENSE_SESSIONS_WARNING = <i>int</i> Warning level for number of non-system<br>
+user sessions<br>
+LOCAL_LISTENER = <i>network_name </i> Define which listeners instances register with<br>
+<b>   LOCK_NAME_SPACE</b> = <i>namespace</i>    Used for generating lock names for standby/primary database<br>
+assign each a unique name space<b><br>
+LOCK_SGA </b>= {TRUE | <u>FALSE</u>}<br>
+<b><span class="sty_new">   LOG_ARCHIVE_CONFIG</span></b> = [SEND|NOSEND] [RECEIVE|NORECEIVE] [ DG_CONFIG]<br>
+LOG_ARCHIVE_DEST = <i>string</i><br>
+LOG_ARCHIVE_DEST_<i>n</i> = {null_string |<br>
+{LOCATION=<i>local_pathname</i> | SERVICE=<i>tnsnames_service</i>}<br>
+[MANDATORY | OPTIONAL] [REOPEN[=<i>integer</i>]]}<br>
+LOG_ARCHIVE_DEST_STATE<i>_n</i> = {ENABLE | DEFER}   (<i>n</i> = 1-10)<br>
+LOG_ARCHIVE_DUPLEX_DEST = <i>string</i><br>
+<b>   LOG_ARCHIVE_FORMAT </b>= <i>string</i>    [CHAR: “MyApp%S.ARC”]<br>
+<b><span class="sty_new">LOG_ARCHIVE_LOCAL_FIRST</span></b> = {TRUE|FALSE}    Establish EXPEDITE attribute default value<br>
+LOG_ARCHIVE_MAX_PROCESSES = <i>int</i><br>
+LOG_ARCHIVE_MIN_SUCCEED_DEST = <i>int</i>   Minimum number of archive destinations<br>
+that must succeed<br>
+<b>  <span class="sty_old"> LOG_ARCHIVE_START</span> </b>= {TRUE | <u>FALSE</u>}<br>
+LOG_ARCHIVE_TRACE = <i>int</i>            Tracing level for Archive logs<br>
+<b>LOG_BUFFER</b> = <i>int</i> <a href="syntax-initora.html#notes">bytes</a>             Redo circular buffer size<br>
+LOG_CHECKPOINT_INTERVAL = <i>int</i>      Checkpoint threshold, # redo blocks<br>
+LOG_CHECKPOINT_TIMEOUT = <i>int</i>       Checkpoint threshold, maximum time interval between<br>
+checkpoints in seconds<br>
+LOG_CHECKPOINTS_TO_ALERT = {TRUE|<u>FALSE</u>}    Log checkpoint begin/end to alert file<br>
+<b>LOG_FILE_NAME_CONVERT</b> = [‘<i>old string</i>’,‘<i>new string</i>’]<br>
+Convert patterns/strings for standby/clone db<br>
+<b>LOG_PARALLELISM</b> = <i>int</i>           Number of log buffer strands<br>
+<b>LOGMNR_MAX_PERSISTENT_SESSIONS</b> = <i>int</i>  Maximum no of threads to mine</p>
+<p><b>MAX_DISPATCHERS</b> = <i>int</i>         Max number of dispatchers<br>
+MAX_DUMP_FILE_SIZE = {<i>size</i> <a href="syntax-initora.html#notes">bytes</a>|UNLIMITED} [DEFERRED]<br>
+<b>MAX_ENABLED_ROLES</b> = <i>int</i>       Max number of roles a user can have enabled<br>
+<b><span class="sty_old">   MAX_ROLLBACK_SEGMENTS</span> </b>= <i>int</i>   Max number of rollback segments in SGA cache<br>
+<b>MAX_SHARED_SERVERS</b> = <i>int </i>     Max number of shared servers]<br>
+<b><span class="sty_old">   mts_circuits</span></b> = <i>int</i>        Max number of circuits (10g see CIRCUITS)<br>
+<b><span class="sty_old">   mts_dispatchers</span></b>           Specifications of dispatchers (10g see DISPATCHERS)<br>
+<b><span class="sty_old">   MTS_LISTENER_ADDRESS</span></b>      Address(es) of network listener [CHAR]<br>
+<b><span class="sty_old">   mts_max_dispatchers</span></b>       Max number of dispatchers (10g see MAX_DISPATCHERS)<br>
+<b><span class="sty_old">   mts_max_servers</span></b>           Max number of shared servers (10g see MAX_SHARED_SERVERS)<br>
+<b><span class="sty_old">   MTS_MULTIPLE_LISTENERS</span></b> = {TRUE|FALSE}   Are multiple listeners enabled?<br>
+<b><span class="sty_old">  MTS_SERVERS</span></b> = <i>int</i>         Number of shared servers to start up [NUMBER]<br>
+<b><span class="sty_old">   mts_service</span></b> = <i>string</i>      Service supported by dispatchers [CHAR]<br>
+<b><span class="sty_old">   mts_sessions</span></b> = <i>int</i>        max number of shared server sessions [NUMBER]</p>
+<p>nls_calendar =‘<i>string</i>’      NLS calendar system name (Default=GREGORIAN)<br>
+nls_comp = {<u>BINARY</u> | ANSI}  NLS comparison, Enterprise Edition<br>
+nls_currency =‘<i>string</i>’      NLS local currency symbol<br>
+nls_date_format =‘<i>format</i>’   NLS Oracle date format<br>
+nls_date_language =<i>language</i> NLS date language name (Default=AMERICAN)]<br>
+nls_dual_currency = <i>currency_symbol</i><br>
+nls_iso_currency =<i> territory</i>    Override the default set by NLS_TERRITORY<br>
+nls_language =<i> language</i>         NLS language name (session default)<br>
+nls_length_semantics = {<u>BYTE</u>|CHAR}}  Default when creating new columns<br>
+nls_nchar_conv_excp = {TRUE|<u>FALSE</u>}  Raise an exception instead of<br>
+allowing an implicit conversion<br>
+nls_numeric_characters =&quot;<i>decimal_character group_separator</i>&quot;<br>
+nls_sort = {BINARY |<i>linguistic_def</i>}     Case-sensitive or insensitive sort<br>
+<i>linguistic_def</i> can be BINARY, BINARY_CI, BINARY_AI,<br>
+GERMAN, GERMAN_CI, etc<br>
+nls_territory =<i> territory</i>          Territory name (country settings)<br>
+nls_time_format =<i>time_format</i>       Time format<br>
+nls_time_tz_format = <i>time_format</i>   Time with timezone format<br>
+nls_timestamp_format = <i>time_format</i>     Timestamp format<br>
+nls_timestamp_tz_format = <i>time_format</i>  Timestamp with timezone format</p>
+<p>O7_DICTIONARY_ACCESSIBILITY = {TRUE | <u>FALSE</u>}   Allow Dictionary Access (as in Ora V7 )<br>
+OBJECT_CACHE_MAX_SIZE_PERCENT = <i>int</i> DEFERRED   Space for application objects Max<br>
+OBJECT_CACHE_OPTIMAL_SIZE = <i>int</i> DEFERRED       Space for application objects Min<br>
+OLAP_PAGE_POOL_SIZE =<i>int </i><a href="syntax-initora.html#notes">bytes</a><br>
+OPEN_CURSORS = <i>int</i>              Max # cursors per session<br>
+<b>OPEN_LINKS</b> = <i>int</i>                Max # open links per Session<br>
+<b>OPEN_LINKS_PER_INSTANCE</b> = <i>int</i>   Max # open links per instance<br>
+OPTIMIZER_DYNAMIC_SAMPLING = <i>int</i><br>
+OPTIMIZER_FEATURES_ENABLE = {8.0.0|8.0.3|8.0.4|8.0.5|8.0.6|8.0.7|8.1.0|8.1.3|8.1.4|8.1.5|8.1.6|8.1.7|9.0.0|9.0.1|<u>9.2.0</u>}<br>
+Configure qry optimiser based on an Oracle release No.<br>
+OPTIMIZER_INDEX_CACHING = <i>int</i>     Percent to cache (favour nested loop joins &amp; IN-list)<br>
+OPTIMIZER_INDEX_COST_ADJ = <i>int</i>    Adjust the cost of index vs FTS<br>
+<span class="sty_old">OPTIMIZER_MAX_PERMUTATIONS</span> = <i>int</i>  Max join permutations per qry block<br>
+OPTIMIZER_MODE = [RULE | <u>CHOOSE</u> | FIRST_ROWS | ALL_ROWS]<br>
+<b><span class="sty_old">   oracle_trace_collection_name</span></b> =<i>collection</i>   Name for use by Oracle TRACE <b><span class="sty_old"><br>
+oracle_trace_collection_path</span></b> =<i>path</i>         Path to .cdf &amp; .dat files (ORACLE_HOME/otrace/admin/cdf)<br>
+<b><span class="sty_old">   oracle_trace_collection_size</span></b> =<i>int</i> <a href="syntax-initora.html#notes">bytes</a>    Max trace file size<br>
+<b><span class="sty_old">   oracle_trace_enable</span></b> = {TRUE|<u>FALSE</u>}         Enable Oracle Trace<br>
+<b><span class="sty_old">   oracle_trace_facility_name</span></b> ={<u>ORACLED</u> | ORACLEE | ORACLESM | ORACLEC}    TRACE event set<br>
+<b><span class="sty_old">   oracle_trace_facility_path</span></b> =<i>path</i>           TRACE definition files:  ORACLE_HOME/otrace/admin/fdf/<br>
+OS_AUTHENT_PREFIX = <i>prefix</i>                 Prefix for auto-logon accounts [string]<br>
+OS_ROLES = {TRUE|<u>FALSE</u>}                    Retrieve roles from the operating system</p>
+<p>PARALLEL_ADAPTIVE_MULTI_USER = {TRUE | FALSE}  Tune degree of parallelism<br>
+PARALLEL_AUTOMATIC_TUNING = {TRUE|<u>FALSE</u>}       Automatic tuning<br>
+PARALLEL_EXECUTION_MESSAGE_SIZE = <i>int</i> <a href="syntax-initora.html#notes">bytes</a>    Message buffer size<br>
+PARALLEL_INSTANCE_GROUP = ‘<i>group</i>’              RAC: Limit instances used<br>
+<b>PARALLEL_MAX_SERVERS</b> = <i>int</i><br>
+PARALLEL_MIN_PERCENT = <i>int</i>                Min percent of threads required for<br>
+parallel query<br>
+<b>PARALLEL_MIN_SERVERS</b> = <i>int</i><br>
+PARALLEL_SERVER = [TRUE | FALSE]          Startup in parallel server mode<br>
+PARALLEL_SERVER_instances = <i>int</i>           No. of instances (used for sizing SGA)<br>
+PARALLEL_THREADS_PER_CPU = <i>int</i><br>
+PARTITION_VIEW_ENABLED = {TRUE|<u>FALSE</u>}     Deprecated (use partition TABLES)<br>
+PGA_AGGREGATE_TARGET = <i>int</i> <a href="syntax-initora.html#notes">bytes</a>          Automatically size the SQL working area<br>
+<b><span class="sty_new">   plsql_code_type</span></b> ={INTERPRETED | NATIVE}   Code-type<br>
+PLSQL_COMPILER_FLAGS = { [DEBUG | <u>NON_DEBUG</u>] [<u>INTERPRETED</u> | NATIVE] }<br>
+<span class="style8">plsql_debug</span> ={TRUE | <u>FALSE</u>}<br>
+<span class="sty_old"> plsql_native_c_compiler</span><br>
+plsql_native_library_dir = [‘<i>Path_to_directory</i>’]<br>
+plsql_native_library_subdir_count = <i>int</i><br>
+<span class="sty_old">   plsql_native_linker </span>=<i>path</i>             Path to linker<br>
+<span class="sty_old"> plsql_native_make_file_name</span> =<i>path</i>     Pathname of make file<br>
+<span class="sty_old"> plsql_native_make_utility</span> =<i>path</i>       Pathname of make utility<br>
+<b><span class="sty_new"> plsql_optimize_level</span></b>                  Optimize level<br>
+PLSQL_V2_COMPATIBILITY = {TRUE | <u>FALSE</u>} [DEFERRED]<br>
+<b><span class="sty_new"> plsql_warnings</span></b> =<i>string</i>                Compiler warnings settings<br>
+See also DBMS_WARNING and DBA_PLSQL_OBJECT_SETTINGS<br>
+<b>PRE_PAGE_SGA</b> = {TRUE|<u>FALSE</u>}           Pre-page sga for process<br>
+<b> PROCESSES</b> = <i>int</i>                       User processes</p>
+<p>QUERY_REWRITE_ENABLED = {FORCE | TRUE | <u>FALSE</u>} <span class="sty_static_new">[DEFERRED | NOOVERRIDE]</span><br>
+QUERY_REWRITE_INTEGRITY = {<u>ENFORCED</u> | TRUSTED | STALE_TOLERATED}</p>
+<p><b>RDBMS_SERVER_DN</b> = <i>Distinguished Name</i><br>
+<b>READ_ONLY_OPEN_DELAYED</b> = {TRUE | <u>FALSE</u>}   Delay opening read_only files until first access<br>
+<b>RECOVERY_PARALLELISM</b> = <i>int</i>    Server processes to use for parallel recovery<br>
+<b>REMOTE_ARCHIVE_ENABLE</b> = [RECEIVE[,SEND] | FALSE | <u>TRUE</u>]<br>
+Enable or disable sending archived redo logs to/from remote destinations<br>
+REMOTE_DEPENDENCIES_MODE = {<u>TIMESTAMP</u> | SIGNATURE}<br>
+Remote-procedure-call dependencies mode</p>
+<p>REMOTE_LISTENER =<i>network_name</i><br>
+<b> REMOTE_LOGIN_PASSWORDFILE</b> ={NONE | SHARED | EXCLUSIVE}    Use a password file<br>
+REMOTE_OS_AUTHENT = {TRUE | <u>FALSE</u>}    Allow non-secure remote clients to use<br>
+auto-logon accounts<br>
+REMOTE_OS_ROLES = {TRUE | <u>FALSE</u>}      Allow non-secure remote clients to use os roles<br>
+REPLICATION_DEPENDENCY_TRACKING = {<u>TRUE</u> | FALSE}<br>
+RESOURCE_LIMIT = {TRUE | <u>FALSE</u>}       Master switch for resource limit<br>
+RESOURCE_MANAGER_PLAN = <i>plan_name</i>     Turn on Resource Manager plan<br>
+<b><span class="sty_new"> resumable_timeout</span></b> =<i>seconds</i>            Set resumable_timeout<br>
+ROLLBACK_SEGMENTS = (<i>rbs1</i> [, <i>rbs2</i>] … )<br>
+ROW_LOCKING = [<u>ALWAYS</u> | DEFAULT | INTENT]</p>
+<p><b>SERIAL_REUSE</b> =    {<u>DISABLE</u> | SELECT | DML | PLSQL | ALL}   Cursor memmory management<br>
+SERVICE_NAMES = <i>db_service_name</i> [,<i>db_service_name</i> [,…] ]<br>
+SESSION_CACHED_CURSORS = <i>int</i>          Session cursors to cache<br>
+<b>SESSION_MAX_OPEN_FILES</b> = <i>int</i>          Max no. of BFiles (LOB) each session can open<br>
+<b>SESSIONS</b> = <i>int</i>                        Max no. of user and system sessions<br>
+<b>SGA_MAX_SIZE </b><i>=int <a href="syntax-initora.html#notes">bytes</a>               </i>Initial SGA size<br>
+<b><span class="sty_new">   sga_target</span></b> <i>= int <a href="syntax-initora.html#notes">bytes</a> </i>                Target size of SGA<br>
+<b>SHADOW_CORE_DUMP</b> = {<u>PARTIAL</u> | FULL | NONE}  Include SGA in core file<br>
+<b>SHARED_MEMORY_ADDRESS</b> = <i>int</i>                 SGA starting address (platform specific)<br>
+<b>SHARED_POOL_RESERVED_SIZE</b> <i>= int <a href="syntax-initora.html#notes">bytes</a> </i>      Reserved area of shared pool<br>
+<b>SHARED_POOL_SIZE</b> =<i> int</i>         Size of shared pool<br>
+SHARED_SERVERS = <i>int</i>           Number of shared servers to start up (MTS)<br>
+<b>SHARED_SERVER_SESSIONS</b> = <i>int</i>   Max number of shared server sessions<br>
+<span class="style8"><span class="sty_new">   </span>SKIP_UNUSABLE_INDEXES </span> = {TRUE | FALSE}<br>
+<b><span class="sty_new">   smtp_out_server</span></b> = server_clause               utl_smtp server and port configuration parameter<br>
+SORT_AREA_RETAINED_SIZE =<i>int <a href="syntax-initora.html#notes">bytes</a></i> [DEFERRED]   UGA Memory to retain (Shared Server)<br>
+SORT_AREA_SIZE = <i>int</i> <i><a href="syntax-initora.html#notes">bytes</a></i> [DEFERRED]           In-memory sort work area (Shared Server)<br>
+SORT_MULTIBLOCK_READ_COUNT     Obsolete in 9i<br>
+<b>   SPFILE</b> =<i>spfile_name</i>            Parameter file<br>
+<b><span class="sty_new"> sp_name</span></b> =<i>name</i>                  Service Provider Name<br>
+<b>SQL92_SECURITY</b>  = {TRUE | <u>FALSE</u>}     Require select privilege for update/delete<br>
+SQL_TRACE = {TRUE | <u>FALSE</u>}           Enable SQL trace<br>
+<b><span class="sty_new">   sqltune_category</span></b> =<i>category</i>           Qualifier for applying hintsets<br>
+SQL_VERSION =<i>version</i>                 Sql language version, for compatibility<br>
+STANDBY_ARCHIVE_DEST = ‘<i>filespec</i>’    Standby database archivelog destination<br>
+STANDBY_FILE_MANAGEMENT = {<u>MANUAL</u> | AUTO}<br>
+Automate file mmanagement on standby DB<br>
+STAR_TRANSFORMATION_ENABLED = {TEMP_DISABLE | TRUE | <u>FALSE</u>}<br>
+STATISTICS_LEVEL = {ALL | <u>TYPICAL</u> | BASIC}        Collect Statistics<br>
+<b><span class="sty_new">streams_pool_size</span></b> = <i>int</i> <i><a href="syntax-initora.html#notes">bytes</a></i>        Size of the streams pool</p>
+<p><b>TAPE_ASYNCH_IO</b> = {<u>TRUE</u> | FALSE}      Allow I/O requests to tape devices at the same time as CPU processing<br>
+<b>THREAD</b> =<i>int</i>                          Redo thread to use (RAC)<br>
+TIMED_OS_STATISTICS = <i>int</i>            Gather OS statistics every <i>x</i> seconds<br>
+TIMED_STATISTICS = {TRUE | FALSE}    Collect time statistics<br>
+TIME_ZONE =  ‘[+ | -] hh:mm’| LOCAL | DBTIMEZONE | '<i>time_zone_region</i>’<br>
+TRACE_ENABLED = {<u>TRUE</u> | FALSE}       Trace execution path (Internal use only-Oracle support services)<br>
+TRACEFILE_IDENTIFIER = “<i>traceid</i>”     Trace file custom identifier<br>
+<span class="sty_old">TRANSACTION_AUDITING</span> = {<u>TRUE</u> | FALSE} [DEFERRED]<br>
+<b>TRANSACTIONS</b> = <i>int</i>                    Max. number of concurrent active transactions<br>
+<b>   TRANSACTIONS_PER_ROLLBACK_SEGMENT</b> = <i>int</i></p>
+<p><b>UNDO_MANAGEMENT</b> = {<u>MANUAL</u> | AUTO}    Undo space management mode (Manual=rollback segs)<br>
+<a href="syntax-redo.html">UNDO_RETENTION</a> = <i>int</i>                 Undo retention in second<br>
+<span class="sty_old"> UNDO_SUPPRESS_ERRORS </span> = {TRUE |<u>FALSE</u>}     Suppress RBU errors in SMU mode<br>
+UNDO_TABLESPACE =<i>undoname</i>            Select an undo tablespace<br>
+USE_INDIRECT_DATA_BUFFERS = {TRUE|<u>FALSE</u>}  Configure SGA Memory cache for &gt;4Gb RAM<br>
+USE_PRIVATE_OUTLINES = {TRUE |<u>FALSE</u> |<i>category_name</i> }<br>
+USE_STORED_OUTLINES = { TRUE |<u>FALSE</u> |<i>category_name</i>} [NOOVERRIDE]<br>
+USER_DUMP_DEST = ‘<i>directory_name</i>’    User process dump directory<br>
+<b>UTL_FILE_DIR</b>                         Utl_file accessible directories list<br>
+UTL_FILE_DIR =‘Path1’, ‘Path2’…<br>
+or<br>
+UTL_FILE_DIR =‘Path1’  # Must be<br>
+UTL_FILE_DIR =‘Path2’  # consecutive entries</p>
+<p>WORKAREA_SIZE_POLICY = {AUTO | MANUAL}    Policy used to size SQL working areas</p></pre><p></p>
+<p><b>Session &amp; other Parameters</b></p>
+<p>The following parameters are not <i>initialization</i> parameters:<br>
+  CONSTRAINT, CREATE_STORED_OUTLINES, CURRENT_SCHEMA, ERROR_ON_OVERLAP_TIME, FLAGGER, INSTANCE, ISOLATION_LEVEL , SQL_TRACE?, SKIP_UNUSABLE_INDEXES, TIME_ZONE, USE_PRIVATE_OUTLINES,  USE_STORED_OUTLINES.<br>
+You cannot set values for these in the parameter file (pfile/spfile)</p>
+<p>SQL_TRACE is an initialization parameter, but when changed in a user session, does not update V$PARAMETER.</p>
+<p>TRANSACTIONS can be changed in the parameter file or using ALTER SYSTEM…SCOPE=SPFILE </p>
+<h2><a id="notes"></a>Notes</h2>
+<blockquote>
+<p>All Byte values can also be specified in K or M or G </p>
+<p>e.g. you can enter 8388608 or
+    8192 <b>K</b> or
+    8<b>M</b></p>
+<p>All directory paths follow standard notation i.e UNIX 'quotes' or Windows "double
+quotes"</p>
+<p>The default value for many of these parameters does vary across 
+  Operating System platforms.</p>
+</blockquote>
+<h2>New parameters in 9.2 </h2>
+<blockquote>
+<p>audit_sys_operations, dg_broker_start, dg_broker_config_file_n, file_mapping, filesystem_io_options, log_parallelism, olap_page_pool_size, optimizer_dynamic_sampling, statistics_level.</p>
+</blockquote>
+<h2>New parameters in 10G</h2>
+<blockquote>
+<p>asm_diskgroups, asm_diskstring, asm_power_limit, db_flashback_retention_target, db_recovery_file_dest, db_recovery_file_dest_size, db_unique_name, ddl_wait_for_locks, fileio_network_adapters, gcs_server_processes, instance_type, ldap_directory_access, log_archive_config, log_archive_local_first, plsql_code_type, plsql_debug, plsql_optimize_level, plsql_warnings, resumable_timeout, sga_target, smtp_out_server, sp_name, sqltune_category, streams_pool_size.</p>
+</blockquote>
+<h2>New parameters in 11G</h2>
+<blockquote>
+<p>asm_preferred_read_failure_groups,
+client_result_cache_lag,
+client_result_cache_size,
+commit_logging,
+commit_wait,
+control_management_pack_access,
+db_lost_write_protect,
+db_securefile,
+db_ultra_safe,
+ddl_lock_timeout,
+diagnostic_dest,
+global_txn_processes,
+java_jit_enabled,
+ldap_directory_sysauth,
+memory_max_target,
+memory_target,
+optimizer_capture_sql_plan_baselines,
+optimizer_use_invisible_indexes,
+optimizer_use_pending_statistics,
+optimizer_use_sql_plan_baselines,
+parallel_io_cap_enabled,
+plscope_settings,
+redo_transport_user,
+resource_manager_cpu_allocation,
+result_cache_max_result,
+result_cache_max_size, result_cache_mode,
+result_cache_remote_expiration,
+sec_case_sensitive_logon,
+sec_max_failed_login_attempts,
+sec_protocol_error_further_action,
+sec_protocol_error_trace_action,
+sec_return_server_release_banner,
+xml_db_events</p>
+</blockquote>
+<p class="quote"><i>"Happiness, wealth, and success are by-products 
+of goal setting; they cannot be the goal themselves" ~ Denis Waitley,
+The Joy of Working </i></p>
+<p><b>Related</b></p>
+<p><a href="syntax-parameters.html">Server Parameter Files</a> - Examples - How to Edit <br>
+  <a href="../orav/V$PARAMETER.html">V$PARAMETER</a><br>
+  <a href="../orav/V$SPPARAMETER.html">V$SpPARAMETER</a><br>
+  <a href="system_a.html">ALTER SYSTEM</a><br>
+<a href="http://www.orafaq.com/parms/" target="_blank" rel="external">Server Parameters</a> - OraFaq.com <br>
+<a href="syntax-architecture.ppt">Oracle Memory Architecture</a> (Powerpoint)</p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-initora.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/syntax-initora.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

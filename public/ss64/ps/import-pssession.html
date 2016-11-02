@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Import-PSSession 
+Import commands from another session into the current session.
+Syntax
+      Import-PSSession [-Session] PSSession 
+         [[-CommandName] string[]] [[-FormatTypeName] string[]]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/import-pssession.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Import-PSSession 
+Import commands from another session into the current session.
+Syntax
+      Import-PSSession [-Session] PSSession 
+         [[-CommandName] string[]] [[-FormatTypeName] string[]]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Import-PSSession 
+Import commands from another session into the current session.
+Syntax
+      Import-PSSession [-Session] PSSession 
+         [[-CommandName] string[]] [[-FormatTypeName] string[]]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Import-PSSession</h1> 
+<p>Import commands from another session into the current session.</p>
+<pre>Syntax
+      Import-PSSession [-Session] <i>PSSession</i> 
+         [[-CommandName] <i>string</i>[]] [[-FormatTypeName] <i>string</i>[]]
+            [-AllowClobber] [-ArgumentList <i>Object</i>[]]
+               [-CommandType {Alias | Function | Filter | Cmdlet | ExternalScript | Application | Script | All}]
+                  [-Encoding <i>string</i>] [-Force] [-Module <i>string</i>[]]
+                     [-Prefix <i>string</i>]  [<i>CommonParameters</i>]
+<p>Key<br>
+-AllowClobber<br>
+Import the specified commands, even if they have the same names as<br>
+commands in the current session.</p>
+<pre><code>   If you import a command with the same name as a command in the current session,
+   the imported command hides or replaces the original commands.
+   For more information, see about_Command_Precedence. 
+
+   By default Import-PSSession does not import commands that have the same names as commands
+   in the current session. The default behavior is designed to prevent command name conflicts.
+</code></pre>
+<p>-ArgumentList <i>Object</i>[]<br>
+Import the variant of the command that results from using the specified arguments (parameter values).<br>
+For example, to import the variant of the Get-Item command in the certificate (Cert:) drive<br>
+in the PSSession in $sess, type “import-pssession -session $sess -command get-item -argumentlist cert:”.</p>
+<pre><code>-CommandName &lt;i&gt;string&lt;/i&gt;[]
+   Import only the commands with the specified &lt;i&gt;string&lt;/i&gt; names or name patterns.
+   Wildcards are permitted.
+   Use &quot;-CommandName&quot; or its alias, &quot;-Name&quot;.
+
+   By default, import-PSSession will import all commands from the PSSession except
+   for commands that have the same names as commands in the current session.
+   This prevents imported commands from hiding or replacing commands in the
+   current session. To import all commands, even those that hide or replace other commands,
+   use -AllowClobber 
+   If you use -CommandName, the formatting files for the commands are not imported unless
+   you use -FormatTypeName. Similarly, if you use -FormatTypeName, no commands are imported unless 
+   you specify -CommandName.
+
+-CommandType &lt;i&gt;CommandTypes&lt;/i&gt;
+    Import only specific types of command objects. Use &quot;-CommandType&quot; or its alias, &quot;-Type&quot;.
+
+    Valid values are:
+       Alias           All PowerShell aliases in the current session.
+       All             All command types. It is the equivalent of &quot;get-command *&quot;.
+       Application     All files other than  PowerShell files in paths listed in the Path environment variable 
+                       ($env:path), including .txt, .exe, and .dll files.
+       Cmdlet          The cmdlets in the current session. &quot;Cmdlet&quot; is the default.
+       ExternalScript  All .ps1 files in the path(s) listed in the Path environment variable ($env:path).
+       Filter          All PowerShell functions.
+       Function        All PowerShell functions.
+       Script          Script blocks in the current session.
+</code></pre>
+<p>-FormatTypeName <i>string</i>[]<br>
+Import formatting instructions only for the specified Microsoft .NET Framework types.<br>
+Enter the type names. Wildcards are permitted.<br>
+The value of this parameter must be the name of a type that is returned by a Get-FormatData<br>
+command in the session from which the commands are being imported.</p>
+<pre><code>   To get all of the formatting data in the remote session, type *
+
+   If the command does not include either -CommandName or -FormatTypeName, Import-PSSession 
+   will import formatting instructions for all .NET Framework types returned by a
+   Get-FormatData command in the remote session.
+
+   If you use the FormatTypeName parameter, no commands are imported unless you use -CommandName.
+   Similarly, if you use -CommandName, the formatting files for the commands are not imported unless 
+   you also use -FormatTypeName.
+</code></pre>
+<p>-Module <i>string</i>[]<br>
+Import only the commands in the specified PowerShell snap-ins and modules.<br>
+Enter the snap-in and module names. Wildcards are not permitted.<br>
+For more information, see about_PSSnapins and Import-Module.</p>
+<p>-Prefix <i>string</i><br>
+Add the specified prefix to the nouns in the names of imported commands.</p>
+<pre><code>   Use this parameter to avoid name conflicts that might occur when different commands in the
+   session have the same name. 
+   For example, if you specify the prefix &quot;Remote&quot; and then import a Get-Date cmdlet, the cmdlet
+   is known in the session as Get-RemoteDate and it is not confused with the original Get-Date cmdlet.
+</code></pre>
+<p>-Session <i>PSSession</i><br>
+The PSSession from which the commands are imported.<br>
+Enter a variable that contains a session object or a command that gets a session object,<br>
+such as a Get-PSSession command. This parameter is required.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>  Standard <a href="get-alias.html">Aliases</a> for Import-PSSession:<span class="code"> ipsn</span></p>
+<p>Import-PSSession  imports commands (such as cmdlets, functions, and aliases) from a PSSession on a local 
+or remote computer into the current session. You can import any command that <a href="get-command.html">Get-Command</a> can find in the PSSession.<br>
+<br>
+This is useful for importing commands from a customized shell, such as an Exchange Server shell, or from a session that includes PowerShell modules and snap-ins or other elements that are not in the current session.<br>
+<br>
+To import commands, first use <a href="new-pssession.html"> New-PSSession</a>  to create a PSSession. Then use  Import-PSSession 
+to import the commands. By default, Import-PSSession imports all commands except those with the same name as a command in the current session. To import all the commands, use <span class="code">-AllowClobber</span>.<br>
+<br>
+Use imported commands  as you would use any command in the session. When you use an imported command, the imported part of the command runs implicitly in the session from which it was imported. However, the remote operations are handled entirely by  PowerShell. You need not even be aware of them, except that you must keep the connection to the other session (PSSession) open. If you close it, the imported commands are no longer available.<br>
+<br>
+Because imported commands might take longer to run than local commands, Import-PSSession adds an AsJob parameter to
+every imported command. This parameter allows you to run the command as a  PowerShell background job. For more information, see about_Jobs.<br>
+<br>
+PowerShell will add all imported commands to a temporary module that exists only
+in your session and returns an object that represents the module. To create a persistent module that you can use in future sessions, use <a href="export-pssession.html">Export-PSSession</a>.<br>
+<br>
+Import-PSSession  uses the implicit remoting feature of  PowerShell. When you import commands into
+the current session, they run implicitly in the original session or in a similar session on the originating computer.</p>
+<p><b>Examples</b></p>
+<p>Import all commands from a PSSession on the Server64 computer into the current session, except for commands that have the same names as commands in the current session: </p>
+<pre>PS C:&gt; $sesh = new-pssession -computername Server64<br>PS C:&gt; import-pssession -session $sesh</pre>
+<p>Import New-Test and Get-Test  cmdlets from a PSSession on the Server64 computer and  Set-Test  from Server75 computer, then demonstrate piping an object from one (imported) cmdlet to another 
+without error:</p>
+<pre>PS C:&gt; $s1 = new-pssession -computername Server64
+PS C:&gt; $s2 = new-pssession -computername Server75
+PS C:&gt; import-pssession -session s1 -type cmdlet -name New-Test, Get-Test -FormatTypeName *
+PS C:&gt; import-pssession -session s2 -type cmdlet -name Set-Test -FormatTypeName *
+PS C:&gt; new-test Test1 | set-test -runtype full</pre>
+<p>Run an imported command as a background job:<br> 
+Because imported commands might take longer to run than local commands, Import-PSSession adds an AsJob parameter to<br>
+every imported command. The AsJob parameter lets you run the command as a background job.</p>
+<pre>PS C:&gt; $s = new-pssession -computername <span class="code">Server64</span>
+PS C:&gt; import-pssession -session $s -commandname *-test* -formattypename *
+PS C:&gt; $batch = new-test -name Batch -asjob
+PS C:&gt; receive-job $batch</pre>
+<p>Import the cmdlets and functions from a  PowerShell module on a remote computer in
+to the current session:</p>
+<p class="code">PS C:&gt; $s = new-pssession -comp Server64<br>
+PS C:&gt;  invoke-command -session $s {import-module TestManagement}<br>
+PS C:&gt;  import-pssession -session $s -module TestManagement</p>
+<p> After creating a PSSession on <span class="code">Server64</span>  and saving it in the $s variable,
+the second command above uses Invoke-Command to run an Import-Module command in the PSSession in $s.<br>
+</p><p>Typically, the module would be added to all sessions by an Import-Module command in a  PowerShell profile, but profiles are not run in PSSessions.<br><br>
+<br><br>
+The last command above uses <span class="code">Import-PSSession -Module</span> to import the cmdlets and functions in the module<br>
+into the current session.<br><br>
+–</p><p></p>
+<p>Import a Get-Date cmdlet and a SearchHelp function into the current
+session, this shows that all commands are converted into functions before they are imported:</p>
+<p><span class="code">PS C:&gt; import-pssession $s -CommandName Get-Date, SearchHelp -formatTypeName * -AllowClobber</span></p>
+<p>Using <span class="code"> Get-Command -Module</span> to find out what was imported into the
+session by <span class="code">Import-PSSession</span> command:</p>
+<p><span class="code">PS C:&gt; $mymod = import-pssession -session $sess -CommandName *bits* -formattypename *bits*<br>
+<p>PS C:&gt; get-command -module $mymod</p></span></p><p></p>
+<p class="quote"><i>“We never fully grasp the import of any true statement until we have a clear notion of what the opposite untrue statement would be” ~ William James</i></p>
+<p><b>Related:</b></p>
+<p><a href="export-pssession.html">Export-PSSession</a> - Import commands and save them in a PowerShell module</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="import-pssession.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/import-pssession.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

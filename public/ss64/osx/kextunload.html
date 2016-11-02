@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="kextfind 
+Find kernel extensions (kexts) based on a variety of criteria      and print information.
+Syntax:
+ kextunload [&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt;] [--] [&amp;lt;i&amp;gt;kext &amp;lt;/i&amp;gt;...]
+
+Options
+kext">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/kextunload.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="kextfind 
+Find kernel extensions (kexts) based on a variety of criteria      and print information.
+Syntax:
+ kextunload [&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt;] [--] [&amp;lt;i&amp;gt;kext &amp;lt;/i&amp;gt;...]
+
+Options
+kext">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.124Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="kextfind 
+Find kernel extensions (kexts) based on a variety of criteria      and print information.
+Syntax:
+ kextunload [&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt;] [--] [&amp;lt;i&amp;gt;kext &amp;lt;/i&amp;gt;...]
+
+Options
+kext">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>kextfind</h1> 
+<p>Find kernel extensions (kexts) based on a variety of criteria      and print information.</p>
+<pre>Syntax:
+<pre><code> kextunload [&lt;i&gt;options&lt;/i&gt;] [--] [&lt;i&gt;kext &lt;/i&gt;...]
+</code></pre>
+<p>Options</p>
+<pre><code>kext     Unload the loaded kext whose bundle identifier matches the
+          CFBundleIdentifier of kext.  All instances of IOService sub-
+          classes defined by the loaded kext and in the IOService plane of
+          the I/O Registry are terminated; the kext is checked to make
+          sure no instances of its libkern C++ classes remain; the kext's
+          C++ static destructores and module stop routine are invoked;
+          then the kext's executable and IOKitPersonalities are unloaded
+          from the kernel.  Failure at any stage prevents kext unload.
+
+ -b &lt;i&gt;identifier&lt;/i&gt;, -bundle-id &lt;i&gt;identifier&lt;/i&gt;
+          Unload executable and IOKitPersonalities (as described immedi-
+          ately above) for the kext whose CFBundleIdentifier is
+          identifier.
+
+ -c &lt;i&gt;classname&lt;/i&gt;, -class &lt;i&gt;classname&lt;/i&gt;
+          Terminate all instances of class classname that are in the
+          IOService plane of the I/O Registry, if possible, but do not
+          unload the defining kext or its IOKitPersonalities.  New load
+          requests for devices that were driven by these terminated
+          instances may result in the same class being instantiated at any
+          time.
+
+ -h, -help
+          Print a help message describing each option flag and exit with a
+          success result, regardless of any other options on the command
+          line.
+
+ -m &lt;i&gt;identifier&lt;/i&gt;
+          Same as -b (remains for backward compatibility).
+
+ -p, -personalities-only
+          Terminate services and remove personalities only; do not unload
+          kexts.
+
+ -q, -quiet
+          Quiet mode; print no informational or error messages.
+
+ -v [0-6 | 0x####], -verbose [0-6 | 0x####]
+          Verbose mode; print information about program operation.  Higher
+          levels of verbosity include all lower levels.  By default
+          kextunload prints only warnings and errors.  You can specify a
+          level from 0-6, or a hexadecimal log specification (as described
+          in kext_logging(8)). The levels of verbose output are:
+
+          0            Print only errors (that is, suppress warnings); see
+                       also -quiet.
+
+          1 (or none)  Print basic information about program operation.
+
+          2            Prints information about unload stages.
+
+          3            Prints information about removal of personalities.
+
+          4            Prints information about module stop functions and
+                       C++ class destruction.
+
+          5            Prints detailed information internal operations
+                       such as bookkeping.
+
+          6            Identical to level 5 for kextunload.
+
+          Unlike in other kext tools, the -verbose flag in kextunload
+          applies to all kexts (that is, it turns on hexadecimal bit 0x8
+          by default).  See kext_logging(8) for more information on ver-
+          bose logging.&lt;/pre&gt;
+</code></pre>
+<p>The kextunload program is used to terminate and unregister I/O Kit objects associated with a kernel extension (kext) and to unload the code and personalities for that kext.</p>
+<p> kextunload must run with <a href="sudo.html">superuser</a> privileges.</p>
+<p> If another loaded kext has a dependency on the kext being unloaded, the unload will fail.  You can determine whether a kext has dependents using the kextstat(8) tool.      kextunload is a formal interface for unloading kexts in the Darwin OS and in Mac OS X.  Software and installers can rely on its presence and invoke it in order to unload kexts.  Note that long options are present as of Mac OS X 10.6 (Snow Leopard).</p>
+<h2>Exit Code</h2>
+<blockquote>
+<p>kextunload exits with a zero status upon success, or prints an error mes-      sage and exits with a nonzero status upon failure.</p>
+</blockquote>
+<h2>Bugs</h2>
+<blockquote>
+<p>Many single-letter options are inconsistent in meaning with (or directly      contradictory to) the same letter options in other kext tools.</p>
+</blockquote>
+<p><b>Examples</b></p>
+<p>Unload the Macally ICE keyboard driver</p>
+<p class="code">$ sudo kextunload /System/Library/Extensions/ICEKey.kext</p>
+<p class="quote"><i>"To be a traveler—and novelists are often travelers—is to be constantly reminded of the simultaneity of what is going on in the world, your world and the very different world you have visited and from which you have returned home” ~ Susan Sontag</i></p><p><b>Related:</b></p>
+<p><a href="kextfind.html">kextfind</a> - List kernel extensions.<br>
+<a href="kextstat.html">kextstat</a> - Display status of loaded kernel extensions.<br>
+kextutil - load, diagnose problems with, and generate symbols for kernel      extensions.<br>
+<a href="find.html">find</a> - Search for files that meet a desired criteria<br>
+<a href="xargs.html">xargs</a> - Execute utility - passing arguments</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="kextunload.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/kextunload.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

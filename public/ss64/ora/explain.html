@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="EXPLAIN PLAN Statement  
+Display the execution plan for an SQL statement.
+  
+  Syntax:
+   EXPLAIN PLAN [SET STATEMENT_ID = &apos;text&apos;]
+      FOR statement;
+EXPLAIN PLAN [SET STATEMENT_ID = ‘text’]
+INTO [s">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/explain.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="EXPLAIN PLAN Statement  
+Display the execution plan for an SQL statement.
+  
+  Syntax:
+   EXPLAIN PLAN [SET STATEMENT_ID = &apos;text&apos;]
+      FOR statement;
+EXPLAIN PLAN [SET STATEMENT_ID = ‘text’]
+INTO [s">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:29.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="EXPLAIN PLAN Statement  
+Display the execution plan for an SQL statement.
+  
+  Syntax:
+   EXPLAIN PLAN [SET STATEMENT_ID = &apos;text&apos;]
+      FOR statement;
+EXPLAIN PLAN [SET STATEMENT_ID = ‘text’]
+INTO [s">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>EXPLAIN PLAN Statement </h1> 
+<p>Display the execution plan for an SQL statement.<br>
+  <br>
+  Syntax:</p>
+<pre>   EXPLAIN PLAN [SET STATEMENT_ID = '<i>text</i>']
+      FOR <i>statement</i>;
+<p>EXPLAIN PLAN [SET STATEMENT_ID = ‘<i>text</i>’]<br>
+INTO [schema.]table@dblink<br>
+FOR <i>statement;</i></p></pre><p></p>
+<p>If you omit the INTO TABLE_NAME clause, Oracle will fill a table named PLAN_TABLE</p>
+<p>Example</p>
+<p class="code">-- Create an empty plan table (adds a table to the current schema) <br>
+@$ORACLE_HOME/rdbms/admin/utlxplan.sql</p>
+<p class="code">-- Run explain plan <br>
+EXPLAIN PLAN FOR<br>
+SELECT s.col1, s.col2, h.col3 <br>
+FROM huge_table h JOIN small_table s USING (demo_id);</p>
+<p class="code">-- Now look at the plan created <br>
+SELECT * FROM TABLE(dbms_xplan.display);</p>
+<p class="code">-- Delete the records when finished <br>
+DELETE from plan_table;<br>
+COMMIT;
+</p>
+<p>If the query is fast enough that it can be run to completion in a reasonable amount of time, then just turn on the <a href="syntax-sqlplus-set.html">SQL*Plus AutoTrace</a> feature. Once turned on, this feature will display an execution plan for every subsequent SQL statement you run.</p>
+<p class="code">SQL&gt; SET AUTOTRACE ON<br>
+SQL&gt; SELECT s.col1, s.col2, h.col3 <br>
+FROM huge_table h JOIN small_table s USING (demo_id);</p>
+<p>Explain plan results</p>
+<p>In an explain plan output, the <b>more indented</b> an operation is, the <b>earlier</b> it is executed. <br>
+The result of the indented operation is fed to the parent (less indented) operation. In this way you can see the order of execution for the whole statement.</p>
+<p>It is possible for several  operations to be equally indented and have the same parent. These indentations are calculated from the id, and parent_id columns of the plan_table.</p>
+<p>Operations: SELECT, INSERT,  UPDATE, DELETE,  AND-EQUAL,  CONNECT BY,  CONCATENATION,  COUNT,  DOMAIN INDEX,  FILTER,  FIRST , ROW,  FOR UPDATE,  HASH JOIN,  INDEX,  INLIST ITERATOR,  INTERSECTION,  MERGE JOIN,  MINUS,  NESTED LOOPS,  PARTITION,REMOTE,  SEQUENCE,  SORT,  TABLE ACCESS,  UNION,  VIEW.</p>
+<p>There are also many Options which describe each Operation in more detail - here are a few of the most common:<br>
+TABLE ACCESS (FULL) = Full table scan<br>
+INDEX (RANGE SCAN) = Read multiple values from an index<br>
+INDEX (UNIQUE SCAN) = Read one value from an index<br>
+MERGE JOIN () = Sort two tables and merge the sorted rows <br>
+SORT (JOIN) = Sort returning multiple rows<br>
+SORT (AGGREGATE) = Sort returning one row </p>
+<p><i> 
+"Nobody expects the Spanish Inquisition!!!" - Monty Python </i><b><br>
+<br>
+Related:</b></p>
+<p> DBMS_XPLAN -  use to format/display the plan table. <br>
+</p><p><a href="analyze.html">ANALYZE</a><a href="delete.html"><br><br>
+</a><a href="insert.html"> INSERT</a><a href="truncate.html"><br><br>
+</a><a href="select.html">SELECT</a><a href="truncate.html"> <br><br>
+</a> <a href="update.html">UPDATE</a></p><p></p>
+<p class="code">  <a href="../orad/DBA_SNAPSHOTS.html">DBA_SNAPSHOTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_SNAPSHOTS.html">ALL_SNAPSHOTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_SNAPSHOTS.html">USER_SNAPSHOTS</a> <br>  
+  <a href="../orad/DBA_ALL_TABLES.html">DBA_ALL_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_ALL_TABLES.html">ALL_ALL_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_ALL_TABLES.html">USER_ALL_TABLES</a><br>  
+  <a href="../orad/DBA_TABLES.html">DBA_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_TABLES.html">ALL_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_TABLES.html">USER_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/TAB.html">TAB</a><br>  
+  <a href="../orad/DBA_VIEWS.html">DBA_VIEWS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_VIEWS.html">ALL_VIEWS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_VIEWS.html">USER_VIEWS</a><br>
+  <br>                                                                
+  <a href="../orad/DICTIONARY.html">DICTIONARY</a><br>                                                                
+  <a href="../orad/DICT_COLUMNS.html">DICT_COLUMNS</a><br>  
+  <a href="../orav/V$EXECUTION.html">V$EXECUTION</a> </p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/explain.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

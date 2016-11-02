@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="csplit 
+Split a file into context-determined pieces.
+Syntax
+     csplit [options]... FILE PATTERN...
+
+Output pieces of FILE separated by PATTERN(s) to files &apos;xx00&apos;, &apos;xx01&apos;, ..., and output byte counts">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/csplit.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="csplit 
+Split a file into context-determined pieces.
+Syntax
+     csplit [options]... FILE PATTERN...
+
+Output pieces of FILE separated by PATTERN(s) to files &apos;xx00&apos;, &apos;xx01&apos;, ..., and output byte counts">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="csplit 
+Split a file into context-determined pieces.
+Syntax
+     csplit [options]... FILE PATTERN...
+
+Output pieces of FILE separated by PATTERN(s) to files &apos;xx00&apos;, &apos;xx01&apos;, ..., and output byte counts">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>csplit</h1> 
+<p>Split a file into context-determined pieces.</p>
+<pre>Syntax
+     csplit [<i>options</i>]... <i>FILE</i> <i>PATTERN</i>...
+</pre>
+<p>Output pieces of <i>FILE</i> separated by PATTERN(s) to files 'xx00', 'xx01', ..., and output byte counts of each piece to standard output.  (standard input if <i>FILE</i> is - ).</p>
+<pre>Options
+<p>-f <i>PREFIX</i><br>
+–prefix=<i>PREFIX</i><br>
+Use <i>PREFIX</i> as the output file name prefix.</p>
+<p>-b <i>SUFFIX</i><br>
+–suffix=<i>SUFFIX</i><br>
+Use <i>SUFFIX</i> as the output file name suffix.  When this option is<br>
+specified, the suffix string must include exactly one<br>
+<code>printf(3)'-style conversion specification, possibly including format specification flags, a field width, a precision specifications, or all of these kinds of modifiers. The format letter must convert a binary integer argument to readable form; thus, only</code>d’, <code>i',</code>u’, <code>o',</code>x’, and <code>X' conversions are allowed. The entire SUFFIX is given (with the current output file number) to</code>sprintf(3)’ to form the file name suffixes for each of<br>
+the individual output files in turn.  If this option is used, the<br>
+`–digits’ option is ignored.</p>
+<p>-n <i>DIGITS</i><br>
+–digits=<i>DIGITS</i><br>
+Use output file names containing numbers that are DIGITS digits<br>
+long instead of the default 2.</p>
+<p>-k<br>
+–keep-files<br>
+Do not remove output files when errors are encountered.</p>
+<p>-z<br>
+–elide-empty-files<br>
+Suppress the generation of zero-length output files.  (In cases<br>
+where the section delimiters of the input file are supposed to<br>
+mark the first lines of each of the sections, the first output<br>
+file will generally be a zero-length file unless you use this<br>
+option.)  The output file sequence numbers always run<br>
+consecutively starting from 0, even when this option is specified.</p>
+<p>-s<br>
+-q<br>
+–silent<br>
+–quiet<br>
+Do not print counts of output file sizes.</p></pre><p></p>
+<p>Read standard input if <i>FILE</i> is -. Each <i>PATTERN</i> can be: </p>
+<p>The contents of the output files are determined by the <i>PATTERN</i> arguments, as detailed below. An error occurs if a <i>PATTERN</i> argument refers to a nonexistent line of the input file (e.g., if no remaining line matches a given regular expression). After every <i>PATTERN</i> has been matched, any remaining input is copied into one last output file.<br>
+<br>
+By default, `csplit' prints the number of bytes written to each output file after it has been created.</p>
+<p>     The types of pattern arguments are:</p>
+<pre><i>   N</i>
+      Create an output file containing the input up to but not including
+      line <i>N</i> (a positive integer).  If followed by a repeat count, also
+      create an output file containing the next LINE lines of the input
+      file once for each repeat.
+<p>/<i>REGEXP</i>/[<i>OFFSET</i>]<br>
+Create an output file containing the current line up to (but not<br>
+including) the next line of the input file that contains a match<br>
+for <i>REGEXP</i>.  The optional <i>OFFSET</i> is a <code>+' or</code>-’ followed by a<br>
+positive integer.  If it is given, the input up to the matching<br>
+line plus or minus <i>OFFSET</i> is put into the output file, and the<br>
+line after that begins the next section of input.</p>
+<p>%<i>REGEXP</i>%[<i>OFFSET</i>]<br>
+Like the previous type, except that it does not create an output<br>
+file, so that section of the input file is effectively ignored.</p>
+<p>{<i>REPEAT-COUNT</i>}<br>
+Repeat the previous pattern <i>REPEAT-COUNT</i> additional times.<br>
+<i>REPEAT-COUNT</i> can either be a positive integer or an asterisk,<br>
+meaning repeat as many times as necessary until the input is<br>
+exhausted.</p></pre><p></p>
+<p>The output files' names consist of a prefix (<code>xx' by default) followed by a suffix. By default, the suffix is an ascending sequence of two-digit decimal numbers from </code>00' and up to `99'. In any case, concatenating the output files in sorted order by filename produces the original input file.<br>
+<br>
+By default, if `csplit' encounters an error or receives a hangup, interrupt, quit, or terminate signal, it removes any output files that it has created so far before it exits.</p>
+<p><b>Related:</b><br>
+<br>
+<a href="cut.html">cut</a> - Divide a file into several parts<br>
+<a href="fmt.html">fmt</a> - Reformat paragraph text<br>
+<a href="fold.html">fold</a> - Wrap input lines to fit in specified width<br>
+<a href="join.html">join</a> - Join lines on a common field <br>
+<a href="paste.html">paste</a> - Merge lines of files<br>
+<a href="split.html">split</a> - Split a file into fixed-size pieces<br>
+<a href="tail.html">tail</a> - Output the last part of files</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="csplit.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/csplit.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>
