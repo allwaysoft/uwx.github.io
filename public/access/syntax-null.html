@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Null values
+A NULL is a value that has not been entered, so can be thought of as unknown or missing.
+In any database some data values will be required and some will be optional the NULL allows you to">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/syntax-null.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Null values
+A NULL is a value that has not been entered, so can be thought of as unknown or missing.
+In any database some data values will be required and some will be optional the NULL allows you to">
+<meta property="og:image" content="http://rafa1231518.github.io/null.png">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:04:00.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Null values
+A NULL is a value that has not been entered, so can be thought of as unknown or missing.
+In any database some data values will be required and some will be optional the NULL allows you to">
+<meta name="twitter:image" content="http://rafa1231518.github.io/null.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access_syntax.lbi" --><!-- #EndLibraryItem -->
+<h1>Null values</h1>
+<p>A NULL is a value that has not been entered, so can be thought of as unknown or missing.</p>
+<p>In any database some data values will be required and some will be optional the NULL allows you to recognise and handle these 'not entered' values.</p>
+<p>Handling NULLs correctly is an important task in writing any database code, this is not limited just to MS Access.</p>
+<ul>
+<li>Null is not the same as zero.</li>
+<li> Null is not the same as an Empty (zero-length) string "".</li>
+<li> Null is not the same as an Empty variable which has not yet been initialized.</li>
+<li>The length of a Zero Length String is zero, the length of a NULL is unknown/undefined.</li>
+</ul>
+<p>In VBA code it is useful to use the <a href="nz.html">Nz()</a> function to change the NULL value into a concrete value that you can test. </p>
+<p>In SQL queries  it is useful to use the SQL <span class="code">IS</span> operator with <span class="code">Null</span> to find Null values:</p>
+<blockquote>
+<p class="code">WHERE value IS NULL<br>
+WHERE value IS NOT NULL</p>
+<p class="code"><img src="null.png" width="248" height="106" alt="IS NULL query"></p>
+</blockquote>
+<p>You can't use the = operator to compare Null values to anything, as the result will always be Null.</p>
+<p>The <a href="isnull.html">IsNull()</a> function can be used to test if a variable is NULL, but unlike <a href="nz.html">Nz()</a> it will not flag Zero Length Strings:</p>
+<blockquote>
+<p class="code">MyVar = Null <br>
+MyCheck = IsNull(MyVar)</p>
+</blockquote>
+<p class="quote"><i>“Measuring programming progress by lines of code is like measuring aircraft building progress by weight” ~ Bill Gates </i></p>
+<p><b>Related</b>:</p>
+<p><a href="syntax-odbc-error.html">Error trapping ODBC errors</a><br>
+<a href="syntax-null-value-error.html">Error trapping NULLs</a> - <i>You tried to assign the null value to a variable </i><br>
+<a href="nz.html">Nz</a> - Detect a NULL value or Zero Length string.<br>
+</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="syntax-null.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem --></p><p></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/syntax-null.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

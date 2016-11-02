@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DateDiff
+  Returns a Variant (Long) specifying the number of time intervals between two  dates.
+Syntax
+      DateDiff(interval, date1, date2[, firstdayofweek[, firstweekofyear]])
+Key
+interval  The int">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/datediff.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DateDiff
+  Returns a Variant (Long) specifying the number of time intervals between two  dates.
+Syntax
+      DateDiff(interval, date1, date2[, firstdayofweek[, firstweekofyear]])
+Key
+interval  The int">
+<meta property="og:image" content="http://rafa1231518.github.io/datediff.png">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:58.905Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DateDiff
+  Returns a Variant (Long) specifying the number of time intervals between two  dates.
+Syntax
+      DateDiff(interval, date1, date2[, firstdayofweek[, firstweekofyear]])
+Key
+interval  The int">
+<meta name="twitter:image" content="http://rafa1231518.github.io/datediff.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>DateDiff</h1>
+<p>  Returns a Variant (Long) specifying the number of time intervals between two  dates.</p>
+<pre>Syntax
+      DateDiff(<i>interval, date1, date2[, firstdayofweek[, firstweekofyear]]</i>)
+<p>Key<br>
+<i>interval</i>  The interval of time to add.</p>
+<p><i>date1, date2</i>    The two dates to compare Variant (Date).</p>
+<p><i>firstdayofweek</i>  A constant (0-7)that specifies the first day of the week.<br>
+default=vbSunday (1).</p>
+<p><i>firstweekofyear</i> A constant (0-3) that specifies the first week of the year.<br>
+default = the week in which January 1 occurs (1).</p></pre><p></p>
+<table cols="2"> <tbody> <tr> <td class="label"><b>Interval Setting</b></td> <td class="label"><b>Description</b></td></tr>
+<tr> <td>yyyy</td> <td>Year</td></tr>
+<tr> <td>q</td> <td>Quarter</td></tr>
+<tr> <td>m</td> <td>Month</td></tr> 
+<tr> <td>y</td> <td>Day of year</td></tr>
+<tr> <td>d</td> <td>Day</td></tr> 
+<tr> <td>w</td> <td>Weekday</td></tr>
+<tr> <td>ww</td> <td>Week</td></tr> 
+<tr> <td>h</td> <td>Hour</td></tr> 
+<tr> <td>n</td> <td>Minute</td></tr> 
+<tr> <td>s</td> <td>Second</td></tr></tbody></table>
+<p>FirstWeekConstants:<br>
+<span class="code">0 vbUseSystem</span> - Use the NLS API setting.<br>
+<span class="code">1 <u>vbFirstJan1</u></span> - Start with week in which January 1 occurs (default).<br>
+<span class="code">2 vbFirstFourDays</span> - Start with the first week that has at least four days in the new year.<br>
+<span class="code">3 vbFirstFullWeek</span> - Start with first full week of the year.</p>
+<p>If <i>date1</i> refers to a later point in time than <i>date2</i>, then DateDiff() returns a negative number.<br>
+The <i>firstdayofweek</i> argument will affect calculations that use week intervals.<br>
+When comparing December 31 to January 1, DateDiff for Year ("yyyy") returns 1 even though only a day has elapsed.</p>
+<p>The DateDiff() function can be used in VBA or in an <a href="syntax-functions.html">SQL query</a>.</p>
+<p><b>Examples</b></p>
+<p>In a query:</p>
+<blockquote>
+<p><img src="datediff.png" width="439" height="104" alt="DateDiff"></p>
+</blockquote>
+<p>In VBA:</p>
+<p class="code">DateDiff("ww", "Jan 01","Feb 14")</p>
+<p><span class="code">DateDiff("d", dtmStart, dtmEnd)</span></p>
+<!-- s s 6 4 . c o m --><p class="quote"><i>“Beauty is Nature's coin, must not be hoarded, but must be current” ~ John Milton</i></p>
+<p><b>Related:</b></p>
+<p><a href="date.html">Date</a> - Return the current date. <a href="dateadd.html"><br>
+DateAdd</a> - Add a time interval to a date.<a href="datepart.html"><br>
+DatePart</a> - Return part of a given date.<br>
+<a href="dateserial.html">DateSerial</a> - Return a date given a year, month, and day.<br>
+<a href="http://www.fmsinc.com/microsoftaccess/modules/examples/AddWeekdays.asp" target="_blank" rel="external">Add WeekDays</a> - FMS inc <br>
+<a href="https://msdn.microsoft.com/en-us/library/dd327646(v=office.12).aspx" target="_blank" rel="external">Count Working Days</a> - Access 2007</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="datediff.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/datediff.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>
