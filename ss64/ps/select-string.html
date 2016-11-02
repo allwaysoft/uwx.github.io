@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Select-String 
+Search through strings or files for patterns.
+Syntax
+      Select-String {-inputObject psobject | [-path] string[]}
+         [-pattern] string[] [-Context Int32[]] [-Encoding string]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/select-string.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Select-String 
+Search through strings or files for patterns.
+Syntax
+      Select-String {-inputObject psobject | [-path] string[]}
+         [-pattern] string[] [-Context Int32[]] [-Encoding string]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.104Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Select-String 
+Search through strings or files for patterns.
+Syntax
+      Select-String {-inputObject psobject | [-path] string[]}
+         [-pattern] string[] [-Context Int32[]] [-Encoding string]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Select-String</h1> 
+<p>Search through strings or files for patterns.</p>
+<pre>Syntax
+      Select-String <b>{</b>-inputObject psobject <b>|</b> [-path] <i>string</i>[]<b>}</b>
+         [-pattern] <i>string</i>[] [-Context <i>Int32</i>[]] [-Encoding <i>string</i>]
+            [-include <i>string</i>[]] [-exclude <i>string</i>[]] [-caseSensitive]
+               [-List] [-AllMatches] [-NotMatch] [-SimpleMatch]
+                  [-Quiet] [<i>CommonParameters</i>]
+<p>Key<br>
+-Pattern <i>string</i><br>
+The string or <a href="syntax-regex.html">regular expression</a> to match.<br>
+If a string is entered, use the -SimpleMatch parameter.</p>
+<p>-inputObject <i>psobject</i><br>
+Accept an object as input to Select-String. Enter a variable,<br>
+command or expression that gets the objects.</p>
+<p>-Path <i>path</i><br>
+Strings or files to match against, wildcards are allowed.</p>
+<p>-AllMatches<br>
+Search for more than one match in each line of text.<br>
+Without this parameter, Select-String will find only the first match in each line.</p>
+<pre><code>   When more than one match is found, Select-string still emits only
+   one MatchInfo object for the line, but the Matches property of the
+   object contains all of the matches.
+</code></pre>
+<p>-Context <i>Int32</i>[]<br>
+Capture the specified number of lines before and after the line with the match.<br>
+This allows viewing the matching text in context.</p>
+<pre><code>   If one number is given as the value of -context, that number of lines will be
+   captured before and after the match.
+
+   If two numbers are given as the value of -context, the first number determines the
+   number of lines before the match and the second number determines the number of lines after the match.
+
+   In the default display, lines with a match are indicated by a right angle bracket (&amp;gt;)
+   in the first column of the display. Unmarked lines are the context.
+
+   This parameter does not change the number of objects generated by Select-String.
+   Select-String generates one MatchInfo object for each match.
+   The context is stored as an array of strings in the Context property of the object.
+
+   If the output of a Select-String command is piped to another Select-String command,
+   the receiving command searches only the text in the matched line
+   (the value of the Line property of the MatchInfo object), not the text in the context lines.
+  
+   When the context includes a match, the MatchInfo object for each match includes
+   all of the context lines, but the overlapping lines appear only once in the display.
+</code></pre>
+<p>-Encoding <i>string</i><br>       The character encoding of the file being searched. The default is UTF8.<br>        <br>        Valid values are “UTF7”, “UTF8”, “UTF32”, “ASCII”, “Unicode”, “BigEndianUnicode”,<br>
+“Default”, and “OEM”.</p>
+<pre><code>    &quot;Default&quot; is the encoding of the system's current ANSI code page.
+    &quot;OEM&quot; is the current original equipment manufacturer code page for the OS.
+</code></pre>
+<p>-include <i>string</i><br>
+Include only the specified items from the Path. e.g. &quot;May*&quot;<br>
+this only works when the path includes a wildcard character.</p>
+<p>-Exclude <i>string</i><br>
+Omit the specified items from the Path e.g. &quot;<em>SS64</em>&quot;<br>
+this only works when the path includes a wildcard character.</p>
+<p>-SimpleMatch<br>
+Use a simple match, rather than a regular expression match</p>
+<p>-CaseSensitive<br>
+Make the matches case sensitive. By default, matches are not case-sensitive.</p>
+<p>-Quiet<br>
+Suppress most of the output from Select-String.<br>
+When specified, only a boolean value is passed along the pipeline.<br>
+TRUE = a match was found, otherwise FALSE.</p>
+<p>-List<br>
+Return only the first match in each input file.<br>
+By default, Select-String returns a MatchInfo object for each match found.</p>
+<p>-NotMatch<br>
+Find text that does not match the specified pattern.</p>
+<p>-SimpleMatch<br>
+Use a simple match rather than a regular expression match.<br>
+This will search the input for the text given in the -Pattern parameter.<br>
+It will not interpret -Pattern as a regular expression.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p> The output of  Select-String command is not a collection of strings, but a collection of MatchInfo objects. The <span class="code">Line</span> property of the MatchInfo object contains a string with the matching results.
+</p>
+<p><b>Examples</b></p>
+<p>Perform a case sensitive matching of literal strings:</p>
+<p><span class="code">PS C:\&gt; "Hello","HELLO" | select-string -pattern "HELLO" -casesensitive</span><br>
+  <br>
+  Search through all files with the .xml file extension in the current directory and display the lines in those files that include the case sensitive string "Princess":</p>
+<p class="code">PS C:\&gt; select-string -path *.xml -pattern "Princess" -casesensitive</p>
+<p>Retrieve the last 100 events from the application event log and filter to show only those containing the message string "failed":</p>
+<p class="code">PS C:\&gt; $events = get-eventlog -logname application -newest 100<br>
+PS C:\&gt; $events | select-string -inputobject {$_.message} -pattern "failed"</p>
+<p>Now include 2 lines before and 3 lines after each matching line - line numbers  will appear in the output with a &gt; prefixing the matching line:</p>
+<p class="code">PS C:\&gt; $events | select-string -inputobject {$_.message} -pattern "failed"  -Context 2,3</p>
+<p>Examine all files in the subdirectories of C:\Windows\System32 with the .txt file name extension and 
+search for the Case-Sensitive string "Microsoft":</p>
+<p><span class="code">PS C:\&gt; get-childitem c:\windows\system32\* -include *.txt -recurse |<br>
+select-string -pattern "Microsoft" -casesensitive</span></p>
+<p>Select lines from a file containing <span class="code">"Total Sales"</span> and then split the matching lines:</p>
+<p><span class="code">PS C:\&gt; $demo = get-content C:\demo\sales.txt<br>
+PS C:\&gt; $demo | select-string "Total Sales" | <a href="foreach-object.html">%</a>{$_.line.<a href="split.html">split</a>()}</span></p>
+<p class="quote"><i>"The key
+insight is that the smallest constituents of the world are not
+particles, as had been supposed since ancient times, but "strings" - tiny strands of energy" - Jim Holt, (<a href="http://www.newyorker.com/archive/2006/10/02/061002crat_atlarge" target="_blank" rel="external">The New Yorker</a>)</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="get-help.html">Get-Help</a> - about_commonparameters<br>
+<a href="get-help.html">Get-Help</a> - about_comparison_operators<br>
+<a href="get-help.html">Get-Help</a> - about_regular_expression<br>
+Microsoft.PowerShell.Commands.MatchInfo<br>
+Equivalent bash command: <a href="../bash/grep.html">grep</a> - Search files for specific text. </p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="select-string.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/select-string.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

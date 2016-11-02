@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="who 
+Print who is currently logged in
+Syntax
+      who [options] [file] [am i]
+Options
+-m
+Print the current user id, name and domain
+(Same as `who am i’)
+-q
+–count
+Print only the login names and the n">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/who.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="who 
+Print who is currently logged in
+Syntax
+      who [options] [file] [am i]
+Options
+-m
+Print the current user id, name and domain
+(Same as `who am i’)
+-q
+–count
+Print only the login names and the n">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:43.709Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="who 
+Print who is currently logged in
+Syntax
+      who [options] [file] [am i]
+Options
+-m
+Print the current user id, name and domain
+(Same as `who am i’)
+-q
+–count
+Print only the login names and the n">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>who</h1> 
+<p>Print who is currently logged in</p>
+<pre>Syntax
+      who [<i>options</i>] [<i>file</i>] [am i]
+<p>Options</p>
+<p>-m<br>
+Print the current user id, name and domain<br>
+(Same as `who am i’)</p>
+<p>-q<br>
+–count<br>
+Print only the login names and the number of users logged on.<br>
+Overrides all other options.</p>
+<p>-s<br>
+Ignored; for compatibility with other versions of `who’.</p>
+<p>-i<br>
+-u<br>
+–idle<br>
+After the login time, print the number of hours and minutes that<br>
+the user has been idle.  <code>.' means the user was active in last minute.</code>old’ means the user was idle for more than 24 hours.</p>
+<p>-l<br>
+–lookup<br>
+Attempt to canonicalize hostnames found in utmp through a DNS<br>
+lookup.  This is not the default because it can cause significant<br>
+delays on systems with automatic dial-up internet access.</p>
+<p>-H<br>
+–heading<br>
+Print a line of column headings.</p>
+<p>-w<br>
+-T<br>
+–mesg<br>
+–message<br>
+–writable<br>
+After each login name print a character indicating the user’s<br>
+message status:</p>
+<pre><code>      +  allowing `write' messages
+      -  disallowing `write' messages
+      ?  cannot find terminal device
+</code></pre>
+</pre>
+<p>The who command differs from whoami in that it provides a list of all users currently logged into the system as well as additional information about each of those users (including login times and terminal numbers). It also differs in that, in the event of a change in ownership of a login session through the use of the su command, it reports the original owner of the session, whereas whoami provides the user name of the effective (i.e., current) owner of the session. </p>
+<p>If given no non-option arguments, `who' prints the following information 
+  for each user currently logged on:<br>
+  <br>
+  <span class="code">login name,<br>
+  terminal line,<br>
+  login time,<br>
+  remote hostname or X display. </span><br>
+<br>
+If given one non-option argument, <code>who' uses that instead of </code>/var/run/utmp' 
+as the name of the file containing the record of users logged on. `/var/run/wtmp' 
+is commonly given as an argument to `who' to look at who has previously logged 
+on. <br>
+<br>
+If given two non-option arguments, `who' prints only the entry for the user 
+running it (determined from its standard input), preceded by the hostname. Traditionally, 
+the two arguments given are <code>am i', as in </code>who am i'.<br>
+  <br>
+  <i class="quote">"It is awful work this love and prevents all a mans projects of good 
+  or glory" ~ Lord 
+  Byron </i> </p>
+<p><b>Related:</b></p>
+<p><a href="groups.html">groups</a> - Print group names a user is in<br>
+<a href="hostname.html">hostname</a> - Print or set system name <br>
+<a href="id.html">id</a> - Print user and group id's <br>
+<a href="uname.html">uname</a> - Print system information<br>
+<a href="logname.html">logname</a> - Print current login name<br>
+<a href="users.html">users</a> - Print login names of users currently logged 
+in <br>
+w - Show who is logged on and what they are doing.<br>
+  whoami - Print the current user id and name (`id -un') <br>
+Equivalent Windows command: <a href="../nt/echo.html"> <span class="code">ECHO </span></a><span class="code"> %USERNAME%</span> or <span class="code">Quser</span> - Display user sessions on a terminal server.</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="who.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/who.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

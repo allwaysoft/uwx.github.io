@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="diff 
+Display the differences between two files, or each corresponding 
+  file in two directories. 
+  Each set of differences is called a &quot;diff&quot; or &quot;patch&quot;. For files that are identical, 
+  diff norma">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/diff.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="diff 
+Display the differences between two files, or each corresponding 
+  file in two directories. 
+  Each set of differences is called a &quot;diff&quot; or &quot;patch&quot;. For files that are identical, 
+  diff norma">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="diff 
+Display the differences between two files, or each corresponding 
+  file in two directories. 
+  Each set of differences is called a &quot;diff&quot; or &quot;patch&quot;. For files that are identical, 
+  diff norma">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>diff</h1> 
+<p>Display the differences between two files, or each corresponding 
+  file in two directories. <br>
+  Each set of differences is called a "diff" or "patch". For files that are identical, 
+  diff normally produces no output; for binary (non-text) files, diff normally 
+reports only that they are different.</p>
+<pre>Syntax
+      diff [<i>options</i>] <i>FILES</i></pre>
+<pre>Options</pre><p>Multiple single letter options (unless they take an argument) can be combined into a single command line word: so <code>-ac' is equivalent to </code>-a -c'.</p> 
+<pre>   FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE...' or 'FILE... DIR'.
+              If --from-file or --to-file is given, there are no restrictions on FILES.
+              If a FILE is '-', read standard input. 
+   -a
+   --text
+       Treat all files as text.
+<p>-b<br>
+–ignore-space-change<br>
+Ignore changes in the amount of white space.</p>
+<p>-B<br>
+–ignore-blank-lines<br>
+Ignore changes whose lines are all blank.</p>
+<p>-c <i>NUM</i><br>
+-C <i>NUM<br>
+</i> --context[=<i>NUM</i>]<br>
+Output <i>NUM</i> (default 3) lines of copied context.</p>
+<p>-d<br>
+–minimal<br>
+Try hard to find a smaller set of changes.</p>
+<p>-e<br>
+–ed<br>
+Output an ed script.</p>
+<p>-E<br>
+–ignore-tab-expansion<br>
+Ignore changes due to tab expansion.</p>
+<p>-F <i>RE<br>
+</i> --show-function-line=<i>RE</i><br>
+Show the most recent line matching <i>RE</i>.</p>
+<p>–help<br>
+Output this help.</p>
+<p>–horizon-lines=<i>NUM</i><br>
+Keep <i>NUM</i> lines of the common prefix and suffix.</p>
+<p>-i<br>
+–ignore-case<br>
+Ignore case differences in file contents.</p>
+<p>–ignore-file-name-case<br>
+Ignore case when comparing file names.</p>
+<p>–no-ignore-file-name-case<br>
+Consider case when comparing file names.</p>
+<p>–label <i>LABEL</i><br>
+Use <i>LABEL</i> instead of file name.</p>
+<p>–left-column<br>
+Output only the left column of common lines.</p>
+<p>-l<br>
+–paginate<br>
+Pass the output through ‘pr’ to paginate it.</p>
+<p>-N<br>
+–new-file<br>
+Treat absent files as empty.<br>
+–normal<br>
+Output a normal diff.</p>
+<p>-n<br>
+–rcs<br>
+Output an RCS format diff.</p>
+<p>-p<br>
+–show-c-function<br>
+Show which C function each change is in.</p>
+<p>-q<br>
+–brief<br>
+Output only whether files differ.</p>
+<p>-r<br>
+–recursive<br>
+Recursively compare any subdirectories found.</p>
+<p>–strip-trailing-cr<br>
+Strip trailing carriage return on input.</p>
+<p>-S <i>FILE</i><br>
+–starting-file=<i>FILE</i><br>
+Start with FILE when comparing directories.</p>
+<p>-s<br>
+–report-identical-files<br>
+Report when two files are the same.</p>
+<p>–speed-large-files<br>
+Assume large files and many scattered small changes.</p>
+<p>–suppress-common-lines<br>
+Do not output common lines.</p>
+<p>-t<br>
+–expand-tabs<br>
+Expand tabs to spaces in output.</p>
+<p>-T<br>
+–initial-tab<br>
+Make tabs line up by prepending a tab.</p>
+<p>–unidirectional-new-file<br>
+Treat absent first files as empty.</p>
+<p>-u <i>NUM</i><br>
+-U <i>NUM<br>
+</i> --unified[=<i>NUM</i>]<br>
+Output NUM (default 3) lines of unified context.<br>
+-v<br>
+–version<br>
+Output version info.</p>
+<p>-w<br>
+–ignore-all-space<br>
+Ignore all white space.</p>
+<p>-W <i>NUM</i><br>
+–width=<i>NUM</i><br>
+Output at most NUM (default 130) print columns.</p>
+<p>-x <i>PAT</i><br>
+–exclude=<i>PAT</i><br>
+Exclude files that match <i>PAT</i>.</p>
+<p>-X <i>FILE</i><br>
+–exclude-from=<i>FILE</i><br>
+Exclude files that match any pattern in <i>FILE</i>.</p>
+<p>-y<br>
+–side-by-side<br>
+Output in two columns.</p>
+<p>–from-file=<i>FILE1</i><br>
+Compare FILE1 to all operands. FILE1 can be a directory.</p>
+<p>–to-file=<i>FILE2</i><br>
+Compare all operands to FILE2. FILE2 can be a directory.</p>
+<pre><code>-D &lt;i&gt;NAME&lt;/i&gt;
+</code></pre>
+<p>–ifdef=<i>NAME</i><br>
+Output merged file to show ‘#ifdef <i>NAME</i>’ diffs.</p>
+<p>–GTYPE-group-format=<i>GFMT</i><br>
+Similar, but format GTYPE input groups with GFMT.</p>
+<p>-I <i>REGEXP</i><br>
+–ignore-matching-lines=<i>REGEXP</i><br>
+Ignore changes whose lines all match <i>REGEXP</i>.</p>
+<p>–line-format=LFMT<br>
+Similar, but format all input lines with LFMT.</p>
+<p>–LTYPE-line-format=<i>LFMT</i><br>
+Similar, but format LTYPE input lines with <i>LFMT</i>.<br>
+LTYPE is ‘old’, ‘new’, or ‘unchanged’.<br>
+GTYPE is LTYPE or ‘changed’.<br>
+GFMT can contain:<br>
+%&lt;       lines from FILE1<br>
+%&gt;       lines from FILE2<br>
+%=       lines common to FILE1 and FILE2<br>
+%[-][WIDTH][.[PREC]]{doxX}<i>LETTER</i><br>
+printf-style spec for <i>LETTER</i><br>
+LETTERs are as follows for new group, lower case for old group:<br>
+F       first line number<br>
+L       last line number<br>
+N       number of lines = L-F+1<br>
+E       F-1<br>
+M       L+1</p>
+<p>LFMT can contain:<br>
+%L       contents of line<br>
+%l       contents of line, excluding any trailing newline<br>
+%[-][WIDTH][.[PREC]]{doxX}n<br>
+<a href="printf.html">printf</a>-style spec for input line number</p>
+<p>Either GFMT or LFMT can contain:<br>
+%%        %<br>
+%c’C’     The single character C<br>
+%c’\OOO’  The character with octal code OOO </p></pre><p></p>
+<p>In the simplest case, diff compares the contents of the two files <i>from-file</i>and <i>to-file</i>. A file name of - stands for text read from the standard input. </p>
+<p>If <i>from-file</i> is a directory and <i>to-file </i>is not, diff compares the file in <i>from-file</i> whose file name is that of <i>to-file</i>, and vice versa. The non-directory file must not be -. </p>
+<p>If both <i>from-file</i> and <i>to-file </i>are directories, diff compares corresponding files in both directories, in alphabetical order; this comparison is not recursive unless the -r or --recursive option is given. </p>
+<p>GNU `diff' can show whether files are different without detailing the differences.<br>
+It also provides ways to suppress certain kinds of differences that are not important to you. <br><br>
+Most commonly, such differences are changes in the amount of white space between words or lines. `diff' also provides ways to suppress differences in alphabetic case or in lines that match a regular expression that you provide. <br>
+<br>These options can accumulate; for example, you can ignore changes in both white space and alphabetic case.<b><br><br>
+End -of-Line markers</b><br>
+In operating systems that distinguish between text and binary files, `diff' normally reads and writes all data as text. <br><br>
+Use the <code>--binary' option to force </code>diff' to read and write binary data instead. This option has no effect on a Posix-compliant system like GNU or traditional Unix. However, many personal computer operating systems represent the end of 
+a line with a carriage return followed by a newline. <br><br>
+On such systems, <code>diff' normally ignores these carriage returns on input and generates them at the end of each output line, but with the </code>--binary' option `diff' treats each carriage return as just another input character, and does 
+not generate a carriage return at the end of each output line. <br><br>
+This can be useful when dealing with non-text files that are meant to be interchanged with Posix-compliant systems.<br><br>
+<b>Ignore Case</b></p>
+<p>GNU <code>diff' can treat lowercase letters as equivalent to their uppercase counterparts, so that, for example, it considers </code>Funky Stuff', <code>funky STUFF', and </code>fUNKy 
+stuFf' to all be the same. <br>To request this, use the <code>-i' or </code>--ignore-case' option.<br><br>
+<b>Suppressing Lines Matching a Regular Expression</b><br>
+To ignore insertions and deletions of lines that match a regular expression, use the <code>-I REGEXP' or </code>--ignore-matching-lines=REGEXP' option. <br>
+You should escape regular expressions that contain shell metacharacters to prevent the shell from expanding them. <br><br>
+For example, <span class="code">diff -I '^[0-9]'</span> ignores all changes to lines beginning with a digit. <br><br>
+However, <span class="code">-I</span> only ignores the insertion or deletion of lines that contain the regular expression if every changed line in the hunk--every insertion and every 
+deletion--matches the regular expression. <br><br>
+In other words, for each non-ignorable change, <code>diff' prints the complete set of changes in its vicinity, including the ignorable ones. You can specify more than one regular expression for lines to ignore by using more than one </code>-I' option. `diff' tries to match each line against each regular expression, starting with the last one given.<br>
+<br><b>Summarizing Which Files Differ</b><br>
+When you only want to find out whether files are different, and you don't care what the differences are, you can use the summary output format. <br>
+In this format, instead of showing the differences between the files, `diff' simply reports whether files differ. <br>
+The <code>-q' and </code>--brief' options select this output format. <br>This format is especially useful when comparing the contents of two directories. It is also much faster than doing the normal line by line comparisons, because 
+`diff' can stop analyzing the files as soon as it knows that there are any differences. <br>
+You can also get a brief indication of whether two files differ by using `cmp'. <br><br>
+<b>Using diff to patch a file</b><br>
+To show context around the differing lines GNU `diff' provides these output formats <br>
+<br>
+Normal Format: An output format that shows each hunk of differences without any surrounding context<br>
+Context Format:: An output format that shows surrounding lines. <br>
+Unified Format:: A more compact output format that shows context.<br>
+<br>
+<code>patch' can apply diffs by searching in the files for the lines of context around the differing lines; if those lines are actually a few lines away from where the diff says they are, </code>patch' can adjust the line numbers accordingly and 
+still apply the diff correctly.</p>
+<p><b>Example</b></p>
+<p><span class="code">$ diff -q &lt;(sort file1.txt | uniq) &lt;(sort file2.txt | uniq)</span><br><br>
+The command above will return 0 if <span class="code">file1.txt = file2.txt </span>and will return 1 if <span class="code">file1.txt ≠ file2.txt</span><br>Note the files have to be sorted first (the order matters) and if the files could contain duplicate values, then the output of sort has to be run through the uniq command to eliminate any duplicate elements. </p>
+<p>For more on patching files and producing commands that direct the `ed' text editor to edit a file - run <span class="code">info diff</span><br>
+<br>
+<i class="quote">#Oh lord won't you buy me a Mercedes Benz, my friends all drive Porsches, I must make amends# ~ Janice Joplin </i> </p>
+<p><b>Related:</b><br>
+<br>
+<a href="cmp.html">cmp</a> - Compare two files<br>
+dircmp - Compare 2 directories<br>
+<a href="diff3.html">diff3</a> - Show differences among three files<br>
+<a href="sdiff.html">sdiff</a> - Merge two files interactively<br>
+Equivalent Windows commands:  <a href="../nt/comp.html">COMP</a> / <a href="../nt/fc.html">FC</a> /WINDIFF (GUI) - Compare and display Characters/Lines which do not match.</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="diff.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/diff.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

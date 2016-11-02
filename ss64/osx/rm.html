@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="rm 
+Delete files and folders.
+Syntax
+     rm [options] file ...
+ unlink &amp;lt;i&amp;gt;file&amp;lt;/i&amp;gt;
+
+Options
+-d   Attempt to remove folders.
+-f   Attempt to remove the files without prompting for confirma">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/rm.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="rm 
+Delete files and folders.
+Syntax
+     rm [options] file ...
+ unlink &amp;lt;i&amp;gt;file&amp;lt;/i&amp;gt;
+
+Options
+-d   Attempt to remove folders.
+-f   Attempt to remove the files without prompting for confirma">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="rm 
+Delete files and folders.
+Syntax
+     rm [options] file ...
+ unlink &amp;lt;i&amp;gt;file&amp;lt;/i&amp;gt;
+
+Options
+-d   Attempt to remove folders.
+-f   Attempt to remove the files without prompting for confirma">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>rm</h1> 
+<p>Delete files and folders.</p>
+<pre>Syntax
+     rm [<i>options</i>] <i>file</i> ...
+<pre><code> unlink &lt;i&gt;file&lt;/i&gt;
+</code></pre>
+<p>Options<br>
+-d   Attempt to remove folders.</p>
+<p>-f   Attempt to remove the files without prompting for confirmation,<br>
+regardless of the file’s permissions.  If the file does not exist,<br>
+do not display a diagnostic message or modify the exit status<br>
+to reflect an error.</p>
+<p>-i   Request confirmation before attempting to remove each file.</p>
+<p>-P   Overwrite regular files before deleting them.  Files are<br>
+overwritten three times, first with the byte pattern 0xff,<br>
+then 0x00, and then 0xff again, before they are deleted.</p>
+<p>-R   Remove the entire file hierarchy rooted in each file argument.<br>
+(implies the -d  Delete folders).<br>
+If the -i option is specified, the user is prompted for confirmation<br>
+before each directory’s contents are processed (as well as before<br>
+the attempt is made to remove the directory).  If the user does not<br>
+respond affirmatively, the file hierarchy rooted in that directory<br>
+is skipped.</p>
+<p>-r   Equivalent to -R.</p>
+<p>-v   Be verbose when deleting files, showing them as they are removed.</p>
+<p>-W   Attempt to undelete the named files.  Currently, this option<br>
+can only be used to recover files covered by whiteouts.</p>
+<p>unlink   Unlink a file, only one argument, which must not be a directory<br>
+can be supplied. Calls the unlink() function which removes the link<br>
+named by path from its directory and decrements the link count of<br>
+the file which was referenced by the link.</p></pre><p></p>
+<p> The rm utility removes symbolic links, not the files referenced 
+  by the links.</p>
+<p>If an error occurs, rm exits with a value &gt;0. </p>
+<p><b>Examples</b></p>
+<p>Delete all .jpg files in the current folder:<br>
+<span class="code">$ rm *.jpg</span><br>
+<br>
+ Delete the folder named "temp", and all its contents:<br>
+<span class="code">$ rm -R temp</span><br>
+<br>
+Delete a protected folder:<br>
+<span class="code">$ sudo rm -r NAME_OF_FOLDER_TO_DELETE</span><br>  you will be prompted for your password. hit return.</p>
+<p class="quote"><i>“The erase function in Disk Utility can erase an entire partition”</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/rm.1.html" target="_blank" rel="external">rm man page</a> - Apple.com<br>  
+<a href="cp.html">cp</a> - Copy files<br>
+<a href="find.html">find</a> - Find and optionally Delete files <br>
+<a href="ls.html">ls</a> - List information about files <br>
+<a href="rmdir.html">rmdir</a> - Remove empty folder<br>
+<a href="srm.html">srm</a> - Securely remove files or directories<br>
+<a href="http://support.apple.com/kb/ht1526" target="_blank" rel="external">HT1526</a> - You can't empty the Trash or move a file to the Trash</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="rm.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/rm.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

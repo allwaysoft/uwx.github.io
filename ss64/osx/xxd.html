@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="xxd 
+Make a hexdump or do the reverse. 
+xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. Like  uuencode and uudecode it allows">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/xxd.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="xxd 
+Make a hexdump or do the reverse. 
+xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. Like  uuencode and uudecode it allows">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:03.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="xxd 
+Make a hexdump or do the reverse. 
+xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. Like  uuencode and uudecode it allows">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>xxd</h1> 
+<p>Make a hexdump or do the reverse. <br>
+xxd creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. Like  <a href="uuencode.html">uuencode</a> and <a href="uuencode.html">uudecode</a> it allows the transmission of binary data in an 'email-safe' <a href="../ascii.html">ASCII</a> representation, but has the advantage of decoding to standard output. Moreover, it can be used to perform binary file patching.</p>
+<pre>Syntax
+<pre><code>  xxd [&lt;i&gt;options&lt;/i&gt;] [&lt;i&gt;infile&lt;/i&gt; [&lt;i&gt;outfile&lt;/i&gt;]]
+
+  xxd -r[evert] [&lt;i&gt;options&lt;/i&gt;] [&lt;i&gt;infile&lt;/i&gt; [&lt;i&gt;outfile&lt;/i&gt;]]
+
+  xxd -h[elp]
+</code></pre>
+<p>Options<br>
+If no infile is given, standard input is read.  If infile is  specified<br>
+as  a  ‘-’  character,  then input is taken from standard input.  If no<br>
+outfile is given (or a ‘-’ character is in its place), results are sent<br>
+to standard output.</p>
+<pre><code>   Note  that  a  &quot;lazy&quot; parser is used which does not check for more than
+   the first option letter, unless the option is followed by a  parameter.
+   Spaces  between  a single option letter and its parameter are optional.
+   Parameters to options can be specified in decimal, hexadecimal or octal
+   notation.  Thus -c8, -c 8, -c 010 and -cols 8 are all equivalent.
+
+
+   -a | -autoskip
+          toggle  autoskip: A single '*' replaces nul-lines.  Default off.
+
+   -b | -bits
+          Switch to bits (binary digits) dump, rather than hexdump.   This
+          option  writes octets as eight digits &quot;1&quot;s and &quot;0&quot;s instead of a
+          normal hexadecimal dump. Each line is preceded by a line  number
+          in  hexadecimal and followed by an ascii (or ebcdic) representa-
+          tion. The command line switches -r, -p, -i do not work with this
+          mode.
+
+   -c &lt;i&gt;cols&lt;/i&gt; | -cols &lt;i&gt;cols&lt;/i&gt;
+          format  &lt;i&gt;cols&lt;/i&gt; octets per line. Default 16 (-i: 12, -ps: 30, -b:
+          6). Max 256.
+
+   -E | -EBCDIC
+          Change the character encoding in the righthand column from ASCII
+          to EBCDIC.  This does not change the hexadecimal representation.
+          The option is meaningless in combinations with -r, -p or -i.
+
+   -g bytes | -groupsize &lt;i&gt;bytes&lt;/i&gt;
+          separate the output of every &lt;i&gt;bytes&lt;/i&gt; bytes (two  hex  characters
+          or eight bit-digits each) by a whitespace.  Specify -g 0 to sup-
+          press grouping.  &lt;i&gt;Bytes&lt;/i&gt; defaults to 2 in normal mode and  1  in
+          bits  mode.   Grouping  does  not apply to postscript or include
+          style.
+
+   -h | -help
+          print a summary of available commands and exit.  No hex  dumping
+          is performed.
+
+   -i | -include
+          output  in C include file style. A complete static array defini-
+          tion is written (named after the input file), unless  xxd  reads
+          from stdin.
+
+   -l len | -len &lt;i&gt;len&lt;/i&gt;
+          stop after writing &lt;i&gt;len&lt;/i&gt; octets.
+
+   -p | -ps | -postscript | -plain
+          output  in  postscript  continuous  hexdump style. Also known as
+          plain hexdump style.
+
+   -r | -revert
+          reverse operation: convert (or patch) hexdump into  binary.   If
+          not  writing  to stdout, xxd writes into its output file without
+          truncating it. Use the combination -r -p to read plain hexadeci-
+          mal dumps without line number information and without a particu-
+          lar column layout. Additional  Whitespace  and  line-breaks  are
+          allowed anywhere.
+
+   -seek &lt;i&gt;offset&lt;/i&gt;
+          When used after -r: revert with &lt;i&gt;offset&lt;/i&gt; added to file positions
+          found in hexdump.
+
+   -s [+][-]&lt;i&gt;seek&lt;/i&gt;
+          start at &lt;i&gt;seek&lt;/i&gt; bytes abs. (or rel.) infile offset.  + indicates
+          that  the  seek  is  relative to the current stdin file position
+          (meaningless when not reading from stdin).  - indicates that the
+          seek  should  be  that many characters from the end of the input
+          (or if combined with +: before the current stdin file position).
+          Without -s option, xxd starts at the current file position.
+
+   -u     use upper case hex letters. Default is lower case.
+
+   -v | -version
+          show version string.
+</code></pre>
+<p>CAVEATS</p>
+<pre><code>   xxd -r has some builtin magic while evaluating line number information.
+   If the output file is seekable, then the linenumbers at  the  start  of
+   each  hexdump  line may be out of order, lines may be missing, or over-
+   lapping. In these cases xxd will lseek(2) to the next position. If  the
+   output  file  is  not  seekable,  only  gaps are allowed, which will be
+   filled by null-bytes.
+
+   xxd -r never generates parse errors. Garbage is silently skipped.
+
+   When editing hexdumps, please note that xxd -r skips everything on  the
+   input line after reading enough columns of hexadecimal data (see option
+   -c). This also means, that changes to the printable ascii  (or  ebcdic)
+   columns  are  always  ignored.  Reverting a plain (or postscript) style
+   hexdump with xxd -r -p does not depend on the correct  number  of  col-
+   umns.  Here  anything  that  looks  like a pair of hex-digits is inter-
+   preted.
+
+   Note the difference between
+   % xxd -i file
+   and
+   % xxd -i &amp;lt; file
+
+   xxd -s +seek may be different from xxd -s seek, as lseek(2) is used  to
+   &quot;rewind&quot; input.  A '+' makes a difference if the input source is stdin,
+   and if stdin's file position is not at the start of  the  file  by  the
+   time  xxd  is  started and given its input.  The following examples may
+   help to clarify (or further confuse!)...
+
+   Rewind stdin before reading; needed because the `cat' has already  read
+   to the end of stdin.
+   % sh -c &quot;cat &amp;gt; plain_copy; xxd -s 0 &amp;gt; hex_copy&quot; &amp;lt; file
+
+   Hexdump  from  file  position  0x480 (=1024+128) onwards.  The `+' sign
+   means &quot;relative to the current position&quot;, thus the `128' adds to the 1k
+   where dd left off.
+   %  sh -c &quot;dd of=plain_snippet bs=1k count=1; xxd -s +128 &amp;gt; hex_snippet&quot;
+   &amp;lt; file
+
+   Hexdump from file position 0x100 ( = 1024-768) on.
+   % sh -c &quot;dd of=plain_snippet bs=1k count=1; xxd -s +-768 &amp;gt; hex_snippet&quot;
+   &amp;lt; file
+
+   However,  this is a rare situation and the use of `+' is rarely needed.
+   The author prefers to monitor the  effect  of  xxd  with  strace(1)  or
+   truss(1), whenever -s is used.
+</code></pre>
+<p>EXAMPLES</p>
+<pre><code>   Print everything but the first three lines (hex 0x30 bytes) of file.
+   % xxd -s 0x30 file
+
+   Print 3 lines (hex 0x30 bytes) from the end of file.
+   % xxd -s -0x30 file
+
+   Print 120 bytes as continuous hexdump with 20 octets per line.
+   % xxd -l 120 -ps -c 20 xxd.1
+   2e54482058584420312022417567757374203139
+   39362220224d616e75616c207061676520666f72
+   20787864220a2e5c220a2e5c222032317374204d
+   617920313939360a2e5c22204d616e2070616765
+   20617574686f723a0a2e5c2220202020546f6e79
+   204e7567656e74203c746f6e79407363746e7567
+
+   Hexdump the first 120 bytes of this man page with 12 octets per line.
+   % xxd -l 120 -c 12 xxd.1
+   0000000: 2e54 4820 5858 4420 3120 2241  .TH XXD 1 &quot;A
+   000000c: 7567 7573 7420 3139 3936 2220  ugust 1996&quot;
+   0000018: 224d 616e 7561 6c20 7061 6765  &quot;Manual page
+   0000024: 2066 6f72 2078 7864 220a 2e5c   for xxd&quot;..\
+   0000030: 220a 2e5c 2220 3231 7374 204d  &quot;..\&quot; 21st M
+   000003c: 6179 2031 3939 360a 2e5c 2220  ay 1996..\&quot;
+   0000048: 4d61 6e20 7061 6765 2061 7574  Man page aut
+   0000054: 686f 723a 0a2e 5c22 2020 2020  hor:..\&quot;
+   0000060: 546f 6e79 204e 7567 656e 7420  Tony Nugent
+   000006c: 3c74 6f6e 7940 7363 746e 7567  &amp;lt;tony@sctnug
+
+   Display just the date from the file xxd.1
+   % xxd -s 0x36 -l 13 -c 13 xxd.1
+   0000036: 3231 7374 204d 6179 2031 3939 36  21st May 1996
+
+   Copy input_file to output_file and prepend 100 bytes of value 0x00.
+   % xxd input_file | xxd -r -s 100 &amp;gt; output_file
+
+   Patch the date in the file xxd.1
+   % echo &quot;0000037: 3574 68&quot; | xxd -r - xxd.1
+   % xxd -s 0x36 -l 13 -c 13 xxd.1
+   0000036: 3235 7468 204d 6179 2031 3939 36  25th May 1996
+
+   Create  a  65537 byte file with all bytes 0x00, except for the last one
+   which is 'A' (hex 0x41).
+   % echo &quot;010000: 41&quot; | xxd -r &amp;gt; file
+
+   Hexdump this file with autoskip.
+   % xxd -a -c 12 file
+   0000000: 0000 0000 0000 0000 0000 0000  ............
+   *
+   000fffc: 0000 0000 40                   ....A
+
+   Create a 1 byte file containing a single  'A'  character.   The  number
+   after '-r -s' adds to the linenumbers found in the file; in effect, the
+   leading bytes are suppressed.
+   % echo &quot;010000: 41&quot; | xxd -r -s -0x10000 &amp;gt; file
+
+   Use xxd as a filter within an editor such as vim(1) to hexdump a region
+   marked between 'a' and 'z'.
+   :'a,'z!xxd
+
+   Use xxd as a filter within an editor such as vim(1) to recover a binary
+   hexdump marked between 'a' and 'z'.
+   :'a,'z!xxd -r
+
+   Use xxd as a filter within an editor such as vim(1) to recover one line
+   of a hexdump.  Move the cursor over the line and type:
+   !!xxd -r
+
+   Read single characters from a serial line
+   % xxd -c1 &amp;lt; /dev/term/b &amp;amp;
+   % stty &amp;lt; /dev/term/b -echo -opost -isig -icanon min 1
+   % echo -n foo &amp;gt; /dev/term/b
+&lt;/pre&gt;
+</code></pre>
+<p><b>RETURN VALUES        </b></p>
+<p>The following error values are returned:        <br>
+<span class="code">0 </span>no errors encountered. <br>
+<span class="code">-1 </span>operation not supported ( xxd -r -i still impossible).<br>
+<span class="code">1 </span>error while parsing options. <br>
+<span class="code">2 </span>problems with input file. <br>
+<span class="code">3 </span>problems with output file. <br>
+<span class="code">4,5 </span>desired seek position is unreachable.</p>
+<p> This manual page documents xxd version 1.7 Author:        Juergen Weigert (c) 1990-1997</p>
+<p class="quote"><i>“Discovery consists of seeing what everybody has seen and thinking what nobody has thought” ~ Albert Szent-Gyorgyi </i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/xargs.1.html" target="_blank" rel="external">xargs man page</a> - Apple.com<br>
+echo(1)<br>
+<a href="env.html">env</a> - Set environment and run a utility <br>
+<a href="find.html">find</a> - Search for files that meet a desired criteria<br>
+execvp(3)</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="xxd.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/xxd.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

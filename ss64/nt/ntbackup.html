@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NTBACKUP (XP/2003) 
+Backup to tape: drives,  folders and  systemstate. 
+In Vista and above wbadmin and PowerShell have replaced NTBACKUP.
+To recover backups on Windows Server 2008/Vista that were crea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/ntbackup.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="NTBACKUP (XP/2003) 
+Backup to tape: drives,  folders and  systemstate. 
+In Vista and above wbadmin and PowerShell have replaced NTBACKUP.
+To recover backups on Windows Server 2008/Vista that were crea">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.666Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="NTBACKUP (XP/2003) 
+Backup to tape: drives,  folders and  systemstate. 
+In Vista and above wbadmin and PowerShell have replaced NTBACKUP.
+To recover backups on Windows Server 2008/Vista that were crea">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>NTBACKUP (XP/2003)</h1> 
+<p>Backup to tape: drives,  folders and  systemstate. <br>
+In Vista and above <span class="code">wbadmin</span> and PowerShell have replaced NTBACKUP.</p>
+<p>To recover backups on Windows Server 2008/Vista that were created using ntbackup a 'restore-only' version   of NTBACKUP is <a href="http://go.microsoft.com/fwlink/?LinkId=82917" target="_blank" rel="external">available as a download</a>.</p>
+<pre><b>Syntax</b>:
+<pre><code>NTBACKUP backup [systemstate] &quot;&lt;i&gt;@bks file name&lt;/i&gt;&quot;
+            /J {&quot;&lt;i&gt;job name&lt;/i&gt;&quot;} [&lt;i&gt;options&lt;/i&gt;] [/SNAP:{on|off}] [/um]
+</code></pre>
+<p><b>Options</b>:</p>
+<p><i>systemstate</i><br>
+Back up the System State data.<br>
+This will also force the backup type to normal or copy.</p>
+<p>@<i>bks file name</i><br>
+The name of the backup selection file (.bks file).<br>
+In WinXP the at (@) character must precede this name.<br>
+A backup selection file contains information on the files and folders<br>
+to be backed up.<br>
+You have to create the file using the GUI version of NT Backup.</p>
+<p>/J {“job name”}<br>
+The job name to be used in the log file<br>
+Describe the files and folders and the backup date-time.</p>
+<p>/P {“pool name”}<br>
+The media pool from which you want to use media.<br>
+Usually a subpool of the Backup media pool, such as 4mm DDS.<br>
+If you select this you cannot use /A, /G, /F, or /T</p>
+<p>/G {“guid name”}<br>
+Overwrite or append to this tape.<br>
+Don’t use with a media Pool (/P).</p>
+<p>/T {“tape name”}<br>
+Overwrite or append to this tape.<br>
+don’t use with a media Pool (/P).</p>
+<p>/A<br>
+Perform an append operation.<br>
+Either “guid name” (/G) or “tape name” (/T) must be specified with this switch.<br>
+don’t use with a media Pool (/P).</p>
+<p>/N {“media name”}<br>
+The new tape name. don’t use with Append (/A).</p>
+<p>/F {“file name”}<br>
+Backup to a file - logical disk path and file name.<br>
+Do not use with the switches: /P /G /T.</p>
+<p>/D {“set description”}<br>
+Label for each backup set</p>
+<p>/DS {“server name”}<br>
+Back up the directory service file for MS Exchange 5.5 server.<br>
+This is not needed/does not work with Exchange 2000 since Exchange 2000<br>
+uses Active Directory.</p>
+<p>/IS {“server name”}<br>
+Back up the Information Store file for an MS Exchange 5.5 Server.</p>
+<p>/V:{yes|no}<br>
+Verify the data after the backup is complete.</p>
+<p>/R:{yes|no}<br>
+Restrict access to this tape to the Owner/AdministratorS</p>
+<p>/L:{f|s|n}<br>
+The type of log file: f=full, s=summary, n=none</p>
+<p>/M {<i>backup type</i>}<br>
+The backup type. One of: normal, copy, differential, incremental, or daily</p>
+<p>/RS:{yes|no}<br>
+Backs up the migrated data files located in Remote Storage.<br>
+The /RS command-line option is not required to back up the local Removable<br>
+Storage database (that contains the Remote Storage placeholder files).<br>
+When you backup the %systemroot% folder, Backup automatically backs up the<br>
+Removable Storage database as well.</p>
+<p>/HC:{on|off}<br>
+Use hardware compression, if available, on the tape drive.</p>
+<p>/SNAP:{on|off}<br>
+Copy open/locked files, requires XP or 2003,<br>
+creates a temporary snapshot for the <a href="http://en.wikipedia.org./wiki/Shadow_Copy" target="_blank" rel="external">volume shadow copy</a>.</p>
+<p>/um  (Windows 2000 only)<br>
+Find the first available media, format it, and use for the current backup.<br>
+Use with the /p switch to scan for available media pools.<br>
+This command is only for standalone tape devices (not tape loaders.)<br>
+The /UM switch must be at the end of the command line.</p></pre><p></p>
+<p>NTBackup has a reputation for being clumsy and unreliable, <a href="http://www.microsoft.com/en-us/server-cloud/products/system-center-2012-r2/" target="_blank" rel="external">Microsoft Data Protection Manager</a> is a more robust solution for Windows backup and recovery. Third party and cross platform tools are also available: <a href="http://en.wikipedia.org/wiki/List_of_backup_software" target="_blank" rel="external">List of backup software</a></p>
+<p>NTBackup is not available  in Windows Vista/Windows 7 but utilities to restore old backup files are available (links below)</p>
+<p><i class="quote">Mick Jagger  sang backup vocals for "You're so Vain" by Carly Simon</i><br>
+<br>
+<b>Related:</b></p>
+<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=7da725e2-8b69-4c65-afa3-2a53107d54a7&amp;DisplayLang=en" target="_blank" rel="external">Microsoft utility to restore NT Backups</a> for Windows Vista/Server 2008 <br>
+<a href="https://support.microsoft.com/kb/974674" target="_blank" rel="external">Microsoft utility to restore NT Backups</a> for Windows 7/Server 2008 R2<br>
+Wbadmin - back up and restore the OS, volumes, files, folders, and applications.<br>
+<a href="http://technet.microsoft.com/library/jj902428.aspx" target="_blank" rel="external">Windows Server  PowerShell Backup Cmdlets</a><br>
+<a href="http://www.backupassist.com/" target="_blank" rel="external">BackupAssist</a> - 3rd party backup software  for small and medium businesses<br>
+<a href="at.html"> </a><a href="https://support.microsoft.com/kb/814583" target="_blank" rel="external">Q814583</a> /<a href="https://support.microsoft.com/kb/821730" target="_blank" rel="external">Q821730</a> - NT Backup in Windows Server 2003 <br>
+<a href="https://support.microsoft.com/kb/237310" target="_blank" rel="external">Q237310</a> - Manually Edit Ntbackup.exe Selection Script Files <br>
+Equivalent bash command (Linux): <a href="http://www.diffingo.com/oss/fwbackups" target="_blank" rel="external">fwbackups</a> or <a href="../bash/rsync.html">rsync</a> - Synchronize file trees.</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ntbackup.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/ntbackup.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

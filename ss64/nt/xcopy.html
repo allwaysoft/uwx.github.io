@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="XCOPY  
+Copy files and/or directory trees to another folder. XCOPY is 
+  similar to the COPY command except that it has additional switches to specify 
+both the source and destination in detail.
+Xcopy">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/xcopy.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="XCOPY  
+Copy files and/or directory trees to another folder. XCOPY is 
+  similar to the COPY command except that it has additional switches to specify 
+both the source and destination in detail.
+Xcopy">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:56.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="XCOPY  
+Copy files and/or directory trees to another folder. XCOPY is 
+  similar to the COPY command except that it has additional switches to specify 
+both the source and destination in detail.
+Xcopy">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>XCOPY </h1> 
+<p>Copy files and/or directory trees to another folder. XCOPY is 
+  similar to the COPY command except that it has additional switches to specify 
+both the source and destination in detail.</p>
+<p>Xcopy has been <a href="http://en.wikipedia.org/wiki/Deprecation" target="_blank" rel="external">deprecated</a> under Vista and Windows 2008, this means that while still available now it might disappear in a future OS release. To ensure your scripts are 'future proof' use other tools (such as <a href="robocopy.html">Robocopy</a>) instead of xcopy. <br>
+  <br>
+  XCOPY is particularly useful when copying files from CDROM to a hard drive, 
+as it will automatically remove the read-only attribute.</p>
+<pre>Syntax
+      XCOPY <i>source</i> [<i>destination</i>] [<i>options</i>]<br>
+Key
+   source      : Pathname for the file(s) to be copied (accepts <a href="syntax-wildcards.html">wildcards</a>).
+<p>destination : Pathname for the new file(s).</p>
+<p>[options] can be any combination of the following:</p>
+<p><i>Source Options</i></p>
+<p>/A    Copy files with the archive attribute set (default=Y)<br><br>
+/M    Copy files with the archive attribute set and<br>
+turn off the archive attribute, use this option<br>
+when making regular Backups (default=Y)</p>
+<p>/H    Copy hidden and system files and folders (default=N)<br><br>
+/D:mm-dd-yyyy<br>
+Copy files changed on or after the specified date.<br>
+If no date is given, copy only files whose<br>
+source date/time is newer than the destination time.<br><br>
+/U    Copy only files that already exist in destination.</p>
+<p>/S    Copy folders and subfolders<br><br>
+/E    Copy folders and subfolders, including Empty folders.<br>
+can be used to modify /T.</p>
+<p>/EXCLUDE:<i>file1</i>[+<i>file2</i>][+<i>file3</i>]…</p>
+<pre><code>     The files can each contain one or more full or partial pathnames to be excluded.
+     When any of these match any part of the absolute path of a SOURCE file, then 
+     that file will be excluded.
+     For example, specifying a string like \obj\ or .obj will exclude
+     all files underneath the directory obj or all files with the
+     .obj extension respectively.
+</code></pre>
+<p><i>Copy Options</i></p>
+<p>/W    Prompt you to press a key before starting to copy.<br>
+/P    Prompt before creating each file.</p>
+<p>/Y    Suppress prompt to confirm overwriting a file.<br>
+can be preset in the COPYCMD env variable.<br>
+/-Y   Prompt to confirm overwriting a file.</p>
+<p>/V    <a href="verify.html">Verify</a> that the new files are readable.<br>
+/C    Continue copying even if an error occurs.</p>
+<p>/I    If in doubt always assume the destination is a folder<br>
+e.g. when the destination does not exist.</p>
+<p>/B    Copy the Symbolic link itself, not the target of the file.</p>
+<p>/G    Allow the copying of encrypted files to a destination that does not support encryption.</p>
+<p>/J    Copy using unbuffered I/O. Recommended for very large files.</p>
+<p>/Q    Do not display file names while copying.<br>
+/F    Display full source and destination file names while copying.<br>
+/L    List only - Display files that would be copied.</p>
+<p>/Z    Copy files in restartable mode. If the copy is interrupted part way through,<br>
+it will restart if possible. (use on slow networks)<br><i><br>
+Destination Options</i><br><br>
+/R    Overwrite read-only files.<br><br>
+/T    Create folder structure, but do not copy files.<br>
+Do not include empty folders or subfolders. <br>          /T /E will include empty folders and subfolders.<br><br>
+/K    Copy attributes. XCOPY will otherwise reset read-only attributes.<br><br>   /N    If at all possible, use only a short filename (8.3) when creating<br>
+a destination file. This can be necessary when copying between disks<br>
+that are formatted differently e.g NTFS and VFAT, or when archiving<br>
+data to an ISO9660 CDROM.</p>
+<p>/O    Copy file Ownership and ACL information.</p>
+<p>/X    Copy file audit settings (implies /O).</p></pre><p></p>
+<p> XCOPY will accept UNC pathnames<b>.</b></p>
+<p>To always overwrite destination files use the COPYCMD environment variable: <span class="code">SET COPYCMD=/Y</span><br>
+<br>
+When comparing Dates/Times the granularity (the finest increment of the timestamp) is 2 seconds for a FAT volume and 0.1 microsecond for an NTFS volume.</p>
+<h2>Copy a single file</h2>
+<blockquote>
+<p>In most cases copying a single file is best done with the <a href="copy.html">COPY</a> command. When copying a single file with XCOPY, there is no option to indicate if the destination is a filename or a directory (with the filename defaulting to that of the source file).<br>
+In such cases XCOPY will prompt with a (locale specific) message like:<br>
+<span class="code">C:\&gt; xcopy foo.txt bar.txt<br>
+Does foo.txt specify a file name<br>
+or directory name on the target<br>
+(F = file, D = directory)?</span></p>
+<p>Adding a wildcard (*) to the end of the destination will suppress this prompt and default to copying as a file:<br>
+<span class="code">C:\&gt; xcopy foo.txt bar.txt*<br>
+C:foo.txt <br>
+1 File(s) copied</span><br>
+This requires the source and target file extensions to be the same length, typically 3 characters.</p>
+</blockquote>
+<h2>  Insufficient Memory error</h2>
+<blockquote>
+<p> Attempting to XCOPY a source file that has a pathname longer than the Windows maximum path length (254 characters) will result in a rather unhelpful 'Insufficient Memory' error, the operation will then halt. This bug which has been around for over 10 years makes XCOPY a poor choice for any kind of backup script, use <a href="robocopy.html">ROBOCOPY</a> instead.</p>
+</blockquote>
+<p>
+<b>Examples:</b><br>
+<br>
+Copy a file:<br>
+<br>
+<span class="code">echo F| XCOPY C:\utils\MyFile.txt D:\Backup\CopyFile.txt</span><br>
+<br>
+Copy a folder:<br>
+<br>
+<span class="code">XCOPY C:\utils D:\Backup\utils /i</span><br>
+<br>
+Copy a folder including all subfolders.<br>
+<br>
+<span class="code">XCOPY C:\utils\* D:\Backup\utils /s /i</span><br>
+</p>
+<p><i class="quote">“It is easier to copy than to think, hence fashion” ~  Wallace Stevens</i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="copy.html">COPY</a> - Copy one or more files to another location<br>
+<a href="del.html">DEL</a> - Delete files <br>
+<a href="move.html">MOVE</a> - Move a file from one folder to another<br>
+<a href="robocopy.html">ROBOCOPY</a> - Robust File and Folder Copy<br>
+ PowerShell: <a href="../ps/copy-item.html">Copy-Item</a> - Copy an item from one location to another<br>
+Equivalent bash command (Linux): <a href="../bash/cp.html">cp</a> - Copy one or more files to another location</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/xcopy.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="id 
+User identity - display the user and group names (and IDs)
+  The groups utility has been obsoleted by id, and is equivalent to `id 
+-Gn [user]&apos; 
+Syntax
+      id [user]
+      id -A
+      id -G [-n]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/id.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="id 
+User identity - display the user and group names (and IDs)
+  The groups utility has been obsoleted by id, and is equivalent to `id 
+-Gn [user]&apos; 
+Syntax
+      id [user]
+      id -A
+      id -G [-n]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="id 
+User identity - display the user and group names (and IDs)
+  The groups utility has been obsoleted by id, and is equivalent to `id 
+-Gn [user]&apos; 
+Syntax
+      id [user]
+      id -A
+      id -G [-n]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>id</h1> 
+<p>User identity - display the user and group names (and IDs)<br>
+  The <span class="code">groups</span> utility has been obsoleted by id, and is equivalent to `id 
+-Gn [<i>user</i>]' </p>
+<pre>Syntax
+      id [<i>user</i>]
+      id -A
+      id -G [-n] [<i>user</i>]
+      id -M
+      id -P [<i>user</i>]
+      id -g [-nr] [<i>user</i>]
+      id -p [<i>user</i>]
+      id -u [-nr] [<i>user</i>]
+<p>Options<br>
+-A     Display the process audit user ID and other process audit properties, which requires privilege.</p>
+<p>-G     Display the different group IDs (effective, real and supplementary)<br>
+as white-space separated numbers, in no particular order.</p>
+<p>-M     Display the MAC label of the current process.</p>
+<p>-P     Display the id as a password file entry.</p>
+<p>-g     Display the effective group ID as a number.</p>
+<p>-n     Display the name of the user or group ID for the -G, -g and -u<br>
+options instead of the number.  If any of the ID numbers cannot<br>
+be mapped into names, the number will be displayed as usual.</p>
+<p>-p     Make the output human-readable.  If the user name returned by<br>
+getlogin(2) is different from the login name referenced by the<br>
+user ID, the name returned by getlogin(2) is displayed, preceded<br>
+by the keyword <code>login'. The user ID as a name is displayed, preceded by the keyword</code>uid’.  If the effective user ID is<br>
+different from the real user ID, the real user ID is displayed as<br>
+a name, preceded by the keyword <code>euid'. If the effective group ID is different from the real group ID, the real group ID is displayed as a name, preceded by the keyword</code>rgid’.  The list of<br>
+groups to which the user belongs is then displayed as names, preceded<br>
+by the keyword `groups’.  Each display is on a separate line.</p>
+<p>-r     Display the real ID for the -g and -u options instead of the<br>
+effective ID.</p>
+<p>-u     Display the effective user ID as a number.   </p></pre><p></p>
+<p>Displays the user and group names and numeric IDs, of the calling 
+process, to the standard output.</p>
+<p> If the real and effective IDs are different, both are displayed, 
+  otherwise only the real ID is displayed.</p>
+<p>The id utility exits 0 on success, and &gt;0 if an error occurs.</p>
+<p> If a <i>user</i> (login name or user ID) is specified, the user 
+  and group IDs of that user are displayed. In this case, the real and effective 
+IDs are assumed to be the same.</p>
+<p class="quote"><i>"There is no monument dedicated to the memory of a committee" 
+  ~ Lester 
+  J. Pourciau</i></p>
+<p><b>Related:</b></p>
+<p>
+<a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/id.1.html" target="_blank" rel="external">id man page</a> - Apple.com<br>
+The historic <span class="code">groups</span> command is equivalent to <span class="code">id -Gn [user]</span><br>
+The historic <span class="code">whoami</span> command is equivalent to <span class="code">id -un</span><br>
+<a href="who.html">who</a> - Print all users currently logged in<br>
+<span class="code">whoami </span>- Print real user name.<br>
+Equivalent (Linux) bash command:<a href="../bash/who.html">who</a> - Print all users currently logged in</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="id.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/id.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

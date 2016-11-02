@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PARTITIONING Clause 
+Specify table partitioning 
+  
+  Syntax:
+   PARTITION BY RANGE (column,column,…) [subptn_clause] 
+     (PARTITION partition VALUES LESS THAN (values_list)
+          Partition_def">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/clause_partition.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PARTITIONING Clause 
+Specify table partitioning 
+  
+  Syntax:
+   PARTITION BY RANGE (column,column,…) [subptn_clause] 
+     (PARTITION partition VALUES LESS THAN (values_list)
+          Partition_def">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:28.440Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PARTITIONING Clause 
+Specify table partitioning 
+  
+  Syntax:
+   PARTITION BY RANGE (column,column,…) [subptn_clause] 
+     (PARTITION partition VALUES LESS THAN (values_list)
+          Partition_def">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>PARTITIONING Clause</h1> 
+<p>Specify table partitioning <br>
+  <br>
+  Syntax:</p>
+<pre>   <b>PARTITION BY RANGE</b> (<i>column</i>,<i>column</i>,…) [<i>subptn_clause</i>] 
+     <b>(</b>PARTITION <i>partition </i>VALUES LESS THAN (<i>values_list</i>)
+          <i>Partition_def</i>
+      [,PARTITION <i>partition</i>…]<b>)</b>
+<p><b>PARTITION BY HASH</b> (<i>column</i>) individual or by qty - see the Oracle docs.</p>
+<p><b>PARTITION BY LIST</b> (<i>column</i>)<br>
+<b>(</b>PARTITION <i>partition</i><br>
+VALUES (DEFAULT | NULL | <i>value</i>,…)<br>
+<i>    Partition_def</i><br>
+[,PARTITION <i>partition</i>…]<b>)</b></p>
+<p><i>Partition_def</i>:<br>
+<i>   storage_options</i> [[NO]COMPRESS] [OVERFLOW <i>storage_options</i>]<br>
+[<a href="clause_lob.html">LOB_storage_clause</a>] [<a href="clause_varray.html">varray_storage_clause</a>]<br>
+[(SUBPARTITION subpartion [<a href="clause_lob.html">LOB_storage_clause</a>] [<a href="clause_varray.html">varray_storage_clause</a>] )]</p>
+<p><i>storage_options</i>:<br>
+PCTFREE <i>int</i><br>
+PCTUSED <i>int</i><br>
+INITTRANS <i>int</i><br>
+MAXTRANS <i>int</i><br>
+STORAGE <a href="clause_storage.html">storage_clause</a><br>
+TABLESPACE <i>tablespace</i><br>
+[LOGGING|NOLOGGING]</p>
+<p><i>subptn_clause</i>:<br>
+SUBPARTITION BY HASH (<i>column</i>,<i>column</i>,…)<br>
+[SUBPARTITIONS <i>quantity</i> [STORE IN (<i>tablespace</i>,…)] ]<br>
+[<i>subpartition_template</i>]<br>
+SUBPARTITION BY LIST (<i>column</i>)  [<i>subpartition_template</i>] </p></pre><p></p>
+<p><b>Example</b></p>
+<pre>partition by range (SA_DATE_PART) (
+  partition P01_JAN 
+     values less than (to_date('2005-02-01','yyyy-mm-dd'))
+     tablespace DATA01,
+  partition P02_FEB
+     values less than (to_date('2005-03-01','yyyy-mm-dd'))
+     tablespace DATA02,
+  partition P03_MAR 
+     values less than (to_date('2005-04-01','yyyy-mm-dd'))
+     tablespace DATA03,
+  partition P04_APR
+     values less than (to_date('2005-05-01','yyyy-mm-dd'))
+     tablespace DATA04, 
+  partition P05_REST
+     values less than (maxvalue))
+     tablespace DATA;</pre>
+<p><b> Related Commands:<br>
+  <br>
+  </b>TABLE - <a href="table_c.html">CREATE TABLE</a><br>
+  TABLE - <a href="table_a.html">ALTER TABLE</a></p>
+<p><b>Related Views:</b></p>
+<p class="code">  <a href="../orad/DBA_PART_COL_STATISTICS.html">DBA_PART_COL_STATISTICS</a> &nbsp;<a href="../orad/ALL_PART_COL_STATISTICS.html">ALL_PART_COL_STATISTICS</a>&nbsp;&nbsp;<a href="../orad/USER_PART_COL_STATISTICS.html">USER_PART_COL_STATISTICS</a> <br>  
+  <a href="../orad/DBA_PART_HISTOGRAMS.html">DBA_PART_HISTOGRAMS</a>&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_PART_HISTOGRAMS.html">ALL_PART_HISTOGRAMS</a>&nbsp;&nbsp;&nbsp;<a href="../orad/USER_PART_HISTOGRAMS.html">USER_PART_HISTOGRAMS</a>  <br>  
+  <a href="../orad/DBA_PART_INDEXES.html">DBA_PART_INDEXES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_PART_INDEXES.html">ALL_PART_INDEXES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_PART_INDEXES.html">USER_PART_INDEXES</a>    <br>  
+  <a href="../orad/DBA_PART_KEY_COLUMNS.html">DBA_PART_KEY_COLUMNS</a>&nbsp;&nbsp;<a href="../orad/ALL_PART_KEY_COLUMNS.html">ALL_PART_KEY_COLUMNS</a>&nbsp;&nbsp;<a href="../orad/USER_PART_KEY_COLUMNS.html">USER_PART_KEY_COLUMNS</a>  <br>  
+  <a href="../orad/DBA_PART_LOBS.html">DBA_PART_LOBS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_PART_LOBS.html">ALL_PART_LOBS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_PART_LOBS.html">USER_PART_LOBS</a>       <br>  
+<a href="../orad/DBA_PART_TABLES.html">DBA_PART_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_PART_TABLES.html">ALL_PART_TABLES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_PART_TABLES.html">USER_PART_TABLES</a>   </p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="clause_partition.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/clause_partition.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

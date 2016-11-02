@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MSIEXEC  
+Microsoft Windows Installer (Windows 7/2008).
+Syntax
+      MSIEXEC /Option RequiredParameter [OptionalParameter]
+Install Options
+Install or configure a product:
+MSIEXEC /package Product.msi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/msiexec.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="MSIEXEC  
+Microsoft Windows Installer (Windows 7/2008).
+Syntax
+      MSIEXEC /Option RequiredParameter [OptionalParameter]
+Install Options
+Install or configure a product:
+MSIEXEC /package Product.msi">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.959Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="MSIEXEC  
+Microsoft Windows Installer (Windows 7/2008).
+Syntax
+      MSIEXEC /Option RequiredParameter [OptionalParameter]
+Install Options
+Install or configure a product:
+MSIEXEC /package Product.msi">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>MSIEXEC</h1>  
+<p>Microsoft Windows Installer (Windows 7/2008).
+</p><pre>Syntax
+      MSIEXEC /Option <i>RequiredParameter</i> [<i>OptionalParameter</i>]
+<p>Install Options<br>
+Install or configure a product:<br>
+MSIEXEC /package <i>Product.msi</i><br>
+MSIEXEC /i <i>Product.msi</i></p>
+<p>Administrative install, Install a product on the network:<br>
+MSIEXEC /a <i>Product.msi</i></p>
+<p>Advertise a product to all users:<br>
+MSIEXEC /j <b>m</b> <i>Product.msi</i> [/t <i>TransformList</i>] [/g <i>LanguageID</i>]</p>
+<p>Advertise a product to current user:<br>
+MSIEXEC /j <b>u</b> <i>Product.msi</i> [/t <i>TransformList</i>] [/g <i>LanguageID</i>]</p>
+<p>Uninstall the product:<br>
+MSIEXEC /uninstall <i>Product.msi</i><br>
+MSIEXEC /x <i>Product.msi</i><br>
+MSIEXEC /uninstall <i>ProductCode</i><br>
+MSIEXEC /x <i>ProductCode</i></p>
+<p>Display Options</p>
+<p>Quiet mode, no user interaction<br>
+/quiet</p>
+<p>Unattended mode - progress bar only<br>
+/passive</p>
+<p>Set user interface level: None<br>
+/qn</p>
+<p>Set user interface level: Basic UI<br>
+/qb</p>
+<p>Set user interface level: Reduced UI<br>
+/qr</p>
+<p>Set user interface level: Full UI (default)<br>
+/qf</p>
+<p>Help information<br>
+/help</p>
+<p>Restart Options<br>
+Do not restart after the installation is complete:<br>
+/norestart</p>
+<p>Prompt the user for restart if necessary:<br>
+/promptrestart</p>
+<p>Always restart the computer after installation:<br>
+/forcerestart</p>
+<p>Logging Options<br>
+/le <i>Logfile</i>  Log All error messages<br>
+/lw <i>Logfile</i>  Log Non-fatal warnings<br>
+/li <i>Logfile</i>  Log Status messages<br>
+/la <i>Logfile</i>  Log Start up of actions<br>
+/lr <i>Logfile</i>  Log Action-specific records<br>
+/lu <i>Logfile</i>  Log User requests<br>
+/lc <i>Logfile</i>  Log Initial (UI) parameters<br>
+/lm <i>Logfile</i>  Log Out-of-memory or fatal exit information<br>
+/lo <i>Logfile</i>  Log Out-of-disk-space messages<br>
+/lp <i>Logfile</i>  Log Terminal properties<br>
+/lv <i>Logfile</i>  Log Verbose output<br>
+/lx <i>Logfile</i>  Log Extra debugging information</p>
+<p>/l* <i>Logfile</i>  Log all information, except for v and x options<br>
+/log <i>Logfile</i> Equivalent of /l* <logfile></logfile></p>
+<p>/l+ <i>Logfile</i>  Append to an existing log file.<br>
+/l! <i>Logfile</i>  Flush each line to the log.</p>
+<p>Update Options<br>
+Apply update(s)<br>
+/update &lt;update1.msp&gt;[;<i>Update2.msp</i>]</p>
+<p>Remove update(s) for a product:<br>
+/uninstall <patchcodeguid>[;<i>Update2.msp</i>] /package &lt;product.msi |=&quot;&quot; productcode=&quot;&quot;&gt;</patchcodeguid></p>
+<p>Repair Options - Repair a previously installed product<br>
+/fp          Repair/fix - re<b>p</b>lace missing files<br>
+/fo          Repair/fix - replace <b>O</b>lder files(default)<br>
+/fe          Repair/fix - replace older or <b>E</b>qual date files<br>
+/fd          Repair/fix - replace <b>D</b>ifferent version files<br>
+/fc          Repair/fix - replace files based on <b>C</b>hecksum differences<br>
+/fa          Repair/fix - replace <b>A</b>ll files<br>
+/fu          Repair/fix - rewrite HKCU registry(default)<br>
+/fm          Repair/fix - rewrite HKLM registry(default)<br>
+/fs          Repair/fix - recreate shortcuts(default)<br>
+/fv          Repair/fix - rewrite local cache from source</p>
+<p>Set Public Properties<br>
+[PROPERTY=<i>PropertyValue</i>]&lt;/product.msi&gt;&lt;/update1.msp&gt;</p></pre><p></p>
+<p>Windows installer (and msiexec) have been updated with each major release of Windows (from 2000 to XP to 2008 R2)
+Windows Installer redistributables are available at the <a href="http://www.microsoft.com/download/" target="_blank" rel="external">Microsoft Download Center</a>.</p>
+<p>Registry Keys:<br>
+<span class="code">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall </span></p>
+<p>Product codes - the ProductCode for each application is a GUID that can be retrieved with a WMI query in VBScript or PowerShell, <span class="code"><a href="../ps/get-wmiobject.html">Get-WmiObject</a> Win32_Product</span> will return the <span class="code">IdentifyingNumber</span> which is the Product code:<br> 
+<span class="code">PS C:\&gt; gwmi Win32_Product -Filter "Name LIKE 'Paint.net v3%'"</span></p>
+<p>Do not use the  domain controller SYSVOL folder as a Windows Installer installation point, doing so can result in the following error when you attempt to run the Windows Installer (.msi) package:</p>
+<blockquote>
+  <p><i>This installation package could not be opened. Verify that the package exists and that you can access it, or contact the application vendor to verify that this is a valid Windows Installer package.</i></p>
+</blockquote>
+<p>This is because the SYSVOL folder is created with the SHI1005_FLAGS_RESTRICT_EXCLUSIVE_OPENS attribute, which prevents it from being exclusively locked by Windows Installer. Having locked files on a SYSVOL will  create Active Directory directory service
+synchronization problems.</p>
+<p><b>Examples:</b></p>
+<p>Install:<br>
+<span class="code">msiexec /i "C:\Install\ss64app.msi"</span><br>
+<br>
+UnInstall:<br>
+<span class="code">msiexec /uninstall "{5AFF6499-63BA-4A36-83B2-8D256404AC3D}" /log "C:\install\ss64app.txt"</span></p>
+<p>or remotely with <a href="psexec.html">psexec</a><br>
+<span class="code">psexec \\$workstation -s msiexec /uninstall "{5AFF6499-63BA-4A36-83B2-8D256404AC3D}" /log "C:\install\ss64app.txt"</span></p>
+<p>Extracting files from an MSI</p>
+<p class="code">msiexec /a <i>MSIFile</i> /qb TARGETDIR=<i>DestinationDirectory</i></p>
+<p>Extract the files from <a href="../links/windows.html">adminpak.msi</a>: </p>
+<p><span class="code">msiexec /a adminpak.msi /qb TARGETDIR=C:\reskit\adminpak</span><br>
+</p>
+<p><span class="quote"><i>“People don’t resist change. They resist being changed!” - Peter Senge.</i></span><b><br>
+<br>
+Related:</b><br>
+<br>
+<a href="change.html">CHANGE</a> -  Terminal Server session install mode.<br>
+<a href="regsvr32.html">REGSVR32</a> - Register or unregister a DLL<br>
+<a href="rundll32.html">RunDll32</a> - Uninstall DLL's e.g. MS Java<br>
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa371185(v=vs.85).aspx" target="_blank" rel="external">MSDN/Dev Centre</a> - Released Versions of Windows Installer<br>
+<a href="https://support.microsoft.com/kb/310747" target="_blank" rel="external">Q310747</a> - System File Checker (Sfc.exe) <br>
+Equivalent bash command (Linux): <a href="http://www.tfug.org/helpdesk/linux/rpm.html" target="_blank" rel="external">RPM</a> - Rpm Package Manager</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="msiexec.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/msiexec.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

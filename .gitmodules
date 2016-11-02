@@ -1,6 +1,0 @@
-[submodule "themes/cyanstyle"]
-	path = themes/cyanstyle
-	url = https://github.com/rafa1231518/cyanstyle-mod.git
-[submodule "local_modules/hexo-html-minifier"]
-	path = local_modules/hexo-html-minifier
-	url = https://github.com/rafa1231518/hexo-html-minifier.git

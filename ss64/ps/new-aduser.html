@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="New-ADUser 
+Create a new Active Directory user.
+Syntax
+      New-ADUser [-Name] string  ADProperties[...]
+        [-AccountExpirationDate DateTime] [-AccountNotDelegated bool]
+           [-AccountPass">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/new-aduser.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="New-ADUser 
+Create a new Active Directory user.
+Syntax
+      New-ADUser [-Name] string  ADProperties[...]
+        [-AccountExpirationDate DateTime] [-AccountNotDelegated bool]
+           [-AccountPass">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.040Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="New-ADUser 
+Create a new Active Directory user.
+Syntax
+      New-ADUser [-Name] string  ADProperties[...]
+        [-AccountExpirationDate DateTime] [-AccountNotDelegated bool]
+           [-AccountPass">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>New-ADUser</h1> 
+<p>Create a new Active Directory user.</p>
+<pre>Syntax
+      New-ADUser [-Name] <i>string</i>  <i>ADProperties</i>[...]
+        [-AccountExpirationDate <i>DateTime</i>] [-AccountNotDelegated <i>bool</i>]
+           [-AccountPassword <i>SecureString</i>] [-AllowReversiblePasswordEncryption <i>bool</i>]
+              [-AuthType {<u>Negotiate</u> | Basic}] [-CannotChangePassword <i>bool</i>]
+                 [-Certificates <i>X509Certificate</i>[]] [-ChangePasswordAtLogon <i>bool</i>]
+                    [-Credential <i>PSCredential</i>] [-Enabled <i>bool</i>] [-Instance <i>ADUser</i>] [-PassThru]
+                       [-PasswordNeverExpires <i>bool</i>] [-PasswordNotRequired <i>bool</i>]
+                          [-Path <i>string</i>] [-ProfilePath <i>string</i>] [-SamAccountName <i>string</i>]
+                             [-ScriptPath <i>string</i>] [-Server <i>string</i>] [-ServicePrincipalNames <i>string</i>[]] 
+                                [-SmartcardLogonRequired <i>bool</i>] [-TrustedForDelegation <i>bool</i>]
+                                   [-Type <i>string</i>] [-UserPrincipalName <i>string</i>]
+                                      [-Confirm] [-WhatIf] [<a href="common.html"><i>CommonParameters</i></a>] 
+<p>Key<br>
+<i>ADProperties</i><br>
+[-City <i>string</i>] [-Company <i>string</i>] [-Country <i>string</i>]<br>
+[-Department <i>string</i>] [-Description <i>string</i>] [-DisplayName <i>string</i>]<br>
+[-Division <i>string</i>] [-EmailAddress <i>string</i>] [-EmployeeID <i>string</i>]<br>
+[-EmployeeNumber <i>string</i>] [-Fax <i>string</i>] [-GivenName <i>string</i>]<br>
+[-HomeDirectory <i>string</i>] [-HomeDrive <i>string</i>] [-HomePage <i>string</i>]<br>
+[-HomePhone <i>string</i>] [-Initials <i>string</i>] [-LogonWorkstations <i>string</i>]<br>
+[-Manager <i>ADUser</i>] [-MobilePhone <i>string</i>] [-Office <i>string</i>] [-OfficePhone <i>string</i>]<br>
+[-Organization <i>string</i>] [-OtherAttributes <i>hashtable</i>] [-OtherName <i>string</i>]<br>
+[-POBox <i>string</i>] [-PostalCode <i>string</i>] [-State <i>string</i>] [-StreetAddress <i>string</i>]<br>
+[-Surname <i>string</i>] [-Title <i>string</i>]</p>
+<p>-AccountExpirationDate <i>[System.DateTime]</i><br>
+The expiry date for the account. (0=never expires)<br>
+Use PowerShell <a href="syntax-dateformats.html">DateTime syntax</a><br>
+Time is assumed to be local time unless otherwise specified.<br>
+The default time is 12:00 (Midday) local time.<br>
+The default date is the current date.<br>
+Examples using GMT, UTC and local time:<br>
+-AccountExpirationDate “Mon, 17 Apr 2011 21:22:48 GMT”<br>
+-AccountExpirationDate “2011-04-17T14:22:48.0000000”<br>
+-AccountExpirationDate &quot;04/17/2011 2:22:48 PM&quot;<br>
+The LDAP Display name (ldapDisplayName) for this property is accountExpires.</p>
+<p>-AccountNotDelegated <i>bool</i><br>
+Security delegation. When True, the security context of the user is not<br>
+delegated to a service even when the service account is set as trusted for<br>
+Kerberos delegation. Sets the AccountNotDelegated property for an AD account.<br>
+This parameter also sets the ADS_UF_NOT_DELEGATED flag of the AD User Account<br>
+Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-AccountPassword <i>SecureString</i><br>
+A new password value for an account.<br>
+This value is stored as an encrypted string.<br>
+If an empty or $null password is specified a Random password will be set.<br>
+If the password does not meet password policy the account will be disabled</p>
+<pre><code>   User accounts, by default, are created without a password.
+   A valid user account password may also be specified manually.
+   User accounts will never be enabled unless a valid password is set
+            
+   The following example will prompt for a password.
+      -AccountPassword (Read-Host -AsSecureString &quot;AccountPassword&quot;)
+</code></pre>
+<p>-AllowReversiblePasswordEncryption <i>bool</i><br>
+Whether reversible password encryption is allowed for the account.<br>
+This parameter sets the AllowReversiblePasswordEncryption property of the account.<br>
+This also sets the ADS_UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED flag of<br>
+the AD User Account Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-CannotChangePassword <i>bool</i><br>
+Whether the account password can be changed.<br>
+Sets the ‘CannotChangePassword’ property of an account.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Certificates <i>X509Certificate[]</i><br>
+Modifies the DER-encoded X.509v3 certificates of the account.<br>
+These certificates include the public key certificates issued to<br>
+this account by the Microsoft Certificate Service.<br>
+Sets the Certificates property of the account object.<br>
+The LDAP Display Name for this property is “userCertificate”.</p>
+<pre><code>   Syntax to add/remove/replace/clear:
+     -Certificates @{Add=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+     -Certificates @{Remove=&lt;i&gt;value3&lt;/i&gt;,&lt;i&gt;value4&lt;/i&gt;,...}
+     -Certificates @{Replace=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+     -Certificates $null
+
+   Multiple operations may be specified by using a list separated by semicolons.
+     -Certificates @{Add=value1,value2,...};@{Remove=value3,value4,...}
+</code></pre>
+<p>-ChangePasswordAtLogon <i>bool</i><br>
+Whether a password must be changed during the next logon attempt.<br>
+Values for this parameter: $false or 0, $true or 1<br>
+This cannot be set to $true for an account that also has PasswordNeverExpires set.</p>
+<p>-City <i>string</i><br>
+The user’s town or city.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> display name of the City property is “l”.</p>
+<p>-Company <i>string</i><br>
+The user’s company.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> display name of the Company property is “company”.</p>
+<p>-Country <i>string</i><br>
+The country or region code for the user’s language of choice.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of the Country property is “c”.</p>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default is the current user unless the cmdlet is run from an AD PowerShell provider drive<br>
+in which case the account associated with the drive is the default.</p>
+<pre><code>   &quot;User64&quot; or &quot;Domain01\User64&quot; or a &lt;a href=&quot;get-credential.html&quot;&gt;PSCredential&lt;/a&gt; object.
+</code></pre>
+<p>-Department <i>string</i><br>
+The user’s department.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “department”.</p>
+<p>-Description <i>string</i><br>
+A description of the object.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “description”.</p>
+<p>-DisplayName <i>string</i><br>
+The display name of the object.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “displayName”.</p>
+<p>-Division <i>string</i><br>
+The user’s division.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “division”.</p>
+<p>-EmailAddress <i>string</i><br>
+The user’s email address.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “mail”.</p>
+<p>-EmployeeID <i>string</i><br>
+The user’s employee ID.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “employeeID”.</p>
+<p>-EmployeeNumber <i>string</i><br>
+The user’s employee number.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “employeeNumber”.</p>
+<p>-Enabled <i>bool</i><br>
+Is the account enabled.<br>
+An enabled account requires a password.<br>
+This parameter sets the Enabled property for an account object.<br>
+Also sets the ADS_UF_ACCOUNTDISABLE flag of the AD User Account Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Fax <i>string</i><br>
+The user’s fax phone number.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “facsimileTelephoneNumber”.</p>
+<p>-GivenName <i>string</i><br>
+The user’s given name.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “givenName”.</p>
+<p>-HomeDirectory <i>string</i><br>
+Specifies a user’s home directory.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for the ‘HomeDirectory’ property is “homeDirectory”.</p>
+<p>-HomeDrive <i>string</i><br>
+Specifies a drive that is associated with the UNC path defined by -HomeDirectory.<br>
+The drive letter is specified as “<i>DriveLetter</i>:” where <i>DriveLetter</i> is a single,<br>
+uppercase letter.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “homeDrive”.</p>
+<p>-HomePage <i>string</i><br>
+The URL of the home page of the object.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “wWWHomePage”.</p>
+<p>-HomePhone <i>string</i><br>
+The user’s home telephone number.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “homePhone”.</p>
+<p>-Initials <i>string</i><br>
+The initials that represent part of a user’s name.<br>
+Use this value for the user’s middle initial.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name for this property is “initials”.</p>
+<p>-Instance <i>ADUser</i><br>
+An instance of a user object to use as a template for a new user object.</p>
+<pre><code>   Method 1: Use an existing user object as a template for a new object. Retrieve an
+   instance of an existing computer object with &lt;a href=&quot;get-aduser.html&quot;&gt;Get-ADUser&lt;/a&gt;. Then provide this object
+   to the -Instance parameter of New-ADuser to create a new user object.
+   property values may also be overridden for the new object by setting the appropriate parameters. 
+
+      $userInstance = Get-ADuser -Identity GSHeron 
+      New-ADuser -Name &quot;KWest&quot;  -Instance $userInstance -AccountPassword &quot;ChangeMe2&quot; -samAccountName &quot;Kanye West&quot;
+
+   Method 2: Create a new ADuser object and pass this object to the -Instance parameter
+   of the New-ADuser cmdlet to create the new AD user object. 
+
+      $userInstance = &lt;a href=&quot;new-object.html&quot;&gt;new-object&lt;/a&gt; Microsoft.ActiveDirectory.Management.ADcomputer
+      $userInstance.DisplayName = &quot;Kanye West&quot;
+      New-ADUser -SAMAccountName &quot;KWest&quot;  -Instance $userInstance
+</code></pre>
+<p>-LogonWorkstations <i>string</i><br>
+The computers that the user can access.<br>
+To specify more than one computer, create a single comma-separated list.<br>
+Identify each computer with a Security Accounts Manager (SAM) account name or the DNS<br>
+host name of the computer. The SAM account name is the same as the NetBIOS name of the computer.</p>
+<pre><code>   Example using SAMAccountName (NetBIOS) and DNSHostName values:
+      -LogonWorkstations &quot;pc064,pc065,pc1025.corp.ss64.com&quot;
+
+   The &lt;a href=&quot;../vb/syntax-userinfo.html&quot;&gt;LDAP&lt;/a&gt; display name for this property is &quot;userWorkStations&quot;. 
+</code></pre>
+<p>-Manager <i>ADUser</i><br>
+The user’s manager.<br>
+Set this by providing one of the following property values.<br>
+Examples:<br>
+Distinguished Name: CN=JohnDoe,OU=Europe,CN=Users,DC=corp,DC=ss64,DC=com<br>
+GUID (objectGUID) : 599c3d2e-f72d-4d20-8a88-030d99495f20<br>
+Security Identifier (objectSid) : S-1-5-21-3165297888-301567370-576410423-1103<br>
+SAM Account Name (sAMAccountName): JDoe</p>
+<pre><code>   The &lt;a href=&quot;../vb/syntax-userinfo.html&quot;&gt;LDAP&lt;/a&gt; Display Name of this property is &quot;manager&quot;.
+</code></pre>
+<p>-MobilePhone <i>string</i><br>
+The user’s mobile phone number.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “mobile”.</p>
+<p>-Name <i>string</i><br>
+The name of the object.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “name”.</p>
+<p>-Office <i>string</i><br>
+The location of the user’s office or place of business.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “office”.</p>
+<p>-OfficePhone <i>string</i><br>
+The user’s office telephone number.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “telephoneNumber”.</p>
+<p>-Organization <i>string</i><br>
+The user’s organization.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “o”.</p>
+<p>-OtherAttributes <i>hashtable</i><br>
+Specifies object attribute values for attributes that are not represented by cmdlet parameters.<br>
+Syntax:<br>
+To specify a single value:<br>
+-OtherAttributes @{‘<i>AttributeLDAPDisplayName</i>’=<i>value</i>}<br>
+To specify multiple values<br>
+-OtherAttributes @{‘<i>AttributeLDAPDisplayName</i>’=<i>value1,value2</i>,…}</p>
+<pre><code>    e.g.:
+       -OtherAttributes @{'ItemPrice'=123; 'favColors'=&quot;red&quot;,&quot;blue&quot;}
+</code></pre>
+<p>-OtherName <i>string</i><br>
+A name in addition to a user’s given name and surname, such as the user’s middle name.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “middleName”.</p>
+<p>-PassThru<br>
+Returns the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-PasswordNeverExpires <i>bool</i><br>
+Whether the password of an account can expire.<br>
+This parameter also sets the ADS_UF_DONT_EXPIRE_PASSWD flag of the AD UAC attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<pre><code>   Note: This parameter cannot be set to $true for an account that also has the ChangePasswordAtLogon property set.
+</code></pre>
+<p>-PasswordNotRequired <i>bool</i><br>
+Whether the account requires a password.<br>
+This parameter also sets the ADS_UF_PASSWD_NOTREQD flag of the AD UAC attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Path <i>string</i><br>
+The X.500 path of the OU or container where the new object is created.<br>
+In many cases, a <a href="path-defaults.html">default value</a> will be used for -Path.</p>
+<pre><code>   Example:
+      -Path &quot;ou=test1,dc=demo,dc=ss64,dc=com&quot;
+
+   Note: PowerShell cmdlets, such &lt;a href=&quot;new-item.html&quot;&gt;New-Item&lt;/a&gt;, &lt;a href=&quot;remove-item.html&quot;&gt;Remove-Item&lt;/a&gt;, &lt;a href=&quot;remove-itemproperty.html&quot;&gt;Remove-ItemProperty&lt;/a&gt;, &lt;a href=&quot;rename-item.html&quot;&gt;Rename-Item&lt;/a&gt; and 
+   &lt;a href=&quot;set-itemproperty.html&quot;&gt;Set-ItemProperty&lt;/a&gt; also contain a -Path property. However, for the &lt;a href=&quot;ad.html&quot;&gt;AD Provider cmdlets&lt;/a&gt;, -Path 
+   identifies the path of the actual object and not the container.
+</code></pre>
+<p>-POBox <i>string</i><br>
+The user’s post office box number.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “postOfficeBox”.</p>
+<p>-PostalCode <i>string</i><br>
+The user’s postal code or zip code.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “postalCode”.</p>
+<p>-ProfilePath <i>string</i><br>
+A path to the user’s profile.<br>
+This value can be a local absolute path or a UNC path.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “profilePath”.</p>
+<pre><code>   Examples:  -ProfilePath &quot;E:\users\profiles\GailMoss&quot;
+              -ProfilePath &quot;\\users\profiles\GailMoss&quot;
+</code></pre>
+<p>-SamAccountName <i>string</i><br>
+The Security Account Manager (SAM) account name of the user, group, computer, or service account.<br>
+The maximum length of the description is 256 characters.<br>
+For compatibility with older operating systems use 20 characters or less.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “sAMAccountName”.<br>
+If the value provided is not terminated with a ‘$’ character, the system will add one if needed.</p>
+<p>-ScriptPath <i>string</i><br>
+A path to the user’s log-on script.<br>
+The default path is the NetLogon share<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “scriptPath”.</p>
+<pre><code>   Example:
+       -ScriptPath &quot;Logon.cmd&quot;
+</code></pre>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number) or AD Snapshot instance.</p>
+<pre><code>   Examples: demo.SS64.com  demo  demoDC02.demo.ss64.com  demoDC02.demo.ss64.com:3268
+</code></pre>
+<p>-ServicePrincipalNames <i>string[]</i><br>
+The service principal names for the account.<br>
+Use the following syntax to add remove, replace or clear service principal name values:</p>
+<pre><code>      -ServicePrincipalNames @{Add=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+      -ServicePrincipalNames @{Remove=&lt;i&gt;value3&lt;/i&gt;,&lt;i&gt;value4&lt;/i&gt;,...}
+      -ServicePrincipalNames @{Replace=&lt;i&gt;value1&lt;/i&gt;,&lt;i&gt;value2&lt;/i&gt;,...}
+      -ServicePrincipalNames $null
+
+   Multiple operations may be specified by using a list separated by semicolons.
+     -ServicePrincipalNames @{Add=value1,value2,...};@{Remove=value3,value4,...}
+
+   Example:
+     -ServicePrincipalNames @{Add=&quot;SQLservice\NewService.ss64.com:1456&quot;};{Remove=&quot;SQLservice\demo.ss64.com:1456&quot;}
+</code></pre>
+<p>-SmartcardLogonRequired <i>bool</i><br>
+Whether a smart card is required to logon.<br>
+This parameter also sets the ADS_UF_SMARTCARD_REQUIRED flag of the AD User Account<br>
+Control attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-State <i>string</i><br>
+The user’s or Organizational Unit’s state or province.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “st”.</p>
+<p>-StreetAddress <i>string</i><br>
+The user’s street address.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “streetAddress”.</p>
+<p>-Surname <i>string</i><br>
+The user’s last name or surname.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “sn”.</p>
+<p>-Title <i>string</i><br>
+The user’s title.<br>
+The <a href="../vb/syntax-userinfo.html">LDAP</a> Display Name of this property is “title”.</p>
+<p>-TrustedForDelegation <i>bool</i><br>
+Whether an account is trusted for Kerberos delegation.<br>
+A service that runs under an account that is trusted for Kerberos delegation can<br>
+assume the identity of a client requesting the service.<br>
+This value also sets the ADS_UF_TRUSTED_FOR_DELEGATION flag of the AD UAC attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Type <i>string</i><br>
+The type of object to create. If not specified this will default to “User”.<br>
+This option exists to support migrating data from other directory services.<br>
+Set <i>string</i> to the LDAP display name of the AD Schema Class that represents the<br>
+type of object to be created.  The selected type must be a subclass <br>       of the User schema class. e.g. “InetOrgPerson” or “User”.<br><br>
+-UserPrincipalName <i>string</i><br>
+Each user account has a user principal name (UPN) in the format<br>
+<i>user</i>@<i>DNS-domain-name</i><br>
+A UPN is a friendly name assigned by an administrator that is shorter than the LDAP<br>
+distinguished name used by the system and easier to remember.<br>
+The UPN is independent of the user object’s DN, so a user object can be moved or<br>
+renamed without affecting the user logon name. When logging on using a UPN, users<br>
+no longer have to choose a domain from a list on the logon dialog box.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<pre><code>-WhatIf
+   Describe what would happen if you executed the command, without actually executing the command.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>New-ADUser  creates a new AD user.<br>
+<br>
+Property values that are not associated with cmdlet parameters can be set by using the <span class="code">-OtherAttributes</span> parameter.<br>
+<br>
+You must specify the SAMAccountName parameter to create a user. <br>
+<br>
+New-ADUser can also create different types of user accounts such as iNetOrgPerson accounts. To do 
+this, set the <span class="code">-Type</span> parameter.<br>
+<br>
+The <span class="code">-Path</span> parameter specifies the container or organizational unit (OU) for the new user. If not specified the user object will be created in the default container for user objects in the domain.<br>
+<br>
+There are 3 different ways to create a user object with this cmdlet:<br>
+<br>
+Method 1: Use  New-ADUser, specify the required parameters, and set any additional property values by using the cmdlet parameters.<br>
+<br>
+Method 2: Use a template to create the new object. Create a new user object or retrieve a copy of an existing user object and set the <span class="code">-Instance</span> parameter to this object. The object provided to the Instance parameter is 
+used as a template for the new object.<br>
+<br>
+Method 3: Use <a href="import-csv.html">Import-CSV</a>  with the New-ADUser cmdlet to create multiple AD user objects. To
+do this, use the Import-CSV cmdlet to create the custom objects from a CSV file that contains a list of object properties. Then pass these objects through the pipeline to  New-ADUser.</p>
+<p><b>Examples</b></p>
+<p>Ceate new user account named "User64" and prompt for a password:</p>
+<pre>PS C:\&gt; $pw = <a href="read-host.html">Read-Host</a> -Prompt 'Enter a Password for this user' -AsSecureString 
+PS C:\&gt; New-ADUser -Name User64 -SamAccountName user64 -DisplayName 'User 64' -AccountPassword $pw -Enabled $true</pre>
+<p>Create a new user named 'GailMoss' and set the title and mail properties on the new object:</p>
+<p><span class="code">PS C:\&gt; New-ADUser GailMoss -OtherAttributes @{title="director";mail="GailMoss@ss64.com"}</span></p>
+<p>Create a new inetOrgPerson named 'GailMoss' on an AD LDS instance.: </p>
+<p><span class="code">PS C:\&gt; New-ADUser GailMoss -Type iNetOrgPerson -Path "DC=AppNC" -server lds.SS64.com:50000</span></p>
+<p>Create user accounts from a CSV formatted spreadsheet, (adjust the items in bold to match the s/sheet column names):</p>
+<p class="code">PS C:\&gt; <a href="import-csv.html">Import-Csv</a> .\users.csv | foreach-object {<br>
+$userprinicpalname = $_.SamAccountName + "@<b>EXAMPLE</b>.com" <br>
+New-ADUser -SamAccountName $_.<b>SamAccountName</b> -UserPrincipalName $userprinicpalname -Name $_.<b>name</b> -DisplayName $_.<b>name</b> -GivenName $_.<b>cn</b> -SurName $_.<b>sn</b> -Department $_.<b>Department</b> -Path "<b>CN=Users,DC=EXAMPLE,DC=com</b>" -AccountPassword (ConvertTo-SecureString "<b>PASSWORD1</b>" -AsPlainText -force) -Enabled $True -PasswordNeverExpires $True -PassThru }</p>
+<p>Create a new user named 'GailMoss' with a certicate imported from the file "export.cer": </p>
+<p><span class="code">PS C:\&gt; New-ADUser GailMoss -Certificate (new-object System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList "export.cer")</span></p>
+<p class="quote"><i> “If there is a sin against life, it consists perhaps not so much in despairing of life as in hoping for another life and in eluding the implacable grandeur of this life” ~ Albert Camus</i></p>
+<p><b>Related:</b></p>
+<p><a href="new-qaduser.html">New-QADUser</a> - Create a new user account<br>
+<a href="remove-aduser.html">Remove-adUser</a> - Remove an AD user. <br>
+<a href="set-aduser.html">Set-adUser</a> - Modify an AD user.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="new-aduser.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/new-aduser.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

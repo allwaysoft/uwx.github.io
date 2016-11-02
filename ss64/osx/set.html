@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="set 
+Create a shell variable and set it equal to some value. 
+Syntax
+      set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
+Key
+-a   Automatically mark variables and functions which are modified or cre">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/set.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="set 
+Create a shell variable and set it equal to some value. 
+Syntax
+      set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
+Key
+-a   Automatically mark variables and functions which are modified or cre">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="set 
+Create a shell variable and set it equal to some value. 
+Syntax
+      set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
+Key
+-a   Automatically mark variables and functions which are modified or cre">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>set</h1> 
+<p>Create a shell variable and set it equal to some value. </p>
+<pre>Syntax
+      set [--abefhkmnptuvxBCHP] [-o <i>option</i>] [<i>arg</i> ...]
+<p>Key<br>
+-a   Automatically mark variables and functions which are modified or created for export to<br>
+the environment of subsequent commands.<br>
+-b   Report the status of terminated background jobs immediately, rather than before the<br>
+next primary prompt.  This is effective only when job control is enabled.<br>
+-e   Exit immediately if a simple command (see SHELL GRAMMAR) exits with a non-zero<br>
+status.  The shell does not exit if the command that fails is part of the command list<br>
+immediately following a while or until keyword, part of the test in an  if  statement,<br>
+part  of a &amp;&amp; or || list, or if the command’s return value is being inverted via !.  A<br>
+trap on ERR, if set, is executed before the shell exits.<br>
+-f   Disable pathname expansion.<br>
+-h   Remember the location of commands as they are looked up for execution. This is enabled<br>
+by default.<br>
+-k   All arguments in the form of assignment statements are placed in the environment for a<br>
+command, not just those that precede the command name.<br>
+-m   Monitor mode.  Job control is enabled.  This option is on by default  for  interactive<br>
+shells  on  systems that support it (see JOB CONTROL).  Background processes run in a<br>
+separate process group and a line containing their exit status is printed upon their<br>
+completion.<br>
+-n   Read commands but do not execute them. This may be used to check a shell script for<br>
+syntax errors. This is ignored by interactive shells.<br>
+-o <i>option-name</i><br>
+The <i>option-name</i> can be one of the following:<br>
+allexport   Same as -a.<br>
+braceexpand Same as -B.<br>
+emacs       Use an emacs-style command line editing interface.  This is enabled by default<br>
+when the shell is interactive, unless the shell is started with --noediting<br>
+errtrace    Same as -E.<br>
+functrace   Same as -T.<br>
+errexit     Same as -e.<br>
+hashall     Same as -h.<br>
+histexpand  Same as -H.<br>
+history     Enable command history, as described above under HISTORY.  This option  is  on<br>
+by default in interactive shells.<br>
+ignoreeof   The  effect is as if the shell command `<a href="syntax-shell_vars.html">IGNOREEOF</a>=10’ had been executed<br>
+keyword     Same as -k.<br>
+monitor     Same as -m.<br>
+noclobber   Same as -C.<br>
+noexec      Same as -n.<br>
+noglob      Same as -f.  nolog Currently ignored.<br>
+notify      Same as -b.<br>
+nounset     Same as -u.<br>
+onecmd      Same as -t.<br>
+physical    Same as -P.<br>
+pipefail    If set, the return value of a pipeline is the value of the last (rightmost)<br>
+command to exit with a non-zero status, or zero if all commands in the pipeline<br>
+exit successfully.  This option is disabled by default.<br>
+posix       Change the behavior of bash where the default operation differs from the POSIX<br>
+standard to match the standard (posix mode).<br>
+privileged  Same as -p.<br>
+verbose     Same as -v.<br>
+vi          Use a vi-style command line editing interface.<br>
+xtrace  Same as -x.</p></pre><p></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>If  <span class="code">-o</span> is supplied with no<i> option-name</i>, the values of the current options are printed.<br>
+If <span class="code">+o</span> is supplied with no <i>option-name</i>, a series of set commands to recreate  the current
+option settings is displayed on the standard output.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre>   -p      Turn  on  privileged  mode. In this mode, the $ENV and $BASH_ENV files are not processed,
+           shell functions are not inherited from the environment, and the SHELLOPTS variable,
+           if it appears in the environment, is ignored.  If the shell is started with the
+           effective user (group) id not equal to the real user (group) id, and the -p option
+           is  not supplied, these actions are taken and the effective user id is set to the real
+           user id.  If the -p option is supplied at startup, the effective user id is not reset.
+           Turning  this option off causes the effective user and group ids to be set to the real
+           user and group ids.
+   -t      Exit after reading and executing one command.
+   -u      Treat unset variables as an error when performing parameter expansion. If expansion
+           is  attempted  on  an  unset  variable, the shell prints an error message, and, if not
+           interactive, exits with a non-zero status.
+   -v      Print shell input lines as they are read.
+   -x      After expanding each simple command, for command, case  command,  select  command,  or
+           arithmetic for command, display the expanded value of PS4, followed by the command and
+           its expanded arguments or associated word list.
+   -B      The shell performs brace expansion  (see  Brace  Expansion  above).   This  is  on  by
+           default.
+   -C      If  set, bash does not overwrite an existing file with the &gt;, &gt;&amp;, and &lt;&gt; redirection
+           operators. This may be overridden when creating output files by using the redirection
+           operator &gt;| instead of &gt;.
+   -E      If set, any trap on ERR is inherited by shell functions, command substitutions, and
+           commands executed in a subshell environment. The ERR trap is normally  not  inherited
+           in such cases.
+   -H      Enable ! style history substitution. This option is on by default when the shell is
+           interactive.
+   -P      If set, the shell does not follow symbolic links when executing commands  such  as  cd
+           that  change  the current working directory. It uses the physical directory structure
+           instead.  By default, bash follows the logical chain of  directories  when  performing
+           commands which change the current directory.
+   -T      If  set,  any traps on DEBUG and RETURN are inherited by shell functions, command substitutions,
+           and commands executed in a subshell environment. The DEBUG and RETURN traps are 
+           normally not inherited in such cases.
+   --      If  no arguments follow this option, then the positional parameters are unset. Otherwise,
+           the positional parameters are set to the args, even if some of them begin with a -.
+   -       Signal the end of options, cause all remaining args to be assigned to the positional
+           parameters. The -x and -v options are turned off. If there are no args, the positional
+           parameters remain unchanged.</pre>
+<p> The options are off by default unless otherwise noted. Using + rather than - causes these options to be turned off. 
+</p><p>Without options, the <i>name</i> and <i>value</i> of each shell variable are displayed in a format that  can be  reused as input for setting or resetting the currently-set variables.  
+</p><p>Read-only variables cannot be reset. <br>
+In posix mode, only shell  variables  are  listed.<br>
+The  output  is  sorted according  to  the  current  locale.   
+</p><p>When  options  are  specified,  they set or unset shell attributes.  Any arguments remaining after the options are processed are treated as values for the  positional parameters and are assigned, in order, to $1, $2, ...
+</p><p>The options can also be specified as arguments to an invocation of the shell. The current set of options may be found in $-. 
+</p><p>The return status is always true.<br>
+<span class="code">set</span>  is a bash builtin command.
+</p><p class="quote"><i>“Have no friends not equal to yourself” ~ Confucious (Analects)</i></p>
+<p><b>Related:</b></p>
+<p><a href="echo.html">echo</a> - Display text (or variables) on screen<br>
+<a href="unset.html">unset</a> - Remove variable or function names<br>
+</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/set.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

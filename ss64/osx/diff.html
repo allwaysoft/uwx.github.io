@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="diff 
+Display the differences between two files, or each corresponding file in two directories. 
+Each set of differences is called a &quot;diff&quot; or &quot;patch&quot;. For files that are identical, &apos;diff&apos; normally pr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/diff.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="diff 
+Display the differences between two files, or each corresponding file in two directories. 
+Each set of differences is called a &quot;diff&quot; or &quot;patch&quot;. For files that are identical, &apos;diff&apos; normally pr">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.080Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="diff 
+Display the differences between two files, or each corresponding file in two directories. 
+Each set of differences is called a &quot;diff&quot; or &quot;patch&quot;. For files that are identical, &apos;diff&apos; normally pr">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>diff</h1> 
+<p>Display the differences between two files, or each corresponding file in two directories. <br>
+Each set of differences is called a "diff" or "patch". For files that are identical, 'diff' normally produces no output; for binary (non-text) files, `diff' normally reports only that they are different.</p>
+<pre>Syntax
+      diff [<i>options</i>] <i>from-file to-file</i> </pre>
+<pre>Options
+<span class="body">    Multiple single letter options (unless they take an argument) can be combined into a single command-line word: so <code>-ac' is equivalent to </code>-a -c'.</span>
+<pre><code>  -&lt;i&gt;lines&lt;/i&gt;  Show &lt;i&gt;lines&lt;/i&gt; lines of context. This option is obsolete.
+
+   -a     Treat all files as text and compare  them  line-by-
+          line, even if they do not seem to be text.
+
+   -b     Ignore changes in amount of white space.
+
+   -B     Ignore  changes  that  just  insert or delete blank
+          lines.
+
+   --brief
+          Report only  whether  the  files  differ,  not  the
+          details of the differences.
+
+   -c     Use the context output format.
+
+   -C &lt;i&gt;lines&lt;/i&gt;
+   --context[=&lt;i&gt;lines&lt;/i&gt;]
+          Use  the  context  output format, showing &lt;i&gt;lines&lt;/i&gt; (an
+          integer) lines of context, or three if lines is not
+          given.  For proper operation, patch typically needs
+          at least two lines of context.
+
+   --changed-group-format=&lt;i&gt;format&lt;/i&gt;
+          Use &lt;i&gt;format&lt;/i&gt; to output a line group  containing  dif-
+          fering  lines  from both files in if-then-else for-
+          mat.
+
+   -d     Change the algorithm to perhaps find a smaller  set
+          of changes.  This makes diff slower (sometimes much
+          slower).
+
+   -D &lt;i&gt;name&lt;/i&gt;
+          Make merged if-then-else format output, conditional
+          on the preprocessor macro name.
+
+   -e
+   --ed   Make output that is a valid ed script.
+
+   --exclude=&lt;i&gt;pattern&lt;/i&gt;
+          When comparing directories, ignore files and subdi-
+          rectories whose basenames match &lt;i&gt;pattern&lt;/i&gt;.
+
+   --exclude-from=&lt;i&gt;file&lt;/i&gt;
+          When comparing directories, ignore files and subdi-
+          rectories  whose  basenames  match any pattern con-
+          tained in &lt;i&gt;file&lt;/i&gt;.
+
+   --expand-tabs
+          Expand tabs to spaces in the  output,  to  preserve
+          the alignment of tabs in the input files.
+
+   -f     Make  output  that  looks vaguely like an ed script
+          but has changes in the order  they  appear  in  the
+          file.
+
+   -F &lt;i&gt;regexp&lt;/i&gt;
+          In  context  and  unified  format, for each hunk of
+          differences, show some of the last  preceding  line
+          that matches &lt;i&gt;regexp&lt;/i&gt;.
+
+   --forward-ed
+          Make  output  that  looks vaguely like an ed script
+          but has changes in the order  they  appear  in  the
+          file.
+
+   -h     This  option currently has no effect; it is present
+          for Unix compatibility.
+
+   -H     Use heuristics to speed  handling  of  large  files
+          that have numerous scattered small changes.
+
+   --horizon-lines=&lt;i&gt;lines&lt;/i&gt;
+          Do  not  discard the last &lt;i&gt;lines&lt;/i&gt; lines of the common
+          prefix and the first lines lines of the common suf-
+          fix.
+
+   -i     Ignore  changes in case; consider upper- and lower-
+          case letters equivalent.
+
+   -I &lt;i&gt;regexp&lt;/i&gt;
+          Ignore changes that just  insert  or  delete  lines
+          that match &lt;i&gt;regexp&lt;/i&gt;.
+
+   --ifdef=&lt;i&gt;name&lt;/i&gt;
+          Make merged if-then-else format output, conditional
+          on the preprocessor macro &lt;i&gt;name&lt;/i&gt;.
+
+   --ignore-all-space
+          Ignore white space when comparing lines.
+
+   --ignore-blank-lines
+          Ignore changes that just  insert  or  delete  blank
+          lines.
+
+   --ignore-case
+          Ignore  changes in case; consider upper- and lower-
+          case to be the same.
+
+   --ignore-matching-lines=&lt;i&gt;regexp&lt;/i&gt;
+          Ignore changes that just  insert  or  delete  lines
+          that match &lt;i&gt;regexp&lt;/i&gt;.
+
+   --ignore-space-change
+          Ignore changes in amount of white space.
+
+   --initial-tab
+          Output a tab rather than a space before the text of
+          a line in normal or context  format.   This  causes
+          the alignment of tabs in the line to look normal.
+
+   -l     Pass the output through pr to paginate it.
+
+   -L &lt;i&gt;label&lt;/i&gt;
+   --label=&lt;i&gt;label&lt;/i&gt;
+          Use &lt;i&gt;label&lt;/i&gt; instead of the file name in the context
+          format and unified format headers.
+
+   --left-column
+          Print only the left column of two common  lines  in
+          side by side format.
+
+   --line-format=&lt;i&gt;format&lt;/i&gt;
+          Use  &lt;i&gt;format&lt;/i&gt;  to  output all input lines in in-then-
+          else format.
+
+   --minimal
+          Change the algorithm to perhaps find a smaller  set
+          of changes.  This makes diff slower (sometimes much
+          slower).
+
+   -n     Output RCS-format diffs; like -f except  that  each
+          command specifies the number of lines affected.
+
+   -N
+   --new-file
+          In directory comparison, if a file is found in only
+          one directory, treat it as present but empty in the
+          other directory.
+
+   --new-group-format=&lt;i&gt;format&lt;/i&gt;
+          Use  &lt;i&gt;format&lt;/i&gt;  to  output a group of lines taken from
+          just the second file in if-then-else format.
+
+   --new-line-format=&lt;i&gt;format&lt;/i&gt;
+          Use &lt;i&gt;format&lt;/i&gt; to output a line  taken  from  just  the
+          second file in if-then-else format.
+
+   --old-group-format=&lt;i&gt;format&lt;/i&gt;
+          Use  &lt;i&gt;format&lt;/i&gt;  to  output a group of lines taken from
+          just the first file in if-then-else format.
+
+   --old-line-format=&lt;i&gt;format&lt;/i&gt;
+          Use &lt;i&gt;format&lt;/i&gt; to output a line  taken  from  just  the
+          first file in if-then-else format.
+
+   -p     Show which C function each change is in.
+
+   -P     When  comparing directories, if a file appears only
+          in the second directory of the  two,  treat  it  as
+          present but empty in the other.
+
+   --paginate
+          Pass the output through pr to paginate it.
+
+   -q     Report  only  whether  the  files  differ,  not the
+          details of the differences.
+
+   -r     When comparing directories, recursively compare any
+          subdirectories found.
+
+   --rcs  Output  RCS-format  diffs; like -f except that each
+          command specifies the number of lines affected.
+
+   --recursive
+          When comparing directories, recursively compare any
+          subdirectories found.
+
+   --report-identical-files
+   -s     Report when two files are the same.
+
+   -S &lt;i&gt;file&lt;/i&gt;
+          When  comparing  directories,  start  with the file
+          &lt;i&gt;file&lt;/i&gt;.  This is used for resuming an aborted compar-
+          ison.
+
+   --sdiff-merge-assist
+          Print extra information to help &lt;a href=&quot;sdiff.html&quot;&gt;sdiff&lt;/a&gt;.  sdiff uses
+          this option when it runs diff.  This option is  not
+          intended for users to use directly.
+
+   --show-c-function
+          Show which C function each change is in.
+
+   --show-function-line=&lt;i&gt;regexp&lt;/i&gt;
+          In  context  and  unified  format, for each hunk of
+          differences, show some of the last  preceding  line
+          that matches &lt;i&gt;regexp&lt;/i&gt;.
+
+   --side-by-side
+          Use the side by side output format.
+
+   --speed-large-files
+          Use  heuristics  to  speed  handling of large files
+          that have numerous scattered small changes.
+
+   --starting-file=&lt;i&gt;file&lt;/i&gt;
+          When comparing directories,  start  with  the  file
+          &lt;i&gt;file&lt;/i&gt;.  This is used for resuming an aborted compar-
+          ison.
+
+   --suppress-common-lines
+          Do not print common lines in side by side format.
+
+   -t     Expand tabs to spaces in the  output,  to  preserve
+          the alignment of tabs in the input files.
+
+   -T     Output a tab rather than a space before the text of
+          a line in normal or context  format.   This  causes
+          the alignment of tabs in the line to look normal.
+
+   --text Treat  all  files as text and compare them line-by-
+          line, even if they do not appear to be text.
+
+   -u     Use the unified output format.
+
+   --unchanged-group-format=&lt;i&gt;format&lt;/i&gt;
+          Use &lt;i&gt;format&lt;/i&gt; to output a group of common lines  taken
+          from both files in if-then-else format.
+
+   --unchanged-line-format=&lt;i&gt;format&lt;/i&gt;
+          Use &lt;i&gt;format&lt;/i&gt; to output a line common to both files in
+          if-then-else format.
+
+   --unidirectional-new-file
+          When comparing directories, if a file appears  only
+          in  the  second  directory  of the two, treat it as
+          present but empty in the other.
+
+   -U &lt;i&gt;lines&lt;/i&gt;
+   --unified[=&lt;i&gt;lines&lt;/i&gt;]
+          Use the unified output format,  showing  &lt;i&gt;lines&lt;/i&gt;  (an
+          integer) lines of context, or three if lines is not
+          given.  For proper operation, patch typically needs
+          at least two lines of context.
+
+   -v
+   --version
+          Output the version number of diff.
+
+   -w     Ignore white space when comparing lines.
+
+   -W &lt;i&gt;columns&lt;/i&gt;
+   --width=&lt;i&gt;columns&lt;/i&gt;
+          Use an output width of &lt;i&gt;columns&lt;/i&gt; in side by side for-
+          mat.
+
+   -x &lt;i&gt;pattern&lt;/i&gt;
+          When comparing directories, ignore files and subdi-
+          rectories whose basenames match &lt;i&gt;pattern&lt;/i&gt;.
+
+   -X &lt;i&gt;file&lt;/i&gt;
+          When comparing directories, ignore files and subdi-
+          rectories whose basenames match  any  pattern  con-
+          tained in &lt;i&gt;file&lt;/i&gt;.
+
+   -y     Use the side by side output format.&lt;/pre&gt;
+</code></pre>
+<p><b>Notes<br></b>In the simplest case, diff compares the contents of the two files <i>from-file </i>and <i>to-file</i>. A file name of - stands for text read from the standard input. </p>
+<p>If <i>from-file</i> is a directory and <i>to-file </i>is not, diff compares the file in <i>from-file</i> whose file name is that of <i>to-file</i>, and vice versa. The non-directory file must not be -. </p>
+<p>If both <i>from-file</i> and <i>to-file </i>are directories, diff compares corresponding files in both directories, in alphabetical order; this comparison is not recursive unless the -r or --recursive option is given. </p>
+<p>As a special case, diff - - compares a copy of standard input to itself.</p>
+<p>diff never compares the actual contents of a directory as if it were a file. The file that is fully specified can not be standard input, because standard input is nameless and the notion of `file with the same name' does 
+  not apply. </p>
+<p>diff options begin with -, so normally<i> from-file</i> and <i>to-file</i>may not begin with -. However, -- as an argument by itself treats the remaining arguments as file names even if they begin with -.</p>
+<p class="quote"><i>“In order to really enjoy a dog, one doesn't merely try to train him to be semihuman. The point of it is to open oneself to the possibility of becoming partly a dog” - Edward Hoagland</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/diff.1.html" target="_blank" rel="external">diff man page</a> - Apple.com<br>
+patch - apply a diff file to an original<br>
+<a href="comm.html">comm</a> - Compare two sorted files line by line<br>
+ed - Line editor <br>
+<a href="cmp.html">cmp</a> - Compare two files<br>
+<a href="diff3.html">diff3</a> - Show differences among three files<br>
+FileMerge - GUI tool to compare two ASCII files/folders (Developer tools)<br>
+<a href="pr.html">pr</a> - Convert text files for printing<br>
+<a href="sdiff.html">sdiff</a> - Merge two files interactively</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/diff.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

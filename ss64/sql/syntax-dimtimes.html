@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Create Time Dimension
+The procedure below creates and populates a time table containing records 
+at one minute intervals for a single day.
+The time range is 00:00:00 through 23:59:00. 
+The table retur">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/syntax-dimtimes.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Create Time Dimension
+The procedure below creates and populates a time table containing records 
+at one minute intervals for a single day.
+The time range is 00:00:00 through 23:59:00. 
+The table retur">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Create Time Dimension
+The procedure below creates and populates a time table containing records 
+at one minute intervals for a single day.
+The time range is 00:00:00 through 23:59:00. 
+The table retur">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>Create Time Dimension</h1>
+<p>The procedure below creates and populates a time table containing records 
+at one minute intervals for a single day.
+The time range is 00:00:00 through 23:59:00. 
+</p><p>The table returned  contains a single datetime column along with<br>
+several other CHAR and INT columns containing  formatted attributes of each datetime.<br>
+This make it convenient to get various commonly<br>
+used time attributes from the data warehouse without having to program and test<br>
+the same logic in many reports/applications. </p><p></p>
+<p>First create an empty table (called dimTimes) with this <a href="dimtimes_create_table.txt">Create Table script</a></p>
+<pre>USE [SS64_DATA_WAREHOUSE]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE Procedure [dbo].[userproc_GenerateDimTimes] AS 
+BEGIN 
+-- declare variables to hold the start and end date
+DECLARE @Startint INTEGER
+DECLARE @Endint INTEGER
+-- Assign values to the start and end numbers, there are 1440 seconds in a day
+SET @Startint = 0
+SET @Endint = 1439
+<p>DECLARE @LoopNum integer<br>
+SET @LoopNum = @Startint</p>
+<p>– Loop once for each second in a day<br>
+WHILE @LoopNum &lt;= @Endint<br>
+BEGIN<br>
+– add a record to the time dimension table<br>
+INSERT INTO dimTimes (CLOCKTIME,HOUR24,MINUTE24,TIME24,MINUTE12,HOUR12,HOUR12_LONG,TIME12,TIME12_LONG,AMPM) VALUES (<br>
+Cast(RIGHT(‘0’ + Cast((Floor(@LoopNum/60)) AS VARCHAR(2)), 2) + ‘:’ + RIGHT(‘0’ + Cast(@LoopNum - (Floor(@LoopNum/60) * 60) AS VARCHAR(2)), 2) AS SMALLDATETIME),<br>
+Cast((Floor(@LoopNum/60)) as int)<br>
+Cast(@LoopNum - (Floor(@LoopNum/60) * 60) as int),<br>
+Cast(RIGHT(‘0’ + Cast(Floor(@LoopNum/60) AS VARCHAR(2)), 2) + ‘:’ + RIGHT(‘0’ + Cast(@LoopNum - (Floor(@LoopNum/60) * 60) AS VARCHAR(2)), 2) + ‘:00’ as char),<br>
+Cast(@LoopNum - (Floor(@LoopNum/60) * 60) as int),<br>
+Cast(CASE WHEN ((Floor(@LoopNum/60)) % 12) &lt;&gt; 0 THEN ((Floor(@LoopNum/60)) % 12) ELSE 12 END as int),<br>
+Cast(cast(CASE WHEN ((Floor(@LoopNum/60)) % 12) &lt;&gt; 0 THEN ((Floor(@LoopNum/60)) % 12) ELSE 12 END as varchar) + ’ ’ + CASE WHEN (Floor(@LoopNum/60)) &lt; 12 THEN ‘AM’ ELSE ‘PM’ END AS VARCHAR(5))<br>
+Cast(RIGHT(‘0’ + Cast(CASE WHEN ((Floor(@LoopNum/60)) % 12) &lt;&gt; 0 THEN ((Floor(@LoopNum/60)) % 12) ELSE 12 END AS VARCHAR(2)), 2) + ‘:’ + RIGHT(‘0’ + Cast((@LoopNum - (Floor(@LoopNum/60) * 60)) AS VARCHAR(2)), 2) + ‘:00’ as char),<br>
+Cast(RIGHT(‘0’ + Cast(CASE WHEN ((Floor(@LoopNum/60)) % 12) &lt;&gt; 0 THEN ((Floor(@LoopNum/60)) % 12) ELSE 12 END AS VARCHAR(2)), 2) + ‘:’ + RIGHT(‘0’ + Cast((@LoopNum - (Floor(@LoopNum/60) * 60)) AS VARCHAR(2)), 2) + ':00 ’ + CASE WHEN (Floor(@LoopNum/60)) &lt; 12 THEN ‘AM’ ELSE ‘PM’ END as char),<br>
+Cast(CASE WHEN (Floor(@LoopNum/60)) &lt; 12 THEN ‘AM’ ELSE ‘PM’ END as char<br>
+Cast(CASE WHEN (@LoopNum) = 0 THEN ‘Midnight’ WHEN (@LoopNum) = 720 THEN ‘Midday’ WHEN (Floor(@LoopNum/60)) &lt; 12 THEN ‘AM’ ELSE ‘PM’ END as char)<br>
+)</p>
+<p>SET @LoopNum = @LoopNum + 1</p>
+<p>END<br>
+– Add values for Unknown<br>
+SET IDENTITY_INSERT dimTimes ON<br>
+INSERT INTO dimTimes (TIMESK,CLOCKTIME,HOUR24,MINUTE24,TIME24,MINUTE12,HOUR12,HOUR12_LONG,TIME12,TIME12_LONG,AMPM) VALUES (<br>
+-1,‘00:00:00’,-1,-1,‘Unknown’,-1,-1,‘Unk’,‘Unknown’,‘Unknown’,‘Unknown’)<br>
+SET IDENTITY_INSERT dimTimes OFF</p>
+<p>Return<br>
+END</p></pre><p></p>
+<p><b>Example</b></p>
+<p>-- Empty the table (in case previously populated) <br>
+DELETE FROM dbo.DimTimes<br>
+Go</p>
+<p>-- Reseed the identity column<br>
+DBCC CHECKIDENT('DimTimes', RESEED, 0)<br>
+Go</p>
+<p>-- Run the procedure<br>
+Exec userproc_GenerateDimTimes<br>
+Go</p>
+<p><b>Related</b></p>
+<p><a href="syntax-dimdates.html">Date Dimension </a></p>
+<p class="quote"><i>“The real minimum wage is zero” - Thomas Sowell</i></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/syntax-dimtimes.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

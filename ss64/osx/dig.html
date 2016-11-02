@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dig (domain information groper) 
+A flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. Most">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/dig.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="dig (domain information groper) 
+A flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. Most">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.081Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="dig (domain information groper) 
+A flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. Most">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>dig (domain information groper)</h1> 
+<p>A flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. Most DNS administrators use dig to troubleshoot DNS problems because of its flexibility, ease of use and clarity of output. Other lookup tools tend to have less functionality than dig.</p>
+<pre>Syntax:
+     dig [@<i>server</i>] [-b <i>address</i>] [-c <i>class</i>] [-f <i>filename</i>] [-k <i>filename</i>] [-m]
+             [-p <i>port#</i>] [-q name] [-t <i>type</i>] [-x <i>addr</i>] [-y [hmac:]<i>name</i>:<i>key</i>] 
+                [-4] [-6] [<i>name</i>] [<i>type</i>] [<i>class</i>] [<i>queryopt</i>...]<br>     dig [-h]
+<pre><code> dig [&lt;i&gt;&lt;a href=&quot;dig-queryopt.html&quot;&gt;global-queryopt&lt;/a&gt;&lt;/i&gt;...] [&lt;i&gt;query&lt;/i&gt;...]
+</code></pre>
+<p>Options:</p>
+<p>-4    Force dig to only use IPv4 query transport.</p>
+<p>-6    Force dig to only use IPv6 query transport.</p>
+<p>-b <i>address</i><br>
+Set the source IP address of the query to address.<br>
+This must be a valid address on one of the host’s network interfaces or “0.0.0.0” or “::”.<br>
+An optional port can be specified by appending “#<i>port</i>”</p>
+<p>-c <i>class</i><br>
+Over-ride the default query class (IN for internet).<br>
+class is any valid class, such as HS for Hesiod records or CH for CHAOSNET records.</p>
+<p>-f <i>filename</i><br>
+Operate in batch mode by reading a list of lookup requests to process from a file.<br>
+The file contains a number of queries, one per line.<br>
+Each entry in the file should be organised in the same way they would be presented<br>
+as queries to dig using the command-line interface.</p>
+<p>-m    Enable memory usage debugging.</p>
+<p>-p <i>port#</i><br>
+Specify a non-standard port number to be queried,<br>
+default = the standard DNS port number 53.<br>
+This option would be used to test a name server that has been configured<br>
+to listen for queries on a non-standard port number.</p>
+<p>-t <i>type</i><br>
+Set the query type to <i>type</i>, any valid query type which is supported in BIND9.<br>
+The default query type “A”, unless the -x option is supplied to indicate a reverse lookup.<br>
+A zone transfer can be requested by specifying a type of AXFR.<br>
+When an incremental zone transfer (IXFR) is required, type is set to ixfr=N.<br>
+The incremental zone transfer will contain the changes made to the zone since the<br>
+serial number in the zone’s SOA record was N.</p>
+<p>-x <i>addr<br>
+</i> Reverse lookups - mapping addresses to names: <i>addr</i> is an IPv4 address in dotted-<br>
+decimal notation, or a colon-delimited IPv6 address. When this option is used,<br>
+there is no need to provide the name, class and type arguments. dig automatically<br>
+performs a lookup for a name like 11.12.13.10.in-addr.arpa and sets the query type<br>
+and class to PTR and IN respectively. By default, IPv6 addresses are looked up using<br>
+nibble format under the IP6.ARPA domain. To use the older RFC1886 method using the<br>
+IP6.INT domain specify the -i option. Bit string labels (RFC2874) are now experimental<br>
+and are not attempted.</p>
+<p>-k <i>filename</i><br>
+Sign the DNS queries sent by dig and their responses using transaction signatures<br>
+(TSIG key file). You can also specify the TSIG key itself on the command line<br>
+using the -y option; <i>name</i> is the name of the TSIG key and <i>key</i> is the actual key.<br>
+The key is a base-64 encoded string, typically generated by dnssec-keygen(8).<br>
+Caution should be taken when using the -y option on multi-user systems as the key<br>
+can be visible in the output from ps(1 ) or in the shell’s history file.<br>
+When using TSIG authentication with dig, the name server that is queried needs to<br>
+know the key and algorithm that is being used. In BIND, this is done by providing<br>
+appropriate key and server statements in named.conf.</p>
+<p>-h   Print a brief summary of the command-line arguments and options.</p></pre><p></p>
+<p> Although dig is normally used with command-line arguments, it also has a batch mode of operation for reading lookup requests from a file. Unlike earlier versions, the BIND9 implementation of dig allows multiple lookups to be issued from the command line.</p>
+<p>Unless it is told to query a specific name server, dig will try each of the servers listed in <span class="code">/etc/resolv.conf</span></p>
+<p>When no command line arguments or options are given, will perform an NS query for "." (the root).</p>
+<p>It is possible to set per-user defaults for dig via <span class="code">${HOME}/.digrc</span>. This file is read and any options in it are applied before the command line arguments.</p>
+<p>The IN and CH class names overlap with the IN and CH top level domains names. Either
+  use the -t and -c options to specify the type and class, use the -q the specify the
+  domain name, or use "IN." and "CH." when looking up these top level domains.</p>
+<p>Mac OS X NOTICE<br>
+The dig command does not use the host name and address resolution or
+the DNS query routing mechanisms used by other processes running on Mac
+OS X.  The results of name or address queries printed by dig might differ from those found by other processes that use the Mac OS X native name
+and address resolution mechanisms.  The results of DNS queries can also
+differ from queries that use the Mac OS X DNS routing library.</p>
+<p><b>Examples</b></p>
+<p>List the DNS A records for ss64.com:<span class="code"><br>
+$ 
+dig ss64.com</span><br>
+or <br>
+<span class="code">$ dig ss64.com A</span></p>
+<p>List the DNS AAAA (ipv6) records for ss64.com:<br>
+<span class="code">$ dig ss64.com AAAA </span></p>
+<p>List the DNS A records for ss64.com using Google DNS  (8.8.8.8) instead of your local cache:<span class="code"><br>
+$ 
+dig ss64.com @8.8.8.8</span></p>
+<p>List the  Signature record (SIG record)  for ss64.com:<span class="code"><br>
+$ dig ss64.com SIG</span></p>
+<p>List the Mail exchanger record (MX record)  for ss64.com:<span class="code"><br>
+$ dig ss64.com MX <br>
+</span></p>
+<p>Test your DNS resolver's source port behavior:<span class="code"><br>
+$ dig +short porttest.<a href="https://www.dns-oarc.net/oarc/services/porttest" target="_blank" rel="external">dns-oarc.net</a> TXT</span></p>
+<p class="quote"><i> “Businessmen they drink my wine, Plowmen dig my earth, But none of them along the line, Know what any of it is worth” - Bob Dylan</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/dig.1.html" target="_blank" rel="external">dig man page</a> - Apple.com<br>
+<a href="dscacheutil.html">dscacheutil</a> - Query or flush the Directory Service/DNS cache<br>
+<a href="http://viewdns.info/" target="_blank" rel="external">ViewDNS.info</a> - IP and DNS lookups<br>
+<a href="http://en.wikipedia.org/wiki/List_of_DNS_record_types" target="_blank" rel="external">List of DNS record types</a> - Wikipedia</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="dig.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/dig.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

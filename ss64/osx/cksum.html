@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cksum 
+Display file checksums and block counts. 
+Writes to the standard output three (whitespace separated) fields for each input file:  CRC_checksum Total_no_of_octets Filename
+Syntax
+       cksum [-">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/cksum.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="cksum 
+Display file checksums and block counts. 
+Writes to the standard output three (whitespace separated) fields for each input file:  CRC_checksum Total_no_of_octets Filename
+Syntax
+       cksum [-">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="cksum 
+Display file checksums and block counts. 
+Writes to the standard output three (whitespace separated) fields for each input file:  CRC_checksum Total_no_of_octets Filename
+Syntax
+       cksum [-">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>cksum</h1> 
+<p>Display file checksums and block counts. <br>
+Writes to the standard output three (whitespace separated) fields for each input file: <span class="code"> CRC_checksum Total_no_of_octets Filename</span></p>
+<pre>Syntax
+       cksum [-o 1 | 2 | 3] [<i>file</i> ...]
+<pre><code>   sum [&lt;i&gt;file&lt;/i&gt; ...]&lt;/pre&gt;
+</code></pre>
+<p><span class="body">The sum utility is identical to cksum, except that it defaults 
+  to using historic algorithm 1, as described below. It is provided for compatibility 
+only.</span> </p>
+<pre>Options
+   -o     Use historic algorithms 1, 2 or 3 instead of the (superior) default one.
+<p><i>file</i>   The file(s) to checksum<br>
+If no <i>file</i>  is specified, the standard input is used and no file name is written.</p>
+</pre>
+<p><b>Algorithm 1</b> is the algorithm used by historic BSD systems as the sum(1) algorithm and by historic AT&amp;T System V UNIX systems as the sum(1) algorithm when using the -r option. This is a 16-bit checksum, with a right rotation before each addition; overflow is discarded.<br>
+<br>   
+<b>Algorithm 2</b> is the algorithm used by historic AT&amp;T System V UNIX systems as the default sum(1) algorithm.  This is a 32-bit check-sum, and is defined as follows:<br>
+<br>s = sum of all bytes;<br> 
+r = s % 2^16 + (s % 2^32) / 2^16;<br>   
+cksum = (r % 2^16) + r / 2^16;<br>
+<br>
+<b>Algorithm 3</b> is what is commonly called the `32bit CRC' algorithm.
+This is a 32-bit checksum.<br>
+<br>
+Both algorithm 1 and 2 write to the standard output the same fields as the default algorithm except that the size of the file in bytes is replaced with the size of the file in blocks. For historic reasons, the block size is 1024 for algorithm 1 and 512 for algorithm 2.  Partial blocks are rounded up.</p>
+<p>exit 0 on success, and &gt;0 if an error occurs.</p>
+<p>  The default CRC used is based on the polynomial used for CRC error checking in the networking standard ISO/IEC 8802-3:1989 <br>
+The checksum encoding algorithm is explained in the full cksum man page. </p>
+<p class="quote"><i>“Insisting on perfect safety is for people who don't have the balls to live in the real world” ~ Mary Shafer NASA  Flight Research Center</i></p>
+<p><b>Related:</b></p>
+<p>md5(1)<br>
+<a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/cksum.1.html" target="_blank" rel="external">cksum man page</a> - Apple.com</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/cksum.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

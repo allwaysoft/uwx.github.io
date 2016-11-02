@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Windows 10 registry - user interface settings 
+Registry settings for user interface settings and options under Windows 10.
+The older Windows 7 version of this page is here
+Windows Registry Editor Ver">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/syntax-reghacks.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Windows 10 registry - user interface settings 
+Registry settings for user interface settings and options under Windows 10.
+The older Windows 7 version of this page is here
+Windows Registry Editor Ver">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:55.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Windows 10 registry - user interface settings 
+Registry settings for user interface settings and options under Windows 10.
+The older Windows 7 version of this page is here
+Windows Registry Editor Ver">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ntsyntax.lbi" --><!-- #EndLibraryItem -->
+<h1>Windows 10 registry - user interface settings </h1>
+<p>Registry settings for user interface settings and options under Windows 10.<br>
+The older Windows 7 version of this page is <a href="syntax-reghacks-w7.html">here</a></p>
+<pre>Windows Registry Editor Version 5.00
+; Win10.REG
+<p>; Usual disclaimers apply - don’t edit the registry unless you know what you are doing and<br>
+; BACKUP THE REGISTRY FIRST</p>
+<p>; Comment lines are prefixed with ;  (<a href="regedit.html">REGEDIT</a> will ignore them)</p>
+<p>; ============ Start menu ===========</p>
+<p>;Start menu speed - the default is 400<br>
+;  [HKEY_CURRENT_USER\Control Panel\Desktop]<br>
+;  “MenuShowDelay”=“50”</p>
+<p>; ============ Taskbar ===========</p>
+<p>;No Glomming (keep every icon on the taskbar separate)<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+;  “TaskbarGlomming”=dword:00000000</p>
+<p>;Glomming enabled<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+;  “TaskbarGlomming”=dword:00000001</p>
+<p>;Always combine Taskbar icons + hide labels<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “TaskbarGlomLevel”=dword:00000000</p>
+<p>;Combine icons when taskbar is full (default)<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “TaskbarGlomLevel”=dword:00000001</p>
+<p>;Never combine Taskbar icons<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “TaskbarGlomLevel”=dword:00000002</p>
+<p>;TaskBar left/right grouping by age (oldest first) (default).<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+“TaskbarGroupSize”=dword:00000000<br>
+;or group by size largest first<br>
+;  “TaskbarGroupSize”=dword:00000001<br>
+;or group all with 2 or more, or 3 or more:<br>
+;  “TaskbarGroupSize”=dword:00000002<br>
+;  “TaskbarGroupSize”=dword:00000003<br>
+;or prevent grouping altogether<br>
+;  “NoTaskGrouping”=dword:00000001;Don’t hide the log-off option from the Start Menu<br>
+;(setting to 0 does not prevent users from using other methods to log off.)<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+;  “StartMenuLogOff”=dword:00000001</p>
+<p>;Don’t hide the Themes tab in Control Panel Personalisation<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+;  “NoThemesTab”=dword:00000000</p>
+<p>; Remember my Explorer views<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+;  “NoSaveSettings”=dword:00000000</p>
+<p>; ============ System Tray ===========</p>
+<p>; System Tray - Show all icons (The default for this can be set under HKLM)<br>
+; [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer]<br>
+; “EnableAutoTray”=dword:00000000<br>
+; or hide inactive icons<br>
+; [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer]<br>
+; “EnableAutoTray”=dword:00000001<br>
+;</p>
+<p>; ============ Explorer / General ===========</p>
+<p>;Don’t tie new shortcuts to a specific PC<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]<br>
+;  “LinkResolveIgnoreLinkInfo”=dword:00000001</p>
+<p>;Don’t use Windows NTFS link tracking to resolve existing shortcuts.<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]<br>
+;  “NoResolveTrack”=dword:00000001</p>
+<p>;Don’t hide any local Drives<br>
+;  “<a href="syntax-nodrives.html">NoDrives</a>”=dword:00000000</p>
+<p>;Don’t add “-Shortcut” text to the name of newly created shortcuts.<br>
+;  [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]<br>
+;  “link”=hex:00,00,00,00<br>
+;or Restore the default adding “-Shortcut” text to the name of newly created shortcuts.<br>
+;  “link”=hex:1e,00,00,00</p>
+<p>;Show all folders in Explorer including Recycle Bin, Desktop, Control Panel<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  &quot;NavPaneShowAllFolders”=dword:00000001<br>
+;or only show current folder path in Explorer<br>
+;  &quot;NavPaneShowAllFolders”=dword:00000000</p>
+<p>;Remove the <a href="https://support.office.com/en-GB/article/Turn-off-or-uninstall-OneDrive-f32a17ce-3336-40fe-9c38-6efb09f944b0" target="_blank" rel="external">OneDrive</a> icon<br>
+;  [HKEY_CLASSES_ROOT\CLSID{018D5C66-4533-4307-9B53-224DE2ED1FE6}]<br>
+;  “System.IsPinnedToNameSpaceTree”=dword:00000000<br>
+;  [HKEY_CLASSES_ROOT\Wow6432Node\CLSID{018D5C66-4533-4307-9B53-224DE2ED1FE6}]<br>
+;  “System.IsPinnedToNameSpaceTree”=dword:00000000</p>
+<p>;Add Right Click “Open PowerShell window here” Context Menu<br>
+; see <a href="http://www.tenforums.com/tutorials/59686-open-command-window-here-administrator-add-windows-10-a.html" target="_blank" rel="external">this article on TenForums</a></p>
+<p>; ============ Explorer\Advanced ===========<br>
+<b><br>
+</b>;Show hidden files and folders<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “Hidden”=dword:00000001<br>
+;or Don’t show hidden files and folders:<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “Hidden”=dword:00000002</p>
+<p>;Don’t Hide file extensions<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “HideFileExt”=dword:00000000</p>
+<p><b></b>;Don’t hide recently opened Programs from the Start menu /Start Run<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “Start_TrackProgs”=dword:00000001</p>
+<p>;Don’t hide recently opened Documents from the Start menu /Start Run<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “Start_TrackDocs”=dword:00000001</p>
+<p>;Don’t add a Games shortcut to the start menu<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “Start_ShowMyGames”=dword:00000000</p>
+<p>;Don’t slow down search by including all public folders<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “Start_SearchFiles”=dword:00000001</p>
+<p>;Don’t change the upper/lower case of filenames<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]<br>
+;  “DontPrettyPath”=dword:00000001</p>
+<p>; ============ Personalization ===========</p>
+<p>;Allow changing Windows Color<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoDispAppearancePage”=dword:00000000</p>
+<p>;Allow Color scheme changes<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoColorChoice”=dword:00000000</p>
+<p>;Allow changing the font size<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoSizeChoice”=dword:00000000</p>
+<p>;Change desktop background (any wallpaper will override this)<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoDispBackgroundPage”=dword:00000000</p>
+<p>;Allow changing the Screen Saver<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoDispScrSavPage”=dword:00000000</p>
+<p>;Allow changing the Display<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoDispCPL”=dword:00000000</p>
+<p>;Allow changing the Display Settings<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoDispSettingsPage”=dword:00000000</p>
+<p>;Allow changing the Screen Saver<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “NoDispScrSavPage”=dword:00000000</p>
+<p>;Allow changing the wallpaper<br>
+;If a wallpaper value is set here (or via policy) it will override the users choice<br>
+;in the control panel (HKCU\Control Panel\Desktop) so delete the key to allow changes:</p>
+<p>;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]<br>
+;  “Wallpaper”=-</p>
+<p>; ============ Control Panel / Add-Remove Programs ===========<br>
+;<br>
+;Don’t hide any Control Panel applets see <a href="https://support.microsoft.com/kb/207750/" target="_blank" rel="external">Q207750</a><br>
+;  [HKEY_CURRENT_USER\Control Panel\don’t load]<br>
+;  “appwiz.cpl”=-</p>
+<p>;These keys make sure you can install or uninstall programs:<br>
+;  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Programs]<br>
+;  “NoProgramsAndFeatures”=-<br>
+;  “NoProgramsCPL”=-</p>
+<p>; or disallow access:<br>
+;  “NoProgramsAndFeatures”=dword:00000001<br>
+<b><br>
+</b>; ============ Windows Update [<b>HKLM</b>] ===========</p>
+<p>; These affect all users [HKLM] and would typically be set via Group Policy<br>
+;  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update]<br>
+;Download and install<br>
+;  “AUOptions”=dword:00000004</p>
+<p>;Download but don’t install<br>
+;  “AUOptions”=dword:00000003</p>
+<p>;Check but don’t download<br>
+;  “AUOptions”=dword:00000002</p>
+<p>;Don’t check<br>
+;  “AUOptions”=dword:00000001</p>
+<p>;Disable P2P uploads/downloads (Windows Update&gt;Advanced&gt;Choose how updates are delivered)<br>
+;  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]<br>
+;  “DODownloadMode”=dword:00000000</p>
+<p>; ============ Misc [<b>HKLM</b>] All users ===========<br>
+;<br>
+;Set the Screen Saver grace period (this only works if a valid screensaver is set)<br>
+;an alternative is adjusting the power / hibernate settings for the display.<br>
+;  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]<br>
+;  “ScreenSaverGracePeriod”=“5”</p>
+<p>;When opening files with an unknown extension, dont prompt to ‘Look for an app in the Store’<br>
+;  [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]<br>
+;  “NoUseStoreOpenWith”=dword:00000001</p>
+<p>;this can also be set for all users<br>
+;  [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]ß<br>
+;  “NoUseStoreOpenWith”=dword:00000001</p>
+<p>;Display verbose messages during login (Group policy, profile loading etc)<br>
+;  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System<br>
+;  “verbosestatus”=dword:00000001</p>
+<p>;Disable Cortana (Windows 10 Anniversary+)<br>
+;  HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search<br>
+;  “AllowCortana”=dword:00000000</p></pre><p></p>
+<p>Many of the On/Off registry values above can be toggled between TRUE (<span class="code">00000001</span>) and FALSE (<span class="code">00000000</span>)</p>
+<p>If any of the above settings could have been modified by Group Policy, use <span class="code">RSOP.msc</span> (GUI utility) to see the policy settings that have been applied to the current user, or run <a href="gpresult.html">GPRESULT /z</a> to see the full details of registry keys set.</p>
+<p>If you are running DISM then equivalent settings for All Users can be found under <span class="code">[HKEY_LOCAL_MACHINE\<b>WIM_Default</b>\Software\Microsoft\Windows\CurrentVersion\Explorer\</span></p>
+<p>Windows 10 Themes can be found under:<br>
+<span class="code">%userprofile%\AppData\Local\Microsoft\Windows\Themes</span><br>
+</p>
+<p><i class="quote">"It's not like I let people do things for me, so I guess you can call me a control freak, or you can call me passionate" ~ Courteney Cox</i><br>
+<br>
+<b>Related:</b>
+</p><p><a href="http://www.tenforums.com/tutorials/" target="_blank" rel="external">TenForums</a> - Tutorials on Windows 10 personalization<br>
+ <a href="http://www.askvg.com/collection-of-windows-10-hidden-secret-registry-tweaks/" target="_blank" rel="external">AskVG</a> - Windows 10 Hidden Secret Registry Tweaks<br>
+</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-reghacks.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/syntax-reghacks.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

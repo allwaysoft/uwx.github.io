@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ADmodcmd Mailbox Rights  
+Mailbox related Attributes:
+   -setmailboxrights
+               Set msExchMailboxSecurityDescriptor (Q324353)
+-fixsendas  Grant Send-As rights to users with Full Mailbox Acce">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/admodcmd-mail.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ADmodcmd Mailbox Rights  
+Mailbox related Attributes:
+   -setmailboxrights
+               Set msExchMailboxSecurityDescriptor (Q324353)
+-fixsendas  Grant Send-As rights to users with Full Mailbox Acce">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:48.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ADmodcmd Mailbox Rights  
+Mailbox related Attributes:
+   -setmailboxrights
+               Set msExchMailboxSecurityDescriptor (Q324353)
+-fixsendas  Grant Send-As rights to users with Full Mailbox Acce">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1><a href="admodcmd.html">ADmodcmd</a> Mailbox Rights </h1> 
+<p>Mailbox related Attributes:</p>
+<pre>   -<i>setmailboxrights</i>
+               Set msExchMailboxSecurityDescriptor (<a href="https://support.microsoft.com/kb/324353" target="_blank" rel="external">Q324353</a>)
+<p>-fixsendas  Grant Send-As rights to users with Full Mailbox Access and Read.</p>
+<p>-removefixsendas<br>
+Remove Send-As rights from users with Full Mailbox Access and Read.<br>
+(Undo for -fixsendas)</p>
+<p>-grantselfaea<br>
+Grant Associated External Account privileges to SELF (<a href="https://support.microsoft.com/kb/278966" target="_blank" rel="external">Q278966</a>)</p>
+<p>-removeaeafromself<br>
+Remove Associated External Account from SELF. (Undo for <a href="https://support.microsoft.com/kb/278966" target="_blank" rel="external">Q278966</a>)</p>
+<p>-grantselffullandread<br>
+Grant Full Mailbox Access and Read to SELF.  (<a href="https://support.microsoft.com/kb/304935" target="_blank" rel="external">Q304935</a>)</p>
+<p>-removefullandread<br>
+Remove Full Mailbox Access and Read from SELF.  (Undo for <a href="https://support.microsoft.com/kb/304935" target="_blank" rel="external">Q304935</a>)</p>
+<p>-dumpmailboxrights<br>
+Dump all permissions in Mailbox Rights to a file called mbxrights.xml.</p>
+<p>-importmailboxrights overwrite|append<br>
+Import mailbox rights from the mbxrights.xml created by -dumpmailboxrights<br>
+When using this switch, the -dn switch is not required.<br>
+Overwrite will remove all non-inherited ACE’s before importing,<br>
+append will not.  This switch only imports non-inherited mailbox rights.</p>
+<p>-addtomailboxrights DOMAIN\USER ACCESS_MASK -deny (Optional)<br>
+Add an account to mailbox rights with the specified permissions masks.<br>
+The optional -deny switch specfies a deny entry, default is an allow entry.<br>
+Valid Access Masks:</p>
+<pre><code>              ACE_MB_FULL_ACCESS
+              ACE_MB_DELETE_MB_STORAGE
+              ACE_MB_READ_PERMISSIONS
+              ACE_MB_CHANGE_PERMISSION
+              ACE_MB_TAKE_OWNERSHIP
+</code></pre>
+<p>-removefrommailboxrights DOMAIN\USER ACCESS_MASK -deny (optional)<br>
+Remove the specified mask from DOMAIN\USER in mailbox rights.<br>
+The -deny switch specifies a deny entry, default is an allow entry.<br>
+Valid Access Masks:</p>
+<pre><code>              ACE_MB_FULL_ACCESS
+              ACE_MB_DELETE_MB_STORAGE
+              ACE_MB_READ_PERMISSIONS
+              ACE_MB_CHANGE_PERMISSION
+              ACE_MB_TAKE_OWNERSHIP
+              ALL
+
+              The ALL Mask will remove all permissions for the specified user.&lt;/pre&gt;
+</code></pre>
+<p class="quote"><i>“Learning music by reading about it is like making love by mail” - Luciano Pavarotti</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="admodcmd.html">ADmodcmd</a> - Active Directory Bulk Modify Tool<br>
+<a href="http://technet.microsoft.com/en-us/library/cc755399%28WS.10%29.aspx" target="_blank" rel="external">How Terminal Services Works</a> - Technet<br>
+<a href="admodcmd-ts.html">Terminal Server Attributes</a> | <a href="admodcmd-ex.html">Exchange Related Attributes</a> | <a href="admodcmd-user.html">User Account Settings</a> |<a href="admodcmd-custom.html"> Custom Attributes</a></p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="admodcmd-mail.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/admodcmd-mail.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

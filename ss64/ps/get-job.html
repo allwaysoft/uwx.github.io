@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-Job 
+Get  PowerShell background jobs that are running in the current session.
+Syntax
+      Get-Job [-Command string[]] [CommonParameters]
+  Get-Job [[-InstanceId] &amp;lt;i&amp;gt;Guid&amp;lt;/i&amp;gt;[]] [&amp;lt;i">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-job.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-Job 
+Get  PowerShell background jobs that are running in the current session.
+Syntax
+      Get-Job [-Command string[]] [CommonParameters]
+  Get-Job [[-InstanceId] &amp;lt;i&amp;gt;Guid&amp;lt;/i&amp;gt;[]] [&amp;lt;i">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-Job 
+Get  PowerShell background jobs that are running in the current session.
+Syntax
+      Get-Job [-Command string[]] [CommonParameters]
+  Get-Job [[-InstanceId] &amp;lt;i&amp;gt;Guid&amp;lt;/i&amp;gt;[]] [&amp;lt;i">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-Job</h1> 
+<p>Get  PowerShell background jobs that are running in the current session.</p>
+<pre>Syntax
+      Get-Job [-Command <i>string</i>[]] [<i>CommonParameters</i>]
+<pre><code>  Get-Job [[-InstanceId] &lt;i&gt;Guid&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-Job [[-Name] &lt;i&gt;string&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-Job [[-Id] &lt;i&gt;Int32&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+
+  Get-Job [-State {NotStarted | Running | Completed | Failed | Stopped | Blocked}] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-Command <i>string</i>[]<br>
+Get the jobs that include the specified command.<br>
+The default is all jobs. Enter a command (as a string).<br>
+You can use wildcards to specify a command pattern.</p>
+<pre><code>-Id &lt;i&gt;Int32&lt;/i&gt;[]
+   Get only jobs with the specified IDs. 
+
+   The ID is an integer that uniquely identifies the job within the current session.
+   It is easier to remember and to type than the instance ID, but it is unique only
+   within the current session. You can type one or more IDs (separated by commas).
+   To find the ID of a job, type &quot;Get-Job&quot; without parameters.
+</code></pre>
+<p>-InstanceId <i>Guid</i>[]<br>
+Get jobs with the specified instance IDs. The default is all jobs.</p>
+<pre><code>   An instance ID is a GUID that uniquely identifies the job on the computer.
+   To find the instance ID of a job, use Get-Job.
+</code></pre>
+<p>-Name <i>string</i>[]<br>
+Get the job with the specified friendly names.<br>
+Enter a job name, or use wildcard characters to enter a job name pattern.<br>
+By default, Get-Job gets all jobs in the current session.</p>
+<p>-State <i>JobState</i><br>
+Get only jobs in the specified state.<br>
+Valid values are NotStarted, Running, Completed, Stopped, Failed, and Blocked.<br>
+By default, Get-Job gets all the jobs in the current session.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Get-Job:<span class="code"> gjb</span></p>
+<p>Use Get-Job to get jobs that were started by using <a href="start-job.html">Start-Job</a>, or by using the AsJob parameter of any cmdlet. A PowerShell background job is a command that runs "in the background" without interacting with the current
+session. Typically, you use a background job to run a complex command that takes a long time to complete. For more information  see about_Jobs.</p>
+<p><b>Examples</b></p>
+<p>Get all background jobs started in the current session:</p>
+<p><span class="code">PS C:\&gt; get-job</span></p>
+<p>Stop a job using its unique ID:</p>
+<p><span class="code">PS C:\&gt; $myjob = get-job -name Job1<br>
+PS C:\&gt; $jobid = $myjob.InstanceID<br>
+PS C:\&gt; stop-job -instanceid $jobid</span></p>
+<p>Get  jobs on the system that include a Get-Process command:</p>
+<p><span class="code">PS C:\&gt; get-job -command "*get-process*"</span><br>
+or<br>
+<span class="code">PS C:\&gt; "*get-process*" | get-job</span><br>
+<br>Get  jobs that have been created but have not yet been started. (including scheduled jobs):</p>
+<p class="code">PS C:\&gt; get-job -state NotStarted</p>
+<p class="quote"><i>“New York is an exciting town where something is happening all the time, most unsolved” ~  Johnny Carson</i>
+</p><p><b>Related:</b><br>
+<br> <a href="receive-job.html">Receive-Job</a> - Get PowerShell background job results<br> 
+<a href="remove-job.html">Remove-Job</a> - Delete a PowerShell background job
+<!-- #BeginLibraryItem "/Library/foot_ps.lbi" --></p><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-job.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-job.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

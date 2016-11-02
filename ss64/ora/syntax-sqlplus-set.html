@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SQL*PLUS - SET Statement 
+Set sqlplus system settings and defaults.
+  
+  Syntax:
+   SET option value
+SHO[W] option
+Options: most of the options listed below have an abbreviated and a long form
+e.g. AP">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/syntax-sqlplus-set.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="SQL*PLUS - SET Statement 
+Set sqlplus system settings and defaults.
+  
+  Syntax:
+   SET option value
+SHO[W] option
+Options: most of the options listed below have an abbreviated and a long form
+e.g. AP">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:32.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="SQL*PLUS - SET Statement 
+Set sqlplus system settings and defaults.
+  
+  Syntax:
+   SET option value
+SHO[W] option
+Options: most of the options listed below have an abbreviated and a long form
+e.g. AP">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orasyntax.lbi" --><!-- #EndLibraryItem --><h1>SQL*PLUS - SET Statement</h1> 
+<p>Set sqlplus system settings and defaults.<br>
+  <br>
+  Syntax:</p>
+<pre>   SET <i>option</i> value
+<p>SHO[W] <i>option</i></p>
+<p><i>Options: most of the options listed below have an abbreviated and a long form<br>
+e.g. </i>APPINFO<i> or </i>APPI <i>will do the same thing</i></p>
+<p>APPI[NFO] {ON|<u>OFF</u>|<i>text</i>}<br>
+Application info for performance monitor (see <a href="../orap/DBMS_APPLICATION_INFO.html">DBMS_APPLICATION_INFO</a>)</p>
+<p>ARRAY[SIZE] {<u>15</u>|<i>n</i>}<br>
+Fetch size (1 to 5000) the number of rows that will be retrieved in one go.</p>
+<p>AUTO[COMMIT] {<u>OFF</u>|ON|IMM[EDIATE]|<i>n</i>}<br>
+Autocommit commits after each SQL command or PL/SQL block</p>
+<p>AUTOP[RINT] {<u>OFF</u>|ON}<br>
+Automatic PRINTing of bind variables.(see PRINT)</p>
+<p>AUTORECOVERY [ON|<u>OFF</u>]<br>
+Configure the RECOVER command to automatically apply<br>
+archived redo log files during recovery - without any user confirmation.</p>
+<p><a href="explain.html">AUTOT[RACE]</a> {<u>OFF</u>|ON|TRACE[ONLY]} [EXP[LAIN]] [STAT[ISTICS]]<br>
+Display a trace report for SELECT, INSERT, UPDATE or DELETE statements<br>
+EXPLAIN shows the query execution path by performing an EXPLAIN PLAN.<br>
+STATISTICS displays SQL statement statistics.<br>
+Using ON or TRACEONLY with no explicit options defaults to EXPLAIN STATISTICS</p>
+<p>BLO[CKTERMINATOR] {<u>.</u>|<i>c</i>|OFF|<u>ON</u>}<br>
+Set the non-alphanumeric character used to end PL/SQL blocks to c</p>
+<p>CMDS[EP] {;|<i>c</i>|<u>OFF</u>|ON}<br>
+Change or enable command separator - default is a semicolon (;)</p>
+<p>COLSEP {<u> </u>|text}<br>
+The text to be printed between SELECTed columns normally a space.</p>
+<p>COM[PATIBILITY] {V5|V6|V7|V8|<u>NATIVE</u>}<br>
+Version of oracle - see also init.ora COMPATIBILITY=<br>
+You can set this back by up to 2 major versions e.g. Ora 9 supports 8 and 7</p>
+<p>CON[CAT] {<u>.</u>|<i>c</i>|OFF|<u>ON</u>}<br>
+termination character for substitution variable reference<br>
+default is a period.</p>
+<p>COPYC[OMMIT] {<u>0</u>|<i>n</i>}<br>
+The COPY command will fetch n batches of data between commits.<br>
+(n= 0 to 5000) the size of each fetch=ARRAYSIZE.<br>
+If COPYCOMMIT = 0, COPY will commit just once - at the end.</p>
+<p>COPYTYPECHECK {OFF|<u>ON</u>}<br>
+Suppres the comparison of datatypes while inserting or appending to DB2</p>
+<p>DEF[INE] {<u>&amp;</u>|<i>c</i>|OFF|<u>ON</u>}<br>
+c =  the char used to prefix substitution variables.<br>
+ON or OFF controls whether to replace substitution variables with their values.<br>
+(this overrides SET SCAN)</p>
+<p>DESCRIBE [DEPTH {<u>1</u>|<i>n</i>|ALL}][LINENUM {ON|<u>OFF</u>}][INDENT {ON|<u>OFF</u>}]<br>
+Sets the depth of the level to which you can recursively describe an object<br>
+(1 to 50) see the <a href="desc.html">DESCRIBE</a> command</p>
+<p>ECHO {<u>OFF</u>|ON}<br>
+Display commands as they are executed</p>
+<p>EMB[EDDED] {<u>OFF</u>|ON}<br>
+OFF = report printing will start at the top of a new page.<br>
+ON = report printing can begin anywhere on a page.</p>
+<p>ESC[APE] {<u>&lt;/u&gt;|<i>c</i>|<u>OFF</u>|ON}<br>
+Defines the <a href="syntax-escape.html">escape character</a>. OFF undefines. ON enables.</u></p>
+<p>FEED[BACK] {<u>6</u>|<i>n</i>|OFF|<u>ON</u>}<br>
+Display the number of records returned (when rows &gt;= n )<br>
+OFF (or n=0) will turn the display off<br>
+ON will set n=1</p>
+<p>FLAGGER {<u>OFF</u>|ENTRY|INTERMED[IATE]|FULL}<br>
+Checks to make sure that SQL statements conform to the ANSI/ISO SQL92 standard.<br>
+non-standard constructs are flagged as errors and displayed<br>
+See also <a href="session_a.html">ALTER SESSION</a> SET FLAGGER.</p>
+<p>FLU[SH] {OFF|ON}<br>
+Buffer display output (OS)<br>
+(no longer used in Oracle 9)</p>
+<p>HEA[DING] {OFF|<u>ON</u>}<br>
+print column headings</p>
+<p>HEADS[EP] {<u>|</u>|<i>c</i>|OFF|<u>ON</u>}<br>
+Define the heading separator character (used to divide a column heading onto &gt; one line.)<br>
+OFF will actually print the heading separator char<br>
+see also: COLUMN command</p>
+<p>INSTANCE [instance_path|<u>LOCAL</u>]<br>
+Change the default instance for your session, this command can only be issued when<br>
+not already connected and requires Net8</p>
+<p>LIN[ESIZE] {<u>150</u>|<i>n</i>}<br>
+Width of a line (before wrapping to the next line)<br>
+Earlier versions default to 80, Oracle 9 is 150</p>
+<p>LOBOF[FSET] {<i>n</i>|<u>1</u>}<br>
+Starting position from which CLOB and NCLOB data is retrieved and displayed</p>
+<p>LOGSOURCE [<i>pathname</i>]<br>
+Change the location from which archive logs are retrieved during recovery<br>
+normally taken from LOG_ARCHIVE_DEST</p>
+<p>LONG {<u>80</u>|<i>n</i>}<br>
+Set the maximum width (in chars) for displaying and copying LONG values.</p>
+<p>LONGC[HUNKSIZE] {<u>80</u>|<i>n</i>}<br>
+Set the fetch size (in chars) for retrieving LONG values.</p>
+<p>MARK[UP] HTML [ON|<u>OFF</u>]<br>
+[HEAD <i>text</i>] [BODY <i>text</i>] [TABLE <i>text</i>]<br>
+[ENTMAP {<u>ON</u>|OFF}][SPOOL {ON|<u>OFF</u>}]<br>
+[PRE[FORMAT] {ON|<u>OFF</u>}]<br>
+Output HTML text, which is the output used by iSQL*Plus.</p>
+<p>NEWP[AGE] {1|<i>n</i>}<br>
+The number of blank lines between the top of each page and the top title.<br>
+0 = a formfeed between pages.</p>
+<p>NULL <i>text</i><br>
+Replace a null value with 'text’<br>
+The NULL clause of the <a href="syntax-sqlplus-col.html">COLUMN</a> command will override this for a given column.</p>
+<p>NUMF[ORMAT] <i>format</i><br>
+The default number format.<br>
+see <a href="syntax-sqlplus-col.html">COLUMN FORMAT</a>.</p>
+<p>NUM[WIDTH] {10|<i>n</i>}<br>
+The default width for displaying numbers.</p>
+<p>PAGES[IZE] {<u>14</u>|<i>n</i>}<br>
+The height of the page - number of lines.<br>
+0 will suppress all headings, page breaks, titles</p>
+<p>PAU[SE] {<u>OFF</u>|ON|<i>text</i>}<br>
+press [Return] after each page<br>
+enclose <i>‘text’</i> in single quotes</p>
+<p>RECSEP {<u>WR[APPED]</u>|EA[CH]|OFF}<br>
+Print a single line of the RECSEPCHAR between each record.<br>
+WRAPPED = print only for wrapped lines<br>
+EACH=print for every row</p>
+<p>RECSEPCHAR {_|<i>c</i>}<br>
+Define the RECSEPCHAR character, default= ’ '<br>
+<span class="depracate_st"><br>
+SCAN {OFF|ON}<br>
+OFF = disable substitution variables and parameters</span></p>
+<p>SERVEROUT[PUT] {OFF|<u>ON</u>} [SIZE <i>n</i>] [FOR[MAT] {WRA[PPED]|<u>WOR[D_WRAPPED]</u>|TRU[NCATED]}]<br>
+whether to display the output of stored procedures (or PL/SQL blocks)<br>
+i.e., <a href="../orap/DBMS_OUTPUT.html">DBMS_OUTPUT.PUT_LINE</a></p>
+<p>SIZE = buffer size (2000-1,000,000) bytes</p>
+<p>SHOW[MODE] {OFF|ON}<br>
+Display old and new settings of a system variable<span class="depracate_st"></span></p>
+<p>SPA[CE] {1|<i>n</i>}<br>
+The number of spaces between columns in output (1-10)</p>
+<p>SQLBL[ANKLINES] {ON|<u>OFF</u>}<br>
+Allow blank lines within an SQL command. reverts to OFF after the curent command/block.</p>
+<p>SQLC[ASE] {<u>MIX[ED</u>]|LO[WER]|UP[PER]}<br>
+Convert the case of SQL commands and PL/SQL blocks<br>
+(but not the SQL buffer itself)</p>
+<p>SQLPLUSCOMPAT[IBILITY] {x.y[.z]}<br>
+Set the behavior or output format of VARIABLE to that of the<br>
+release or version specified by x.y[.z].</p>
+<p>SQLCO[NTINUE] {&gt; |<i>text</i>}<br>
+Continuation prompt (used when a command is continued on an additional line using a hyphen -)</p>
+<p>SQLN[UMBER] {OFF|ON}<br>
+Set the prompt for the second and subsequent lines of a command or PL/SQL block.<br>
+ON = set the SQL prompt = the line number.<br>
+OFF = set the SQL prompt = SQLPROMPT.</p>
+<p>SQLPRE[FIX] {#|<i>c</i>}<br>
+set a non-alphanumeric prefix char for immediately executing one line of SQL (#)</p>
+<p>SQLP[ROMPT] {<u>SQL&gt;</u>|<i>text</i>}<br>
+Set the command prompt.</p>
+<p>SQLT[ERMINATOR] {<u>;</u>|<i>c</i>|OFF|<u>ON</u>}|<br>
+Set the char used to end and execute SQL commands to <i>c</i>.<br>
+OFF disables the command terminator - use an empty line instead.<br>
+ON resets the terminator to the default semicolon (;).</p>
+<p>SUF[FIX] {SQL|<i>text</i>}<br>
+Default file extension for SQL scripts</p>
+<p>TAB {OFF|ON}<br>
+Format white space in terminal output.<br>
+OFF = use spaces to format white space.<br>
+ON = use the TAB char.<br>
+Note this does not apply to spooled output files.<br>
+The default is system-dependent. Enter SHOW TAB to see the default value.</p>
+<p>TERM[OUT] {OFF|ON}<br>
+OFF suppresses the display of output from a command file<br>
+ON displays the output.<br>
+TERMOUT OFF does not affect the output from commands entered interactively.</p>
+<p>TI[ME] {OFF|ON}<br>
+Display the time at the command prompt.</p>
+<p>TIMI[NG] {OFF|ON}<br>
+ON = display timing statistics for each SQL command or PL/SQL block run.<br>
+OFF = suppress timing statistics</p>
+<p>TRIM[OUT] {OFF|ON}<br>
+Display trailing blanks at the end of each line.<br>
+ON = remove blanks, improving performance<br>
+OFF = display blanks.<br>
+This does not affect spooled output.<br>
+SQL*Plus ignores TRIMOUT ON unless you set TAB ON.</p>
+<p>TRIMS[POOL] {ON|OFF}<br>
+Allows trailing blanks at the end of each spooled line.<br>
+This does not affect terminal output.</p>
+<p>UND[ERLINE] {<u>-</u>|<i>c</i>|<u>ON</u>|OFF}<br>
+Set the char used to underline column headings to c.</p>
+<p>VER[IFY] {OFF|ON}<br>
+ON = list the text of a command before and after replacing substitution variables with values.<br>
+OFF = dont display the command.</p>
+<p>WRA[P] {OFF|ON}<br>
+Controls whether to truncate or wrap the display of long lines.<br>
+OFF = truncate<br>
+ON = wrap to the next line<br>
+The <a href="syntax-sqlplus-col.html">COLUMN</a> command (WRAPPED and TRUNCATED clause) can override this for specific columns.</p>
+</pre>
+<p>The items in <span class="depracate_st">Gray</span> on this page are deprecated from Oracle 9 onwards - also note that several of the options above have 'gone missing' 
+  from the official documentation set - HELP SET is a more accurate reference.</p>
+<p> Get a list of these SET options in sql*plus with the command: <br>
+<span class="code"> SQLPLUS&gt; HELP SET</span></p>
+<p><span class="code"></span><b>Example</b></p>
+<p> A <a href="syntax-sqlplus-set-commands.txt">demo SQL script</a> with the most common 
+SET options</p>
+<p><b>Related:</b><br>
+<a href="syntax-sqlplus.html">SQL*Plus commands</a></p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-sqlplus-set.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/syntax-sqlplus-set.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

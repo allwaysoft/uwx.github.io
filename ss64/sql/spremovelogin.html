@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="spRemoveLogin
+A stored procedure written by Clinton Herring that can be used to remove SQL logins from multiple databases. 
+ Removing login from a SQL server can be a tedious, manual
+ process, checkin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/spremovelogin.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="spRemoveLogin
+A stored procedure written by Clinton Herring that can be used to remove SQL logins from multiple databases. 
+ Removing login from a SQL server can be a tedious, manual
+ process, checkin">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="spRemoveLogin
+A stored procedure written by Clinton Herring that can be used to remove SQL logins from multiple databases. 
+ Removing login from a SQL server can be a tedious, manual
+ process, checkin">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>spRemoveLogin</h1>
+<p>A stored procedure written by <i>Clinton Herring</i> that can be used to remove SQL logins from multiple databases. </p>
+<p> Removing login from a SQL server can be a tedious, manual
+ process, checking for database access in each database, object
+ ownership in each database, granted permissions (the login is
+the grantor), jobs &amp; packages owned by the login. </p>
+<p>This procedure  automates the process as much as possible. The following rules are applied when issues are encountered: </p>
+<p> 1) If the login owns databases (as will occur when a restore  is done manually) the ownership is changed to sa.<br>
+2) If the login is a user in a particlar db and owns objects,  then the proc attempts to reassign ownership to dbo. <br>
+If an  object by the same name is already owned by dbo a message is  displayed and manual intervention is required. <br>
+3) If this login as a user in a db has granted permissions then  those permissions are removed. <br> 
+4) Once object ownership is taken care and grants are dropped  then the user can be removed from the db. <br> 
+5) If the user is aliased it is dropped. <br> 
+6) This process continues for each db. <br>
+Once all databases are  processed if there were any objects that could not be handled  without manual intervention a message is displayed to that effect. <br>
+7) If the login owns jobs or packages in msdb those are changed to sa.<br> 
+8) Any open connections the login has are killed and finally the  login is removed from the SQL Server. <br>
+9) If a session could not be killed a message is displayed to that effect.</p>
+<pre>Use master
+if exists (<i>select</i> *
+   from dbo.sysobjects
+   where id = object_id(N'[dbo].[spRemoveLogin]')
+   and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[spRemoveLogin]
+Go
+<p>Create procedure spRemoveLogin<br>
+@name sysname = null<br>
+As</p>
+<p>/<strong><em>5</em></strong>10<strong><em>15</em></strong>20<strong><em>25</em></strong>30<strong><em>35</em></strong>40<strong><em>45</em></strong>50<strong><em>55</em></strong>60<strong><em>65</em></strong>70<em><strong>75</strong>/<br>
+–Name : spRemoveLogin for SQL 7.0 &amp; 2K<br>
+–<br>
+–Description : Attempts to remove a login from a SQL Server whether STD or NT.<br>
+–<br>
+–Parameters : @name - the login to be removed, i.e, <i>login</i> or <i>domain</i>&lt;i&gt;login<br>
+–<br>
+–Date : 07/02/2001<br>
+–Author : Clinton Herring<br>
+–<br>
+–History : 07/10/2002 Added code to change the db owner to sa if the<br>
+– login owns databases.<br>
+–<br>
+/<strong><em>5</em></strong>10</em><strong>15</strong><em>20</em><strong>25</strong><em>30</em><strong>35</strong><em>40</em><strong>45</strong><em>50</em><strong>55</strong><em>60</em><strong>65</strong><em>70</em><strong>75</strong>/</p>
+<p>– Create a temp holding table<br>
+If (Select object_id(‘tempdb.dbo.#Parm’)) &gt; 0<br>
+Exec (‘Drop table #Parm’)<br>
+Create table #Parm(value int null)</p>
+<p>– Declare variables<br>
+Declare @sid varbinary(85),<br>
+@dbname sysname,<br>
+@cmd varchar(4096),<br>
+@spid int</p>
+<p>– Check for master db<br>
+If db_name() &lt;&gt; 'master’<br>
+Begin<br>
+Print 'This stored procedure must be run from the master database.'<br>
+Return<br>
+End</p>
+<p>– Check for a null parameter<br>
+IF @name is null<br>
+Begin<br>
+Print 'This stored procedure requires a valid login as a parameter.'<br>
+Return<br>
+End</p>
+<p>– Check for logins not allowed to be dropped using this procedure<br>
+IF @name in (‘BUILTIN\Administrators’, ‘distributor_admin’, ‘sa’, ‘repl_publisher’, ‘repl_subscriber’)<br>
+Begin<br>
+Print 'You may not drop the following logins using this stored procedure:'<br>
+Print ’ BUILTIN\Administrators, distributor_admin, sa, repl_publisher, repl_subscriber’<br>
+Return<br>
+End</p>
+<p>– Check to see if the login exists.<br>
+If exists (select * from master.dbo.syslogins where loginname = @name)<br>
+Begin</p>
+<pre><code>  -- Display a message
+  Print 'Attempting to find and drop ''' + @name + ''' from each database...'
+  
+  -- retrieve the sid of the login
+  Set @sid = suser_sid(@name)
+  
+  -- Check for database ownership
+  -- Here dynamic sql is required to use the 'Use command'.
+</code></pre>
+<p>If exists(select * from sysdatabases where sid = @sid)<br>
+Begin<br>
+Select @dbname = min(name) from master.dbo.sysdatabases where name &lt;&gt; ‘master’ and sid = @sid<br>
+While @dbname is not null and exists(select * from sysdatabases where sid = @sid)<br>
+Begin<br>
+Select @cmd = 'use ’ + @dbname + ’ exec sp_changedbowner ‘‘sa’’'<br>
+Exec (@cmd)<br>
+Select @dbname = min(name) from master.dbo.sysdatabases where name &lt;&gt; ‘master’ and sid = @sid<br>
+End<br>
+End</p>
+<p>– If the login exists begin checking each database for this login as a user in<br>
+– that database.<br>
+Select @dbname = min(name) from master.dbo.sysdatabases</p>
+<p>– Loop through each database.<br>
+While @dbname is not null<br>
+Begin<br>
+– Here dynamic sql is required to use the ‘Use command’.<br>
+– This loop checks for db and msdb ownership issues &amp; granted permissions.<br>
+– Build a command.<br>
+Select @cmd = ‘use ’ + @dbname + ’ declare @uid int, @cmd varchar(512), @name sysname ’ +<br>
+‘If exists (select * from sysusers where sid = suser_sid(’’’ + @name + ‘’’) and isaliased = 0) ’ +<br>
+‘Begin Print ‘’ Processing db ’ + @dbname + ‘…’’ Select @uid = uid, @name = name from ’ +<br>
+‘sysusers where sid = suser_sid(’’’ + @name + ‘’’) If exists (select * from sysobjects ’ +<br>
+‘where uid = 1 and name in (select name from sysobjects where uid = @uid)) ’ +<br>
+‘Begin Print ‘’ The following objects are owned by the user in database ’ + @dbname + ‘.’’ ’ +<br>
+‘Print ‘’ Objects with the same name owned by dbo already exist. Please decide ‘’ ’ +<br>
+‘Print ‘’ what to do with these objects before attempting to drop this user.’’ Print ‘’’’ ’ +<br>
+‘Select convert(varchar(50), name) ‘‘name’’, type from sysobjects where uid = @uid ’ +<br>
+‘Insert into #parm values(1) End ’ +<br>
+‘Else Begin Exec sp_configure ‘‘allow updates’’, 1 Reconfigure with override ’ +<br>
+‘waitfor delay ‘‘00:00:01’’ select @cmd = ‘‘update sysobjects set uid = 1 where uid = ‘’ ’ +<br>
+’+ convert(varchar(5),@uid) + ’ +<br>
+’’’ Delete from syspermissions where grantor = ‘’ + convert(varchar(5),@uid) ’ +<br>
+‘Print ‘’ Fixing object ownership issues in ‘’ + db_name() + ‘’…’’ Exec (@cmd) ’ +<br>
+‘Exec sp_configure ‘‘allow updates’’, 0 Reconfigure with override ’ +<br>
+‘Exec sp_revokedbaccess @name End Print ‘’’’ End ’ +<br>
+‘If exists(select * from sysusers where sid = suser_sid(’’’ + @name + ‘’’) and isaliased = 1) ’ +<br>
+‘Begin Exec sp_dropalias ‘’’ + @name + ‘’’ Print ‘’’’ End’<br>
+– Execute the command<br>
+Exec (@cmd)</p>
+<pre><code>  -- If the database is msdb then fix any job or package onwership issues.
+  If @dbname = 'msdb' and
+  (exists(select * from msdb.dbo.sysjobs where owner_sid = @sid) or
+  exists(select * from msdb.dbo.sysdtspackages where owner_sid = @sid))
+  Begin
+     Select @cmd = 'use msdb declare @cmd varchar(512) ' +
+     'Exec sp_configure ''allow updates'', 1 Reconfigure with override ' +
+     'waitfor delay ''00:00:01'' select @cmd = ' +
+     '''update sysdtspackages set owner = ''''sa'''', owner_sid = ' +
+     '0x01 where owner_sid = suser_sid(''''' + @name + ''''') ' +
+     'update sysjobs set owner_sid = 0x01 where owner_sid = suser_sid(''''' + @name+ ''''')'' ' +
+     'Print '' Fixing job &amp;amp;/or package ownership issues in msdb.'' ' +
+     'Exec (@cmd) Exec sp_configure ''allow updates'', 0 Reconfigure with override '
+     Exec (@cmd)
+  End
+</code></pre>
+<p>Select @dbname = min(name) from master.dbo.sysdatabases where name &gt; @dbname<br>
+End</p>
+<p>– Did we have any issues that could not be resolved?<br>
+If exists(select * from #parm where value = 1)<br>
+Print 'Cannot drop the login at this time.'<br>
+Else<br>
+Begin<br>
+Truncate table #parm</p>
+<p>– Check for any connection by this login and attempt to kill them.<br>
+If exists (Select * from master.dbo.sysprocesses where loginame = @name and sid &lt;&gt; 0x01 and sid is not null)<br>
+Begin<br>
+Insert into #parm Select spid from master.dbo.sysprocesses where loginame = @name and sid &lt;&gt; 0x01 and sid is not null<br>
+Select @spid = min(value) from #parm<br>
+While @spid is not null<br>
+Begin<br>
+Select @cmd = 'Kill ’ + convert(varchar(5),@spid)<br>
+Exec (@cmd)<br>
+Select @spid = min(value) from #parm where value &gt; @spid<br>
+End<br>
+End</p>
+<p>– Not all kill commands succeed; check again<br>
+If exists (Select * from master.dbo.sysprocesses where loginame = @name and sid &lt;&gt; 0x01 and sid is not null)<br>
+Begin<br>
+Print 'Could not kill all active sessions for this login.'<br>
+Print ‘Cannot drop the login at this time.‘<br>
+End<br>
+Else<br>
+Begin<br>
+If charindex(’’, @name) &gt; 0<br>
+Exec sp_revokelogin @name<br>
+Else<br>
+Exec sp_droplogin @name<br>
+End<br>
+End</p>
+<p>End<br>
+Else<br>
+Begin<br>
+Print ‘The login ‘’’ + @name + ‘’’ does not exist on SQL Server ‘’’ + @@servername + ‘’’.'<br>
+End</p>
+<p>go</p>
+</pre>
+<p><b>Example</b></p>
+<pre>spRemovelogin "JaneDoe"</pre>
+<p class="quote"><i>“When you have eliminated the impossible, that which remains, however improbable, must be the truth” - Arthur Conan Doyle, Sr</i></p>
+<p><b>Related commands:</b></p>
+<p><a href="user_d.html">DROP USER</a></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="spremovelogin.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/spremovelogin.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

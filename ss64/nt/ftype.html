@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="FTYPE 
+Display or change the link between a FileType and an executable 
+program
+Syntax
+   FTYPE fileType=executable_path
+   FTYPE
+FTYPE fileType
+FTYPE fileType=
+Key
+fileType        : The type of file">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/ftype.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="FTYPE 
+Display or change the link between a FileType and an executable 
+program
+Syntax
+   FTYPE fileType=executable_path
+   FTYPE
+FTYPE fileType
+FTYPE fileType=
+Key
+fileType        : The type of file">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.281Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="FTYPE 
+Display or change the link between a FileType and an executable 
+program
+Syntax
+   FTYPE fileType=executable_path
+   FTYPE
+FTYPE fileType
+FTYPE fileType=
+Key
+fileType        : The type of file">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>FTYPE</h1> 
+<p>Display or change the link between a FileType and an executable 
+program</p>
+<pre>Syntax
+   FTYPE <i>fileType</i>=<i>executable_path</i><br>
+   FTYPE
+<p>FTYPE <i>fileType</i></p>
+<p>FTYPE <i>fileType</i>=</p>
+<p>Key<br>
+<i>fileType</i>        : The type of file</p>
+<p><i>executable_path</i> : The executable program including any command line parameters</p></pre><p></p>
+<p> More than one file extension can be associated with the same 
+File Type.<br>
+e.g. both the extension .JPG and the extension .JPEG can be associated with 
+the File Type "jpegfile"<br>
+<br>
+File Types can be displayed in the Windows Explorer GUI under  Options, File Types however the naming used is not consistent e.g. the File Type "txtfile" is displayed in the GUI as "Text Document"and "jpegfile" is displayed as "image/jpeg"<br>
+<br>
+Several FileTypes can be linked to the same executable application.<br>
+<br>
+<span class="code">FTYPE <i>filetype</i> </span>will display the current executable program for that file type e.g. <span class="code">FTYPE jpegfile</span>.<br>
+<br>
+<span class="code">FTYPE</span> without any parameters will display all FileTypes and the executable program for each.</p>
+<h2>  Defining command line parameters</h2>
+<blockquote>
+<p>  It is almost always necessary to supply command line parameters so that when a document is opened not only is the relevant application loaded into memory but the document itself also loaded into the application. To make this happen the filename of the document must be passed back to the application. <br>
+  <br>
+  Command line parameters are exactly like <a href="syntax-args.html">batch file parameters</a>, %0 is the executable program and %1 will reference the document filename<br>
+  <br>
+  so a simple command line might be:<br>
+  <span class="code"><br>
+  MyApplication.exe "%1"<br>
+  </span><br>
+  If any further parameters are required by the application they can be passed as %2, %3. To pass ALL parameters to an application use %*. To pass all the remaining parameters starting with the nth parameter, use %~n where n is between 2 and 9. <br>
+  <br>
+  The FileType should always be created before making a File Association<br>
+  <br>
+  For example:<br>
+  <span class="code"><br>
+  FTYPE htmlfile="C:\PROGRA~1\Plus!\MICROS~1\iexplore.exe" -nohome<br>
+  ASSOC .html=htmlfile<br>
+  <br>
+  FTYPE pagemill.html=C:\PROGRA~1\Adobe\PAGEMI~1.0\PageMill.exe "%1"<br>
+  ASSOC .html=pagemill.html<br>
+  <br>
+  FTYPE rtffile="C:\Program Files\Windows NT\Accessories\WORDPAD.EXE" "%1"<br>
+  ASSOC .rtf=rtffile<br>
+  <br>
+  FTYPE word.rtf.8="C:\Program Files\Microsoft Office\Office\winword.exe" /n<br>
+ASSOC .rtf=word.rtf.8</span></p>
+</blockquote>
+<h2>Switch between multiple applications</h2>
+<blockquote>
+<p>  If you have multiple applications that use the same file extension, the <a href="assoc.html">ASSOC</a> 
+command can be used to switch the file extension between the different FileTypes.</p>
+</blockquote>
+<h2> Delete a FileType</h2>
+<blockquote>
+<p>  Specify <b>executable_path=</b>nothing and the FTYPE command will delete the 
+  <b>executable_path</b> for that FileType. <br>
+  For example:<br>
+FTYPE htmlfile=</p>
+</blockquote>
+<h2>Backup  FileTypes</h2>
+<blockquote>
+<p><b><span class="code"></span></b><span class="code">FTYPE &gt;backup_types.txt<br>
+ASSOC &gt;backup_ext.txt</span></p>
+</blockquote>
+<h2>Restore  FileTypes from a Backup</h2>
+<blockquote>
+<p><span class="code"><a href="for.html">FOR</a> /F "tokens=* delims=" %G IN (backup_types.txt) DO 
+    FTYPE %G<br>
+  FOR /F "tokens=* delims=" %G IN (backup_ext.txt) DO ASSOC %G</span><br>
+  <br>
+  This will recreate the CLASS id's in the registry at HKey_Classes_Root\.&lt;file 
+  extension&gt; <br>
+If you put the commands above in a batch file change the %G to be %%G</p>
+</blockquote>
+<h2>Use file associations at the command line</h2>
+<blockquote>
+<p>  If you have a file association between .DOC and Word for Windows then at a command prompt you can open a document with any of the following commands:<br>
+  <br>
+  <span class="code">Start "My Document.doc"<br>
+  "Monthly Report.doc"<br>
+  JULY.DOC</span><br>
+  <br>
+note that the file extension must be supplied for this to work</p>
+</blockquote>
+<h2>Errorlevels</h2>
+<blockquote>
+<p> When <a href="cmd.html">CMD Command Extensions</a> are enabled (the default)</p>
+<p>If the File Type Association was successfully changed <a href="errorlevel.html">%ERRORLEVEL%</a> = 0<br>
+If File Type Association could not be changed = 1</p>
+</blockquote>
+<p>FTYPE is an <a href="syntax-internal.html">internal</a> command.</p>
+<p><i class="quote">"True to type - Of a plant, or group of plants, which matches the accepted description of the cultivar to which it is assumed to belong"</i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="assoc.html">ASSOC</a> - Change file extension associations <br>
+Batch file to list the <a href="fassoc.txt">application associated</a> with a file extension <br>
+<a href="associate.html">ASSOCIAT</a> - One step file association (Resource Kit)</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ftype.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/ftype.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

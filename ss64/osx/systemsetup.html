@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="systemsetup 
+Configure certain per-machine settings      typically configured in the System Preferences application.  
+The      systemsetup command requires at least &quot;admin&quot; privileges to run.
+Syntax">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/systemsetup.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="systemsetup 
+Configure certain per-machine settings      typically configured in the System Preferences application.  
+The      systemsetup command requires at least &quot;admin&quot; privileges to run.
+Syntax">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:03.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="systemsetup 
+Configure certain per-machine settings      typically configured in the System Preferences application.  
+The      systemsetup command requires at least &quot;admin&quot; privileges to run.
+Syntax">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>systemsetup</h1> 
+<p>Configure certain per-machine settings      typically configured in the System Preferences application.  <br>
+The      systemsetup command requires at least "admin" privileges to run.</p>
+<pre>Syntax
+      systemsetup [-getdate] [-setdate <i>mm:dd:yy</i>] [-gettime] [-settime <i>hh:mm:ss</i>]
+                 [-gettimezone] [-listtimezones] [-settimezone <i>timezone</i>]
+                 [-getusingnetworktime] [-setusingnetworktime on | off]
+                 [-getnetworktimeserver] [-setnetworktimeserver <i>timeserver</i>]
+                 [-getsleep] [-setsleep <i>minutes</i>] [-getcomputersleep]
+                 [-setcomputersleep <i>minutes</i>] [-getdisplaysleep]
+                 [-setdisplaysleep <i>minutes</i>] [-getharddisksleep]
+                 [-setharddisksleep <i>minutes</i>] [-getwakeonmodem]
+                 [-setwakeonmodem on | off] [-getwakeonnetworkaccess]
+                 [-setwakeonnetworkaccess on | off] [-getrestartpowerfailure]
+                 [-setrestartpowerfailure on | off] [-getrestartfreeze]
+                 [-setrestartfreeze on | off]
+                 [-getallowpowerbuttontosleepcomputer]
+                 [-setallowpowerbuttontosleepcomputer on | off]
+                 [-getremotelogin] [-setremotelogin on | off]
+                 [-getremoteappleevents] [-setremoteappleevents on | off]
+                 [-getcomputername] [-setcomputername computername]
+                 [-getstartupdisk] [-liststartupdisks] [-setstartupdisk <i>path</i>]
+                 [-getwaitforstartupafterpowerfailure]
+                 [-setwaitforstartupafterpowerfailure <i>value</i>]
+                 [-getdisablekeyboardwhenenclosurelockisengaged]
+                 [-setdisablekeyboardwhenenclosurelockisengaged yes | no]
+                 [-getkernelbootarchitecturesetting]
+                 [-setkernelbootarchitecture i386 | x86_64 | default]
+                 [-version] [-help] [-printCommands]
+Key:
+   -getdate
+       Display the current date.
+<p>-setdate <i>mm:dd:yy</i><br>
+Set the current month, day, and year.</p>
+<p>-gettime<br>
+Display the current time in 24-hour format.</p>
+<p>-settime <i>hh:mm:ss</i><br>
+Set the current time. The provided time argument should be in 24-hour format.</p>
+<p>-gettimezone<br>
+Display current time zone.</p>
+<p>-listtimezones<br>
+List all time zones supported by this machine.</p>
+<p>-settimezone <i>timezone</i><br>
+Set the local time zone.<br>
+Use “-listtimezones” to list valid timezone arguments.</p>
+<p>-getusingnetworktime<br>
+Display whether network time is on or off.</p>
+<p>-setusingnetworktime on | off<br>
+Set whether using network time is on or off.</p>
+<p>-getnetworktimeserver<br>
+Display the currently set network time server.</p>
+<p>-setnetworktimeserver <i>timeserver</i><br>
+Designate a network time server.<br>
+Enter the IP address or DNS name for the network time server.</p>
+<p>-getsleep<br>
+Display amount of idle time until machine sleeps.</p>
+<p>-setsleep <i>minutes</i><br>
+Set amount of idle time until computer sleeps.<br>
+Specify “Never” or “Off” for computers that should never sleep.<br>
+Important: if you set the system to sleep, you will not be able to administer the<br>
+server remotely while it is sleeping.</p>
+<p>-getcomputersleep<br>
+Display amount of idle time until computer sleeps.</p>
+<p>-setcomputersleep <i>minutes</i><br>
+Set amount of idle time until computer sleeps. Specify “Never” or “Off” for never.</p>
+<p>-getdisplaysleep<br>
+Display amount of idle time until display sleeps.</p>
+<p>-setdisplaysleep <i>minutes</i><br>
+Set amount of idle time until display sleeps. Specify “Never” or “Off” for never.</p>
+<p>-getharddisksleep<br>
+Display amount of idle time until hard disk sleeps. Specify “Never” or “Off” for never.</p>
+<p>-setharddisksleep <i>minutes</i><br>
+Set amount of idle time until hard disk sleeps. Specify “Never” or “Off” for never.</p>
+<p>-getwakeonmodem<br>
+Display whether wake on modem is on or off.</p>
+<p>-setwakeonmodem on | off<br>
+Use this command to specify whether or not the server will wake<br>
+from sleep when modem activity is detected.</p>
+<p>-getwakeonnetworkaccess<br>
+Display whether wake on network access is on or off.</p>
+<p>-setwakeonnetworkaccess on | off<br>
+Use this command to specify whether the server wakes from sleep<br>
+when a network admin packet is sent to it.</p>
+<p>-getrestartpowerfailure<br>
+Display whether restart on power failure is on or off.</p>
+<p>-setrestartpowerfailure on | off<br>
+Specify whether the server should automatically restart after a power failure.</p>
+<p>-getrestartfreeze<br>
+Display whether restart on freeze is on or off.</p>
+<p>-setrestartfreeze on | off<br>
+Specify whether the server should restart automatically after the system freezes.</p>
+<p>-getallowpowerbuttontosleepcomputer<br>
+Enable or disable whether the power button can sleep the computer.</p>
+<p>-setallowpowerbuttontosleepcomputer on | off<br>
+Enable or disable whether the power button can sleep the computer.</p>
+<p>-getremotelogin<br>
+Displays whether remote login (SSH) is on or off.</p>
+<p>-setremotelogin [-f] on | off<br>
+Set remote login (SSH) to either on or off.<br>
+Important  If you turn off remote login, you won’t be able to administer the server<br>
+using remote command line tools and SSH. To turn remote login back on, you’ll need<br>
+to connect a monitor and keyboard to the server to administer it locally.<br>
+Use “setremotelogin -f off” to suppress prompting when turning remote login off.</p>
+<p>-getremoteappleevents<br>
+Display whether remote apple events are on or off.</p>
+<p>-setremoteappleevents on | off<br>
+Set whether the server responds to events sent by other computers (such as AppleScripts).</p>
+<p>-getcomputername<br>
+Display computer name.</p>
+<p>-setcomputername <i>computername</i><br>
+Sets computer name to <i>computername</i>. This name is used by AFP.</p>
+<p>-getlocalsubnetname<br>
+Display local subnet name.</p>
+<p>-setlocalsubnetname name<br>
+Set local subnet name to <i>name</i>.</p>
+<p>-getstartupdisk<br>
+Display current startup disk.</p>
+<p>-liststartupdisks<br>
+List all valid startup disks on this computer.</p>
+<p>-setstartupdisk <i>path</i><br>
+Set current startup disk to the indicated path. Valid arguments<br>
+can be listed using “-liststartupdisks.”</p>
+<p>-getwaitforstartupafterpowerfailure<br>
+Get the number of seconds after which the computer will start up<br>
+after a power failure.</p>
+<p>-setwaitforstartupafterpowerfailure <i>seconds</i><br>
+Set the number of seconds after which the computer will start up<br>
+after a power failure. The <i>seconds</i> value must be a multiple of 30 seconds.</p>
+<p>-getdisablekeyboardwhenenclosurelockisengaged<br>
+Get whether or not the keyboard should be disabled when the X<br>
+Serve enclosure lock is engaged.</p>
+<p>-setdisablekeyboardwhenenclosurelockisengaged yes | no<br>
+Set whether or not the keyboard should be disabled when the X<br>
+Serve enclosure lock is engaged.</p>
+<p>-getkernelbootarchitecturesetting<br>
+Gets the Kernel Architecture setting from the com.apple.Boot.plist.</p>
+<p>-setkernelbootarchitecture i386 | x86_64 | default<br>
+Set the kernel to boot in 32 or 64 bit mode on next boot. default<br>
+removes the setting.</p>
+<p>-version<br>
+Displays version of systemsetup tool.</p>
+<p>-help<br>
+Displays a list of all the commands available in the System Setup<br>
+Tool, with explanatory information.</p>
+<p>-printCommands<br>
+Displays a list of systemsetup commands with no detail.</p></pre><p></p>
+<p>Files: /usr/sbin/systemsetup</p>
+<p>  <b>Examples</b> </p>
+<p class="code">$ sudo systemsetup -getcomputername</p>
+<p class="code">$ sudo systemsetup -setdate 04:15:02</p>
+<p class="code"> $ sudo systemsetup -settime 16:20:00      </p>
+<p class="code">$ sudo systemsetup -settimezone US/Pacific      </p>
+<p class="code">$ sudo systemsetup -setnetworktimeserver time.apple.com</p>
+<p>DIsplay the restart@system freeze feature, by default this is on: <br>
+</p><p><span class="code">$ sudo systemsetup -getrestartfreeze </span></p><p></p>
+<p>Turn the restart@system freeze feature off, useful for debugging: <br>
+<span class="code">sudo systemsetup -setrestartfreeze off<br>
+</span><br>
+<i class="quote">“Some old wounds never truly heal, and bleed again at the slightest word” - George R.R. Martin</i></p>
+<p><b>Related:</b></p>
+<p>networksetup - Configuration tool for network settings</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="systemsetup.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/systemsetup.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

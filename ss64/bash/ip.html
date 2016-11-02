@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ip 
+Show / manipulate routing, devices, policy routing and tunnels. 
+Syntax
+      ip [ OPTIONS ] OBJECT { COMMAND | help }
+     &amp;lt;i&amp;gt;OBJECT&amp;lt;/i&amp;gt; := { link | addr | addrlabel | route | rule |">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ip.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ip 
+Show / manipulate routing, devices, policy routing and tunnels. 
+Syntax
+      ip [ OPTIONS ] OBJECT { COMMAND | help }
+     &amp;lt;i&amp;gt;OBJECT&amp;lt;/i&amp;gt; := { link | addr | addrlabel | route | rule |">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:40.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ip 
+Show / manipulate routing, devices, policy routing and tunnels. 
+Syntax
+      ip [ OPTIONS ] OBJECT { COMMAND | help }
+     &amp;lt;i&amp;gt;OBJECT&amp;lt;/i&amp;gt; := { link | addr | addrlabel | route | rule |">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>ip</h1> 
+<p>Show / manipulate routing, devices, policy routing and tunnels. </p>
+<pre>Syntax
+      <b>ip</b> [ <i>OPTIONS</i> ] <i>OBJECT</i> { <i>COMMAND</i> | help }
+<pre><code>     &lt;i&gt;OBJECT&lt;/i&gt; := { link | addr | addrlabel | route | rule | neigh | tunnel | maddr | mroute | monitor }
+
+     &lt;i&gt;OPTIONS&lt;/i&gt; := { -V[ersion] | -s[tatistics] | -r[esolve] | -f[amily] { inet | inet6 | ipx | dnet | link } | -o[neline] }
+
+  &lt;b&gt;&lt;a href=&quot;ip-link-set.html&quot;&gt;ip link set&lt;/a&gt;&lt;/b&gt; &lt;i&gt;DEVICE&lt;/i&gt; { up | down | arp { on | off } |
+     promisc { on | off } | allmulticast { on | off } |
+        dynamic { on | off } | multicast { on | off } |
+           txqueuelen &lt;i&gt;PACKETS&lt;/i&gt; | name &lt;i&gt;NEWNAME&lt;/i&gt; |
+              address &lt;i&gt;LLADDR&lt;/i&gt; | broadcast &lt;i&gt;LLADDR&lt;/i&gt; | mtu &lt;i&gt;MTU&lt;/i&gt; | netns &lt;i&gt;PID&lt;/i&gt; | 
+                 alias &lt;i&gt;NAME &lt;/i&gt;| vf &lt;i&gt;NUM &lt;/i&gt;[ mac &lt;i&gt;LLADDR&lt;/i&gt; ] [ vlan &lt;i&gt;VLANID&lt;/i&gt; [ qos &lt;i&gt;VLAN-QOS&lt;/i&gt; ] ] [ rate &lt;i&gt;TXRATE&lt;/i&gt; ] }
+
+  &lt;b&gt;ip link show&lt;/b&gt; [ &lt;i&gt;DEVICE&lt;/i&gt; ]
+        dev &lt;i&gt;NAME&lt;/i&gt; (default)  - &lt;i&gt;NAME&lt;/i&gt; specifies the network device to show.
+                              If this argument is omitted all devices are listed.
+        up                  - Only display running interfaces, e.g. $ ip link ls up 
+
+  &lt;b&gt;&lt;a href=&quot;ip-address.html&quot;&gt;ip address&lt;/a&gt;&lt;/b&gt; { add | del } &lt;i&gt;IFADDR&lt;/i&gt; dev &lt;i&gt;STRING&lt;/i&gt;
+
+  &lt;b&gt;&lt;a href=&quot;ip-address-show.html&quot;&gt;ip address&lt;/a&gt;&lt;/b&gt; { show | flush } [ dev &lt;i&gt;STRING&lt;/i&gt; ] [ scope &lt;i&gt;SCOPE-ID&lt;/i&gt; ] [ to &lt;i&gt;PREFIX&lt;/i&gt; ] [ &lt;i&gt;FLAG-LIST&lt;/i&gt; ] [ label &lt;i&gt;PATTERN&lt;/i&gt; ]
+
+     IFADDR := &lt;i&gt;PREFIX&lt;/i&gt; | &lt;i&gt;ADDR&lt;/i&gt; peer &lt;i&gt;PREFIX&lt;/i&gt; [ broadcast &lt;i&gt;ADDR&lt;/i&gt; ] [ anycast &lt;i&gt;ADDR&lt;/i&gt; ] [ label &lt;i&gt;STRING&lt;/i&gt; ] [ scope &lt;i&gt;SCOPE-ID&lt;/i&gt; ]
+
+     SCOPE-ID := [ host | link | global | &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     FLAG-LIST := [ &lt;i&gt;FLAG-LIST&lt;/i&gt; ] &lt;i&gt;FLAG&lt;/i&gt;
+
+     FLAG := [ permanent | dynamic | secondary | primary | tentative | deprecated ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-addrlabel.html&quot;&gt;ip addrlabel&lt;/a&gt;&lt;/b&gt; { add | del } prefix &lt;i&gt;PREFIX&lt;/i&gt; [ dev &lt;i&gt;DEV&lt;/i&gt; ] [ label &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-addrlabel.html&quot;&gt;ip addrlabel&lt;/a&gt;&lt;/b&gt; { list | flush }
+
+  &lt;b&gt;&lt;a href=&quot;ip-route.html&quot;&gt;ip route&lt;/a&gt;&lt;/b&gt; { list | flush } &lt;i&gt;SELECTOR&lt;/i&gt;
+
+  &lt;b&gt;&lt;a href=&quot;ip-route.html&quot;&gt;ip route get&lt;/a&gt;&lt;/b&gt; &lt;i&gt;ADDRESS&lt;/i&gt; [ from &lt;i&gt;ADDRESS&lt;/i&gt; iif &lt;i&gt;STRING&lt;/i&gt; ] [ oif &lt;i&gt;STRING&lt;/i&gt; ] [ tos &lt;i&gt;TOS&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-route.html&quot;&gt;ip route&lt;/a&gt;&lt;/b&gt; { add | del | change | append | replace | monitor } &lt;i&gt;ROUTE&lt;/i&gt;
+
+     SELECTOR := [ root &lt;i&gt;PREFIX&lt;/i&gt; ] [ match &lt;i&gt;PREFIX&lt;/i&gt; ] [ exact &lt;i&gt;PREFIX&lt;/i&gt; ] [ table &lt;i&gt;TABLE_ID&lt;/i&gt; ]
+                    [ proto &lt;i&gt;RTPROTO&lt;/i&gt; ] [ type &lt;i&gt;TYPE&lt;/i&gt; ] [ scope &lt;i&gt;SCOPE&lt;/i&gt; ]
+
+     ROUTE := NODE_SPEC [ &lt;i&gt;INFO_SPEC&lt;/i&gt; ]
+
+     NODE_SPEC := [ &lt;i&gt;TYPE&lt;/i&gt; ] &lt;i&gt;PREFIX&lt;/i&gt; [ tos &lt;i&gt;TOS&lt;/i&gt; ] [ table &lt;i&gt;TABLE_ID&lt;/i&gt; ] [ proto &lt;i&gt;RTPROTO&lt;/i&gt; ] [ scope &lt;i&gt;SCOPE&lt;/i&gt; ] [ metric &lt;i&gt;METRIC&lt;/i&gt; ]
+
+     INFO_SPEC := &lt;i&gt;NH OPTIONS FLAGS&lt;/i&gt; [ nexthop &lt;i&gt;NH&lt;/i&gt; ] ...
+
+     NH := [ via &lt;i&gt;ADDRESS&lt;/i&gt; ] [ dev &lt;i&gt;STRING&lt;/i&gt; ] [ weight &lt;i&gt;NUMBER&lt;/i&gt; ] &lt;i&gt;NHFLAGS&lt;/i&gt;
+
+     OPTIONS := &lt;i&gt;FLAGS&lt;/i&gt; [ mtu &lt;i&gt;NUMBER&lt;/i&gt; ] [ advmss &lt;i&gt;NUMBER&lt;/i&gt; ] [ rtt &lt;i&gt;TIME&lt;/i&gt; ] [ rttvar &lt;i&gt;TIME&lt;/i&gt; ]
+                   [ window &lt;i&gt;NUMBER&lt;/i&gt; ] [ cwnd &lt;i&gt;NUMBER&lt;/i&gt; ] [ initcwnd &lt;i&gt;NUMBER&lt;/i&gt; ] [ ssthresh &lt;i&gt;REALM&lt;/i&gt; ]
+                      [ realms &lt;i&gt;REALM&lt;/i&gt; ] [ rto_min &lt;i&gt;TIME&lt;/i&gt; ] [ initrwnd &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     TYPE := [ unicast | local | broadcast | multicast | throw | unreachable | prohibit | blackhole | nat ]
+
+     TABLE_ID := [ local| main | default | all | &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     SCOPE := [ host | link | global | &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     FLAGS := [ equalize ]
+
+     NHFLAGS := [ onlink | pervasive ]
+
+     RTPROTO := [ kernel | boot | static | &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-rule.html&quot;&gt;ip rule&lt;/a&gt;&lt;/b&gt; [ list | add | del | flush ] &lt;i&gt;SELECTOR&lt;/i&gt; &lt;i&gt;ACTION&lt;/i&gt;
+
+     SELECTOR := [ from &lt;i&gt;PREFIX&lt;/i&gt; ] [ to &lt;i&gt;PREFIX&lt;/i&gt; ] [ tos &lt;i&gt;TOS&lt;/i&gt; ] [ fwmark &lt;i&gt;FWMARK&lt;/i&gt;[/&lt;i&gt;MASK&lt;/i&gt;] ] [ dev &lt;i&gt;STRING&lt;/i&gt; ] [ pref &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     ACTION := [ table &lt;i&gt;TABLE_ID&lt;/i&gt; ] [ nat &lt;i&gt;ADDRESS&lt;/i&gt; ] [ prohibit | reject | unreachable ] [ realms [&lt;i&gt;SRCREALM&lt;/i&gt;/]&lt;i&gt;DSTREALM&lt;/i&gt; ]
+
+     TABLE_ID := [ local | main | default | &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-neighbour.html&quot;&gt;ip neighbour&lt;/a&gt;&lt;/b&gt; { add | del | change | replace } { &lt;i&gt;ADDR&lt;/i&gt; [ lladdr &lt;i&gt;LLADDR&lt;/i&gt; ]
+              [ nud { permanent | noarp | stale | reachable } ] | proxy &lt;i&gt;ADDR&lt;/i&gt; } [ dev &lt;i&gt;DEV&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-neighbour.html&quot;&gt;ip neighbour&lt;/a&gt;&lt;/b&gt; { show | flush } [ to &lt;i&gt;PREFIX&lt;/i&gt; ] [ dev &lt;i&gt;DEV&lt;/i&gt; ] [ nud &lt;i&gt;STATE&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-tunnel.html&quot;&gt;ip tunnel&lt;/a&gt;&lt;/b&gt; { add | change | del | show | prl } [ &lt;i&gt;NAME&lt;/i&gt; ] [ mode &lt;i&gt;MODE &lt;/i&gt;] [ remote &lt;i&gt;ADDR &lt;/i&gt;]
+     [ local &lt;i&gt;ADDR&lt;/i&gt; ] [ [i|o]seq ] [ [i|o]key &lt;i&gt;KEY &lt;/i&gt;] [ [i|o]csum ] ] [ encaplimit &lt;i&gt;ELIM &lt;/i&gt;] [ ttl &lt;i&gt;TTL &lt;/i&gt;]
+        [ tos &lt;i&gt;TOS&lt;/i&gt; ] [ flowlabel &lt;i&gt;FLOWLABEL &lt;/i&gt;] [ prl-default &lt;i&gt;ADDR &lt;/i&gt;] [ prl-nodefault &lt;i&gt;ADDR &lt;/i&gt;] [ prl-delete &lt;i&gt;ADDR&lt;/i&gt; ]
+           [ [no]pmtudisc ] [ dev &lt;i&gt;PHYS_DEV&lt;/i&gt; ] [ dscp inherit ]
+
+     MODE := { ipip | gre | sit | isatap | ip6ip6 | ipip6 | any }
+
+     ADDR := { &lt;i&gt;IP_ADDRESS&lt;/i&gt; | any }
+
+     TOS := { &lt;i&gt;NUMBER&lt;/i&gt; | inherit }
+
+     ELIM := { none | 0..255 }
+
+     TTL := { 1..255 | inherit }
+
+     KEY := { &lt;i&gt;DOTTED_QUAD&lt;/i&gt; | &lt;i&gt;NUMBER&lt;/i&gt; }
+
+     TIME := NUMBER[s|ms|us|ns|j]
+
+  &lt;b&gt;&lt;a href=&quot;ip-maddress.html&quot;&gt;ip maddr&lt;/a&gt;&lt;/b&gt; [ add | del ] &lt;i&gt;MULTIADDR&lt;/i&gt; dev &lt;i&gt;STRING&lt;/i&gt;
+
+  &lt;b&gt;&lt;a href=&quot;ip-maddress.html&quot;&gt;ip maddr show&lt;/a&gt;&lt;/b&gt; [ dev STRING ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-mroute.html&quot;&gt;ip mroute show&lt;/a&gt;&lt;/b&gt; [ &lt;i&gt;PREFIX&lt;/i&gt; ] [ from &lt;i&gt;PREFIX&lt;/i&gt; ] [ iif &lt;i&gt;DEVICE&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-monitor.html&quot;&gt;ip monitor&lt;/a&gt;&lt;/b&gt; [ all | &lt;i&gt;LISTofOBJECTS&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm&lt;/a&gt;&lt;/b&gt; &lt;i&gt;XFRM_OBJECT&lt;/i&gt; { &lt;i&gt;COMMAND&lt;/i&gt; }
+
+     XFRM_OBJECT := { state | policy | monitor }
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm state&lt;/a&gt;&lt;/b&gt; { add | update } ID [ &lt;i&gt;XFRM_OPT&lt;/i&gt; ] [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID &lt;/i&gt;] [ seq &lt;i&gt;SEQ &lt;/i&gt;] [ replay-window &lt;i&gt;SIZE&lt;/i&gt; ]
+     [ flag &lt;i&gt;FLAG-LIST&lt;/i&gt; ] [ encap &lt;i&gt;ENCAP&lt;/i&gt; ] [ sel &lt;i&gt;SELECTOR&lt;/i&gt; ] [ &lt;i&gt;LIMIT-LIST &lt;/i&gt;]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm state allocspi&lt;/a&gt;&lt;/b&gt; ID [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID&lt;/i&gt; ] [ seq &lt;i&gt;SEQ&lt;/i&gt; ] [ min &lt;i&gt;SPI&lt;/i&gt; max &lt;i&gt;SPI&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm state&lt;/a&gt;&lt;/b&gt; { delete | get } &lt;i&gt;ID&lt;/i&gt;
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm state&lt;/a&gt;&lt;/b&gt; { deleteall | list } [ &lt;i&gt;ID&lt;/i&gt; ] [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID &lt;/i&gt;] [ flag &lt;i&gt;FLAG_LIST&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm state flush&lt;/a&gt;&lt;/b&gt; [ proto &lt;i&gt;XFRM_PROTO&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm state count&lt;/a&gt;&lt;/b&gt;
+
+     ID := [ src &lt;i&gt;ADDR&lt;/i&gt; ] [ dst &lt;i&gt;ADDR&lt;/i&gt; ] [ proto &lt;i&gt;XFRM_PROTO&lt;/i&gt; ] [ spi SPI ]
+
+     XFRM_PROTO := [ esp | ah | comp | route2 | hao ]
+
+     MODE := [ transport | tunnel | ro | beet ] (default=transport)
+
+     FLAG-LIST := [ &lt;i&gt;FLAG-LIST&lt;/i&gt; ] &lt;i&gt;FLAG&lt;/i&gt;
+
+     FLAG := [ noecn | decap-dscp | wildrecv ]
+
+     ENCAP := &lt;i&gt;ENCAP-TYPE SPORT DPORT OADDR&lt;/i&gt;
+
+     ENCAP-TYPE := espinudp | espinudp-nonike
+
+     ALGO-LIST := [ &lt;i&gt;ALGO-LIST&lt;/i&gt; ] | [ &lt;i&gt;ALGO&lt;/i&gt; ]
+
+     ALGO := &lt;i&gt;ALGO_TYPE ALGO_NAME ALGO_KEY&lt;/i&gt;
+
+     ALGO_TYPE := [ enc | auth | comp ]
+
+     SELECTOR := src &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] dst &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] [ &lt;i&gt;UPSPEC&lt;/i&gt; ] [ dev &lt;i&gt;DEV&lt;/i&gt; ]
+
+     UPSPEC := proto &lt;i&gt;PROTO&lt;/i&gt; [[ sport &lt;i&gt;PORT&lt;/i&gt; ] [ dport &lt;i&gt;PORT&lt;/i&gt; ] | [ type &lt;i&gt;NUMBER&lt;/i&gt; ] [ code &lt;i&gt;NUMBER&lt;/i&gt; ]]
+
+     LIMIT-LIST := [ &lt;i&gt;LIMIT-LIST&lt;/i&gt; ] | [ limit &lt;i&gt;LIMIT&lt;/i&gt; ]
+
+     LIMIT := [ [time-soft|time-hard|time-use-soft|time-use-hard] SECONDS ] |
+                 [ [byte-soft|byte-hard] &lt;i&gt;SIZE&lt;/i&gt; ] | [ [packet-soft|packet-hard] &lt;i&gt;COUNT&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm policy&lt;/a&gt;&lt;/b&gt; { add | update } dir &lt;i&gt;DIR SELECTOR&lt;/i&gt; [ index &lt;i&gt;INDEX&lt;/i&gt; ]
+                    [ ptype &lt;i&gt;PTYPE&lt;/i&gt; ] [ action &lt;i&gt;ACTION&lt;/i&gt; ] [ priority &lt;i&gt;PRIORITY&lt;/i&gt; ]
+                       [ &lt;i&gt;LIMIT-LIST&lt;/i&gt; ] [ &lt;i&gt;TMPL-LIST&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm policy&lt;/a&gt;&lt;/b&gt; { delete | get } dir &lt;i&gt;DIR&lt;/i&gt; [ &lt;i&gt;SELECTOR&lt;/i&gt; | index &lt;i&gt;INDEX&lt;/i&gt; ] [ ptype &lt;i&gt;PTYPE&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm policy&lt;/a&gt;&lt;/b&gt; { deleteall | list } [ dir &lt;i&gt;DIR&lt;/i&gt; ] [ &lt;i&gt;SELECTOR&lt;/i&gt; ] [ index &lt;i&gt;INDEX &lt;/i&gt;]
+                    [ action &lt;i&gt;ACTION &lt;/i&gt;] [ priority &lt;i&gt;PRIORITY &lt;/i&gt;]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm policy flush&lt;/a&gt;&lt;/b&gt; [ ptype &lt;i&gt;PTYPE&lt;/i&gt; ]
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm count&lt;/a&gt;&lt;/b&gt;
+
+     PTYPE := [ main | sub ] (default=main)
+
+     DIR := [ in | out | fwd ]
+
+     SELECTOR := src &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] dst &lt;i&gt;ADDR&lt;/i&gt;[/&lt;i&gt;PLEN&lt;/i&gt;] [ &lt;i&gt;UPSPEC&lt;/i&gt; ] [ dev &lt;i&gt;DEV&lt;/i&gt; ]
+
+     UPSPEC := proto &lt;i&gt;PROTO&lt;/i&gt; [ [ sport &lt;i&gt;PORT&lt;/i&gt; ] [ dport &lt;i&gt;PORT&lt;/i&gt; ] |
+                  [ type &lt;i&gt;NUMBER&lt;/i&gt; ] [ code &lt;i&gt;NUMBER&lt;/i&gt; ] ]
+
+     ACTION := [ allow | block ] (default=allow)
+
+     LIMIT-LIST := [ &lt;i&gt;LIMIT-LIST&lt;/i&gt; ] | [ limit &lt;i&gt;LIMIT&lt;/i&gt; ]
+
+     LIMIT := [ [time-soft|time-hard|time-use-soft|time-use-hard] &lt;i&gt;SECONDS&lt;/i&gt; ] |
+                 [ [byte-soft|byte-hard] &lt;i&gt;SIZE&lt;/i&gt; ] | [packet-soft|packet-hard] &lt;i&gt;NUMBER&lt;/i&gt; ]
+
+     TMPL-LIST := [ &lt;i&gt;TMPL-LIST&lt;/i&gt; ] | [ tmpl &lt;i&gt;TMPL&lt;/i&gt; ]
+
+     TMPL := ID [ mode &lt;i&gt;MODE&lt;/i&gt; ] [ reqid &lt;i&gt;REQID&lt;/i&gt; ] [ level &lt;i&gt;LEVEL&lt;/i&gt; ]
+
+     ID := [ src &lt;i&gt;ADDR&lt;/i&gt; ] [ dst &lt;i&gt;ADDR&lt;/i&gt; ] [ proto &lt;i&gt;XFRM_PROTO&lt;/i&gt; ] [ spi &lt;i&gt;SPI&lt;/i&gt; ]
+
+     XFRM_PROTO := [ esp | ah | comp | route2 | hao ]
+
+     MODE := [ transport | tunnel | beet ] (default=transport)
+
+     LEVEL := [ required | use ] (default=required)
+
+  &lt;b&gt;&lt;a href=&quot;ip-xfrm.html&quot;&gt;ip xfrm monitor&lt;/a&gt;&lt;/b&gt; [ all | &lt;i&gt;LISTofOBJECTS&lt;/i&gt; ] 
+</code></pre>
+<p>OPTIONS</p>
+<p>-f, -family<br>
+followed by protocol family identifier: inet, inet6 or link ,enforce the protocol family to use.<br>
+If the option is not present, the protocol family is guessed from other arguments.<br>
+If the rest of the command line does not give enough information to guess the family, ip falls<br>
+back to the default one, usually inet or any. link is a special family identifier meaning that<br>
+no networking protocol is involved.</p>
+<p>-4  shortcut for -family inet. (IPv4)</p>
+<p>-6  shortcut for -family inet6. (IPv6)</p>
+<p>-0  shortcut for -family link.<br>
+-o, -oneline<br>
+output each record on a single line, replacing line feeds with the ‘’ character.<br>
+This is convenient when you want to count records with wc(1) or to grep(1) the output.</p>
+<p>-r, -resolve<br>
+use the system’s name resolver to print DNS names instead of host addresses.</p>
+<p>-s, -stats, -statistics<br>
+output more information. If the option appears twice or more, the amount of information increases.<br>
+As a rule, the information is statistics or some time values.</p>
+<p>-V, -Version<br>
+print the version of the ip utility and exit.</p>
+<p>OBJECTS with abbreviations</p>
+<p>link      l           Network device.<br>
+address   a or addr   Protocol (IP or IPv6) address on a device.<br>
+addrlabel addrl       Label configuration for protocol address selection.<br>
+neighbour n or neigh  ARP or NDISC cache entry.<br>
+route     r           Routing table entry.<br>
+rule      ru          Rule in routing policy database.<br>
+maddress  m or maddr  Multicast address.<br>
+mroute    mr          Multicast routing cache entry.<br>
+tunnel    t           tunnel over IP.<br>
+xfrm      x           framework for IPsec protocol.</p>
+<p>The names of all objects may be written in full or abbreviated form.</p>
+<p>COMMAND</p></pre><p></p>
+<blockquote>
+<p> Specifies the action to perform on the object.<br>
+The set of possible actions depends on the object type.<br>
+As a rule, it is possible to add, delete and show (or list ) objects, but some objects
+do not allow all of these operations or have some additional commands.</p>
+<p> The help command is available for all objects.<br>
+It prints out a list of available commands and argument syntax conventions. e.g.<span class="code"> ip a help</span><br>
+<br>
+If no command is given, some default command is assumed.<br>
+Usually it is list or, if the objects of this class cannot be listed, help. </p>
+</blockquote>
+<p><b>Examples</b>:</p>
+<p>List and show all ip address associated on on all network interfaces:<br>
+<span class="code">$ 
+ip addr</span></p>
+<p>Prevent accidental deletions by making <a href="rm.html">rm</a> interactive: <br>
+<span class="code">$ alias rm='rm -i'</span><br>
+</p>
+<p class="quote">“There are many reasons why novelists write, but they all have one thing in common - a need to create an alternative world” ~ John Fowles</p>
+<p><b>Related:</b></p>
+<p><a href="ss.html">ss</a> - Socket Statistics<br>
+<br>
+Equivalent Windows  command: <a href="../nt/route.html">ROUTE</a> - Manipulate network routing tables</p>
+<!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ip.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

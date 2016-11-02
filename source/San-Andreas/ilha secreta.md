@@ -1,1 +1,0 @@
-r2 l1 l1 baixo cima cima quadrado circulo triangulo r1 r2

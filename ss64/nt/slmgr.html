@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="slmgr.vbs (Windows7/2008) 
+Software Licensing Management Tool. Windows Activation and Key Management Service (KMS)
+Syntax
+      slmgr [MachineName [Username Password]] [Option]
+Key
+  machinename   The">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/slmgr.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="slmgr.vbs (Windows7/2008) 
+Software Licensing Management Tool. Windows Activation and Key Management Service (KMS)
+Syntax
+      slmgr [MachineName [Username Password]] [Option]
+Key
+  machinename   The">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="slmgr.vbs (Windows7/2008) 
+Software Licensing Management Tool. Windows Activation and Key Management Service (KMS)
+Syntax
+      slmgr [MachineName [Username Password]] [Option]
+Key
+  machinename   The">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>slmgr.vbs (Windows7/2008)</h1> 
+<p>Software Licensing Management Tool. Windows Activation and Key Management Service (KMS)</p>
+<pre>Syntax
+      slmgr [<i>MachineName </i>[<i>Username Password</i>]] [<i>Option</i>]<br>
+Key
+  <i>machinename</i>   The machine to administer, by default the current local machine.
+<p><i>username </i>     An administrator equivalent user account for the remote computer.</p>
+<p><i>password </i>     The password for the user account on the remote computer.</p>
+<p>/ato   Activate Windows license and product key against Microsoft’s server.</p>
+<p>/atp <i>Confirmation_ID</i>   Activate Windows with user-provided Confirmation ID</p>
+<p>/ckms  Clear the name of KMS server used to default and port to default.</p>
+<p>/cpky  Clear product key from the registry (prevents disclosure attacks)<br>
+<br>   /dli   Display the current license information with activation<br>
+status and partial product key.</p>
+<p>/dlv   Verbose, similar to -dli but with more information.</p>
+<p>/dti   Display Installation ID for offline activation</p>
+<p>/ipk <i>Key</i>  Enter a new product <i>key</i> supplied as xxxxx-xxxxx-xxxxx-xxxxx-xxxxx</p>
+<p>/ilc <i>License_file </i>  Install license</p>
+<p>/rilc               Re-install system license files</p>
+<p>/rearm Reset the <a href="https://support.microsoft.com/kb/948472" target="_blank" rel="external">evaluation period</a>/licensing status and activation state of the machine</p>
+<p>/skms <i>activationservername:port </i><br>
+Set the Volume Licensing KMS server and/or the port used for KMS activation<br>
+(where supported by your Windows edition)</p>
+<p>/skhc  Enable KMS host caching (default), this blocks the use of DNS priority and<br>
+weight after the initial discovery of a working KMS host.<br>
+If the system can no longer contact the working KMS host, discovery will be attempted again.</p>
+<p>/ckhc  Disable KMS host caching. This setting instructs the client to use DNS auto-discovery<br>
+each time it attempts KMS activation (recommended when using priority and weight)</p>
+<p>/sai <i>interval</i><br>
+Sets the interval in minutes for unactivated clients to attempt KMS connection.<br>
+The activation interval must be between 15 minutes and 30 days, although the default (2 hours)<br>
+is recommended.<br>
+The KMS client initially picks up this interval from the registry but switches to the KMS<br>
+setting after the first KMS response has been received.</p>
+<p>/sri <i>interval</i><br>
+Sets the renewal interval in minutes for activated clients to attempt KMS connection.<br>
+The renewal interval must be between 15 minutes and 30 days.<br>
+This option is set initially on both the KMS server and client sides.<br>
+The default is 10080 minutes (7 days).</p>
+<p>/spri  Set the KMS priority to normal (default).<br>
+/cpri  Set the KMS priority to low.<br>
+Use this option to minimize contention from KMS in a co-hosted environment.<br>
+Note that this could lead to KMS starvation, depending on what other applications<br>
+or server roles are active. Use with care.</p>
+<p>/sprt <i>port</i><br>
+Sets the port on which the KMS host listens for client activation requests. The default TCP port is 1688.</p>
+<p>/sdns  Enable DNS publishing by the KMS host (default).<br>
+/cdns  Disable DNS publishing by the KMS host.</p>
+<p>/upk   Uninstall current installed product key and return license status back to trial state.</p>
+<p>/xpr   Show the expiry date of current license (if not permanently activated)</p>
+<p>Token-based activation:<br>
+/lil   List the installed token-based activation issuance licenses.</p>
+<p>/ril <i>ILID ILvID</i><br>
+Remove an installed token-based activation issuance license.</p>
+<p>/stao  Set the Token-based Activation Only flag, disabling automatic KMS activation.<br>
+/ctao  Clear the Token-based Activation Only flag (default), enabling automatic KMS activation.<br>
+/ltc   List valid token-based activation certificates that can activate installed software.<br>
+/fta <i>Certificate Thumbprint</i> [PIN]<br>
+Force token-based activation using the identified certificate.<br>
+The optional personal identification number (PIN) is provided to unlock the private<br>
+key without a PIN prompt when using certificates that are protected by hardware<br>
+(for example, smart cards).</p></pre><p></p>
+<p>All actions (other than displaying status)  require elevated administrator privileges.<br>
+Slmgr.vbs script is not intended to work across platforms i.e. between Vista and Windows 7</p>
+<p><b>Examples</b></p>
+<p class="code">C:\&gt;  <a href="../vb/cscript.html">cscript</a> C:\windows\system32\slmgr.vbs wkstn64 administrator pa55w0rd1 -dli<br>
+<br>
+C:\&gt; cscript slmgr.vbs -skms 192.168.10.1:8090 <br>
+<br>
+C:\&gt; cscript slmgr.vbs -skms KMSServer:8090</p>
+<p><span class="quote"><i>"One resolution I have made, and try always to keep, is this: To rise above
+little things" ~ John Burroughs</i></span><i><br></i><br><b>Related:</b></p>
+<p>SLUI - Software Licensing (Windows Activation) <span class="code">SLUI.exe 3 <i>XXXXX.XXXXXX.XXXXXX.XXXXX</i></span><br>
+<a href="http://technet.microsoft.com/en-us/library/ff793399.aspx" target="_blank" rel="external">Activation Error Codes</a> - TechNet<br>
+<a href="certreq.html">CERTREQ</a> - Request certificate from a certification authority<br>
+WINVER - Display Licence Activation status<br>
+<a href="https://support.microsoft.com/kb/921471" target="_blank" rel="external">Q921471</a> - 
+Activation fails when you try to activate Windows Vista, Windows 7...<br>
+<a href="perms.html">PERMS</a> - Show permissions for a user<br>
+<a href="systeminfo.html">SYSTEMINFO</a> - List system configuration</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="slmgr.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/slmgr.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

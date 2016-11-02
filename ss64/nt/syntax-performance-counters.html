@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Performance Counters 
+These Performance Monitor counters can be used with TypePerf or LogMan to record Performance data:
+Disk:
+\LogicalDisk(*)\Avg. Disk sec/Read     The average time, in seconds, to r">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/syntax-performance-counters.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Performance Counters 
+These Performance Monitor counters can be used with TypePerf or LogMan to record Performance data:
+Disk:
+\LogicalDisk(*)\Avg. Disk sec/Read     The average time, in seconds, to r">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:55.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Performance Counters 
+These Performance Monitor counters can be used with TypePerf or LogMan to record Performance data:
+Disk:
+\LogicalDisk(*)\Avg. Disk sec/Read     The average time, in seconds, to r">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ntsyntax.lbi" --><!-- #EndLibraryItem --><h1>Performance Counters </h1>
+<p>These Performance Monitor counters can be used with <a href="typeperf.html">TypePerf</a> or <a href="logman.html">LogMan</a> to record Performance data:</p>
+<pre>Disk:
+\LogicalDisk(*)\Avg. Disk sec/Read     The average time, in seconds, to read a block of data
+\LogicalDisk(*)\Avg. Disk sec/Write    The average time, in seconds, to write a block of data
+\LogicalDisk(*)\Disk Transfers/sec     Rate of read and write operations on the disk (&gt;80/sec)
+\PhysicalDisk(*)\% Disk Time
+\PhysicalDisk(*)\Avg. Disk Bytes/Read
+\PhysicalDisk(*)\Avg. Disk Bytes/Write
+\PhysicalDisk(*)\Avg. Disk Queue Length
+\PhysicalDisk(*)\Avg. Disk Read Queue Length
+\PhysicalDisk(*)\Avg. Disk sec/Read          Average time, in seconds, to read a block of data
+\PhysicalDisk(*)\Avg. Disk sec/Write         Average time, in seconds, to write a block of data
+\PhysicalDisk(*)\Avg. Disk Write Queue Length
+\PhysicalDisk(*)\Disk Read Bytes/sec
+\PhysicalDisk(*)\Disk Reads/sec
+\PhysicalDisk(*)\Disk Transfers/sec
+\PhysicalDisk(*)\Disk Write Bytes/sec
+\PhysicalDisk(*)\Disk Writes/sec
+<p>Processes:<br>
+\Process(<em>)\IO Data Operations/sec      The rate of file, network and device Reads/Writes.<br>
+\Process(</em>)\IO Other Operations/sec     The rate of file, network and device I/O’s (not read/write)</p>
+<p>Memory:<br>
+\Memory\Available MBytes                Amount of physical memory available MB (&gt;10%)<br>
+\Memory\Free System Page Table Entries  The no. of page table entries not currently in use (&gt;10000)<br>
+\Memory\Pages Input/sec                 The rate at which pages are read from disk (&gt; 10/Sec)<br>
+\Memory\Pages/sec                       The rate at which hard page faults are resolved (&lt;1000)<br>
+\Memory\Page Reads/sec<br>
+\Memory\Page Writes/sec<br>
+\Memory\Pages Input/sec<br>
+\Memory\Pages Output/sec<br>
+\Memory\Pool Nonpaged Bytes        (&gt;40% available)<br>
+\Memory\Pool Paged Bytes           (&gt;40% available)</p>
+<p>User Mode Memory:<br>
+\Process(<em>)\Private Bytes  The current non-shared memory consumed by this process, in bytes.<br>
+\Process(</em>)\Working Set    The current private + shared memory for this process, in bytes.<br>
+(On Win32 target a 250MB delta between Min size and Max size) (Win64 = 500MB)</p>
+<p>\Process(<em>)\Thread Count   The no. of threads currently active in this process.<br>
+\Process(</em>)\Handle Count   How many handles each process has open.</p>
+<p>Network:<br>
+\Network Interface(<em>)\Packets/sec<br>
+\Network Interface(</em>)\Output Queue Length  (&lt;1 thread waiting)<br>
+\Network Interface(<em>)\Bytes Total/sec      The rate bytes are sent over each network adapter<br>
+\Network Interface(</em>)\Current Bandwidth    (&lt;50%)<br>
+\Server\Bytes Total/sec                    The no. of bytes sent over the network (&lt;50% of capacity).</p>
+<p>Processor:<br>
+\Processor% Processor Time       The primary indicator of processor activity. (&lt;70%)<br>
+\Processor% Privileged Time      (&lt;75%)<br>
+\Processor(<em>)% Interrupt Time    Receiving and servicing hardware interrupts. (&lt;30%)<br>
+\System\Context Switches/sec      Thread re-prioritisation (5000/Sec)<br>
+\System\Processor Queue Length    Threads waiting to execute (&lt;3)<br>
+\Processor(</em>)% User Time</p>
+<p>SQL Server:<br>
+\Process(sqlservr)% Privileged Time<br>
+\Process(sqlservr)% Processor Time<br>
+\Process(sqlservr)% User Time<br>
+\Process(sqlservr)\IO Data Operations/sec<br>
+\Process(sqlservr)\Page Faults/sec<br>
+\Process(sqlservr)\Private Bytes<br>
+\Process(sqlservr)\Thread Count<br>
+\Process(sqlservr)\Virtual Bytes<br>
+\Process(sqlservr)\Working Set<br>
+\SQLServer:Buffer Manager*<br>
+\SQLServer:Cache Manager(<em>)*<br>
+\SQLServer:Databases(</em>)\Data File(s) Size (KB)<br>
+\SQLServer:Databases(<em>)\Log File(s) Size (KB)<br>
+\SQLServer:Databases(</em>)\Transactions/sec<br>
+\SQLServer:General Statistics*<br>
+\SQLServer:Locks(*)*<br>
+\SQLServer:Memory Manager*<br>
+\SQLServer:SQL Statistics\Batch Requests/sec<br>
+\SQLServer:SQL Statistics\SQL Compilations/sec<br>
+\SQLServer:SQL Statistics\SQL Re-Compilations/sec</p>
+</pre>
+<p>The values in parenthesis are recommended/typical values, items consistently outside these ranges normally indicate a performance bottleneck. High Memory and CPU figures are not automatically a bad thing, combined with low disk activity this often indicates a well tuned, if busy, system.
+</p><p><b>Example</b>
+</p><p>The % processor on the local machine: <span class="code">\Processor\% Processor Time<br>
+</span>The % processor on a remote machine: <span class="code">\\server214\Processor\% Processor Time</span>
+</p><p class="quote"><i>"The time you enjoy wasting is not wasted time” ~ Bertrand Russell</i>
+</p><p><b>Related</b>
+</p><p><a href="typeperf.html">TypePerf</a> - Write performance data to a log file.<br>
+<a href="logman.html">LOGMAN</a> - Manage Performance Monitor.<br>
+<a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx" target="_blank" rel="external">Process Explorer</a> - 
+Map processes to DLLs and executables. <br>
+<a href="http://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/" target="_blank" rel="external">Using perfmon for Sql Server</a> 
+<!-- #BeginLibraryItem "/Library/foot_nt.lbi" --></p><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-performance-counters.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/syntax-performance-counters.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

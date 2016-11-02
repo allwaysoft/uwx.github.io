@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MapDrivePersistent.vbs 
+VBScript to Map a Drive letter to a network file share (persistent)
+This script is designed to maximise the speed of login, so if a drive  already has the correct persistent co">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/vb/syntax-mapdrivepersistent.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="MapDrivePersistent.vbs 
+VBScript to Map a Drive letter to a network file share (persistent)
+This script is designed to maximise the speed of login, so if a drive  already has the correct persistent co">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:19.410Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="MapDrivePersistent.vbs 
+VBScript to Map a Drive letter to a network file share (persistent)
+This script is designed to maximise the speed of login, so if a drive  already has the correct persistent co">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_vbsyntax.lbi" --><!-- #EndLibraryItem --><h1>MapDrivePersistent.vbs</h1> 
+<p>VBScript to Map a Drive letter to a network file share (persistent)</p>
+<p>This script is designed to maximise the speed of login, so if a drive  already has the correct persistent connection it will be left alone. This is a good approach for machines that are running a recent version of Windows and which are always connected to the domain e.g. Windows 7 Workstations.</p>
+<p>For each drive letter there are several possible states, that may have to be dealt with by the script: <br>
+- Remembered (persistent connection) / Not Remembered<br>
+- Already Connected / Connected to the wrong network share / Not Connected.</p>
+<p> If a drive does have to be re-connected this script will attempt to remove any  'remembered' connections, including those to a file share that no longer exists or which is off-line.</p>
+<pre>Option Explicit
+Function <b>MapDrivePersistent</b>(strDrive,strPath)
+   ' strDrive = Drive letter - e.g. "x:"
+   ' strPath = Path to server/share - e.g. "\\server\share"
+   ' Returns a boolean (True or False)
+<p>Dim objNetwork, objDrives, blnFound, objReg, i<br>
+Dim strLocalDrive, strRemoteShare, strRemembered, strMessage<br>
+Const HKCU = &amp;H80000001</p>
+<p>’ Check syntax of parameters passed<br>
+If Right(strDrive, 1) &lt;&gt; “:” OR Left(strPath, 2) &lt;&gt; “\” Then<br>
+WScript.echo “Usage: MapDrivePersistent.vbs ““X:”” “”\server\share”&quot; //NoLogo&quot;<br>
+WScript.Quit(1)<br>
+End If</p>
+<p>Err.clear<br>
+MapDrivePersistent = False</p>
+<p>Set objNetwork = WScript.CreateObject(“WScript.Network”)</p>
+<p>'Step 1: Get the current drives<br>
+Set objDrives = objNetwork.EnumNetworkDrives<br>
+If Err.Number &lt;&gt; 0 Then<br>
+’Code here for error logging<br>
+Err.Clear<br>
+MapDrivePersistent = False<br>
+Exit Function<br>
+End If</p>
+<p>WScript.echo &quot;   Connecting drive letter: &quot; + strDrive + &quot; to &quot; + strPath</p>
+<p>'Step 2: Compare drive letters to the one requested<br>
+blnFound = False<br>
+For i = 0 To objDrives.Count - 1 Step 2<br>
+If UCase(strDrive) = UCase(objDrives.Item(i)) Then<br>
+blnFound = True<br>
+’Drive letter was found.  Now see if the network share on it is the same as requested<br>
+If UCase(strPath) = UCase(objDrives.Item(i+1)) Then<br>
+’Correct mapping on the drive<br>
+MapDrivePersistent = True<br>
+Else<br>
+’Wrong mapping on drive.  Disconnect and remap<br>
+WScript.Echo &quot;–&quot;<br>
+objNetwork.RemoveNetworkDrive strDrive, True, True 'Disconnect drive<br>
+If Err.Number &lt;&gt; 0 Then<br>
+’Code here for error logging<br>
+Err.clear<br>
+MapDrivePersistent = False<br>
+Exit Function<br>
+End If</p>
+<pre><code>            ' To completely remove the previous remembered persistent mapping
+            ' we also delete the associated registry key HKCU\Network\Drive\RemotePath
+            ' In theory this should be covered by bUpdateProfile=True in
+            ' the RemoveNetworkDrive section above but that doesn't always work.
+             Set objReg = GetObject(&quot;winmgmts:{impersonationLevel=impersonate}!\\.\root\default:StdRegProv&quot;)
+             objReg.GetStringValue HKCU, &quot;Network\&quot; &amp;amp; Left(strDrive, 1), &quot;RemotePath&quot;, strRemembered
+             If strRemembered &amp;lt;&amp;gt; &quot;&quot; Then
+               objReg.DeleteKey HKCU, &quot;Network\&quot; &amp;amp; Left(strDrive, 1)
+             End If
+
+           ' Connect drive
+           On Error Resume Next
+            WScript.Echo &quot;++&quot;
+            objNetwork.MapNetworkDrive strDrive, strPath, True 
+            If Err.Number &amp;lt;&amp;gt; 0 Then
+                'Code here for error logging
+                Err.clear
+                MapDrivePersistent = False
+                Exit Function 
+            End If
+
+            MapDrivePersistent = True
+            
+        End If
+    End If
+    
+Next'Drive in the list
+</code></pre>
+<p>'If blnFound is still false, the drive letter isn’t being used.  So let’s map it.<br>
+If Not blnFound Then<br>
+On Error Resume Next<br>
+objNetwork.MapNetworkDrive strDrive, strPath, True<br>
+If Err.Number &lt;&gt; 0 Then<br>
+’Code here for error logging<br>
+Err.clear<br>
+MapDrivePersistent = False<br>
+Exit Function<br>
+End If</p>
+<pre><code>    MapDrivePersistent = True
+</code></pre>
+<p>End If</p>
+<p>WScript.Echo &quot;   ____&quot;<br>
+End Function</p>
+<p>’ Example calling the function above to map a drive:</p>
+<p>if not <b>MapDrivePersistent</b>(“Z:”,&quot;\Server64\workgroups&quot;) Then<br>
+Wscript.Echo &quot;   ERROR: Drive Z: failed to connect!&quot;<br>
+End If</p></pre><p></p>
+<p> You are free to use or modify this script: Creative Commons Attribution 2.5 License.</p>
+<p>For drive mapping to work, <i>File and Printer sharing</i> must  be enabled on the remote (server) computer.</p>
+<p>based on a script by Corey Thomas<a href="http://vbscripter.blogspot.co.uk/2008/03/better-drive-mapping.html" target="_blank" rel="external"> Better Drive Mapping</a></p>
+<p class="quote"><i>“You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one” ~ John Lennon</i></p>
+<p><b>Related:</b></p>
+<p><a href="syntax-mapdrive.html">MapDrive</a> - Map a Drive letter to a network file share (non-persistent)<br>
+<a href="mapnetworkdrive.html">.MapNetworkDrive</a> - Drive Map.<br>
+<a href="http://blogs.technet.com/b/askds/archive/2009/01/07/using-group-policy-preferences-to-map-drives-based-on-group-membership.aspx" target="_blank" rel="external">Using Group Policy Preferences</a> to Map Drives Based on Group Membership.<br>
+<a href="../nt/syntax-nodrives.html">NoDrives</a> - Hide mapped drives from Windows Explorer.<br>
+<a href="../nt/net.html">NET</a> - Manage network resources.<br>
+Equivalent PowerShell command: <a href="../ps/new-psdrive.html">New-PSDrive</a>- Create a  mapped network drive.</p><!-- #BeginLibraryItem "/Library/foot_vb.lbi" --><p>
+<!-- VB300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1683739502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-mapdrivepersistent.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/vb/syntax-mapdrivepersistent.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

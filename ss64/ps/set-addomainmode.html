@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-ADDomainMode
+Set the domain functional level for an AD domain.
+Syntax
+      Set-ADDomainMode [-Identity] ADDomain
+         [-DomainMode] {Windows2000Domain | Windows2003InterimDomain | Windows2003">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-addomainmode.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-ADDomainMode
+Set the domain functional level for an AD domain.
+Syntax
+      Set-ADDomainMode [-Identity] ADDomain
+         [-DomainMode] {Windows2000Domain | Windows2003InterimDomain | Windows2003">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-ADDomainMode
+Set the domain functional level for an AD domain.
+Syntax
+      Set-ADDomainMode [-Identity] ADDomain
+         [-DomainMode] {Windows2000Domain | Windows2003InterimDomain | Windows2003">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-ADDomainMode</h1>
+<p>Set the domain functional level for an AD domain.</p>
+<pre>Syntax
+      Set-ADDomainMode [-Identity] <i>ADDomain</i>
+         [-DomainMode] {Windows2000Domain | Windows2003InterimDomain | Windows2003Domain |
+                        Windows2008Domain | Windows2008R2Domain | UnknownDomain}
+            [-AuthType {<u>Negotiate</u> | Basic}] [-Credential <i>PSCredential</i>] [-PassThru]
+               [-Server <i>string</i>] [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<p>Key<br>
+-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use:<br>
+Negotiate or 0<br>
+Basic or 1<br>
+A Secure Sockets Layer (SSL) connection is required for the Basic authentication method.</p>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default is the current user unless the cmdlet is run from an AD PowerShell provider drive<br>
+in which case the account associated with the drive is the default.</p>
+<pre><code>   &quot;User64&quot; or &quot;Domain01\User64&quot; or a &lt;a href=&quot;get-credential.html&quot;&gt;PSCredential&lt;/a&gt; object.
+</code></pre>
+<p>-DomainMode <i>ADDomainMode</i><br>
+The domain mode for an AD domain.<br>
+Values:<br>
+Windows2000Domain or 0<br>
+Windows2003InterimDomain or 1<br>
+Windows2003Domain or 2<br>
+Windows2008Domain or 3<br>
+Windows2008R2Domain or 4</p>
+<p>-Identity <i>ADDomain</i><br>
+An AD domain object:</p>
+<pre><code>      Distinguished Name
+        Example: DC=strasbourg,DC=corp,DC=SS64,DC=com 
+      GUID (objectGUID)
+        Example: 90886fbf-2779-48cd-b020-0aa9c94d5c90
+      Security Identifier (objectSid)
+        Example: S-1-5-21-3465297858-302567370-
+      DNS domain name
+        Example: strasbourg.corp.SS64.com
+      NetBIOS domain name
+        Example: strasbourg
+
+   The identifier in parentheses is the LDAP display name for the attribute.
+
+   The cmdlet searches the default naming context or partition to find the object.
+   If the identifier given is a DN, the partition to search will be computed from that DN.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   This parameter can also accept an object through the pipeline.
+</code></pre>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number) or AD Snapshot instance.</p>
+<pre><code>   Examples: demo.SS64.com  demo  demoDC02.demo.ss64.com  demoDC02.demo.ss64.com:3268
+</code></pre>
+<p>-PassThru<br>
+Returns the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<pre><code>-WhatIf
+   Describe what would happen if you executed the command, without actually executing the command.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Set-ADDomainMode  sets the domain mode for a domain. Specify the domain mode by setting the<span class="code"> -DomainMode</span> parameter. <br>
+<br>You can change the domain mode to a mode with higher functionality only. For example, if the domain mode  is 'Windows 2003', you can  increase the mode to 'Windows 2008'.<br>
+<br>The <span class="code">-Identity</span> parameter specifies the AD domain to modify. Identify a domain by its distinguished name (DN), GUID, security identifier (SID), DNS domain name, or NetBIOS name. Alternatively set the -Identity parameter to a domain object <a href="syntax-variables.html">variable</a> or through the <a href="syntax-pipeline.html">pipeline</a>. e.g. from <a href="get-addomain.html">Get-ADDomain </a><br>
+<br>Set-ADDomainMode will prompt for permission unless <span class="code">-confirm:$false</span> is specified.</p>
+<p><b>Examples</b></p>
+<p>Set the DomainMode property of the SS64.com domain:</p>
+<p class="code">PS C:\&gt; Set-ADDomainMode -Identity SS64.com -DomainMode Windows2008R2Domain</p>
+<p>Set the DomainMode of the current logged on user's domain to Windows2008R2Domain:</p>
+<p class="code">PS C:\&gt; $pdc = Get-ADDomainController -Discover -Service PrimaryDC<br>
+PS C:\&gt; Set-ADDomainMode -Identity $pdc.Domain -Server $pdc.HostName[0] -DomainMode Windows2008R2Domain</p>
+<p class="quote"><i>“The people and circumstances around me do not make me what I am, they reveal who I am” ~ Dr. Laura Schlessinger</i></p>
+<p><b>Related:</b></p>
+<p><a href="get-addomain.html">Get-adDomain</a> - Get an AD domain. <a href="set-addomain.html"><br>
+</a><a href="set-adforestmode.html">Set-adForestMode</a> - Set the forest mode for an AD forest</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-addomainmode.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

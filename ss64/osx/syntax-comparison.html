@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Logical, arithmetical and comparison operators
+These operators are similar to those of C and have the same precedence.
+They include
+
+  ||  &amp;amp;&amp;amp;  |  ^   &amp;amp;  ==  !=  =~  !~  &amp;lt;=  &amp;gt;=  &amp;lt;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/syntax-comparison.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Logical, arithmetical and comparison operators
+These operators are similar to those of C and have the same precedence.
+They include
+
+  ||  &amp;amp;&amp;amp;  |  ^   &amp;amp;  ==  !=  =~  !~  &amp;lt;=  &amp;gt;=  &amp;lt;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Logical, arithmetical and comparison operators
+These operators are similar to those of C and have the same precedence.
+They include
+
+  ||  &amp;amp;&amp;amp;  |  ^   &amp;amp;  ==  !=  =~  !~  &amp;lt;=  &amp;gt;=  &amp;lt;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #EndLibraryItem --><h1>Logical, arithmetical and comparison operators</h1>
+<p>These operators are similar to those of C and have the same precedence.<br>
+They include<br>
+</p>
+<pre>  ||  &amp;&amp;  |  ^   &amp;  ==  !=  =~  !~  &lt;=  &gt;=  &lt;  &gt; &lt;&lt;  &gt;&gt;  +  -  *   /  %  !  ~  (  )
+<pre><code>   Here the precedence increases to the right, == !=  =~  and !~,
+   &amp;lt;=  &amp;gt;=  &amp;lt; and  &amp;gt;,  &amp;lt;&amp;lt; and &amp;gt;&amp;gt;, + and -, * / and %
+   being, in groups, at the same level.  The == != =~ and !~ operators
+   compare  their  arguments as strings; all others operate on numbers.
+   The operators '=~' and '!~' are like '!=' and '=='  except  that
+   the  right hand side is a glob-pattern against which the left hand
+   operand is matched. This reduces the need for use of the &lt;a href=&quot;switch.html&quot;&gt;switch&lt;/a&gt; builtin
+   command in shell scripts when all that is really needed is pattern
+   matching.
+
+   Strings which begin with '0' are considered  octal  numbers.   Null  or
+   missing  arguments  are considered '0'.  The results of all expressions
+   are strings, which represent decimal numbers.  It is important to  note
+   that  no   two  components of an expression can appear in the same word;
+   except when adjacent to components of expressions which  are  syntacti-
+   cally  significant  to the parser ('&amp;amp;' '|' '&amp;lt;' '&amp;gt;' '(' ')') they should
+   be surrounded by spaces.
+</code></pre>
+<p><b>Command</b> <b>exit</b> <b>status</b></p>
+<pre><code>   Commands can be executed in expressions and their exit status  returned
+   by enclosing them in braces ('{}').  Remember that the braces should be
+   separated from the words of the command by spaces.  Command  executions
+   succeed, returning true, i.e., '1', if the command exits with status 0,
+   otherwise they fail, returning false, i.e., '0'.   If more detailed sta-
+   tus information is required then the command should be executed outside
+   of an expression and the &lt;b&gt;status&lt;/b&gt; shell variable examined.
+</code></pre>
+<p><b>File</b> <b>inquiry</b> <b>operators</b><br>
+Some of these operators perform true/false tests on files  and  related<br>
+objects.   They are of the form <b>-</b><i>op</i> <i>file</i>, where <i>op</i> is one of</p>
+<pre><code> &lt;b&gt;r&lt;/b&gt;   Read access
+ &lt;b&gt;w&lt;/b&gt;   Write access
+ &lt;b&gt;x&lt;/b&gt;   Execute access
+ &lt;b&gt;X&lt;/b&gt;   Executable  in the path or shell builtin, e.g., '-X ls' and '-X
+     ls-F' are generally true, but '-X /bin/ls' is not (+)
+ &lt;b&gt;e&lt;/b&gt;   Existence
+ &lt;b&gt;o&lt;/b&gt;   Ownership
+ &lt;b&gt;z&lt;/b&gt;   Zero size
+ &lt;b&gt;s&lt;/b&gt;   Non-zero size (+)
+ &lt;b&gt;f&lt;/b&gt;   Plain file
+ &lt;b&gt;d&lt;/b&gt;   Directory
+ &lt;b&gt;l&lt;/b&gt;   Symbolic link (+) *
+ &lt;b&gt;b&lt;/b&gt;   Block special file (+)
+ &lt;b&gt;c&lt;/b&gt;   Character special file (+)
+ &lt;b&gt;p&lt;/b&gt;   Named pipe (fifo) (+) *
+ &lt;b&gt;S&lt;/b&gt;   Socket special file (+) *
+ &lt;b&gt;u&lt;/b&gt;   Set-user-ID bit is set (+)
+ &lt;b&gt;g&lt;/b&gt;   Set-group-ID bit is set (+)
+ &lt;b&gt;k&lt;/b&gt;   Sticky bit is set (+)
+ &lt;b&gt;t&lt;/b&gt;   &lt;i&gt;file&lt;/i&gt; (which must be a digit) is an open file descriptor  for  a
+     terminal device (+)
+ &lt;b&gt;R&lt;/b&gt;   Has been migrated (convex only) (+)
+ &lt;b&gt;L&lt;/b&gt;   Applies  subsequent  operators in a multiple-operator test to a
+     symbolic link rather than to the file to which the link  points
+     (+) *
+
+   &lt;i&gt;file&lt;/i&gt;  is command and filename expanded and then tested to see if it has
+   the specified relationship to the real user.  If &lt;i&gt;file&lt;/i&gt; does not exist or
+   is  inaccessible   or, for the operators indicated by '*', if the speci-
+   fied file type does not exist on the current system, then all enquiries
+   return false, i.e., '0'.
+
+   These  operators may be combined for conciseness: '-&lt;i&gt;xy&lt;/i&gt; &lt;i&gt;file&lt;/i&gt;' is equiva-
+   lent to '-&lt;i&gt;x&lt;/i&gt; &lt;i&gt;file&lt;/i&gt; &amp;amp;&amp;amp; -&lt;i&gt;y&lt;/i&gt; &lt;i&gt;file&lt;/i&gt;'.  (+) For example, '-fx' is true  (returns
+   '1') for plain executable files, but not for directories.
+
+   &lt;b&gt;L&lt;/b&gt; may be used in a multiple-operator test to apply subsequent operators
+   to a symbolic link rather than to the file to which  the   link  points.
+   For  example, '-lLo' is true for links owned by the invoking user.  &lt;b&gt;Lr&lt;/b&gt;,
+   &lt;b&gt;Lw&lt;/b&gt; and &lt;b&gt;Lx&lt;/b&gt; are always true for links and false for non-links.  &lt;b&gt;L&lt;/b&gt;  has  a
+   different  meaning  when it is the last operator in a multiple-operator
+   test; see below.
+
+   It is possible but not useful, and  sometimes  misleading,  to  combine
+   operators  which   expect &lt;i&gt;file&lt;/i&gt; to be a file with operators which do not,
+   (e.g., &lt;b&gt;X&lt;/b&gt; and &lt;b&gt;t&lt;/b&gt;).   Following &lt;b&gt;L&lt;/b&gt; with a non-file operator can lead to par-
+   ticularly strange results.
+
+   Other  operators   return   other information, i.e., not just '0' or '1'.
+   (+) They have the same format as before; &lt;i&gt;op&lt;/i&gt; may be one of
+
+ &lt;b&gt;A&lt;/b&gt;     Last file access time, as the number of seconds  since  the epoch
+ &lt;b&gt;A:&lt;/b&gt;    Like &lt;b&gt;A&lt;/b&gt;, but in timestamp format, e.g., 'Fri May 14 16:36:10  1993'
+ &lt;b&gt;M&lt;/b&gt;     Last file modification time
+ &lt;b&gt;M:&lt;/b&gt;    Like &lt;b&gt;M&lt;/b&gt;, but in timestamp format
+ &lt;b&gt;C&lt;/b&gt;     Last inode modification time
+ &lt;b&gt;C:&lt;/b&gt;    Like &lt;b&gt;C&lt;/b&gt;, but in timestamp format
+ &lt;b&gt;D&lt;/b&gt;     Device number
+ &lt;b&gt;I&lt;/b&gt;     Inode number
+ &lt;b&gt;F&lt;/b&gt;     Composite &lt;b&gt;f&lt;/b&gt;ile identifier, in the form &lt;i&gt;device&lt;/i&gt;:&lt;i&gt;inode&lt;/i&gt;
+ &lt;b&gt;L&lt;/b&gt;     The name of the file pointed to by a symbolic link
+ &lt;b&gt;N&lt;/b&gt;     Number of (hard) links
+ &lt;b&gt;P&lt;/b&gt;     Permissions, in octal, without leading zero
+ &lt;b&gt;P:&lt;/b&gt;    Like &lt;b&gt;P&lt;/b&gt;, with leading zero
+ &lt;b&gt;P&lt;/b&gt;&lt;i&gt;mode&lt;/i&gt;   Equivalent to '-P &lt;i&gt;file&lt;/i&gt; &amp;amp; &lt;i&gt;mode&lt;/i&gt;', e.g., '-P22  &lt;i&gt;file&lt;/i&gt;'  returns '22'
+         if  &lt;i&gt;file&lt;/i&gt; is writable by group and other, '20' if by
+          group only, and '0' if by neither
+ &lt;b&gt;P&lt;/b&gt;&lt;i&gt;mode&lt;/i&gt;&lt;b&gt;:&lt;/b&gt;  Like &lt;b&gt;P&lt;/b&gt;&lt;i&gt;mode&lt;/i&gt;&lt;b&gt;:&lt;/b&gt;, with leading zero
+ &lt;b&gt;U&lt;/b&gt;     Numeric userid
+ &lt;b&gt;U:&lt;/b&gt;    Username, or the numeric userid if the username is unknown
+ &lt;b&gt;G&lt;/b&gt;     Numeric groupid
+ &lt;b&gt;G:&lt;/b&gt;    Groupname, or the  numeric  groupid  if  the   groupname  is unknown
+ &lt;b&gt;Z&lt;/b&gt;     Size, in bytes
+</code></pre>
+</pre>
+<p> Only one of these operators may appear in a multiple-operator test, and
+it must be the last.  Note that <b>L</b> has a different meaning at the end of
+and  elsewhere  in  a  multiple-operator   test.  Because '0' is a valid
+return value for many of these operators, they do not return  '0'  when
+they fail: most return '-1', and <b>F</b> returns ':'.<br>
+<br>
+If  the  shell  is  compiled  with POSIX defined (see the <b>version</b> shell
+variable), the result of a file inquiry is based on the permission bits
+of  the  file  and not on the result of the <b>access(2)</b> system call.  For
+example, if one tests a file with <b>-w</b> whose permissions would ordinarily
+allow writing but which is on a file system mounted read-only, the test
+will succeed in a POSIX shell but fail in a non-POSIX shell.<br>
+<br>
+File inquiry operators can also be evaluated with the <i>filetest</i>  builtin
+command</p>
+<p><b>Related commands</b>:<br>
+  <br>
+  <a href="syntax.html">OS X Syntax</a></p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-comparison.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/syntax-comparison.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

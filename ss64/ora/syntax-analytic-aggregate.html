@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Analytic Functions - Window Aggregate Functions 
+ Window aggregate functions return a summary value representing a set of rows.
+  
+  This syntax applies to the aggregate functions SUM, AVG, MIN, MAX,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/syntax-analytic-aggregate.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Analytic Functions - Window Aggregate Functions 
+ Window aggregate functions return a summary value representing a set of rows.
+  
+  This syntax applies to the aggregate functions SUM, AVG, MIN, MAX,">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:31.274Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Analytic Functions - Window Aggregate Functions 
+ Window aggregate functions return a summary value representing a set of rows.
+  
+  This syntax applies to the aggregate functions SUM, AVG, MIN, MAX,">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orasyntax.lbi" --><!-- #EndLibraryItem --><h1>Analytic Functions - Window Aggregate Functions </h1>
+<p> Window aggregate functions return a summary value representing a set of rows.<br>
+  <br>
+  This syntax applies to the aggregate functions SUM, AVG, MIN, MAX, MEDIAN, FIRST_VALUE, 
+  LAST_VALUE, STDDEV, VARIANCE, COUNT, VAR_SAMP, VAR_POP, STDDEV_SAMP, STDDEV_POP, 
+  COVAR_SAMP, COVAR_POP, REGR_SLOPE, REGR_INTERCEPT, REGR_R2, REGR_AVGX, REGR_AVGY, 
+  REGR_COUNT, REGR_SXX, REGR_SXY, REGR_SYY.<br>
+  <br>
+  Each Window aggregate function can have an optional clause defining the size 
+  of the window, by default the window is unbounded i.e. the whole table/partition. 
+  This provides answers to questions such as "what is the average sale price 
+  over all time" or "What is the average sale price over the last 28 
+  days"<br>
+  <br>
+  <b>Defining the Window size</b><br>
+  The window (or the set of rows to be worked on) can be defined as a fixed number 
+  of rows, all preceeding or all following rows or it can be calculated based 
+  on comparing values (or time periods) in the current row with values in the 
+  ordered sequence. This definition is made with the ROWS or RANGE clause<br>
+</p>
+<p>Syntax:</p>
+<pre>Function([arguments]) OVER 
+   ([PARTITION BY value/expr]
+       [ORDER BY expr [<u>ASC</u>|DESC]
+          [ROWS | RANGE <i>windowing_clause</i>]])
+<p><i>windowing_clause</i>s:</p>
+<p>INTERVAL ‘nn’ DAY PRECEDING<br>
+INTERVAL ‘nn’ SECONDS FOLLOWING<br>
+INTERVAL ‘nn’ MONTH PRECEDING<br>
+BETWEEN x PRECEDING AND y FOLLOWING<br>
+BETWEEN x PRECEDING AND y PRECEDING<br>
+BETWEEN CURRENT ROW AND y FOLLOWING<br>
+BETWEEN x PRECEDING AND CURRENT ROW<br>
+BETWEEN x PRECEDING AND UNBOUNDED FOLLOWING<br>
+BETWEEN UNBOUNDED PRECEDING AND y FOLLOWING<br>
+column BETWEEN current.column +/- n AND current.column +/- m<br>
+UNBOUNDED PRECEDING | FOLLOWING<br>
+value/expr PRECEDING | FOLLOWING<br>
+CURRENT ROW</p></pre><p></p>
+<p> For time intervals, the ORDER BY clause has to be a DATE column/expression. 
+  <br>
+  <br>
+  If you omit the windowing_clause entirely, the default is RANGE BETWEEN UNBOUNDED 
+  PRECEDING AND CURRENT ROW. <br>
+  <br>
+  If ROWS is specified, it's a physical offset (the no. of rows in the window)<br>
+  If RANGE is specified, it's a logical offset.<br>
+  <br>
+  UNBOUNDED means the very first/last row of the partition, or if not partitioned, 
+  the first/last row of the dataset.<br>
+  <br>
+  Examples:</p>
+<pre>   SELECT employee_name, hire_date, salary,
+     AVG(salary) OVER (ORDER BY hire_date)
+     RANGE INTERVAL '28' DAY PREDEEDING
+   FROM employees;
+<p>SELECT department_id, hire_date, salary,<br>
+SUM(salary) OVER (PARTITION BY department_id<br>
+ORDER BY hire_date<br>
+ROWS UNBOUNDED PRECEEDING) As &quot;Salary running sum&quot;<br>
+FROM employees<br>
+ORDER BY department_id;   </p></pre><p></p>
+<p> <b> Analytic aggregate functions<br>
+  </b>This other aggregate functions listed at the top of the page all work in 
+  much the same way, FIRST_VALUE and LAST_VALUE are particularly 
+  useful when working with a data window.<br>
+  <br>
+  The functions PERCENTILE_CONT and PERCENTILE_DISC are new in Oracle 9 and calculate 
+  reverse percentiles e.g. given the value 0.42 find the item that comes out at 
+  42% in the ordered data set (_DISC = discrete or nearest value, _CONT=continuous 
+  using linear interpolation)<br>
+  <br>
+<i class="quote">"In the long run the aggregate of decisions in individual businessmen, exercising individual judgment in a free economy, even if often mistaken, is less likely to do harm than the centralized decisions of a government" ~ P. J. O'Rourke (Eat the Rich)</i></p>
+<p>Related</p>
+<p><a href="syntax-analytic.html">Analytic features</a><br>
+<a href="syntax-functions.html">Oracle SQL Functions</a></p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/syntax-analytic-aggregate.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

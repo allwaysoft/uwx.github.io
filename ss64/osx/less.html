@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="less 
+Page through text one screenful at a time, search through output. less provides more emulation plus extensive enhancements such as allowing backward paging through a file as well as forward move">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/less.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="less 
+Page through text one screenful at a time, search through output. less provides more emulation plus extensive enhancements such as allowing backward paging through a file as well as forward move">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="less 
+Page through text one screenful at a time, search through output. less provides more emulation plus extensive enhancements such as allowing backward paging through a file as well as forward move">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>less</h1> 
+<p>Page through text one screenful at a time, search through output. <span class="code">less</span> provides <a href="more.html" class="code">more</a> emulation plus extensive enhancements such as allowing backward paging through a file as well as forward movement.</p>
+<pre>Syntax
+      less [-[+]aBcCdeEfFgGiIJmMnNqQrRsSuUVwWX~]
+              [-b <i>space</i>] [-h <i>lines</i>] [-j <i>line</i>] [-k <i>keyfile</i>]
+                 [-{oO} <i>logfile</i>] [-p <i>pattern</i>] [-P <i>prompt</i>] [-t <i>tag</i>]
+                    [-T <i>tagsfile</i>] [-x <i>tab</i>,...] [-y <i>lines</i>] [-[z] lines]
+                       [-# <i>shift</i>] [+[+]cmd] [--] [<i>filename</i>]...
+<pre><code>  less -?
+  less --help
+  less -V
+  less --version
+</code></pre>
+<p>Options - <a href="less_options.html">The options above are described in full on this page</a></p>
+<p>Commands</p></pre><p></p>
+<p>In  the following descriptions, ^X means control-X.  ESC stands for the
+ESCAPE  key;  for  example  ESC-v  means   the  two  character  sequence "ESCAPE", then "v".</p>
+<pre>   h or H    Help: display a summary of these commands. If you forget all
+                  the other commands, remember this one.
+<p>SPACE or ^V or f or ^F<br>
+Scroll forward N  lines, default one window (see  option  -z<br>
+below).  If N is more  than  the screen size, only the final<br>
+screenful is displayed.  Warning: some systems use ^V as a  spe-<br>
+cial literalization character.</p>
+<p>z      Like  SPACE, but if N is specified, it becomes the new window<br>
+size.</p>
+<p>ESC-SPACE<br>
+Like SPACE, but scrolls a full screenful, even i  it reaches<br>
+end-of-file in the process.</p>
+<p>RETURN or ^N or e or ^E or j or ^J<br>
+Scroll  forward N lines, default 1. The entire N lines are dis-<br>
+played, even if N is more than the screen size.</p>
+<p>d or ^D<br>
+Scroll forward N lines, default one half of the screen size.  If<br>
+N   is specified, it becomes the new default for subsequent d and<br>
+u commands.</p>
+<p>b or ^B or ESC-v<br>
+Scroll backward N lines, default one window  (see  option  -z<br>
+below).  If N is more than the screen size, only the final<br>
+screenful is displayed.</p>
+<p>w      Like ESC-v, but if N is specified, it becomes  the  new  window<br>
+size.</p>
+<p>y or ^Y or ^P or k or ^K<br>
+Scroll backward N lines, default 1.  The entire N lines are dis-<br>
+played, even if N is more than the screen size.  Warning:  some<br>
+systems use ^Y as a special job control character.</p>
+<p>u or ^U<br>
+Scroll  backward  N  lines, default one half of the screen size.<br>
+If N is specified, it becomes the new default for   subsequent  d<br>
+and u commands.<br>
+ESC-) or RIGHTARROW<br>
+Scroll  horizontally right N characters, default half the screen<br>
+width (see the -# option). If a  number  N is  specified,  it<br>
+becomes  the  default  for  future RIGHTARROW and LEFTARROW com-<br>
+mands.  While the text is scrolled, it acts  as  though  the  -S<br>
+option (chop lines) were in effect.<br>
+ESC-( or LEFTARROW<br>
+Scroll horizontally left N characters, default half the screen<br>
+width (see the -# option). If a  number   N  is  specified,  it<br>
+becomes the default for future RIGHTARROW and LEFTARROW com-<br>
+mands.</p>
+<p>r or ^R or ^L<br>
+Repaint the screen.</p>
+<p>R      Repaint the screen, discarding any buffered input. Useful  if<br>
+the file is changing while it is being viewed.<br>
+F      Scroll  forward, and keep trying to read when the end of file is<br>
+reached.  Normally this command would be used  when  already  at<br>
+the  end of the file. It is a way to monitor the tail of a file<br>
+which is growing while it is being viewed. (The  behavior  is<br>
+similar to the “tail -f” command.)</p>
+<p>g or &lt; or ESC-&lt;<br>
+Go to line N in the file, default 1 (beginning of file). (Warn-<br>
+ing: this can be slow if N is large.)</p>
+<p>G or &gt; or ESC-&gt;<br>
+Go to line N in the file, default the end of the  file. (Warn-<br>
+ing:  this can be slow if N is large, or if N is not specified<br>
+and standard input, rather than a file, is being read.)</p>
+<p>p or % Go to a position N percent into the file. N should be between 0<br>
+and 100.</p>
+<p>{      If a left curly bracket appears in the top line displayed on the<br>
+screen, the { command will go to  the  matching  right   curly<br>
+bracket.   The matching right curly bracket is positioned on the<br>
+bottom line of the screen. If there is more than one left curly<br>
+bracket on the top line, a number N can be used to specify the<br>
+N-th bracket on the line.</p>
+<p>}      If a right curly bracket appears in the bottom line displayed on<br>
+the  screen, the   }  command will go to the matching left curly<br>
+bracket.  The matching left curly bracket is positioned  on  the<br>
+top  line   of the screen.   If there is more than one right curly<br>
+bracket on the top line, a number N can be used to  specify  the<br>
+N-th bracket on the line.<br>
+(      Like {, but applies to parentheses rather than curly brackets.</p>
+<p>)      Like }, but applies to parentheses rather than curly brackets.</p>
+<p>[      Like  {, but applies to square brackets rather than curly brackets.</p>
+<p>]      Like }, but applies to square brackets rather than curly  brackets.</p>
+<p>ESC-^F Followed  by two characters, acts like {, but uses the two char-<br>
+acters as open and close brackets, respectively.   For  example,<br>
+“ESC  ^F &lt; &gt;” could be used to go forward to the &gt; which matches<br>
+the &lt; in the top displayed line.</p>
+<p>ESC-^B Followed by two characters, acts like }, but uses the two   char-<br>
+acters  as  open and close brackets, respectively. For example,<br>
+“ESC ^B &lt; &gt;” could be used to go backward to the &lt; which matches<br>
+the &gt; in the bottom displayed line.</p>
+<p>m      Followed  by  any lowercase letter, marks the current position<br>
+with that letter.</p>
+<p>’      (Single quote.)  Followed by any lowercase  letter,  returns  to<br>
+the position which was previously marked with that letter.  Fol-<br>
+lowed by another single quote, returns to the position at   which<br>
+the last “large” movement command was executed. Followed by a ^<br>
+or $, jumps to the beginning or end of  the  file  respectively.<br>
+Marks  are  preserved when a new file is examined, so the ’ com-<br>
+mand can be used to switch between input files.</p>
+<p><sup>X</sup>X   Same as single quote.</p>
+<p>/<i>pattern</i><br>
+Search forward in the file for the <i>N</i>-th line containing the pat-<br>
+tern.  <i>N</i> defaults to 1.  The pattern is a regular expression, as<br>
+recognized by ed.   The search starts at  the  second  line  dis-<br>
+played (but see the -a and -j options, which change this).</p>
+<pre><code>    Certain  characters  are  special if entered at the beginning of
+    the pattern; they modify the type of search rather  than  become
+    part of the pattern:
+
+     ^N or !
+      Search for lines which do NOT match the pattern.
+     ^E or *
+      Search multiple files. That is, if the search reaches
+      the END of the current file without finding a match,  the
+      search  continues in the  next file in the command line
+      list.
+
+     ^F or @
+      Begin the search at the first line of the FIRST  file  in
+      the  command line list, regardless of what is currently
+      displayed on the screen or the settings of the -a  or  -j
+      options.
+
+     ^K
+     Highlight any text which matches the pattern on the
+      current screen, but don't move to the first match
+     (KEEP current position).
+</code></pre>
+<p>^R     Don’t interpret regular expression metacharacters; that<br>
+is, do a simple textual comparison.</p>
+<p>?pattern<br>
+Search backward in the file for the  N-th   line  containing  the<br>
+pattern.   The  search starts at the line immediately before the<br>
+top line displayed.</p>
+<pre><code>    Certain characters are special as in the / command:
+</code></pre>
+<p>^N or !<br>
+Search for lines which do NOT match the pattern.</p>
+<p>^E or *<br>
+Search multiple files.  That is, if  the  search  reaches<br>
+the  beginning  of the current file  without finding a<br>
+match, the search continues in the previous file  in  the<br>
+command line list.</p>
+<p>^F or @<br>
+Begin the search at the last line of the last file in the<br>
+command line list, regardless of what is  currently  dis-<br>
+played  on the screen  or  the settings of the -a or -j<br>
+options.</p>
+<p>^K     As in forward searches.</p>
+<p>^R     As in forward searches.</p>
+<p>ESC-/pattern<br>
+Same as “/*”.</p>
+<p>ESC-?pattern<br>
+Same as “?*”.</p>
+<p>n      Repeat previous search, for N-th line containing the  last  pat-<br>
+tern.   If the previous search was modified by ^N, the search is<br>
+made for the N-th line NOT containing the pattern.  If the  pre-<br>
+vious  search  was  modified  by ^E, the search continues in the<br>
+next (or previous) file if not satisfied in  the  current   file.<br>
+If  the  previous   search was modified by ^R, the search is done<br>
+without using regular expressions.  There is no  effect  if  the<br>
+previous search was modified by ^F or ^K.</p>
+<p>N      Repeat previous search, but in the reverse direction.<br>
+ESC-n  Repeat previous  search, but  crossing  file  boundaries.  The<br>
+effect is as if the previous search were modified by *.<br>
+ESC-N  Repeat previous search, but in the reverse direction and  cross-<br>
+ing file boundaries.</p>
+<p>ESC-u  Undo  search  highlighting.   Turn  off  highlighting of strings<br>
+matching the current search pattern.  If highlighting is already<br>
+off  because of a previous ESC-u command, turn highlighting back<br>
+on.  Any search command will also   turn  highlighting  back  on.<br>
+(Highlighting can also be disabled by toggling the -G option; in<br>
+that case search commands do not turn highlighting back on.)</p>
+<p>:e [<i>filename</i>]<br>
+Examine a new file.  If the filename is missing,  the  “current&quot;<br>
+file  (see  the :n and :p commands below) from the list of files<br>
+in the command line is re-examined. A percent sign (%) in  the<br>
+filename  is  replaced by the name of the current file.  A pound<br>
+sign (#) is replaced by the name  of  the  previously examined<br>
+file.    However,   two  consecutive percent  signs  are  simply<br>
+replaced with a single percent sign. This allows you to enter a<br>
+filename  that  contains a percent sign in the name.  Similarly,<br>
+two consecutive pound signs are replaced  with a  single   pound<br>
+sign.   The  filename  is inserted into the command line list of<br>
+files so that it can be seen by subsequent :n and  :p  commands.<br>
+If the filename consists of several files, they are all inserted<br>
+into the list of files and the first one is  examined. If  the<br>
+filename contains one or more spaces, the entire filename should<br>
+be enclosed in double quotes (also see the -” option).</p>
+<p><sup>X</sup>V or E<br>
+Same as :e.  Warning: some systems use ^V as a special literal-<br>
+ization character. On such systems, you might not be able to use<br>
+^V.</p>
+<p>:n     Examine the next file (from the list of files given in the command<br>
+line). If a number N is specified, the N-th next file is<br>
+examined.</p>
+<p>:p     Examine the previous file in the command line list. If a number<br>
+N is specified, the N-th previous file is examined.</p>
+<p>:x     Examine  the first file in the command line list. If a number N<br>
+is specified, the N-th file in the list is examined.</p>
+<p>:d     Remove the current file from the list of files.</p>
+<p>t      Go to the next tag, if there were more than one matches for  the<br>
+current tag.  See the -t option for more details about tags.</p>
+<p>T      Go  to the previous tag, if there were more than one matches for<br>
+the current tag.</p>
+<p>= or ^G or :f<br>
+Prints some information about the file being  viewed,  including<br>
+its  name and the line number and byte offset of the bottom line<br>
+being displayed.  If possible, it also prints the length of  the<br>
+file,  the  number  of  lines in the file and the percent of the<br>
+file above the last displayed line.</p>
+<ul>
+<li>
+<pre><code> Followed by one of the command line option letters (see  Options
+</code></pre>
+below),  this will change the setting of that option and print a<br>
+message describing the new setting. If  a  ^P  (CONTROL-P)  is<br>
+entered immediately after the dash, the setting of the option is<br>
+changed but no message is printed. If the option letter  has  a<br>
+numeric  value (such as -b or -h), or a string value (such as -P<br>
+or -t), a new value can be entered after the option letter.   If<br>
+no  new  value is entered, a message describing the current setting<br>
+is printed and nothing is changed.</li>
+</ul>
+<p>–     Like the - command, but takes a long option  name   (see  Options<br>
+below)  rather  than  a  single  option  letter.  You must press<br>
+RETURN after typing the option name.  A ^P immediately after the<br>
+second  dash suppresses printing of a message describing the new<br>
+setting, as in the - command.</p>
+<p>-+     Followed by one of the command line  option  letters  this  will<br>
+reset  the  option to its  default setting and print a message<br>
+describing the new setting. (The “-+X” command  does  the  same<br>
+thing  as  “-+X”  on  the command line.) This does not work for<br>
+string-valued options.</p>
+<p>–+    Like the -+ command, but takes a long option name rather than  a<br>
+single option letter.</p>
+<p>-!     Followed  by  one of the command line option letters, this will<br>
+reset the option to the “opposite” of its default  setting  and<br>
+print  a message describing the new setting.  This does not work<br>
+for numeric or string-valued options.</p>
+<p>–!    Like the -! command, but takes a long option name rather than  a<br>
+single option letter.</p>
+<p>_      (Underscore.)  Followed  by one of the command line option let-<br>
+ters, this will print a message describing the current  setting<br>
+of that option.  The setting of the option is not changed.</p>
+<p>__     (Double underscore.)  Like the _ (underscore) command, but takes<br>
+a long option name rather than a single option letter.  You must<br>
+press RETURN after typing the option name.</p>
+<p>+cmd   Causes  the specified cmd to be executed each time a new file is<br>
+examined.   For example, +G causes less to initially display each<br>
+file starting at the end rather than the beginning.</p>
+<p>V      Prints the version number of less being run.</p>
+<p>q or Q or :q or :Q or ZZ<br>
+Exits less.</p>
+<p>The  following four commands might not be valid, depending on your<br>
+particular installation.</p>
+<p>v      Invokes an editor to edit the current file  being viewed. The<br>
+editor is taken from the environment variable VISUAL if defined,<br>
+or EDITOR if VISUAL is not defined, or defaults to “vi” if  neither<br>
+VISUAL  nor EDITOR is defined.  See also the discussion of<br>
+LESSEDIT under the section on PROMPTS below.</p>
+<p>! <i>shell-command</i><br>
+Invokes a shell to run the shell-command given.  A percent  sign<br>
+(%)  in the command is replaced by the name of the current file.<br>
+A pound sign (#) is replaced by the name of the previously examined<br>
+file.   “!!”  repeats the last shell command.  “!” with no<br>
+shell command simply invokes a  shell.   On  Unix   systems,  the<br>
+shell  is taken from the environment variable SHELL, or defaults<br>
+to “sh”.  On MS-DOS and OS/2 systems, the shell  is  the  normal<br>
+command processor.</p>
+<p>| <i>m</i> <i>shell-command</i><br>
+<i>m</i>  represents  any  mark letter. Pipes a section of the input<br>
+file to the given shell command. The section of the file to  be<br>
+piped  is   between  the first line on the current screen and the<br>
+position marked by the letter. <i>m</i> can also be ^ or $ to indicate<br>
+beginning or end of file respectively.  If <i>m</i> is . or newline,<br>
+the current screen is piped.</p>
+<p>s <i>filename</i><br>
+Save the input to a file. This only works if  the  input   is  a<br>
+pipe, not an ordinary file.</p>
+<p>Also: <a href="less_options.html">Options, Line editing and Language support</a></p></pre><p></p>
+<p> less does not have to read the entire input file before starting, so with large input files it starts up faster than text editors like vi.</p>
+<p>When the output of <span class="code">less</span> is redirected to a file, it behaves like <a href="cat.html">cat</a>, no additional output is added or input requested.</p>
+<p class="quote"><i>“Counter to the widely held belief that industrial agriculture is more efficient and productive, small farms produce far more per acre than large farms” ~ <a href="http://www.foodfirst.org/en/node/3049" target="_blank" rel="external">Christos Vasilikiotis</a></i> (University of California, Berkeley)</p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/less.1.html" target="_blank" rel="external">less man page</a> - Apple.com<br>
+lesskey - specify key bindings for less<br>
+<a href="echo.html">echo</a> - Display message on screen<br>
+<a href="tee.html">tee</a> - Redirect output to multiple files <br>
+The <a href="http://www.greenwoodsoftware.com/less/" target="_blank" rel="external">less home 
+page</a> (Mark Nudelman)<br>
+AquaLess - OSX file pager.</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/less.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

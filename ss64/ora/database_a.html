@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ALTER DATABASE 
+Open an existing database, and /or modify associated files.
+  
+  Syntax:
+   ALTER DATABASE database_name options
+Options: 
+open/mount options:
+   MOUNT
+   MOUNT STANDBY DATABASE
+   MOU">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/database_a.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ALTER DATABASE 
+Open an existing database, and /or modify associated files.
+  
+  Syntax:
+   ALTER DATABASE database_name options
+Options: 
+open/mount options:
+   MOUNT
+   MOUNT STANDBY DATABASE
+   MOU">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:28.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ALTER DATABASE 
+Open an existing database, and /or modify associated files.
+  
+  Syntax:
+   ALTER DATABASE database_name options
+Options: 
+open/mount options:
+   MOUNT
+   MOUNT STANDBY DATABASE
+   MOU">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>ALTER DATABASE</h1> 
+<p>Open an existing database, and /or modify associated files.<br>
+  <br>
+  Syntax:</p>
+<pre>   ALTER DATABASE database_name <i>options</i></pre>
+<p>Options: </p>
+<pre><i>open/mount options:</i>
+   MOUNT
+   MOUNT STANDBY DATABASE
+   MOUNT CLONE DATABASE
+   MOUNT PARALLEL
+   CONVERT
+   OPEN [READ ONLY]
+   OPEN [READ WRITE] [RESETLOGS|<u>NORESETLOGS</u>] [UPGRADE|DOWNGRADE]
+   ACTIVATE [PHYSICAL | LOGICAL] STANDBY DATABASE [FINISH APPLY]
+   [NATIONAL] CHARACTER SET <i>char_set</i>
+<p><i>archivelog options:</i><br>
+ARCHIVELOG<br>
+NOARCHIVELOG</p>
+<p><i>backup and recovery options:</i><br>
+BEGIN BACKUP<br>
+BACKUP CONTROLFILE TO ‘<i>filename</i>’ [REUSE]<br>
+BACKUP CONTROLFILE TO TRACE [RESETLOGS] [AS ‘<i>filename</i>’ [REUSE]]<br>
+CREATE STANDBY CONTROLFILE AS ‘<i>filename</i>’ [REUSE]<br>
+RECOVER <a href="clause_recover.html">recover_clause</a><br>
+RECOVER MANAGED STANDBY <a href="clause_recover_standby.html">standby_recover_clause</a><br>
+END BACKUP</p>
+<p><i>Datafile options:</i><br>
+CREATE DATAFILE ‘<i>filename</i>’ [,‘<i>filename</i>’…] AS <a href="clause_filespec.html">filespec</a> [,‘<i>filespec</i>’…]<br>
+CREATE DATAFILE <i>filenunber</i> [,<i>filenunber</i>…] AS <a href="clause_filespec.html">filespec</a> [,‘<i>filespec</i>’…]<br>
+DATAFILE ‘<i>filename</i>’ ONLINE<br>
+DATAFILE ‘<i>filename</i>’ OFFLINE [FOR DROP]<br>
+DATAFILE ‘<i>filename</i>’ RESIZE <i>int</i> K | M<br>
+DATAFILE ‘<i>filename</i>’ AUTOEXTEND OFF<br>
+DATAFILE ‘<i>filename</i>’ AUTOEXTEND ON [NEXT <i>int</i> K | M] [MAXSIZE <i>int</i> K | M | UNLIMITED]<br>
+DATAFILE ‘<i>filename</i>’ END BACKUP<br>
+RENAME FILE ‘<i>data_file_name</i>’ TO ‘<i>data_file_name</i>’</p>
+<p>TEMPFILE ‘<i>filename</i>’ ONLINE<br>
+TEMPFILE ‘<i>filename</i>’ OFFLINE<br>
+TEMPFILE ‘<i>filename</i>’ DROP [INCLUDING DATAFILES]<br>
+TEMPFILE ‘<i>filename</i>’ RESIZE <i>int</i> K | M<br>
+TEMPFILE ‘<i>filename</i>’ AUTOEXTEND OFF<br>
+TEMPFILE ‘<i>filename</i>’ AUTOEXTEND ON [NEXT <i>int</i> K | M] [MAXSIZE <i>int</i> K | M | UNLIMITED]</p>
+<p><i>redo log options:</i><br>
+ADD LOGFILE [THREAD <i>int</i>] [GROUP <i>int</i>] <a href="clause_filespec.html">filespec</a><br>
+ADD LOGFILE MEMBER ‘<i>filename</i>’ [REUSE] TO GROUP <i>int</i><br>
+ADD LOGFILE MEMBER ‘<i>filename</i>’ [REUSE] TO 'filename’<br>
+DROP LOGFILE GROUP <i>int</i><br>
+DROP LOGFILE (‘<i>filename</i>’)<br>
+DROP LOGFILE MEMBER '<i>filename</i>’<br>
+RENAME FILE ‘<i>redolog_file_name</i>’ TO '<i>redolog_file_name</i>’<br>
+CLEAR [UNARCHIVED] LOGFILE GROUP <i>int</i> [UNRECOVERABLE DATAFILE]<br>
+CLEAR [UNARCHIVED] LOGFILE (‘<i>filename</i>’) [UNRECOVERABLE DATAFILE]<br>
+<i><br>
+Parallel server options:</i><br>
+CREATE STANDBY CONTROLFILE AS ‘<i>filename</i>’ [REUSE]<br>
+SET DBLOW = '<i>text</i>’<br>
+SET DBHIGH = '<i>text</i>’<br>
+SET DBMAC = ON | OFF<br>
+ENABLE [PUBLIC] THREAD <i>int</i><br>
+DISABLE THREAD <i>int</i></p>
+<p><i>Backwards compatibility options:</i><br>
+RENAME GLOBAL_NAME TO <i>database</i> [<i>domain</i>]<br>
+RESET COMPATIBILITY</p></pre><p></p>
+<p>Any option above that includes a 'filename' 
+  can be extended to cover multiple files using the syntax:<b> (</b>'filename1'<b>,</b> 
+'filename2')</p>
+<p> <span class="code">'<i>filename</i>' [offline] DROP</span> will only work on a tablespace consisting of a single datafile, for a tablespace comprising multiple datafiles you can only drop a datafile by dropping the entire
+tablespace.</p>
+<p>Some of the commands above can only be used when the database is in a particular 
+state:</p>
+<blockquote>
+<p>MOUNT, CONVERT - Require that the db is Not Mounted.<br>
+  ARCHIVELOG, NOARCHIVLOG, RECOVER - Require that the db is Mounted but not open 
+  (must be mount exclusive - not mount parallel).<br>
+ENABLE, DISABLE, RENAME GLOBAL_NAME, RESET, SET - Require that the db is Open.</p>
+</blockquote>
+<p>All other options will work with the db mounted, open or closed as long as none 
+of the files involved are 'in use'</p>
+<p><code>database_name</code> is defined when the database is created - it is normally set to the same as the database SID.</p>
+<p><b>Examples</b></p>
+<p>Resize datafile:</p>
+<pre>SQL&gt; ALTER DATABASE DATAFILE 'F:\oradata\live\Mydb02.ora' RESIZE 500m;</pre>
+<p>Take datafile offline:</p>
+<pre>SQL&gt; ALTER DATABASE DATAFILE 'F:\oradata\live\Mydb02.ora' OFFLINE;</pre>
+<pre>Database altered.
+</pre>
+<p>Take datafile online, when doing this, file recovery is needed to update the timestamp in the offline datafile header.:</p>
+<pre>SQL&gt; ALTER DATABASE DATAFILE 'F:\oradata\live\Mydb02.ora' ONLINE;
+ ALTER DATABASE DATAFILE 'F:\oradata\live\Mydb02.ora' ONLINE
+ *
+ ERROR at line 1:
+ ORA-01113: file 16 needs media recovery
+ ORA-01110: data file 16: 'F:\ORADATA\LIVE\Mydb02.ORA'
+</pre>
+<pre>SQL&gt; RECOVER DATAFILE 'F:\oradata\live\Mydb02.ora';
+ Media recovery complete.</pre>
+<pre>SQL&gt; ALTER DATABASE DATAFILE 'F:\oradata\live\Mydb02.ora' ONLINE;</pre>
+<pre>Database altered</pre>
+<p>Change the database character set to UTF8, this must be done with no users connected (restricted session) </p>
+<pre>SQL&gt; SHUTDOWN IMMEDIATE;   -- or NORMAL
+    &lt;do a full backup&gt;
+SQL&gt; STARTUP MOUNT;
+SQL&gt; ALTER SYSTEM ENABLE RESTRICED SESSION;
+SQL&gt; ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0;
+SQL&gt; ALTER DATABASE OPEN;
+SQL&gt; ALTER DATABASE CHARACTER SET <b>UTF8</b>;
+SQL&gt; SHUTDOWN IMMEDIATE;   -- or NORMAL
+SQL&gt; STARTUP;
+</pre>
+<p><i class="quote">"You know, the very powerful and the very stupid have one thing in common, 
+  they don't alter their views to fit the facts, they alter the facts to fit the 
+  views, which can be uncomfortable, if you happen to be one of the facts that 
+  needs altering" ~ Doctor 
+  Who</i><br>
+<br>
+<b> Related Commands:</b></p>
+<p>DATABASE - <a href="database_c.html">CREATE DATABASE</a> 
+  <br>
+  <a href="recover.html">RECOVER</a> <br>
+  <a href="shutdown.html">SHUTDOWN</a> <br>
+  <a href="startup.html">STARTUP</a> <br>
+<a href="tablespace_a.html">ALTER TABLESPACE</a><br>
+  <a href="system_a.html">ALTER SYSTEM</a> </p>
+<p><b>Related Views:</b></p>
+<p class="code"> &nbsp;<a href="../orad/GLOBAL_NAME.html">GLOBAL_NAME</a>   
+&nbsp;<a href="../orad/DBA_DATA_FILES.html">DBA_DATA_FILES</a>   
+&nbsp;<a href="../orav/V$CONTROLFILE.html">V$CONTROLFILE</a>   
+&nbsp;<a href="../orav/V$DATABASE.html">V$DATABASE</a>   
+&nbsp;<a href="../orav/V$DATAFILE.html">V$DATAFILE</a>   
+&nbsp;<a href="../orav/V$LOG.html">V$LOG</a>   
+&nbsp;<a href="../orav/V$LOGFILE.html">V$LOGFILE</a> </p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="database_a.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/database_a.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

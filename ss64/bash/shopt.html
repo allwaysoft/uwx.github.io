@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="shopt 
+Shell Options
+Syntax
+      shopt [-pqsu] [-o] [optname ...]
+Options
+-s   Enable (set) each optname
+ -u   Disable (unset) each optname.
+
+ -p   Display a list of all settable options, with an ind">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/shopt.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="shopt 
+Shell Options
+Syntax
+      shopt [-pqsu] [-o] [optname ...]
+Options
+-s   Enable (set) each optname
+ -u   Disable (unset) each optname.
+
+ -p   Display a list of all settable options, with an ind">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:42.110Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="shopt 
+Shell Options
+Syntax
+      shopt [-pqsu] [-o] [optname ...]
+Options
+-s   Enable (set) each optname
+ -u   Disable (unset) each optname.
+
+ -p   Display a list of all settable options, with an ind">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>shopt</h1> 
+<p>Shell Options</p>
+<pre>Syntax
+      shopt [-pqsu] [-o] [<var>optname</var> ...]
+<p>Options<br>
+-s   Enable (set) each optname</p>
+<pre><code> -u   Disable (unset) each optname.
+
+ -p   Display a list of all settable options, with an indication of 
+      whether or not each is set. The output is displayed in a form 
+      that can be reused as input. (-p is the default action)
+
+ -q   Suppresses normal output; the return status indicates whether the optname
+      is set or unset. If multiple optname arguments are given with `-q',
+      the return status is zero if all optnames are enabled; non-zero otherwise. 
+
+ -o   Restricts the values of optname to be those defined for the `-o' option to 
+      the set builtin.&lt;/pre&gt;
+</code></pre>
+<p><span class="body"> If either <code>-s' or </code>-u' is used with no optname arguments, 
+  the display is limited to those options which are set or unset, respectively. 
+  Unless otherwise noted, the shopt options are disabled (off) by default. <br>
+  <br>
+  The return status is zero unless an optname was *not* enabled or was not a valid 
+  shell option. </span><br>
+</p>
+<pre>The list of <code>shopt</code> options is:
+<p>cdable_vars<br>
+If this is set, an argument to the <code>cd</code> builtin command that<br>
+is not a directory is assumed to be the name of a variable whose value is<br>
+the directory to change to.</p>
+<p>cdspell<br>
+If set, minor errors in the spelling of a directory component in a <code>cd</code><br>
+command will be corrected. The errors checked for are transposed characters,<br>
+a missing character, and a character too many. If a correction is found, the<br>
+corrected path is printed, and the command proceeds. This option is only used<br>
+by interactive shells.</p>
+<p>checkhash<br>
+If this is set, Bash checks that a command found in the hash table exists<br>
+before trying to execute it. If a hashed command no longer exists, a normal<br>
+path search is performed.</p>
+<p>checkwinsize<br>
+If set, Bash checks the window size after each command and, if necessary,<br>
+updates the values of <code>LINES</code> and <code>COLUMNS</code>.</p>
+<p>cmdhist<br>
+If set, Bash attempts to save all lines of a multiple-line command in the<br>
+same history entry. This allows easy re-editing of multi-line commands.</p>
+<p>dotglob<br>
+If set, Bash includes filenames beginning with a `.’ in the results of filename<br>
+expansion.</p>
+<p>execfail<br>
+If this is set, a non-interactive shell will not exit if it cannot execute<br>
+the file specified as an argument to the <code>exec</code> builtin command.<br>
+An interactive shell does not exit if <code>exec</code> fails.</p>
+<p>expand_aliases<br>
+If set, aliases are expanded. This option is enabled by default for interactive<br>
+shells.</p>
+<p>extglob<br>
+If set, the extended pattern matching features described above are enabled.</p>
+<p>histappend<br>
+If set, the history list is appended to the history file when the shell exits,<br>
+rather than overwriting the history file.<br>
+shopt -s histappend<br>
+To append every line to history individually set:<br>
+PROMPT_COMMAND='history -a’<br>
+With these two settings, a new shell will get the history lines from all previous<br>
+shells instead of the default ‘last window closed’&gt;history<br>
+(the history file is named by the value of the <code>HISTFILE</code> variable)</p>
+<p>histreedit<br>
+If set, and Readline is being used, a user is given the opportunity to re-edit<br>
+a failed history substitution.</p>
+<p>histverify<br>
+If set, and Readline is being used, the results of history substitution<br>
+are not immediately passed to the shell parser. Instead, the resulting line<br>
+is loaded into the Readline editing buffer, allowing further modification.</p>
+<p>hostcomplete<br>
+If set, and Readline is being used, Bash will attempt to perform hostname<br>
+completion when a word containing a <samp>`@’</samp> is being completed.<br>
+This option is enabled by default.</p>
+<p>huponexit<br>
+If set, Bash will send <code>SIGHUP</code> to all jobs when an interactive<br>
+login shell exits.</p>
+<p>interactive_comments<br>
+Allow a word beginning with <samp>`#’</samp> to cause that word and all<br>
+remaining characters on that line to be ignored in an interactive shell. This<br>
+option is enabled by default.</p>
+<p>lithist<br>
+If enabled, and the <code>cmdhist</code> option is enabled, multi-line commands<br>
+are saved to the history with embedded newlines rather than using semicolon<br>
+separators where possible.</p>
+<p>mailwarn<br>
+If set, and a file that Bash is checking for mail has been accessed since<br>
+the last time it was checked, the message <code>“The mail in <var>mailfile</var><br>
+has been read”</code> is displayed.</p>
+<p>no_empty_cmd_completion<br>
+If set, and Readline is being used, Bash will not attempt to search the<br>
+<code>PATH</code> for possible completions when completion is attempted on<br>
+an empty line.</p>
+<p>nocaseglob<br>
+If set, Bash matches filenames in a case-insensitive fashion when performing<br>
+filename expansion.</p>
+<p>nullglob<br>
+If set, Bash allows filename patterns which match no files to expand to<br>
+a null string, rather than themselves.</p>
+<p>progcomp<br>
+If set, the programmable completion facilities are enabled. This option<br>
+is enabled by default.</p>
+<p>promptvars<br>
+If set, prompt strings undergo variable and parameter expansion after being<br>
+expanded. This option is enabled by default.</p>
+<p>restricted_shell<br>
+The shell sets this option if it is started in restricted mode. The value<br>
+can not be changed. This is not reset when the startup files are executed,<br>
+allowing the startup files to discover whether or not a shell is restricted.</p>
+<p>shift_verbose<br>
+If this is set, the <code>shift</code> builtin prints an error message when<br>
+the shift count exceeds the number of positional parameters.</p>
+<p>sourcepath<br>
+If set, the <code>source</code> builtin uses the value of <code>PATH</code><br>
+to find the directory containing the file supplied as an argument. This option<br>
+is enabled by default.</p>
+<p>xpg_echo<br>
+If set, the <code>echo</code> builtin expands backslash-escape sequences<br>
+by default.</p></pre><p></p>
+<p>`shopt' is a BASH builtin command.<br>
+  <br>
+  <i class="quote">"The dogma of the ghost in the machine" ~ Gilbert 
+  Ryle </i> </p>
+<p><b>Related:</b><br>
+<br>
+<a href="env.html">env</a> - Display, set, or remove environment variables<br>
+<a href="function.html">function</a> - Define Function Macros<br>
+<a href="local.html">local</a> - Create variables <br>
+<a href="logname.html">logname</a> - Print current login name<br>
+<a href="set.html">set</a> - Manipulate shell variables and functions<br>
+<a href="uname.html">uname</a> - Print system information<br>
+<a href="users.html">users</a> - Print login names of users currently logged in<br>
+<a href="who.html">who</a> - Print who is currently logged in <br>
+Equivalent Windows commands: <a href="../nt/setlocal.html">SETLOCAL</a> - Set options to control the visibility of  variables</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="shopt.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/shopt.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

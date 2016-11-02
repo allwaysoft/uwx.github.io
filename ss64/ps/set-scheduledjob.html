@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-ScheduledJob (PowerShell 3.0+) 
+Change the properties of a scheduled job.
+Syntax
+      Set-ScheduledJob [-InputObject] ScheduledJobDefinition [-ArgumentList Object[]]
+         [-Authentication Aut">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-scheduledjob.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-ScheduledJob (PowerShell 3.0+) 
+Change the properties of a scheduled job.
+Syntax
+      Set-ScheduledJob [-InputObject] ScheduledJobDefinition [-ArgumentList Object[]]
+         [-Authentication Aut">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-ScheduledJob (PowerShell 3.0+) 
+Change the properties of a scheduled job.
+Syntax
+      Set-ScheduledJob [-InputObject] ScheduledJobDefinition [-ArgumentList Object[]]
+         [-Authentication Aut">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-ScheduledJob (PowerShell 3.0+)</h1> 
+<p>Change the properties of a scheduled job.</p>
+<pre>Syntax
+      Set-ScheduledJob [-InputObject] <i>ScheduledJobDefinition</i> [-ArgumentList <i>Object</i>[]]
+         [-Authentication <i>AuthenticationMechanism</i>] [-Credential <i>PSCredential</i>]
+            [-InitializationScript <i>ScriptBlock</i>] [-MaxResultCount <i>Int32</i>] [-Name <i>String</i>]
+               [-PassThru] [-RunAs32] [-RunNow] [-ScheduledJobOption <i>ScheduledJobOptions</i>]
+                  [-<b>ScriptBlock</b> <i>ScriptBlock</i>] [-Trigger <i>ScheduledJobTrigger</i>[]] [<a href="common.html"><i>CommonParameters</i></a>]
+<pre><code>  Set-ScheduledJob [-InputObject] &lt;i&gt;ScheduledJobDefinition&lt;/i&gt; [-ArgumentList &lt;i&gt;Object&lt;/i&gt;[]]
+     [-Authentication &lt;i&gt;AuthenticationMechanism&lt;/i&gt;] [-Credential &lt;i&gt;PSCredential&lt;/i&gt;] 
+        [-InitializationScript &lt;i&gt;ScriptBlock&lt;/i&gt;] [-MaxResultCount &lt;i&gt;Int32&lt;/i&gt;] [-Name &lt;i&gt;String&lt;/i&gt;]
+           [-PassThru] [-RunAs32] [-RunNow] [-ScheduledJobOption &lt;i&gt;ScheduledJobOptions&lt;/i&gt;]
+              [-&lt;b&gt;FilePath&lt;/b&gt; &lt;i&gt;String&lt;/i&gt;] [-Trigger &lt;i&gt;ScheduledJobTrigger&lt;/i&gt;[]] [&lt;a href=&quot;common.html&quot;&gt;&lt;i&gt;CommonParameters&lt;/i&gt;&lt;/a&gt;]
+
+  Set-ScheduledJob [-InputObject] &lt;i&gt;ScheduledJobDefinition&lt;/i&gt; [-&lt;b&gt;ClearExecutionHistory&lt;/b&gt;]
+     [-PassThru] [&lt;a href=&quot;common.html&quot;&gt;&lt;i&gt;CommonParameters&lt;/i&gt;&lt;/a&gt;]
+</code></pre>
+<p>Key<br>
+-ArgumentList <i>Object</i>[]<br>
+Specifies values for the parameters of the script that is specified by the FilePath parameter or for the<br>
+command that is specified by the ScriptBlock parameter.</p>
+<p>-Authentication <i>AuthenticationMechanism</i><br>
+Specifies the mechanism that is used to authenticate the user’s credentials.   Valid values are Default,<br>
+Basic, Credssp, Digest, Kerberos, Negotiate, and NegotiateWithImplicitCredential.  The default value is<br>
+Default. For information about the values of this parameter, see the description of the<br>
+System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in MSDN.</p>
+<pre><code>   CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are 
+   passed to a remote computer to be authenticated, is designed for commands that require authentication on more 
+   than one resource, such as accessing a remote network share. This mechanism increases the security risk of the 
+   remote operation. If the remote computer is compromised, the credentials that are passed to it can be used to 
+   control the network session.
+</code></pre>
+<p>-ClearExecutionHistory<br>
+Deletes the current execution history and the saved results of the scheduled job.</p>
+<pre><code>   The job execution history and job results are saved with the scheduled job in the 
+   $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory on the computer on which the job is 
+   created. To see the execution history, use the Get-Job cmdlet. To get the job results, use the Receive-Job 
+   cmdlet.
+
+   This parameter does not affect the events that Task Scheduler writes to the Windows event logs and it does not 
+   stop Windows PowerShell from saving job results. To manage the number of job results that are saved, use the 
+   MaxResultCount parameter.
+</code></pre>
+<p>-Credential <i>PSCredential</i><br>
+Specifies a user account that has permission to run the scheduled job. The default is the current user.</p>
+<pre><code>   Type a user name, such as &quot;User01&quot; or &quot;Domain01\User01&quot;, or enter a PSCredential object, such as one from the 
+   Get-Credential cmdlet. If you enter only a user name, you will be prompted for a password.
+</code></pre>
+<p>-FilePath <i>String</i><br>
+Specifies a script that the scheduled job runs. Enter the path to a .ps1 file on the local computer. To<br>
+specify default values for the script parameters, use the ArgumentList parameter. Every scheduled job must<br>
+have either a ScriptBlock or FilePath value.</p>
+<p>-InitializationScript <i>ScriptBlock</i><br>
+Specifies the fully qualified path to a Windows PowerShell script (.ps1). The initialization script runs in<br>
+the session that is created for the background job before the commands that are specified by the ScriptBlock<br>
+parameter or the script that is specified by the FilePath parameter . You can use the initialization script to<br>
+configure the session, such as adding files, functions, or aliases, creating directories, or checking for<br>
+prerequisites.</p>
+<pre><code>   To specify a script that runs the primary job commands, use the FilePath parameter.
+
+   If the initialization script generates an error (even a non-terminating error), the current instance of the 
+   scheduled job does not run and its status is &quot;Failed.&quot;
+</code></pre>
+<p>-InputObject <i>ScheduledJobDefinition</i><br>
+Specifies the scheduled job to be changed. Enter a variable that contains  ScheduledJobDefinition objects or<br>
+type a command or expression that gets ScheduledJobDefinition objects, such as a Get-ScheduledJob command. You<br>
+can also pipe a ScheduledJobDefinition object to Set-ScheduledJob.</p>
+<pre><code>   If you specify multiple scheduled jobs, Set-ScheduledJob makes the same changes to all jobs.
+
+-MaxResultCount &lt;i&gt;Int32&lt;/i&gt;
+   Specifies how many job result entries are maintained for the scheduled job. The default value is 32.
+
+   PowerShell saves the execution history and results of each triggered instance of the scheduled job on 
+   disk. The value of this parameter determines the number of job instance results that are saved for this 
+   scheduled job. When the number of job instance results exceeds this value, Windows PowerShell deletes the 
+   results of the oldest job instance to make room for the results of the newest job instance.
+
+   The job execution history and job results are saved in the 
+   $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\&lt;jobname&gt;\Output\&lt;timestamp&gt; directories on the 
+   computer on which the job is created. To see the execution history, use the Get-Job cmdlet. To get the job 
+   results, use the Receive-Job cmdlet.
+
+   The MaxResultCount parameter sets the value of the ExecutionHistoryLength property of the scheduled job.
+
+   To delete the current execution history and job results, use the ClearExecutionHistory parameter.
+</code></pre>
+<p>-Name <i>String</i><br>
+Specifies a new name for the scheduled job and instances of the scheduled job. The name must be unique on the<br>
+local computer.</p>
+<pre><code>   To identify the scheduled job to be changed, use the InputObject parameter or pipe a scheduled job from 
+   Get-ScheduledJob to Set-ScheduledJob.
+
+   This parameter does not change the names of job instances on disk. It affects only job instances that are 
+   started after this command completes.
+</code></pre>
+<p>-PassThru<br>
+Returns the scheduled jobs that changed. By default, this cmdlet does not generate any output.</p>
+<p>-RunAs32<br>
+Runs the scheduled job in a 32-bit process.</p>
+<p>-RunNow<br>
+Starts a job immediately, as soon as the Set-ScheduledJob cmdlet is run. This parameter eliminates the need to<br>
+trigger Task Scheduler to run a Windows PowerShell script immediately after registration, and does not require<br>
+users to create a trigger that specifies a starting date and time.</p>
+<p>-ScheduledJobOption <i>ScheduledJobOptions</i><br>
+Sets options for the scheduled job. Enter a ScheduledJobOptions object, such as one that you create by using<br>
+the New-ScheduledJobOption cmdlet, or a hash table value.</p>
+<pre><code>   You can set options for a scheduled job when you register the scheduled job or use the Set-ScheduledJobOption 
+   or Set-ScheduledJob cmdlets to set or change options.
+
+   Many of the options and their default values determine whether and when a scheduled job runs. Be sure to 
+   review these options before scheduling a job. For a description of the scheduled job options, including the 
+   default values, see New-ScheduledJobOption.
+
+   To submit a hash table, use the following keys. In the following hash table, the keys are shown with their 
+   default values.
+
+   @{% raw %}{#{% endraw %} Power SettingsStartIfOnBattery=$False;StopIfGoingOnBattery=$True; WakeToRun=$False; # Idle 
+   SettingsStartIfNotIdle=$False; IdleDuration=&quot;00:10:00&quot;; IdleTimeout=&quot;01:00:00&quot;; StopIfGoingOffIdle=$True; 
+   RestartOnIdleResume=$False;# Security settingsShowInTaskScheduler=$TrueRunElevated=$False;# 
+   MiscRunWithoutNetwork=$False;DoNotAllowDemandStart=$False;MultipleInstancePolicy=IgnoreNew# Can be IgnoreNew, 
+   Parallel, Queue, StopExisting}
+</code></pre>
+<p>-ScriptBlock ScriptBlock<br>
+Specifies the commands that the scheduled job runs. Enclose the commands in braces ( { } ) to create a script<br>
+block. To specify default values for command parameters, use the ArgumentList parameter.</p>
+<pre><code>   Every Register-ScheduledJob command must use either the ScriptBlock or FilePath parameters.
+</code></pre>
+<p>-Trigger ScheduledJobTrigger[]<br>
+Specifies the triggers for the scheduled job. Enter one or more ScheduledJobTrigger objects, such as the<br>
+objects that the New-JobTrigger cmdlet returns, or a hash table of job trigger keys and values.</p>
+<pre><code>   A &quot;job trigger&quot; starts a scheduled job automatically on a one-time or recurring scheduled or when an event 
+   occurs.
+
+   Job triggers are optional. You can add a trigger when you create the scheduled job,  use the Add-JobTrigger or 
+   Set-ScheduledJob cmdlets to add triggers later, or use the Start-Job cmdlet to start the scheduled job 
+   immediately. You can also create and maintain a scheduled job that has no job triggers.
+
+   To submit a hash table, use the following keys.
+
+   @{Frequency=&quot;Once&quot; (or Daily, Weekly, AtStartup, AtLogon);At=&quot;3am&quot; (or any valid time string);
+   DaysOfWeek=&quot;Monday&quot;, &quot;Wednesday&quot; (or any combination of day names);
+   Interval=2 (or any valid frequency interval);
+   RandomDelay=&quot;30minutes&quot; (or any valid timespan string);
+   User=&quot;Domain1\User01 (or any valid user; used only with the AtLogon frequency value)
+   }
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -PipelineVariable, -OutVariable.</p></pre><p></p>
+<p>To use this cmdlet, begin by using  <a href="get-scheduledjob.html">Get-ScheduledJob</a>  to get the scheduled job. Then, pipe the scheduled      job to Set-ScheduledJob (or save the job in a variable) and use the -InputObject parameter of Set-ScheduledJob to      identify the job.</p>
+<p>Although you can use Set-ScheduledJob to change the triggers and options of a scheduled job, the <a href="add-jobtrigger.html">Add-JobTrigger</a>,      <a href="set-jobtrigger.html">Set-JobTrigger</a>, and <a href="set-scheduledjoboption.html">Set-ScheduledJobOption</a> cmdlets provide much easier ways to accomplish those tasks. To create a      new scheduled job, use the Register-ScheduledJob cmdlet.</p>
+<p>The -Trigger parameter      is optional, so you can add triggers when you create the scheduled job, add job triggers later, add the -RunNow      parameter to start the job immediately, use <a href="start-job.html"> Start-Job</a> to start the job immediately at any time, or save      the untriggered scheduled job as a template for other jobs.</p>
+<p>You cannot rename an existing job, instead delete the job and recreate it with a new name.</p>
+<p><b>Examples</b></p>
+<p>Specify a new script for the existing job ss64job:</p>
+<pre><span class="code">C:\PS&gt; <a href="import-module.html">Import-Module</a> TaskScheduler<br>C:\PS&gt; Get-ScheduledJob -Name ss64job | Set-ScheduledJob -FilePath C:\Scripts\demo.ps1 -Passthru</span></pre>
+<p>Delete the execution history of a scheduled job:</p>
+<p><span class="code"> C:\PS&gt; Get-ScheduledJob ss64job | Set-ScheduledJob -ClearExecutionHistory</span><br>
+<br>
+Change the scheduled job 'ss64job' on several remote computers:</p>
+<p class="code">PS C:\&gt; <a href="invoke-command.html">Invoke-Command</a> -ComputerName (Get-Content Servers.txt) -ScriptBlock {Get-ScheduledJob -Name ss64job | Set-ScheduledJob      -InitializationScript \\Srv64\Scripts\demo.ps1}</p>
+<p class="quote"><i>“You are never too old to set another goal or to dream a new dream” ~  C.S. Lewis</i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="scheduler.html">Scheduler cmdlets</a> - Get/Set scheduled jobs<br>
+<a href="add-jobtrigger.html">Add-JobTrigger</a> - Add  a job trigger to a scheduled job<br>
+<a href="new-jobtrigger.html">New-JobTrigger</a> - Create a new Job Trigger<br>
+<a href="set-scheduledjoboption.html">Set-ScheduledJobOption</a> - Change the options of a scheduled job<br>
+</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set-scheduledjob.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-scheduledjob.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

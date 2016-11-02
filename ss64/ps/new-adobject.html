@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="New-ADObject 
+Create an AD object.
+Syntax
+      New-ADObject [-Name] string [-Type] string
+         [-AuthType {Negotiate | Basic}] [-Credential PSCredential]
+            [-Description string] [-Displ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/new-adobject.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="New-ADObject 
+Create an AD object.
+Syntax
+      New-ADObject [-Name] string [-Type] string
+         [-AuthType {Negotiate | Basic}] [-Credential PSCredential]
+            [-Description string] [-Displ">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.037Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="New-ADObject 
+Create an AD object.
+Syntax
+      New-ADObject [-Name] string [-Type] string
+         [-AuthType {Negotiate | Basic}] [-Credential PSCredential]
+            [-Description string] [-Displ">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>New-ADObject</h1> 
+<p>Create an AD object.</p>
+<pre>Syntax
+      New-ADObject [-Name] <i>string</i> [-Type] <i>string</i>
+         [-AuthType {<u>Negotiate</u> | Basic}] [-Credential <i>PSCredential</i>]
+            [-Description <i>string</i>] [-DisplayName <i>string</i>]
+               [-Instance <i>ADObject</i>] [-OtherAttributes <i>hashtable</i>]
+                  [-PassThru] [-Path <i>string</i>] [-ProtectedFromAccidentalDeletion <i>bool</i>]
+                     [-Server <i>string</i>] [-Confirm] [-WhatIf] [<i>CommonParameters</i>]
+<p>Key<br>
+-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-Credential <i>PSCredential</i><br>
+The user account credentials to use to perform this task.<br>
+The default credentials are those of the currently logged on user unless the<br>
+cmdlet is run from an Active Directory PowerShell provider drive.<br>
+If the cmdlet is run from such a provider drive, the account associated with the drive is the default.</p>
+<pre><code>   Type a user name, such as &quot;User64&quot; or &quot;Domain64\User64&quot; or specify a
+   PSCredential object such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt; 
+
+   If a user name is specified, the cmdlet will prompt for a password.
+</code></pre>
+<p>-Description <i>string</i><br>
+A description of the object.</p>
+<p>-DisplayName <i>string</i><br>
+The display name of the object.</p>
+<p>-Instance <i>ADObject</i><br>
+An instance of an object to use as a template for a new AD object.</p>
+<pre><code>   Use an instance of an existing AD object as a template or construct a
+   new group object by using the PowerShell command line or by using a script.
+
+   The following examples show how to use these two methods:
+
+   Method 1: Use the Get-ADObject cmdlet and then override property values of
+   the new object by setting the appropriate parameters. 
+
+      $ObjectInstance = Get-ADObject -Identity &quot;Desktop001&quot; 
+      New-ADObject -Name &quot;Desktop002&quot; -Instance $ObjectInstance -Type &quot;computer&quot;
+
+   Method 2: Use the New-Object cmdlet and pass the object to the New-ADObject cmdlet.
+
+      $objectInstance = New-Object Microsoft.ActiveDirectory.Management.ADObject
+      $objectInstance.Description = &quot;Desktop002 Computer&quot;
+      New-ADObject -Name Desktop002  -Instance $ObjectInstance -Type computer
+
+   Note: Specified attributes are not validated, so attempting to set attributes that
+         do not exist or cannot be set will raise an error.
+</code></pre>
+<p>-Name <i>string</i><br>
+The name of the object.</p>
+<p>-OtherAttributes <i>hashtable</i><br>
+Object attribute values for attributes that are not represented by cmdlet parameters.<br>
+Set one or more parameters at the same time with this parameter.<br>
+If an attribute takes more than one value, you can assign multiple values.<br>
+To identify an attribute, specify the LDAPDisplayName (ldapDisplayName) defined for it in<br>
+the Active Directory schema.</p>
+<pre><code>    Syntax:
+    To specify a single value for an attribute:
+       -OtherAttributes @{'AttributeLDAPDisplayName'=value}
+    To specify multiple values for an attribute
+       -OtherAttributes @{'AttributeLDAPDisplayName'=value1,value2,...}
+
+    Specify values for more than one attribute by using semicolons to separate attributes.
+    To set values for multiple attributes:
+       -OtherAttributes @{'Attribute1LDAPDisplayName'=value; 'Attribute2LDAPDisplayName'=value1,value2;...}
+
+    The following examples show how to use this parameter.
+
+    To set the value of a custom attribute called favColors that takes a set of Unicode strings: 
+       -OtherAttributes @{'favColors'=&quot;pink&quot;,&quot;purple&quot;}
+
+    To set values for favColors and dateOfBirth simultaneously, use the following syntax:
+       -OtherAttributes @{'favColors'=&quot;pink&quot;,&quot;purple&quot;; 'dateOfBirth'=&quot; 01/01/1960&quot;}
+</code></pre>
+<p>-PassThru <i>switch</i><br>
+Return the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-Path <i>string</i><br>
+The X.500 path of the Organizational Unit (OU) or container where the new object is created.</p>
+<pre><code>   In many cases, a &lt;a href=&quot;path-defaults.html&quot;&gt;default value&lt;/a&gt; will be used for -Path if no value is specified.
+
+   Note:  The PowerShell cmdlets, such New-Item, Remove-Item, Remove-ItemProperty, Rename-Item and 
+   Set-ItemProperty also contain a Path property. However, for the &lt;a href=&quot;ad.html&quot;&gt;AD provider cmdlets&lt;/a&gt;, the -Path parameter 
+   identifies the path of the actual object and not the container.
+</code></pre>
+<p>-ProtectedFromAccidentalDeletion <i>bool</i><br>
+When this property is true, you cannot delete the corresponding object without<br>
+first resetting the value of this property.<br>
+Values: $true (or 1), $false (or 0)<br>          <br><br>
+-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)</p>
+<p>-Type <i>string<br>
+</i>       The type of object to create.<br>
+Set the Type parameter to the LDAP display name of the AD Schema Class that represents<br>
+the type of object to be created. Examples: -type user, -type computer, -type group.</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command without actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>New-ADObject  creates a new AD object such as a new organizational unit or new user account. Use this cmdlet to create any type of AD object. Many object properties are defined by setting cmdlet parameters. Properties that are not set by cmdlet parameters can be set by using the -OtherAttributes parameter. </p>
+<p>The <span class="code">-Name</span> and <span class="code">-Type</span> parameters are required to create a new AD object. The Name specifies the name of the new object. The Type parameter specifies the LDAP display name of the Active Directory Schema Class that represents the type of object you want to create. Examples of -Type values include computer, group, organizational unit, and user.<br>
+The <span class="code">-Path</span> parameter specifies the container where the object will be created.<br>
+<br>
+There are 3 different ways to create an object  using New-ADObject:</p>
+<p>Method 1: Use  New-ADObject, specifing the required parameters.</p>
+<p>Method 2: Use a template to create the new object. Create or retrieve a copy of an existing AD object and set the <span class="code">-Instance</span> parameter to this object. The object provided to the <span class="code">-Instance</span> parameter is used as a template for the new object.</p>
+<p>Method 3: Use  <a href="import-csv.html">Import-CSV</a> with the New-ADObject cmdlet to create multiple AD objects. Use  <a href="import-csv.html">Import-CSV</a> to create  custom objects from a CSV file that contains a list of object properties. Then pass the objects through the <a href="syntax-pipeline.html">pipeline</a> to New-ADObject.</p>
+<p><b>Examples</b></p>
+<p>Creates a subnet object in the Aberdeen site with the described attributes:</p>
+<p><span class="code">PS C:\&gt; New-ADObject -Name '192.168.1.0/26' -Type subnet -Description '192.168.1.0/255.255.255.192' -OtherAttributes @{location="West Tullos";siteObject="CN=Aberdeen,CN=Sites,CN=Configuration,DC=SS64,DC=COM"} -Path "CN=Subnets,CN=Sites
+,CN=Configuration,DC=SS64,DC=COM"</span></p>
+<p>Create a new subnet object, using an existing subnet object as a template:</p>
+<p><span class="code">PS C:\&gt; $subnetTemplate = get-adobject -Identity "CN=192.168.1.0/26,CN=Subnets,CN=Sites,CN=Configuration,DC=SS64,<br>
+DC=com" -properties description,location<br>
+<br> 
+PS C:\&gt; new-adobject -instance $subnetTemplate -name "192.168.1.0/28" -type subnet -path "CN=Subnets,CN=Sites,CN=Configuration,DC=SS64,DC=COM"</span></p>
+<p>Create a new contact object, set the msDS-SourceObjectDN property and protect the object from accidental deletion:</p>
+<p class="code">PS C:\&gt; New-ADObject -name SaraDavisContact -type contact -ProtectedFromAccidentalDeletion $true -OtherAttributes @{'msDS-SourceObjectDN'="CN=SS64Contacts,DC=SS64,DC=COM"}</p>
+<p class="quote"><i>“Works of art, in my opinion, are the only objects in the material universe to possess internal order, and that is why, though I don't believe that only art matters, I do believe in Art for Art's sake” ~ E. M. Forster</i></p>
+<p><b>Related:</b></p>
+<p><a href="get-adobject.html">Get-adObject</a> - Get one or more AD objects<br>
+<a href="move-adobject.html">Move-adObject</a> - Move an AD object or container to a different container or domain. <br>
+<a href="remove-adobject.html">Remove-adObject</a> - Remove an AD object.<br>
+<a href="rename-adobject.html">Rename-adObject</a> - Change the name of an AD object. <br>
+<a href="restore-adobject.html">Restore-adObject</a> - Restore an AD object.<br>
+<a href="set-adobject.html">Set-adObject</a> - Modify an AD object.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="new-adobject.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/new-adobject.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

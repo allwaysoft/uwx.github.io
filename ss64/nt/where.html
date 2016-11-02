@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="WHERE (Windows 2003 + ) 
+ Locate and display files in a directory tree. 
+  
+  The WHERE command is roughly equivalent to the UNIX &apos;which&apos; command. By default, the search is done in the current directo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/where.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="WHERE (Windows 2003 + ) 
+ Locate and display files in a directory tree. 
+  
+  The WHERE command is roughly equivalent to the UNIX &apos;which&apos; command. By default, the search is done in the current directo">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:56.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="WHERE (Windows 2003 + ) 
+ Locate and display files in a directory tree. 
+  
+  The WHERE command is roughly equivalent to the UNIX &apos;which&apos; command. By default, the search is done in the current directo">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>WHERE (Windows 2003 + )</h1> 
+<p> Locate and display files in a directory tree. <br>
+  <br>
+  The WHERE command is roughly equivalent to the UNIX 'which' command. By default, the search is done in the <a href="cd.html">current directory</a> 
+and in the <a href="path.html">PATH</a>.
+</p><pre>Syntax
+      WHERE [/r <i>Dir</i>] [/q] [/f] [/t] <i>Pattern</i> ...
+<pre><code>  WHERE [/q] [/f] [/t] [$&lt;i&gt;ENV&lt;/i&gt;:&lt;i&gt;Pattern&lt;/i&gt;
+</code></pre>
+<p>key<br>
+/r      A recursive search, starting with the specified <i>Dir</i> directory.</p>
+<p>/q      Don’t display the files but return either an exit code of 0 for success<br>
+or 1 for failure.</p>
+<p>/f      Display the output file name in quotation marks.</p>
+<p>/t      Display the size, time stamp, and date stamp of the file.</p>
+<p><i>pattern</i>  The Drive\Directory\file, or set of files to be found.<br>
+you can use wildcard characters ( ? * ) and UNC paths.</p>
+<p><i>ENV</i>     Path to search where <i>ENV</i> is an existing environment variable containing one or more paths.</p></pre><p></p>
+<p>By default, WHERE searches the current directory and the paths specified in the PATH environment variable. Optional search paths (in <i>pattern</i>) should not be used in conjunction with <span class="code">/r Dir</span>.</p>
+<p><b>Examples</b></p>
+<p>Find all files named 'Zappa' in the current system path</p>
+<p><span class="code">WHERE  Zappa</span><br>
+<br>
+Find all files named 'Zappa' on the remote computer 'Server64' searching 
+its subdirectories:<br>
+<br>
+<span class="code">WHERE /r \\Server64\Share1 Zappa.* </span></p>
+<p><i class="quote">“Who never walks, save where he sees men's tracks, makes no discoveries” ~ Josiah Gilbert Holland </i><br>
+<br>
+<b>Related:</b></p>
+<p><a href="syntax-which.html">Which.cmd</a> - Show full path to executable.<br>
+<a href="http://www.flounder.com/whereis.htm" target="_blank" rel="external">whereis utility</a> - Flounder.com<br>
+<a href="http://www.robvanderwoude.com/unixports.php#WHICH" target="_blank" rel="external">Which </a>  - Rob Vanderwoude (Batch/Perl/VBScript) <br>
+<a href="http://blogs.msdn.com/oldnewthing/archive/2005/01/20/357225.aspx" target="_blank" rel="external">OldNewthing</a> - which batch file + discussion <br>
+<a href="cd.html">CD</a> - Change Directory<br>
+<a href="type.html">TYPE</a> - Display the contents of a text file <br>
+Equivalent bash command (Linux): <a href="../bash/which.html">which</a> - Show full path of commands<br>
+Equivalent PowerShell cmdlet: <span class="code">(<a href="../ps/get-command.html">get-command</a> $file).Definition</span><br>
+</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="where.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/where.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

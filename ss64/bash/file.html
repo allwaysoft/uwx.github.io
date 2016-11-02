@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="file 
+Determine file type. 
+Syntax
+      file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e testname]
+         [-F separator] [-f namefile] [-m magicfiles] file ... 
+  file -C [-m &amp;l">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/file.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="file 
+Determine file type. 
+Syntax
+      file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e testname]
+         [-F separator] [-f namefile] [-m magicfiles] file ... 
+  file -C [-m &amp;l">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="file 
+Determine file type. 
+Syntax
+      file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e testname]
+         [-F separator] [-f namefile] [-m magicfiles] file ... 
+  file -C [-m &amp;l">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>file</h1> 
+<p>Determine file type. </p>
+<pre>Syntax
+      file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e <i>testname</i>]
+         [-F <i>separator</i>] [-f <i>namefile</i>] [-m <i>magicfiles</i>] <i>file</i> ... 
+<pre><code>  file -C [-m &lt;i&gt;magicfiles&lt;/i&gt;]
+
+  file [--help]
+</code></pre>
+<p>Key</p>
+<p>-b, --brief     Do not prepend filenames to output lines (brief mode).<br>
+-C, --compile   Write a magic.mgc output file that contains a pre-parsed version of the magic file or directory.<br>
+-c, --checking-printout<br>
+Cause a checking printout of the parsed form of the magic file.<br>
+This is usually used in conjunction with the -m flag to debug a<br>
+new magic file before installing it.<br>
+-e, --exclude <i>testname</i><br>
+Exclude the test named in <i>testname</i> from the list of tests made to<br>
+determine the file type.<br>
+Valid test names are:<br>
+apptype     EMX application type (only on EMX).<br>
+text        Various types of text files (this test will try to<br>
+guess the text encoding, irrespective of the setting<br>
+of the ‘encoding’ option).<br>
+encoding    Different text encodings for soft magic tests.<br>
+tokens      Looks for known tokens inside text files.<br>
+cdf         Prints details of Compound Document Files.<br>
+compress    Checks for, and looks inside, compressed files.<br>
+elf         Prints ELF file details.<br>
+soft        Consults magic files.<br>
+tar         Examines tar files.<br>
+-F, --separator <i>separator</i><br>
+Use the specified string as the separator between the filename and<br>
+the file result returned. Defaults to ‘:’.<br>
+-f, --files-from <i>namefile<br>
+</i>                   Read the names of the files to be examined from namefile (one per line)<br>
+before the argument list. Either namefile or at least one filename argument<br>
+must be present; to test the standard input, use ‘-’ as a filename argument.<br>
+-h, --no-dereference<br>
+option causes symlinks not to be followed (on systems that support symbolic links).<br>
+This is the default if the environment variable POSIXLY_CORRECT is not defined.<br>
+-i, --mime      Causes the file command to output mime type strings rather than the more<br>
+traditional human readable ones. Thus it might say 'text/plain; charset=us-ascii’<br>
+rather than ‘ASCII text’. In order for this option to work, file<br>
+changes the way it handles files recognized by the command itself<br>
+(such as many of the text file types, directories etc), and makes<br>
+use of an alternative ‘magic’ file. (See the FILES section, below).<br>
+–mime-type, --mime-encoding<br>
+Like -i, but print only the specified element(s).<br>
+-k, --keep-going<br>
+Don’t stop at the first match, keep going. Subsequent matches will<br>
+have the string '\012- ’ prepended.  (If you want a newline, see -r)<br>
+-L, --dereference<br>
+option causes symlinks to be followed, as the like-named option<br>
+in <a href="ls.html">ls</a>(1) (on systems that support symbolic links).<br>
+This is the default if the environment variable POSIXLY_CORRECT is defined.<br>
+-m, --magic-file magicfiles<br>
+Specify an alternate list of files and directories containing magic.<br>
+This can be a single item, or a colon-separated list.<br>
+If a compiled magic file is found alongside a file or directory, it will be used instead.<br>
+-N, --no-pad    Don’t pad filenames so that they align in the output.<br>
+-n, --no-buffer Force stdout to be flushed after checking each file. This is only<br>
+useful if checking a list of files. It is intended to be used by<br>
+programs that want filetype output from a pipe.<br>
+-p, --preserve-date<br>
+On systems that support utime(2) or utimes(2), attempt to preserve<br>
+the access time of files analyzed, to pretend that file never read them.<br>
+-r, --raw       Don’t translate unprintable characters to \ooo. Normally file<br>
+translates unprintable characters to their octal representation.<br>
+-s, --special-files<br>
+Normally, file only attempts to read and determine the type of argument<br>
+files which stat(2) reports are ordinary files. This prevents problems,<br>
+because reading special files can have peculiar consequences.<br>
+Specifying the -s option causes file to also read argument files which<br>
+are block or character special files. This is useful for determining<br>
+the filesystem types of the data in raw disk partitions, which are<br>
+block special files. This option also causes file to disregard the<br>
+file size as reported by stat(2) since on some systems it reports a<br>
+zero size for raw disk partitions.<br>
+-v, --version   Print the version of the program and exit.<br>
+-z, --uncompress<br>
+Try to look inside compressed files.<br>
+-0, --print0    Output a null character ‘\0’ after the end of the filename.<br>
+Nice to <a href="cut.html">cut</a>(1) the output. This does not affect the separator which is still printed.<br>
+–help          Print a help message and exit.</p></pre><br>
+<h2> Files<br><br>
+</h2><p></p>
+<pre> /usr/share/misc/magic.mgc  Default compiled list of magic.
+ /usr/share/misc/magic      Directory containing default magic files.</pre>
+<p></p><h2> Return Code<br><br>
+</h2><p></p>
+<pre> file returns 0 on success, and non-zero on error.</pre>
+<p> If the file named by the <i>file</i> operand does not exist, cannot be read, or the type of the file named by the file operand cannot be determined, this is not be considered an error that affects the exit status. <br>
+</p>
+<p><b> Examples</b><br>
+</p>
+<pre>$ file file.c file /dev/{wd0a,hda}
+file.c:   C program text
+file:     ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV),
+<pre><code>dynamically linked (uses shared libs), stripped 
+</code></pre>
+<p>/dev/wd0a: block special (0/0)<br>
+/dev/hda: block special (3/0)</p>
+<p>$ file -s /dev/wd0{b,d}<br>
+/dev/wd0b: data<br>
+/dev/wd0d: x86 boot sector</p>
+<p>$ file -s /dev/hda{,1,2,3,4,5,6,7,8,9,10}<br>
+/dev/hda: x86 boot sector<br>
+/dev/hda1: Linux/i386 ext2 filesystem<br>
+/dev/hda2: x86 boot sector<br>
+/dev/hda3: x86 boot sector, extended partition table<br>
+/dev/hda4: Linux/i386 ext2 filesystem<br>
+/dev/hda5: Linux/i386 swap file<br>
+/dev/hda6: Linux/i386 swap file<br>
+/dev/hda7: Linux/i386 swap file<br>
+/dev/hda8: Linux/i386 swap file<br>
+/dev/hda9: empty<br>
+/dev/hda10: empty</p>
+<p>$ file -i file.c file /dev/{wd0a,hda}<br>
+file.c: text/x-c<br>
+file: application/x-executable<br>
+/dev/hda: application/x-not-regular-file<br>
+/dev/wd0a: application/x-not-regular-file </p></pre><p></p>
+<p> file uses several algorithms that favor speed over accuracy, thus it can be misled about the contents of text files.</p>
+<p class="quote"><i>#Dance to this fix and flex every muscle<br>
+Space can be filled if you rise like my lumber<br>
+Advance to the tune but don't do the hustle<br>
+Shake, rattle, roll to my magic number# ~ De La Soul (The Magic Number) </i></p>
+<p><b>Related:</b><br>
+<br>
+magic(5), strings(1), od(1), hexdump(1,) file(1posix)</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="file.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/file.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

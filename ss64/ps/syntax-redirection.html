@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Redirection 
+  command &amp;gt;  filename     # Redirect command output to a file (overwrite)
+
+  command &amp;gt;&amp;gt; filename     # APPEND into a file
+
+  command 2&amp;gt; filename     # Redirect Errors from ope">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/syntax-redirection.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Redirection 
+  command &amp;gt;  filename     # Redirect command output to a file (overwrite)
+
+  command &amp;gt;&amp;gt; filename     # APPEND into a file
+
+  command 2&amp;gt; filename     # Redirect Errors from ope">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Redirection 
+  command &amp;gt;  filename     # Redirect command output to a file (overwrite)
+
+  command &amp;gt;&amp;gt; filename     # APPEND into a file
+
+  command 2&amp;gt; filename     # Redirect Errors from ope">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_pssyntax.lbi" --><!-- #EndLibraryItem --><h1>Redirection</h1> 
+<pre>  <i>command</i> &gt;  <i>filename</i>     # Redirect command output to a file (overwrite)
+
+  <i>command</i> &gt;&gt; <i>filename</i>     # APPEND into a file
+
+<i>  command</i> 2&gt; <i>filename</i>     # Redirect Errors from operation to a file(overwrite)
+
+  <i>command</i> 2&gt;&gt; <i>filename</i>    # APPEND errors to a file
+
+  <i>command</i> 2&gt;&amp;1            # Add errors to results
+
+  <i>command</i> 1&gt;&amp;2            # Add results to errors
+
+  <i>command</i> | <i>command</i>       # This is the basic form of a PowerShell <a href="syntax-pipeline.html">Pipeline</a>
+
+In PowerShell 3.0+
+
+  <i>command</i> 3&gt; warning.txt  # Write <a href="write-warning.html">warning</a> output to warning.txt 
+
+  <i>command</i> 4&gt;&gt; verbose.txt # Append verbose.txt with the <a href="write-verbose.html">verbose</a> output 
+
+  <i>command</i> 5&gt;&amp;1            # Writes <a href="write-debug.html">debug</a> output to the output stream 
+
+  <i>command</i> *&gt; out.txt      # Redirect all streams (output, error, warning, verbose, and debug) to out.txt</pre>
+<p>In PowerShell you must redirect only the commands that will output string data:<br>
+<br>
+<span class="code">if ($demo -eq $null) <b>{</b>Echo 'result'<b>}</b> &gt;demo.txt #this will fail</span><br>
+<span class="code">if ($demo -eq $null) <b>{</b>Echo 'result' &gt;demo.txt<b>}</b> #this will work</span></p>
+<p>Redirecting output to Null (to discard the output from a cmdlet) can be done with <a href="out-null.html">out-null</a>, but a far faster method is redirecting to the <span class="code">$null</span> <a href="syntax-automatic-variables.html">automatic variable</a>:</p>
+<p><span class="code">PS C:\&gt; get-childitem &gt; $null</span></p>
+<p>In PowerShell it is not  possible to redirect the output of an entire session (so Powershell.exe .... &gt;filename.txt won't work) however a very similar text output can be produced using the <a href="start-transcript.html">Start-Transcript</a> cmdlet. </p>
+<p>The text files produced by PowerShell are by default in Unicode (UTF16), if you need a different encoding, use <a href="out-file.html">Out-File</a> instead of the redirection operator. </p>
+<p><b>Examples</b></p>
+<p class="code">PS C:\&gt; Get-ChildItem c:\windows\system &gt;&gt; "c:\my logs\text1.txt"</p>
+<p class="code">PS C:\&gt; Get-ChildItem c:\windows\system | Out-File text2.txt -encoding ASCII </p>
+<p class="code">PS C:\&gt; Start-Transcript -path c:\docs\Text3.txt<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>
+PS C:\&gt; Stop-Transcript</p>
+<p class="quote"><i>“Most variables can show either an upward trend or a downward trend, depending on the base year chosen” ~ Thomas Sowell</i></p>
+<p><b>Related:</b></p>
+<p><a href="out-host.html">Out-Host</a> - Send the pipelined output to the host.<br>
+<a href="out-string.html">Out-String</a> - Send objects to the host as a series of strings.<br>
+<a href="tee-object.html">Tee-Object</a> - Send input objects to two places.<br>
+<a href="start-transcript.html">Start-Transcript</a> - Start a transcript of a command shell session<a href="stop-transcript.html">.<br>
+Stop-Transcript</a> - Stop the transcription process.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-redirection.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/syntax-redirection.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

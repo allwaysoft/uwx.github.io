@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="$Profile - profile.ps1 
+Configure the PowerShell environment.
+The PowerShell $Profile is run automatically when the shell session is started, it can be used to run scripts and set variables. 
+The $pro">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/syntax-profile.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="$Profile - profile.ps1 
+Configure the PowerShell environment.
+The PowerShell $Profile is run automatically when the shell session is started, it can be used to run scripts and set variables. 
+The $pro">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.217Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="$Profile - profile.ps1 
+Configure the PowerShell environment.
+The PowerShell $Profile is run automatically when the shell session is started, it can be used to run scripts and set variables. 
+The $pro">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_pssyntax.lbi" --><!-- #EndLibraryItem --><h1>$Profile - profile.ps1 </h1>
+<p>Configure the PowerShell environment.<br>
+The PowerShell $Profile is run automatically when the shell session is started, it can be used to run scripts and set variables. </p>
+<p>The <span class="code">$profile </span>automatic variable will show the location of your Profile.ps1 file:<br>
+<span class="code">PS &gt; "$Profile"</span></p>
+<p><span class="code"></span>To edit the profile with notepad:<span class="code"><br>
+</span><span class="code">PS &gt; notepad $Profile</span></p>
+<p>To reload the profile into the current session:<span class="code"><br>
+</span><span class="code">PS &gt; .$Profile</span></p>
+<p>By default, the profile file does not exist, even though PowerShell has a filename for it, the file can be created using <a href="new-item.html">New-Item</a> or notepad.</p>
+<p>The search order of commands is Alias &gt; Function &gt; Cmdlet</p>
+<p>Functions defined in  $Profile will take precedence over built-in cmdlets with the same name. However to replace an Alias you must first remove the built-in Alias with <span class="code"><a href="remove-item.html">Remove-Item</a></span>. The built-in aliases are 'sticky', unless they are removed from every session (by adding a <span class="code">Remove-Item</span> command to  $Profile) then they will re-appear the next time you start PowerShell. </p>
+<p>Below are a few functions you may want to add to your $Profile:</p>
+<blockquote>
+<p><a href="syntax-cd.html"> 'CD -' function</a> - quickly change directory/location </p>
+<p>List all local drives, listing only drives with &gt; 1 MB of free space excludes any unmounted
+drives.<br>
+<span class="code">function drives{gdr -p FileSystem |where {$_.free -gt 1MB}}</span></p>
+<p><a href="http://blogs.msdn.com/powershell/archive/2006/07/01/perserving-command-history-across-sessions.aspx" target="_blank" rel="external">Perserve Command History Across Sessions</a></p>
+<p>Change background color on  all elevated command prompts (from<a href="http://www.ilovepowershell.com/profile-trick-how-to-set-administrator-mode-background-color/" target="_blank" rel="external"> ilovepowershell.com</a>):</p>
+<p class="code">if ($host.UI.RawUI.WindowTitle -match "Administrator")<br>
+{$host.UI.RawUI.BackgroundColor = "DarkRed";<br>
+$Host.UI.RawUI.ForegroundColor = "White"}</p>
+<p>Add the word "Administrator" to the title bar of all elevated command prompts (from<a href="http://www.leastprivilege.com/AdminTitleBarForPowerShell.aspx" target="_blank" rel="external"> leastprivilege.com</a>):<br>
+<span class="code">$id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+$p = New-Object System.Security.Principal.WindowsPrincipal($id)
+if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator))
+{$Host.UI.RawUI.WindowTitle = "Administrator: " + $Host.UI.RawUI.WindowTitle}</span></p>
+</blockquote>
+<p>PowerShell may also be configured for multiple power users, there are 4 locations where you can store a Profile.ps1 file:</p>
+<p> 1. "All users" profile "&lt;Installation Directory&gt;\profile.ps1"<br>
+2. "All users," host-specific profile "&lt;Installation Directory&gt;\Microsoft.PowerShell_profile.ps1"<br>
+3. Current user profile "&lt;My Documents&gt;\WindowsPowerShell\profile.ps1"<br>
+4. Current User, host-specific profile"&lt;My Documents&gt;\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"</p>
+<p>These are loaded in order 1,2,3,4 it is possible to redefine the same function in the different $profile files.</p>
+<p class="quote"><i>“O Marvelous! what new configuration will come next? I am bewildered with multiplicity” ~     William Carlos Williams, American poet (1883-1963)</i></p>
+<p><b>Related:</b></p>
+<p><a href="http://dotfiles.org/" target="_blank" rel="external">dotfiles.org</a> - Share startup files<br>
+<a href="http://mshforfun.blogspot.com/2006/05/perfect-prompt-for-windows-powershell.html" target="_blank" rel="external">Custom PowerShell Prompts</a> - PowerShell For Fun </p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-profile.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/syntax-profile.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

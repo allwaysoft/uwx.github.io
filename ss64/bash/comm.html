@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="comm 
+Common - compare two sorted files line by line and write to standard output: 
+  
+the lines that are common, plus the lines that are unique.
+Syntax
+      comm [options]... File1 File2
+Options
+-1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/comm.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="comm 
+Common - compare two sorted files line by line and write to standard output: 
+  
+the lines that are common, plus the lines that are unique.
+Syntax
+      comm [options]... File1 File2
+Options
+-1">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.257Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="comm 
+Common - compare two sorted files line by line and write to standard output: 
+  
+the lines that are common, plus the lines that are unique.
+Syntax
+      comm [options]... File1 File2
+Options
+-1">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>comm</h1> 
+<p>Common - compare two sorted files line by line and write to standard output: 
+  <br>
+the lines that are common, plus the lines that are unique.</p>
+<pre>Syntax
+      comm [<i>options</i>]... <i>File1 File2</i>
+<p>Options<br>
+-1   suppress lines unique to <i>file1</i><br>
+-2   suppress lines unique to <i>file2</i><br>
+-3   suppress lines that appear in both files</p>
+<p>A file name of `-’ means standard input.</p></pre><p></p>
+<p> Before `comm' can be used, the input files must be sorted using 
+  the collating sequence specified by the 'LC_COLLATE' locale, with trailing newlines 
+  significant. If an input file ends in a non-newline character, a newline is 
+  silently appended. The 'sort' command with no options always outputs a file 
+  that is suitable input to 'comm'.<br>
+  <br>
+  With no options, `comm' produces three column output. Column one contains lines 
+  unique to FILE1, column two contains lines unique to FILE2, and column three 
+  contains lines common to both files. Columns are separated by a single TAB character.<br>
+  <br>
+  The options -1, -2, and -3 suppress printing of the corresponding columns.<br>
+  <br>
+  Unlike some other comparison utilities, `comm' has an exit status that does 
+  not depend on the result of the comparison. Upon normal completion `comm' produces 
+an exit code of zero. If there is an error it exits with nonzero status. </p>
+<p><b>Examples</b></p>
+<p><span class="code">$ comm -23 &lt;(sort words.txt | uniq) &lt;(sort countries.txt | uniq)</span></p>
+<p>If the file words.txt contains a subset of countries.txt then the above will return nothing.<br>
+If the file words.txt contains items that don't exist in countries.txt then the above will return those unique items. </p>
+<p>To return the lines that are in both words.txt and countries.txt use:</p>
+<p><span class="code">$ comm -12 &lt;(sort words.txt | uniq) &lt;(sort countries.txt | uniq)</span><br>
+<i><br>
+<span class="quote">"You don't sew with a fork, so I see no reason to eat with knitting needles" ~ Miss Piggy, on eating Chinese Food</span></i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="cmp.html">cmp</a> - Compare two files <br>
+<a href="diff.html">diff</a> - Display the differences between two files<br>
+<a href="diff3.html">diff3</a> - Show differences among three files<br>
+<a href="sdiff.html">sdiff</a> - merge two files interactively<br>
+<a href="head.html">head</a> - Output the first part of file(s)<br>
+<a href="sort.html">sort</a> - Sort text files <br>
+Equivalent Windows commands: <a href="../nt/comp.html">COMP</a> / <a href="../nt/fc.html">FC</a> - Compare and display Characters/Lines which do not match.<br>
+(also the WINDIFF GUI)</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="comm.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/comm.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

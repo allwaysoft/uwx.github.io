@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MKLink (Vista/Windows 7/2008)
+Create a symbolic link to a directory or a file, or create a hard file link or directory junction. 
+Syntax
+      MKLINK [[/D] | [/H] | [/J]] Link Target
+Key:
+/D     Creat">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/mklink.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="MKLink (Vista/Windows 7/2008)
+Create a symbolic link to a directory or a file, or create a hard file link or directory junction. 
+Syntax
+      MKLINK [[/D] | [/H] | [/J]] Link Target
+Key:
+/D     Creat">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:51.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="MKLink (Vista/Windows 7/2008)
+Create a symbolic link to a directory or a file, or create a hard file link or directory junction. 
+Syntax
+      MKLINK [[/D] | [/H] | [/J]] Link Target
+Key:
+/D     Creat">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>MKLink (Vista/Windows 7/2008)</h1>
+<p>Create a symbolic link to a directory or a file, or create a hard file link or directory junction.</p> 
+<pre>Syntax
+      MKLINK [[/D] | [/H] | [/J]] <i>Link Target</i>
+<p>Key:</p>
+<p>/D     Create a Directory symbolic link. (default is file)</p>
+<p>/H     Create a hard link instead of a symbolic link.</p>
+<p>/J     Create a Directory Junction.</p>
+<p><i>Link</i>   The new symbolic link name.</p>
+<p><i>Target</i> The path (relative or absolute) that the new link refers to.</p></pre><br>
+<h2>Types of Link<br><br>
+</h2><p></p>
+<table class="mklink">
+<tbody><tr>
+<td></td>
+<th><p>Can link to files?</p></th>
+<th><p>Can link to folders?</p></th>
+<th><p>Can link across hard drives?</p></th>
+<th><p>Supported on:</p></th>
+<th><p>Can point to a non-existent target?</p></th>
+<th><p>Can be relative?</p></th>
+<th><p>How to delete:</p></th>
+</tr>
+<tr>
+<th><p><a href="shortcut.html">Shortcut</a></p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Windows 95+</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p><a href="del.html">Del</a></p></td>
+</tr>
+<tr>
+<th><p>Hard link</p></th>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Windows 3.5+</p></td>
+<td><p>No<br>
+</p></td>
+<td><p>No</p></td>
+<td><p><a href="del.html">Del</a></p></td>
+</tr>
+<tr>
+<th><p>Junction<br>
+(soft link)</p></th>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Y (on the same computer)</p></td>
+<td><p>Windows 2000+</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p><a href="rd.html">RD</a></p></td>
+</tr>
+<tr>
+<th><p>Symbolic link</p></th>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Vista+</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes (on the same volume)</p></td>
+<td><p>RD <i>folder</i> or Del <i>file</i></p></td>
+</tr>
+</tbody></table>
+<p>Symbolic links are transparent to users; the links appear as normal NTFS files or directories, and can be acted upon by the user or application in exactly the same manner. Symbolic links can span volumes and can use UNC paths. </p>
+<p> A symlink can be an absolute path <span class="code">C:\Programs</span> or a path relative to the link's location <span class="code">\Programs</span>. <br>
+</p>
+<p><b> </b>Symbolic Links and Directory Junctions are implemented using <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365503(v=vs.85).aspx" target="_blank" rel="external">reparse points</a>.</p>
+<p> Hard Links are implemented  with multiple file table entries that point to the same inode – the same  as Unix hard links. If the original filename is deleted, the hard link will still work - it points directly to the data on disk.<br>
+To create hard links on Windows XP use <a href="fsutil.html">fsutil</a>.</p>
+<p>It is possible (but not advisable) to create  two links that point to each other in a loop, or a link that targets  itself. Symbolic links can expose security vulnerabilities in applications that aren't designed to handle them.</p>
+<p>By default, only Administrators can create symbolic links. The security setting 'Create symbolic links' can be granted at: <span class="code">Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\</span></p>
+<h2>Errorlevels</h2>
+<blockquote>
+<p>If the link was successfully created <a href="errorlevel.html">%ERRORLEVEL%</a> = 0<br>
+Link could not be created or bad parameters given = 1</p>
+</blockquote>
+<p><b>Examples:</b></p>
+<p> Link for a file:<br>
+<span class="code"> C:\&gt; MKlink ss64.exe C:\Windows\system32\notepad.exe<br>
+C:\&gt; Dir<br>
+C:\&gt; Del ss64.exe</span></p>
+<p> Link for a folder<span class="code">:<br>
+C:\&gt; MKlink /D Apr C:\work\April<br>
+C:\&gt; Dir<br>
+C:\&gt; RD Apr</span></p>
+<p>MKLINK is an <a href="syntax-internal.html">internal</a> command.</p>
+<p><i class="quote"> "And so its my assumption, I’m really up the junction" ~ Squeeze </i><br>
+  <b><br>
+Related Commands:</b></p>
+<p><a href="fsutil.html">FSUTIL</a> - Create Hard Junction Link<br>
+<a href="fsutil.html#behavior">FSUTIL behavior set symlinkevalution</a> - Allow/disable symbolic links<br>
+<a href="mountvol.html">MOUNTVOL</a> - Manage a volume mount point<br>
+<a href="https://support.microsoft.com/kb/205524" target="_blank" rel="external">Q205524</a> - How to create and manipulate NTFS junction points<br>
+LinkD - Create symbolic link (2003 Resource Kit)<br>
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365006%28v=vs.85%29.aspx" target="_blank" rel="external">Hard Links and Junctions</a> - MSDN<br>
+<a href="http://en.wikipedia.org/wiki/NTFS_symbolic_link" target="_blank" rel="external">NTFS_symbolic_link</a> - Wikipedia<br>
+<a href="http://technet.microsoft.com/en-gb/sysinternals/bb896768.aspx" target="_blank" rel="external">Junction</a> - Create directory symbolic link (sysInternals)</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="mklink.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/mklink.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

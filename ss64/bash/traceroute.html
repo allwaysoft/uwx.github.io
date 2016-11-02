@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="traceroute 
+ Print the route packets take to network host.
+Syntax
+      traceroute [options] host [packetsize]
+Options:
+-I    Use ICMP ECHO for probes
+-T    Use TCP SYN for probes
+-U    Use UDP datagr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/traceroute.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="traceroute 
+ Print the route packets take to network host.
+Syntax
+      traceroute [options] host [packetsize]
+Options:
+-I    Use ICMP ECHO for probes
+-T    Use TCP SYN for probes
+-U    Use UDP datagr">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:43.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="traceroute 
+ Print the route packets take to network host.
+Syntax
+      traceroute [options] host [packetsize]
+Options:
+-I    Use ICMP ECHO for probes
+-T    Use TCP SYN for probes
+-U    Use UDP datagr">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>traceroute</h1> 
+<p> Print the route packets take to network host.</p>
+<pre>Syntax
+      traceroute [<i>options</i>] host [<i>packetsize</i>]
+<p>Options:</p>
+<p>-I    Use ICMP ECHO for probes<br>
+-T    Use TCP SYN for probes<br>
+-U    Use UDP datagrams for probes (default). Only UDP is allowed for unprivileged users.<br>
+-d    Enable socket level debugging (when the Linux kernel supports it)</p>
+<p>-F    Set the “Don’t Fragment” bit. This tells intermediate routers not to fragment<br>
+the packet when they find it’s too big for a network hop’s MTU.</p>
+<p>-f <i>first_ttl</i><br>
+With what TTL to start. Default = 1</p>
+<p>-g <i>gateway</i><br>
+Adds an IP source route gateway to the outgoing packet. Not useful, as<br>
+most routers have disabled this for security reasons.</p>
+<p>-i <i>interface</i><br>
+The interface through which traceroute should send packets.<br>
+Default = select according to the routing table.</p>
+<p>-m <i>max_ttl</i><br>
+The max no. of hops (max time-to-live value) traceroute will probe. Default=30 hops</p>
+<p>-N <i>squeries</i><br>
+The number of probe packets sent out simultaneously. Sending several probes<br>
+concurrently can speed up traceroute considerably. Default = 16<br>
+Note that some routers and hosts can use ICMP rate throttling. In such a situation<br>
+specifying too large number can lead to loss of some responses.</p>
+<p>-n    Show numerical addresses; do not look up hostnames.<br>
+(Useful if DNS is not functioning properly.)</p>
+<p>-p <i>port</i><br>
+For UDP tracing: the destination port base traceroute will use<br>
+(the destination port number will be incremented by each probe).<br>
+For ICMP tracing: the initial icmp sequence value (incremented by each probe).<br>
+For TCP tracing: the (constant) destination port to connect.<br>
+-t <i>tos</i><br>
+For IPv4, set the Type of Service (TOS) and Precedence value.<br>
+Useful values are 16 (low delay) and 8 (high throughput).<br>
+Note that in order to use some TOS precendence values, you have to be super user.<br>
+For IPv6, set the Traffic Control value.</p>
+<p>-w <i>waittime</i><br>
+Set the time (in seconds) to wait for a response to a probe (default 5.0 sec).</p>
+<p>-q <i>nqueries</i><br>
+Set the number of probe packets per hop. Default = 3</p>
+<p>-r    Bypass the normal routing tables and send directly to a host on an attached network.<br>
+If the host is not on a directly-attached network, an error is returned.<br>
+This option can be used to ping a local host through an interface that has no route through it.</p>
+<p>-s <i>source_addr</i><br>
+Choose an alternative source address. You must select the address of one of the interfaces.<br>
+Default = address of the outgoing interface.</p>
+<p>-z sendwait<br>
+Minimal time interval between probes (default 0). If the value is more than 10,<br>
+then it specifies a number in milliseconds, else it is a number of seconds<br>
+(float point values allowed too). Useful when some routers use rate-limit for icmp messages.</p>
+<p>-A    Perform AS path lookups in routing registries and print results directly after<br>
+the corresponding addresses</p>
+<p>-V    Print the version and exit.</p>
+<p>–help  Print help info and exit.</p>
+<p>-4, -6  Explicitly force IPv4 or IPv6 traceouting. By default, the program will try<br>
+to resolve the name given, and choose the appropriate protocol automatically.<br>
+If resolving a host name returns both IPv4 and IPv6 addresses, traceroute will use IPv4. </p></pre><p></p>
+<p class="quote"> <i>"The Net interprets censorship as damage and routes around it" ~ John Gilmore</i></p>
+<p><b>Related:</b></p>
+<p><a href="mtr.html">mtr</a> - Network diagnostics (traceroute/ping)<br>
+netstat(1)<br>
+ping(8)<br>
+route - manipulate routing tables<br>
+Equivalent Windows command: <a href="../nt/tracert.html">tracert</a> - Trace Route</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="traceroute.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/traceroute.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

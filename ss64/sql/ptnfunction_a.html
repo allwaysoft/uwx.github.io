@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ALTER PARTITION FUNCTION
+Alter the boundary values for a partition function by splitting or merging the ranges.
+Syntax
+      ALTER PARTITION FUNCTION partition_function()        SPLIT RANGE (boundary_">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/ptnfunction_a.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ALTER PARTITION FUNCTION
+Alter the boundary values for a partition function by splitting or merging the ranges.
+Syntax
+      ALTER PARTITION FUNCTION partition_function()        SPLIT RANGE (boundary_">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ALTER PARTITION FUNCTION
+Alter the boundary values for a partition function by splitting or merging the ranges.
+Syntax
+      ALTER PARTITION FUNCTION partition_function()        SPLIT RANGE (boundary_">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>ALTER PARTITION FUNCTION</h1>
+<p>Alter the boundary values for a partition function by splitting or merging the ranges.</p>
+<pre>Syntax
+      ALTER PARTITION FUNCTION <i>partition_function</i>()<br>        SPLIT RANGE (<i>boundary_value</i>) [ ; ]
+<pre><code>  ALTER PARTITION FUNCTION &lt;i&gt;partition_function&lt;/i&gt;()&lt;br&gt;        MERGE RANGE (&lt;i&gt;boundary_value&lt;/i&gt;) [ ; ]
+</code></pre>
+<p>Key:<br>
+SPLIT RANGE     Add a partition to the partition function.<br>
+MERGE RANGE     Drop a partition and merge values to one of the remaining partitions.<br>
+boundary_value  The range of the new/old partition</p>
+</pre> 
+<p>The partition scheme(s) that use the partition function must have a filegroup marked as NEXT USED to hold the new partition. </p>
+<p>If the scheme lacks a filegroup marked NEXT USED, use ALTER PARTITION SCHEME to either add a filegroup, or designate an existing one, to hold the new partition. A filegroup that already holds partitions can be designated to hold additional partitions. </p>
+<p>Example</p>
+<pre>CREATE PARTITION FUNCTION myPtnFunct (int)<br>AS RANGE LEFT FOR VALUES ( 1, 50, 500 );<br>GO
+<br>-- Split the partition between 50 and 500<br>-- create 2 partitions:
+--   50-250 and  250-500<br>ALTER PARTITION FUNCTION myPtnFunct ()<br>SPLIT RANGE (250);
+<p>– Partitions at this point:<br>
+–  &lt;=1<br>
+–  &gt;1 and &lt;= 50<br>
+–  &gt;50 and &lt;=250<br>
+–  &gt;250 and &lt;=500</p>
+<p>– Merge the partitions 1-50 and 50-250<br>– to create one partition from 1-250:<br>
+<br>ALTER PARTITION FUNCTION myPtnFunct ()<br>MERGE RANGE (50);</p></pre><p></p>
+<p class="quote"><i>"The best way to get a bad law repealed is to enforce it strictly" ~ Abraham Lincoln </i></p>
+<p><b>Related commands:</b></p>
+<p>  <a href="ptnfunction_c.html">CREATE PARTITION FUNCTION</a><br>
+  <a href="ptnfunction_d.html">DROP PARTITION FUNCTION</a><br>
+Equivalent Oracle command:  <a href="../ora/table_a_part.html">ALTER TABLE</a> Partitioning clause </p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/ptnfunction_a.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

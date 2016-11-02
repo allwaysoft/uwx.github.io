@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="chkconfig 
+Update and query runlevel information for system services.
+Syntax
+      chkconfig --list [name]      chkconfig --add name      chkconfig --del name      chkconfig [--level levels] name &amp;lt;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/chkconfig.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="chkconfig 
+Update and query runlevel information for system services.
+Syntax
+      chkconfig --list [name]      chkconfig --add name      chkconfig --del name      chkconfig [--level levels] name &amp;lt;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="chkconfig 
+Update and query runlevel information for system services.
+Syntax
+      chkconfig --list [name]      chkconfig --add name      chkconfig --del name      chkconfig [--level levels] name &amp;lt;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>chkconfig</h1> 
+<p>Update and query runlevel information for system services.</p>
+<pre>Syntax
+      chkconfig --list [<i>name</i>]<br>      chkconfig --add <i>name</i><br>      chkconfig --del <i>name</i><br>      chkconfig [--level <i>levels</i>] <i>name</i> &lt;on|off|reset&gt;<br>      chkconfig [--level <i>levels</i>] <i>name</i> 
+<p>Options:<br>
+–level <i>levels</i><br>
+The run levels an operation should pertain to.<br>
+Given as a string of numbers from 0 to 7.<br>
+For example, --level 35 specifies runlevels 3 and 5.</p>
+<p>–add <i>name</i><br>
+Add a new service for management by chkconfig.<br>
+When a new service is added, chkconfig ensures that the<br>
+service has either a start or a kill entry in every runlevel.<br>
+If any runlevel is missing such an entry, chkconfig creates<br>
+the appropriate entry as specified by the default values in<br>
+the init script. Note that default entries in LSB-delimited<br>
+’INIT INFO’ sections take precedence over the default runlevels<br>
+in the initscript.<br>
+–del <i>name</i><br>
+Delete the service from chkconfig management, and remove any<br>
+links in /etc/rc[0-6].d which pertain to it.</p>
+<pre><code>         Note that future package installs for this service may
+         run chkconfig --add, which will re-add such links.
+         To disable a service, run chkconfig name off. 
+</code></pre>
+<p>–list <i>name</i><br>
+List all of the services which chkconfig knows about, and<br>
+whether they are stopped or started in each runlevel.<br>
+If <i>name </i>is specified, information is only displayed about service <i>name</i>. </p></pre><p></p>
+<p>chkconfig provides a simple command-line tool for maintaining the /etc/rc[0-6].d directory hierarchy by relieving system administrators of the task of directly manipulating the numerous symbolic links in those directories.</p>
+<p>This implementation of chkconfig was inspired by the chkconfig command present in the IRIX operating system. Rather than maintaining configuration information outside of the <span class="code">/etc/rc[0-6].d</span> hierarchy, however, this version directly manages the symlinks in <span class="code">/etc/rc[0-6].d</span>. This leaves all of the configuration information regarding what services init starts in a single location.</p>
+<p>chkconfig has five distinct functions: adding new services for management, removing services from management, listing the current startup information for services, changing the startup information for services, and checking the startup state of a particular service.</p>
+<p>When chkconfig is run without any options, it displays usage information. If only a service name is given, it checks to see if the service is configured to be started in the current runlevel. If it is, chkconfig returns true; otherwise it returns false. The --level option can be used to have chkconfig query an alternative runlevel rather than the current one.</p>
+<p>If one of <b>on, off,</b> or <b>reset</b> is specified after the service name, chkconfig changes the startup information for the specified service. The on and off flags cause the service to be started or stopped, respectively, in the runlevels being changed. The <b>reset</b> flag resets the startup information for the service to whatever is specified in the init script in question.</p>
+<p>By default, the on and off options affect only runlevels 2, 3, 4, and 5, while reset affects all of the runlevels. The --level option can be used to specify which runlevels are affected.</p>
+<p>Note that for every service, each runlevel has either a start script or a stop script. When switching runlevels, init will not re-start an already-started service, and will not re-stop a service that is not running.</p>
+<p>chkconfig also can manage xinetd scripts via the means of xinetd.d configuration files. Note that only the on, off, and --list commands are supported for xinetd.d services. </p>
+<p><b>Runlevel Files</b></p>
+<p>Each service which should be manageable by chkconfig needs two or more commented lines added to its<span class="code"> init.d</span> script. The first line tells <b>chkconfig</b> what runlevels the service should be started in by default, as well as the start and stop priority levels. If the service should not, by default, be started in any runlevels, a - should be used in place of the runlevels list. The second line contains a description for the service, and can be extended across multiple lines with backslash continuation.</p>
+<p>For example, random.init has these three lines:</p>
+<p class="code"># chkconfig: 2345 20 80<br>
+# description: Saves and restores system entropy pool for \<br>
+# higher quality random number generation.</p>
+<p>This says that the random script should be started in levels 2, 3, 4, and 5, that its start priority should be 20, and that its stop priority should be 80. You should be able to figure out what the description says; the \ causes the line to be continued. The extra space in front of the line is ignored. </p>
+<p><b>Examples</b></p>
+<p># List all the startup services, and sort alphabetically:<br>
+<span class="code">$ sudo chkconfig --list | sort | less</span></p>
+<p># List the finger service:<span class="code"><br>
+$ sudo chkconfig --list finger<br>
+<br>
+</span>#
+query a service in /etc/rc.d, and see the service settings for each runlevel<span class="code">:<br>
+$ sudo chkconfig --list anacron<br>
+anacron 0:off 1:off 2:on 3:on 4:on 5:on 6:off</span></p>
+<p># Turn nscd off in runlevels 3, 4, and 5<br>
+<span class="code">$ sudo chkconfig --level 345 nscd off</span></p>
+<p class="quote"><i>“Did you ever stop to think, and forget to start again?” ~ A. A. Milne</i></p>
+<p><b>Related:</b><br>
+<br>
+init(8) <br>
+lspci - list all PCI devices<br>
+ntsysv(8) <br>
+system-config-services(8) <br>
+Windows Equivalent: <a href="../nt/syntax-services.html">Services</a></p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/chkconfig.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

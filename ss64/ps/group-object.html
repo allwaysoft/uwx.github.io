@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Group-Object 
+Group objects that contain the same value.
+Syntax
+      Group-Object [-AsHashTable] [-AsString] [[-property] Object[]]
+         [-caseSensitive] [-noElement] [-culture string]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/group-object.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Group-Object 
+Group objects that contain the same value.
+Syntax
+      Group-Object [-AsHashTable] [-AsString] [[-property] Object[]]
+         [-caseSensitive] [-noElement] [-culture string]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.016Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Group-Object 
+Group objects that contain the same value.
+Syntax
+      Group-Object [-AsHashTable] [-AsString] [[-property] Object[]]
+         [-caseSensitive] [-noElement] [-culture string]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Group-Object</h1> 
+<p>Group objects that contain the same value.</p>
+<pre>Syntax
+      Group-Object [-AsHashTable] [-AsString] [[-property] <i>Object</i>[]]
+         [-caseSensitive] [-noElement] [-culture <i>string</i>]
+            [-inputObject <i>psobject</i>] [<i>CommonParameters</i>]
+<p>Key<br>
+-AsHashTable<br>
+Return the group as a <a href="syntax-hash-tables.html">hash table</a>.<br>
+The keys of the hash table are the property values by which the objects are grouped.<br>
+The values of the hash table are the objects that have that property value.</p>
+<pre><code>   By itself, -AsHashTable returns each hash table in which each key is an instance
+   of the grouped object. When used with -AsString, the keys in the hash table are strings.
+</code></pre>
+<p>-AsString<br>
+Convert the hash table keys to strings.<br>
+By default, the hash table keys are instances of the grouped object.<br>
+This parameter is valid only when used with -AsHashTable.</p>
+<p>-property <i>Object</i>[]<br>
+The property or list of properties upon which to group.<br>
+The value of -Property can be a new calculated property.<br>
+To create a calculated, property, create a hash table with an Expression key<br>
+that specifies a string or script block value.</p>
+<p>-caseSensitive<br>
+Make the grouping case-sensitive.<br>
+e.g. Test, TEST and TesT would become separate groups.</p>
+<p>-noElement<br>
+Don’t include members of each group in the output objects.</p>
+<p>-culture <i>string</i><br>
+The culture to use when performing a string comparison.</p>
+<p>-inputObject <i>psobject</i><br>
+The objects to group. May be pipelined.<br>
+A variable command or expression that gets the objects.<br>
+To group the objects in a collection, pipe the objects to Group-Object.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Group-Object:<span class="code"> <b>group</b></span></p>
+<p><b>Examples</b></p>
+<p>Display a list of files  grouped by size:</p>
+<p><span class="code">PS C:\&gt; get-childitem *.doc | group-object -property length</span><br>
+<br>
+Display a list of files, sorted and then grouped by the file extension:</p>
+<p class="code">PS C:\&gt; get-childitem | sort-object -property extension | group-object -property extension</p>
+<p>Count the  file extensions (in the current directory) without retrieving all the files:</p>
+<p class="code">PS C:\&gt; get-childitem | group-object extension -noelement</p>
+<p class="quote"><i>“If we are together nothing is impossible. If we are divided all will fail” ~ Winston Churchill</i></p>
+<p><b>Related:</b></p>
+<p>  <span class="body"><a href="compare-object.html">Compare-Object</a> Compare the properties of objects<br>
+<a href="foreach-object.html">ForEach-object</a> - Loop for each object in the pipeline<br>
+<a href="measure-object.html">Measure-Object</a> - Measure aspects of object properties and create objects from those values<br>
+<a href="new-object.html">New-Object</a> - Create a new .Net object<br>
+<a href="select-object.html">Select-Object</a> - Select objects based on parameters set in the Cmdlet command string<br>
+<a href="sort-object.html">Sort-Object</a> - Sort the input objects by property value<br>
+<a href="tee-object.html">Tee-Object</a> - Send input objects to two places<br>
+<a href="where-object.html">Where-Object</a> - Filter input from the pipeline allowing operation on only certain objects</span></p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="group-object.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/group-object.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

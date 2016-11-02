@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="GRANT to user/role 
+Grant permissions to a  database user, database role, or application role.
+Syntax
+      GRANT permission  [ ,...n ] 
+         TO grantee_principal [,...n ]
+            [WITH GRANT">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/grant_user.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="GRANT to user/role 
+Grant permissions to a  database user, database role, or application role.
+Syntax
+      GRANT permission  [ ,...n ] 
+         TO grantee_principal [,...n ]
+            [WITH GRANT">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.695Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="GRANT to user/role 
+Grant permissions to a  database user, database role, or application role.
+Syntax
+      GRANT permission  [ ,...n ] 
+         TO grantee_principal [,...n ]
+            [WITH GRANT">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>GRANT to user/role </h1>
+<p>Grant permissions to a  database user, database role, or application role.</p>
+<pre>Syntax
+      GRANT <i>permission</i>  [ ,...<i>n</i> ] 
+         TO <i>grantee_principal </i>[,...n ]
+            [WITH GRANT OPTION]
+               [AS <i>grantor_principal</i>] 
+<pre><code>  GRANT &lt;i&gt;permission&lt;/i&gt; | ALL [ PRIVILEGES ] [,...&lt;i&gt;n&lt;/i&gt; ] 
+     [ON USER::&lt;i&gt;user&lt;/i&gt; | ON ROLE::&lt;i&gt;role&lt;/i&gt; | ON APPLICATION ROLE::&lt;i&gt;role&lt;/i&gt;]
+        TO &lt;i&gt;principal&lt;/i&gt; [ ,...&lt;i&gt;n&lt;/i&gt; ] [WITH GRANT OPTION]
+           [AS &lt;i&gt;principal&lt;/i&gt; ]
+</code></pre>
+<p>Key:<br>
+principal   one of:<br>
+user /role /application role<br>
+user mapped to a Windows login/group/certificate<br>
+user mapped to an asymmetric key<br>
+user not mapped to a server principal.</p>
+<p>grantee_principal/grantor_principal<br>
+SQL Server login or SQL Login mapped to a Windows login/group/certificate/asymmetric_key<br>
+The grantor_principal for an Endpoint must be a SQL Server login</p>
+<p>WITH GRANT   Also allow the principal to grant this permission to other principals.</p>
+<p>permission<br>
+ALL (= BACKUP DATABASE, BACKUP LOG, CREATE DATABASE, CREATE DEFAULT,<br>
+CREATE FUNCTION, CREATE PROCEDURE, CREATE RULE, CREATE TABLE, CREATE VIEW)<br>
+ALTER<br>
+ALTER ANY APPLICATION ROLE<br>
+ALTER ANY ASSEMBLY<br>
+CREATE AGGREGATE<br>
+CREATE ASSEMBLY<br>
+UNSAFE ASSEMBLY<br>
+EXTERNAL ACCESS ASSEMBLY<br>
+CREATE ASYMMETRIC KEY<br>
+ALTER ANY ASYMMETRIC KEY<br>
+AUTHENTICATE<br>
+AUTHENTICATE SERVER	<br>
+BACKUP DATABASE<br>
+BACKUP LOG<br>
+ADMINISTER BULK OPERATIONS	<br>
+ALTER ANY CONNECTION	<br>
+ALTER ANY CREDENTIAL	<br>
+CHECKPOINT<br>
+CONNECT<br>
+CONNECT REPLICATION<br>
+CONTROL<br>
+CREATE CERTIFICATE<br>
+ALTER ANY CERTIFICATE<br>
+CREATE CONTRACT<br>
+ALTER ANY CONTRACT<br>
+VIEW DATABASE STATE<br>
+CREATE DATABASE<br>
+CREATE ANY DATABASE	<br>
+ALTER ANY DATABASE<br>
+VIEW ANY DATABASE<br>
+CREATE DDL EVENT NOTIFICATION<br>
+CREATE DATABASE DDL EVENT NOTIFICATION<br>
+CREATE TRACE EVENT NOTIFICATION<br>
+ALTER ANY DATABASE EVENT NOTIFICATION<br>
+ALTER ANY DATASPACE<br>
+CREATE DEFAULT<br>
+VIEW DEFINITION<br>
+VIEW ANY DEFINITION<br>
+DELETE<br>
+CREATE ENDPOINT<br>
+ALTER ANY ENDPOINT<br>
+ALTER ANY EVENT NOTIFICATION	<br>
+EXECUTE<br>
+CREATE FULLTEXT CATALOG<br>
+ALTER ANY FULLTEXT CATALOG<br>
+CREATE FUNCTION<br>
+INSERT<br>
+ALTER ANY LINKED SERVER	<br>
+ALTER ANY LOGIN<br>
+CREATE MESSAGE TYPE<br>
+ALTER ANY MESSAGE TYPE<br>
+TAKE OWNERSHIP<br>
+CREATE PROCEDURE<br>
+CREATE QUEUE<br>
+SUBSCRIBE QUERY NOTIFICATIONS<br>
+ALTER RESOURCES	<br>
+REFERENCES<br>
+CREATE REMOTE SERVICE BINDING<br>
+ALTER ANY REMOTE SERVICE BINDING<br>
+CREATE ROLE<br>
+ALTER ANY ROLE<br>
+CREATE ROUTE<br>
+ALTER ANY ROUTE<br>
+CREATE RULE<br>
+CREATE SCHEMA<br>
+ALTER ANY SCHEMA<br>
+SELECT<br>
+ALTER SERVER STATE<br>
+VIEW SERVER STATE	<br>
+ALTER SETTINGS<br>
+CREATE SERVICE<br>
+ALTER ANY SERVICE<br>
+SHOWPLAN<br>
+SHUTDOWN<br>
+CONNECT SQL<br>
+CREATE SYMMETRIC KEY<br>
+ALTER ANY SYMMETRIC KEY<br>
+CREATE SYNONYM<br>
+CREATE TABLE<br>
+ALTER TRACE<br>
+ALTER ANY DATABASE DDL TRIGGER<br>
+CREATE TYPE<br>
+ALTER ANY USER<br>
+UPDATE<br>
+CREATE VIEW<br>
+CREATE XML SCHEMA COLLECTION</p></pre><p></p>
+<p>If CONTROL SERVER or ALTER ANY SERVER STATE are granted to a user, then many of the permissions above will be implicitly granted.</p>
+<p>When granting from one principle to another principle (GRANT <i>permission </i>ON <i>user/role</i> TO <i>user/role</i> ) 
+  then 
+the only valid permissions are:</p>
+<pre>   CONTROL, IMPERSONATE, TAKE OWNERSHIP, ALTER, VIEW DEFINITION
+<pre><code>  For user: CONTROL/IMPERSONATE/ALTER/VIEW DEFINITION
+  For role: CONTROL/TAKE OWNERSHIP/ALTER/VIEW DEFINITION
+  For app. role:  CONTROL/ALTER/VIEW DEFINITION&lt;/pre&gt;
+</code></pre>
+<p>Examples</p>
+<pre>USE MyDb;<br>GRANT CREATE TABLE TO MyUser;
+GRANT CREATE VIEW TO MyUser WITH GRANT OPTION;<br>GO
+<p>GRANT VIEW DEFINITION ON ROLE::SupervisorRole<br>  TO User64 WITH GRANT OPTION;<br>
+GO</p>
+<p>GRANT IMPERSONATE ON USER::User78 TO SupervisorRole;<br>GO  </p></pre><p></p>
+<p class="quote"><i>"I had one guy at a gas station in New York say to me, 'Hey, you look
+  like Hugh Grant. No offense'" ~ Hugh Grant, on being recognized in
+public</i></p>
+<p><b>Related commands:</b></p>
+<p><a href="revoke_user.html">  REVOKE User/Role</a> permissions<br>
+  <a href="grant.html">GRANT Object</a> permissions<br>
+  <a href="deny_user.html">DENY User/Role</a> permissions  <br>
+  sys.database_permissions<br>
+  sys.database_principals  <br>
+Equivalent Oracle command: <a href="../ora/grant.html">GRANT</a></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="grant_user.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/grant_user.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

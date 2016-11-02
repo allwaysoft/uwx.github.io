@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PowerCFG (Windows XP SP2/2003) 
+Control power settings,  configure Hibernate/Standby modes. See also the Vista/Windows7/Server 2008 version of PowerCfg. 
+Syntax
+      powercfg [Options]
+Options
+/l
+/li">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/powercfg-xp.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PowerCFG (Windows XP SP2/2003) 
+Control power settings,  configure Hibernate/Standby modes. See also the Vista/Windows7/Server 2008 version of PowerCfg. 
+Syntax
+      powercfg [Options]
+Options
+/l
+/li">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.959Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PowerCFG (Windows XP SP2/2003) 
+Control power settings,  configure Hibernate/Standby modes. See also the Vista/Windows7/Server 2008 version of PowerCfg. 
+Syntax
+      powercfg [Options]
+Options
+/l
+/li">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>PowerCFG (Windows XP SP2/2003) </h1>
+<p>Control power settings,  configure Hibernate/Standby modes. See also the <a href="powercfg.html">Vista/Windows7/Server 2008 version of PowerCfg</a>. </p>
+<pre>Syntax
+      powercfg [<i>Options</i>]
+<p>Options</p>
+<p>/l<br>
+/list<br>
+List the current user’s power schemes.</p>
+<p>/query [<i>Scheme_name</i>]<br>
+/q [<i>Scheme_name</i>]<br>
+Display the contents of a power scheme.</p>
+<p>/create <i>Scheme_Name</i><br>
+/c <i>Scheme_Name<br>
+</i>            Create a power scheme with the specified <i>Scheme_Name</i>.</p>
+<p>/delete <i>Scheme_Name</i><br>
+/d <i>Scheme_Name</i><br>
+Delete the power scheme with the specified <i>Scheme_Name</i>.</p>
+<p>/setactive <i>Scheme_Name</i><br>
+/s <i>Scheme_Name</i><br>
+Make the specified power scheme active on the computer.</p>
+<p>/change <i>setting value</i><br>
+/x <i>setting value</i><br>
+Modify one of the following settings in the current power scheme:<br>
+/monitor-timeout-ac <i>minutes</i><br>
+/monitor-timeout-dc <i>minutes</i><br>
+/disk-timeout-ac <i>minutes</i><br>
+/disk-timeout-dc <i>minutes</i><br>
+/standby-timeout-ac <i>minutes</i><br>
+/standby-timeout-dc <i>minutes</i><br>
+/hibernate-timeout-ac <i>minutes</i><br>
+/hibernate-timeout-dc <i>minutes</i><br>
+/processor-throttle-ac <i>throttle</i><br>
+/processor-throttle-dc <i>throttle</i><br>
+AC settings are used when the system is on AC power. DC settings on battery power.<br>
+Setting any value to 0 will set the timeout=Never<br>
+<i>throttle </i>= NONE CONSTANT, DEGRADE, or ADAPTIVE.</p>
+<p>/export <i>Scheme_Name </i>[/FILE <i>filename</i>]<br>
+Export a power scheme, represented by <i>Scheme_Name</i>, into <i>filename</i>. (default filename: Scheme.pow)</p>
+<p>/import <i>Scheme_Name </i>[/FILE <i>filename</i>]<br>
+Import all power settings from the specified file.<br>
+<i>filename</i> is the path to a file generated with powercfg /export</p>
+<p>/hibernate [on|off]<br>
+/h [on|off]<br>
+Enable or disable the hibernate feature. Hibernate timeout is not supported on all computers.</p>
+<p>/numerical<br>
+/n<br>
+Specify the power scheme to be operated upon with a numerical identifier.<br>
+This switch allows a number to be used in place of the <i>Scheme_Name</i> in the following<br>
+commands: /QUERY, /DELETE, /SETACTIVE, /CHANGE, /EXPORT, and /IMPORT</p>
+<p>/globalpowerflag {ON|OFF} /OPTION: <i>flag</i><br>
+/g {ON|OFF} /OPTION <i>flag</i><br>
+Turn one of the following global power flags on or off:<br>
+BatteryIcon    Turn the battery meter icon in the system tray on/off.<br>
+MultiBattery   Turns on/off multiple battery display in system Power Meter.<br>
+ResumePassword Prompt for password on resuming the system.<br>
+WakeOnRing     Turn on/off wake on ring support.<br>
+VideoDim       Turn on/off support for dimming video display on battery power.</p>
+<p>/availablesleepstates<br>
+/a<br>
+Report the sleep states available on the computer.<br>
+Will also attempt to report reasons why sleep states are unavailable.</p>
+<p>/batteryalarm {LOW|CRITICAL} [settings]<br>
+/b {LOW|CRITICAL} [settings]<br>
+Configure the battery alarm.<br>
+Settings:<br>
+/activate &lt;on|off&gt;<br>
+Enable or disable the alarm.<br>
+/level &lt;percentage (0 – 100)&gt;<br>
+The alarm will be activated when the power level reaches this percentage.<br>
+/text &lt;on|off&gt;<br>
+Turns the text notification on or off.<br>
+/sound &lt;on|off&gt;<br>
+Turns the audible notification on or off.<br>
+/action &lt;none|shutdown|hibernate|standby&gt;<br>
+Specifies the action to take when this alarm goes off.<br>
+Not all actions are always available.<br>
+/forceaction &lt;on|off&gt;<br>
+Force stand by or shutdown even if a program stops responding.<br>
+/program &lt;on|off&gt;<br>
+Specifies a program to run.  schtasks.exe /change can be used to configure the program.</p>
+<p>/devicequery <i>query_flags</i><br>
+Return a list of devices that meet the specified flags:<br>
+wake_from_S1_supported – Waking the computer from a light sleep state.<br>
+wake_from_S2_supported – Waking the computer from a deeper sleep state.<br>
+wake_from_S3_supported – Waking the computer from the deepest sleep state.<br>
+wake_from_any   – Support waking the computer from any sleep state.<br>
+S1_supported    – Light sleep.<br>
+S2_supported    – Deeper sleep.<br>
+S3_supported    – Deepest sleep.<br>
+S4_supported    – Hibernation.<br>
+wake_programmable – User-configurable to wake the computer from a sleep state.<br>
+wake_armed      – Currently configured to wake the computer from any sleep state.<br>
+all_devices     – Present in the computer.<br>
+all_devices_verbose – Verbose list of devices.</p>
+<p>/deviceEnableWake <i>devicename</i><br>
+Enable the device to wake the computer from a sleep state.</p>
+<p>/deviceDisableWake <i>devicename</i><br>
+Disable the device from waking the computer from a sleep state.</p>
+<p>/help<br>
+/?<br>
+Display help</p>
+</pre>
+<p>Power Schemes are configured on a per-user basis and (under Windows XP) PowerCfg requires workstation Administrator or Power User rights. <br>
+Alternatively grant rights to the following registry keys (from <a href="http://blogs.msdn.com/b/aaron_margosis/archive/2005/02/09/370263.aspx" target="_blank" rel="external">Aaron Margosis</a>): <span class="code"><br>
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\PowerCfg\GlobalPowerPolicy<br>
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\PowerCfg\PowerPolicies<br>
+KEY_USERS\.DEFAULT\Control Panel\PowerCfg</span></p>
+<p>The most common cause of problems with power saving/hibernation is an incompatible device driver, diagnose this by disabling each device in turn (with <span class="code">/deviceDisableWake</span>) </p>
+<p>When activating Power Saving across an organisation, it is important to ensure that software updates (security patches and antivirus) are not disrupted.<br>
+<a href="http://technet.microsoft.com/en-us/windowsserver/bb332157.aspx" target="_blank" rel="external">WSUS</a> can be configured to install updates when workstations are available and <a href="schtasks.html">Scheduled Tasks</a> can be set to Wake the machine when needed. </p>
+<p><b>Examples</b></p>
+<p class="code">Powercfg /devicequery wake_armed<br>
+Powercfg /h on<br>
+Powercfg /deviceEnableWake "Microsoft USB IntelliMouse Explorer"<br>
+<br>
+Powercfg /CREATE SS64 <br>
+Powercfg /CHANGE SS64 /monitor-timeout-ac 15<br>
+Powercfg /CHANGE SS64 /disk-timeout-ac 30<br>
+Powercfg /CHANGE SS64 /standby-timeout-ac 60<br>
+Powercfg /CHANGE SS64 /hibernate-timeout-ac 0<br>
+Powercfg /SETACTIVE SS64 </p>
+<p> <span class="quote"><i>“The fact that you have to choose between nine different ways of turning off your computer... produces just a little bit of unhappiness every time” - <a href="http://www.joelonsoftware.com/items/2006/11/21.html" target="_blank" rel="external">Joel on Software</a></i></span> <br>
+<br>
+<b> Related:</b></p>
+<p><a href="powercfg.html">PowerCfg</a> for  Vista/Windows7/Server 2008<br>
+<a href="https://support.microsoft.com/kb/915160" target="_blank" rel="external">Q915160</a> - Create a Group Policy object for power schemes.<br>
+<a href="https://support.microsoft.com/kb/913622" target="_blank" rel="external">Q913622</a> - Power scheme options are unavailable (XP)<br>
+<a href="https://support.microsoft.com/kb/324347" target="_blank" rel="external">Q324347</a> - How to use Powercfg.exe in Windows Server 2003<br>
+<a href="http://ask.metafilter.com/189659/Why-does-powercfg-not-do-what-I-want-in-Windows-7#2740762" target="_blank" rel="external">Configure ' Sleep' key</a> - for XP
+<br>
+<a href="http://www.energystar.gov/index.cfm?c=power_mgt.pr_power_mgt_comm_packages" target="_blank" rel="external">3rd party Power Management tools</a> - EnergyStar.gov</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="powercfg-xp.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/powercfg-xp.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

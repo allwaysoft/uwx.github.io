@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-Counter 
+Get performance counter data from local and remote computers.
+Syntax
+      Get-Counter [-Counter] string[] [-ComputerName string[]] [-Continuous]
+        [-MaxSamples Int64] [-SampleInter">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-counter.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-Counter 
+Get performance counter data from local and remote computers.
+Syntax
+      Get-Counter [-Counter] string[] [-ComputerName string[]] [-Continuous]
+        [-MaxSamples Int64] [-SampleInter">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.931Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-Counter 
+Get performance counter data from local and remote computers.
+Syntax
+      Get-Counter [-Counter] string[] [-ComputerName string[]] [-Continuous]
+        [-MaxSamples Int64] [-SampleInter">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-Counter</h1> 
+<p>Get performance counter data from local and remote computers.</p>
+<pre>Syntax
+      Get-Counter [-Counter] <i>string</i>[] [-ComputerName <i>string</i>[]] [-Continuous]
+        [-MaxSamples <i>Int64</i>] [-SampleInterval <i>int</i>] [<i>CommonParameters</i>]
+<pre><code>  Get-Counter -ListSet &lt;i&gt;string&lt;/i&gt;[] [-ComputerName &lt;i&gt;string&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key:<br>
+-ComputerName <i>string</i>[]<br>
+Get data from the specified computer(s).<br>
+Type the NetBIOS name, an Internet Protocol (IP) address, or fully qualified domain names.<br>
+The default value is the local computer.</p>
+<pre><code>   Note:  Get-Counter does not rely on PowerShell remoting.
+</code></pre>
+<p>-Continuous<br>
+Get samples continuously until you press CTRL+C.<br>
+By default, Get-Counter gets only one counter sample.<br>
+Use -SampleInterval to set the interval for continuous sampling.</p>
+<p>-Counter <i>string</i>[]<br>
+Get data from the specified performance counters.<br>
+Enter one or more counter paths. Wildcards are permitted only in the Instance value.<br>
+You can also pipe counter path strings to Get-Counter.</p>
+<pre><code>   Each counter path has the following format:
+           &quot;[\\&amp;lt;ComputerName&amp;gt;]\&amp;lt;CounterSet&amp;gt;(&amp;lt;Instance&amp;gt;)\&amp;lt;CounterName&amp;gt;&quot; 
+
+   For example: 
+            &quot;\\Server01\Processor(2)\% User Time&quot;.  
+
+   The &lt;i&gt;ComputerName&lt;/i&gt; element is optional. If you omit it, Get-Counter uses the value of -ComputerName.
+
+   Note:  To get correctly formatted counter paths, use -ListSet to get a performance counter set.
+
+   The Paths and PathsWithInstances properties of each performance counter set contain
+   the individual counter paths formatted as a string. You can save the counter path strings
+   in a variable or pipe the string directly to another Get-Counter command. See the examples.
+</code></pre>
+<p>-ListSet <i>string</i>[]<br>
+Get the specified performance counter sets on the computers.<br>
+Enter the names of the counter sets. Wildcards are permitted.<br>
+You can also pipe counter set names to Get-Counter.</p>
+<p>-MaxSamples <i>Int64</i><br>
+The number of samples to get from each counter.<br>
+The default is 1 sample. To get samples continuously (no max sample size), use -Continuous.</p>
+<pre><code>   To collect a very large data set, consider running a Get-Counter command as a PowerShell background job.
+   For more information, see about_Jobs and Start-Job.
+</code></pre>
+<p>-SampleInterval <i>int</i><br>
+The time between samples in seconds.<br>
+The minimum value and the default value are 1 second.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Get-Counter  gets live, real-time performance counter data directly from a local or remote Windows computer. Without parameters, Get-Counter will get counter data for a set of system counters. </p>
+<p><b>Examples</b></p>
+<p>Get all of the counter sets on the local computer. Run this command with "Run as administrator" to see all counter sets as many are protected by access control lists (ACLs.)</p>
+<p class="code">PS C:&gt; get-counter -ListSet *</p>
+<p>Get the current "% Processor Time" combined values for all processors on the local computer. Collect data every 2 seconds until 10 sample values are collected.</p>
+<p><span class="code">PS C:&gt; get-counter -Counter "\Processor(_Total)\% Processor Time" -SampleInterval 2 -MaxSamples 10 </span><br>
+  <br>
+Get a sorted list of all the counter set names:</p>
+<p class="code">PS C:&gt; get-counter -listset * | sort-object  countersetname | format-table countersetname</p>
+<p>Get the correctly formatted path names of the performance counters in the Memory counter set: (this can also be done with <span class="code">.pathswithinstances</span>) </p>
+<p class="code">PS C:&gt; (get-counter -listset memory).paths</p>
+<p>Get the correctly formatted path names that include "cache":</p>
+<p class="code">PS C:&gt; (get-counter -listset memory).paths | where {$_ -like "*cache*"}</p>
+<p>Save the Disk Reads/sec counter path in the <span class="code">$diskreads</span> variable.. </p>
+<p class="code">PS C:&gt; $diskreads = "\LogicalDisk(C:)\Disk Reads/sec"</p>
+<p>Pipe the counter path (in $diskreads) to Get-Counter:</p>
+<p class="code">PS C:&gt; $diskreads | get-counter -computer Server64, Server65 -maxsamples 10</p>
+<p>Get a list of 50 randomly selected servers from the Servers.txt file and store in a variable:</p>
+<p class="code">PS C:&gt; $servers = get-random (get-content servers.txt) -count 50</p>
+<p>Save a counter path in the $Counter variable and then get the counter values for all the servers. </p>
+<p class="code">PS C:&gt; $counter = "\Processor(*)\% DPC Time"<br>
+PS C:&gt; get-counter -Counter $counter -computername $servers</p>
+<p>Get a single value for all of the performance counters in the memory counter set on the local computer. First get the counter paths and then get the counter data for each counter:</p>
+<p class="code">PS C:&gt; $memCounters = (get-counter -list memory).paths<br>
+PS C:&gt; get-counter -counter $memCounters</p>
+<p>The properties of the CounterSamples object can be used to examine, select, sort, and group  data:</p>
+<p class="code">PS C:&gt; $counter = "\\SERVER64\Process(Idle)\% Processor Time" <br>
+PS C:&gt; $data = get-counter $counter<br>
+PS C:&gt; $data.countersamples | format-list -property *</p>
+<p>Run a Get-Counter command as <a href="start-job.html">background job</a>.</p>
+<p class="code">PS C:&gt; $counters = "\LogicalDisk(_Total)\% Free Space"<br>
+PS C:&gt; start-job -scriptblock {get-counter -counter $counters -maxsamples 1000)</p>
+<p>Find the '% free disk space' on 50 computers 
+selected randomly from Servers.txt</p>
+<p class="code">PS C:&gt; get-counter -computername (get-random servers.txt -count 50) -counter "\LogicalDisk(*)\% Free Space"</p>
+<p class="quote"><i>“I was going to thrash them within an inch of their lives, but I didn't have a tape measure” ~ Groucho Marx</i></p>
+<p><b>Related:</b></p>
+<p>  <a href="export-counter.html">Export-Counter</a> - Export Performance Counter data to log files<br>
+<a href="import-counter.html">Import-Counter</a>             - Import performance counter log files</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="get-counter.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-counter.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

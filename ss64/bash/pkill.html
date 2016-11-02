@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pgrep / pkill 
+Kill processes by a full  or partial name.
+Syntax
+      pgrep [-flvx] [-d delimiter] [-n|-o] [-P ppid,...] [-g pgrp,...]
+         [-s sid,...] [-u euid,...] [-U uid,...] [-G gid,...]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/pkill.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="pgrep / pkill 
+Kill processes by a full  or partial name.
+Syntax
+      pgrep [-flvx] [-d delimiter] [-n|-o] [-P ppid,...] [-g pgrp,...]
+         [-s sid,...] [-u euid,...] [-U uid,...] [-G gid,...]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:41.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="pgrep / pkill 
+Kill processes by a full  or partial name.
+Syntax
+      pgrep [-flvx] [-d delimiter] [-n|-o] [-P ppid,...] [-g pgrp,...]
+         [-s sid,...] [-u euid,...] [-U uid,...] [-G gid,...]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>pgrep / pkill</h1> 
+<p>Kill processes by a full  or partial name.</p>
+<pre>Syntax
+      pgrep [-flvx] [-d <i>delimiter</i>] [-n|-o] [-P <i>ppid</i>,...] [-g <i>pgrp</i>,...]
+         [-s <i>sid</i>,...] [-u <i>euid</i>,...] [-U <i>uid</i>,...] [-G gid,...]
+            [-t <i>term</i>,...] [<i>pattern</i>]
+<pre><code>  pkill [-signal] [-fvx] [-n|-o] [-P &lt;i&gt;ppid&lt;/i&gt;,...] [-g &lt;i&gt;pgrp&lt;/i&gt;,...]
+     [-s &lt;i&gt;sid&lt;/i&gt;,...] [-u &lt;i&gt;euid&lt;/i&gt;,...] [-U &lt;i&gt;uid&lt;/i&gt;,...] [-G &lt;i&gt;gid&lt;/i&gt;,...]
+        [-t &lt;i&gt;term&lt;/i&gt;,...] [&lt;i&gt;pattern&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+<i>pattern</i><br>
+An Extended Regular Expression to match process names or command lines.</p>
+<p>-d <i>delimiter</i><br>
+Set the string used to delimit each process ID in the output<br>
+(by default a newline). (pgrep only.)<br>
+-f<br>
+The pattern is normally only matched against the process name.<br>
+When -f is set, the full command line is used.<br>
+-g <i>pgrp</i>,…<br>
+Only match processes in the process group IDs listed.<br>
+Process group 0 is translated into pgrep’s or pkill’s own process group.<br>
+-G <i>gid</i>,…<br>
+Only match processes whose real group ID is listed.<br>
+Either the numerical or symbolical value can be used.<br>
+-l<br>
+List the process name as well as the process ID. (pgrep only.)<br>
+-n<br>
+Select only the newest (most recently started) of the matching processes.<br>
+-o<br>
+Select only the oldest (least recently started) of the matching processes.<br>
+-P <i>ppid</i>,…<br>
+Only match processes whose parent process ID is listed.<br>
+-s <i>sid</i>,…<br>
+Only match processes whose process session ID is listed.<br>
+Session ID 0 is translated into pgrep’s or pkill’s own session ID.<br>
+-t <i>term</i>,…<br>
+Only match processes whose controlling terminal is listed.<br>
+The terminal name should be specified without the “/dev/” prefix.<br>
+-u <i>euid</i>,…<br>
+Only match processes whose effective user ID is listed.<br>
+Either the numerical or symbolical value can be used.<br>
+-U <i>uid</i>,…<br>
+Only match processes whose real user ID is listed.<br>
+Either the numerical or symbolical value can be used.<br>
+-v<br>
+Negates the matching.<br>
+-x<br>
+Only match processes whose name (or command line if -f is specified)<br>
+exactly match the pattern.<br>
+-signal<br>
+Defines the signal to send to each matched process.<br>
+Either the numeric or the symbolic signal name can be used. (pkill only.)</p></pre><p></p>
+<p><span class="code">pgrep</span> searches the process table on the running system and prints the process IDs of all processes that match the criteria given on the command line.</p>
+<p><span class="code">pkill</span> searches the process table on the running system and signals all processes that match the criteria given on the command line.</p>
+<p>All the criteria have to match. For example, <span class="code">pgrep -u root sshd</span> will only list the processes called sshd AND owned by root. On the other hand, <span class="code">pgrep -u root,daemon</span> will list the processes owned by root OR daemon. </p>
+<p><b>Examples</b></p>
+<p>Example 1: Find the process ID of the named daemon:</p>
+<p class="code">$ pgrep -u root named</p>
+<p>Example 2: Make syslog reread its configuration file:</p>
+<p class="code">$ pkill -HUP syslogd</p>
+<p>Example 3: Give detailed information on all xterm processes:</p>
+<p class="code">$ ps -fp $(pgrep -d, -x xterm)</p>
+<p>Example 4: Make all netscape processes run nicer:</p>
+<p class="code">$ renice +4 'pgrep netscape'</p>
+<blockquote>
+<table>
+<caption>
+Common Kill Signals
+</caption>
+<tbody><tr>
+<th scope="col">Signal name</th>
+<th scope="col">Signal value</th>
+<th scope="col">Effect</th>
+</tr>
+<tr>
+<td>SIGHUP</td>
+<td>1</td>
+<td>Hangup</td>
+</tr>
+<tr>
+<td>SIGINT</td>
+<td>2</td>
+<td>Interrupt from keyboard </td>
+</tr>
+<tr>
+<td>SIGQUIT</td>
+<td>3</td>
+<td>Quit</td>
+</tr>
+<tr>
+<td>SIGABRT</td>
+<td>6</td>
+<td>Abort</td>
+</tr>
+<tr>
+<td>SIGKILL</td>
+<td>9</td>
+<td>Kill signal </td>
+</tr>
+<tr>
+<td>SIGTERM</td>
+<td>15</td>
+<td>Termination signal - allow an orderly shutdown</td>
+</tr>
+<tr>
+<td>SIGSTOP</td>
+<td>17,19,23</td>
+<td>Stop the process</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h2>Exit Status</h2>
+<blockquote>
+<p> 1. One or more processes matched the criteria.<br>
+2. No processes matched.<br>
+3. Syntax error in the command line.<br>
+4. Fatal error: out of memory etc.</p>
+</blockquote>
+<p class="quote"><i>“Somebody should tell us, right at the start of our lives, that we are dying. Then we might live life to the limit, every minute of every day. Do it! I say. Whatever you want to do, do it now! There are only so many tomorrows” - Pope Paul VI</i></p>
+<p><b> Related:</b><br>
+<br><a href="ps.html">ps</a> - List running processes (returns PID)<br>
+<a href="kill.html">kill</a> - Kill a process by specifying its PID.<br>
+<a href="killall.html">killall</a> - Kill processes by name.<br>
+<a href="bg.html">bg</a> - Put a process in the background<br>
+<a href="fg.html">fg</a> - Put a process in the foreground<br>
+Equivalent Windows command: <a href="../nt/tskill.html">TSKILL</a> - End a running process</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="pkill.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/pkill.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

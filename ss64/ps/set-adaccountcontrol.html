@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-ADAccountControl 
+Modify the user account control (UAC) values for an AD account.
+Syntax
+      Set-ADAccountControl [-Identity] ADAccount
+        [-AccountNotDelegated bool] [-AllowReversiblePassw">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-adaccountcontrol.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-ADAccountControl 
+Modify the user account control (UAC) values for an AD account.
+Syntax
+      Set-ADAccountControl [-Identity] ADAccount
+        [-AccountNotDelegated bool] [-AllowReversiblePassw">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-ADAccountControl 
+Modify the user account control (UAC) values for an AD account.
+Syntax
+      Set-ADAccountControl [-Identity] ADAccount
+        [-AccountNotDelegated bool] [-AllowReversiblePassw">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-ADAccountControl</h1> 
+<p>Modify the user account control (UAC) values for an AD account.</p>
+<pre>Syntax
+      Set-ADAccountControl [-Identity] <i>ADAccount</i>
+        [-AccountNotDelegated <i>bool</i>] [-AllowReversiblePasswordEncryption <i>bool</i>]
+           [-AuthType {<u>Negotiate</u> | Basic}] [-CannotChangePassword <i>bool</i>]
+              [-Credential <i>PSCredential</i>] [-DoesNotRequirePreAuth <i>bool</i>]
+                 [-Enabled <i>bool</i>] [-HomedirRequired <i>bool</i>] [-MNSLogonAccount <i>bool</i>]
+                    [-Partition <i>String</i>] [-PassThru] [-PasswordNeverExpires <i>bool</i>]
+                       [-PasswordNotRequired <i>bool</i>] [-Server <i>String</i>]
+                          [-TrustedForDelegation <i>bool</i>] [-TrustedToAuthForDelegation <i>bool</i>]
+                             [-UseDESKeyOnly <i>bool</i>] [-Confirm] [-WhatIf] [<a href="common.html"><i>CommonParameters</i></a>]
+<p>Key<br>
+-AccountNotDelegated <i>bool</i><br>
+Security delegation. When True, the security context of the user is not<br>
+delegated to a service even when the service account is set as trusted for<br>
+Kerberos delegation. Sets the AccountNotDelegated property for an AD account.<br>
+This parameter also sets the ADS_UF_NOT_DELEGATED flag of the AD User Account<br>
+Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-AllowReversiblePasswordEncryption <i>bool</i><br>
+Whether reversible password encryption is allowed for the account.<br>
+This parameter sets the AllowReversiblePasswordEncryption property of the account.<br>
+This also sets the ADS_UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED flag of<br>
+the AD User Account Control (UAC) attribute.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-CannotChangePassword <i>bool</i><br>
+Whether the account password can be changed.<br>
+Sets the ‘CannotChangePassword’ property of an account.<br>
+Values for this parameter: $false or 0, $true or 1</p>
+<p>-Credential <i>PSCredential</i><br>
+A user account that has permission to perform this action.<br>
+The default is the current user unless the cmdlet is run from an AD PowerShell provider drive<br>
+in which case the account associated with the drive is the default.</p>
+<pre><code>   &quot;User64&quot; or &quot;Domain01\User64&quot; or a &lt;a href=&quot;get-credential.html&quot;&gt;PSCredential&lt;/a&gt; object.
+</code></pre>
+<p>-DoesNotRequirePreAuth <i>bool</i><br>
+Is Kerberos pre-authentication required to logon using the user/computer account.<br>
+This parameter sets the ADS_UF_DONT_REQUIRE_PREAUTH flag of the AD User Account Control (UAC) attribute.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-Enabled <i>bool</i><br>
+Is the account is enabled. An enabled account requires a password.<br>
+This parameter sets the Enabled property for an account object.<br>
+This parameter also sets the ADS_UF_ACCOUNTDISABLE flag of the AD UAC attribute.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-HomedirRequired <i>bool</i><br>
+Is a home directory is required for the account.<br>
+This parameter sets the ADS_UF_HOMEDIR_REQUIRED flag of the AD UAC attribute.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-Identity <i>ADAccount</i><br>
+Specify an AD domain object by providing one of the following values.<br>
+(The identifier in parentheses is the LDAP display name for the attribute.)</p>
+<pre><code>      Distinguished Name 
+        Example: DC=Helvetia,DC=corp,DC=SS64,DC=com 
+      GUID (objectGUID) 
+        Example: 599c4d2e-f72d-4d20-8a78-030d69495f20
+      Security Identifier (objectSid) 
+        Example: S-1-5-21-5165297888-301467370-576410423-1803
+      Security Accounts Manager (SAM) Account Name (sAMAccountName)
+        Example: Helvetia
+
+   The cmdlet searches the default naming context or partition to find the object.
+   If two or more objects are found, the cmdlet returns a non-terminating error.
+
+   This parameter can also get this object through the pipeline or you can set this
+   parameter to an object instance.
+</code></pre>
+<p>-MNSLogonAccount <i>bool</i><br>
+Is the account is a Majority Node Set (MNS) logon account.<br>
+This parameter also sets the ADS_UF_MNS_LOGON_ACCOUNT flag of the AD User Account Control (UAC) attribute.<br>
+Use MNS logon accounts to configure a multi-node cluster without a shared disk drive.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-Partition <i>string</i><br>
+The distinguished name of an AD partition.<br>
+The distinguished name must be one of the naming contexts on the current<br>
+directory server. The cmdlet searches this partition to find the object defined by<br>
+the -Identity parameter.<br>
+The following two examples show how to specify a value for this parameter.<br>
+-Partition “CN=Configuration,DC=Europe,DC=Test,DC=SS64,DC=com”<br>
+-Partition “CN=Schema,CN=Configuration,DC=Europe,DC=Test,DC=SS64,DC=com”</p>
+<pre><code>   In many cases, a &lt;a href=&quot;partition-defaults.html&quot;&gt;default value&lt;/a&gt; will be used for -Partition if no value is specified.
+</code></pre>
+<p>-PassThru<br>
+Return the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet does not generate any output.</p>
+<p>-PasswordNeverExpires <i>bool</i><br>
+Specifies whether the password of an account can expire.<br>
+This parameter cannot be set to True for an account that also has ChangePasswordAtLogon = True.</p>
+<pre><code>   This parameter sets the PasswordNeverExpires property of an account object.
+   This parameter also sets the ADS_UF_DONT_EXPIRE_PASSWD flag of the AD User Account Control (UAC) attribute.
+   Possible values: $false (or 0), $true (or 1)&lt;br&gt;        &lt;br&gt;   -Server &lt;i&gt;string&lt;/i&gt;
+   The AD Domain Services instance to connect to, this may be a Fully qualified domain name,
+   NetBIOS name, Fully qualified directory server name (with or without port number) or AD Snapshot instance.
+
+   Examples: demo.SS64.com  demo  demoDC02.demo.ss64.com  demoDC02.demo.ss64.com:3268
+</code></pre>
+<p>-TrustedForDelegation <i>bool</i><br>
+Specifies whether an account is trusted for Kerberos delegation.<br>
+A service that runs under an account that is trusted for Kerberos delegation can assume the<br>
+identity of a client requesting the service.<br>
+This parameter sets the TrustedForDelegation property of an account object.<br>
+This value also sets the ADS_UF_TRUSTED_FOR_DELEGATION flag of the AD UAC attribute.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-TrustedToAuthForDelegation <i>bool</i><br>
+Specifies whether an account is enabled for delegation.<br>
+When this parameter is set to true, a service running under such an account can<br>
+impersonate a client on other remote servers on the network.<br>
+This parameter sets the ADS_UF_TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION flag of the AD UAC attribute.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-UseDESKeyOnly <i>bool</i><br>
+Specifies whether an account is restricted to use only Data Encryption Standard (DES) encryption<br>
+types for keys.<br>       This parameter sets the ADS_UF_USE_DES_KEY_ONLY flag of the AD User Account Control attribute.<br>
+Possible values: $false (or 0), $true (or 1)</p>
+<p>-Confirm<br>
+Prompt for confirmation before executing the command.</p>
+<p>-WhatIf<br>
+Describe what would happen if you executed the command, without actually executing the command.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Set-ADAccountControl  modifies the user account control (UAC) values for an AD user or computer account.<br>
+<br>
+The <span class="code">-Identity</span> parameter specifies the AD account to modify. Identify an account by its distinguished name (DN), GUID, security identifier (SID) or security accounts manager (SAM) account name. Alternatively set the <span class="code">-Identity</span> parameter to a user object <a href="syntax-variables.html">variable</a>, or pass a user object through the PowerShell <a href="syntax-pipeline.html">pipeline</a>. For example, from the <a href="search-adaccount.html">Search-ADAccount</a>, <a href="get-aduser.html">Get-ADUser</a>, <a href="get-adcomputer.html">Get-ADComputer</a> or <a href="get-adserviceaccount.html">Get-ADServiceAccount</a> cmdlets.</p>
+<p><b>Examples</b></p>
+<p>Sets the UAC flag on the user account User64 to make sure that a password is required for logon:</p>
+<p><span class="code">PS C:\&gt; Set-ADAccountControl user64 -PasswordNotRequired $false</span></p>
+<p>Sets the password of the user to never expire:</p>
+<p><span class="code">PS C:\&gt; Set-ADAccountControl user64 -PasswordNeverExpires $true</span></p>
+<p>Set the security descriptor of the user so they cannot change their own password:</p>
+<p><span class="code">PS C:\&gt; Set-ADAccountControl 'CN=user64,OU=UserAccounts,DC=SS64,DC=com' -CannotChangePassword $true</span></p>
+<p>Set the flag on userAccountControl so that the account cannot be delegated:</p>
+<p><span class="code">PS C:\&gt; Set-ADAccountControl SQLAdmin1 -AccountNotDelegated $true</span></p>
+<p>Set the flag on userAccountControl so that the account is  trusted to authenticate for delegation:</p>
+<p><span class="code">PS C:\&gt; Set-ADAccountControl 'CN=IIS01 SvcAccount,OU=ServiceAccounts,OU=Managed,DC=SS64,DC=com' -TrustedToAuthForDelegation $true</span></p>
+<p>The specified computer is now set to be trusted for delegation:</p>
+<p><span class="code">PS C:\&gt; Set-ADAccountControl -Identity "Server64" -TrustedForDelegation $true</span></p>
+<p class="quote"><i>“I think the key is for women not to set any limits” ~ Martina Navratilova</i></p>
+<p><b>Related:</b></p>
+<p><a href="set-adaccountexpiration.html">Set-adAccountExpiration</a> - Set the expiration date for an AD account<br>
+<a href="enable-adaccount.html">Enable-adAccount</a> - Enable an Active Directory account<br>
+<a href="reset-adserviceaccountpassword.html">Reset-adServiceAccountPassword</a> - Reset the service account password for a computer<br>
+<a href="http://support.microsoft.com/kb/305144" target="_blank" rel="external">Q305144</a> - UserAccountControl flags - user account properties
+</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set-adaccountcontrol.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-adaccountcontrol.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

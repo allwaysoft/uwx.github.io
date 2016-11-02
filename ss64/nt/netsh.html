@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NETSH (Network Shell)  
+Configure Network Interfaces, Windows Firewall, Routing &amp;amp; remote access. 
+Syntax
+      NETSH [Context] [sub-Context] command
+Key
+The contexts and commands available vary by">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/netsh.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="NETSH (Network Shell)  
+Configure Network Interfaces, Windows Firewall, Routing &amp;amp; remote access. 
+Syntax
+      NETSH [Context] [sub-Context] command
+Key
+The contexts and commands available vary by">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="NETSH (Network Shell)  
+Configure Network Interfaces, Windows Firewall, Routing &amp;amp; remote access. 
+Syntax
+      NETSH [Context] [sub-Context] command
+Key
+The contexts and commands available vary by">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>NETSH (Network Shell) </h1> 
+<p>Configure Network Interfaces, Windows Firewall, Routing &amp; remote access. 
+</p><pre>Syntax
+      NETSH [<i>Context</i>] [<i>sub-Context</i>] <i>command</i>
+<p>Key<br>
+The contexts and commands available vary by platform, the list below is for Windows 2008.<br>
+Use interactive mode/help (described below) to check the commands available on your machine.</p>
+<p>= add             - Add a configuration entry to a list of entries.<br>
+netsh add helper <dllfilename> - Install the specified helper DLL</dllfilename></p>
+<p>= advfirewall    - Change the ‘netsh advfirewall’ context.</p>
+<p>netsh advfirewall consec ?              - Display a list of commands.<br>
+netsh advfirewall consec add            - Add a new connection security rule.<br>
+netsh advfirewall consec delete         - Delete all matching connection security rules.<br>
+netsh advfirewall consec dump           - Display a configuration script.<br>
+netsh advfirewall consec set            - Set new values for properties of an existing rule.<br>
+netsh advfirewall consec show           - Display a specified connection security rule.</p>
+<p>netsh advfirewall dump    Create a script that contains the current configuration.<br>
+If saved to a file, this can be used to restore the configuration settings.</p>
+<p>netsh advfirewall export <i>path\filename</i>  - Export the current policy to the specified file.<br>
+netsh advfirewall import <i>path\filename</i>  - Import policy from the specified file.</p>
+<p>netsh advfirewall firewall add          - Add a new inbound or outbound firewall rule.<br>
+netsh advfirewall firewall delete       - Delete all matching inbound rules.<br>
+netsh advfirewall firewall dump         - Display a configuration script.<br>
+netsh advfirewall firewall set          - Set new values for properties of a existing rule.<br>
+netsh advfirewall firewall show         - Display a specified firewall rule.</p>
+<p>netsh advfirewall monitor delete        - Delete all matching security associations.<br>
+netsh advfirewall monitor dump          - Display a configuration script.<br>
+netsh advfirewall monitor show          - Show all matching security associations.</p>
+<p>netsh advfirewall reset   - Reset to factory settings (Firewall=ON)</p>
+<p>netsh advfirewall set allprofiles    - Set properties in all profiles.<br>
+netsh advfirewall set currentprofile - Set properties in the active profile.<br>
+netsh advfirewall set domainprofile  - Set properties in the domain profile.<br>
+netsh advfirewall set global         - Set the global properties.<br>
+netsh advfirewall set privateprofile - Set properties in the private profile.<br>
+netsh advfirewall set publicprofile  - Set properties in the public profile.</p>
+<p>netsh advfirewall show allprofiles    - Display properties for all profiles.<br>
+netsh advfirewall show currentprofile - Display properties for the active profile.<br>
+netsh advfirewall show domainprofile  - Display properties for the domain properties.<br>
+netsh advfirewall show global         - Display the global properties.<br>
+netsh advfirewall show privateprofile - Display properties for the private profile.<br>
+netsh advfirewall show publicprofile  - Display properties for the public profile.<br>
+netsh advfirewall show store          - Display the policy store for the current interactive session.</p>
+<p>=bridge         - Change to the ‘netsh bridge’ context.<br>
+netsh bridge dump           - Display a configuration script.<br>
+netsh bridge install        - Install the component corresponding to the current context.<br>
+netsh bridge set            - Set configuration information.<br>
+netsh bridge show           - Display information.<br>
+netsh bridge uninstall      - Remove the component corresponding to the current context.</p>
+<p>=delete         - Delete a configuration entry from a list of entries.<br>
+netsh delete helper <dllfilename>  Remove the specified helper DLL from netsh.<br>
+Note that after a helper is removed, it is no longer supported by netsh.</dllfilename></p>
+<p>=dhcpclient     - Change to the ‘netsh dhcpclient’ context.<br>
+netsh dhcpclient list            - List all the commands available.<br>
+netsh dhcpclient trace enable    - Enable tracing for DHCP client and DHCP QEC.<br>
+netsh dhcpclient trace disable   - Disable tracing for DHCP client and DHCP QEC.</p>
+<p>=dump           - Display a configuration script.<br>
+netsh dump   - Create a script that contains the current configuration.<br>
+If saved to a file, this can be used to restore the configuration settings.</p>
+<p>=exec           - Run a script file.<br>
+exec <scriptfile>  - Load a script file and run it.</scriptfile></p>
+<p>=firewall       - Change to the ‘netsh firewall’ context.<br>
+netsh firewall add                - Add firewall configuration.<br>
+netsh firewall delete             - Delete firewall configuration.<br>
+netsh firewall dump               - Display a configuration script.<br>
+netsh firewall reset              - Reset firewall configuration to default.<br>
+netsh firewall set allowedprogram - Set firewall allowed program configuration.<br>
+netsh firewall set icmpsetting    - Set firewall ICMP configuration.<br>
+netsh firewall set logging        - Set firewall logging configuration.<br>
+netsh firewall set multicastbroadcastresponse - Set firewall multicast/broadcast response configuration.<br>
+netsh firewall set notifications  - Set firewall notification configuration.<br>
+netsh firewall set opmode         - Set firewall operational configuration.<br>
+netsh firewall set portopening    - Set firewall port configuration.<br>
+netsh firewall set service        - Set firewall service configuration.<br>
+netsh firewall show allowedprogram - Show firewall allowed program configuration.<br>
+netsh firewall show config         - Show firewall configuration.<br>
+netsh firewall show currentprofile - Show current firewall profile.<br>
+netsh firewall show icmpsetting    - Show firewall ICMP configuration.<br>
+netsh firewall show logging        - Show firewall logging configuration.<br>
+netsh firewall show multicastbroadcastresponse - Show firewall multicast/broadcast response configuration.<br>
+netsh firewall show notifications  - Show firewall notification configuration.<br>
+netsh firewall show opmode         - Show firewall operational configuration.<br>
+netsh firewall show portopening    - Show firewall port configuration.<br>
+netsh firewall show service        - Show firewall service configuration.<br>
+netsh firewall show state          - Show current firewall state.</p>
+<p>=help           - Display a list of netsh commands.<br>
+netsh help</p>
+<p>=http           - Change to the ‘netsh http’ context.<br>
+netsh http add            - Add a configuration entry to a table.<br>
+netsh http delete         - Delete a configuration entry from a table.<br>
+netsh http dump           - Display a configuration script.<br>
+netsh http flush          - Flushe internal data.<br>
+netsh http show           - Display information.</p>
+<p>=interface      - Change to the ‘netsh interface’ context.<br>
+netsh interface 6to4           + Change to the ‘netsh interface 6to4’ context.<br>
+netsh interface add            - Add a configuration entry to a table.<br>
+netsh interface delete         - Delete a configuration entry from a table.<br>
+netsh interface dump           - Display a configuration script.<br>
+netsh interface ipv4           + Change to the ‘netsh interface ipv4’ context.<br>
+netsh interface ipv6           + Change to the ‘netsh interface ipv6’ context.<br>
+netsh interface isatap         + Change to the ‘netsh interface isatap’ context.<br>
+netsh interface portproxy      + Change to the ‘netsh interface portproxy’ context.<br>
+netsh interface reset          - Reset information.<br>
+netsh interface set            - Set configuration information.<br>
+netsh interface show           - Display information.<br>
+netsh interface tcp            + Change to the ‘netsh interface tcp’ context.<br>
+netsh interface teredo         + Change to the ‘netsh interface teredo’ context.</p>
+<p>The following sub-contexts are available:<br>
+6to4 ipv4 ipv6 isatap portproxy tcp teredo</p>
+<p>=ipsec          - Change to the ‘netsh ipsec’ context.<br>
+netsh ipsec dump                  - Display a configuration script.<br>
+netsh ipsec dynamic add           - Add policy, filter, and actions to SPD.<br>
+netsh ipsec dynamic delete        - Delete policy, filter, and actions from SPD.<br>
+netsh ipsec dynamic dump          - Display a configuration script.<br>
+netsh ipsec dynamic set           - Modifiy policy, filter, and actions in SPD.<br>
+netsh ipsec dynamic show          - Display policy, filter, and actions from SPD.<br>
+netsh ipsec static add            - Create new policies and related information.<br>
+netsh ipsec static delete         - Delete policies and related information.<br>
+netsh ipsec static dump           - Display a configuration script.<br>
+netsh ipsec static exportpolicy   - Export all the policies from the policy store.<br>
+netsh ipsec static importpolicy   - Import the policies from a file to the policy store.<br>
+netsh ipsec static set            - Modify existing policies and related information.<br>
+netsh ipsec static show           - Display details of policies and related information.</p>
+<p>=lan            - Change to the ‘netsh lan’ context.<br>
+netsh lan add            - Add a configuration entry to a table.<br>
+netsh lan delete         - Delete a configuration entry from a table.<br>
+netsh lan dump           - Display a configuration script.<br>
+netsh lan export         - Save LAN profiles to XML files.<br>
+netsh lan reconnect      - Reconnect on an interface.<br>
+netsh lan set            - Configure settings on interfaces.<br>
+netsh lan show           - Display information.</p>
+<p>=nap            - Change to the ‘netsh nap’ context.<br>
+netsh nap client         + Change to the ‘netsh nap client’ context.<br>
+netsh nap dump           - Display a configuration script.<br>
+netsh nap hra            + Change to the ‘netsh nap hra’ context.<br>
+netsh nap reset          - Reset configuration.<br>
+netsh nap show           - Show configuration and state information.</p>
+<p>=netio          - Change to the ‘netsh netio’ context.<br>
+netsh netio add          - Add a configuration entry to a table.<br>
+netsh netio delete       - Delete a configuration entry from a table.<br>
+netsh netio dump         - Display a configuration script.<br>
+netsh netio show         - Display information.</p>
+<p>=ras            - Change to the ‘netsh ras’ context. (Remote Access Server)<br>
+netsh ras aaaa           - Change to the ‘netsh ras aaaa’ context.<br>
+netsh ras add            - Add items to a table.<br>
+netsh ras delete         - Remove items from a table.<br>
+netsh ras diagnostics    - Change to the ‘netsh ras diagnostics’ context.<br>
+netsh ras dump           - Display a configuration script.<br>
+netsh ras ip             - Change to the ‘netsh ras ip’ context.<br>
+netsh ras ipv6           - Change to the ‘netsh ras ipv6’ context.<br>
+netsh ras set            - Set configuration information.<br>
+netsh ras show           - Display information.</p>
+<p>=rpc            - Change to the ‘netsh rpc’ context. (RPC firewall filter)<br>
+netsh rpc add            - Create an Add list of subnets.<br>
+netsh rpc delete         - Create a Delete list of subnets.<br>
+netsh rpc dump           - Display a configuration script.<br>
+netsh rpc filter         - Change to the ‘netsh rpc filter’ context.<br>
+netsh rpc reset          - Reset the selective binding settings to ‘none’ (listen on all interfaces).<br>
+netsh rpc show           - Display the selective binding state for each subnet on the system.</p>
+<p>=set            - Update configuration settings on a remote machine.<br>
+netsh set machine [name=]&lt;machine_on_which_to_operate&gt; [user=][[DomainName]UserName] [pwd=][Password | *]</p>
+<p>If a machine name is not specified, the local machine is used.<br>
+A username and password cannot be used to connect to the local machine.</p>
+<p>=show           - Display information.<br>
+netsh show alias   - List all defined aliases.<br>
+netsh show helper  - List all the top-level helpers.</p>
+<p>=winhttp        - Change to the ‘netsh winhttp’ context.<br>
+netsh winhttp dump           - Display a configuration script.<br>
+netsh winhttp import         - Import WinHTTP proxy settings.<br>
+netsh winhttp reset          - Reset WinHTTP settings.<br>
+netsh winhttp set            - Configure WinHTTP settings.<br>
+netsh winhttp show           - Display currents settings.</p>
+<p>=winsock        - Change to the ‘netsh winsock’ context.<br>
+netsh winsock audit          - Display a list of Winsock LSPs that have been installed and removed.<br>
+netsh winsock dump           - Display a configuration script.<br>
+netsh winsock remove         - Remove a Winsock LSP from the system.<br>
+netsh winsock reset          - Reset the Winsock Catalog to a clean state.<br>
+netsh winsock show           - Display information.</p>
+<p>netsh                        - Interactive mode&lt;/machine_on_which_to_operate&gt;</p></pre><p></p>
+<p>In interactive mode, switch context by typing any context name: <span class="code">advfirewall, bridge, firewall, http, interface, ipsec</span>.. etc<br>
+list commands with <span class="code">?</span> exit interactive mode with <span class="code">Quit</span> or <span class="code">Exit</span>.<br>
+To view help for any command, type the command, followed by a space and ?</p>
+<p>For run Netsh against a remote machine, both <i>File and Printer sharing</i> must  be enabled and the <i>Remote Registry</i> <a href="syntax-services.html">service</a> must be running on the remote machine.</p>
+<p>The syntax on this page is based on Windows 2008, for backwards compatibility with XP <span class="code">dns</span> is an alias for dnsserver, <span class="code">ip</span> is an alias for ipv4</p>
+<p><b>Examples:</b></p>
+<p>Install ipmontr.dll:<br>
+<span class="code">C:\&gt; netsh advfirewall net add helper ipmontr.dll</span><br>
+<br>
+Export the fiewall policy: <br>
+<span class="code">C:\&gt; netsh advfirewall export "c:\advfirewallpolicy.wfw"</span><br>
+<br>
+</p><p>Show TCP/IP settings<br><br>
+<span class="code">C:&amp;gt; netsh interface ip show config</span><br><br>
+<br><br>
+Set a static IP address (e.g. for a laptop)<br></p>
+<p><span class="code">C:&amp;gt; netsh interface ip set address name=“Local Area Connection” source=static addr=192.168.0.10 mask=255.255.255.0 gateway=192.168.0.1 gwmetric=1</span><br><br>
+<br><br>
+Set a dynamic IP address with DHCP<br><br>
+<span class="code">C:&amp;gt; netsh interface ip set address name=“Local Area Connection” source=dhcp</span><br><br>
+<br><br>
+Add multiple DNS servers:<br></p>
+<p><span class="code">C:&amp;gt; netsh interface ipv4 add dns “Local Area Connection” 10.0.0.1<br><br>
+C:&amp;gt; netsh interface ipv4 add dns “Local Area Connection” 10.0.0.3 index=2</span><br></p>
+<p>index=2 adds the IP as a secondary dns server.<br><br>
+<br><br>
+Set a static DNS server address:<br><br>
+<span class="code">C:&amp;gt; netsh interface ip set dns name=“Local Area Connection” source=static addr=192.168.0.2 register=none</span></p><p></p>
+<blockquote>
+<p>Working with foreign locales: you cannot rely on the interface name being English e.g. in French the <i>Local Area Network</i> is called "<i>Connexion au réseau local</i>" (why yes that is unicode!) To display  the different interfaces with their index numbers: <br>
+<span class="code">C:\&gt; netsh interface ip show interfaces</span><br>
+ Knowing the index number (the main/active interface tends to be 13.) we can  set a static address/gateway using the index number:<br>
+<span class="code">C:\&gt; netsh interface ip set address <b>13</b> static 192.168.0.10 255.255.255.0 192.168.0.1 1</span></p>
+</blockquote>
+<p>Set a dynamic DNS server address with DHCP:<br>
+<span class="code">C:\&gt; netsh interface ip set dns name="Local Area Connection" source=dhcp</span><br>
+<br>
+Set a static address for the WINS server:<br>
+<span class="code">C:\&gt; netsh interface ip set wins name="Local Area Connection" source=static addr=192.168.100.3</span><br>
+<br>
+To configure WINS from DHCP:<br>
+<span class="code">C:\&gt; netsh interface ip set wins name="Local Area Connection" source=dhcp</span></p>
+<p>List general configuration state including DirectAccess and DNSSEC.<br>
+<span class="code">C:\&gt; netsh dns show state</span></p>
+<p>Disable IPv6 <a href="http://blog.bimajority.org/2014/09/05/the-network-nightmare-that-ate-my-week/" target="_blank" rel="external">privacy</a> extensions:<br>
+<span class="code">C:\&gt; netsh interface ipv6 set privacy state=disabled store=persistent</span> (saved configuration)<br>
+<span class="code">C:\&gt; netsh interface ipv6 set privacy state=disabled store=active</span> (running configuration)<br>
+<br>
+Backup the local DHCP server configuration to a file:<br>
+<span class="code">C:\&gt; netsh dump dhcp &gt; C:\backupDHCPconfig.dat</span><br>
+</p><p>You can use this backup file to recreate the DHCP server with Netsh .<br><br>
+<br><br>
+Work against a remote machine:<br><br>
+<span class="code">C:&amp;gt; netsh set machine server64</span><br><br>
+<br><br>
+Backup the current network interface configuration to a file:<br><br>
+<span class="code">C:&amp;gt; netsh dump interface &gt; c:\backupInterfaceConfig.dat</span><br><br>
+<br><br>
+Restore network interface configuration from a file:<br><br>
+<span class="code">C:&amp;gt; netsh exec c:\backupInterfaceConfig.dat</span></p><p></p>
+<p>Run Netsh from <a href="../ps/index.html">PowerShell</a> (returns a Text object you can manipulate) <br>
+<span class="code">PS C:\&gt; $myFWstate=netsh firewall show state<br>
+PS C:\&gt; $myFWstate -match "disable"</span></p>
+<p>Disable Network auto-tuning (certain routers and networking devices perform better with this off.) <br>
+<span class="code">PS C:\&gt; netsh interface tcp set global autotuning=disabled</span></p>
+<p>Enable Network auto-tuning (certain routers and networking devices perform better with this on.) <br>
+<span class="code">PS C:\&gt; netsh interface tcp set global autotuning=normal</span></p>
+<p><i class="quote"> "Once you eliminate your #1 problem, #2 gets a promotion" ~ Gerald Weinberg, "The Secrets of Consulting"</i> <br>
+<br>
+<b>Related:</b></p>
+<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=f41878de-2ee7-4718-8499-2ef336db3df5&amp;displaylang=en" target="_blank" rel="external">Netsh 2008 Technical Reference</a> - Microsoft.com <br>
+<a href="http://technet.microsoft.com/en-us/library/cc754516(WS.10).aspx" target="_blank" rel="external">Netsh command reference</a> - Microsoft.com
+<br>
+<a href="https://support.microsoft.com/kb/242468" target="_blank" rel="external">Q242468</a> - How to Use the Netsh.exe Tool <br>
+<a href="nvspbind.html">NVSPBIND</a> - Modify network bindings (Unsupported tool.)<br>
+<a href="https://support.microsoft.com/kb/257748" target="_blank" rel="external">Q257748</a> - Change from Static IP Address to DHCP with NETSH<br>
+<a href="https://support.microsoft.com/kb/140859" target="_blank" rel="external">Q140859</a> - Win NT TCP/IP Routing Basics <br>
+<a href="route.html">ROUTE</a> - Manipulate network routing tables <br>
+Equivalent bash command (Linux):<a href="../bash/export.html">    </a></p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="netsh.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem --><p><br>
+  <br>
+</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/netsh.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

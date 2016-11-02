@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PORTQRY (Download)
+Port Query - Display the status of TCP and UDP ports, troubleshoot TCP/IP  connectivity and security, return LDAP base query info, SMTP, POP3, IMAP4 status, enumerate SQL Server ins">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/portqry.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PORTQRY (Download)
+Port Query - Display the status of TCP and UDP ports, troubleshoot TCP/IP  connectivity and security, return LDAP base query info, SMTP, POP3, IMAP4 status, enumerate SQL Server ins">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PORTQRY (Download)
+Port Query - Display the status of TCP and UDP ports, troubleshoot TCP/IP  connectivity and security, return LDAP base query info, SMTP, POP3, IMAP4 status, enumerate SQL Server ins">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>PORTQRY (<a href="http://www.microsoft.com/downloads/details.aspx?familyid=89811747-C74B-4638-A2D5-AC828BDC6983&amp;displaylang=en" target="_blank" rel="external">Download</a>)</h1>
+<p>Port Query - Display the status of TCP and UDP ports, troubleshoot TCP/IP  connectivity and security, return LDAP base query info, SMTP, POP3, IMAP4 status, enumerate SQL Server instances (UDP port 1434), Local  ports, local services running
+ (and the DLL modules loaded by each).</p>
+<p>Portqry.exe can query a single port, a list of several ports, or a sequential range of port numbers.</p>
+<pre>Syntax
+<p>The 3 modes are listed below: Command line, Local and Interactive mode.</p>
+<p><b>Command line mode:</b><br>
+portqry -n <i>name_to_query</i> [-p <i>protocol</i>]<br>
+[-e | -r | -o <i>endpoint(s</i>)]<br>
+[<i>other options</i>]</p>
+<p>Command line mode options:<br>
+-n [<i>name_to_query</i>]   IP address or name of system to query</p>
+<p>-p [<i>protocol</i>]        TCP or UDP or BOTH (default is TCP)</p>
+<p>-e [<i>endpoint</i>]        Single Port to query (valid range: 1-65535)<br>
+-r [<i>end point range</i>] Range of ports to query (start:end)<br>
+-o [<i>end point order</i>] Range of ports to query in an order (x,y,z)</p>
+<p>-l [<i>logfile</i>]  Output a log file</p>
+<p>-y            Overwrite existing log file without prompting</p>
+<p>-sp [<i>source port</i>] Initial source port to use for query</p>
+<p>-sl     ‘slow link delay’ Wait longer for UDP replies from remote systems</p>
+<p>-nr     By-pass default IP address-to-name resolution<br>
+ignored unless an IP address is specified after -n</p>
+<p>-cn     Specify SNMP community name for query<br>
+ignored unless querying an SNMP port<br>
+must be delimited with !</p>
+<p>-q      ‘Quiet’ operation runs with no output<br>
+returns 0 if port is listening<br>
+returns 1 if port is not listening<br>
+returns 2 if port is listening or filtered</p>
+<p><b>Local Mode:</b><br>
+Local Mode gives detailed data on local system’s ports</p>
+<p>portqry -local [-wt <i>seconds</i>] [-l <i>logfile</i>] [-v]<br>
+portqry -wpid pid [-wt <i>seconds</i>] [-l <i>logfile</i>] [-v]<br>
+portqry -wport port [-wt <i>seconds</i>] [-l <i>logfile</i>] [-v]</p>
+<p>Local mode options:<br>
+-local   Enumerate local port usage, port to process mapping,<br>
+service port usage, and list loaded modules</p>
+<p>-wport [<i>port_number</i>]  Watch the specified port<br>
+report when the port’s connection status changes</p>
+<p>-wpid [<i>process_ID</i>]    Watch the specified process ID (PID)<br>
+report when the PID’s connection status changes<br>
+-wt [<i>seconds</i>]   Watch time option<br>
+specify how often to check for status changes<br>
+valid range: 1 - 1200 seconds (default = 60 secs)</p>
+<p>-l [<i>logfile</i>]  Log file to create</p>
+<p>-v            Verbose output</p>
+<p><b>Interactive Mode:</b><br>
+An alternative to command line mode</p>
+<p>portqry -i [-<i>options</i>]</p>
+<p>For help with -i run portqry.exe and then type ‘help’ &lt;enter&gt;</p>
+</pre>
+<p><b>Examples</b></p>
+<pre>portqry -local
+portqry -local -l MyLogFile.txt -v
+portqry -wpid 1272 -wt 5 -l MyLogFile.txt -y -v
+portqry -wport 53 -l dnslog.txt
+portqry -n myserver.com -e 25
+portqry -n 10.0.0.1 -e 53 -p UDP -i
+portqry -n host1.dev.reskit.com -r 21:445
+portqry -n 10.0.0.1 -o 25,445,1024 -p both -sp 53
+portqry -n host2 -cn !my community name! -e 161 -p udp</pre>
+<p>For best results run local commands in the context of local administrator.<br>
+Port to process mapping is not be available on all systems.<br>
+Defaults: TCP, port 80, no log file, slow link delay off.</p>
+<p> Hit Ctrl-C to terminate prematurely<i>.</i></p>
+<p><i class="quote">“I always look for a woman who has a tattoo. I see a woman with a tattoo, and I’m thinking, okay, here’s a gal who’s capable of making a decision she’ll regret in the future” - Richard Jeni</i><br>
+<br>
+<b>Related:</b><br>
+<a href="nslookup.html"><br>
+nslookup</a> - Lookup IP addresses on a NameServer<br>
+<a href="http://www.microsoft.com/downloads/details.aspx?familyid=69BA779B-BAE9-4243-B9D6-63E62B4BCD2E&amp;displaylang=en" target="_blank" rel="external">PortRptr</a> - Port Reporter, logging service for  TCP/IP port usage<br>
+<a href="netsh.html">NETSH diag</a> - <span class="body">Connect to TCP port</span><br>
+<a href="wmic.html">WMIC PORTCONNECTOR</a> - Access Physical port<br>
+<a href="http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml" target="_blank" rel="external">Port Numbers</a> at IANA or <a href="http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers" target="_blank" rel="external">Wikipedia list of TCP and UDP port numbers</a><br>
+<a href="http://www.theinquirer.net/inquirer/news/1001872/fire-it-director" target="_blank" rel="external">Jon Honeyball</a> - 
+Routing to harden machines against  attack<br>
+<a href="https://support.microsoft.com/kb/310099" target="_blank" rel="external">Q310099</a> - Description of PortQry<br>
+<a href="https://support.microsoft.com/kb/832919" target="_blank" rel="external">Q832919</a> - PortQry Version2<br>
+<a href="https://support.microsoft.com/kb/310456" target="_blank" rel="external">Q310456</a> -
+Use PortQry to Troubleshoot Active Directory Connectivity <br>
+<a href="https://support.microsoft.com/kb/310298" target="_blank" rel="external">Q310298</a> -
+Use PortQry to Troubleshoot MS Exchange</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="portqry.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/portqry.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

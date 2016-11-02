@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SET @local_variable
+Set a local variable, previously created with Declare
+Syntax
+      SET @local_variable [:: property | field ]
+         = expression | udt_name { . | :: } method (argument [ ,...n ]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/set_var.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="SET @local_variable
+Set a local variable, previously created with Declare
+Syntax
+      SET @local_variable [:: property | field ]
+         = expression | udt_name { . | :: } method (argument [ ,...n ]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.744Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="SET @local_variable
+Set a local variable, previously created with Declare
+Syntax
+      SET @local_variable [:: property | field ]
+         = expression | udt_name { . | :: } method (argument [ ,...n ]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>SET @local_variable</h1>
+<p>Set a local variable, previously created with Declare</p>
+<pre>Syntax
+      SET @<i>local_variable</i> [:: <i>property</i> | <i>field</i> ]
+         = <i>expression</i> | <i>udt_name</i> { . | :: } <i>method </i>(<i>argument </i>[ ,...<i>n</i> ] ) 
+<pre><code>  SET @&lt;i&gt;cursor_variable&lt;/i&gt; = @&lt;i&gt;cursor_variable&lt;/i&gt; | &lt;i&gt;cursor&lt;/i&gt; 
+
+  SET @&lt;i&gt;cursor_variable&lt;/i&gt; =  CURSOR [ FORWARD_ONLY | SCROLL ] 
+     [STATIC | KEYSET | DYNAMIC | FAST_FORWARD ] 
+        [READ_ONLY | SCROLL_LOCKS | OPTIMISTIC ]  [TYPE_WARNING ] 
+           FOR &lt;i&gt;select_statement&lt;/i&gt; 
+              [FOR { READ ONLY | UPDATE [ OF &lt;i&gt;column&lt;/i&gt; [ ,...n ] ] } ]  
+</code></pre>
+<p>Key<br>
+property     Property of a user-defined type.<br>
+field        Public field of a user-defined type.<br>
+udt_name     Name of a Common Language Runtime user-defined type.<br>
+{. | ::}     A method (static :: or non-static .) of a CLR user-define type.<br>
+method       A method of a user-defined type, the arguments modify its state.<br>
+CURSOR       Cursor declaration.<br>
+SCROLL       Allow all cursor fetch options: FIRST, LAST, NEXT, PRIOR, RELATIVE, ABSOLUTE.<br>
+FAST_FORWARD A FORWARD_ONLY, READ_ONLY cursor with optimizations enabled.<br>
+FORWARD_ONLY Only allow FETCH NEXT.<br>
+STATIC       Non-updatable cursor, uses a temporary table in tempdb.<br>
+KEYSET       Fix the membership and order of rows in the cursor.<br>
+DYNAMIC      Reflect all data changes made to the rows.<br>
+SCROLL_LOCKS Lock the rows as they are read into the cursor.<br>
+OPTIMISTIC   Do not lock rows as they are read into the cursor.<br>
+TYPE_WARNING Send a warning message if the cursor is implicitly converted.<br>
+FOR          A SELECT statement to define the cursor result set.<br>
+UPDATE       Define updatable columns within the cursor. default=all cols.</p></pre><p></p>
+<p>     In SQL Server 2005, both FAST_FORWARD and FORWARD_ONLY cursor options  can be used in the same DECLARE CURSOR statement.</p>
+<p>Example</p>
+<pre>DECLARE @myvar char(20);<br>SET @myvar = 'Hello World';<br>SELECT @myvar;<br>GO</pre>
+<p class="quote"><i>"Come on baby, light my fire,
+Try to set the night on fire" ~ The Doors </i></p>
+<p><b>Related commands:</b></p>
+<p> DECLARE  <br>
+  <a href="execute.html">EXECUTE</a><br>
+  <a href="select.html">SELECT</a><br>
+  <a href="set.html">SET</a></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set_var.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/set_var.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

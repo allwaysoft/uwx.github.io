@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ConvertTo-Html 
+Create an HTML page from one or more PowerShell objects.
+Syntax  
+      ConvertTo-Html [[-head] string[] ] [[-title] string] [[-body] string[] ]
+         [-CssUri Uri] [[-property] Obj">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/convertto-html.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ConvertTo-Html 
+Create an HTML page from one or more PowerShell objects.
+Syntax  
+      ConvertTo-Html [[-head] string[] ] [[-title] string] [[-body] string[] ]
+         [-CssUri Uri] [[-property] Obj">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ConvertTo-Html 
+Create an HTML page from one or more PowerShell objects.
+Syntax  
+      ConvertTo-Html [[-head] string[] ] [[-title] string] [[-body] string[] ]
+         [-CssUri Uri] [[-property] Obj">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>ConvertTo-Html</h1> 
+<p>Create an HTML page from one or more PowerShell objects.</p>
+<pre>Syntax  
+      ConvertTo-Html [[-head] <i>string</i>[] ] [[-title] <i>string</i>] [[-body] <i>string</i>[] ]
+         [-CssUri <i>Uri</i>] [[-property] <i>Object</i>[] ]
+            [-As {<u>TABLE</u> | LIST}] [-inputObject <i>psobject</i>]
+               [-PreContent <i>string</i>[]] [-PostContent <i>string</i>[]] [<i>CommonParameters</i>]
+<pre><code> ConvertTo-Html [-Fragment] [[-property] &lt;i&gt;Object&lt;/i&gt;[] ]
+        [-As {&lt;u&gt;TABLE&lt;/u&gt; | LIST}] [-inputObject &lt;i&gt;psobject&lt;/i&gt;]
+           [-PreContent &lt;i&gt;string&lt;/i&gt;[]] [-PostContent &lt;i&gt;string&lt;/i&gt;[]] [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-head <i>string</i><br>
+Text to include in the &lt;head&gt; element of the HTML output.<br>
+default = “HTML TABLE” <br>        If you specify -Head, the -Title parameter is ignored.</p>
+<pre><code>-title &lt;i&gt;string&lt;/i&gt;
+    Text to include in the &amp;lt;title&amp;gt; element of the HTML output.
+
+-body &lt;i&gt;string&lt;/i&gt;
+    Text to include in the &amp;lt;body&amp;gt; element of the HTML.
+
+-Fragment&lt;br&gt;        Generate only an HTML table. The HTML, HEAD, TITLE, and BODY tags are omitted.
+
+-inputObject &lt;i&gt;psobject&lt;/i&gt;
+    The objects to represent as an HTML table. 
+    A variable that contains the objects or a command/expression
+    that gets the objects.
+
+    If you submit multiple objects, such as all of the services on a computer,&lt;br&gt;        ConvertTo-Html will display the properties of the collection / array. &lt;br&gt;        To display the individual objects, use the &lt;a href=&quot;syntax-pipeline.html&quot;&gt;pipeline operator&lt;/a&gt; to
+    pipe the objects to ConvertTo-Html one at a time.
+</code></pre>
+<p>-As <i>string</i><br>        Format the object as a table or a list. Valid values are TABLE or LIST.</p>
+<pre><code>-CssUri &lt;i&gt;Uri&lt;/i&gt;&lt;br&gt;        The Uniform Resource Identifier (&lt;a href=&quot;http://en.wikipedia.org/wiki/Uniform_Resource_Identifier&quot;&gt;URI&lt;/a&gt;) of the cascading style sheet
+    The CSS URI is included as a style sheet link in the output.
+
+-property &lt;i&gt;Object&lt;/i&gt;
+    Properties of the input object to appear in the HTML table.
+    
+-PreContent &lt;i&gt;string&lt;/i&gt;[]&lt;br&gt;       Text to add before the opening &amp;lt;TABLE&amp;gt; tag.
+
+-PostContent &lt;i&gt;string&lt;/i&gt;[]&lt;br&gt;       Text to add after the closing &amp;lt;/TABLE&amp;gt; tag. &lt;br&gt;        &lt;br&gt;   &lt;a href=&quot;common.html&quot;&gt;CommonParameters&lt;/a&gt;:
+   -Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
+   -OutBuffer -OutVariable.&lt;/pre&gt;
+</code></pre>
+<p>
+ The object property names appear as  HTML table column headings.</p>
+<p><b>Examples</b></p>
+<p>Display the date as HTML on the console :</p>
+<p class="code">PS C:\&gt; <a href="get-date.html">get-date</a> | convertto-html</p>
+<p>Save the system processes to C:\processes.html</p>
+<p class="code">PS C:\&gt; <a href="get-process.html">Get-Process</a> | ConvertTo-Html name,path,fileversion | Set-Content c:\processes.htm</p>
+<p>Save the system services to C:\services.html</p>
+<p class="code">PS C:\&gt; <a href="get-service.html">get-service</a> | ConvertTo-Html -Title "Services" -Body "&lt;H2&gt;The result of get-service&lt;/H2&gt; " -Property Name,Status&nbsp;<b> &gt;</b>&nbsp; c:\services.html</p>
+<p>Save the system services to C:\services.html and format in color (example from Hung Yuwu ): </p>
+<p class="code">PS C:\&gt; <a href="get-service.html">get-service</a> | ConvertTo-Html -Title "Services" -Body "&lt;H2&gt;The result of get-service&lt;/H2&gt; " -Property Name,Status | <br>
+<b>foreach</b> {if($_ -like "*&lt;td&gt;Running&lt;/td&gt;*"){$_ <b>-replace "&lt;tr&gt;", "&lt;tr bgcolor=green&gt;"</b>}elseif($_ -like "*&lt;td&gt;Stopped&lt;/td&gt;*"){$_ <b>-replace "&lt;tr&gt;", "&lt;tr bgcolor=red&gt;"</b>}else{$_}} <b>&gt;</b> c:\services.html</p>
+<p>Save the system services to C:\services.html and format with css, then open the HTML page with Invoke-Item:</p>
+<p><span class="code">PS C:\&gt; <a href="get-service.html">get-service</a> | ConvertTo-Html -CssUri "SS64.css" <b> &gt;</b> c:\services.html<br>
+PS C:\&gt; <a href="invoke-item.html">Invoke-Item</a> c:\services.html</span></p>
+<p>Get events from the "Windows PowerShell" event log, select only the ID, Level, and Task properties and format as HTML: </p>
+<p><span class="code">PS C:\&gt; <a href="get-eventlog.html">get-eventlog</a> -log "Windows PowerShell" | convertto-html -property id, level, task</span></p>
+<p class="quote"><i>  “If you have an important point to make, don't
+try to be subtle or clever. Use a pile driver. Hit
+the point once. Then come back and hit it again.
+Then hit it a third time - a tremendous whack” ~ Winston Churchill</i></p>
+<p><b>Related:</b></p>
+<p>        <a href="export-clixml.html">export-clixml</a> - Produce a clixml representation of a PowerShell objects<br>
+<a href="export-csv.html">export-csv</a> - Export to Comma Separated Values (spreadsheet)<br>
+<a href="invoke-item.html">Invoke-Item</a> - Invoke an executable or open a file</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/convertto-html.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

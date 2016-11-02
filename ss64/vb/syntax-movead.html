@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Move an AD object   to a new Organisational Unit. 
+This script can be used to move an AD object (User,  Group, computer etc) to a different OU within Active Directory.
+
+Option Explicit
+&apos; Move-object.v">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/vb/syntax-movead.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Move an AD object   to a new Organisational Unit. 
+This script can be used to move an AD object (User,  Group, computer etc) to a different OU within Active Directory.
+
+Option Explicit
+&apos; Move-object.v">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:19.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Move an AD object   to a new Organisational Unit. 
+This script can be used to move an AD object (User,  Group, computer etc) to a different OU within Active Directory.
+
+Option Explicit
+&apos; Move-object.v">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_vbsyntax.lbi" --><!-- #EndLibraryItem --><h1>Move an AD object   to a new Organisational Unit.</h1> 
+<p>This script can be used to move an AD object (User,  Group, computer etc) to a different OU within Active Directory.<br>
+</p>
+<pre>Option Explicit
+' Move-object.vbs ObjectToMove TargetOU ObjectType
+'
+' Move an AD object into a specific OU
+' Search AD (from the root) to find the current location of the object.
+<p>On Error Resume Next<br>
+Dim strObject,strTargetOU,objTargetOU,objRootDSE,strDNSDomain,strTarget,objConnection,objCmd,objRecordSet<br>
+Dim Object,strParent,objParentOU,strObjectName,strObjectDN,strObjectOU</p>
+<p>strObject =  Wscript.Arguments(0)<br>
+strTargetOU = Wscript.Arguments(1)<br>
+strObjectType = Wscript.Arguments(2)</p>
+<p>wscript.Echo &quot;Move the Object &quot; &amp; strObject<br>
+’wscript.Echo &amp; &quot;into the OU: &quot; &amp; strTargetOU</p>
+<p>Set objTargetOU = GetObject(“LDAP://” &amp; strTargetOU)</p>
+<p>’ Connect to the LDAP server’s root object<br>
+Set objRootDSE = GetObject(“LDAP://RootDSE”)<br>
+strDNSDomain = objRootDSE.Get(“defaultNamingContext”)<br>
+strTarget = “LDAP://” &amp; strDNSDomain</p>
+<p>’ Connect to AD Provider<br>
+Set objConnection = CreateObject(“ADODB.Connection”)<br>
+objConnection.Provider = &quot;ADsDSOObject&quot;<br>
+objConnection.Open “Active Directory Provider”</p>
+<p>’ Search command<br>
+Set objCmd = CreateObject(“ADODB.Command”)<br>
+Set objCmd.ActiveConnection = objConnection</p>
+<p>’ Query to match Object name<br>
+objCmd.CommandText = “SELECT Name, ADsPath,distinguishedName FROM '” &amp; strTarget &amp; “’ WHERE objectCategory = strObjectType AND name=’” &amp; strObject &amp; “’”<br>
+’ Run the Search command<br>
+Const ADS_SCOPE_SUBTREE = 2<br>
+objCmd.Properties(“Page Size”) = 100<br>
+objCmd.Properties(“Timeout”) = 30<br>
+objCmd.Properties(“Searchscope”) = ADS_SCOPE_SUBTREE<br>
+objCmd.Properties(“Cache Results”) = False<br>
+Set objRecordSet = objCmd.Execute</p>
+<p>’ Iterate through the results<br>
+objRecordSet.MoveFirst<br>
+Do Until objRecordSet.EOF<br>
+strObjectName = objRecordSet.Fields(“Name”)<br>
+wscript.Echo &quot;Object Name: &quot; &amp; strObjectName<br>
+strObjectDN = objRecordSet.Fields(“distinguishedName”)<br>
+wscript.Echo &quot;Object DN: &quot; &amp; strObjectDN<br>
+objRecordSet.MoveNext<br>
+Loop</p>
+<p>’ Having the current OU we can bind directly to the Object that will be moved.<br>
+Set Object = GetObject(“LDAP://” &amp; strObjectDN)<br>
+wscript.Echo Object.ADsPath</p>
+<p>’ Optionally you may want to display the parent OU.<br>
+strParent = Object.Parent<br>
+’wscript.Echo &quot;Parent: &quot; &amp; strParent<br>
+Set objParentOU = GetObject(strParent)<br>
+strObjectOU = objParentOU.distinguishedName<br>
+’wscript.Echo &quot;ParentOU: &quot; &amp; strObjectOU</p>
+<p>’ Move the Object<br>
+On Error Resume Next<br>
+wscript.Echo “Move the Object [” &amp; strObject &amp; &quot;] to &quot; &amp; strTargetOU<br>
+objTargetOU.MoveHere Object.ADsPath, vbNullString</p>
+<p>if err.number &lt;&gt; 0 then<br>
+wscript.Echo &quot;Error - failed.&quot;<br>
+else<br>
+wscript.Echo &quot;Complete.&quot;<br>
+end if</p>
+<p>On Error Goto 0</p>
+</pre>
+<p>The valid AD Object types are: User, Contact, Group, Shared Folder, Printer, Computer, Domain Controllers, OU</p>
+<p><b>Example</b></p>
+<p class="code">cscript Move-object.vbs "johndoe" "LDAP://OU=Users,DC=ss64,DC=com" "User"<br>
+</p>
+<p class="quote"><i>“The majority of men meet with failure because of their lack of persistence in creating new plans to take the place of those which fail” ~   Napoleon Hill</i></p>
+<p><b>Related:</b></p>
+<p><a href="syntax-ad.html">SearchAD</a> - Search AD for Users, Computers or groups</p><!-- #BeginLibraryItem "/Library/foot_vb.lbi" --><p>
+<!-- VB300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1683739502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-movead.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/vb/syntax-movead.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

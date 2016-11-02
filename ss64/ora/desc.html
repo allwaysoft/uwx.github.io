@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DESC[RIBE] (SQL*Plus command) 
+Describe an Oracle Table, View, Synonym, package or Function.
+  
+  Note that because this is a SQL*Plus command you don&apos;t need to terminate it 
+  with a semicolon.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/desc.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DESC[RIBE] (SQL*Plus command) 
+Describe an Oracle Table, View, Synonym, package or Function.
+  
+  Note that because this is a SQL*Plus command you don&apos;t need to terminate it 
+  with a semicolon.">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:29.329Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DESC[RIBE] (SQL*Plus command) 
+Describe an Oracle Table, View, Synonym, package or Function.
+  
+  Note that because this is a SQL*Plus command you don&apos;t need to terminate it 
+  with a semicolon.">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>DESC[RIBE] (SQL*Plus command)</h1> 
+<p>Describe an Oracle Table, View, Synonym, package or Function.<br>
+  <br>
+  Note that because this is a SQL*Plus command you don't need to terminate it 
+  with a semicolon.<br>
+  <br>
+  Syntax:</p>
+<pre>   DESC <i>table</i>
+<p>DESC <i>view</i></p>
+<p>DESC <i>synonym</i></p>
+<p>DESC <i>function</i></p>
+<p>DESC package</p>
+</pre>
+<p> In Oracle 7 you could describe individual procedures 
+  e.g. desc DBMS_UTILITY.GET_PARAMETER_VALUE<br>
+  In Oracle 8/9/10 you can only describe
+  the whole package: desc DBMS_UTILITY</p>
+<p>It is also possible to describe objects
+    in another schema or via a database  link <br>
+  e.g. <br>
+  DESCRIBE user.table@db_link <br>
+  <br>
+  <b>Recursive</b><br>
+  <br>
+  The DESCRIBE command allows you to describe objects recursively to the depth
+     level set in the <a href="syntax-sqlplus-set.html">SET DESCRIBE</a> command. <br>
+  For example use the SET commands:<br>
+  SET LINESIZE 80<br>
+  SET DESCRIBE DEPTH 2<br>
+  SET DESCRIBE INDENT ON<br>
+  SET DESCRIBE LINE OFF<br>
+  To display these settings use:
+    SHOW DESCRIBE</p>
+<p><b>Data Types</b><br>
+  <br>
+  The description for functions and procedures contains the type of PL/SQL
+        object (function or procedure) the name of the function or procedure,
+    the type of value
+        returned (for functions) the argument names, types, whether input or
+    output, and default values, if any.<br>
+  <br>
+  DESC user.object_name will always identify a distinct database object
+        because a user's database objects must have unique names. e.g. you cannot
+        create
+        a FUNCTION
+       with the same name as a TABLE in the same schema.</p>
+<p><b>Data Dictionary</b></p>
+<p>An alternative to the DESC command is selecting directly from
+    the data dictionary - <br>
+    <br>
+  DESC MY_TABLE<br>
+  <br>
+  is equivalent to <br>
+  <br>
+SELECT <br>
+  column_name "Name", <br>
+  nullable "Null?",<br>
+  concat(concat(concat(data_type,'('),data_length),')') "Type"<br>
+  FROM <a href="../orad/USER_TAB_COLUMNS.html">user_tab_columns</a><br>
+WHERE table_name='TABLE_NAME_TO_DESCRIBE';</p>
+<p><b>Column Comments</b></p>
+<p>To view column comments:</p>
+<p>SELECT comments<br>
+  FROM user_col_comments <br>
+  WHERE table_name='MY_TABLE';</p>
+<p>SELECT 'comment on column '||table_name||'.'||column_name||' is '''||comments||''';' 
+  <br>
+  FROM user_col_comments<br>
+  WHERE comments is not null;</p>
+<p>Writing code and find yourself typing in a bunch of column 
+  names? Why bother when it's all available  in the  data dictionary.
+   The script below will help out:</p>
+<p>COL.SQL<br>
+  -- List all the columns of a table.</p>
+<pre>select chr(9)||lower(column_name)||',' 
+from USER_tab_columns 
+where table_Name = UPPER('&amp;1') 
+/ </pre>
+<p> So now if you want a list of the columns in the EMP table simply type: <br>
+  @col emp <br>
+  This will produce a list of columns: </p>
+<blockquote>
+  <p>empno, <br>
+    ename, <br>
+    job, <br>
+    mgr, <br>
+    hiredate, <br>
+    sal, <br>
+    comm, <br>
+    deptno,</p>
+</blockquote>
+<p> <i class="quote">"You know the great thing about TV? If something important happens anywhere at all in the world, no matter what time of the day or night, you can always change the channel" ~ Jim Ignatowski</i><b><br>
+  <br>
+Related Views:</b></p>
+<p class="code"> <a href="../orad/DBA_COL_COMMENTS.html">DBA_COL_COMMENTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_COL_COMMENTS.html">ALL_COL_COMMENTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_COL_COMMENTS.html">USER_COL_COMMENTS</a><br> 
+  <a href="../orad/DBA_TAB_COMMENTS.html">DBA_TAB_COMMENTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/ALL_TAB_COMMENTS.html">ALL_TAB_COMMENTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../orad/USER_TAB_COMMENTS.html">USER_TAB_COMMENTS</a><br>                                                                
+  <a href="../orad/DICTIONARY.html">DICTIONARY</a><br>                                                                
+<a href="../orad/DICT_COLUMNS.html">DICT_COLUMNS</a></p>
+<p><b>Related Commands/Packages:<br>
+  </b><br>
+  <a href="comment.html">COMMENT</a> - Add a comment to a table or a column.<br>
+<a href="../orap/DBMS_DESCRIBE.html">DBMS_DESCRIBE</a></p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="desc.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/desc.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

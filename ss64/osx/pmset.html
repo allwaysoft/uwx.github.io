@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pmset 
+Power management settings
+Syntax
+List current settings (Get)      pmset -g [custom | live | cap | sched | ups | ps | …full list below]
+UPS settings:
+pmset -u [haltlevel percent] [haltafter minu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/pmset.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="pmset 
+Power management settings
+Syntax
+List current settings (Get)      pmset -g [custom | live | cap | sched | ups | ps | …full list below]
+UPS settings:
+pmset -u [haltlevel percent] [haltafter minu">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.160Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="pmset 
+Power management settings
+Syntax
+List current settings (Get)      pmset -g [custom | live | cap | sched | ups | ps | …full list below]
+UPS settings:
+pmset -u [haltlevel percent] [haltafter minu">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>pmset</h1> 
+<p>Power management settings</p>
+<pre>Syntax
+<p>List current settings (Get)<br>      <b>pmset -g </b>[custom | <u>live</u> | <abbr title="Capabilities">cap</abbr> | <abbr title="Scheduled events">sched</abbr> | ups | ps | …full list below]</p>
+<p>UPS settings:<br>
+<b>pmset -u</b> [haltlevel<i> percent</i>] [haltafter <i>minutes</i>] [haltremain <i>minutes</i>]</p>
+<p>Settings for battery(b),charger©, UPS(u), all(a):<br>
+<b>pmset</b> [<b>-b</b> | <b>-c</b> | <b>-u</b> | <b>-a</b>] [displaysleep <i>minutes</i>] [disksleep <i>minutes</i>]<br>           [sleep <i>minutes</i>] [womp <i>1/0</i>] [ring <i>1/0</i>] [autorestart <i>1/0</i>] [dps <i>1/0</i>]<br>              [reduce <i>1/0</i>] [powerbutton <i>1/0</i>] [lidwake <i>1/0</i>] [acwake <i>1/0</i>]<br>                 [lessbright <i>1/0</i>] [halfdim <i>1/0</i>] [sms <i>1/0</i>] [boot]<br><br>
+Override settings and sleep now:<br>
+<b>pmset</b> [sleepnow | noidle | lock | touch]</p>
+<p>Schedule:<br>
+<b>pmset schedule</b> [cancel] {sleep | wake | poweron | shutdown | wakeorpoweron}<br>
+“MM/dd/yy HH:mm:ss” [owner]<br>
+<br>      <b>pmset repeat cancel</b><br>
+<br>      <b>pmset repeat</b> {sleep | wake | poweron | shutdown | wakeorpoweron}<br>
+<i>weekdays </i>“MM/dd/yy HH:mm:ss”</p>
+<pre><code>        Where weekdays is a subset of MTWRFSU (&quot;M&quot; and &quot;MTWRF&quot; are valid strings)
+</code></pre>
+<p>Key:</p>
+<p>GETTING<br>
+-g (with no argument) will display the settings currently in use.<br>
+-g live     Display the settings currently in use. (default if no argument given)<br>
+-g custom   Display custom settings for all power sources, although<br>
+these settings might not currently be in use; a pre-set settings profile<br>
+might be active instead.<br>
+-g cap      Display which power management features the machine supports.<br>
+-g sched    Display scheduled startup/wake and shutdown/sleep events.<br>
+-g ups      Display UPS emergency thresholds.<br>
+-g ps /batt Display status of batteries and UPSs.<br>
+-g pslog    Display an ongoing log of power source (battery and UPS)state.<br>
+-g rawlog   Display an ongoing log of battery state as read directly from battery.<br>
+-g profiles Display the settings associated with each Energy Saver profile. 10.5+<br>
+-g thermlog Show a log of thermal notifications that affect CPU speed. Not available on all platforms.<br>
+-g assertions Display a summary of power assertions.<br>
+Assertions can  prevent system sleep or display sleep. 10.6+<br>
+-g assertionslog Show a log of assertion creations and releases. 10.6+<br>
+-g activity    Display a summary of power state of Display wrangler and Disk Queue Manager.10.6+<br>
+-g activitylog Show a log of power state changes to Display Wrangler and Disk Queue Manager. 10.6+<br>
+-g sysload     Display the “system load advisory” - a summary of system activity<br>
+available from the IOGetSystemLoadAdvisory API. 10.6+<br>
+-g sysloadlog  Display an ongoing log of lives changes to the system load advisory. 10.6+<br>
+-g ac / adapter Display details about an attached AC power adapter.<br>
+Only supported for MacBook and MacBook Pro.<br>
+-g log         Display a history of sleeps, wakes, and other power management events.<br>
+This log is for admin &amp; debugging purposes.<br>
+-g uuid        Display the currently active sleep/wake UUID; used within OS X to correlate<br>
+sleep/wake activity within one sleep cycle.  history<br>
+-g uuidlog     Display the currently active sleep/wake UUID, and prints a new UUID as<br>
+they’re set by the system.<br>
+-g history     A debugging tool. Prints a timeline of system sleeplwake UUIDs, when<br>
+enabled with boot-arg io=0x3000000.<br>
+-g historydetailed Prints driver-level timings for a sleep/wake.<br>
+Pass a UUID as an argument.<br>
+-g everything  Print output from every argument under the GETTING header.<br>
+This is useful for quickly collecting all the output that pmset provides.10.8+</p>
+<p>ARGUMENTS</p>
+<p>displaysleep - display sleep timer; replaces ‘dim’ argument in 10.4<br>
+(value in minutes, or 0 to disable)<br>
+disksleep - disk spindown timer; replaces ‘spindown’ argument in 10.4<br>
+(value in minutes, or 0 to disable)<br>
+sleep - system sleep timer (value in minutes, or 0 to disable)<br>
+womp  - wake on ethernet magic packet (value = 0/1)<br>
+ring  - wake on modem ring (value = 0/1)<br>
+autorestart - automatic restart on power loss (value = 0/1)<br>
+dps    - dynamically change processor speed based on load (value = 0/1)<br>
+reduce - reduce processor speed (value = 0/1)<br>
+powerbutton - sleep the machine when power button is pressed (value=0/1)<br>
+lidwake - wake the machine when the laptop lid (or clamshell) is opened<br>
+(value = 0/1)<br>
+acwake - wake the machine when power source (AC/battery) is changed<br>
+(value = 0/1)<br>
+lessbright - slightly turn down display brightness when switching to this<br>
+power source (value = 0/1)<br>
+halfdim - display sleep will use an intermediate half-brightness state<br>
+between full brightness and fully off  (value = 0/1)<br>
+sms - use Sudden Motion Sensor to park disk heads on sudden changes in G<br>
+force (value = 0/1)<br>
+hibernatemode - change hibernation mode. Please use caution. (value =integer)<br>
+hibernatefile - change hibernation image file location. Image can  only be<br>
+located on the root volume. Please use caution. (value = path)<br>
+ttyskeepawake - prevent idle system sleep when any tty (e.g. remote login<br>
+session) is ‘active’. A tty is ‘inactive’ only when its idle time exceeds<br>
+the system sleep timer. (value = 0/1)</p>
+<p>networkoversleep - this setting affects how OS X networking presents shared<br>
+network services during system sleep. This setting is not<br>
+used by all platforms; changing its value is unsupported.<br>
+destroyfvkeyonstandby - Destroy File Vault Key when going to standby mode.<br>
+By default File vault keys are retained even when system goes to standby.<br>
+If the keys are destroyed, user will be prompted to enter the password<br>
+while coming out of standby mode.(value: 1 - Destroy, 0 - Retain)</p>
+</pre>
+<p>pmset must be run as root in order to modify any settings.<br>
+See <span class="code">man pmset</span> for a description of power management with more examples.</p>
+<p>The OS X Energy Saver preference file is stored at:<br>
+<span class="code">/Library/Preferences/SystemConfiguration/com.apple.PowerManagement.plist</span><br>
+If energy saving preferences are not 'sticking', then trashing this preference file and rebooting will usually fix things.</p>
+<p><b> Examples</b></p>
+<p>Set displaysleep to a 5 minute timer on battery power<br>
+<span class="code">$ sudo pmset -b displaysleep 5</span></p>
+<p>Print the power management settings in use by the system:<br>
+<span class="code">$ pmset -g</span></p>
+<p>Restore default settings:<br>  
+<span class="code">$ sudo pmset -c 2 -b 1 -u 1</span></p>
+<p class="quote"><i>“Work like you don't need the money, love like you've never been hurt, and dance like nobodys watching” ~ Satchel 'Satchmo' Paige</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/pmset.1.html" target="_blank" rel="external">pmset man page</a> - Apple.com<br>
+<a href="caffeinate.html">caffeinate</a> - Prevent the system from sleeping</p>
+<!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="pmset.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/pmset.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

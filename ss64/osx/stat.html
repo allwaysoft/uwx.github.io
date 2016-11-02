@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="stat/readlink 
+Display the status of a file.
+
+Syntax:
+      stat [-FLnq] [-f format | -l | -r | -s | -x] [-t timefmt] [file ...]
+  readlink [-n] [&amp;lt;i&amp;gt;file&amp;lt;/i&amp;gt; ...]
+
+Key
+-F      As in ls(1),">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/stat.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="stat/readlink 
+Display the status of a file.
+
+Syntax:
+      stat [-FLnq] [-f format | -l | -r | -s | -x] [-t timefmt] [file ...]
+  readlink [-n] [&amp;lt;i&amp;gt;file&amp;lt;/i&amp;gt; ...]
+
+Key
+-F      As in ls(1),">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.272Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="stat/readlink 
+Display the status of a file.
+
+Syntax:
+      stat [-FLnq] [-f format | -l | -r | -s | -x] [-t timefmt] [file ...]
+  readlink [-n] [&amp;lt;i&amp;gt;file&amp;lt;/i&amp;gt; ...]
+
+Key
+-F      As in ls(1),">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>stat/readlink</h1> 
+<p>Display the status of a file.
+</p>
+<pre>Syntax:
+      stat [-FLnq] [-f <i>format</i> | -l | -r | -s | -x] [-t <i>timefmt</i>] [<i>file</i> ...]
+<pre><code>  readlink [-n] [&lt;i&gt;file&lt;/i&gt; ...]
+</code></pre>
+<p>Key<br>
+-F      As in ls(1), display a slash (<code>/') immediately after each path-name that is a directory, an asterisk (</code>*’) after each that is executable, an at sign (<code>@') after each symbolic link, a percent sign (</code>%’) after each whiteout, an equal sign (<code>=') after each socket, and a vertical bar (</code>|’) after each that is a FIFO.  The use of -F implies -l.</p>
+<p>-f <i>format</i>  Display information using the specified format.<br>
+See the FORMATS section for a description of valid formats.</p>
+<p>-L      Use stat(2) instead of lstat(2).  The information reported by stat will refer to the target of file,<br>
+if file is a symbolic link, and not to file itself.</p>
+<p>-l      Display output in ls -lT format.<br>
+-n      Do not force a newline to appear at the end of each piece of output.<br>
+-q      Suppress failure messages if calls to stat(2) or lstat(2) fail.<br>
+When run as readlink, error messages are automatically suppressed.</p>
+<p>-r      Display raw information.  That is, for all the fields in the stat structure,<br>
+display the raw, numerical value (for example, times in seconds since the epoch, etc.).</p>
+<p>-s      Display information in ‘shell output’, suitable for initializing variables.</p>
+<p>-t <i>timefmt</i>  Display timestamps using the specified format.  This format is passed directly to strftime(3).</p>
+<p>-x      Display information in a more verbose way as known from some Linux distributions.</p>
+<p><i>Formats</i>      Format strings are similar to printf(3) formats in that they start with %,<br>
+are then followed by a sequence of formatting characters, and end in acharacter<br>
+that selects the field of the struct stat which is to be formatted.<br>
+If the % is immediately followed by one of n, t, %, or @, then a newline character,<br>
+a tab character, a percent character, or the current file number is printed,<br>
+otherwise the string is examined for the following:<br>
+Any of the following optional flags:<br>
+#    Selects an alternate output form for octal and hexadecimal output.<br>
+Non-zero octal output will have a leading zero, and non-zero hexadecimal<br>
+output will have ‘0x’ prepended to it.<br>
++    Asserts that a sign indicating whether a number is positive or negative<br>
+should always be printed.  Non-negative numbers are not usually printed with<br>
+a sign.<br>
+-    Aligns string output to the left of the field, instead of to the right.<br>
+0    Sets the fill character for left padding to the `0’ character, instead of a space.<br>
+space   Reserves a space at the front of non-negative signed output fields.<br>
+A ‘+’ overrides a space if both are used.</p>
+<pre><code>          Then the following fields:
+          &lt;i&gt;size&lt;/i&gt;    An optional decimal digit string specifying the minimum field width.
+          &lt;i&gt;prec&lt;/i&gt;    An optional precision composed of a decimal point '.' and a decimal digit
+                  string that indicates the maximum string length, the number of digits to
+                  appear after the decimal point in floating point output, or the minimum
+                  number of digits to appear in numeric output.
+          &lt;i&gt;fmt&lt;/i&gt;     An optional output format specifier which is one of D, O, U, X, F, or S.
+                  These represent signed decimal output, octal output, unsigned decimal output,
+                  hexadecimal output, floating point output, and string output, respectively.
+                  Some output formats do not apply to all fields.  Floating point output only
+                  applies to timespec fields (the a, m, and c fields).
+                  The special output specifier &lt;b&gt;S&lt;/b&gt; may be used to indicate that the output,
+                  if applicable, should be in string format.
+
+                  May be used in combination with:
+                  amc     Display date in strftime(3) format.
+                  dr      Display actual device name.
+                  gu      Display group or user name.
+                  p       Display the mode of file as in ls -lTd.
+                  N       Displays the name of file.
+                  T       Displays the type of file.
+                  Y       Insert a ' -&amp;gt; ' into the output.  Note that the default output
+                          format for Y is a string, but if specified explicitly,
+                          these four characters are prepended.
+          &lt;i&gt;sub&lt;/i&gt;     An optional sub field specifier (high, middle, low).
+                  Only applies to the p, d, r, and T output formats.  It can be one of
+                  the following:
+                  H       'High' -- specifies the major number for devices from r or d,
+                          the 'user' bits for permissions from the string form of p, the file 'type'
+                          bits from the numeric forms of p, and the long output form of T.
+                  L       'Low' -- specifies the minor number for devices from r or d, the 'other'
+                          bits for permissions from the string form of p, the 'user', 'group',
+                          and 'other' bits from the numeric forms of p, and the ls -F style output
+                          character for file type when used with T (the use of L for this is optional).
+                  M       'Middle' -- specifies the 'group' bits for permissions from the string
+                          output form of p, or the 'suid','sgid', and 'sticky' bits for the
+                          numeric forms of p.
+          &lt;i&gt;datum&lt;/i&gt;   A required field specifier, being one of the following:
+                  d       Device upon which file resides.
+                  i       file's inode number.
+                  p       File type and permissions.
+                  l       Number of hard links to file.
+                  u, g    User ID and group ID of file's owner.
+                  r       Device number for character and block device special files.
+                  a, m, c, B   The time file was last accessed or modified, of when the inode was last
+                          changed, or the birth time of the inode.
+                  z       The size of file in bytes.
+                  b       Number of blocks allocated for file.
+                  k       Optimal file system I/O operation block size.
+                  f       User defined flags for file.
+                  v       Inode generation number.
+
+                  The following four field specifiers are not drawn directly from the data in struct stat,
+                  but are:      N   The name of the file.
+                                T   The file type, either as in ls -F or in a more descriptive form if
+                                    the sub field specifier H is given.
+                                Y   The target of a symbolic link.
+                                Z   Expands to 'major,minor' from the rdev field for character or block
+                                    special devices and gives size output for all others.
+
+           Only the % and the field specifier are required. Most field specifiers default to U as an
+           output form, with the exception of p which defaults to O, a, m, and c which default to
+           D, and Y, T, and N which default to S.
+</code></pre>
+<p>EXIT STATUS   The stat and readlink utilities exit 0 on success, and &gt;0 if an error occurs.</p></pre><p></p>
+<p>The <span class="code">stat</span> utility displays information about the file pointed to by <i>file</i>.      Read, write or execute permissions of the named file are not required,      but all directories listed in the path name leading to the file must be      searchable.  If no argument is given, stat displays information about the      file descriptor for standard input.      </p>
+<p>When invoked as <span class="code">readlink</span>, only the target of the symbolic link is      printed.  If the given argument is not a symbolic link, readlink will      print nothing and exit with an error.</p>
+<p> <b>Examples</b></p>
+<p>Given a symbolic link foo that points from /tmp/foo to /, you would use      stat as follows:</p>
+<p class="code">$  stat -F /tmp/foo<br>
+lrwxrwxrwx 1 jschauma cs 1 Apr 24 16:37:28 2002 /tmp/foo@ -&gt; /<br>
+<br>
+$ stat -LF /tmp/foo<br>
+drwxr-xr-x 16 root wheel 512 Apr 19 10:57:54 2002 /tmp/foo/</p>
+<p>To initialize some shell variables, you could use the -s flag as follows:</p>
+<p class="code">$ sh<br>
+$ eval $(stat -s .profile)<br>
+$ echo $st_size $st_mtimespec<br>
+1148 1015432481</p>
+<p class="quote"><i>“If it disagrees with experiment it is wrong. In that simple statement is the key to science. It does not make any difference how beautiful your guess is. It does not make any difference how smart you are, who made the guess, or what his name is – if it disagrees with experiment it is wrong” ~ <a href="http://www.youtube.com/watch?v=EYPapE-3FRw" target="_blank" rel="external">Richard Feynman</a></i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/stat.1.html" target="_blank" rel="external">stat man page</a> - Apple.com<br>
+<a href="chmod.html">chmod</a> - Change access permissions<br>
+<a href="ls.html">ls</a> - List information about file(s)</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="stat.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/stat.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,1 +1,0 @@
-in case of 'expected variable end' run hexo clean and make sure there are no {{ or }}s in the markdown code (js shouldnt matter)

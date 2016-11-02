@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Calendar 
+Rreminder service. 
+Syntax
+      calendar [-a] [-A num] [-B num] [-F friday]
+         [-f calendarfile] [-t dd[.mm[.year]]] [-W num]
+Key
+-A num  Print lines from today and the next num days">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/calendar.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Calendar 
+Rreminder service. 
+Syntax
+      calendar [-a] [-A num] [-B num] [-F friday]
+         [-f calendarfile] [-t dd[.mm[.year]]] [-W num]
+Key
+-A num  Print lines from today and the next num days">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:02.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Calendar 
+Rreminder service. 
+Syntax
+      calendar [-a] [-A num] [-B num] [-F friday]
+         [-f calendarfile] [-t dd[.mm[.year]]] [-W num]
+Key
+-A num  Print lines from today and the next num days">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>Calendar</h1> 
+<p>Rreminder service. </p>
+<pre>Syntax
+      calendar [-a] [-A <i>num</i>] [-B <i>num</i>] [-F <i>friday</i>]
+         [-f <i>calendarfile</i>] [-t <i>dd</i>[.<i>mm</i>[.<i>year</i>]]] [-W <i>num</i>]
+<p>Key<br>
+-A <i>num</i>  Print lines from today and the next <i>num</i> days (forward, future).</p>
+<p>-a      Process the <i>calendar</i> files of all users and mail the results to them.<br>
+This requires superuser privileges.</p>
+<p>-B <i>num</i>  Print lines from today and the previous <i>num</i> days.</p>
+<p>-F <i>friday</i><br>
+Specify which day of the week is Friday (the day before the weekend begins).<br>
+Default is 5.</p>
+<p>-f <i>calendarfile</i><br>
+Use <i>calendarfile</i> as the default calendar file.</p>
+<p>-t <i>dd</i>[.<i>mm</i>[.<i>year</i>]]<br>
+For test purposes only: set date directly to argument values.</p>
+<p>-W <i>num</i>  Print lines from today and the next <i>num</i> days.<br>
+Ignore weekends when calculating the number of days.</p></pre><p></p>
+<p>
+  To handle calendars in your national code table you can specify <code></code>LANG=
+  <locale_name>
+  '' in the calendar
+  file as early as possible.  To handle national Easter names in the calendars <code></code>Easter=
+<national_name>''<br>
+  (for Catholic Easter) or <code></code>Paskha=
+  <national_name>'' (for Orthodox Easter) can be used.<br>
+  <br>
+  Other lines should begin with a month and day.  They can be entered in almost any format, either
+  numeric or as character strings.  If the proper locale is set, national month and weekday names can be
+  used.  A single asterisk (<code></code>*'') matches every month.  A day without a month matches that day of every
+  week.  A month without a day matches the first of that month.  Two numbers default to the month fol-lowed followed by the day.  Lines with leading tabs default to the last entered date, allowing multiple line
+  specifications for a single date.<br>
+  <br>
+  `Easter', is Easter for this year, and can be followed by a positive or negative integer.<br>
+  <br>
+  `Paskha', is Orthodox Easter for this year, and can be followed by a positive or negative integer.<br>
+  <br>
+  Weekdays can be followed by <code></code>-4'' ... <code></code>+5'' (aliases for last, first, second, third, fourth) for moving events like <code></code>the last Monday in April''.<br>
+  <br>
+  By convention, dates followed by an asterisk are not fixed, i.e., change from year to year.<br>
+  <br>
+  Day descriptions start after the first <tab> character in the line; if the line does not contain a  <tab> character, it is not displayed.  If the first character in the line is a <tab> character, it is
+  treated as a continuation of the previous line.<br>
+  <br>
+  The `calendar' file is preprocessed by cpp(1), allowing the inclusion of shared files such as lists
+  of company holidays or meetings.  If the shared file is not referenced by a full pathname, cpp(1)
+  searches in the current (or home) directory first, and then in the directory /usr/share/calendar.<br>
+  Empty lines and lines protected by the C commenting syntax (/* ... */) are ignored.<br>
+  <br>
+  Some possible calendar entries (<tab> characters highlighted by \t sequence)<br>
+</tab></tab></tab></tab></national_name></national_name></locale_name></p>
+<pre>           LANG=C
+           Easter=Ostern
+<pre><code>       #include &lt;calendar.usholiday&gt;
+       #include &lt;calendar.birthday&gt;
+
+       6/15\tJune 15 (if ambiguous, will default to month/day).
+       Jun. 15\tJune 15.
+       15 June\tJune 15.
+       Thursday\tEvery Thursday.
+       June\tEvery June 1st.
+       15 *\t15th of every month.
+
+       May Sun+2\tsecond Sunday in May (Muttertag)
+       04/SunLast\tlast Sunday in April,
+       \tsummer time in Europe
+       Easter\tEaster
+       Ostern-2\tGood Friday (2 days before Easter)
+       Paskha\tOrthodox Easter
+</code></pre>
+<p>FILES<br>
+calendar            file in current directory<br>
+~/.calendar         calendar HOME directory.  A chdir is done into this directory if it exists.<br>
+~/.calendar/calendar<br>
+calendar file to use if no calendar file exists in the current directory.<br>
+~/.calendar/nomail  do not send mail if this file exists.&lt;/calendar.birthday&gt;&lt;/calendar.usholiday&gt;</p></pre><p></p>
+<p>  The following default calendar files are provided:<br>
+</p>
+<pre>     calendar.all          File which includes all the default files.
+     calendar.australia    Calendar of events in Australia.
+     calendar.birthday     Births and deaths of famous (and not-so-famous) people.
+     calendar.christian    Christian holidays.  This calendar should be updated yearly by the local system
+                           administrator so that roving holidays are set correctly for the current year.
+     calendar.computer     Days of special significance to computer people.
+     calendar.croatian     Calendar of events in Croatia.
+     calendar.freebsd      Birthdays of FreeBSD committers.
+     calendar.french       Calendar of events in France.
+     calendar.german       Calendar of events in Germany.
+     calendar.history      Everything else, mostly U.S. historical events.
+     calendar.holiday      Other holidays, including the not-well-known, obscure, and really obscure.
+     calendar.judaic       Jewish holidays.  This calendar should be updated yearly by the local system
+                           administrator so that roving holidays are set correctly for the current year.
+     calendar.music        Musical events, births, and deaths.  Strongly oriented toward rock 'n' roll.
+     calendar.newzealand   Calendar of events in New Zealand.
+     calendar.russian      Russian calendar.
+     calendar.southafrica  Calendar of events in South Africa.
+     calendar.usholiday    U.S. holidays.  This calendar should be updated yearly by the local system admin-istrator administrator
+                           istrator so that roving holidays are set correctly for the current year.
+     calendar.world        Includes all calendar files except for national files.
+<p>COMPATIBILITY<br>
+The calendar program previously selected lines which had the correct date anywhere in the line.  This<br>
+is no longer true, the date is only recognized when it occurs at the beginning of a line.</p>
+<p>The calendar utility does not handle Jewish holidays and moon phases.</p></pre><p></p>
+<p class="quote"><i>“Carpe Diem - Seize the day” ~ Horace </i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/calendar.1.html" target="_blank" rel="external">calendar man page</a> - Apple.com<br>
+<a href="cal.html"> cal</a> - Display a calendar<br>
+at(1), cpp(1), mail(1), <a href="cron.html">cron</a></p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="calendar.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/calendar.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

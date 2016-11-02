@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="units 
+Convert units from one scale to another
+Syntax
+      units [-f filename] [-qv] [from-unit to-unit]
+Options
+-f filename
+Specify the name of the units data file to load.
+ -q      Suppress prompti">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/osx/units.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="units 
+Convert units from one scale to another
+Syntax
+      units [-f filename] [-qv] [from-unit to-unit]
+Options
+-f filename
+Specify the name of the units data file to load.
+ -q      Suppress prompti">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:01:03.467Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="units 
+Convert units from one scale to another
+Syntax
+      units [-f filename] [-qv] [from-unit to-unit]
+Options
+-f filename
+Specify the name of the units data file to load.
+ -q      Suppress prompti">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_osx.lbi" --><!-- #EndLibraryItem --><h1>units</h1> 
+<p>Convert units from one scale to another</p>
+<pre>Syntax
+      units [-f <i>filename</i>] [-qv] [<i>from-unit to-unit</i>]
+<p>Options<br>
+-f <i>filename</i><br>
+Specify the name of the units data file to load.</p>
+<pre><code> -q      Suppress prompting of the user for units and the display of
+  statistics about the number of units loaded.
+
+ -v      Print the version number.
+
+ &lt;i&gt;from-unit to-unit&lt;/i&gt;
+  Allow a single unit conversion to be done directly from the
+  command line. The program will not print prompts.  
+  It will print out the result of the single specified conversion.&lt;/pre&gt;
+</code></pre>
+<p> The units program converts quantities expressed in various scales to their equivalents in other scales.  The units program an only handle
+multiplicative scale changes.  It cannot convert Celsius to Fahrenheit,
+for example.  It works interactively by prompting the user for input:<br>
+</p>
+<pre>  You have: meters
+  You want: feet
+   * 3.2808399
+   / 0.3048
+<p>You have: cm^3<br>
+You want: gallons</p>
+<ul>
+<li>0.00026417205<br>
+/ 3785.4118</li>
+</ul>
+<p>You have: meters/s<br>
+You want: furlongs/fortnight</p>
+<ul>
+<li>6012.8848<br>
+/ 0.00016630952</li>
+</ul>
+<p>You have: 1|2 inch<br>
+You want: cm</p>
+<ul>
+<li>1.27<br>
+/ 0.78740157</li></ul></pre>
+
+<p> Powers of units can be specified using the '^' character as shown in the
+example, or by simple concatenation: 'cm3' is equivalent to 'cm^3'.  Multiplication of units can be specified by using spaces, a dash or an
+asterisk. Division of units is indicated by the slash ('/').  </p>
+<p>Note that
+multiplication has a higher precedence than division, so 'm/s/s' is the
+same as 'm/s^2' or 'm/s s'.  </p>
+<p>Division of numbers must be indicated using
+the vertical bar ('|').  To convert half a meter, you would write '1|2
+meter'.  If you write '1/2 meter' then the units program would interpret
+that as equivalent to '0.5/meter'.  </p>
+<p>If you enter incompatible unit types,
+the units program will print a message indicating that the units are not
+conformable and it will display the reduced form for each unit:<br>
+</p>
+<pre>  You have: ergs/hour
+  You want: fathoms kg^2 / day
+  conformability error
+   2.7777778e-11 kg m^2 / sec^3
+   2.1166667e-05 kg^2 m / sec
+<pre><code> The conversion information is read from a units data file.  The default
+ file includes definitions for most familiar units, abbreviations and met-
+ ric prefixes.  Some constants of nature included are:
+
+pi    ratio of circumference to diameter
+c    speed of light
+e    charge on an electron
+g    acceleration of gravity
+force   same as g
+mole    Avogadro's number
+water   pressure per unit height of water
+mercury pressure per unit height of mercury
+au    astronomical unit&lt;/pre&gt;
+</code></pre>
+<p> The unit 'pound' is a unit of mass.  Compound names are run together so
+'pound force' is a unit of force. The unit 'ounce' is also a unit of
+mass.  The fluid ounce is 'floz'. British units that differ from their
+US counterparts are prefixed with 'br', and currency is prefixed with its
+country name: 'belgiumfranc', 'britainpound'.  When searching for a unit,
+if the specified string does not appear exactly as a unit name, then
+units will try to remove a trailing 's' or a trailing 'es' and check
+again for a match.<br>
+<br>
+To find out what units are available read the standard units file.  If
+you want to add your own units you can supply your own file.  A unit is
+specified on a single line by giving its name and an equivalence. Be
+careful to define new units in terms of old ones so that a reduction
+leads to the primitive units which are marked with '!' characters.  The
+units program will not detect infinite loops that could be caused by
+careless unit definitions.  Comments in the unit definition file begin
+with a '/' character at the beginning of a line.<br>
+<br>
+Prefixes are defined in the same was as standard units, but with a trailing dash at the end of the prefix name.  If a unit is not found even
+after removing trailing 's' or 'es', then it will be checked against the
+list of prefixes. Prefixes will be removed until a legal base unit is
+identified.<br>
+<br>
+Here is an example of a short units file that defines some basic units.<br>
+</p>
+<pre>    m    !a!
+    sec    !b!
+    micro-  1e-6
+    minute  60 sec
+    hour    60 min
+    inch    0.0254 m
+    ft    12 inches
+    mile    5280 ft
+<p>BUGS<br>
+The effect of including a ‘/’ in a prefix is surprising.</p>
+<pre><code> Exponents entered by the user can be only one digit.  You can work around
+ this by multiplying several terms.
+
+ The user must use | to indicate division of numbers and / to indicate
+ division of symbols.  This distinction should not be necessary.
+
+ The program contains various arbitrary limits on the length of the units
+ converted and on the length of the data file.
+</code></pre>
+<p>FILES<br>
+/usr/share/misc/units.lib the standard units library</p></pre><p></p>
+<p class="quote"><i>“You have not converted a man because you have silenced him” ~ John Morley</i></p>
+<p><b>Related:</b></p>
+<p><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/units.1.html" target="_blank" rel="external">units man page</a> - Apple.com<br> 
+<a href="cal.html">cal</a> - Display a calendar</p><!-- #BeginLibraryItem "/Library/foot_osx.lbi" --><p>
+<!-- OSX300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1823340303"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="units.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/osx/units.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

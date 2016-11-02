@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RMTSHARE.exe (NT 4 Resource kit - download) 
+Manage File and Printer shares, local or on a remote server.
+  Although missing from recent Resource kits, the old version appears to work fine 
+under Wind">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/rmtshare.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="RMTSHARE.exe (NT 4 Resource kit - download) 
+Manage File and Printer shares, local or on a remote server.
+  Although missing from recent Resource kits, the old version appears to work fine 
+under Wind">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:54.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="RMTSHARE.exe (NT 4 Resource kit - download) 
+Manage File and Printer shares, local or on a remote server.
+  Although missing from recent Resource kits, the old version appears to work fine 
+under Wind">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>RMTSHARE.exe (<a href="../links/windows.html#kits">NT 4 Resource kit</a> - <a href="ftp://ftp.microsoft.com/bussys/winnt/winnt-public/reskit/nt40/i386/" target="_blank" rel="external">download</a>)</h1> 
+<p>Manage File and Printer shares, local or on a remote server.<br>
+  Although missing from recent Resource kits, the old version appears to work fine 
+under Windows XP/2003.</p>
+<pre>Syntax
+  Display all shares
+      RMTSHARE \\<i>server</i>
+<p>Display details of a specific share<br>
+RMTSHARE \server\sharename</p>
+<p>Share a Folder<br>
+RMTSHARE \<i>server\sharename</i>=drive:path [<i>options</i>]</p>
+<p>Share a Printer<br>
+RMTSHARE \<i>server\sharename</i>=<i>printername</i> /PRINTER [<i>options</i>]</p>
+<p>Edit an existing SHARE<br>
+RMTSHARE \<i>server\sharename</i> [<i>options</i>]</p>
+<p>Delete a SHARE<br>
+RMTSHARE \<i>server\sharename</i> /DELETE</p>
+<p>Options<br>
+/USERS:<i>number</i><br>
+/UNLIMITED<br>
+/REMARK:“<i>text</i>”<br>
+/GRANT <i>user</i>:<i>perm</i><br>
+/REMOVE <i>user</i></p>
+</pre>
+<p>Notes: 
+Either specify <span class="code">/Users</span> to restrict the number of connections that can be made
+OR specify <span class="code">/UNLIMITED</span><br>
+You can include several <span class="code">/GRANT</span>s in a single command line.<br>
+Enclose paths that include spaces like this<br>
+<span class="code">\\server\"long share name"="c:\long file name"</span></p>
+<p>An alternative way to list remote shares with PowerShell:</p>
+<pre># List the file shares on the remote server: <i>SERVER64</i>.
+<p>$shares = <a href="../ps/get-wmiobject.html">Get-WmiObject</a> -class Win32_Share -computername <b><i>SERVER64 </i></b>-filter “Type=0”<br>
+$shares | foreach {<br>
+$path=($<em>.path)<br>
+$Description=($</em>.Description)<br>
+$name=($<em>.name)<br>
+$Caption=($</em>.Caption)</p>
+<pre><code>&quot;Share Name   : $name
+ Source Folder: $path 
+ Description  : $Description
+ Caption : $Caption&quot;
+}&lt;/pre&gt;
+</code></pre>
+<p> <i class="quote">“How to be green? consume less, share more, enjoy life” 
+  ~ Penny Kemp </i><br>
+  <br>
+<b> Related:</b></p>
+<p><a href="cacls.html">CACLS</a> - Apply File permissions <br>
+  <a href="net.html">NET USE</a> - Connect to a file share <br>
+  REMOTE - Run a command on a remote computer (Resource Kit)<br>
+  <a href="rundll32.html">RUNDLL32</a> - Run a DLL command (add/remove print connections)  <br>
+  <a href="share.html">SHARE</a> - List or edit a file share or print share (on any computer)<br>
+Powershell: <a href="../ps/get-wmiobject.html">Get-WmiObject</a> win32_share<br>
+</p><p>Equivalent bash command (Linux): <a href="../bash/mount.html">mount</a> - Mount a file system</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p></p>
+<!-- windows300 -->
+<p><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins></p>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><p></p>
+<hr>
+<div id="bl" class="footer"><a href="rmtshare.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/rmtshare.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

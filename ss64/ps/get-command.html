@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Get-Command 
+Get  basic information about  PowerShell commands: cmdlets, files and functions.
+Syntax
+      Get-Command [-Noun String[] ]  [-Verb String[] ] [[-ArgumentList] Object[] ]
+          [-All]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/get-command.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Get-Command 
+Get  basic information about  PowerShell commands: cmdlets, files and functions.
+Syntax
+      Get-Command [-Noun String[] ]  [-Verb String[] ] [[-ArgumentList] Object[] ]
+          [-All]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:37.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Get-Command 
+Get  basic information about  PowerShell commands: cmdlets, files and functions.
+Syntax
+      Get-Command [-Noun String[] ]  [-Verb String[] ] [[-ArgumentList] Object[] ]
+          [-All]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Get-Command</h1> 
+<p>Get  basic information about  PowerShell commands: cmdlets, files and functions.</p>
+<pre>Syntax
+      Get-Command [<b>-Noun</b> <i>String</i>[] ]  [<b>-Verb</b> <i>String</i>[] ] [[-ArgumentList] <i>Object</i>[] ]
+          [-All] [-ListImported] [-Module <i>String</i>[] ] 
+             [-ParameterName <i>String</i>[] ] [-ParameterType <i>PSTypeName</i>[] ] 
+                [-Syntax] [-TotalCount <i>Int32</i> ] [ <i>CommonParameters</i>]
+<pre><code>  Get-Command [[&lt;b&gt;-Name&lt;/b&gt;] &lt;i&gt;String&lt;/i&gt;[] ]  [-CommandType &lt;i&gt;CommandTypes&lt;/i&gt; ] [[-ArgumentList] &lt;i&gt;Object&lt;/i&gt;[] ]
+      [-All] [-ListImported] [-Module &lt;i&gt;String&lt;/i&gt;[] ]
+         [-ParameterName &lt;i&gt;String&lt;/i&gt;[] ] [-ParameterType &lt;i&gt;PSTypeName&lt;/i&gt;[] ]
+            [-Syntax] [-TotalCount &lt;i&gt;Int32&lt;/i&gt; ] [ &lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>key<br>
+-All<br>
+Get all commands, including commands of the same type that have the same name.<br>
+By default, only returns the command that would run if you typed the command name.<br>
+PowerShell 3.0+  (In PowerShell 2.0, Get-Command gets all commands by default.)</p>
+<p>-name<br>
+Get information for cmdlets (or command elements) with this name.<br>
+All or part of the name, wildcards are permitted.</p>
+<p>-verb<br>
+Get information for cmdlet names that include the specified verb.<br>
+String  “Get”, “Set”, “Remove” etc.  Wildcards are permitted and multiple<br>
+verbs or verb patterns can be specified: “*et”.</p>
+<p>-noun<br>
+Get information for cmdlet names that include the specified noun.<br>
+“process”, “Service”, “Variable” etc. Wildcards are permitted:“<em>item</em>”</p>
+<p>-commandType <i>CommandTypes</i><br>
+Get only specified type(s) of command objects:</p>
+<pre><code>         Alias              PowerShell Alias
+         All                       
+         Application        Non-PowerShell files in the PowerShell path.
+         Cmdlet             PowerShell Cmdlet (default)
+         ExternalScript     .ps1 script files in the &lt;a href=&quot;../nt/path.html&quot;&gt;Path&lt;/a&gt; (&lt;a href=&quot;syntax-env.html&quot;&gt;$env&lt;/a&gt;:path).
+         Filter             PowerShell functions.
+         Functon            PowerShell functions.
+         Script             Script blocks built into the runspace config.
+         Workflow           Workflows.
+   You can use -CommandType or its alias, -Type.
+</code></pre>
+<p>-totalCount <i>int32</i><br>
+Limit the number of items retrieved.</p>
+<p>-ListImported<br>
+Get only commands in the current session.<br>
+Beginning in PowerShell 3.0, by default, Get-Command gets all installed commands,<br>
+including, but not limited to, the commands in the current session.<br>
+In PowerShell 2.0, only commands in the current session are returned.</p>
+<p>-Module string[]<br>
+Get the commands that came from the specified modules or snap-ins.<br>
+Enter the names of modules or snap-ins, or enter snap-in/module object name(s).</p>
+<pre><code>   You can use -Module, or its alias, -PSSnapin.
+
+   This parameter takes string values, or a PSModuleInfo or PSSnapinInfo object, such as the 
+   objects returned by Get-Module, Get-PSSnapin, and Import-PSSession.
+</code></pre>
+<p>-ParameterName <i>String</i><br>
+Get commands in the session that have the specified parameters.<br>
+Enter parameter names and/or parameter aliases. Wildcard are supported.<br>
+The -ParameterName and -ParameterType parameters search only commands in the current session.<br>
+PowerShell 3.0+</p>
+<p>-ParameterType <i>PSTypeName</i>[]<br>
+Get commands in the session that have parameters of the specified type.<br>
+Enter the full name or partial name of a parameter type. Wildcards are supported.<br>
+The ParameterName and ParameterType parameters search only commands in the current session.<br>
+PowerShell 3.0+</p>
+<p>-syntax<br>
+Describes the item:<br>
+alias name, cmdlet syntax, function definition, filter definition,<br>
+script path/filename.</p>
+<p>-argumentList<br>
+Get information about a cmdlet when it is used with a specific argument,<br>
+such as a file path or a registry key. e.g., “HKML\Software” or “cert:\my”.<br>
+This is useful because some cmdlet parameters are added dynamically.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Standard <a href="get-alias.html">Aliases</a> for Get-Command:<span class="code"> <b>gcm</b></span></p>
+<p>Get-Command gets its data directly from the code of a cmdlet, function, script, or alias, unlike <a href="get-help.html">Get-Help</a>, which gets its information from help topic files.<br>
+<br>
+The <span class="code">-Module</span> parameter will find the commands added to the session by adding a PowerShell snap-in or importing a module.</p>
+<p>To list commands with the same <span class="code">-name</span> in execution order, type the command name without wildcard characters.</p>
+<p><b>Examples</b></p>
+<p>Describe the 'Set' verbs:</p>
+<p><span class="code">PS C:\&gt; get-command -verb set | format-list<br>
+PS C:\&gt; get-command -verb set | format list *</span><br>
+<br>
+List all functions in the current session:</p>
+<p><span class="code"> PS C:\&gt; get-command -CommandType function</span></p>
+<p>Display cmdlets  in noun-based groups:</p>
+<p class="code">PS C:\&gt; get-command | sort-object noun | format-table -group noun</p>
+<p>Display all <a href="ad.html">Active Directory cmdlets</a> available to PowerShell:</p>
+<p class="code">PS C:\&gt; get-command -module ActiveDirectory -verb get<br>
+PS C:\&gt; get-command -module ActiveDirectory -noun ADUser</p>
+<p>Retrieve information about all the elements available to PowerShell (all files, functions, aliases and cmdlets):</p>
+<p class="code">PS C:\&gt; get-command *</p>
+<p>Describe the alias 'dir':</p>
+<p class="code">PS C:\&gt; get-command dir | format-list</p>
+<p class="quote"><i>Klinger: "Oh, you were built for command.  Those shoulders --
+  broad enough for four stars.  That height--
+commanders should be tall--to look down on his men"<br>
+Corporal:  "Napoleon didn't do so bad" ~ Dialogue from M*A*S*H 1978 </i></p>
+<p><b>Related:</b><br>
+<br>
+<a href="get-help.html">Get-Help</a> - Open the help file<br>
+<a href="get-psdrive.html">Get-PSDrive</a> - Get drive information (DriveInfo)<br>
+<a href="get-member.html">Get-Member</a> - Enumerate the properties of an object<br>
+Equivalent bash command: <a href="../bash/man.html">man</a> - Display helpful information about commands.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/get-command.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

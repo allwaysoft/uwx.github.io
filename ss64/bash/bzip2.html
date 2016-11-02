@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="bzip2 
+Compress or decompress named file(s).
+Syntax
+      bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ... ]
+  bunzip2 [ -fkvsVL ] [ &amp;lt;i&amp;gt;filenames&amp;lt;/i&amp;gt; ... ]
+
+  bzcat [ -s ] [ &amp;lt;i&amp;gt;filena">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/bzip2.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="bzip2 
+Compress or decompress named file(s).
+Syntax
+      bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ... ]
+  bunzip2 [ -fkvsVL ] [ &amp;lt;i&amp;gt;filenames&amp;lt;/i&amp;gt; ... ]
+
+  bzcat [ -s ] [ &amp;lt;i&amp;gt;filena">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.119Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="bzip2 
+Compress or decompress named file(s).
+Syntax
+      bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ... ]
+  bunzip2 [ -fkvsVL ] [ &amp;lt;i&amp;gt;filenames&amp;lt;/i&amp;gt; ... ]
+
+  bzcat [ -s ] [ &amp;lt;i&amp;gt;filena">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>bzip2</h1> 
+<p>Compress or decompress named file(s).</p>
+<pre>Syntax
+      bzip2 [ -cdfkqstvzVL123456789 ] [ <i>filenames</i> ... ]
+<pre><code>  bunzip2 [ -fkvsVL ] [ &lt;i&gt;filenames&lt;/i&gt; ... ]
+
+  bzcat [ -s ] [ &lt;i&gt;filenames&lt;/i&gt; ... ]
+
+  bzip2recover &lt;i&gt;filename&lt;/i&gt;
+</code></pre>
+<p>Key<br>
+-c --stdout      Compress or decompress to standard output.</p>
+<p>-d --decompress  Force decompression. bzip2, bunzip2 and bzcat are really the same program,<br>
+and the decision about what actions to take is done on the basis of which<br>
+name is used. This flag overrides that mechanism, and forces bzip2 to decompress.</p>
+<p>-z --compress    The complement to -d: forces compression, regardless of the invokation name.</p>
+<p>-t --test        Check integrity of the specified file(s), but don’t decompress them.<br>
+This really performs a trial decompression and throws away the result.</p>
+<p>-f --force       Force overwrite of output files. Normally, bzip2 will not overwrite existing<br>
+output files. Also forces bzip2 to break hard links to files, which it otherwise<br>
+wouldn’t do. bzip2 normally declines to decompress files which don’t have the<br>
+correct magic header bytes. If forced (-f), however, it will pass such files<br>
+through unmodified. This is how GNU gzip behaves.</p>
+<p>-k --keep        Keep (don’t delete) input files during compression or decompression.</p>
+<p>-s --small       Reduce memory usage, for compression, decompression and testing. Files are<br>
+decompressed and tested using a modified algorithm which only requires 2.5 bytes<br>
+per block byte. This means any file can be decompressed in 2300k of memory, albeit<br>
+at about half the normal speed. During compression, -s selects a block size of<br>
+200k, which limits memory use to around the same figure, at the expense of your<br>
+compression ratio. In short, if your machine is low on memory (8 megabytes or less),<br>
+use -s for everything.</p>
+<p>-q --quiet       Suppress non-essential warning messages. Messages pertaining to I/O errors and<br>
+other critical events will not be suppressed.</p>
+<p>-v --verbose     Verbose mode – show the compression ratio for each file processed. Further -v’s<br>
+increase the verbosity level, spewing out lots of information which is primarily<br>
+of interest for diagnostic purposes.</p>
+<p>-L --license<br>
+-V --version     Display the software version, license terms and conditions.</p>
+<p>-1 (or --fast) to -9 (or -best)<br>
+Set the block size to 100 k, 200 k … 900 k when compressing. Has no effect when<br>
+decompressing. The --fast and --best aliases are primarily for GNU gzip<br>
+compatibility. In particular, --fast doesn’t make things significantly faster.<br>
+And --best merely selects the default behaviour.</p>
+<p>–               Treats all subsequent arguments as file names, even if they start with a dash.<br>
+This is so you can handle files with names beginning with a dash,<br>
+for example: bzip2 – -myfilename.</p>
+<p>–repetitive-fast, --repetitive-best<br>
+These flags are redundant in versions 0.9.5 and above. They provided some coarse<br>
+control over the behaviour of the sorting algorithm in earlier versions, bzip now<br>
+has an improved algorithm which renders these flags irrelevant.</p></pre><p></p>
+<p>Compared with <a href="gzip.html">gzip</a>, bzip2 will create smaller archives but has a slower  decompression time and higher memory use.</p>
+<p>bzip2 compresses files using the Burrows-Wheeler block sorting text compression algorithm, and Huffman coding.<br>
+The command-line options are deliberately very similar to those of GNU gzip, but they are not identical. </p>
+<p>bzip2 expects a list of file names to accompany the command-line flags. Each file is replaced by a compressed version of itself, with the name <span class="code"><i>original_name</i>.bz2</span>. Each compressed file has the same modification date, permissions, and, when possible, ownership as the corresponding original, so that these properties can be correctly restored at decompression time. </p>
+<p>File name handling is naive in the sense that there is no mechanism for preserving original file names, permissions, ownerships or dates in filesystems which lack these concepts, or have serious file name length restrictions, such as MS-DOS. </p>
+<p>bzip2 and bunzip2 will by default not overwrite existing files. If you want this to happen, specify the -f flag. <br>
+If no file names are specified, bzip2 compresses from standard input to standard output. In this case, bzip2 will decline to write compressed output to a terminal, as this would be entirely incomprehensible and therefore pointless.</p>
+<p>Website: <a href="http://www.bzip.org/" target="_blank" rel="external">bzip.org</a></p>
+<p><b>Examples</b></p>
+<p>Compress the file <span class="code">mountetna.csv</span> and replace it with a compressed version named <span class="code">mountetna.csv.bz2</span></p>
+<p><span class="code">$ 
+bzip2 mountetna.csv</span></p>
+<p>Compress the file <span class="code">mountetna.csv</span>, keep the uncompressed version and create the new file by redirecting standard out:</p>
+<p class="code">$ 
+bzip2 mountetna.csv &gt; mountetna.csv.bz2</p>
+<p> Combine a set of mp3 music files into one file with <a href="tar.html">tar</a> and then zip the result with bzip2:</p>
+<p class="code"> $      tar -cf music.tar miles.mp3 chet.mp3 charlie.mp3<br>
+$ 
+bzip2 music.tar</p>
+<p>The same as above but in one step by using the <span class="code">tar -j</span> option:</p>
+<p class="code"> $ tar -cjf music.tar.bz2 miles.mp3 chet.mp3 charlie.mp3</p>
+<p class="quote"><i>“What is Art, Sir, but Nature concentrated?” ~ Honoré de Balzac</i> (Qu'est-ce que l'Art, monsieur?C'est la Nature concentrée.)</p>
+<p><b>Related:</b></p>
+<p><a href="gzip.html">gzip</a> - Compress or decompress named file(s)<br>
+<a href="tar.html">tar</a> - Store, list or extract files in an archive<br>
+<a href="unrar.html">unrar</a> - Extract files from rar archives.<br>
+<a href="xz.html">xz</a> - Compress or decompress .xz and .lzma files</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="bzip2.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/bzip2.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

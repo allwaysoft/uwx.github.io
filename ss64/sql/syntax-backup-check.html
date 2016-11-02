@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Check Backup files
+The script below can be used to check multiple locations for SQL Server backups that have completed in the last 24 hours. 
+&amp;lt;# check.ps1 Script to check SQL Server backups on mul">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/syntax-backup-check.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Check Backup files
+The script below can be used to check multiple locations for SQL Server backups that have completed in the last 24 hours. 
+&amp;lt;# check.ps1 Script to check SQL Server backups on mul">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.749Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Check Backup files
+The script below can be used to check multiple locations for SQL Server backups that have completed in the last 24 hours. 
+&amp;lt;# check.ps1 Script to check SQL Server backups on mul">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1> Check Backup files</h1>
+<p>The script below can be used to check multiple locations for SQL Server backups that have completed in the last 24 hours. </p>
+<pre>&lt;# check.ps1 Script to check SQL Server backups on multiple servers
+   This script must be run with <b>sqlps.exe</b> (not generic PowerShell)
+<p>Limitations: SQL 2000 is not supported, use for SQL Server 2005 and above only.<br>
+The account running this script must have access to all the databases.<br>
+#&gt;</p>
+<h1>Read all the databases to be checked into a hash table</h1>
+<p>$t = Import-Csv -Path <b>C:\batch\databases.txt</b> -Header “database”,“server”<br>
+$Hash = @{}<br>
+foreach($r in $t)<br>
+{<br>
+	Write-Host $r.database $r.server<br>
+	$Hash[$r.database] = $r.server<br>
+}</p>
+<h1>$Hash</h1>
+<h1>Query to retrieve backups</h1>
+<h1>n.b  compressed_backup_size is only available in 2008 and later</h1>
+<h1>so for now we just use the uncompressed backup_size.</h1>
+<p>$query = “SELECT  <a href="http://sdb.Name" target="_blank" rel="external">sdb.Name</a> AS DatabaseName,<br>
+COALESCE(CONVERT(VARCHAR(12), MAX(bus.backup_finish_date), 103), ‘’) AS LastBackUpTime,<br>
+COALESCE(CONVERT(VARCHAR(12), MAX(bus.backup_size), 103), ‘’) AS size<br>
+FROM sysdatabases sdb LEFT OUTER JOIN msdb.dbo.backupset bus ON bus.database_name = <a href="http://sdb.name" target="_blank" rel="external">sdb.name</a><br>
+WHERE bus.backup_finish_date &gt; getdate()-1<br>
+GROUP BY <a href="http://sdb.Name" target="_blank" rel="external">sdb.Name</a><br>
+HAVING  <a href="http://sdb.NAME" target="_blank" rel="external">sdb.NAME</a> IN ( '”<br>
+#$db’ );&quot;</p>
+<p>$results = @{}<br>
+$grandTotal = 0<br>
+$countBackups = 0<br>
+$sqlcmd = 0</p>
+<h1>Loop through the hash table of databases/servers</h1>
+<p>$hash.keys | foreach {</p>
+<h1>Get the database and server names</h1>
+<p>$db =$_<br>
+$server =$($hash.item($_))</p>
+<h1>Write-Host &quot;current server is: $server &quot;</h1>
+<pre><code>Write-Host &quot;Current db is: $db &quot; 
+</code></pre>
+<h1>complete the query string we started above</h1>
+<p>$qry = “$query$db’ );”<br>
+# “$qry”</p>
+<h1>Reset the variable to clear last values out</h1>
+<p>$sqlcmd = 0</p>
+<h1>Execute the query to get the last backup time/date</h1>
+<p>$sqlcmd = Invoke-Sqlcmd -Query $qry -ServerInstance $server -database “master”</p>
+<h1>“$sqlcmd.LastBackUpTime”</h1>
+<h1>$backup = $sqlcmd | Select -ExpandProperty LastBackUpTime</h1>
+<h1>Right-pad database name to 17 characters</h1>
+<p>[string]$name =  $_ + &quot;                 &quot;<br>
+$name = $name.substring(0, 17)</p>
+<h1>Get the backup size</h1>
+<p>[int]$megabytes = $sqlcmd.size/1mb<br>
+[int]$grandTotal = $grandTotal + $megabytes<br>
+[string]$size = &quot;       $megabytes&quot;<br>
+$size = $size.substring($size.length - 7, 7) + &quot; MB  $server&quot;</p>
+<h1>Store the backup date/time + Size in another hash table called $results</h1>
+<p>$results.add($name,$sqlcmd.LastBackUpTime + $size  )</p>
+<h1>Count the number of backups (this will change if/when the list of databases to check is changed.)</h1>
+<p>$countBackups = $countBackups + 1<br>
+}</p>
+<h1>Display results for interactive use</h1>
+<p>Write-Host “-- Display results”<br>
+$results.GetEnumerator() | sort name | ft -HideTableHeaders -autosize</p>
+<h1>Store all the results into some text files</h1>
+<p>$results.GetEnumerator() | sort name | ft -HideTableHeaders -autosize &gt; <b>c:\batch\backups.txt</b><br>
+$grandTotal &gt; <b>c:\batch\total.txt</b><br>
+$countBackups &gt; <b>c:\batch\count.txt</b></p>
+</pre>
+<p><br>
+To have these results emailed to a person or group use a <a href="../ps/syntax-email.html">standard PowerShell email script</a> to read and email the text files.</p>
+<p class="quote"><i>"I pledge allegiance to my Flag and the Republic for which it stands, one nation, indivisible, with liberty and justice for all" ~ Francis Bellamy (1892)</i></p>
+<p><b>Related:</b></p>
+<p><a href="../ps/syntax-backup-check.html">PowerShell backup check</a> - Checks a list of file locations.</p>
+<p class="quote">&nbsp;</p>
+<p></p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-backup-check.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/syntax-backup-check.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

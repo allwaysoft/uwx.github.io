@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="QChange - Connect to a different Printer Queue 
+This page contains a VBScript that can be used to update a user&apos;s printer connections (Print Mappings) 
+ In addition to switching to a different Print Q">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/vb/syntax-qchange.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="QChange - Connect to a different Printer Queue 
+This page contains a VBScript that can be used to update a user&apos;s printer connections (Print Mappings) 
+ In addition to switching to a different Print Q">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:19.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="QChange - Connect to a different Printer Queue 
+This page contains a VBScript that can be used to update a user&apos;s printer connections (Print Mappings) 
+ In addition to switching to a different Print Q">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_vbsyntax.lbi" --><!-- #EndLibraryItem --><h1>QChange - Connect to a different Printer Queue</h1> 
+<p>This page contains a VBScript that can be used to update a user's printer connections (Print Mappings) </p>
+<p> In addition to switching to a different Print Queue (or Print Server ) the script will also also preserve the user's current <b>default </b>printer. i.e if their default printer is renamed then the new name will be set as their default. </p>
+<p>Multiple queues can be moved at once. The changes required are listed in a simple text file, the script will ignore any other print connections not explicitly listed.</p>
+<p>Execute the script like this: </p>
+<p class="code">cscript qchange.vbs changes.txt //NoLogo</p>
+<p> [changes.txt]</p>
+<pre>\\Server\Printer1;\\NewServer\NewPrinter1
+\\Server\Printer2;\\NewServer\NewPrinter2
+\\Server\Printer3;\\NewServer\NewPrinter2
+</pre>
+<p>[end]</p>
+<p>[Qchange.vbs]</p>
+<pre>On Error Resume Next
+Const VERBOSE = "N"   'Display progress (Y or N)
+Const Title = "Print Connection Migrator"
+Const ForReading = 1
+<p>Dim strDefaultPrinter<br>
+Dim InstalledPrinters 'Array of printer names<br>
+Dim Textfile          'File with print Q names<br>
+Dim OldPrintQueues()  'Dynamic array to store old print queue names, from the text file<br>
+Dim NewPrintQueues()  'Dynamic array to store new print queue names, from the text file<br>
+Dim fso         'File System Object<br>
+Dim objTextFile 'Text file object<br>
+Dim strNextLine 'Line of the text file<br>
+Dim i<br>
+Dim WshNetwork</p>
+<p>Set WshNetwork = CreateObject(“WScript.Network”)</p>
+<p>’ 1. - Get the command line args        ###<br>
+SET Parameters = Wscript.arguments</p>
+<p>'If no command line arguments provided, quit<br>
+If Parameters.Count = 0 Then<br>
+WScript.Quit(1)<br>
+Else<br>
+Textfile = Parameters.item(0)<br>
+End If</p>
+<p>If Textfile = “” or Not Right(TextFile,4) = “.txt” or Not FileExist(Textfile) Then<br>
+Error=MsgBox(“No valid input file provided. Stopping the script now.”,vbokonly, Title)<br>
+WScript.Quit(1)<br>
+End If</p>
+<p>If VERBOSE = “Y” Then Wscript.Echo “Reading input file”<br>
+’ 2. Read the text file and import it in a Array    ###<br>
+Set objFSO = CreateObject(“Scripting.FileSystemObject”)<br>
+Set objTextFile = objFSO.OpenTextFile (TextFile, ForReading)<br>
+i=-1</p>
+<p>While not objTextFile.AtEndOfStream<br>
+i = i+1<br>
+Redim Preserve OldPrintQueues(i)<br>
+ReDim Preserve NewPrintQueues(i)<br>
+strLine = objTextFile.Readline<br>
+’Do not import the comment lines<br>
+If Left(strLine,2) = “\” Then<br>
+OldPrintQueues(i) = Left(strLine,InStr(strline,&quot;;&quot;)-1)<br>
+If VERBOSE = “Y” Then Wscript.Echo &quot; old Q is: &quot; &amp; OldPrintQueues(i)<br>
+NewPrintQueues(i) = Mid(strline,InStr(strline,&quot;;&quot;)+1,Len(strline))<br>
+If VERBOSE = “Y” Then Wscript.Echo &quot; new Q is: &quot; &amp; NewPrintQueues(i)<br>
+End If<br>
+Wend</p>
+<p>objTextFile.Close</p>
+<p>’ 3. Store the name of the default Printer        ###</p>
+<p>strDefaultPrinter = DefaultPrinter<br>
+If VERBOSE = “Y” Then Wscript.Echo &quot; Default is: &quot; &amp; strDefaultPrinter</p>
+<p>’ 4. WMI query for current printer connections    ###</p>
+<p>strComputer = &quot;.&quot;<br>
+Set objWMIService = GetObject(“winmgmts:” _<br>
+&amp; “{impersonationLevel=impersonate}!\” &amp; strComputer &amp; “\root\cimv2”)<br>
+Set colInstalledPrinters = objWMIService.ExecQuery _<br>
+(“Select * from Win32_Printer”)</p>
+<p>’ 5. Main Loop through printer collection         ###</p>
+<p>For Each objPrinter in colInstalledPrinters<br>
+If VERBOSE = “Y” Then Wscript.Echo &quot; Current connection: &quot; &amp; <a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a><br>
+If Left(<a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a>, 2) = “\” Then 'Work only On network printers<br>
+’Search the corresponding printer and create it<br>
+i = 0 'set the indice at the beginning of the array (prepare to loop)<br>
+Do Until i &gt; UBound(OldPrintQueues)<br>
+If UCase(<a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a>) = UCase(OldPrintQueues(i)) Then<br>
+’Create the connection to the new printer<br>
+If VERBOSE = “Y” Then Wscript.Echo &quot; New connection: &quot; &amp; NewPrintQueues(i)<br>
+WshNetwork.AddWindowsPrinterConnection NewPrintQueues(i)<br>
+If UCase(strDefaultPrinter) = UCase(<a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a>) Then 'This is the default printer<br>
+’Set the default Printer<br>
+WshNetwork.SetDefaultPrinter NewPrintQueues(i)<br>
+End If<br>
+’Delete the printer connection<br>
+WshNetwork.RemovePrinterConnection <a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a><br>
+If VERBOSE = “Y” Then Wscript.Echo &quot; Removing : &quot; &amp; <a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a><br>
+End If<br>
+i = i + 1<br>
+Loop<br>
+End If 'End of check for network printers<br>
+Next 'End of the loop through the printers of this user</p>
+<p>Set WshNetwork = Nothing</p>
+<p>‘-----------------<br>
+’ Functions<br>
+’-----------------</p>
+<p>'Return the default printer<br>
+Function DefaultPrinter<br>
+Dim strComputer<br>
+Dim Result</p>
+<pre><code>strComputer = &quot;.&quot;
+Result = &quot;&quot;
+
+Set objWMIService = GetObject(&quot;winmgmts:&quot; _
+</code></pre>
+<p>&amp; “{impersonationLevel=impersonate}!\” &amp; strComputer &amp; “\root\cimv2”)<br>
+Set colInstalledPrinters = objWMIService.ExecQuery _<br>
+(“Select * from Win32_Printer”)<br>
+For Each objPrinter in colInstalledPrinters<br>
+If objPrinter.Default = True Then<br>
+Result = <a href="http://objPrinter.Name" target="_blank" rel="external">objPrinter.Name</a><br>
+End If<br>
+Next<br>
+DefaultPrinter = Result<br>
+End Function</p>
+<p>'-----------------</p>
+<p>'Does File Exist (Boolean)<br>
+Function FileExist (FileFullPath)<br>
+Dim Fso<br>
+Set Fso = CreateObject(“Scripting.FileSystemObject”)<br>
+If (Fso.FileExists(FileFullPath)) Then<br>
+FileExist = True<br>
+Else<br>
+FileExist = False<br>
+End If<br>
+End Function</p>
+<p>’ Based on a script by: Sebastien Pittet (<a href="http://pittet.org" target="_blank" rel="external">pittet.org</a>)<br>
+’ discussed at <a href="http://cwashington.netreach.net/" target="_blank" rel="external">http://cwashington.netreach.net/</a></p>
+<p>’ Creative Commons Attribution-ShareAlike 2.5<br>
+’ <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="external">http://creativecommons.org/licenses/by-sa/2.5/</a></p>
+<p>’ Simon Sheppard Sept 2005<br>
+’ <a href="http://ss64.com/vb/syntax-qchange.html" target="_blank" rel="external">http://ss64.com/vb/syntax-qchange.html</a></p></pre><p></p>
+<p>[end]</p>
+<p>List all the print queues available on a server with:</p>
+<p class="code">C:\&gt; net view \\MyServer</p>
+<p>If you generate the list of printers via code - check the line endings are &lt;CR&gt; &lt;LF&gt; </p>
+<p> <i class="quote">“The large print giveth, the small print taketh away” ~ Tom Waits</i><br>
+<br>
+<b>Related:</b></p>
+<p><a href="../nt/syntax-printing.html">Syntax - Printing</a> <br>
+<a href="syntax-printsave.html">PrintSave</a> - Save and Restore Windows Printer Connections<br>
+<a href="../nt/printbrm.html">PRINTBRM</a> - Print queue Backup/Recovery<br>
+<a href="../nt/prncnfg.html">PRNCNFG</a> - Configure or rename a printer.<br>
+<a href="../nt/prnmngr.html">PRNMNGR</a> - Add, delete, list printers and printer connections.<br>
+<a href="../nt/rundll32.html">RUNDLL32</a> - Add/remove print <i>connections</i><br>
+<a href="../nt/share.html">SHARE</a> - List or edit a file share or print share<br>
+<a href="../nt/wmic.html">WMIC PRINTER</a> - Set printing options through WMI. <br>
+</p><!-- #BeginLibraryItem "/Library/foot_vb.lbi" --><p>
+<!-- VB300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="1683739502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-qchange.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/vb/syntax-qchange.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TIME 
+Display or set the system time. 
+Syntax
+      TIME [new_time]
+      TIME
+      TIME /T
+key
+new_time : The time as HH:MM
+TIME with no parameters will display the current time and prompt
+for a new">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/time.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="TIME 
+Display or set the system time. 
+Syntax
+      TIME [new_time]
+      TIME
+      TIME /T
+key
+new_time : The time as HH:MM
+TIME with no parameters will display the current time and prompt
+for a new">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:55.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="TIME 
+Display or set the system time. 
+Syntax
+      TIME [new_time]
+      TIME
+      TIME /T
+key
+new_time : The time as HH:MM
+TIME with no parameters will display the current time and prompt
+for a new">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>TIME</h1> 
+<p>Display or set the system time. </p>
+<pre>Syntax
+      TIME [<i>new_time</i>]<br>
+      TIME
+<br>      TIME /T
+<p>key<br>
+<i>new_time</i> : The time as HH:MM</p>
+<p>TIME with no parameters will display the current time and prompt<br>
+for a new value. Pressing ENTER will keep the same time.</p>
+<p>/T : Just display the time, formatted according to the current Regional settings.</p></pre><br>
+<h2> Time Formatting</h2><p></p>
+<blockquote>
+<p>  In Control Panel, Regional settings a Time Appearance can be set. This can be 
+  used to change the separator, and the number of characters used to display hours 
+  and minutes.<br>
+  <br>
+  To display the time including Seconds:<br>
+  <br>
+  ECHO:| TIME will display the time, including seconds and hundredths of a second 
+  <br>
+  <br>
+</p><p>The time separator and the Country Code are user settings in the registry:<br><br>
+<br><br>
+The <b>time separator</b> can be read using <a href="reg.html">REG</a> as follows</p><p></p>
+<pre>@echo off
+FOR /F "TOKENS=3" %%D IN ('REG QUERY ^"HKEY_CURRENT_USER\Control Panel\International^" /v sTime ^| find ^"REG_SZ^"') DO (
+        SET _time_sep=%%D)
+echo %_time_sep%</pre>
+<p> To read the <b>Country Code</b> replace <span class="code">sTime</span> in the above with <span class="code">iCountry</span>.</p>
+</blockquote>
+<h2>Country Codes/Formats</h2>
+<blockquote>
+<p>The time formats for different country codes are as follows:</p>
+</blockquote>
+<!-- google_ad_section_start(weight=ignore) -->
+<pre><b>   Country or language   CountryCode  Date format Time format</b>
+<p>United States         001          01/03/1994  5:35:00.00p</p>
+<p>Czechoslovakia        042          03.01.1994 17:35:00<br>
+France                033          03.01.1994 17:35:00<br>
+Germany               049          03.01.1994 17:35:00<br>
+Latin America         003          03/01/1994  5:35:00.00p<br>
+International English 061          03/01/1994 17:35:00.00<br>
+Portugal              351          03-01-1994 17:35:00<br>
+Finland               358          3.1.1994   17.35.00<br>
+Switzerland           041          03.01.94   17 35.00<br>
+Norway                047          03.01.94   17:35:00<br>
+Belgium               032          03/01/94   17:35:00<br>
+Brazil                055          03/01/94   17:35:00<br>
+Italy                 039          03/01/94   17.35.00<br>
+United Kingdom        044          03/01/94   17:35:00.00<br>
+Denmark               045          03-01-94   17.35.00<br>
+Netherlands           031          03-01-94   17:35:00<br>
+Spain                 034          3/01/94    17:35:00<br>
+Hungary               036          1994.01.03 17:35:00<br>
+Canadian-French       002          1994-01-03 17:35:00<br>
+Poland                048          1994-01-03 17:35:00<br>
+Sweden                046          1994-01-03 17.35.00</p></pre><br>
+<h2>Errorlevels</h2><p></p>
+<blockquote>
+<p>If the time was successfully changed (or not given) <a href="errorlevel.html">%ERRORLEVEL%</a> = 0<br>
+If the user lacks admin privileges = 1</p>
+</blockquote>
+<p>TIME is an <a href="syntax-internal.html">internal</a> command. If <a href="cmd.html">Command Extensions</a> are disabled <!-- google_ad_section_end -->TIME 
+  will not support the /T switch</p>
+<p><i class="quote">“Time is like money, the less we have of it to spare, the further we make it go” - Josh Billings </i><br>
+<br>
+<b>Related:</b></p>
+<p>%TIME% - variable containing current time <br>
+</p><p><a href="date.html">DATE</a> - Display or change the date<br><br>
+<a href="now.html">NOW</a> - Display Message with Current Date and Time<br><br>
+<a href="w32tm.html">W32TM</a> - Time Service<br><br>
+<a href="tzutil.html">TZUTIL</a> - Time Zone Utility<br><br>
+Timethis - Time how long it takes the system to run a command. (<a href="../links/windows.html#kits">Win<br>
+2K ResKit</a>) <br><br>
+Uptime - Time since last reboot. (<a href="../links/windows.html#kits">Win 2K<br>
+ResKit</a>) <br><br>
+<a href="syntax-gettime.html">GetTime.cmd</a> - Script to get current time <br><br>
+<a href="syntax-gmt.html">GMT.cmd</a> - Current time in GMT (World Time)<br><br>
+<a href="https://support.microsoft.com/kb/307938" target="_blank" rel="external">Q307938</a> - Change Date and Time display (remove leading zeros) <br><br>
+Powershell: <a href="../ps/get-date.html">Get-Date</a> - Get current date and time<br><br>
+Equivalent bash command (Linux): <a href="../bash/date.html">date</a> - Display or change the date &amp; time</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p></p>
+<!-- windows300 -->
+<p><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins></p>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><p></p>
+<hr>
+<div id="bl" class="footer"><a href="time.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/time.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

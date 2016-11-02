@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DBCC SHRINKFILE
+Shrink the size of the current database data / log file    or empty a file by moving the data.
+Syntax
+      DBCC SHRINKFILE ( file , EMPTYFILE ) [WITH NO_INFOMSGS]
+  DBCC SHRINKFILE (">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/sql/dbcc_shrinkfile.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DBCC SHRINKFILE
+Shrink the size of the current database data / log file    or empty a file by moving the data.
+Syntax
+      DBCC SHRINKFILE ( file , EMPTYFILE ) [WITH NO_INFOMSGS]
+  DBCC SHRINKFILE (">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:27.674Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DBCC SHRINKFILE
+Shrink the size of the current database data / log file    or empty a file by moving the data.
+Syntax
+      DBCC SHRINKFILE ( file , EMPTYFILE ) [WITH NO_INFOMSGS]
+  DBCC SHRINKFILE (">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_sql.lbi" --><!-- #EndLibraryItem --><h1>DBCC SHRINKFILE</h1>
+<p>Shrink the size of the current database data / log file    or empty a file by moving the data.</p>
+<pre>Syntax
+      DBCC SHRINKFILE ( <i>file</i> , EMPTYFILE ) [WITH NO_INFOMSGS]
+<pre><code>  DBCC SHRINKFILE ( &lt;i&gt;file&lt;/i&gt; , &lt;i&gt;target_size&lt;/i&gt;
+          [, {NOTRUNCATE | TRUNCATEONLY }] )  [WITH NO_INFOMSGS ]
+</code></pre>
+<p>Key:<br>
+<i>file</i>          -  Logical file name or file_id</p>
+<p>EMPTYFILE      - Migrate data to other files in the same filegroup.<br>
+The file can be removed with ALTER DATABASE.</p>
+<p><i>target_size</i>   - The size for the file in megabytes.<br>
+default = that specified when the file was created, or<br>
+the last size used with  ALTER DATABASE.(int)</p>
+<p>NOTRUNCATE    - Free space at the end of the data file is not returned to the OS<br>
+(pages are still moved)<br>
+TRUNCATEONLY  - Release free space at the end of the data file to the OS<br>
+(do not move pages)<br>
+	NO_INFOMSGS   - Suppress all information messages (severity 0-10)</p>
+</pre>
+<p>You can shrink a transaction log file while the system is in use (DML commands are also being executed), however this will only affect  the inactive portion  of the transaction log file.<br>
+Discover the file_ID for each file with the SQL: 
+<span class="code">SELECT file_id, name 
+FROM sys.database_files;</span><br>
+After using TRUNCATE_ONLY you must perform a full backup </p>
+<p><b>Examples</b></p>
+<p>Shrink a  datafile to 64 Mb:</p>
+<pre>DBCC SHRINKFILE (<i>MyDataFile01</i>, 64);</pre>
+<p>  Shrink a Log file to 8 GiB (8192 MiB):</p>
+<pre>USE MyDatabase;
+GO
+DBCC SHRINKFILE(MyDatabase_Log, 8192)<br><a href="backup.html">BACKUP</a> LOG MyDatabase WITH TRUNCATE_ONLY<br>DBCC SHRINKFILE(MyDatabase_Log, 8192)
+</pre>
+<p>Afterwords, perform a full backup of the database.<br>
+To make the file as small as possible you can specify <span class="code">1</span> for 1 Mb, or just leave out the <i>target_size</i> completely, be aware that doing this will slow down the system a little as the system will just have to grow the log file again as soon as another transaction is started. </p>
+<p>In SQL Server 2008 the procedure is slightly different, the database must first be set to Simple recovery mode, then shrink the file, then restore FULL recovery mode: </p>
+<pre>ALTER DATABASE <i>MyDatabase</i> SET RECOVERY SIMPLE
+go
+DBCC SHRINKFILE(<i>MyDatabase_log</i>)
+go
+EXEC sp_helpdb <i>MyDatabase</i>
+go
+ALTER DATABASE <i>MyDatabase</i> SET RECOVERY FULL
+go </pre>
+<p class="quote"><i>“Men shrink less from offending one who inspires love than one who inspires fear” ~ Niccolo Machiavelli</i></p>
+<p><b>Related:</b></p>
+<p><a href="http://www.karaszi.com/SQLServer/info_dont_shrink.asp" target="_blank" rel="external">Why you want to be restrictive with shrink of database files</a> - karaszi.com<br> 
+<a href="database_a.html">ALTER DATABASE</a>  <i>MyDatabase</i> SET RECOVERY FULL;<br>
+  <a href="dbcc_shrinkdb.html">DBCC  SHRINKDATABASE</a><br>
+  FILE_ID <br>
+  sys.database_files <br>
+Equivalent Oracle command: <a href="../ora/database_a.html">ALTER DATABASE</a> Datafile '/oradata/ss64.dbf' resize 64M;</p><!-- #BeginLibraryItem "/Library/foot_sql.lbi" --><p>
+<!-- ss64-sql -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6953563613"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="dbcc_shrinkfile.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/sql/dbcc_shrinkfile.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

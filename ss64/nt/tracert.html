@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TRACERT 
+Trace Route - Find the IP address of any remote host. TRACERT 
+  is useful for troubleshooting large networks where several paths can be taken 
+  to arrive at the same point, or where many in">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/tracert.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="TRACERT 
+Trace Route - Find the IP address of any remote host. TRACERT 
+  is useful for troubleshooting large networks where several paths can be taken 
+  to arrive at the same point, or where many in">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:55.810Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="TRACERT 
+Trace Route - Find the IP address of any remote host. TRACERT 
+  is useful for troubleshooting large networks where several paths can be taken 
+  to arrive at the same point, or where many in">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>TRACERT</h1> 
+<p>Trace Route - Find the IP address of any remote host. TRACERT 
+  is useful for troubleshooting large networks where several paths can be taken 
+  to arrive at the same point, or where many intermediate systems (routers or 
+bridges) are involved. </p>
+<pre>Syntax<br>      TRACERT [<i>options</i>] <i>target_name</i>
+<p>Key<br>
+<i>target_name</i>     The HTTP or UNC name of the host</p>
+<p>Options:<br>
+-d             Do not resolve addresses to hostnames.<br>
+(avoids performing a DNS lookup)</p>
+<pre><code>-h &lt;i&gt;max_hops&lt;/i&gt;    Maximum number of hops to search for target.(default=30)
+
+-j &lt;i&gt;host-list&lt;/i&gt;   Trace route along given host-list. 
+               up to 9 hosts in dotted decimal notation, separated by spaces.
+
+-w &lt;i&gt;timeout&lt;/i&gt;     Wait &lt;i&gt;timeout&lt;/i&gt; milliseconds for each reply.&lt;/pre&gt;
+</code></pre>
+<p>The functionality of TRACERT is the same under all versions of 
+  windows but the output is cosmetically improved under XP.</p>
+<p>Tracert uses the IP TTL field and ICMP error messages to determine 
+  the route from one host to another through a network. </p>
+<p>Care must be 
+    taken with tracert as it shows the optimal route, not necessarily 
+    the actual route. To be accurate, it is possible to <b>ping</b> from a UNIX 
+    machine back to the PC using the -R option to record the route taken - but only 
+    if the particular network devices support it. </p>
+<p>This diagnostic tool determines the path taken to a destination by sending ICMP Echo Request messages with varying Time to Live (TTL) values to the destination. </p>
+<p><b>TTL (Time to Live) calculation</b><br>TTL is effectively a count of the (maximum) number of links to the destination host. Each router along the path decrements the TTL in an IP packet by at least 1 before forwarding it. </p>
+<p>When the TTL on a packet reaches 0, the router is expected to return an ICMP <i>Time Exceeded</i> message to the source computer. </p>
+<p>Tracert determines the path by sending the first Echo Request message with a TTL of 1 and incrementing the TTL by 1 on each subsequent transmission until either the target host responds or the maximum number of hops is reached. </p>
+<p>This process relys on intermediate routers to return  ICMP <i>Time Exceeded</i> messages. However, some routers do not return <i>Time Exceeded </i>messages for packets with expired TTL values and are invisible to the tracert command. In this case, a row of asterisks (*) is displayed for that hop.</p>
+<p><b>Firewalls<br>
+  </b>Many firewalls will block ICMP traffic by default.
+  If an attacker is able to forge ICMP redirect packets, he or she can alter the routing tables on the host and possibly subvert the security of the host by causing traffic to flow via a path you didn't intend. <br>
+  <b><br>
+  Examples</b></p>
+<pre> TRACERT www.doubleclick.net
+<p>TRACERT 123.45.67.89</p>
+<p>TRACERT local_server</p></pre><p></p>
+<p><i class="quote">  Get your kicks on ROUTE 66 ~ Jack 
+  Kerouac.</i><b><br>
+  <br>
+  Related:</b><br>
+  <br>
+  <a href="nslookup.html">NSLOOKUP</a> - Name server lookup <br>
+  <a href="ping.html">PING</a> - Test a network connection<br>
+  <a href="pathping.html">PATHPING</a> - Trace route and provide network latency and packet loss for each router and link in the path.<br>
+  <a href="route.html">ROUTE</a> - Manipulate network routing tables <br>
+  <br>
+<a href="https://support.microsoft.com/kb/314868/" target="_blank" rel="external">Q314868</a> - How to use TRACERT to troubleshoot TCP/IP<br>
+  <a href="http://www.pc-help.org/trace.htm" target="_blank" rel="external">TRACE.bat</a> - PCHelp's handy report on any given Internet address<br>
+  <a href="http://www.tracert.com/" target="_blank" rel="external">tracert.com</a> - trace routes from remote locations<br>
+  Equivalent bash command (Linux): <a href="../bash/traceroute.html">traceroute</a> - Print the route packets take to network host.</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="tracert.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/tracert.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

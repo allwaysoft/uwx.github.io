@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ln 
+Make links between files, by default, it makes hard links; with 
+the -s option, it makes symbolic (or &quot;soft&quot;) links.
+Syntax
+      ln [OPTION]... [-T] OriginalSourceFile NewLinkFile (1st form)
+  ln">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/ln.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ln 
+Make links between files, by default, it makes hard links; with 
+the -s option, it makes symbolic (or &quot;soft&quot;) links.
+Syntax
+      ln [OPTION]... [-T] OriginalSourceFile NewLinkFile (1st form)
+  ln">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:40.802Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ln 
+Make links between files, by default, it makes hard links; with 
+the -s option, it makes symbolic (or &quot;soft&quot;) links.
+Syntax
+      ln [OPTION]... [-T] OriginalSourceFile NewLinkFile (1st form)
+  ln">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>ln</h1> 
+<p>Make links between files, by default, it makes hard links; with 
+the <span class="code">-s</span> option, it makes symbolic (or "soft") links.</p>
+<pre>Syntax
+      ln [OPTION]... [-T] <i>OriginalSourceFile NewLinkFile</i> (1st form)
+<pre><code>  ln [OPTION]... &lt;i&gt;OriginalSourceFile                 &lt;/i&gt; (2nd form)
+
+  ln [OPTION]... &lt;i&gt;OriginalSourceFile&lt;/i&gt;... &lt;i&gt;DIRECTORY&lt;/i&gt;     (3rd form)
+
+  ln [OPTION]... -t &lt;i&gt;DIRECTORY OriginalSourceFile&lt;/i&gt;...  (4th form)
+</code></pre>
+</pre>
+<p> In the 1st form, create a link to <i>OriginalSourceFile</i>  with the name <i>NewLinkFile</i>. <br>
+In the 2nd form, create a link to <i>OriginalSourceFile</i> in the current directory.<br>
+In the 3rd and 4th forms, create links to each <i>OriginalSourceFile</i> in DIRECTORY. </p>
+<p>Create hard links by default, symbolic links with --symbolic. When creating hard links, each <i>OriginalSourceFile</i> must exist. Symbolic links can hold arbitrary text; if later resolved, a relative link is interpreted in relation to its parent directory.</p>
+<p>Mandatory arguments to long options are mandatory for short options too.</p>
+<pre>Options
+<p>–backup[=CONTROL]<br>
+Make a backup of each existing destination file<br>
+-b<br>
+Like --backup but does not accept an argument<br>
+-d, -F, --directory<br>
+Allow the superuser to attempt to hard link directories (note: will probably fail due to system restrictions, even for the superuser)<br>
+-f, --force<br>
+Remove existing destination files<br>
+-i, --interactive<br>
+Prompt whether to remove destinations<br>
+-L, --logical<br>
+Make hard links to symbolic link references<br>
+-n, --no-dereference<br>
+Treat destination that is a symlink to a directory as if it were a normal file<br>
+-P, --physical<br>
+Make hard links directly to symbolic links<br>
+-s, --symbolic<br>
+Make symbolic links instead of hard links<br>
+-S, --suffix=<i>SUFFIX</i><br>
+Override the usual backup suffix<br>
+-t, --target-directory=<i>DIRECTORY</i><br>
+Specify the DIRECTORY in which to create the links<br>
+-T, --no-target-directory<br>
+Treat <i>NewLinkFile</i> as a normal file<br>
+-v, --verbose<br>
+Print name of each linked file<br>
+–help<br>
+Display this help and exit<br>
+–version<br>
+Output version information and exit</p></pre><p></p>
+<p> The backup suffix is <span class="code">'~</span>', unless set with <span class="code">--suffix</span> or SIMPLE_BACKUP_SUFFIX. The version control method can be selected via the <span class="code">--backup</span> option or through the VERSION_CONTROL environment variable. </p>
+<p>Here are the values:<br>
+ Using <span class="code">-s</span> ignores <span class="code">-L </span>and <span class="code">-P</span>. Otherwise, the last option specified controls behavior when the source is a symbolic link, defaulting to<span class="code"> -P</span>.<br>
+</p>
+<pre>   none, off        Never make backups (even if --backup is given) 
+   numbered, t      Make numbered backups 
+   existing, nil    Numbered if numbered backups exist, simple otherwise 
+   simple, never    Always make simple backups</pre>
+<p>  It is an error if the last argument is not a directory and more
+  than two files are given.  Without <span class="code">-f</span> or <span class="code">-i</span>, <span class="code">ln</span> will not remove an existing file.  Use the <span class="code">--backup</span> option to
+  make <span class="code">ln</span> rename existing files.<br>
+  <br>
+  A "hard link" is another name for an existing file; the link and the
+  original are indistinguishable.  Technically speaking, they share the
+  same inode, and the inode contains all the information about a
+  file--indeed, it is not incorrect to say that the inode _is_ the file.<br>
+  On all existing implementations, you cannot make a hard link to a
+  directory, and hard links cannot cross filesystem boundaries.  (These
+  restrictions are not mandated by POSIX, however.)<br>
+  <br>
+"Symbolic links" ("symlinks" for short), on the other hand, are a
+  special file type (which not all kernels support: System V release 3
+  (and older) systems lack symlinks) in which the link file actually
+  refers to a different file, by name.  When most operations (opening,
+  reading, writing, and so on) are passed the symbolic link file, the
+  kernel automatically "dereferences" the link and operates on the target
+  of the link.  But some operations (e.g., removing) work on the link
+file itself, rather than on its target.</p>
+<p><b>Examples</b></p>
+<pre>$ ln file1.txt link1
+$ rm file1.txt          #The file cannot be deleted until the link is removed.
+<p>$ ln -s /some/name            # create a link ./name pointing to /some/name<br>
+$ ln -s /some/name mylink2    # or give the link a name</p>
+<p>$ ln -s /home/simon/demo /home/jules/mylink3   #Create mylink3 pointing to demo</p>
+<p>$ ln -s item1 item2 …        # creates links …/item1 and …/item2 pointing to ./item1 and ./item2</p></pre><p></p>
+<p>If you delete a file  for which a symbolic link still exists, the <span class="code">rm</span> will succeed but the symbolic link would remain and any attempt to reference it  will return a 'file not found' error. </p>
+<p><i class="quote">"Dogs are our link to paradise. They don't know evil or jealousy or discontent" - Milan Kundera</i><br>
+<br>
+<b> Related:</b><br>
+<br>
+pathchk - Check file name portability<br>
+<a href="link.html">link</a> - Create a link to a file <br>
+Equivalent Windows command: 
+<a href="../nt/mklink.html">MKLink</a> - Create a symbolic link to a directory or a file</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="ln.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/ln.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

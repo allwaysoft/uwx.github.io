@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="awk or gawk (gnu awk) 
+Find and Replace text, database sort/validate/index
+Syntax
+  awk &amp;amp;lt;&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt;&amp;amp;gt; &apos;&amp;lt;i&amp;gt;Program&amp;lt;/i&amp;gt;&apos; &amp;lt;i&amp;gt;Input-File1 Input-File2&amp;lt;/i&amp;g">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/awk.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="awk or gawk (gnu awk) 
+Find and Replace text, database sort/validate/index
+Syntax
+  awk &amp;amp;lt;&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt;&amp;amp;gt; &apos;&amp;lt;i&amp;gt;Program&amp;lt;/i&amp;gt;&apos; &amp;lt;i&amp;gt;Input-File1 Input-File2&amp;lt;/i&amp;g">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.039Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="awk or gawk (gnu awk) 
+Find and Replace text, database sort/validate/index
+Syntax
+  awk &amp;amp;lt;&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt;&amp;amp;gt; &apos;&amp;lt;i&amp;gt;Program&amp;lt;/i&amp;gt;&apos; &amp;lt;i&amp;gt;Input-File1 Input-File2&amp;lt;/i&amp;g">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>awk or gawk (gnu awk)</h1> 
+<p>Find and Replace text, database sort/validate/index</p>
+<pre>Syntax
+<pre><code>  awk &amp;lt;&lt;i&gt;options&lt;/i&gt;&amp;gt; '&lt;i&gt;Program&lt;/i&gt;' &lt;i&gt;Input-File1 Input-File2&lt;/i&gt; ...
+
+  awk -f &lt;i&gt;PROGRAM-FILE&lt;/i&gt; &amp;lt;&lt;i&gt;options&lt;/i&gt;&amp;gt; &lt;i&gt;Input-File1 Input-File2&lt;/i&gt; ...
+</code></pre>
+<p>Key<br>
+-F <i>FS</i><br>
+–field-separator <i>FS</i><br>
+Use FS for the input field separator (the value of the `<i>FS</i>’<br>
+predefined variable).</p>
+<p>-f <i>PROGRAM-FILE</i><br>
+–file <i>PROGRAM-FILE</i><br>
+Read the awk program source from the file <i>PROGRAM-FILE</i>, instead<br>
+of from the first command line argument.</p>
+<p>-mf<i> NNN</i><br>
+-mr<i> NNN</i><br>
+The <code>f' flag sets the maximum number of fields, and the</code>r’ flag<br>
+sets the maximum record size.  These options are ignored by<br>
+<code>gawk', since</code>gawk’ has no predefined limits; they are only for<br>
+compatibility with the Bell Labs research version of Unix awk.</p>
+<p>-v <i>VAR</i>=<i>VAL</i><br>
+–assign <i>VAR</i>=<i>VAL</i><br>
+Assign the variable <i>VAR</i> the value <i>VAL</i> before program execution<br>
+begins.</p>
+<p>-W traditional<br>
+-W compat<br>
+–traditional<br>
+–compat<br>
+Use compatibility mode, in which `gawk’ extensions are turned off.</p>
+<p>-W lint<br>
+–lint<br>
+Give warnings about dubious or non-portable awk constructs.</p>
+<p>-W lint-old<br>
+–lint-old<br>
+Warn about constructs that are not available in the original<br>
+Version 7 Unix version of awk.</p>
+<p>-W posix<br>
+–posix<br>
+Use POSIX compatibility mode, in which `gawk’ extensions are<br>
+turned off and additional restrictions apply.</p>
+<p>-W re-interval<br>
+–re-interval<br>
+Allow interval expressions, in regexps.</p>
+<p>-W source=<i>PROGRAM-TEXT</i><br>
+–source <i>PROGRAM-TEXT</i><br>
+Use PROGRAM-TEXT as awk program source code.  This option allows<br>
+mixing command line source code with source code from files, and is<br>
+particularly useful for mixing command line programs with library<br>
+functions.</p>
+<p>–<br>
+Signal the end of options.  This is useful to allow further<br>
+arguments to the awk program itself to start with a `-’.  This<br>
+is mainly for consistency with POSIX argument parsing conventions.</p>
+<p>'<i>Program</i>’<br>
+A series of patterns and actions: see below</p>
+<p><i>Input-File</i><br>
+If no Input-File is specified then awk applies the <i>Program</i> to<br>
+&quot;standard input&quot;, (piped output of some other command or the terminal.<br>
+Typed input will continue until end-of-file (typing `Control-d’)</p></pre><p></p>
+<p><b>Basic functions</b><br>
+  <br>
+The basic function of awk is to search files for lines (or other units of text) that contain a pattern. When a line matches, awk performs a specific action on that line.</p>
+<p>The <i>Program</i> statement that tells awk what to do; consists of a series of "rules". 
+  Each rule specifies one pattern to search for, and one action to perform when that pattern is found.<br>
+  <br>
+For ease of reading, each line in an awk program is normally a separate <i>Program </i>statement , like this:</p>
+<pre>     <i>pattern</i> { <i>action</i> }
+     <i>pattern</i> { <i>action</i> }
+     ...</pre>
+<p>e.g. Display lines from samplefile containing the string "123" or "abc" or "some text":</p>
+<pre>awk '/123/ { print $0 } 
+     /abc/ { print $0 }
+     /some text/ { print $0 }' samplefile</pre>
+<p>A regular expression enclosed in slashes (/) is an awk pattern that matches every input record whose text belongs to that set. e.g. the pattern /foo/ matches any input record containing the three characters `foo', *anywhere* in the record. </p>
+<p>awk patterns can be one of the following: </p>
+<pre><b>/</b>Regular Expression<b>/</b>        - Match =
+Pattern <b>&amp;&amp;</b> Pattern          - AND
+Pattern <b>||</b> Pattern          - OR
+<b>!</b> Pattern                   - NOT
+Pattern <b>?</b> Pattern <b>:</b> Pattern - If, Then, Else
+Pattern1<b>,</b> Pattern2          - Range Start - end
+<b>BEGIN</b>                       - Perform action BEFORE input file is read
+<b>END</b>                         - Perform action AFTER input file is read</pre>
+<p>The special patterns BEGIN and END can be used to capture control before the first input line is read and after the last. BEGIN and END do not combine with other patterns.<br>
+<br>
+Variable names with special meanings:</p>
+<pre>     CONVFMT  conversion  format  used  when  converting  numbers
+              (default %.6g)
+<pre><code> FS       regular  expression  used  to separate fields; also
+          settable by option -Ffs.
+
+ NF       number of fields in the current record
+
+ NR       ordinal number of the current record
+
+ FNR      ordinal number of the current record in the current
+          file
+
+ FILENAME the name of the current input file
+
+ RS       input record separator (default newline)
+
+ OFS      output field separator (default blank)
+
+ ORS      output record separator (default newline)
+
+ OFMT     output format for numbers (default %.6g)
+
+ SUBSEP   separates multiple subscripts (default 034)
+
+ ARGC     argument count, assignable
+
+ ARGV     argument  array,  assignable;  non-null members are
+          taken as filenames
+
+ ENVIRON  array  of  environment  variables;  subscripts  are
+          names.&lt;/pre&gt;
+</code></pre>
+<p>In addition to simple pattern matching awk has a huge range 
+of text and arithmetic Functions, Variables and Operators. </p>
+<p>`gawk' will ignore newlines after any of the following:</p>
+<pre>    , { ? : || &amp;&amp; do else</pre>
+<p> Comments - start with a `#', and continue to the end of the line:</p>
+<pre> # This program prints a nice friendly message</pre>
+<p><b>Examples</b></p>
+<p>From an <a href="ls.html">ls - l</a> listing, return the fifth item ($5) from each line of the output: </p>
+<p class="code">$ ls -l | awk '{print $5}' </p>
+<p>Print the Row Number (NR), then a dash and space <span class="code">("- "</span>) and then the first item ($1) from each line in samplefile.txt: </p>
+<p class="code">$ awk '{print NR "- " $1 }' samplefile.txt</p>
+<p>Print the first item ($1) and then the third last item<span class="code"> $(NF-2)</span> from each line in samplefile.txt: </p>
+<p class="code">$ awk '{print $1, $(NF-2) }' samplefile.txt</p>
+<p>Print every line that has at least one field. This is an easy way to delete blank lines from a file (or rather, to<br>
+create a new file similar to the old file but from which the blank lines have been deleted)</p>
+<pre> awk 'NF &gt; 0' data.txt</pre>
+<p>Comparison with <a href="grep.html">grep</a>:</p>
+<blockquote>
+<p>Running <span class="code">grep Dec</span> against the following file listing would return the 3 rows shown in bold as it matches text in different places: </p>
+<p><span class="code">-rw-r--r-- 7 simon simon 12043 Jan 31 09:36 <b>Dec</b>ember.pdf<br>
+-rw-r--r-- 3 simon simon 1024 <b>Dec</b> 01 11:59 README<br>
+-rw-r--r-- 3 simon simon 5096 Nov 14 18:22 <b>Dec</b>ision.txt </span></p>
+<p>Running <span class="code">awk '$6 == "Dec"'</span>against the same file listing, the relational operator $6 matches the exact field (column 6 = Month) so it will list only the December file:</p>
+<p class="code"> $ ls -l /tmp/demo | awk '$6 == "Dec"'</p>
+</blockquote>
+<p>Print the length of the longest input line: </p>
+<pre> awk '{ if (length($0) &gt; max) max = length($0) }
+      END { print max }' data
+</pre>
+<p>Print seven random numbers from zero to 100,
+inclusive:</p>
+<pre> awk 'BEGIN { for (i = 1; i &lt;= 7; i++)
+                print int(101 * rand()) }'
+</pre>
+<p>Print the total number of bytes used by <i>FILES</i>:</p>
+<pre> ls -lg <i>FILES</i> | awk '{ x += $5 } ; END { print "total bytes: " x }'
+</pre>
+<p>Print the average file size of all .PNG files within a directory:</p>
+<pre> ls -l *.png | gawk '{sum += $5; n++;} END {print sum/n;}' </pre>
+<p>  Print a sorted list of the login names of all users:</p>
+<pre> awk -F: '{ print $1 }' /etc/passwd | sort</pre>
+<p> Count the lines in a file:</p>
+<pre> awk 'END { print NR }' data</pre>
+<p>  Print the even numbered lines in the data file.  If you were to use the expression <span class="code">'NR % 2 == 1'</span> instead, it would
+print the odd numbered lines.</p>
+<pre> awk 'NR % 2 == 0' data</pre>
+<p><i class="quote">“Whenever faced with a problem, some people say `Lets use AWK.' Now, they have two problems” ~ D. Tilbrook (1988)</i><br>
+<br>
+<b>Related:</b></p>
+<p><a href="http://blog.bignerdranch.com/3799-a-crash-course-in-awk/" target="_blank" rel="external">A Crash Course In AWK</a> - Bill Phllips<br>
+<a href="http://www.cs.princeton.edu/courses/archive/spr08/cos333/awk.help" target="_blank" rel="external">AWK Help page</a> - Brian Kernighan<br>
+<a href="http://www.grymoire.com/Unix/Awk.html" target="_blank" rel="external">AWK tutorial and introduction</a> - Bruce Barnett <br>
+<a href="http://www.gnu.org/software/gawk/manual/gawk.html" target="_blank" rel="external">GNU Awk User Guide</a> - Full guide with examples<br>
+<a href="http://www.pement.org/awk/awk1line.txt" target="_blank" rel="external">awk one liners</a> - Eric Pement<br>
+<a href="http://www.catonmat.net/blog/awk-one-liners-explained-part-one/" target="_blank" rel="external">awk one liners explained</a> &amp; <a href="http://www.catonmat.net/blog/awk-one-liners-explained-part-two/" target="_blank" rel="external">pt2</a> - Peteris Krumin (CatOnMat.net)<br>
+<a href="http://gregable.com/2010/09/why-you-should-know-just-little-awk.html" target="_blank" rel="external">Gregable</a> - Why you should know just a little Awk<br>
+<a href="http://sparky.rice.edu/%7Ehartigan/awk.html" target="_blank" rel="external">Patrick Hartigan</a> - How to use awk<br>
+awk, <code>oawk', and </code>nawk' - Alternative, older and newer versions of awk<br>
+<a href="egrep.html">egrep</a> - egrep foo FILES ...is essentially the same as awk '/foo/' FILES ... <br>
+<a href="expr.html">expr</a> - Evaluate expressions<br>
+<a href="eval.html">eval</a> - Evaluate several commands/arguments<br>
+<a href="for.html">for</a> - Expand <var>words</var>, and execute <var>commands</var><br>
+<a href="grep.html">grep</a> - search file(s) for lines that match a given pattern 
+<br>
+<a href="m4.html">m4</a> - Macro processor <br>
+<a href="tr.html">tr</a> - Translate, squeeze, and/or delete characters <br>
+Equivalent Windows command: 
+<a href="../nt/for.html">FOR</a> - Conditionally perform a command several times.</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="awk.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/awk.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

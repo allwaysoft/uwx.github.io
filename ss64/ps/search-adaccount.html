@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Search-ADAccount 
+Get AD user, computer, or service accounts.
+Syntax
+       Search-ADAccount SearchSwitch
+          [-AuthType {Negotiate | Basic}] [-ComputersOnly] [-Credential PSCredential]">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/search-adaccount.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Search-ADAccount 
+Get AD user, computer, or service accounts.
+Syntax
+       Search-ADAccount SearchSwitch
+          [-AuthType {Negotiate | Basic}] [-ComputersOnly] [-Credential PSCredential]">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Search-ADAccount 
+Get AD user, computer, or service accounts.
+Syntax
+       Search-ADAccount SearchSwitch
+          [-AuthType {Negotiate | Basic}] [-ComputersOnly] [-Credential PSCredential]">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Search-ADAccount</h1> 
+<p>Get AD user, computer, or service accounts.</p>
+<pre>Syntax
+       Search-ADAccount <i>SearchSwitch</i>
+          [-AuthType {<u>Negotiate</u> | Basic}] [-ComputersOnly] [-Credential <i>PSCredential</i>]
+             [-ResultPageSize <i>int</i>] [-ResultSetSize <i>int</i>] [-SearchBase <i>string</i>]
+                [-SearchScope {Base | OneLevel | Subtree}] [-Server <i>string</i>]
+                   [-UsersOnly] [<i>CommonParameters</i>]
+<p>SearchSwitch:<br>
+-AccountDisabled<br>
+-AccountExpired<br>
+-AccountExpiring [-DateTime <i>DateTime</i>] [-TimeSpan <i>TimeSpan</i>]<br>
+-AccountInactive [-DateTime <i>DateTime</i>] [-TimeSpan <i>TimeSpan</i>]<br>
+-LockedOut<br>
+-PasswordExpired<br>
+-PasswordNeverExpires</p>
+<p>Key<br>
+-AccountDisabled<br>
+Search for accounts that are disabled.</p>
+<p>-AccountExpired<br>
+Search for accounts that are expired.<br>
+The ADAccount AccountExpirationDate property is set to a time in the past.<br>
+The LDAP Display Name is accountExpires</p>
+<p>-AccountExpiring [-DateTime <i>DateTime</i>] [-TimeSpan <i>TimeSpan</i>]<br>
+Search for accounts that are expiring.<br>
+To specify a time period, use the -TimeSpan parameter.<br>
+To specify a specific time, use the -DateTime parameter.</p>
+<pre><code>    Search for accounts that expire in the next 10 days:
+      -AccountExpiring -TimeSpan 10
+
+    Search for accounts that expire before June 18, 2015 at 2:00 AM:
+      -AccountExpiring -DateTime &quot;6/18/2015 2:00:00 AM&quot;
+</code></pre>
+<p>-AccountInactive [-DateTime <i>DateTime</i>] [-TimeSpan <i>TimeSpan</i>]<br>
+Search for accounts that have not logged in within a given time period<br>
+or since a specified time.  n.b. This requires the domain to be at<br>
+’Windows Server 2003 Domain’ Functional Level.</p>
+<pre><code>    Search for accounts that have been inactive for the past 10 days:
+      -AccountInactive -TimeSpan 10
+
+    Search for accounts that have been inactive since July 16, 2010 at 12:00 AM.
+      -AccountInactive -DateTime &quot;7/16/2010&quot;
+</code></pre>
+<p>-AuthType {<u>Negotiate</u> | Basic}<br>
+The authentication method to use: Negotiate (or 0), Basic (or 1)<br>
+A Secure Sockets Layer (SSL) connection is required for Basic authentication.</p>
+<p>-ComputersOnly<br>
+Search only for computer accounts.</p>
+<p>-Credential <i>PSCredential</i><br>
+The user account credentials to use to perform this task.<br>
+The default credentials are those of the currently logged on user unless the<br>
+cmdlet is run from an Active Directory PowerShell provider drive.<br>
+If the cmdlet is run from such a provider drive, the account associated with the drive is the default.</p>
+<pre><code>   Type a user name, such as &quot;User64&quot; or &quot;Domain64\User64&quot; or specify a
+   PSCredential object such as one generated by &lt;a href=&quot;get-credential.html&quot;&gt;Get-Credential&lt;/a&gt; 
+
+   If a user name is specified, the cmdlet will prompt for a password.
+</code></pre>
+<p>-DateTime <i>DateTime</i><br>
+Specifies a distinct time value for parameters such as -AccountExpiring,<br>
+-AccountInactive, and -PasswordExpiring.</p>
+<pre><code>    Time is assumed to be in local time unless otherwise specified.
+    When a time value is not specified, the time is assumed to midnight local time.
+    When a date is not specified, the date is assumed to be the current date.
+    Examples
+      &quot;2:22 PM&quot;
+      &quot;2:22:48 PM&quot;
+      &quot;4/12/2010&quot;
+      &quot;4/12/2010 2:22 PM&quot;
+      &quot;Monday, April 12, 2010&quot;
+      &quot;Monday, April 12, 2010 2:22:48 PM&quot;
+      &quot;Monday, April 12, 2010 2:22 PM&quot;
+    Greenwich Mean Time (GMT) /RFC1123 standard:
+      &quot;Mon, 12 Apr 2010 21:22:48 GMT&quot;
+    Coordinated Universal Time (UTC):
+      &quot;2010-04-12T14:22:48.0000000&quot; 
+</code></pre>
+<p>-LockedOut<br>
+Search for accounts that are locked out.</p>
+<p>-PasswordExpired<br>
+Search for accounts that have an expired password.</p>
+<p>-PasswordNeverExpires<br>
+Search for accounts that have a password that does not expire.</p>
+<p>-ResultPageSize <i>int</i><br>
+The number of objects to include in one page for an AD Domain Services query.<br>
+The default is 256 objects per page.</p>
+<p>-PassThru <i>switch</i><br>
+Return the new or modified object.<br>
+By default (i.e. if -PassThru is not specified), this cmdlet<br>
+does not generate any output.</p>
+<p>-ResultSetSize <i>int</i><br>
+The maximum number of objects to return for an AD Domain Services query.<br>
+The default is $null (receive all objects)<br>
+Ctrl+c will stop a running query and return of objects.</p>
+<p>-SearchBase <i>string</i><br>
+An Active Directory path to search under.</p>
+<pre><code>   When a cmdlet is run from an AD provider drive, the default path is
+   the current path of the drive.
+   Otherwise the default naming context is used (see help for details.
+</code></pre>
+<p>-SearchScope <i>ADSearchScope</i><br>
+The scope of an AD search.<br>
+Possible values for this parameter are:<br>
+Base or 0       Search only the current path or object<br>
+OneLevel or 1   Search the immediate children of Base<br>
+Subtree or 2    Search the current path or object and all children</p>
+<p>-Server <i>string</i><br>
+The AD Domain Services instance to connect to, this may be a Fully qualified domain name,<br>
+NetBIOS name, Fully qualified directory server name (with or without port number)</p>
+<p>-TimeSpan <i>TimeSpan</i><br>
+A time interval.<br>
+This parameter is used to specify a time value for parameters such as AccountExpiring.</p>
+<pre><code>   Format:
+       [-]D.H:M:S.F
+        where:
+          D = Days (0 to 10675199)
+          H = Hours (0 to 23)
+          M = Minutes (0 to 59)
+          S = Seconds (0 to 59)
+          F= Fractions of a second (0 to 9999999)
+
+    Note: Time values must be between -10675199:02:48:05.4775808 and 10675199:02:48:05.4775807
+
+    Examples:
+      Set the time to 2 days
+        -TimeSpan &quot;2&quot;
+      Set the time span to the previous 2 days
+       -TimeSpan &quot;-2&quot;
+      Set the time to 4 hours
+        -TimeSpan &quot;4:00&quot;
+</code></pre>
+<p>-UsersOnly<br>
+Search for user accounts only.</p>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>Search-ADAccount  retrieves one or more user, computer, or service accounts that meet the criteria specified by the parameters. Search criteria include account and password status.<br>
+<br>Some  parameters, such as <span class="code">-AccountExpiring</span> and <span class="code">-AccountInactive</span> use a default time that you can modify, <span class="code">-DateTime</span> specifies a distinct time or <span class="code">-TimeSpan </span>specifies a time range from the current time. </p>
+<p>For example, to search for all accounts that expire in 14 days, specify  <span class="code">-AccountExpiring</span> and <span class="code">-TimeSpan</span>  and set the value of TimeSpan to "14.00:00:00". To search for all accounts that expire before December 31, 2012, set the <span class="code">-DateTime</span> parameter to "12/31/2012".</p>
+<p><b>Examples</b></p>
+<p>Find all users, computers and service accounts that are disabled:</p>
+<p><span class="code">PS C:\&gt; Search-ADAccount -AccountDisabled | <a href="format-table.html">Format-Table</a> Name,ObjectClass -A</span></p>
+<p>Find all users that are disabled:</p>
+<p><span class="code">PS C:\&gt; Search-ADAccount -AccountDisabled -UsersOnly | <a href="format-table.html">Format-Table</a> Name,ObjectClass -A</span></p>
+<p>Find all accounts where the password has expired: </p>
+<p><span class="code">PS C:\&gt; Search-ADAccount -PasswordExpired | <a href="format-table.html">Format-Table</a> Name,ObjectClass -A</span></p>
+<p>Find all accounts that have been inactive for the last 90 days: </p>
+<p><span class="code">PS C:\&gt; Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00 | <a href="format-table.html">Format-Table</a> Name,ObjectClass -A</span></p>
+<p class="quote"><i> “Anything that excites me for any reason, I will photograph; not searching for unusual subject matter, but making the commonplace unusual” ~ Edward Weston</i></p>
+<p><b>Related:</b></p>
+<p><a href="disable-adaccount.html">Disable-ADAccount</a> - Disable an Active Directory account. <br>
+<a href="new-aduser.html">New-ADUser</a> -  Create a new AD user<br>
+<a href="unlock-adaccount.html">Unlock-ADAccount</a> - Unlock an Active Directory account.</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="search-adaccount.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/search-adaccount.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

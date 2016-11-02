@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PATHPING
+Trace route and provide network latency and packet loss for each router and link in the path. Combines the functionality of PING and TRACERT.
+Syntax
+      PATHPING [-n] [-h max_hops] [-g host">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/nt/pathping.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="PATHPING
+Trace route and provide network latency and packet loss for each router and link in the path. Combines the functionality of PING and TRACERT.
+Syntax
+      PATHPING [-n] [-h max_hops] [-g host">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:52.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="PATHPING
+Trace route and provide network latency and packet loss for each router and link in the path. Combines the functionality of PING and TRACERT.
+Syntax
+      PATHPING [-n] [-h max_hops] [-g host">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_nt.lbi" --><!-- #EndLibraryItem --><h1>PATHPING</h1>
+<p>Trace route and provide network latency and packet loss for each router and link in the path. Combines the functionality of PING and TRACERT.</p>
+<pre>Syntax
+      PATHPING [-n] [-h <i>max_hops</i>] [-g <i>host_list</i>] [-p <i>period</i>]
+         [-q <i>num_queries</i>] [-w <i>timeout</i>] [-i <i>IPAddress</i>] [-4 ] [-6 ][TargetName]
+<p>Key<br>
+-g <i>host_list</i> - Loose source route along host-list.<br>
+-h <i>max_hops </i> - Maximum number of hops to search for target.<br>
+-i <i>address</i>   - Use the specified source address.<br>
+-n           - Do not resolve addresses to hostnames.<br>
+-p <i>period</i>    - Wait <i>period </i>milliseconds between pings.<br>
+-q <i>num_queries </i>- Number of queries per hop.<br>
+-w <i>timeout</i>   - Wait <i>timeout </i>milliseconds for each reply.<br>
+-P    - Test for RSVP PATH connectivity.<br>
+-R    - Test if each hop is RSVP aware.<br>
+-T    - Test connectivity to each hop with Layer-2 priority tags.<br>
+-4    - Force using IPv4.<br>
+-6    - Force using IPv6.</p>
+</pre>
+<p>PathPing is invaluable for determining which routers or subnets are having network problems - it displays the degree of packet loss at any given router or link.</p>
+<p>Pathping sends multiple Echo Request messages to each router between a source and destination over a period of time and computes aggregate results based on the packets returned from each router. </p>
+<p>Pathping performs the equivalent of the tracert command by identifying which routers are on the path. </p>
+<p>To avoid network congestion and to minimize the effect of burst losses, pings should be sent at a sufficiently slow pace (not too frequently.) </p>
+<p>When  -p is specified, pings are sent individually to each intermediate hop. When  -w is specified, multiple pings can be sent in parallel. It's therefore possible to choose a <i>Timeout</i> parameter that is less than the wait <i>Period</i> * Number of hops.</p>
+<p><b>Firewalls<br>
+</b>Like tracert PathPing uses  Internet Control Message Protocol (ICMP) over TCP/IP. Many firewalls will block ICMP traffic by default. If an attacker is able to forge ICMP redirect packets, he or she can alter the routing tables on the host and possibly subvert the security of the host by causing traffic to flow via a path you didn't intend.</p>
+<p class="quote"><i>"The path changes, so too must the traveler" ~ Tarek Verena</i></p>
+<p><b>Related:</b><br>
+  <br>
+  <a href="browstat.html">BROWSTAT</a> - Get domain, browser and PDC info<br>
+  <a href="ipconfig.html">IPCONFIG</a> - IP Configuration<br>
+  <a href="netstat.html">NETSTAT</a> - Display networking statistics (TCP/IP) 
+  <br>
+  <a href="ping.html">PING</a> - Test a network connection<br>
+  <a href="tracert.html">TRACERT</a> - Trace route to a remote host<br>
+  Equivalent bash command (Linux): <a href="../bash/mtr.html">mtr</a> - Network diagnostics (traceroute/ping)</p><!-- #BeginLibraryItem "/Library/foot_nt.lbi" --><p>
+<!-- windows300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="7649547908"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="pathping.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/nt/pathping.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ANALYZE Statement  
+Update  statistics. 
+  Now superceeded by GATHER_SCHEMA_STATS  
+  
+  Syntax:
+   ANALYZE TABLE tablename COMPUTE|ESTIMATE|DELETE STATISTICS ptnOption options
+   ANALYZE INDEX indexn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/analyze.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ANALYZE Statement  
+Update  statistics. 
+  Now superceeded by GATHER_SCHEMA_STATS  
+  
+  Syntax:
+   ANALYZE TABLE tablename COMPUTE|ESTIMATE|DELETE STATISTICS ptnOption options
+   ANALYZE INDEX indexn">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:28.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ANALYZE Statement  
+Update  statistics. 
+  Now superceeded by GATHER_SCHEMA_STATS  
+  
+  Syntax:
+   ANALYZE TABLE tablename COMPUTE|ESTIMATE|DELETE STATISTICS ptnOption options
+   ANALYZE INDEX indexn">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>ANALYZE Statement </h1> 
+<p>Update  statistics. <br>
+  Now superceeded by <a href="../orap/DBMS_STATS.html">GATHER_SCHEMA_STATS</a>  <br>
+  <br>
+  Syntax:</p>
+<pre>   ANALYZE TABLE <i>tablename</i> COMPUTE|ESTIMATE|DELETE STATISTICS <i>ptnOption</i> <i>options</i>
+   ANALYZE INDEX <i>indexname</i> COMPUTE|ESTIMATE|DELETE STATISTICS <i>ptnOption options</i><br>   ANALYZE CLUSTER <i>clustername</i> COMPUTE|ESTIMATE|DELETE STATISTICS <i>options</i>
+<p><i>ptnOption</i><br>
+PARTITION (partion)<br>
+SUBPARTITION (<i>subpartition</i>)</p>
+<p><i>options</i><br>
+VALIDATE STRUCTURE [CASCADE] [INTO <i>tablename</i>]<br>
+LIST CHAINED ROWS [INTO <i>tablename</i>]<br>
+COMPUTE|ESTIMATE STATISTICS FOR TABLE<br>
+COMPUTE|ESTIMATE STATISTICS FOR ALL COLUMNS<br>
+COMPUTE|ESTIMATE STATISTICS FOR ALL INDEXED COLUMNS<br>
+COMPUTE|ESTIMATE STATISTICS FOR COLUMNS [SIZE <i>int</i>] column [SIZE <i>int</i>]</p>
+<p>When Estimating statistics you can optionally<br>
+specify a sample:<br>
+…ESTIMATE STATISTICS SAMPLE <i>n</i> ROWS<br>
+…ESTIMATE STATISTICS SAMPLE <i>n</i> PERCENT</p></pre><p></p>
+<p>Validate structure will perform an integrity check - and will therefore lock the table/index/cluster while it is running.<br><br>
+If the INTO clause is used to store a list of chained rows in a table - the default tablename is CHAINED_ROWS</p>
+<p> UTLCHAIN.sql - creates the chained_rows table<br><br>
+The ANALYZE command is available for all versions of Oracle, however to obtain faster and better statistics use the procedures supplied - in 7.3.4 and 8.0 
+<a href="../orap/DBMS_UTILITY.html">DBMS_UTILITY.ANALYZE_SCHEMA</a>, and in 8i and above - <a href="../orap/DBMS_STATS.html">DBMS_STATS.GATHER_SCHEMA_STATS</a><br>
+<br>
+<i class="quote">"50% of the population has a below average understanding of statistics." ~ Anon</i><br>
+<br>
+<b>Related:</b></p>
+<p><a href="../orap/DBMS_UTILITY.html">DBMS_UTILITY.ANALYZE_SCHEMA</a><br>
+<a href="../orap/DBMS_STATS.html">DBMS_STATS.GATHER_SCHEMA_STATS</a> <br>
+<a href="../orap/DBMS_DDL.html">DBMS_DDL</a> - compile/analyze objects <br>
+<a href="../orap/DBMS_IOT.html">DBMS_IOT</a>.BUILD_CHAIN_ROWS_TABLE <br>
+<br>
+<a href="explain.html">EXPLAIN PLAN</a><br>
+STATISTICS - <a href="stats_assoc.html">ASSOCIATE STATISTICS</a> <br>
+STATISTICS - <a href="stats_dis.html">DISASSOCIATE STATISTICS</a></p>
+<pre>&nbsp;<a href="../orad/INDEX_STATS.html">INDEX_STATS</a>
+ <a href="../orad/DBA_PART_COL_STATISTICS.html">DBA_PART_COL_STATISTICS</a>&nbsp;<a href="../orad/ALL_PART_COL_STATISTICS.html">ALL_PART_COL_STATISTICS</a> <a href="../orad/USER_PART_COL_STATISTICS.html">USER_PART_COL_STATISTICS</a> 
+ <a href="../orad/DBA_TAB_COL_STATISTICS.html">DBA_TAB_COL_STATISTICS</a>&nbsp;&nbsp;<a href="../orad/ALL_TAB_COL_STATISTICS.html">ALL_TAB_COL_STATISTICS</a>  <a href="../orad/USER_TAB_COL_STATISTICS.html">USER_TAB_COL_STATISTICS</a> 
+ <a href="../orad/DBA_USTATS.html">DBA_USTATS</a>              <a href="../orad/ALL_USTATS.html">ALL_USTATS</a>              <a href="../orad/USER_USTATS.html">USER_USTATS</a> 
+ <a href="../orav/V$BUFFER_POOL_STATISTICS.html">V$BUFFER_POOL_STATISTICS</a></pre>
+<p>Equivalent SQL Server command:
+<a href="../sql/stats_c.html">CREATE STATISTICS </a><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --></p><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/analyze.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

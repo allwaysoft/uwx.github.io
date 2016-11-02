@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Set-StrictMode 
+Establish and enforce coding rules in expressions, scripts, and script blocks.
+Syntax
+      Set-StrictMode -Off [CommonParameters]
+  Set-StrictMode -Version &amp;lt;i&amp;gt;Version&amp;lt;/i&amp;gt;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ps/set-strictmode.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Set-StrictMode 
+Establish and enforce coding rules in expressions, scripts, and script blocks.
+Syntax
+      Set-StrictMode -Off [CommonParameters]
+  Set-StrictMode -Version &amp;lt;i&amp;gt;Version&amp;lt;/i&amp;gt;">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:00:38.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Set-StrictMode 
+Establish and enforce coding rules in expressions, scripts, and script blocks.
+Syntax
+      Set-StrictMode -Off [CommonParameters]
+  Set-StrictMode -Version &amp;lt;i&amp;gt;Version&amp;lt;/i&amp;gt;">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ps.lbi" --><!-- #EndLibraryItem --><h1>Set-StrictMode</h1> 
+<p>Establish and enforce coding rules in expressions, scripts, and script blocks.</p>
+<pre>Syntax
+      Set-StrictMode -Off [<i>CommonParameters</i>]
+<pre><code>  Set-StrictMode -Version &lt;i&gt;Version&lt;/i&gt; [&lt;i&gt;CommonParameters&lt;/i&gt;]
+</code></pre>
+<p>Key<br>
+-Off<br>
+Turn strict mode off.<br>
+This parameter also turns off “<a href="set-psdebug.html">Set-PSDebug</a> -Strict”.</p>
+<pre><code>-Version &lt;i&gt;Version&lt;/i&gt;
+   The conditions that cause an error in strict mode. (Required)
+
+   valid values:
+
+    1.0        Prohibit references to uninitialized variables,
+               except for uninitialized variables in strings.
+
+    2.0        Prohibit references to uninitialized variables (including uninitialized variables in strings).
+               Prohibit references to non-existent properties of an object.
+               Prohibit function calls that use the syntax for calling methods.
+               Prohibit a variable without a name (${}).
+    
+    Latest     Select the latest (most strict) version available.
+               Use this value to assure that scripts use the strictest
+               available version, even when new versions are added to PowerShell.
+</code></pre>
+<p><a href="common.html">CommonParameters</a>:<br>
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,<br>
+-OutBuffer -OutVariable.</p></pre><p></p>
+<p>With strictmode set to 2.0 calling a <a href="syntax-functions.html">function</a> with <span class="code">myfunct(2,4)</span> instead of the correct <span class="code">myfunct 2 4</span> will throw an error "<i>The function or command was called like a method. Parameters should be separated by spaces</i>"</p>
+<p><b>Examples</b></p>
+<p>Turn strict mode on and set it to version 1.0:</p>
+<p><span class="code">PS C:\&gt; set-strictmode -version 1.0<br>
+<br>
+C:\PS&gt; $a -gt 5<br>
+False<br>
+The variable $a cannot be retrieved because it has not been set yet.<br>
+At line:1 char:3</span></p>
+<p>  Turn off strictmode (this is the default):</p>
+<p class="code">PS C:\&gt; set-strictmode -off</p>
+<p class="quote"><i>“You are already of consequence in the world if you are known as a man of strict integrity” ~ Grenville Kleiser</i></p>
+<p><b>Related:</b></p>
+<p> <a href="set-psdebug.html">Set-PSdebug</a> - Turn script debugging on or off<br>
+Equivalent bash command: <a href="../bash/cd.html">cd</a> - Change Directory</p><!-- #BeginLibraryItem "/Library/foot_ps.lbi" --><p>
+<!-- PowerShell300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="6253539900"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="set-strictmode.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2015<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ps/set-strictmode.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

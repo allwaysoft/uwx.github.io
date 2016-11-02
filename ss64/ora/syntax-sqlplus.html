@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SQL*Plus commands 
+ The following commands can be issued in SQL*Plus (in addition to the standard 
+SQL commands.)
+   @pathname   Run (START) an SQL Script
+               @MyScript.sql parameter1 param">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/syntax-sqlplus.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="SQL*Plus commands 
+ The following commands can be issued in SQL*Plus (in addition to the standard 
+SQL commands.)
+   @pathname   Run (START) an SQL Script
+               @MyScript.sql parameter1 param">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:32.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="SQL*Plus commands 
+ The following commands can be issued in SQL*Plus (in addition to the standard 
+SQL commands.)
+   @pathname   Run (START) an SQL Script
+               @MyScript.sql parameter1 param">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_orasyntax.lbi" --><!-- #EndLibraryItem --><h1>SQL*Plus commands</h1> 
+<p> The following commands can be issued in SQL*Plus (in addition to the standard 
+<a href="index.html">SQL</a> commands.)</p>
+<pre>   @<i>pathname</i>   Run (<a href="syntax-sqlplus-start.html">START</a>) an SQL Script
+               @MyScript.sql parameter1 parameter2 parameter3 
+               In the SQL-Script, refer to the parameters as &amp;1, &amp;2, and &amp;3.
+               @<i>ScriptName</i>.sql will call sub-scripts from the current working directory of SQL*Plus.
+               @<i>C:\work\oracle\ScriptName</i>.sql will call a sub-script from a specific directory.
+<p>@@<i>pathname</i>  Run (<a href="syntax-sqlplus-start.html">START</a>) an SQL Script<br>
+@@ will call a sub-script from the same directory as the main script.</p>
+<p>&amp;<i>variable</i>   A substitution <a href="syntax-variables.html">variable</a></p>
+<p>&amp;&amp;<i>variable</i>  A substitution <a href="syntax-variables.html">variable</a> valid for the session.</p>
+<p>/           Execute (or re-execute) commands in the SQL*Plus buffer<br>
+does not list commands before running.</p>
+<p>ACCEPT      User input<br>
+ACC[EPT] <a href="syntax-variables.html">variable</a> [NUM[BER]|CHAR|DATE] [FORMAT <a href="syntax-sqlplus-fmt.html">format</a>]<br>
+[DEFAULT default] [PROMPT text|NOPROMPT] [HIDE]</p>
+<p>APPEND      Add text to the end of the current line in the buffer.<br>
+A[PPEND] text_to_add</p>
+<p>BREAK       Specify where and how formatting will change.<br>
+BREAK ON {column|expr|ROW|REPORT} action</p>
+<p>BTITLE      Place and format a title at the bottom of each page.<br>
+BTITLE printspec [text|variable]<br>
+BTITLE [OFF|ON]</p>
+<p>CHANGE      Change text on the current line (change what you just typed.)<br>
+C /oldval/newval</p>
+<p>CLEAR       Clear the SQL*Plus screen and the screen buffer.<br>
+CLEAR {BREAKS|BUFFER|COLUMNS|COMPUTES|SCREEN|SQL TIMING}</p>
+<p><a href="syntax-sqlplus-col.html">COLUMN</a>      Change display width of a column.</p>
+<p><a href="syntax-sqlplus-compute.html">COMPUTE</a>     Calculate and display totals.</p>
+<p><a href="connect.html">CONNECT</a>     Connect to a database as a specified user:<br>
+connect username/password@SID</p>
+<p><a href="syntax-sqlplus-copy.html">COPY</a>        Copy data from a query into a table (local or remote)</p>
+<p>DEFINE      User <a href="syntax-variables.html">variables</a>:<br>
+DEFINE <i>varName</i> = <i>String</i></p>
+<pre><code>           Display a user variable:
+              DEFINE &lt;i&gt;varName&lt;/i&gt;
+
+           Display all variables:
+              DEFINE
+</code></pre>
+<p>DEL         Delete the current line in the SQL buffer.</p>
+<p>DESC[RIBE]  Describe a table, column, view, synonym, function<br>
+procedure, package or package contents.</p>
+<p>DISCONNECT  Logoff (but don’t exit)</p>
+<p><a href="syntax-sqlplus-edit.html">EDIT</a>        Load the SQL*Plus buffer into an editor.<br>
+By default, saves the file to AFIEDT.BUF</p>
+<p><a href="exec.html">EXECUTE</a>     Run a single PLSQL statement<br>
+EXEC :answer := EMP_PAY.BONUS(‘SMITH’)</p>
+<p>EXIT [n]    Commit, logoff and exit (n = error code)<br>
+EXIT SQL.SQLCODE</p>
+<p>GET <i>file</i>    Retrieve a previously stored command file.</p>
+<p>HELP topic  Topic is an SQL PLUS command or HELP COMMANDS</p>
+<p>HOST        Execute a host operating system command.<br>
+HOST CD scripts</p>
+<p>INPUT       Edit sql buffer - add line(s) to the buffer.</p>
+<p>LIST <i>n m</i>    Edit sql buffer - display buffer lines <i>n</i> to <i>m</i><br>
+For all lines - specify <i>m</i> as LAST</p>
+<p>PAUSE <i>message</i>   Wait for the user to hit RETURN.</p>
+<p>PRINT <i>variable</i>  List the value of a bind variable or REF Cursor (see VARIABLE / SHOW)</p>
+<p>PROMPT <i>message</i>  Echo a message to the screen.</p>
+<p><a href="syntax-sqlplus-remark.html">REMARK</a>      REMARK comment or --comment--  or /* comment */</p>
+<p>RUN         Execute (or re-execute) commands in the SQL*Plus buffer<br>
+Lists the commands before running.</p>
+<p>RUNFORM     Run a SQL*Forms application.</p>
+<p>SAVE <i>file</i>   Save the contents of the SQL*Plus buffer in a command file.<br>
+SAVE <i>file</i> [CRE[ATE] | REP[LACE] | APP[END]]</p>
+<p><a href="syntax-sqlplus-set.html">SET</a>         Display or change SQL*Plus settings.</p>
+<p>SHOW        List the value of a system variable (see PRINT)</p>
+<p><a href="shutdown.html">SHUTDOWN</a> [ABORT|IMMEDIATE|NORMAL|TRANSACTIONAL]</p>
+<p>SPOOL <i>file</i>  Store query results in <i>file</i></p>
+<p>SPOOL OFF   Turn off spooling<br>
+SPOOL OUT sends file to printer</p>
+<p><a href="connect.html">SQLPLUS</a>     Start SQL*Plus and connect to a database.</p>
+<p><a href="syntax-sqlplus-start.html">STA[RT]</a>     Run an SQL Script (see @)</p>
+<p><a href="startup.html">STARTUP</a> [NoMOUNT|MOUNT|OPEN]</p>
+<p>TIMING      Record timing data TIMING {START | SHOW | STOP}<br>
+see CLEAR TIMING</p>
+<p>TTITLE      Define a page title</p>
+<p>UNDEFINE    Delete a user/substitution variable  UNDEFINE <i>varName</i> (see DEFINE)</p>
+<p>VARIABLE    Define a bind <a href="syntax-variables.html">variable</a> (Can be used in both SQLPlus and PL/SQL)<br>
+VAR[IABLE] [<i>variable</i> {NUMBER|CHAR|CHAR(<i>n</i>)|REFCURSOR}]</p>
+<pre><code>           A RefCursor bind variable can be used to reference PL/SQL cursor variables in stored procedures.
+           PRINT myRefCursor
+           EXECUTE somePackage.someProcedure(:myRefCursor)
+
+           VARIABLE on its own will display the definitions made.
+</code></pre>
+<p>WHENEVER OSERROR   Exit if an OS error occurs</p>
+<p>WHENEVER SQLERROR  Exit if an SQL or PLSQL error occurs</p></pre><p></p>
+<p>SQL*Plus Prompt:</p>
+<p>To display the currently connected UserName and SID, instead of just SQL&gt;<br>
+<span class="code">SET sqlprompt '&amp;_user:&amp;_connect_identifier &gt; '</span><br>
+Add the line above to the file: $ORACLE_SID/sqlplus/admin/glogin.sql 
+(this tip requires Oracle 10g or greater) </p>
+<p class="quote"><i>“Client Servers were a tremendous mistake and we are sorry that we sold it to you. Instead of applications running on the desktop and data sitting on the server, everything will be Internet based” ~ Larry 
+  Ellison, CEO, Oracle Corp.</i> </p>
+<p><b>Related:</b></p>
+<p><a href="syntax-sqlplus-edit.html">Editing SQL scripts in SQL*Plus</a><br>
+<a href="http://www.sql-plus.com/" target="_blank" rel="external">SQL-Plus.com</a> - SQL*Plus Tutorial
+</p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="syntax-sqlplus.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/syntax-sqlplus.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

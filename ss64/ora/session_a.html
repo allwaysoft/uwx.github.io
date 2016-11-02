@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ALTER SESSION 
+Modify the current user session.
+  
+  Syntax:
+   ALTER SESSION ADVISE {COMMIT | ROLLBACK | NOTHING}
+   ALTER SESSION CLOSE DATABASE LINK link_name
+   ALTER SESSION {ENABLE | DISABLE} CO">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/ora/session_a.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="ALTER SESSION 
+Modify the current user session.
+  
+  Syntax:
+   ALTER SESSION ADVISE {COMMIT | ROLLBACK | NOTHING}
+   ALTER SESSION CLOSE DATABASE LINK link_name
+   ALTER SESSION {ENABLE | DISABLE} CO">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:02:31.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="ALTER SESSION 
+Modify the current user session.
+  
+  Syntax:
+   ALTER SESSION ADVISE {COMMIT | ROLLBACK | NOTHING}
+   ALTER SESSION CLOSE DATABASE LINK link_name
+   ALTER SESSION {ENABLE | DISABLE} CO">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_ora.lbi" --><!-- #EndLibraryItem --><h1>ALTER SESSION</h1> 
+<p>Modify the current user session.<br>
+  <br>
+  Syntax:</p>
+<pre>   ALTER SESSION ADVISE {COMMIT | ROLLBACK | NOTHING}
+   ALTER SESSION CLOSE DATABASE LINK <i>link_name</i>
+   ALTER SESSION {ENABLE | DISABLE} COMMIT IN PROCEDURE
+   ALTER SESSION {ENABLE | DISABLE | FORCE} PARALLEL {DML|DDL|QUERY} [PARALLEL <i>int</i>]
+   ALTER SESSION ENABLE RESUMABLE {TIMEOUT <i>int</i>} {NAME<i> string</i>}
+   ALTER SESSION DISABLE RESUMABLE
+   ALTER SESSION SET <i>option(s)</i> [COMMENT='<i>text</i>']
+<p>Options:<br>
+CONSTRAINT[S] {IMMEDIATE|DEFERRED|DEFAULT}<br>
+<span class="style3">CREATE_STORED_OUTLINES</span> = {TRUE | FALSE| <i>‘category_name’</i> }<br>
+<span class="style3">CURRENT_SCHEMA</span> = <i>schema</i><br>
+CURSOR_SHARING = {FORCE | EXACT}</p>
+<p>DB_BLOCK_CHECKING = {TRUE | FALSE}<br>
+DB_CREATE_FILE_DEST = <i>directory</i><br>
+DB_CREATE_ONLINE_LOG_DEST<i>_N</i> = <i>directory</i><br>
+DB_FILE_MULTIBLOCK_READ_COUNT = <i>int</i></p>
+<p><span class="style3">ERROR_ON_OVERLAP_TIME</span> = {TRUE | FALSE}</p>
+<p>FILESYSTEMIO_OPTIONS = {none | setall | directIO | asynch}<br>
+<span class="style3">FLAGGER</span> = {ENTRY | INTERMEDIATE | FULL | <u>OFF</u>}</p>
+<p>GLOBAL_NAMES = {TRUE | FALSE}</p>
+<p>HASH_AREA_SIZE = <i>int</i><br>
+HASH_JOIN_ENABLED = {TRUE | FALSE}</p>
+<p><span class="style3">INSTANCE</span> = <i>int</i><br>
+<span class="style3">ISOLATION_LEVEL</span> = {SERIALIZABLE | READ_COMMITTED}</p>
+<p>LOG_ARCHIVE_DEST_<i>n</i> (read the Oracle8i Reference for more on this)<br>
+LOG_ARCHIVE_DEST_STATE_<i>n</i> = {ENABLE | DEFER}<br>
+LOG_ARCHIVE_MIN_SUCCEED_DEST = <i>int</i></p>
+<p>MAX_DUMP_FILE_SIZE = { <i>size</i> | UNLIMITED }</p>
+<p>NLS_CALENDAR = 'text’<br>
+NLS_COMP = 'text’<br>
+NLS_CURRENCY = 'text’<br>
+NLS_DATE_FORMAT = '<a href="syntax-fmt.html">fmt</a>’<br>
+NLS_DATE_LANGUAGE = <a href="syntax-nls.html">language</a><br>
+NLS_DUAL_CURRENCY = 'text’<br>
+NLS_ISO_CURRENCY = <a href="syntax-nls.html">territory</a><br>
+NLS_LANGUAGE = <i>language</i><br>
+NLS_LENGTH_SEMANTICS = {CHAR | <u>BYTE</u>}<br>
+NLS_NCHAR_CONV_EXCP = {TRUE | <u>FALSE</u>}<br>
+NLS_NUMERIC_CHARACTERS = 'text’<br>
+NLS_SORT = {sort | BINARY}<br>
+NLS_TERRITORY = <a href="syntax-nls.html">territory</a><br>
+NLS_TIMESTAMP_FORMAT = &quot;<i>datetime_format</i>&quot;<br>
+NLS_TIMESTAMP_TZ_FORMAT = “<i>datetime_format</i>”</p>
+<p>OBJECT_CACHE_MAX_SIZE_PERCENT = <i>int</i><br>
+OBJECT_CACHE_OPTIMAL_SIZE = <i>int</i><br>
+OLAP_PAGE_POOL_SIZE = <i>int</i><br>
+OPTIMIZER_DYNAMIC_SAMPLING = <i>int</i><br>
+OPTIMIZER_INDEX_CACHING = <i>int</i><br>
+OPTIMIZER_INDEX_COST_ADJ = <i>int</i><br>
+OPTIMIZER_MAX_PERMUTATIONS = <i>int</i><br>
+OPTIMIZER_MODE = {ALL_ROWS | FIRST_ROWS | RULE | CHOOSE}<br>
+ORACLE_TRACE_ENABLE = {TRUE | <u>FALSE</u>}</p>
+<p>PARALLEL_INSTANCE_GROUP = ’ <i>text</i> '<br>
+PARALLEL_MIN_PERCENT = <i>int</i><br>
+PARTITION_VIEW_ENABLED = {TRUE | FALSE}<br>
+PLSQL_COMPILER_FLAGS = {[DEBUG | <u>NON_DEBUG</u>], [<u>INTERPRETED</u> | NATIVE] }<br>
+<span class="style3">PLSQL_DEBUG</span> = {TRUE | FALSE}</p>
+<p>QUERY_REWRITE_ENABLED = {FORCE | TRUE | <u>FALSE</u>}<br>
+QUERY_REWRITE_INTEGRITY = {<u>enforced</u> | trusted | stale_tolerated}</p>
+<p>REMOTE_DEPENDENCIES_MODE = {<u>TIMESTAMP</u> | SIGNATURE}</p>
+<p>SESSION_CACHED_CURSORS = <i>int</i><br>
+<span class="style3">SKIP_UNUSABLE_INDEXES</span> = {TRUE | FALSE}<br>
+SORT_AREA_RETAINED_SIZE = <i>int</i><br>
+SORT_AREA_SIZE = <i>integer</i><br>
+SORT_MULTIBLOCK_READ_COUNT = <i>int</i><br>
+<span class="style3">SQL_TRACE</span> = {TRUE | <u>FALSE</u>}<br>
+STAR_TRANSFORMATION_ENABLED = {TRUE | <u>FALSE</u> | TEMP_DISABLE}<br>
+STATISTICS_LEVEL = {ALL | <u>TYPICAL</u> | BASIC}</p>
+<p>TIMED_OS_STATISTICS = <i>int</i><br>
+TIMED_STATISTICS = {TRUE | FALSE}<br>
+TRACE_ENABLED = {<u>TRUE</u> | FALSE}</p>
+<p>UNDO_SUPRESS_ERRORS = {TRUE | <u>FALSE</u>}<br>
+<span class="style3">USE_PRIVATE_OUTLINES</span> = {TRUE | FALSE| <i>‘category_name’</i> }<br>
+<span class="style3">USE_STORED_OUTLINES</span> = {TRUE | FALSE| <i>‘category_name’</i> }</p>
+<p>WORKSIZE_AREA_POLICY = {AUTO | MANUAL}</p>
+<p>Parameters shown in <span class="style3">Green&amp;Bold</span> are Session Parameters,<br>
+generally these are not reflected in <a href="../orav/V$PARAMETER.html">V$PARAMETER</a><br>
+(Some sessions paramaters are synonymous with parameter settings in init.ora)</p>
+<p>DEPRACATED OPTIONS…</p>
+<p>Version 8 Options - obsolete in v9<br>
+FAST_START_IO_TARGET = <i>int</i><br>
+HASH_MULTIBLOCK_IO_COUNT = <i>int</i><br>
+LABEL = {‘text’ | DBLOW | DBHIGH | OSLABEL}<br>
+OPTIMIZER_PERCENT_PARALLEL = <i>int</i><br>
+PARALLEL_BROADCAST_ENABLED = {TRUE | FALSE}<br>
+PLSQL_V2_COMPATIBILITY = {TRUE | FALSE}</p>
+<p>Version 7 Options - obsolete in v8<br>
+CLOSE_CACHED_OPEN_CURSORS = {TRUE | FALSE}<br>
+NLS_ISO_CURRENCY = <a href="syntax-nls.html">territory</a><br>
+MLS_LABEL_FORMAT = '<a href="syntax-fmt.html">fmt</a>’<br>
+OPTIMISER_GOAL - is now OPTIMISER_MODE<br>
+SCHEMA=schema_name</p></pre><p></p>
+<p><i><span class="quote"> "Knowledge speaks, but wisdom listens." - Jimi Hendrix </span></i><br>
+<br>
+<b>Related Commands:</b><br>
+<br>
+<a href="../orap/DBMS_SESSION.html"> </a> <a href="system_a.html">ALTER SYSTEM</a> 
+ENABLE RESTRICTED SESSION <br>
+<a href="system_a.html">ALTER SYSTEM</a> KILL SESSION <br>
+<a href="system_a.html">ALTER SYSTEM</a> SET LICENSE_MAX_SESSIONS<br>
+<a href="transaction_s.html">SET TRANSACTION</a> USE ROLLBACK SEGMENT<br>
+<a href="../orap/DBMS_SESSION.html">DBMS_SESSION<br>
+</a><a href="commit.html">COMMIT</a><br>
+<a href="link_d.html">DROP DATABASE LINK</a><br>
+<a href="rollback.html">ROLLBACK</a><br>
+<b><br>
+Related Views:</b></p>
+<pre> <a href="../orad/DBA_PENDING_TRANSACTIONS.html">DBA_PENDING_TRANSACTIONS</a>
+                                           <a href="../orad/USER_RESOURCE_LIMITS.html">USER_RESOURCE_LIMITS</a>
+ <a href="../orav/V$SESSION.html">V$SESSION</a>
+ <a href="../orav/V$SESSION_CONNECT_INFO.html">V$SESSION_CONNECT_INFO</a>
+ <a href="../orav/V$SESSION_CURSOR_CACHE.html">V$SESSION_CURSOR_CACHE</a>
+ <a href="../orav/V$SESSION_EVENT.html">V$SESSION_EVENT</a>
+ <a href="../orav/V$SESSION_LONGOPS.html">V$SESSION_LONGOPS</a>
+ <a href="../orav/V$SESSION_OBJECT_CACHE.html">V$SESSION_OBJECT_CACHE</a>
+ <a href="../orav/V$SESSION_WAIT.html">V$SESSION_WAIT</a>
+ <a href="../orav/V$SESSTAT.html">V$SESSTAT</a>
+ <a href="../orav/V$SESS_IO.html">V$SESS_IO</a>
+</pre><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- oracle-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/ora/session_a.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

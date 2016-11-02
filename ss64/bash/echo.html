@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="echo 
+Display message on screen, writes each given STRING to standard 
+output, with a space between each and a newline after the last one.
+Syntax
+     echo [options]... [string]...
+Options
+-n
+Do not o">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/echo.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="echo 
+Display message on screen, writes each given STRING to standard 
+output, with a space between each and a newline after the last one.
+Syntax
+     echo [options]... [string]...
+Options
+-n
+Do not o">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:39.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="echo 
+Display message on screen, writes each given STRING to standard 
+output, with a space between each and a newline after the last one.
+Syntax
+     echo [options]... [string]...
+Options
+-n
+Do not o">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>echo</h1> 
+<p>Display message on screen, writes each given STRING to standard 
+output, with a space between each and a newline after the last one.</p>
+<pre>Syntax
+     echo [<i>options</i>]... [<i>string</i>]...
+<p>Options</p>
+<p>-n<br>
+Do not output the trailing newline.</p>
+<p>-E<br>
+Disable the interpretation of the following backslash-escaped characters</p>
+<p>-e<br>
+Enable interpretation of the following backslash-escaped<br>
+characters in each STRING:</p>
+<pre><code>\a          alert (bell)
+
+\b          backspace
+
+\c          suppress trailing newline
+
+\e          escape &lt;br&gt; &lt;br&gt;    \f          form feed
+
+\n          new line
+
+\r          carriage return
+
+\t          horizontal tab
+
+\v          vertical tab
+
+\\          backslash
+
+\&lt;i&gt;NNN&lt;/i&gt;
+      the character whose ASCII code is NNN (octal); if NNN is not
+      a valid octal number, it is printed literally.
+
+\x&lt;i&gt;nnn&lt;/i&gt;&lt;br&gt;          the character whose ASCII code is the hexadecimal value &lt;br&gt;          nnn (one to three digits)&lt;/pre&gt;
+</code></pre>
+<p>echo is a BASH built-in command</p>
+<p><b>Examples</b></p>
+<p>Echo can also display in color by using Escape sequences for  foreground (30..37) and background (40..47) colours.</p>
+<p class="code">$ COL_BLUE="\x1b[34;01m"<br>
+$ COL_RESET="\x1b[39;49;00m"<br>
+$ echo -e $COL_BLUE"Important Message: "$COL_RESET"This is a message"</p>
+<p>Here is a shell script to display all the color combinations: </p>
+<pre> #!/bin/bash
+ #
+ echo ---Bg---40---41---42---43---44---45---46---47
+ for i in {30..37} # foreground
+ do
+ echo -n -e fg$i- 
+ for j in {40..47} # background
+ do
+ echo -n -e '\E['$i';'$j'm SS64'
+ tput sgr0 # Reset text attributes to normal without clear
+ done
+ echo # newline
+ done
+<p>echo – Clear BG –<br>
+for n in {30…37} # foreground<br>
+do<br>
+echo -e fg$n ‘\E[’$n’;'01’m SS64’<br>
+tput sgr0 # Reset text attributes to normal without clear<br>
+done</p></pre><p></p>
+<p><i class="quote">“The only thing that helps me pass the time away; is knowing I'll be back at Echo Beach some day” ~ Martha and the Muffins</i><br>
+<br>
+<b>Related:</b><br>
+<br>
+<a href="head.html">head</a> - Output the first part of file(s)<a href="less.html"><br>
+less</a> - Display output one screen at a time<br>
+<a href="more.html">more</a> - Display output one screen at a time <br>
+<a href="notify-send.html">notify-send</a> - Send desktop notifications<br>
+pg - Display one page at a time<br>
+<a href="tee.html">tee</a> - Redirect output to multiple files <br>
+Equivalent Windows command:  <a href="../nt/echo.html">ECHO</a> - Display message on screen</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="echo.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/echo.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

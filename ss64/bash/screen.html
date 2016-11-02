@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="screen 
+Multiplex a physical terminal between several processes (typically interactive shells).
+Syntax:
+Start a screen session:
+  screen [ -&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt; ] [ &amp;lt;i&amp;gt;cmd&amp;lt;/i&amp;gt; [&amp;lt;i">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/bash/screen.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="screen 
+Multiplex a physical terminal between several processes (typically interactive shells).
+Syntax:
+Start a screen session:
+  screen [ -&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt; ] [ &amp;lt;i&amp;gt;cmd&amp;lt;/i&amp;gt; [&amp;lt;i">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:41.984Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="screen 
+Multiplex a physical terminal between several processes (typically interactive shells).
+Syntax:
+Start a screen session:
+  screen [ -&amp;lt;i&amp;gt;options&amp;lt;/i&amp;gt; ] [ &amp;lt;i&amp;gt;cmd&amp;lt;/i&amp;gt; [&amp;lt;i">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_bash.lbi" --><!-- #EndLibraryItem --><h1>screen</h1> 
+<p>Multiplex a physical terminal between several processes (typically interactive shells).</p>
+<pre>Syntax:
+<p>Start a <i>screen</i> session:</p>
+<pre><code>  screen [ -&lt;i&gt;options&lt;/i&gt; ] [ &lt;i&gt;cmd&lt;/i&gt; [&lt;i&gt;args&lt;/i&gt;] ]
+</code></pre>
+<p>Resume a detached screen session:</p>
+<pre><code>  screen -r [[&lt;i&gt;pid&lt;/i&gt;.]&lt;i&gt;tty&lt;/i&gt;[.&lt;i&gt;host&lt;/i&gt;]]
+
+  screen -r &lt;i&gt;sessionowner&lt;/i&gt;/[[&lt;i&gt;pid&lt;/i&gt;.]&lt;i&gt;tty&lt;/i&gt;[.&lt;i&gt;host&lt;/i&gt;]]
+</code></pre>
+<p>Options:</p>
+<p>-A -[r|R]     Adapt all windows to the new display width &amp; height.<br>
+-c <i>file</i>       Read configuration file instead of .screenrc<br>
+-d (-r)       Detach the elsewhere running screen (and reattach here).<br>
+-dmS <i>name</i>     Start as daemon: Screen session in detached mode.<br>
+-D (-r)       Detach and logout remote (and reattach here).<br>
+-D -RR        Do whatever is needed to Reattach a screen session.<br>
+-d -m         Start in “detached” mode. Useful for system startup scripts.<br>
+-D -m         Start in “detached” mode, &amp; don’t fork a new process.<br>
+-list         List our SockDir and do nothing else (-ls)<br>
+-r            Reattach to a detached screen process.<br>
+-R            Reattach if possible, otherwise start a new session.<br>
+-t <i>title</i>      Set title. (window’s name).<br>
+-U            Tell screen to use UTF-8 encoding.<br>
+-x            Attach to a not detached screen. (Multi display mode).<br>
+-X            Execute <i>cmd</i> as a screen command in the specified session.</p>
+<p>Interactive commands (default key bindings):</p>
+<pre><code> Control-a ?    Display brief help
+ &lt;b&gt;Control-a &quot;&lt;/b&gt;    List all windows for selection
+ Control-a '    Prompt for a window name or number to switch to.
+ Control-a 0    Select window 0
+ Control-a 1    Select window 1
+ ...            ...
+ Control-a 9    Select window 9
+ Control-a A    Accept a title name for the current window.
+ Control-a b    Send a break to window
+ &lt;b&gt;Control-a c&lt;/b&gt;    Create new window running a shell
+ Control-a C    Clear the screen
+ Control-a d    Detach screen from this terminal.
+ Control-a D D  Detach and logout.
+ Control-a f    Toggle flow on, off or auto.
+ Control-a F    Resize the window to the current region size.
+ Control-a h    Write a hardcopy of the current window to file &quot;hardcopy.n&quot;&lt;br&gt;     Control-a H    Begin/end logging of the current window to file &quot;screenlog.n&quot;
+ Control-a i    Show info about this window.
+ &lt;b&gt;Control-a k&lt;/b&gt;    Kill (Destroy) the current window.
+ Control-a l    Fully refresh current window
+ Control-a M    Monitor the current window for activity {toggle on/off}
+ &lt;b&gt;Control-a n&lt;/b&gt;    Switch to the Next window
+ Control-a N    Show the Number and Title of window
+ &lt;b&gt;Control-a p&lt;/b&gt;    Switch to the Previous window
+ Control-a q    Send a control-q to the current window(xon)
+ Control-a Q    Delete all regions but the current one.(only)
+ Control-a r    Toggle the current window's line-wrap setting(wrap)
+ Control-a s    Send a control-s to the current window(xoff)
+ Control-a w    Show a list of windows (windows)
+ Control-a x    Lock this terminal (lockscreen)
+ Control-a X    Kill the current region(remove)
+ Control-a Z    Reset the virtual terminal to its &quot;power-on&quot; values
+ Control-a Control-\    Kill all windows and terminate screen(quit)
+ Control-a :    Enter command line mode(colon)
+ Control-a [    Enter copy/scrollback mode(copy)
+ Control-a ]    Write the contents of the paste buffer to stdin(paste)
+ Control-a _    Monitor the current window for inactivity {toggle on/off}
+ Control-a *    Show  a listing of all currently attached displays.&lt;/pre&gt;
+</code></pre>
+<p>When screen is called, it creates a single window with a shell in it (or the specified command) and then gets out of your way so that you can use the program as you normally would. </p>
+<p>Then, at any time, you can:</p>
+<blockquote>
+<p>Create new (full-screen) windows with other programs in them (including more shells)</p>
+<p>Kill existing windows</p>
+<p>View a list of windows</p>
+<p>Switch between windows - all windows run their programs completely independent of each other. Programs continue to run when their window is currently not visible and even when the whole screen session is detached from the user's terminal. </p>
+</blockquote>
+<p>The interactive commands above assume the default key bindings. You can modify screen’s settings by creating a <a href="http://www.google.co.uk/search?q=.screenrc" target="_blank" rel="external">~/.screenrc</a> file in your home directory. This can change the default keystrokes, bind function keys F11, F12 or even set a load of programs/windows to run as soon as you start screen.</p>
+<p>To start screen automatically at login, set your <a href="syntax-bashrc.html">.profile</a> file to read:  </p>
+<p class="code"><a href="exec.html">exec</a> screen</p>
+<h2>Attaching and Detaching</h2>
+<blockquote>
+<p>Once you have screen running, switch to any of the running windows and type <span class="code">Control-a d</span>. this will detach screen from this terminal. Now, go to a different machine, open a shell, ssh to the machine running screen (the one you just detached from), and type: 
+<span class="code">% screen -r</span></p>
+<p>This will reattach to the session. Just like magic, your session is back up and running, just like you never left it. </p>
+</blockquote>
+<h2>Exiting screen completely</h2>
+<blockquote>
+<p>Screen will exit automatically when all of its windows have been killed. </p>
+<p>Close whatever program is running or type `Exit ' to exit the shell, and the window that contained it will be killed by screen. (If this window was in the foreground, the display will switch to the previous window)</p>
+<p>When none are left, screen exits.</p>
+</blockquote>
+<p>This page is just a summary of the options available, type <span class="code">man screen</span> for more.</p>
+<p class="quote"><i>"Growing old is mandatory, but growing up is optional" ~ Motto of the Silver Screen Saddle Pals</i></p>
+<p><b>Related:</b></p>
+<p><a href="nohup.html">nohup</a> - Run a command immune to hangups<br>
+tset - Select your terminal type <br>
+exit - Exit the shell<br>
+<a href="http://www4.informatik.uni-erlangen.de/%7Ejnweiger/screen-faq.html" target="_blank" rel="external">screen FAQ</a> - Jürgen Weigert</p><!-- #BeginLibraryItem "/Library/foot_bash.lbi" --><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bash300 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4615356305"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<hr>
+<div id="bl" class="footer"><a href="#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/bash/screen.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>
