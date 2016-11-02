@@ -21,8 +21,6 @@
 <blockquote>
 <p>
 <a href="ascii.html">ASCII Table</a><br>
-<a href="colour.html">Average HTML Colours</a><br>
-<a href="case.html">Swap UPPER and lower case</a><a href="nt/syntax-brackets.html"></a><br>
 <a href="unicode.html">Punctuation Marks </a> - Unicode<br>
 <a href="quotes.html">Quotation Marks</a> - Unicode<br>
 <a href="symbols.html">Symbols and smilies</a> - Unicode
