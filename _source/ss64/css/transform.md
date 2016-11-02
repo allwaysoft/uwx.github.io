@@ -39,7 +39,7 @@ Multiple functions can be applied as part of the same CSS rule, separated with s
 <p>To apply the transformation gradually, include a <a href="transition.html">transition</a> rule.<br>
 To apply the 
 transformation immediately when the page loads, don't include any transition.</p>
-<p>To flip text upside-down use <span class="code">transform: rotate(180deg);</span> (an alternative is <a href="../docs/flip.html">flipping text upside down using Unicode</a>)</p>
+<p>To flip text upside-down use <span class="code">transform: rotate(180deg);</span> (an alternative is <a href="http://ss64.com/docs/flip.html">flipping text upside down using Unicode</a>)</p>
 <p>Try it:</p><input type="button" onclick="ApplyStyle()" value="Apply Changes">
 <table>
   <tbody><tr>

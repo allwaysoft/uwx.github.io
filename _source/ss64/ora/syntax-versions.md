@@ -56,7 +56,7 @@ transaction recovery, Client support for Macintosh (Microsoft Windows)</p></td>
 </tbody></table>
 </blockquote>
 <p><b>Related</b></p>
-<p><a href="../docs/lifecycle.html">Microsoft Support Lifecycle</a> - key dates<br>
+<p><a href="http://ss64.com/docs/lifecycle.html">Microsoft Support Lifecycle</a> - key dates<br>
 <a href="http://www.sqlteam.com/article/sql-server-versions">SQL
 Server Version numbers </a></p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p>
 <!-- oracle-footer -->

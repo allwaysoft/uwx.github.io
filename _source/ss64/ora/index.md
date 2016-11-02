@@ -153,7 +153,7 @@ Words in CAPS are Oracle commands, words in lower-case are the options you can
   Sections enclosed in <code>[ ]</code> are optional, <u>underlined</u> options 
   are the default <br>
   Sections enclosed in <code>{ }</code> are alternatives. The pipe symbol `|` indicates 
-OR (<a href="../docs/bnf.html">more</a>)<br>
+OR (<a href="http://ss64.com/docs/bnf.html">more</a>)<br>
 The syntax on these pages is based on Oracle version 9.2, while this is almost all still supported in  10g and 11g there are a few notes added where things have changed. Pages covering the newer functionality (RAC, Data Guard etc) may appear in the future. </p>
 <p>SS64 <a href="http://ss64.org/viewforum.php?id=9">Oracle Discussion forum</a><br>
 <a href="../links/oralinks.html">Links to other Sites, books etc…</a></p><!-- #BeginLibraryItem "/Library/foot_menu.lbi" --><hr>

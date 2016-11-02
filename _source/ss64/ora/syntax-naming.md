@@ -324,7 +324,7 @@ SSLive_clinical02.dbf</pre>
 <a href="http://www.dpriver.com/pp/sqlformat.htm">SQL formatter</a> - Online SQL beautifier <br>
 <a href="http://support.microsoft.com/?kbid=189220">Q189220</a> - Microsoft support for spaces in fieldnames<br>
 Standard ISO-11179 - Rules for defining data elements<br>
-<a href="../docs/documentation.html">IT System Documentation Levels</a><br>
+<a href="http://ss64.com/docs/documentation.html">IT System Documentation Levels</a><br>
 </p><!-- #BeginLibraryItem "/Library/foot_ora.lbi" --><p><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- oracle-footer -->
 <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6140977852749469" data-ad-slot="4275490898"></ins>
