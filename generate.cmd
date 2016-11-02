@@ -1,1 +1,1 @@
-hexo clean && hexo generate
+hexo clean && node try-generate && hexo generate
