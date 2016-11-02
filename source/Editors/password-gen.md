@@ -28,4 +28,4 @@ title: Heavy-Duty Password Generator
 
 <input name="pass" id="pass" class="pass" tabindex="5" size="40"> <input id="gen" class="genbtn" value="Generate" tabindex="4" type="submit">
 
-Generates a fairly safe word from at least 29,981,220,663,656,114,112,016 (416114<sup>4</sup>) possibilities.
+Generates a fairly safe password from at least 29,981,220,663,656,114,112,016 (416114<sup>4</sup>) possibilities.
