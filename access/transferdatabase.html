@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DoCmd.TransferDatabase
+ Import or export data to/from another database.
+Syntax
+      DoCmd.TransferDatabase(TransferType, DatabaseType, DatabaseName,
+                             ObjectType, Source, D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/transferdatabase.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DoCmd.TransferDatabase
+ Import or export data to/from another database.
+Syntax
+      DoCmd.TransferDatabase(TransferType, DatabaseType, DatabaseName,
+                             ObjectType, Source, D">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:04:00.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DoCmd.TransferDatabase
+ Import or export data to/from another database.
+Syntax
+      DoCmd.TransferDatabase(TransferType, DatabaseType, DatabaseName,
+                             ObjectType, Source, D">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>DoCmd.TransferDatabase</h1>
+<p> Import or export data to/from another database.</p>
+<pre>Syntax
+      DoCmd.TransferDatabase(<i>TransferType, DatabaseType, DatabaseName,
+                             ObjectType, Source, Destination,
+                             StructureOnly, StoreLogin</i>)
+<p>Key<br>
+<i>TransferType</i>   The type of transfer to make. <a href="acdatatransfertype.html">AcDataTransferType</a><br>
+default = acImport.</p>
+<p><i>DatabaseType</i>   The type of Database to import from, export to, or link to:<br>
+Microsoft Access (default), Jet 2.x, Jet 3.x, dBase III, dBase IV,<br>
+dBase 5.0, Paradox 3.x, Paradox 4.x, Paradox 5.x, Paradox 7.x,<br>
+ODBC Database, WSS</p>
+<p><i>DatabaseName</i>   The full name, including the path, of the other database.</p>
+<p><i>ObjectType</i>     The type of object to import or export <a href="acobjecttype.html">AcObjectType</a>.</p>
+<p><i>Source</i>         The name of the object whose data to import, export, or link.</p>
+<p><i>Destination</i>    The name of the imported, exported, or linked object<br>
+in the destination database.</p>
+<p><i>StructureOnly</i>  Use True (-1) to import or export only the structure of<br>
+a database table. Use <u>False</u> (0) to import or export the<br>
+structure of the table and its data.</p>
+<p><i>StoreLogin</i>     Use True to store the login identification (ID) and password<br>
+for an ODBC database in the connection string for a linked<br>
+table from the database.<br>
+Use <u>False</u> to prevent storage of the login ID and password. </p></pre><p></p>
+<p>Use TransferDatabase to import or export data between the current Access database and another database. </p>
+<p>An alternative for Access databases is to link table(s). With a linked table, you have access to the table's data while the table itself remains in the other database.</p>
+<p>You can import and export tables and SELECT queries between Access and other types of databases.  You can import and export any Access database object (Forms, Reports etc) if both databases are Access databases.</p>
+<p>If you import a table from another Access database that's a linked table, the link is imported, not the table itself.</p>
+<p><b>Example</b></p>
+<p>'Import a report<br>
+<span class="code"> DoCmd.TransferDatabase acImport, "Microsoft Access","C:\Demo\Demo.mdb", _<br>
+acReport, "rptBookings", "rptBookingsJuly"</span></p>
+<p class="quote"><i>“Traditionally, most of Australia's imports come from overseas” ~ Keppel Enderbery</i></p>
+<p><b>Related:</b></p>
+<p><a href="transfersqldatabase.html">TransferSQLDatabase</a> - Copy an entire SQL Server database.<br>
+<a href="transferspreadsheet.html">TransferSpreadsheet</a> - Import or export data to/from a spreadsheet file.</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="transferdatabase.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/transferdatabase.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

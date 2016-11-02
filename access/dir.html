@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Dir
+  List the files in a folder.
+Syntax
+      Dir [( path [, attributes ] ) ]
+Key
+path   Path to a file, folder, or directory.
+If the path is not found, dir will return a zero-length string.
+attribut">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/dir.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Dir
+  List the files in a folder.
+Syntax
+      Dir [( path [, attributes ] ) ]
+Key
+path   Path to a file, folder, or directory.
+If the path is not found, dir will return a zero-length string.
+attribut">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:59.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Dir
+  List the files in a folder.
+Syntax
+      Dir [( path [, attributes ] ) ]
+Key
+path   Path to a file, folder, or directory.
+If the path is not found, dir will return a zero-length string.
+attribut">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>Dir</h1>
+<p>  List the files in a folder.</p>
+<pre>Syntax
+      Dir [( <i>path</i> [, <i>attributes</i> ] ) ]
+<p>Key<br>
+<i>path</i>   Path to a file, folder, or directory.<br>
+If the <i>path</i> is not found, dir will return a zero-length string.</p>
+<p><i>attributes<br>
+</i>The sum of the file attributes.<br>
+One or a combination of the following values:</p></pre><p></p>
+<blockquote>
+<blockquote>
+<p> 0
+&nbsp;vbNormal   (Default)<br>
+1 &nbsp;vbReadOnly  <br>
+2 &nbsp;vbHidden  <br>
+4 &nbsp;vbSystem  System file<br>
+8 &nbsp;vbVolume  Volume label<br>
+16 vbDirectory<br>
+64 vbAlias</p>
+</blockquote>
+</blockquote>
+<p>Wildcards * and ? can be used to return multiple files.</p>
+<p>To test if a folder (or server) exists at all, you can use this function <a href="http://allenbrowne.com/func-11.html" target="_blank" rel="external">from Allen Browne</a></p>
+<pre>Function FolderExists(strPath As String) As Boolean
+   On Error Resume Next     
+   FolderExists = ((<a href="getattr.html">GetAttr</a>(strPath) And vbDirectory) = vbDirectory) 
+End Function</pre>
+<p><b>Examples</b></p>
+<pre>'List a filename
+Dir("C:\docs\demo.xls")
+<p>'Check if a file exists<br>
+If Len(Dir(“C:\docs\demo.xls”)) = 0 Then Msgbox “File not found!”</p>
+<p>'Check if a folder exists<br>
+If Len(Dir(“C:\docs”, vbDirectory)) = 0 Then Msgbox “Folder not found!”</p></pre><p></p>
+<p class="quote"><i>“Is not the whole world a vast house of assignation of which the filing system has been lost?” ~ Quentin Crisp</i></p>
+<p><b>Related:</b></p>
+<p><a href="mkdir.html">MkDir</a> - Create directory</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="dir.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/dir.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

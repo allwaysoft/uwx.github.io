@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Globally replace the Font on all Access  forms.
+
+In Windows 7,  the  bitmap fonts MS Sans Serif, MS Serif and Courier will not always resize to match the  per-user DPI setting, This is because the siz">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/syntax-fonts.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Globally replace the Font on all Access  forms.
+
+In Windows 7,  the  bitmap fonts MS Sans Serif, MS Serif and Courier will not always resize to match the  per-user DPI setting, This is because the siz">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:04:00.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Globally replace the Font on all Access  forms.
+
+In Windows 7,  the  bitmap fonts MS Sans Serif, MS Serif and Courier will not always resize to match the  per-user DPI setting, This is because the siz">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access_syntax.lbi" --><!-- #EndLibraryItem --><h1>Globally replace the Font on all Access  forms.
+</h1>
+<p>In Windows 7,  the  bitmap fonts <i>MS Sans Serif</i>, <i>MS Serif</i> and <i>Courier</i> will not always resize to match the  per-user <a href="../nt/syntax-dpi.html">DPI setting</a>, This is because the size of bitmap fonts is set (and fixed) during setup, which can cause <a href="http://blogs.msdn.com/b/developingfordynamicsgp/archive/2009/11/25/windows-7-bitmap-fonts-and-microsoft-dynamics-gp.aspx" target="_blank" rel="external">unexpected</a> results.</p>
+<p>In Access 2010 ClearType is defaulted to ON even if disabled in the OS (<a href="http://superuser.com/questions/405066/what-are-all-the-places-where-cleartype-can-be-disabled" target="_blank" rel="external"><span class="code">RespectSystemFontSmooth</span></a>)<br>
+In Access 2013 
+ClearType is disabled due to incompatibility with tablets (which can be rotated) <br>
+ This means that fonts from the ClearType font collection (Calibri, Cambria etc) will not look so good in Office 2013.</p>
+<p> To replace the  font used in an existing database, the code below can be used to globally replace with a suitable True Type font such as <i>Microsoft Sans Serif</i>.</p>
+<pre>Public Sub UpdateFonts()
+On Error Resume Next
+<p>’ Warning: this will globally change the selected font across all forms in the database.<br>
+’ It is strongly recommended that you backup the database before running.</p>
+<p>Dim dbs As Object<br>
+Dim obj As AccessObject<br>
+Dim frm As Form<br>
+Dim ctl As Control</p>
+<p>Set dbs = Application.CurrentProject<br>
+’ Loop through the AllForms collection.<br>
+For Each obj In dbs.AllForms<br>
+DoCmd.OpenForm <a href="http://obj.name" target="_blank" rel="external">obj.name</a>, acDesign<br>
+Set frm = Forms(<a href="http://obj.name" target="_blank" rel="external">obj.name</a>)</p>
+<pre><code>' Loop through the controls on each form
+For Each ctl In frm.Controls
+
+    ' Change the Font of text boxes etc
+    If ctl.ControlType = acTextBox Or ctl.ControlType = acComboBox Or ctl.ControlType = acListBox Or ctl.ControlType = acLabel Then
+        If ctl.FontName = &quot;&lt;b&gt;MS Sans Serif&lt;/b&gt;&quot; Then
+            ctl.FontName = &quot;&lt;b&gt;Microsoft Sans Serif&lt;/b&gt;&quot;
+        End If
+    End If
+Next
+
+Set ctl = Nothing
+
+' Save the form
+DoCmd.Close acForm, obj.name, acSaveYes
+</code></pre>
+<p>Next obj<br>
+End Sub</p></pre><p></p>
+<p class="quote"><i>"Type design is one of the most visible and widespread forms of graphic expression in daily life. It is still not noticed by all readers of newspapers, magazines or books. Nevertheless letter forms reflect the style of a period, and its cultural background. We are surrounded by them everywhere" ~ Hermann Zapf</i></p>
+<p><b>Related</b></p>
+<p><a href="http://support.microsoft.com/kb/2396756" target="_blank" rel="external">Q2396756</a> - Applications using Bitmap Font &amp; DPI<br>
+<a href="../nt/syntax-dpi.html">DPI display settings </a></p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="syntax-fonts.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/syntax-fonts.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

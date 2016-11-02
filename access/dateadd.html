@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DateAdd
+  Add a specified time interval to a date.
+Syntax
+      DateAdd(interval, number, date)
+Key
+interval  The interval of time to add.
+number    The number of intervals to add.
+positive for dates">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/dateadd.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="DateAdd
+  Add a specified time interval to a date.
+Syntax
+      DateAdd(interval, number, date)
+Key
+interval  The interval of time to add.
+number    The number of intervals to add.
+positive for dates">
+<meta property="og:image" content="http://rafa1231518.github.io/dateadd.png">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:03:58.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="DateAdd
+  Add a specified time interval to a date.
+Syntax
+      DateAdd(interval, number, date)
+Key
+interval  The interval of time to add.
+number    The number of intervals to add.
+positive for dates">
+<meta name="twitter:image" content="http://rafa1231518.github.io/dateadd.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access.lbi" --><!-- #EndLibraryItem --><h1>DateAdd</h1>
+<p>  Add a specified time interval to a date.</p>
+<pre>Syntax
+      DateAdd(<i>interval, number, date</i>)
+<p>Key<br>
+<i>interval</i>  The interval of time to add.</p>
+<p><i>number</i>    The number of intervals to add.<br>
+positive for dates in the future or<br>
+negative for dates in the past.</p>
+<p>date      The  date to which the interval is added.</p></pre><p></p>
+<table cols="2"> <tbody> <tr> <td class="label"><b>Interval Setting</b></td> <td class="label"><b>Description</b></td></tr>
+<tr> <td>yyyy</td> <td>Year</td></tr>
+<tr> <td>q</td> <td>Quarter</td></tr>
+<tr> <td>m</td> <td>Month</td></tr> 
+<tr> <td>y</td> <td>Day of year</td></tr>
+<tr> <td>d</td> <td>Day</td></tr> 
+<tr> <td>w</td> <td>Weekday</td></tr>
+<tr> <td>ww</td> <td>Week</td></tr> 
+<tr> <td>h</td> <td>Hour</td></tr> 
+<tr> <td>n</td> <td>Minute</td></tr> 
+<tr> <td>s</td> <td>Second</td></tr></tbody></table>
+<p>DateAdd  won't return an invalid date. </p>
+<p>The DateAdd() function can be used in VBA or in an <a href="syntax-functions.html">SQL query</a>.</p>
+<p><b>Examples</b></p>
+<p>In a query:</p>
+<blockquote>
+<p><img src="dateadd.png" width="439" height="104" alt="DateAdd"></p>
+</blockquote>
+<p>In VBA:</p>
+<p>Add one month to January 31:</p>
+<p class="code">DateAdd("m", 1, "31-Jan-16")</p>
+<p>In this case, DateAdd returns 29-Feb-16</p>
+<p class="quote"><i>“Beauty is Nature's coin, must not be hoarded, but must be current” ~ John Milton</i></p>
+<p><b>Related:</b></p>
+<p><a href="date.html">Date</a> - Return the current date.<br>
+<a href="datediff.html">DateDiff</a> - Return the time difference between two dates. <br>
+<a href="datepart.html">DatePart</a> - Return part of a given date.<br>
+<a href="dateserial.html">DateSerial</a> - Return a date given a year, month, and day.</p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="dateadd.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/dateadd.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

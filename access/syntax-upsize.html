@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Upsize an Access database to SQL Server
+To upsize an access database to SQL Server (or Oracle, Postgres etc) there are several steps to perform:
+
+Create a new server side database.
+Create an ODBC conn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Hansen's Nut Shack">
+<meta property="og:url" content="http://rafa1231518.github.io/access/syntax-upsize.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content="Upsize an Access database to SQL Server
+To upsize an access database to SQL Server (or Oracle, Postgres etc) there are several steps to perform:
+
+Create a new server side database.
+Create an ODBC conn">
+<meta property="og:image" content="http://rafa1231518.github.io/../images/top.png">
+<meta property="og:updated_time" content="2016-11-02T00:04:00.644Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chris Hansen's Nut Shack">
+<meta name="twitter:description" content="Upsize an Access database to SQL Server
+To upsize an access database to SQL Server (or Oracle, Postgres etc) there are several steps to perform:
+
+Create a new server side database.
+Create an ODBC conn">
+<meta name="twitter:image" content="http://rafa1231518.github.io/../images/top.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- #BeginLibraryItem "/Library/head_access_syntax.lbi" --><!-- #EndLibraryItem --><h1>Upsize an Access database to SQL Server</h1>
+<p>To upsize an access database to SQL Server (or Oracle, Postgres etc) there are several steps to perform:</p>
+<ul>
+<li>Create a new server side database.</li>
+<li>Create an ODBC connection on your client that connects to the new database.</li>
+<li>Create the Tables and Columns with matching names and equivalent datatypes.</li>
+<li>Add any data into the new tables.
+</li>
+<li>Add indexes, primary keys and default values.</li>
+<li>Delete the old Access tables and link to the new server side ones (take a backup first)</li>
+<li>Test thoroughly including edits and deletes.</li>
+</ul>
+<p>There are several tools which can automate some of the steps above.</p>
+<ul>
+<li>The built-in Access export tool - this can create and populate the server side tables, and is probably the easiest method.</li>
+<li>The <a href="http://blogs.msdn.com/b/ssma/archive/2011/01/29/access-to-sql-server-migration-how-to-use-ssma.aspx" target="_blank" rel="external">SQL Server Migration Assistant for Access</a> (SSMA)</li>
+<li>For Oracle upsizing - <a href="http://www.oracle.com/technetwork/database/migration/omwb-getstarted-093461.html" target="_blank" rel="external">Oracle SQL Developer Migration Workbench</a></li>
+</ul>
+<p>One pre-requisite for a sucessfull upsize is having compatible Table and Column names, if the database was built using a sensible <a href="syntax-naming.html">naming convention</a>, this won't be a problem. At a minimum it will involve removing any spaces and punctuation from the names. Both Access and SQL Server have a number of 'reserved words' that should not be used for table or column names.</p>
+<p>In the SQL upsizing wizard, choose 'Use Declarative Referential Integrity (DRI)', for relationships rather than triggers. Don't allow the wizard to add timestamp columns unless you have a specific plan for using them.</p>
+<h2>Data Types</h2>
+<p>By default Access Text fields	will be converted to Nvarchar, if you don't require unicode these can be changed to plain Varchar.</p>
+<p>Access YES/NO columns will be converted to SQL  	bit or tinyint columns, it is essential that these have a default value<br>
+e.g. <span class="code">(0)</span> as Access will not be able to interpret any NULLs.</p>
+<p>It is worth checking dates in Access for typos like 214 instead of 2014, as these will not be accepted by SQL server.</p>
+<p>Supported date ranges</p>
+<p>Access:  Jan 1, 100 AD to Dec 31, 9999 AD (9,899 year range)<br>
+SQL Server (datetime)1753 AD to Dec 31, 9999 AD (8,246 year range)<br>
+SQL Server (smalldatetime) 1 Jan 1900 to 6 Jun 2079 AD (179 year range)<br>
+Oracle: 14712 BC to Dec 31, 9999 AD (24,711 year range)</p>
+<blockquote>
+<table cols="2">
+<caption>Data Types</caption>
+<tbody><tr>
+<th>MS Access (Jet)</th>
+<th>SQL Server</th>
+</tr>
+<tr>
+<td>Binary(size)</td>
+<td>Varbinary(size)</td>
+</tr>
+<tr>
+<td>Byte</td>
+<td>Tinyint</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>Money</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>Datetime</td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>GUID</td>
+<td>Uniqueidentifier</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>Smallint</td>
+</tr>
+<tr>
+<td>Long Integer</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>LongBinary</td>
+<td>Varbinary(max)</td>
+</tr>
+<tr>
+<td>Memo</td>
+<td>Nvarchar(max), Varchar(max)*</td>
+</tr>
+<tr>
+<td>Single</td>
+<td>Real</td>
+</tr>
+<tr>
+<td>Text(size)</td>
+<td>Nvarchar(size), Varchar(size)*</td>
+</tr>
+<tr>
+<td>Yes/No</td>
+<td>Bit, Tinyint</td>
+</tr>
+</tbody></table></blockquote>
+<h2>OpenRecordset</h2>
+<p>If your VBA code opens any recordsets, you must use the dbSeeChanges option with <a href="openrecordset.html">OpenRecordset</a> when accessing a SQL Server linked table.</p>
+<h2>Renaming linked tables</h2>
+<p>Rename linked tables to remove the DBO_ prefix, instead of renaming tables manually, create a form with a command button and add this code to the OnClick event:</p>
+<pre>Dim strSQL As String
+Dim db As Database
+Dim rs As Recordset
+<p>’ Select the Linked tables to rename<br>
+strSQL = “SELECT Name FROM MSysObjects WHERE (((Left([Name],4))=‘dbo_’) AND (MSysObjects.Type) IN (4,6) );”<br>
+’ MSysObjects.Type values:<br>
+’ 1 = Local Table<br>
+’ 4 = ODBC Linked Table<br>
+’ 6 = Access Linked Table</p>
+<p>Set db = CurrentDb()<br>
+Set rs = db.OpenRecordset(strSQL)</p>
+<p>If rs.EOF = False Then<br>
+rs.MoveFirst<br>
+Do Until rs.EOF<br>
+’rename starting at the 5th character<br>
+DoCmd.Rename Mid(rs!Name, 5, 100), acTable, rs!Name<br>
+rs.MoveNext<br>
+Loop<br>
+rs.Close<br>
+End If</p></pre><p></p>
+<p>Note that the script above, only <i>reads</i> from the MSysObjects table, the rename is done using <a href="rename.html">docmd.rename</a>. <br>
+Performing updates on system tables is not supported or recommended.</p>
+<p class="quote"><i>“The only meaningful definition of a “generalist” is a specialist who can relate his own small area to the universe of knowledge” ~ Peter Drucker</i></p>
+<p><b>Related Links:</b></p>
+<p><a href="http://www.ssw.com.au/ssw/upsizingpro/" target="_blank" rel="external">SSW Upsizing Pro</a> - Commercial tool for automatic upsizing.<br>
+<a href="http://support.microsoft.com/kb/286335" target="_blank" rel="external">Q286335</a> - Access reserved words <br>
+<a href="http://msdn.microsoft.com/en-us/library/ms189822.aspx" target="_blank" rel="external">SQL Server reserved words</a> </p><!-- #BeginLibraryItem "/Library/foot_access.lbi" --><p>
+<!-- access -->
+<hr>
+<div id="bl" class="footer"><a href="syntax-upsize.html#"><img src="../images/top.png" width="30" height="22" alt="Back to the Top"></a></div>
+<div id="br" class="footer, tagline">© Copyright <a href="http://ss64.com/" target="_blank" rel="external">SS64.com</a> 1999-2016<br>
+Some rights reserved</div><!-- #EndLibraryItem -->
+</p>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/access/syntax-upsize.html">
+    <time datetime="2016-09-04T22:26:55.000Z" class="entry-date">
+        2016-09-04
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>
