@@ -6,4 +6,6 @@ const fs = require('fs-extra');
 if (!fs.existsSync('_generated')) {
   global.keepOutput = true;
   require('./alt-generator.js');
+} else {
+  fs.copySync('_generated', 'public');
 }
