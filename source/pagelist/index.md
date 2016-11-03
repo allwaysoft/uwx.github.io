@@ -17,6 +17,7 @@ A bunch of text tools I made to avoid having to write the same few regular expre
 [CSS Minifier and Beautifier](/Editors/css.html)
 [JSON Minifier and Beautifier](/Editors/json.html)
 [JavaScript Minifier and Beautifier](/Editors/js.html)
+[Hex to RGB and vice-versa](/Editors/hex-rgb.html)
 
 A bunch of converters for different units.
 
@@ -24,3 +25,4 @@ A bunch of converters for different units.
 [Length converter (Meter, kilometer, foot, yard...)](/Converters/byte-conv)
 [Mass converter (Grams, kilograms, ounces, pounds...)](/Converters/byte-conv)
 [Time converter (Second, minute, femtosecond, month, year...)](/Converters/byte-conv)
+[Volume converter (Liter, acre foot, tea spoon, fluid ounces...)](/Converters/volume-conv)
