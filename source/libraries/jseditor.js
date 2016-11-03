@@ -466,18 +466,25 @@ window.onload = function() {
     return text;
   }, 'Could not execute code lines: ');
 
-  document.getElementById('do-264').onclick =  makeFunc(btoa, 'Could not convert to Base64: ');
-  document.getElementById('do-f64').onclick =  makeFunc(atob, 'Could not convert from Base64: ');
+  document.getElementById('do-264').onclick = makeFunc(btoa, 'Could not convert to Base64: ');
+  document.getElementById('do-f64').onclick = makeFunc(atob, 'Could not convert from Base64: ');
   document.getElementById('do-2hex').onclick = makeFunc(toHex, 'Could not convert to Hex: ');
   document.getElementById('do-fhex').onclick = makeFunc(fromHex, 'Could not convert from Hex: ');
   document.getElementById('do-2dec').onclick = makeFunc(toDec, 'Could not convert to Decimal: ');
   document.getElementById('do-fdec').onclick = makeFunc(fromDec, 'Could not convert from Decimal: ');
-  document.getElementById('do-2bi').onclick =  makeFunc(toBinary, 'Could not convert to Binary: ');
-  document.getElementById('do-fbi').onclick =  makeFunc(fromBinary, 'Could not convert from Binary: ');
-  document.getElementById('do-checksm').onclick =  makeFunc(doChecksum, 'Could not calculate checksum: ');
-  document.getElementById('do-rand').onclick =  makeFunc(function() {
+  document.getElementById('do-2bi').onclick = makeFunc(toBinary, 'Could not convert to Binary: ');
+  document.getElementById('do-fbi').onclick = makeFunc(fromBinary, 'Could not convert from Binary: ');
+  document.getElementById('do-checksm').onclick = makeFunc(doChecksum, 'Could not calculate checksum: ');
+  document.getElementById('do-rand').onclick =    makeFunc(function() {
     return Math.random().toString();
   }, 'Could not generate random number: ');
+  document.getElementById('do-lowercase').onclick = makeFunc(function(str) {
+    return str.toLowerCase();
+  }, 'Could not convert to lowercase: ');
+  document.getElementById('do-uppercase').onclick = makeFunc(function(str) {
+    return str.toUpperCase();
+  }, 'Could not convert to uppercase: ');
+
 }; // jshint ignore:line
 
 //Finds y value of given object
