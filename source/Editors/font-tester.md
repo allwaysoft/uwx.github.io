@@ -1,10 +1,6 @@
 ---
-title: Heavy-Duty Password Generator
+title: Dynamic Font Tester
 ---
-
-<style type="text/css">
-
-</style>
 
 <style type="text/css">
 /**
@@ -132,21 +128,380 @@ pre[class*="language-"] {
 </style>
 
 <style type="text/css">
-  .blok {
-    white-space: pre !important;
-    border: none !important;
-  }
+.blok {
+  white-space: pre !important;
+  border: none !important;
+}
+@font-face {
+  font-family: "SourceCodePro-BoldIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-BoldIt.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-ExtraLight";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-ExtraLightIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-ExtraLightIt.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-It";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-It.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-Light";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Light.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-LightIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-LightIt.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-Medium";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Medium.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-MediumIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-MediumIt.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-Regular";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Regular.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-Semibold";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Semibold.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-SemiboldIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-SemiboldIt.ttf");
+}
+@font-face {
+  font-family: "UbuntuMono-B";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/UbuntuMono-B.ttf");
+}
+@font-face {
+  font-family: "UbuntuMono-BI";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/UbuntuMono-BI.ttf");
+}
+@font-face {
+  font-family: "UbuntuMono-R";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/UbuntuMono-R.ttf");
+}
+@font-face {
+  font-family: "UbuntuMono-RI";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/UbuntuMono-RI.ttf");
+}
+@font-face {
+  font-family: "Vera";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Vera.ttf");
+}
+@font-face {
+  font-family: "VeraBd";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraBd.ttf");
+}
+@font-face {
+  font-family: "VeraBI";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraBI.ttf");
+}
+@font-face {
+  font-family: "VeraIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraIt.ttf");
+}
+@font-face {
+  font-family: "VeraMoBd";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraMoBd.ttf");
+}
+@font-face {
+  font-family: "VeraMoBI";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraMoBI.ttf");
+}
+@font-face {
+  font-family: "VeraMoIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraMoIt.ttf");
+}
+@font-face {
+  font-family: "VeraMono";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraMono.ttf");
+}
+@font-face {
+  font-family: "VeraSe";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraSe.ttf");
+}
+@font-face {
+  font-family: "VeraSeBd";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/VeraSeBd.ttf");
+}
+@font-face {
+  font-family: "Anonymous Pro B";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Anonymous Pro B.ttf");
+}
+@font-face {
+  font-family: "Anonymous Pro BI";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Anonymous Pro BI.ttf");
+}
+@font-face {
+  font-family: "Anonymous Pro I";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Anonymous Pro I.ttf");
+}
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Anonymous Pro.ttf");
+}
+@font-face {
+  font-family: "Courier Prime Bold Italic";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Courier Prime Bold Italic.ttf");
+}
+@font-face {
+  font-family: "Courier Prime Bold";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Courier Prime Bold.ttf");
+}
+@font-face {
+  font-family: "Courier Prime Italic";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Courier Prime Italic.ttf");
+}
+@font-face {
+  font-family: "Courier Prime";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Courier Prime.ttf");
+}
+@font-face {
+  font-family: "DroidSansMono";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/DroidSansMono.ttf");
+}
+@font-face {
+  font-family: "Envy Code R Bold";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Envy Code R Bold.ttf");
+}
+@font-face {
+  font-family: "Envy Code R Italic";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Envy Code R Italic.ttf");
+}
+@font-face {
+  font-family: "Envy Code R";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Envy Code R.ttf");
+}
+@font-face {
+  font-family: "Inconsolata-Bold";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Inconsolata-Bold.ttf");
+}
+@font-face {
+  font-family: "Inconsolata-Regular";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/Inconsolata-Regular.ttf");
+}
+@font-face {
+  font-family: "ProFontWindows";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/ProFontWindows.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-Black";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Black.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-BlackIt";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-BlackIt.ttf");
+}
+@font-face {
+  font-family: "SourceCodePro-Bold";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Bold.ttf");
+}
+#f-SourceCodePro-BoldIt {
+  font-family: "SourceCodePro-BoldIt";
+}
+#f-SourceCodePro-ExtraLight {
+  font-family: "SourceCodePro-ExtraLight";
+}
+#f-SourceCodePro-ExtraLightIt {
+  font-family: "SourceCodePro-ExtraLightIt";
+}
+#f-SourceCodePro-It {
+  font-family: "SourceCodePro-It";
+}
+#f-SourceCodePro-Light {
+  font-family: "SourceCodePro-Light";
+}
+#f-SourceCodePro-LightIt {
+  font-family: "SourceCodePro-LightIt";
+}
+#f-SourceCodePro-Medium {
+  font-family: "SourceCodePro-Medium";
+}
+#f-SourceCodePro-MediumIt {
+  font-family: "SourceCodePro-MediumIt";
+}
+#f-SourceCodePro-Regular {
+  font-family: "SourceCodePro-Regular";
+}
+#f-SourceCodePro-Semibold {
+  font-family: "SourceCodePro-Semibold";
+}
+#f-SourceCodePro-SemiboldIt {
+  font-family: "SourceCodePro-SemiboldIt";
+}
+#f-UbuntuMono-B {
+  font-family: "UbuntuMono-B";
+}
+#f-UbuntuMono-BI {
+  font-family: "UbuntuMono-BI";
+}
+#f-UbuntuMono-R {
+  font-family: "UbuntuMono-R";
+}
+#f-UbuntuMono-RI {
+  font-family: "UbuntuMono-RI";
+}
+#f-Vera {
+  font-family: "Vera";
+}
+#f-VeraBd {
+  font-family: "VeraBd";
+}
+#f-VeraBI {
+  font-family: "VeraBI";
+}
+#f-VeraIt {
+  font-family: "VeraIt";
+}
+#f-VeraMoBd {
+  font-family: "VeraMoBd";
+}
+#f-VeraMoBI {
+  font-family: "VeraMoBI";
+}
+#f-VeraMoIt {
+  font-family: "VeraMoIt";
+}
+#f-VeraMono {
+  font-family: "VeraMono";
+}
+#f-VeraSe {
+  font-family: "VeraSe";
+}
+#f-VeraSeBd {
+  font-family: "VeraSeBd";
+}
+#f-Anonymous_Pro_B {
+  font-family: "Anonymous Pro B";
+}
+#f-Anonymous_Pro_BI {
+  font-family: "Anonymous Pro BI";
+}
+#f-Anonymous_Pro_I {
+  font-family: "Anonymous Pro I";
+}
+#f-Anonymous_Pro {
+  font-family: "Anonymous Pro";
+}
+#f-Courier_Prime_Bold_Italic {
+  font-family: "Courier Prime Bold Italic";
+}
+#f-Courier_Prime_Bold {
+  font-family: "Courier Prime Bold";
+}
+#f-Courier_Prime_Italic {
+  font-family: "Courier Prime Italic";
+}
+#f-Courier_Prime {
+  font-family: "Courier Prime";
+}
+#f-DroidSansMono {
+  font-family: "DroidSansMono";
+}
+#f-Envy_Code_R_Bold {
+  font-family: "Envy Code R Bold";
+}
+#f-Envy_Code_R_Italic {
+  font-family: "Envy Code R Italic";
+}
+#f-Envy_Code_R {
+  font-family: "Envy Code R";
+}
+#f-Inconsolata-Bold {
+  font-family: "Inconsolata-Bold";
+}
+#f-Inconsolata-Regular {
+  font-family: "Inconsolata-Regular";
+}
+#f-ProFontWindows {
+  font-family: "ProFontWindows";
+}
+#f-SourceCodePro-Black {
+  font-family: "SourceCodePro-Black";
+}
+#f-SourceCodePro-BlackIt {
+  font-family: "SourceCodePro-BlackIt";
+}
+#f-SourceCodePro-Bold {
+  font-family: "SourceCodePro-Bold";
+}
 </style>
 
 <script type="text/javascript">
+  var element;
   window.onload = function() {
+    element = document.getElementById('h-style-me');
+  }
 
-  };
+  window.onclick = function(e) {
+    e = e || window.event;
+
+    if (e.target.tagName == 'OPTION') {
+      element.style.fontFamily = e.target.value;
+    }
+  }
 </script>
+
+TODO:
+https://download.damieng.com/fonts/original/EnvyCodeR-PR7.zip (redistribution prohibited)
+
+<select style="width: 100%; font-size: 15pt; margin-bottom: 5px; border: 1px solid rgb(162, 230, 247); border-radius: 3px; margin: 0 auto 5px auto;">
+<option id="f-SourceCodePro-BoldIt" value="SourceCodePro-BoldIt">Source Code Pro - Bold Italic</option>
+<option id="f-SourceCodePro-ExtraLight" value="SourceCodePro-ExtraLight">Source Code Pro - ExtraLight</option>
+<option id="f-SourceCodePro-ExtraLightIt" value="SourceCodePro-ExtraLightIt">Source Code Pro - ExtraLightIt</option>
+<option id="f-SourceCodePro-It" value="SourceCodePro-It">Source Code Pro - It</option>
+<option id="f-SourceCodePro-Light" value="SourceCodePro-Light">Source Code Pro - Light</option>
+<option id="f-SourceCodePro-LightIt" value="SourceCodePro-LightIt">Source Code Pro - LightIt</option>
+<option id="f-SourceCodePro-Medium" value="SourceCodePro-Medium">Source Code Pro - Medium</option>
+<option id="f-SourceCodePro-MediumIt" value="SourceCodePro-MediumIt">Source Code Pro - MediumIt</option>
+<option id="f-SourceCodePro-Regular" value="SourceCodePro-Regular">Source Code Pro - Regular</option>
+<option id="f-SourceCodePro-Semibold" value="SourceCodePro-Semibold">Source Code Pro - Semibold</option>
+<option id="f-SourceCodePro-SemiboldIt" value="SourceCodePro-SemiboldIt">Source Code Pro - SemiboldIt</option>
+<option id="f-UbuntuMono-B" value="UbuntuMono-B">UbuntuMono-Bold</option>
+<option id="f-UbuntuMono-BI" value="UbuntuMono-BI">UbuntuMono-Bold Italic</option>
+<option id="f-UbuntuMono-R" value="UbuntuMono-R">UbuntuMono-R</option>
+<option id="f-UbuntuMono-RI" value="UbuntuMono-RI">UbuntuMono-RI</option>
+<option id="f-Vera" value="Vera">Vera</option>
+<option id="f-VeraBd" value="VeraBd">VeraBold</option>
+<option id="f-VeraBI" value="VeraBI">VeraBold Italic</option>
+<option id="f-VeraIt" value="VeraIt">VeraIt</option>
+<option id="f-VeraMoBd" value="VeraMoBd">VeraMoBold</option>
+<option id="f-VeraMoBI" value="VeraMoBI">VeraMoBold Italic</option>
+<option id="f-VeraMoIt" value="VeraMoIt">VeraMoIt</option>
+<option id="f-VeraMono" value="VeraMono">VeraMono</option>
+<option id="f-VeraSe" value="VeraSe">VeraSe</option>
+<option id="f-VeraSeBd" value="VeraSeBd">VeraSeBold</option>
+<option id="f-Anonymous_Pro_B" value="Anonymous Pro B">Anonymous Pro Bold</option>
+<option id="f-Anonymous_Pro_BI" value="Anonymous Pro BI">Anonymous Pro Bold Italic</option>
+<option id="f-Anonymous_Pro_I" value="Anonymous Pro I">Anonymous Pro I</option>
+<option id="f-Anonymous_Pro" value="Anonymous Pro">Anonymous Pro</option>
+<option id="f-Courier_Prime_Bold_Italic" value="Courier Prime Bold Italic">Courier Prime Bold Italic</option>
+<option id="f-Courier_Prime_Bold" value="Courier Prime Bold">Courier Prime Bold</option>
+<option id="f-Courier_Prime_Italic" value="Courier Prime Italic">Courier Prime Italic</option>
+<option id="f-Courier_Prime" value="Courier Prime">Courier Prime</option>
+<option id="f-DroidSansMono" value="DroidSansMono">DroidSansMono</option>
+<option id="f-Envy_Code_R_Bold" value="Envy Code R Bold">Envy Code R Bold</option>
+<option id="f-Envy_Code_R_Italic" value="Envy Code R Italic">Envy Code R Italic</option>
+<option id="f-Envy_Code_R" value="Envy Code R">Envy Code R</option>
+<option id="f-Inconsolata-Bold" value="Inconsolata-Bold">Inconsolata-Bold</option>
+<option id="f-Inconsolata-Regular" value="Inconsolata-Regular">Inconsolata-Regular</option>
+<option id="f-ProFontWindows" value="ProFontWindows">ProFontWindows</option>
+<option id="f-SourceCodePro-Black" value="SourceCodePro-Black">SourceCodePro-Black</option>
+<option id="f-SourceCodePro-BlackIt" value="SourceCodePro-BlackIt">SourceCodePro-BlackIt</option>
+<option id="f-SourceCodePro-Bold" value="SourceCodePro-Bold">SourceCodePro-Bold</option>
+</select>
 
 {% raw %}
 <div style="background: #272822;border: 1px black;padding: 5px;">
-<code class="blok language-c"><span class="token comment" spellcheck="true">/*
+<code id="h-style-me" class="blok language-c"><span class="token comment" spellcheck="true">/*
  * Supplementary group IDs
  */</span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/cred.h&gt;</span></span>
@@ -426,3 +781,17 @@ bool <span class="token function">may_setgroups</span><span class="token punctua
 </code>
 </div>
 {% endraw %}
+
+Sample source code is from the Linux kernel [kernel/groups.c](http://lxr.free-electrons.com/source/kernel/groups.c). Linux is licensed under the [GNU GPL, version 2](https://www.kernel.org/pub/linux/kernel/COPYING).  
+Syntax highlighting from [Prism](http://prismjs.com/) using the built-in Okaidia theme, under the [MIT license](http://www.opensource.org/licenses/mit-license.php/).
+
+Each font is licensed under its specific license:  
+[Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) is distributed with the Open Font License (OFL).  
+[Adobe Source Code Pro](http://blog.typekit.com/2012/09/24/source-code-pro/) is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL)  
+[Bitstream Vera Sans Mono](http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/) is licensed under a (seemingly) modified MIT license. A mirror is available [here](https://rafa1231518.github.io/nfmm-addons/fonts/lic1.txt).  
+[Courier Prime](http://quoteunquoteapps.com/courierprime/) is released under the [SIL Open Font License (OFL)](http://scripts.sil.org/OFL) license.  
+[Droid Sans Mono](https://damieng.com/blog/2007/11/14/droid-sans-mono-great-coding-font) is licensed under the [Apache License Version 2.0](http://www.apache.org/licenses/), with a mirror available [here](https://rafa1231518.github.io/nfmm-addons/fonts/lic2.txt).  
+The copyright notice for [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) states "Free to use but redistribution prohibited."
+[Inconsolata](http://www.levien.com/type/myfonts/inconsolata.html) is licensed under the [SIL Open Font License (OFL)](https://raw.githubusercontent.com/google/fonts/master/ofl/inconsolata/OFL.txt).
+[ProFont](http://www.tobias-jung.de/seekingprofont/) is licensed under the MIT license. A mirror is available [here](https://rafa1231518.github.io/nfmm-addons/fonts/lic3.txt).  
+The [Ubuntu Fonts](http://font.ubuntu.com/) are licensed under the Ubuntu Font Licence. A mirror is available [here](https://rafa1231518.github.io/nfmm-addons/fonts/lic4.txt).  
