@@ -132,6 +132,9 @@ pre[class*="language-"] {
   white-space: pre !important;
   border: none !important;
 }
+#selector {
+  width: 100%; font-size: 15pt; margin-bottom: 5px; border: 1px solid rgb(162, 230, 247); border-radius: 3px; margin: 0 auto 5px auto;
+}
 @font-face {
   font-family: "SourceCodePro-BoldIt";
   src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-BoldIt.ttf");
@@ -304,6 +307,22 @@ pre[class*="language-"] {
   font-family: "SourceCodePro-Bold";
   src: url("https://rafa1231518.github.io/nfmm-addons/fonts/SourceCodePro-Bold.ttf");
 }
+@font-face {
+  font-family: "monof55";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/monof55.ttf");
+}
+@font-face {
+  font-family: "monof56";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/monof56.ttf");
+}
+@font-face {
+  font-family: "Unifont Upper";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/unifont_upper-9.0.04.ttf");
+}
+@font-face {
+  font-family: "Unifont Lower";
+  src: url("https://rafa1231518.github.io/nfmm-addons/fonts/unifont_csur-9.0.04.ttf");
+}
 #f-SourceCodePro-BoldIt {
   font-family: "SourceCodePro-BoldIt";
 }
@@ -433,12 +452,47 @@ pre[class*="language-"] {
 #f-SourceCodePro-Bold {
   font-family: "SourceCodePro-Bold";
 }
+#f-Courier {
+  font-family: "Courier";
+}
+#f-Courier-New {
+  font-family: "Courier New";
+}
+#f-Consolas {
+  font-family: "Consolas";
+}
+#f-monof55 {
+  font-family: "monof55";
+}
+#f-monof56 {
+  font-family: "monof56";
+}
+#f-Unifont-Upper {
+  font-family: "Unifont-Upper";
+}
+#f-Unifont-Lower {
+  font-family: "Unifont-Lower";
+}
 </style>
 
 <script type="text/javascript">
   var element;
   window.onload = function() {
     element = document.getElementById('h-style-me');
+    var selector = document.getElementById('selector');
+    document.getElementById('dlfont').onclick = function() {
+      if (selector.value.startsWith('Envy')) { // redistribution prohibited
+        window.open('https://download.damieng.com/fonts/original/EnvyCodeR-PR7.zip');
+      } else if (selector.value == 'Courier' || selector.value == 'Courier-New') {
+        window.alert('This font should come built-in with any decent operating system.\nWe\'re not gonna include a download link for licensing concerns.');
+      } else if (selector.value == 'Consolas') {
+        window.alert('Consolas is a neat font, but is not free. It comes with Microsoft Office.');
+      } else if (selector.value.startsWith('Unifont')) { // it's a weird GPL
+        window.open('http://unifoundry.com/unifont.html');
+      } else {
+        window.open('https://rafa1231518.github.io/nfmm-addons/fonts/' + selector.value + '.ttf');
+      }
+    }
   }
 
   window.onclick = function(e) {
@@ -450,54 +504,59 @@ pre[class*="language-"] {
   }
 </script>
 
-TODO:
-https://download.damieng.com/fonts/original/EnvyCodeR-PR7.zip (redistribution prohibited)
-
-<select style="width: 100%; font-size: 15pt; margin-bottom: 5px; border: 1px solid rgb(162, 230, 247); border-radius: 3px; margin: 0 auto 5px auto;">
+<select id="selector">
 <option id="f-SourceCodePro-BoldIt" value="SourceCodePro-BoldIt">Source Code Pro - Bold Italic</option>
-<option id="f-SourceCodePro-ExtraLight" value="SourceCodePro-ExtraLight">Source Code Pro - ExtraLight</option>
-<option id="f-SourceCodePro-ExtraLightIt" value="SourceCodePro-ExtraLightIt">Source Code Pro - ExtraLightIt</option>
-<option id="f-SourceCodePro-It" value="SourceCodePro-It">Source Code Pro - It</option>
+<option id="f-SourceCodePro-ExtraLight" value="SourceCodePro-ExtraLight">Source Code Pro - Extra Light</option>
+<option id="f-SourceCodePro-ExtraLightIt" value="SourceCodePro-ExtraLightIt">Source Code Pro - Extra Light Italic</option>
+<option id="f-SourceCodePro-It" value="SourceCodePro-It">Source Code Pro - Italic</option>
 <option id="f-SourceCodePro-Light" value="SourceCodePro-Light">Source Code Pro - Light</option>
-<option id="f-SourceCodePro-LightIt" value="SourceCodePro-LightIt">Source Code Pro - LightIt</option>
+<option id="f-SourceCodePro-LightIt" value="SourceCodePro-LightIt">Source Code Pro - Light Italic</option>
 <option id="f-SourceCodePro-Medium" value="SourceCodePro-Medium">Source Code Pro - Medium</option>
-<option id="f-SourceCodePro-MediumIt" value="SourceCodePro-MediumIt">Source Code Pro - MediumIt</option>
+<option id="f-SourceCodePro-MediumIt" value="SourceCodePro-MediumIt">Source Code Pro - Medium Italic</option>
 <option id="f-SourceCodePro-Regular" value="SourceCodePro-Regular">Source Code Pro - Regular</option>
 <option id="f-SourceCodePro-Semibold" value="SourceCodePro-Semibold">Source Code Pro - Semibold</option>
-<option id="f-SourceCodePro-SemiboldIt" value="SourceCodePro-SemiboldIt">Source Code Pro - SemiboldIt</option>
-<option id="f-UbuntuMono-B" value="UbuntuMono-B">UbuntuMono-Bold</option>
-<option id="f-UbuntuMono-BI" value="UbuntuMono-BI">UbuntuMono-Bold Italic</option>
-<option id="f-UbuntuMono-R" value="UbuntuMono-R">UbuntuMono-R</option>
-<option id="f-UbuntuMono-RI" value="UbuntuMono-RI">UbuntuMono-RI</option>
+<option id="f-SourceCodePro-SemiboldIt" value="SourceCodePro-SemiboldIt">Source Code Pro - Semibold Italic</option>
+<option id="f-UbuntuMono-B" value="UbuntuMono-B">Ubuntu Mono - Bold</option>
+<option id="f-UbuntuMono-BI" value="UbuntuMono-BI">Ubuntu Mono - Bold Italic</option>
+<option id="f-UbuntuMono-R" value="UbuntuMono-R">Ubuntu Mono - Regular</option>
+<option id="f-UbuntuMono-RI" value="UbuntuMono-RI">Ubuntu Mono - Regular Italic</option>
 <option id="f-Vera" value="Vera">Vera</option>
-<option id="f-VeraBd" value="VeraBd">VeraBold</option>
-<option id="f-VeraBI" value="VeraBI">VeraBold Italic</option>
-<option id="f-VeraIt" value="VeraIt">VeraIt</option>
-<option id="f-VeraMoBd" value="VeraMoBd">VeraMoBold</option>
-<option id="f-VeraMoBI" value="VeraMoBI">VeraMoBold Italic</option>
-<option id="f-VeraMoIt" value="VeraMoIt">VeraMoIt</option>
-<option id="f-VeraMono" value="VeraMono">VeraMono</option>
-<option id="f-VeraSe" value="VeraSe">VeraSe</option>
-<option id="f-VeraSeBd" value="VeraSeBd">VeraSeBold</option>
+<option id="f-VeraBd" value="VeraBd">Vera Bold</option>
+<option id="f-VeraBI" value="VeraBI">Vera Bold Italic</option>
+<option id="f-VeraIt" value="VeraIt">Vera Italic</option>
+<option id="f-VeraMoBd" value="VeraMoBd">Vera Mono Bold</option>
+<option id="f-VeraMoBI" value="VeraMoBI">Vera Mono Bold Italic</option>
+<option id="f-VeraMoIt" value="VeraMoIt">Vera Mono Italic</option>
+<option id="f-VeraMono" value="VeraMono">Vera Mono</option>
+<option id="f-VeraSe" value="VeraSe">Vera Serif</option>
+<option id="f-VeraSeBd" value="VeraSeBd">Vera Serif Bold</option>
 <option id="f-Anonymous_Pro_B" value="Anonymous Pro B">Anonymous Pro Bold</option>
 <option id="f-Anonymous_Pro_BI" value="Anonymous Pro BI">Anonymous Pro Bold Italic</option>
-<option id="f-Anonymous_Pro_I" value="Anonymous Pro I">Anonymous Pro I</option>
+<option id="f-Anonymous_Pro_I" value="Anonymous Pro I">Anonymous Pro Italic</option>
 <option id="f-Anonymous_Pro" value="Anonymous Pro">Anonymous Pro</option>
 <option id="f-Courier_Prime_Bold_Italic" value="Courier Prime Bold Italic">Courier Prime Bold Italic</option>
 <option id="f-Courier_Prime_Bold" value="Courier Prime Bold">Courier Prime Bold</option>
 <option id="f-Courier_Prime_Italic" value="Courier Prime Italic">Courier Prime Italic</option>
 <option id="f-Courier_Prime" value="Courier Prime">Courier Prime</option>
-<option id="f-DroidSansMono" value="DroidSansMono">DroidSansMono</option>
+<option id="f-DroidSansMono" value="DroidSansMono">Droid Sans Mono</option>
 <option id="f-Envy_Code_R_Bold" value="Envy Code R Bold">Envy Code R Bold</option>
 <option id="f-Envy_Code_R_Italic" value="Envy Code R Italic">Envy Code R Italic</option>
 <option id="f-Envy_Code_R" value="Envy Code R">Envy Code R</option>
-<option id="f-Inconsolata-Bold" value="Inconsolata-Bold">Inconsolata-Bold</option>
-<option id="f-Inconsolata-Regular" value="Inconsolata-Regular">Inconsolata-Regular</option>
-<option id="f-ProFontWindows" value="ProFontWindows">ProFontWindows</option>
-<option id="f-SourceCodePro-Black" value="SourceCodePro-Black">SourceCodePro-Black</option>
-<option id="f-SourceCodePro-BlackIt" value="SourceCodePro-BlackIt">SourceCodePro-BlackIt</option>
-<option id="f-SourceCodePro-Bold" value="SourceCodePro-Bold">SourceCodePro-Bold</option>
+<option id="f-Inconsolata-Bold" value="Inconsolata-Bold">Inconsolata Bold</option>
+<option id="f-Inconsolata-Regular" value="Inconsolata-Regular">Inconsolata Regular</option>
+<option id="f-ProFontWindows" value="ProFontWindows">ProFont (Windows)</option>
+<option id="f-SourceCodePro-Black" value="SourceCodePro-Black">Source Code Pro - Black</option>
+<option id="f-SourceCodePro-BlackIt" value="SourceCodePro-BlackIt">Source Code Pro - BlackItalic</option>
+<option id="f-SourceCodePro-Bold" value="SourceCodePro-Bold">Source Code Pro - Bold</option>
+<option id="f-Courier" value="Courier">Courier</option>
+<option id="f-Courier-New" value="Courier-New">Courier New</option>
+<option id="f-Consolas" value="Consolas">Consolas</option>
+<option id="f-monof55" value="monof55">Monofur</option>
+<option id="f-monof56" value="monof56">Monofur Italic</option>
+<option value="Unifont Upper">GNU Unifont - Upper glyphs (warning: 1mb, no preview)</option>
+<option value="Unifont Lower">GNU Unifont - CSUR glyphs (warning: 1mb, no preview)</option>
 </select>
+<input style="margin: 0 0 5px 0;" id="dlfont" value="Download Font" type="submit"><br><i style="font-size: 9pt;">Note: Large fonts may display as the default font while they are being downloaded. Browsers such as Internet Explorer 8 and lower might not support CSS3 fonts, and they will also be displayed as the default font.</i>
 
 {% raw %}
 <div style="background: #272822;border: 1px black;padding: 5px;">
@@ -795,3 +854,5 @@ The copyright notice for [Envy Code R](https://damieng.com/blog/2008/05/26/envy-
 [Inconsolata](http://www.levien.com/type/myfonts/inconsolata.html) is licensed under the [SIL Open Font License (OFL)](https://raw.githubusercontent.com/google/fonts/master/ofl/inconsolata/OFL.txt).
 [ProFont](http://www.tobias-jung.de/seekingprofont/) is licensed under the MIT license. A mirror is available [here](https://rafa1231518.github.io/nfmm-addons/fonts/lic3.txt).  
 The [Ubuntu Fonts](http://font.ubuntu.com/) are licensed under the Ubuntu Font Licence. A mirror is available [here](https://rafa1231518.github.io/nfmm-addons/fonts/lic4.txt).  
+[Monofur](http://www.dafont.com/monofur.font)'s license is available [here]([here](https://rafa1231518.github.io/nfmm-addons/fonts/lic5.txt).
+The [GNU Unifont](http://unifoundry.com/unifont.html) is licensed under the [GNU General Public License, with the exception that embedding the font in a document does not in itself constitute a violation of the GNU GPL](http://unifoundry.com/LICENSE.txt).

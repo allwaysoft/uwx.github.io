@@ -12,6 +12,7 @@ date: 2016-09-07 01:07:53
 [Heavy-Duty Password Generator](/Editors/password-gen.html) - Generate a fairly secure, XKCD-style password out of 29 sextillion possibilities.
 [SS64 Mirror](/ss64/index.html) - Unofficial partial stylized mirror of [Simon Sheppard's site](https://ss64.com/).
 [HTML Color Table](/Editors/colortable.md) - A table with 712 unique colors, including RGB/Hex/Decimal values.
+[Dynamic Font Tester](/Editors/font-tester.md) - See which monospaced font is best fit for you.
 
 A bunch of text tools I made to avoid having to write the same few regular expressions again and again.
 
