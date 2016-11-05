@@ -1,5 +1,5 @@
 ---
-title: JavaScript Minifier and Beautifier
+title: PNG to ICO converter
 date: 2016-08-15 13:49:34
 ---
 
@@ -18,57 +18,37 @@ date: 2016-08-15 13:49:34
 -->
 
 <script type="text/javascript">
+window.onload = function() {
+  var form = document.forms.namedItem("fileinfo");
+  form.addEventListener('submit', function(ev) {
 
-  window.onload = function() {
-    function handleFileSelect(evt) {
-      evt.stopPropagation();
-      evt.preventDefault();
+    var oOutput = document.querySelector("#resultdiv"),
+        oData = new FormData(form);
 
-      // files is a FileList of File objects.
-      var files = evt.dataTransfer.files; // FileList object.
+    //oData.append("CustomField", "This is some extra data");
 
-      var reader = new FileReader();
-
-      for (var i = 0, f, l = files.length; f = files[i], i < l; i++) {
-        console.log(f);
-        reader.readAsBinaryString(f);
-        reader.onloadend = function() {
-          //var read = new Uint8Array(reader.result);//.split('');
-
-          var oReq = new XMLHttpRequest();
-          oReq.open("POST", 'https://cors-anywhere.herokuapp.com/http://convertico.com/remoteLoad.php', true);
-          oReq.onload = function (oEvent) {
-            // Uploaded.
-            var response = oReq.responseText;
-            console.log(response);
-            document.location.href = 'http://convertico.com/' + JSON.parse(response).New;
-          };
-
-          //var blob = new Blob(['abc123'], {type: f.type});
-
-          oReq
-          oReq.send(`-----------------------------19781744215459
-Content-Disposition: form-data; name="imgfile"; filename="after effects.png"
-Content-Type: image/png
-
-` + reader.result + `
------------------------------19781744215459--
-`);
+    var oReq = new XMLHttpRequest();
+    oReq.open("POST", "https://cors-anywhere.herokuapp.com/http://convertico.com/remoteLoad.php", true);
+    oReq.onload = function(oEvent) {
+      if (oReq.status == 200) {
+        oOutput.innerHTML = "Uploaded!";
+        var obj = JSON.parse(oReq.responseText);
+        if (obj.error.length > 0) {
+          oOutput.innerHTML = "Backend error: " + JSON.stringify(obj.error);
+        } else if (!obj.New) {
+          oOutput.innerHTML = "No error, but no result. The image needs to be a PNG!";
+        } else {
+          oOutput.innerHTML = "Original: <a href=\"http://convertico.com" + obj.original + "\">" + obj.original + "</a><br>Converted: <a href=\"http://convertico.com" + obj.New + "\">" + obj.New + "</a>";
         }
+      } else {
+        oOutput.innerHTML = "Error " + oReq.status + " occurred when trying to upload your file.<br \/>";
       }
-    }
+    };
 
-    function handleDragOver(evt) {
-      evt.stopPropagation();
-      evt.preventDefault();
-      evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-    }
-
-    // Setup the dnd listeners.
-    var dropZone = document.getElementById('drop_zone');
-    dropZone.addEventListener('dragover', handleDragOver, false);
-    dropZone.addEventListener('drop', handleFileSelect, false);
-  }
+    oReq.send(oData);
+    ev.preventDefault();
+  }, false);
+};
 </script>
 
 <style type="text/css">
@@ -85,10 +65,8 @@ Content-Type: image/png
 }
 </style>
 
-<div class="dropHolder">
-
-<div id="drop_zone">Drop Files here</div>
-
-<output id="list"></output>
-
-</div>
+<form enctype="multipart/form-data" method="post" name="fileinfo">
+  <input type="file" name="imgfile" required />
+  <input type="submit" value="Plant the bomb!" />
+</form><p></p>
+<div id="resultdiv"></div>
