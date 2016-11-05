@@ -106,21 +106,22 @@ title: Heavy-Duty Password Generator
     var el1 = document.getElementById('pass');
     var nw = document.getElementById('numwords');
     var join = document.getElementById('join');
+    window.dictionary = {};
 
     function clickStronk(dictUrl) {
-      if (!window.dictionary) {
+      if (!window.dictionary[dictUrl]) {
         el1.value = 'Please wait, loading word dictionary...'
         var client = new XMLHttpRequest();
         client.open('GET', dictUrl);
         client.onreadystatechange = function() {
-          window.dictionary = client.responseText.split('\n');
+          window.dictionary[dictUrl] = client.responseText.split('\n');
           clickStronk();
         }
         client.send();
       } else {
         var value = [];
         for (var i = 0, val = nw.value; i < val; i++) {
-          value.push(choose(window.dictionary));
+          value.push(choose(window.dictionary[dictUrl]));
         }
         el1.value = value.join(join.value);
       }
@@ -145,14 +146,14 @@ title: Heavy-Duty Password Generator
 
 <input name="pass" id="pass" class="pass" tabindex="5" size="40"><p></p>
 
-Amount of words: <input id="numwords" name="numwords" type="number" min="1" max="10" value="4">
+Amount of words: <input id="numwords" name="numwords" type="number" min="1" max="10" value="4" size="3">
 Character to join the words: <input name="join" id="join" class="join" tabindex="5" size="3">
 <input id="gen" class="genbtn" value="Generate strong password" tabindex="4" type="submit"> <sup>1</sup>
 <input id="gen2" class="genbtn" value="Generate a fairly readable food password" tabindex="4" type="submit"> <sup>2</sup>
 <input id="gen3" class="genbtn" value="Generate a strong, but readable password" tabindex="4" type="submit"> <sup>3</sup>
 
-1: Generates a fairly safe password from somewhere around 29,981,220,663,656,114,112,016 (416114<sup>4</sup>) possibilities.
+1: Generates a fairly safe password from somewhere around 29,981,220,663,656,114,112,016 (416114<sup>4</sup>) possibilities (≈18 bits of entropy per word).
 2: Generates a dish that can be used as a relatively safe password. Consider adjusting it to your taste. This will ignore your "amount of words" setting.
-3: Generates a password from a dictionary of 10,000 common words.
+3: Generates a password from a dictionary of 10,000 common words (≈13 bits of entropy per word).
 
 Remember to wipe your browser's saved field data after generating!
