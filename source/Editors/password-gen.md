@@ -115,7 +115,7 @@ title: Heavy-Duty Password Generator
         client.open('GET', dictUrl);
         client.onreadystatechange = function() {
           window.dictionary[dictUrl] = client.responseText.split('\n');
-          clickStronk();
+          clickStronk(dictUrl);
         }
         client.send();
       } else {
