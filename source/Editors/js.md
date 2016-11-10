@@ -26,6 +26,8 @@ noSidebar: true
 
 <script src="/libraries/hq9plus.js"></script>
 
+<script src="/libraries/math.js"></script>
+
 <script src="/libraries/common.js"></script>
 
 <script src="/libraries/checksum.js"></script>
@@ -69,19 +71,31 @@ noSidebar: true
 
 <h1 class="hansen-header">Code Tools</h1>
 
-<button class="submit hansen-wrap" id="do-jshint">JSHint</button> <button class="submit hansen-wrap" id="do-eval">Execute (Javascript using eval)</button> <button class="submit hansen-wrap" id="do-arnold">Execute (ArnoldC using ArnoldJS)</button> <button class="submit hansen-wrap" id="do-bfuk">Execute (Brainfuck)</button> <button class="submit hansen-wrap" id="do-fishq9">Execute (FisHQ9+)</button>
+<button class="submit hansen-wrap" id="do-jshint">JSHint</button> <button class="submit hansen-wrap" id="do-eval">Execute (Javascript using eval)</button> <button class="submit hansen-wrap" id="do-arnold">Execute (ArnoldC using ArnoldJS)</button> <button class="submit hansen-wrap" id="do-bfuk">Execute (Brainfuck)</button> <button class="submit hansen-wrap" id="do-fishq9">Execute (FisHQ9+)</button> <button class="submit hansen-wrap" id="do-evmath">Evaluate mathematical expression</button>
 
-<h1 class="hansen-header">Encryption Tools</h1>
+<table style="width:100%;color: inherit;font-size: inherit;border: none;">
+  <tr>
+    <td>
+      <h1 class="hansen-header">Encryption Tools</h1>
+      <button class="submit hansen-wrap" id="do-264">Convert to Base64</button> <button class="submit hansen-wrap" id="do-f64">Convert from Base64</button> <br>
+      <button class="submit hansen-wrap" id="do-2hex">Convert to Hex</button> <button class="submit hansen-wrap" id="do-fhex">Convert from Hex</button> <br>
+      <button class="submit hansen-wrap" id="do-2dec">Convert to Decimal</button> <button class="submit hansen-wrap" id="do-fdec">Convert from Decimal</button> <br>
+      <button class="submit hansen-wrap" id="do-2bi">Convert to Binary</button> <button class="submit hansen-wrap" id="do-fbi">Convert from Binary</button> <br>
+      <button class="submit hansen-wrap" id="do-checksm">Get checksum (CRC32, MD5)</button>
+    </td>
+    <td>
+      <h1 class="hansen-header">Math Tools</h1>
+      <button class="submit hansen-wrap" id="do-rand">Generate random number (0-1)</button> <br>
+      <button class="submit hansen-wrap" id="do-mceil">Round number up (ceil)</button> <br>
+      <button class="submit hansen-wrap" id="do-mflor">Round number down (floor)</button> <br>
+      <button class="submit hansen-wrap" id="do-mrond">Round number</button>
+    </td>
+  </tr>
+</table> 
 
-<button class="submit hansen-wrap" id="do-264">Convert to Base64</button> <button class="submit hansen-wrap" id="do-f64">Convert from Base64</button>
-<button class="submit hansen-wrap" id="do-2hex">Convert to Hex</button> <button class="submit hansen-wrap" id="do-fhex">Convert from Hex</button>
-<button class="submit hansen-wrap" id="do-2dec">Convert to Decimal</button> <button class="submit hansen-wrap" id="do-fdec">Convert from Decimal</button>
-<button class="submit hansen-wrap" id="do-2bi">Convert to Binary</button> <button class="submit hansen-wrap" id="do-fbi">Convert from Binary</button>
-<button class="submit hansen-wrap" id="do-checksm">Get checksum (CRC32, MD5)</button>
+<h1 class="hansen-header" id="txt-header" onload="showHeader();">General Text Tools</h1>
 
-<h1 class="hansen-header" id="txt-header">General Text Tools</h1>
-
-<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button> <button class="submit hansen-wrap" id="do-zalgo">Remove combining characters</button> <button class="submit hansen-wrap" id="do-rand">Generate random number (0-1)</button> <button class="submit hansen-wrap" id="do-lowercase">Convert to lowercase</button> <button class="submit hansen-wrap" id="do-uppercase">Convert to uppercase</button>
+<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button> <button class="submit hansen-wrap" id="do-zalgo">Remove combining characters</button> <button class="submit hansen-wrap" id="do-dlowercase">Convert to lowercase</button> <button class="submit hansen-wrap" id="do-duppercase">Convert to uppercase</button> <button class="submit hansen-wrap" id="do-dtitlecase">Convert to titlecase</button>
 
 <div id="textfield"></div>
 

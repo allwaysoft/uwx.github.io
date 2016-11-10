@@ -1,4 +1,4 @@
-/*globals UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus*/
+/*globals UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math*/
 /*jshint evil:true*/
 window.onload = function() {
   'use strict';
@@ -301,7 +301,7 @@ window.onload = function() {
   function toBinary(str) {
     var outstr = [];
     for (var i = 0; i < str.length; i++) {
-      outstr.push(str[i].charCodeAt(i).toString(2));
+      outstr.push(str.charCodeAt(i).toString(2));
     }
     return outstr.join(' ');
   }
@@ -309,7 +309,7 @@ window.onload = function() {
   function toHex(str) {
     var outstr = [];
     for (var i = 0; i < str.length; i++) {
-      outstr.push((str[i].charCodeAt(i) % 256).toString(16)); // % 256 gets only the lower byte
+      outstr.push((str.charCodeAt(i) % 256).toString(16)); // % 256 gets only the lower byte
     }
     return outstr.join(' ');
   }
@@ -327,7 +327,7 @@ window.onload = function() {
   function toDec(str) {
     var outstr = [];
     for (var i = 0; i < str.length; i++) {
-      outstr.push((str[i].charCodeAt(i) % 256).toString()); // % 256 gets only the lower byte
+      outstr.push((str.charCodeAt(i) % 256).toString()); // % 256 gets only the lower byte
     }
     return outstr.join(' ');
   }
@@ -361,14 +361,36 @@ window.onload = function() {
     // mod of hashCode by http://stackoverflow.com/users/353872/fordi using base36 and only takes in strings
 
     outputText('FastHash: ' + fastHash + '\n' + 
-                                'Sergey Shuchkin\'s: ' + strHash + '\n' + 
-                                'Fordi\'s: ' + hashCode + '\n' + 
-                                'Joseph Myers\' MD5: ' + md5 + '\n' + 
-                                'Chris Veness\' SHA-1: ' + sha1 + '\n' + 
-                                'Nicolás Bevacqua\'s: ' + sum + '\n' + 
-                                'Wes\': ' + javaHashCode + '\n' + 
-                                'Modified version of Fordi\'s: ' + hashCode2 + '\n');
+               'Sergey Shuchkin\'s: ' + strHash + '\n' + 
+               'Fordi\'s: ' + hashCode + '\n' + 
+               'Joseph Myers\' MD5: ' + md5 + '\n' + 
+               'Chris Veness\' SHA-1: ' + sha1 + '\n' + 
+               'Nicolás Bevacqua\'s: ' + sum + '\n' + 
+               'Wes\': ' + javaHashCode + '\n' + 
+               'Modified version of Fordi\'s: ' + hashCode2 + '\n');
     return suffix;
+  }
+
+  const lowers = [/(\s)A(\s)/g, /(\s)Is(\s)/g, /(\s)An(\s)/g, /(\s)The(\s)/g, /(\s)And(\s)/g, /(\s)But(\s)/g, /(\s)Or(\s)/g, /(\s)For(\s)/g, /(\s)Nor(\s)/g, /(\s)As(\s)/g, /(\s)At(\s)/g, 
+    /(\s)By(\s)/g, /(\s)For(\s)/g, /(\s)From(\s)/g, /(\s)In(\s)/g, /(\s)Into(\s)/g, /(\s)Near(\s)/g, /(\s)Of(\s)/g, /(\s)On(\s)/g, /(\s)Onto(\s)/g, /(\s)To(\s)/g, /(\s)With(\s)/g];
+  const lowered = ['$1a$2', '$1is$2', '$1an$2', '$1the$2', '$1and$2', '$1but$2', '$1or$2', '$1for$2', '$1nor$2', '$1as$2', '$1at$2', 
+    '$1by$2', '$1for$2', '$1from$2', '$1in$2', '$1into$2', '$1near$2', '$1of$2', '$1on$2', '$1onto$2', '$1to$2', '$1with$2'];
+  const lowersLen = lowers.length;
+
+  const uppers  = ['ID', 'TV'];
+
+  function titleCase(str) {
+    str = str.replace(/([^\W_]+[^\s-]*) */g, function(txt) {
+      return (uppers.indexOf(txt) != -1) ? txt : (txt[0].toUpperCase() + txt.substr(1).toLowerCase());
+    });
+
+    // Certain minor words should be left lowercase unless  they are the first -- or last words in the string -- TODO: why the last words as well?
+
+    for (let i = 0; i < lowersLen; i++) {
+      str = str.replace(lowers[i], lowered[i]);
+    }
+
+    return str;
   }
 
   // Minify
@@ -466,6 +488,25 @@ window.onload = function() {
     return text;
   }, 'Could not execute code lines: ');
 
+  document.getElementById('do-evmath').onclick = makeFunc(function(text) {
+    if (!window.parser) {
+      window.parser = math.parser();
+    }
+    var res = window.parser.eval(text);
+    var resStr = math.format(res, { precision: 14 });
+    var unRoundedStr = math.format(res);
+    if (unRoundedStr.length - resStr.length > 4) {
+      outputText('<p>' + resStr + '</p><p style="margin-bottom: 0;">This result contains a round-off error which is hidden from the output. The unrounded result is:<br>' + 
+             unRoundedStr + 
+             '<br><a href="http://mathjs.org/docs/datatypes/numbers.html#roundoff-errors" style="color: #c8ecf6;">read more...</a></p>');
+    } else {
+      outputText(resStr);
+    }
+
+    return text;
+  }, 'Could not eval math: ');
+  
+
   document.getElementById('do-264').onclick = makeFunc(btoa, 'Could not convert to Base64: ');
   document.getElementById('do-f64').onclick = makeFunc(atob, 'Could not convert from Base64: ');
   document.getElementById('do-2hex').onclick = makeFunc(toHex, 'Could not convert to Hex: ');
@@ -475,33 +516,24 @@ window.onload = function() {
   document.getElementById('do-2bi').onclick = makeFunc(toBinary, 'Could not convert to Binary: ');
   document.getElementById('do-fbi').onclick = makeFunc(fromBinary, 'Could not convert from Binary: ');
   document.getElementById('do-checksm').onclick = makeFunc(doChecksum, 'Could not calculate checksum: ');
-  document.getElementById('do-rand').onclick =    makeFunc(function() {
+  
+  document.getElementById('do-rand').onclick = makeFunc(function() {
     return Math.random().toString();
   }, 'Could not generate random number: ');
-  document.getElementById('do-lowercase').onclick = makeFunc(function(str) {
-    return str.toLowerCase();
-  }, 'Could not convert to lowercase: ');
-  document.getElementById('do-uppercase').onclick = makeFunc(function(str) {
-    return str.toUpperCase();
-  }, 'Could not convert to uppercase: ');
+  document.getElementById('do-mceil').onclick = makeFunc(Math.ceil, 'How does this even happen?! ');
+  document.getElementById('do-mflor').onclick = makeFunc(Math.floor, 'How does this even happen?! ');
+  document.getElementById('do-mrond').onclick = makeFunc(Math.round, 'How does this even happen?! ');
+
+  document.getElementById('do-dlowercase').onclick = makeFunc(Function.apply.bind(String.prototype.toLowerCase), 'Could not convert to lowercase: ');
+  document.getElementById('do-duppercase').onclick = makeFunc(Function.apply.bind(String.prototype.toUpperCase), 'Could not convert to uppercase: ');
+  document.getElementById('do-dtitlecase').onclick = makeFunc(titleCase, 'How does this even happen?! ');
+
 
 }; // jshint ignore:line
 
-//Finds y value of given object
-function hFindPos(obj) {
-  'use strict';
-  var curtop = 0;
-  if (obj.offsetParent) {
-    do {
-        curtop += obj.offsetTop;
-    } while (obj = obj.offsetParent); // jshint ignore:line
-  }
-  return curtop;
-}
-
-document.body.addEventListener("load", function() {
+window.addEventListener("load", function() {
   'use strict';
   var elem = document.getElementById('txt-header');
   if (elem.scrollIntoView) elem.scrollIntoView();
-  else window.scroll(0, hFindPos(elem));
+  else window.scroll(0, window.hFindPos(elem));
 }, true); // jshint ignore:line
