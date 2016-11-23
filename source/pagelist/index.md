@@ -14,6 +14,10 @@ date: 2016-09-07 01:07:53
 [HTML Color Table](/Editors/colortable.html) - A table with 712 unique colors, including RGB/Hex/Decimal values.
 [Dynamic Font Tester](/Editors/font-tester.html) - See which monospaced font is best fit for you.
 
+GameShark codes for classic consoles:
+
+[PSX](/pagelist/gslist.html) - [N64](/pagelist/gs64.html)
+
 A bunch of text tools I made to avoid having to write the same few regular expressions again and again.
 
 [CSS Minifier and Beautifier](/Editors/css.html)
