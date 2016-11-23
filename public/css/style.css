@@ -2230,11 +2230,54 @@ pre {
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
-/* force <code> to be styled like div */
-code {
+/* force <samp> to be styled like div */
+samp {
+    border-bottom-color: rgba(0, 0, 0, 0.24);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: rgba(0, 0, 0, 0.24);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.24);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgba(0, 0, 0, 0.24);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: rgb(0, 0, 0);
+    font-family: "Source Code Pro",Consolas,Monaco,Lucida Console,monospace;
+    font-size: 12.6px;
+    hyphens: auto;
+    line-height: 21.6px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 0px;
+    overflow-wrap: break-word;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    text-rendering: optimizelegibility;
+    vertical-align: baseline;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+
 }
