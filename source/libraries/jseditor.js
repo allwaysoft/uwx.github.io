@@ -1,6 +1,5 @@
 /*globals UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math*/
-/*exported UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math*/
-/*exported removeDuplicateLines, removeEmptyLines, trimLines, re_escape_n, re_escape, descape, jsonEscape, minify, beautify, escapeNonPrintable, escapeNonPrintableJSON, unZalgo, fromBinary, toBinary, toHex, fromHex, toDec, fromDec, doChecksum, titleCase, htmlEscape*/
+/*exported UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math, removeDuplicateLines, removeEmptyLines, trimLines, re_escape_n, re_escape, descape, jsonEscape, minify, beautify, escapeNonPrintable, escapeNonPrintableJSON, unZalgo, fromBinary, toBinary, toHex, fromHex, toDec, fromDec, doChecksum, titleCase, htmlEscape*/
 /*jshint evil:true*/
 
 'use strict';
