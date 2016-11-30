@@ -11,7 +11,7 @@ mkdir %USERPROFILE%\master
 git clone --quiet --branch=master https://github.com/rafa1231518/rafa1231518.github.io %USERPROFILE%\master
 
 @rem override public data and add to git
-robocopy public %USERPROFILE%\master /MIR /IS /NP
+robocopy public %USERPROFILE%\master /E /IS /NP
 cd %USERPROFILE%\master
 dir
 git add -f .
