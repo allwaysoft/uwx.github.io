@@ -8,10 +8,10 @@ For /f "tokens=1-2 delims=/:" %%a in ('time /t') do (set mytime=%%a%%b)
 
 @rem clone gh pages branch
 mkdir %USERPROFILE%\master
-git clone --quiet --branch=master https://github.com/rafa1231518/OpenNFMM %USERPROFILE%\master
+git clone --quiet --branch=master https://github.com/rafa1231518/rafa1231518.github.io %USERPROFILE%\master
 
 @rem override public data and add to git
-copy /y public %USERPROFILE%\master
+robocopy public %USERPROFILE%\master /MIR /IS
 cd %USERPROFILE%\master
 dir
 git add -f .
