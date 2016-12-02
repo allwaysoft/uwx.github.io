@@ -6,6 +6,7 @@
 /public/San-Andreas/Imagens - Copy/
 /source/San-Andreas/Imagens - Copy/
 #/local_modules/hexo-all-minifier/
+/local_modules/hexo-all-minifier/node_modules/
 /source/ss64/robots.txt
 /public/ss64/robots.txt
 #/source/ss64/**.jpg
