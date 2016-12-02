@@ -1,0 +1,129 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "rafa1231518/hexo-all-minifier",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "rafa1231518/hexo-all-minifier",
+        "spec": "github:rafa1231518/hexo-all-minifier",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:rafa1231518/hexo-all-minifier.git",
+          "sshUrl": "git+ssh://git@github.com/rafa1231518/hexo-all-minifier.git",
+          "httpsUrl": "git+https://github.com/rafa1231518/hexo-all-minifier.git",
+          "gitUrl": "git://github.com/rafa1231518/hexo-all-minifier.git",
+          "shortcut": "github:rafa1231518/hexo-all-minifier",
+          "directUrl": "https://raw.githubusercontent.com/rafa1231518/hexo-all-minifier/master/package.json"
+        }
+      },
+      "C:\\Users\\Rafael\\Documents\\GitHub\\static-site-hexo"
+    ]
+  ],
+  "_from": "rafa1231518/hexo-all-minifier",
+  "_id": "hexo-all-minifier@0.0.14",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/hexo-all-minifier",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "rafa1231518/hexo-all-minifier",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "rafa1231518/hexo-all-minifier",
+    "spec": "github:rafa1231518/hexo-all-minifier",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:rafa1231518/hexo-all-minifier.git",
+      "sshUrl": "git+ssh://git@github.com/rafa1231518/hexo-all-minifier.git",
+      "httpsUrl": "git+https://github.com/rafa1231518/hexo-all-minifier.git",
+      "gitUrl": "git://github.com/rafa1231518/hexo-all-minifier.git",
+      "shortcut": "github:rafa1231518/hexo-all-minifier",
+      "directUrl": "https://raw.githubusercontent.com/rafa1231518/hexo-all-minifier/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/rafa1231518/hexo-all-minifier.git#ec486db6f66502320e93365a60ce1e5cd9dcf461",
+  "_shasum": "95ffa8c8451f2e78fdda2aa40c5b1cc3891be471",
+  "_shrinkwrap": null,
+  "_spec": "rafa1231518/hexo-all-minifier",
+  "_where": "C:\\Users\\Rafael\\Documents\\GitHub\\static-site-hexo",
+  "author": {
+    "name": "Chen Zhutian",
+    "email": "zhutian.chen@outlook.com",
+    "url": "http://chenzhutian.org"
+  },
+  "bugs": {
+    "url": "https://github.com/unhealthy/hexo-all-minifier/issues"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "clean-css": "^3.4.15",
+    "html-minifier": "^2.1.3",
+    "imagemin": "^5.2.1",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-optipng": "^5.1.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.1.0",
+    "minimatch": "^3.0.0",
+    "object-assign": "^4.1.0",
+    "stream-to-array": "^2.3.0",
+    "uglify-js": "~2.6.2",
+    "accum": "*",
+    "async": "*",
+    "html-minify": "yize/html-minify",
+    "xmldom": "jindw/xmldom"
+  },
+  "description": "Minify HTML, CSS, JS and Image files.",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "hexo": "^3.2.0",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.0",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.2.0",
+    "hexo-renderer-marked": "^0.2.10",
+    "hexo-renderer-stylus": "^0.3.1",
+    "minimist": "^1.2.0",
+    "mocha": "^2.5.3",
+    "path": "^0.12.7"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "gitHead": "ec486db6f66502320e93365a60ce1e5cd9dcf461",
+  "homepage": "https://github.com/unhealthy/hexo-all-minifier#readme",
+  "keywords": [
+    "hexo",
+    "filter",
+    "optimize",
+    "minify"
+  ],
+  "license": "MIT",
+  "main": "index",
+  "name": "hexo-all-minifier",
+  "optionalDependencies": {},
+  "readme": "# Hexo-all-minifier\r\n[![npm version](https://badge.fury.io/js/hexo-all-minifier.svg)](https://badge.fury.io/js/hexo-all-minifier)\r\n[![NPM Dependencies](https://david-dm.org/unhealthy/hexo-all-minifier.svg)](https://www.npmjs.com/package/hexo-all-minifier)\r\n\r\nAll in one. Minifier & Optimization plugin for [Hexo](https://hexo.io).\r\nSince most of the optimize plugin for [HEXO](https://hexo.io) have been deprecated, and [HEXO](https://hexo.io) has upgraded to 3.XX, so I decide to implement this plugin.\r\n\r\n## Installation\r\n``` bash\r\n$ npm install hexo-all-minifier --save\r\n```\r\nFor Mac User, maybe you need to install somthing more\r\n```bash\r\n$ brew install libtool automake autoconf nasm\r\n```\r\n\r\n## Components\r\nIntegrate all the official minifier plugins of HEXO and a imagemin plugin:\r\n- [hexo-html-minifier](https://github.com/hexojs/hexo-html-minifier), which is based on [HTMLMinifier](https://github.com/kangax/html-minifier)\r\n- [hexo-clean-css](https://github.com/hexojs/hexo-clean-css), which is based on [clean-css](https://github.com/jakubpawlowicz/clean-css)\r\n- [hexo-uglify](https://github.com/hexojs/hexo-uglify), which is based on [UglifyJS](http://lisperator.net/uglifyjs/)\r\n- [hexo-imagemin](https://github.com/vseventer/hexo-imagemin), which is based on [imagemin](https://github.com/imagemin/imagemin)\r\n\r\nThanks for their works.\r\n\r\n## Options\r\n``` yaml\r\nhtml_minifier:\r\n  enable: true\r\n  exclude: \r\n```\r\n- **enable** - Enable the plugin. Defaults to `true`.\r\n- **exclude**: Exclude files\r\n\r\n----------\r\n\r\n``` yaml\r\ncss_minifier:\r\n  enable: true\r\n  exclude: \r\n    - '*.min.css'\r\n```\r\n- **enable** - Enable the plugin. Defaults to `true`.\r\n- **exclude**: Exclude files\r\n\r\n----------\r\n\r\n``` yaml\r\njs_minifier:\r\n  enable: true\r\n  mangle: true\r\n  output:\r\n  compress:\r\n  exclude: \r\n    - '*.min.js'\r\n```\r\n- **enable** - Enable the plugin. Defaults to `true`.\r\n- **mangle**: Mangle file names\r\n- **output**: Output options\r\n- **compress**: Compress options\r\n- **exclude**: Exclude files\r\n\r\n----------\r\n\r\n```yaml\r\nimage_minifier:\r\n  enable: true\r\n  interlaced: false\r\n  multipass: false\r\n  optimizationLevel: 2\r\n  pngquant: false\r\n  progressive: false\r\n```\r\n- **enable** - Enable the plugin. Defaults to `true`.\r\n- **interlaced** - Interlace gif for progressive rendering. Defaults to `false`.\r\n- **multipass** - Optimize svg multiple times until it’s fully optimized. Defaults to `false`.\r\n- **optimizationLevel** - Select an optimization level between 0 and 7. Defaults to `2`.\r\n- **pngquant** - Enable [imagemin-pngquant](https://github.com/imagemin/imagemin-pngquant) plugin. Defaults to `false`.\r\n- **progressive** - Lossless conversion to progressive. Defaults to `false`.\r\n\r\n\r\n\r\nTo be continued\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/unhealthy/hexo-all-minifier.git"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "version": "0.0.14"
+}
