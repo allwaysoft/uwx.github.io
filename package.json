@@ -22,7 +22,7 @@
     "ejs-lint": "^0.2.0",
     "fs-extra": "github:rafa1231518/node-fs-extra",
     "jsdom": "^9.8.3",
-    "rm-local-modules": "0.0.1"
+    "rm-local-modules": "0.0.2"
   },
   "scripts": {
     "i": "rm-local-modules & npm install && exit 0"
