@@ -1,0 +1,30 @@
+version: 1.0.{build}
+branches:
+  only:
+    - newmaster
+
+skip_tags: true
+
+init:
+ - cmd: git config --global credential.helper store
+
+environment:
+  access_token:
+    secure: lJbB21g5AIksBu9oZjhrKw/oYREuj82+JRRZpQ7L17Zm+tnquFcpj2AMCV7FJkLX
+
+install:
+ - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+ - ps: Install-Product node stable
+ - npm install
+ - npm install hexo-cli -g
+
+build_script:
+ - cmd: hexo generate
+ - cmd: ci-publish-new
+
+test_script:
+ - cmd: >-
+    node --version
+    npm --version
+    
+
