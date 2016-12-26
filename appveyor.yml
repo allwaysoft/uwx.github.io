@@ -13,6 +13,7 @@ environment:
     secure: lJbB21g5AIksBu9oZjhrKw/oYREuj82+JRRZpQ7L17Zm+tnquFcpj2AMCV7FJkLX
 
 install:
+ - git submodule update --init --recursive
  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
  - ps: Install-Product node stable
  - npm install
