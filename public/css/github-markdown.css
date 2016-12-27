@@ -679,3 +679,10 @@
 .markdown-body hr {
   border-bottom-color: #eee;
 }
+/*syntax highlight colors*/
+.number {
+    color: #4ea2b0;
+}
+.keyword {
+    color: #e43333;
+}

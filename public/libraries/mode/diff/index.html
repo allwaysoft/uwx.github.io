@@ -1,8 +1,6 @@
-<!doctype html>
-
-<title>CodeMirror: Diff mode</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<!DOCTYPE html><html><head><title>CodeMirror: Diff mode</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
@@ -14,37 +12,36 @@
       span.cm-error.cm-string { background-color: red; }
       span.cm-error.cm-tag { background-color: #2b2; }
     </style>
-<div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+</head><body><div id="nav">
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </ul>
+    </li><li><a href="../../doc/manual.html">Manual</a>
+    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </li></ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Diff</a>
-  </ul>
+    </li><li><a class="active" href="#">Diff</a>
+  </li></ul>
 </div>
 
 <article>
 <h2>Diff mode</h2>
-<form><textarea id="code" name="code">
-diff --git a/index.html b/index.html
+<form><textarea id="code" name="code">diff --git a/index.html b/index.html
 index c1d9156..7764744 100644
 --- a/index.html
 +++ b/index.html
 @@ -95,7 +95,8 @@ StringStream.prototype = {
-     <script>
+     &lt;script&gt;
        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
          lineNumbers: true,
 -        autoMatchBrackets: true
 +        autoMatchBrackets: true,
 +      onGutterClick: function(x){console.log(x);}
        });
-     </script>
-   </body>
+     &lt;/script&gt;
+   &lt;/body&gt;
 diff --git a/lib/codemirror.js b/lib/codemirror.js
 index 04646a9..9a39cc7 100644
 --- a/lib/codemirror.js
@@ -68,11 +65,11 @@ index 04646a9..9a39cc7 100644
  
        e.stop();
 @@ -808,7 +814,7 @@ var CodeMirror = (function() {
-       for (var i = showingFrom; i < showingTo; ++i) {
+       for (var i = showingFrom; i &lt; showingTo; ++i) {
          var marker = lines[i].gutterMarker;
-         if (marker) html.push('<div class="' + marker.style + '">' + htmlEscape(marker.text) + '</div>');
--        else html.push("<div>" + (options.lineNumbers ? i + 1 : "\u00a0") + "</div>");
-+        else html.push("<div>" + (options.lineNumbers ? i + options.firstLineNumber : "\u00a0") + "</div>");
+         if (marker) html.push('&lt;div class="' + marker.style + '"&gt;' + htmlEscape(marker.text) + '&lt;/div&gt;');
+-        else html.push("&lt;div&gt;" + (options.lineNumbers ? i + 1 : "\u00a0") + "&lt;/div&gt;");
++        else html.push("&lt;div&gt;" + (options.lineNumbers ? i + options.firstLineNumber : "\u00a0") + "&lt;/div&gt;");
        }
        gutter.style.display = "none"; // TODO test whether this actually helps
        gutter.innerHTML = html.join("");
@@ -115,3 +112,4 @@ index 04646a9..9a39cc7 100644
     <p><strong>MIME types defined:</strong> <code>text/x-diff</code>.</p>
 
   </article>
+</body></html>

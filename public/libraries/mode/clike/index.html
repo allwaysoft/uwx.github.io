@@ -1,8 +1,6 @@
-<!doctype html>
-
-<title>CodeMirror: C-like mode</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<!DOCTYPE html><html><head><title>CodeMirror: C-like mode</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
@@ -11,33 +9,32 @@
 <script src="../../addon/hint/show-hint.js"></script>
 <script src="clike.js"></script>
 <style>.CodeMirror {border: 2px inset #dee;}</style>
-<div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+</head><body><div id="nav">
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </ul>
+    </li><li><a href="../../doc/manual.html">Manual</a>
+    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </li></ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">C-like</a>
-  </ul>
+    </li><li><a class="active" href="#">C-like</a>
+  </li></ul>
 </div>
 
 <article>
 <h2>C-like mode</h2>
 
-<div><textarea id="c-code">
-/* C demo code */
+<div><textarea id="c-code">/* C demo code */
 
-#include <zmq.h>
-#include <pthread.h>
-#include <semaphore.h>
-#include <time.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <malloc.h>
+#include &lt;zmq.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;semaphore.h&gt;
+#include &lt;time.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;malloc.h&gt;
 
 typedef struct {
   void* arg_socket;
@@ -52,7 +49,7 @@ typedef struct {
   sem_t sem;
 } acl_zmq_context;
 
-#define p(X) (context->arg_##X)
+#define p(X) (context-&gt;arg_##X)
 
 void* zmq_thread(void* context_pointer) {
   acl_zmq_context* context = (acl_zmq_context*)context_pointer;
@@ -60,11 +57,11 @@ void* zmq_thread(void* context_pointer) {
   int res;
 
   while (1) {
-    while ((res = sem_wait(&amp;context->sem)) == EINTR);
-    if (res) {write(context->signal_fd, &amp;err, 1); goto cleanup;}
+    while ((res = sem_wait(&amp;context-&gt;sem)) == EINTR);
+    if (res) {write(context-&gt;signal_fd, &amp;err, 1); goto cleanup;}
     switch(p(command)) {
     case 0: goto cleanup;
-    case 1: p(socket) = zmq_socket(context->context, p(int)); break;
+    case 1: p(socket) = zmq_socket(context-&gt;context, p(int)); break;
     case 2: p(int) = zmq_close(p(socket)); break;
     case 3: p(int) = zmq_bind(p(socket), p(string)); break;
     case 4: p(int) = zmq_connect(p(socket), p(string)); break;
@@ -75,10 +72,10 @@ void* zmq_thread(void* context_pointer) {
     case 9: p(int) = zmq_poll(p(socket), p(int), p(len)); break;
     }
     p(command) = errno;
-    write(context->signal_fd, &amp;ok, 1);
+    write(context-&gt;signal_fd, &amp;ok, 1);
   }
  cleanup:
-  close(context->signal_fd);
+  close(context-&gt;signal_fd);
   free(context_pointer);
   return 0;
 }
@@ -87,9 +84,9 @@ void* zmq_thread_init(void* zmq_context, int signal_fd) {
   acl_zmq_context* context = malloc(sizeof(acl_zmq_context));
   pthread_t thread;
 
-  context->context = zmq_context;
-  context->signal_fd = signal_fd;
-  sem_init(&amp;context->sem, 1, 0);
+  context-&gt;context = zmq_context;
+  context-&gt;signal_fd = signal_fd;
+  sem_init(&amp;context-&gt;sem, 1, 0);
   pthread_create(&amp;thread, 0, &amp;zmq_thread, context);
   pthread_detach(thread);
   return context;
@@ -98,8 +95,7 @@ void* zmq_thread_init(void* zmq_context, int signal_fd) {
 
 <h2>C++ example</h2>
 
-<div><textarea id="cpp-code">
-#include <iostream>
+<div><textarea id="cpp-code">#include &lt;iostream&gt;
 #include "mystuff/util.h"
 
 namespace {
@@ -112,42 +108,41 @@ string raw_string = R"delim(anything
 you
 want)delim";
 
-int Helper(const MyType& param) {
+int Helper(const MyType&amp; param) {
   return 0;
 }
 } // namespace
 
 class ForwardDec;
 
-template <class T, class V>
+template &lt;class T, class V&gt;
 class Class : public BaseClass {
-  const MyType<T, V> member_;
+  const MyType&lt;T, V&gt; member_;
 
  public:
-  const MyType<T, V>& Method() const {
+  const MyType&lt;T, V&gt;&amp; Method() const {
     return member_;
   }
 
-  void Method2(MyType<T, V>* value);
+  void Method2(MyType&lt;T, V&gt;* value);
 }
 
-template <class T, class V>
-void Class::Method2(MyType<T, V>* value) {
-  std::out << 1 >> method();
-  value->Method3(member_);
+template &lt;class T, class V&gt;
+void Class::Method2(MyType&lt;T, V&gt;* value) {
+  std::out &lt;&lt; 1 &gt;&gt; method();
+  value-&gt;Method3(member_);
   member_ = value;
 }
 </textarea></div>
 
 <h2>Objective-C example</h2>
 
-<div><textarea id="objectivec-code">
-/*
+<div><textarea id="objectivec-code">/*
 This is a longer comment
 That spans two lines
 */
 
-#import <Test/Test.h>
+#import &lt;Test/Test.h&gt;
 @implementation YourAppDelegate
 
 // This is a one-line comment
@@ -161,16 +156,15 @@ That spans two lines
 
 <h2>Java example</h2>
 
-<div><textarea id="java-code">
-import com.demo.util.MyType;
+<div><textarea id="java-code">import com.demo.util.MyType;
 import com.demo.util.MyInterface;
 
 public enum Enum {
   VAL1, VAL2, VAL3
 }
 
-public class Class<T, V> implements MyInterface {
-  public static final MyType<T, V> member;
+public class Class&lt;T, V&gt; implements MyInterface {
+  public static final MyType&lt;T, V&gt; member;
   
   private class InnerClass {
     public int zero() {
@@ -183,7 +177,7 @@ public class Class<T, V> implements MyInterface {
     return member;
   }
 
-  public void method2(MyType<T, V> value) {
+  public void method2(MyType&lt;T, V&gt; value) {
     method();
     value.method3();
     member = value;
@@ -193,12 +187,11 @@ public class Class<T, V> implements MyInterface {
 
 <h2>Scala example</h2>
 
-<div><textarea id="scala-code">
-object FilterTest extends App {
+<div><textarea id="scala-code">object FilterTest extends App {
   def filter(xs: List[Int], threshold: Int) = {
     def process(ys: List[Int]): List[Int] =
       if (ys.isEmpty) ys
-      else if (ys.head < threshold) ys.head :: process(ys.tail)
+      else if (ys.head &lt; threshold) ys.head :: process(ys.tail)
       else process(ys.tail)
     process(xs)
   }
@@ -208,8 +201,7 @@ object FilterTest extends App {
 
 <h2>Kotlin mode</h2>
 
-<div><textarea id="kotlin-code">
-package org.wasabi.http
+<div><textarea id="kotlin-code">package org.wasabi.http
 
 import java.util.concurrent.Executors
 import java.net.InetSocketAddress
@@ -234,7 +226,7 @@ public class HttpServer(private val appServer: AppServer) {
         bootstrap = ServerBootstrap()
 
         bootstrap.group(primaryGroup, workerGroup)
-        bootstrap.channel(javaClass<NioServerSocketChannel>())
+        bootstrap.channel(javaClass&lt;NioServerSocketChannel&gt;())
         bootstrap.childHandler(NettyPipelineInitializer(appServer))
     }
 
@@ -260,8 +252,7 @@ public class HttpServer(private val appServer: AppServer) {
 
 <h2>Ceylon mode</h2>
 
-<div><textarea id="ceylon-code">
-"Produces the [[stream|Iterable]] that results from repeated
+<div><textarea id="ceylon-code">"Produces the [[stream|Iterable]] that results from repeated
  application of the given [[function|next]] to the given
  [[first]] element of the stream, until the function first
  returns [[finished]]. If the given function never returns 
@@ -358,3 +349,4 @@ shared {Element+} loop&lt;Element&gt;(
     <code>text/x-squirrel</code> (Squirrel) and
     <code>text/x-ceylon</code> (Ceylon)</p>
 </article>
+</body></html>

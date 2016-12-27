@@ -1,8 +1,6 @@
-<!doctype html>
-
-<title>CodeMirror: Haskell-literate mode</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<!DOCTYPE html><html><head><title>CodeMirror: Haskell-literate mode</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
@@ -12,51 +10,49 @@
   border-top    : 1px solid #DDDDDD;
   border-bottom : 1px solid #DDDDDD;
 }</style>
-<div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo
-                                                          src="../../doc/logo.png"></a>
+</head><body><div id="nav">
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </ul>
+    </li><li><a href="../../doc/manual.html">Manual</a>
+    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </li></ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Haskell-literate</a>
-  </ul>
+    </li><li><a class="active" href="#">Haskell-literate</a>
+  </li></ul>
 </div>
 
 <article>
   <h2>Haskell literate mode</h2>
   <form>
-    <textarea id="code" name="code">
-> {-# LANGUAGE OverloadedStrings #-}
-> {-# OPTIONS_GHC -fno-warn-unused-do-bind #-}
-> import Control.Applicative ((<$>), (<*>))
-> import Data.Maybe (isJust)
+    <textarea id="code" name="code">&gt; {-# LANGUAGE OverloadedStrings #-}
+&gt; {-# OPTIONS_GHC -fno-warn-unused-do-bind #-}
+&gt; import Control.Applicative ((&lt;$&gt;), (&lt;*&gt;))
+&gt; import Data.Maybe (isJust)
 
-> import Data.Text (Text)
-> import Text.Blaze ((!))
-> import qualified Data.Text as T
-> import qualified Happstack.Server as Happstack
-> import qualified Text.Blaze.Html5 as H
-> import qualified Text.Blaze.Html5.Attributes as A
+&gt; import Data.Text (Text)
+&gt; import Text.Blaze ((!))
+&gt; import qualified Data.Text as T
+&gt; import qualified Happstack.Server as Happstack
+&gt; import qualified Text.Blaze.Html5 as H
+&gt; import qualified Text.Blaze.Html5.Attributes as A
 
-> import Text.Digestive
-> import Text.Digestive.Blaze.Html5
-> import Text.Digestive.Happstack
-> import Text.Digestive.Util
+&gt; import Text.Digestive
+&gt; import Text.Digestive.Blaze.Html5
+&gt; import Text.Digestive.Happstack
+&gt; import Text.Digestive.Util
 
 Simple forms and validation
 ---------------------------
 
 Let's start by creating a very simple datatype to represent a user:
 
-> data User = User
->     { userName :: Text
->     , userMail :: Text
->     } deriving (Show)
+&gt; data User = User
+&gt;     { userName :: Text
+&gt;     , userMail :: Text
+&gt;     } deriving (Show)
 
 And dive in immediately to create a `Form` for a user. The `Form v m a` type
 has three parameters:
@@ -66,7 +62,7 @@ has three parameters:
 - `m`: the monad we are operating in, not specified here;
 - `a`: the return type of the `Form`, in this case, this is obviously `User`.
 
-> userForm :: Monad m => Form Text m User
+&gt; userForm :: Monad m =&gt; Form Text m User
 
 We create forms by using the `Applicative` interface. A few form types are
 provided in the `Text.Digestive.Form` module, such as `text`, `string`,
@@ -77,15 +73,15 @@ field using the `.:` operator. This might look like a bit of a burden, but it
 allows you to do some really useful stuff, like separating the `Form` from the
 actual HTML layout.
 
-> userForm = User
->     <$> "name" .: text Nothing
->     <*> "mail" .: check "Not a valid email address" checkEmail (text Nothing)
+&gt; userForm = User
+&gt;     &lt;$&gt; "name" .: text Nothing
+&gt;     &lt;*&gt; "mail" .: check "Not a valid email address" checkEmail (text Nothing)
 
 The `check` function enables you to validate the result of a form. For example,
 we can validate the email address with a really naive `checkEmail` function.
 
-> checkEmail :: Text -> Bool
-> checkEmail = isJust . T.find (== '@')
+&gt; checkEmail :: Text -&gt; Bool
+&gt; checkEmail = isJust . T.find (== '@')
 
 More validation
 ---------------
@@ -93,42 +89,42 @@ More validation
 For our example, we also want descriptions of Haskell libraries, and in order to
 do that, we need package versions...
 
-> type Version = [Int]
+&gt; type Version = [Int]
 
 We want to let the user input a version number such as `0.1.0.0`. This means we
 need to validate if the input `Text` is of this form, and then we need to parse
 it to a `Version` type. Fortunately, we can do this in a single function:
 `validate` allows conversion between values, which can optionally fail.
 
-`readMaybe :: Read a => String -> Maybe a` is a utility function imported from
+`readMaybe :: Read a =&gt; String -&gt; Maybe a` is a utility function imported from
 `Text.Digestive.Util`.
 
-> validateVersion :: Text -> Result Text Version
-> validateVersion = maybe (Error "Cannot parse version") Success .
->     mapM (readMaybe . T.unpack) . T.split (== '.')
+&gt; validateVersion :: Text -&gt; Result Text Version
+&gt; validateVersion = maybe (Error "Cannot parse version") Success .
+&gt;     mapM (readMaybe . T.unpack) . T.split (== '.')
 
 A quick test in GHCi:
 
-    ghci> validateVersion (T.pack "0.3.2.1")
+    ghci&gt; validateVersion (T.pack "0.3.2.1")
     Success [0,3,2,1]
-    ghci> validateVersion (T.pack "0.oops")
+    ghci&gt; validateVersion (T.pack "0.oops")
     Error "Cannot parse version"
 
 It works! This means we can now easily add a `Package` type and a `Form` for it:
 
-> data Category = Web | Text | Math
->     deriving (Bounded, Enum, Eq, Show)
+&gt; data Category = Web | Text | Math
+&gt;     deriving (Bounded, Enum, Eq, Show)
 
-> data Package = Package Text Version Category
->     deriving (Show)
+&gt; data Package = Package Text Version Category
+&gt;     deriving (Show)
 
-> packageForm :: Monad m => Form Text m Package
-> packageForm = Package
->     <$> "name"     .: text Nothing
->     <*> "version"  .: validate validateVersion (text (Just "0.0.0.1"))
->     <*> "category" .: choice categories Nothing
->   where
->     categories = [(x, T.pack (show x)) | x <- [minBound .. maxBound]]
+&gt; packageForm :: Monad m =&gt; Form Text m Package
+&gt; packageForm = Package
+&gt;     &lt;$&gt; "name"     .: text Nothing
+&gt;     &lt;*&gt; "version"  .: validate validateVersion (text (Just "0.0.0.1"))
+&gt;     &lt;*&gt; "category" .: choice categories Nothing
+&gt;   where
+&gt;     categories = [(x, T.pack (show x)) | x &lt;- [minBound .. maxBound]]
 
 Composing forms
 ---------------
@@ -137,13 +133,13 @@ A release has an author and a package. Let's use this to illustrate the
 composability of the digestive-functors library: we can reuse the forms we have
 written earlier on.
 
-> data Release = Release User Package
->     deriving (Show)
+&gt; data Release = Release User Package
+&gt;     deriving (Show)
 
-> releaseForm :: Monad m => Form Text m Release
-> releaseForm = Release
->     <$> "author"  .: userForm
->     <*> "package" .: packageForm
+&gt; releaseForm :: Monad m =&gt; Form Text m Release
+&gt; releaseForm = Release
+&gt;     &lt;$&gt; "author"  .: userForm
+&gt;     &lt;*&gt; "package" .: packageForm
 
 Views
 -----
@@ -169,16 +165,16 @@ Let's write a view for the `User` form. As you can see, we here refer to the
 different fields in the `userForm`. The `errorList` will generate a list of
 errors for the `"mail"` field.
 
-> userView :: View H.Html -> H.Html
-> userView view = do
->     label     "name" view "Name: "
->     inputText "name" view
->     H.br
->
->     errorList "mail" view
->     label     "mail" view "Email address: "
->     inputText "mail" view
->     H.br
+&gt; userView :: View H.Html -&gt; H.Html
+&gt; userView view = do
+&gt;     label     "name" view "Name: "
+&gt;     inputText "name" view
+&gt;     H.br
+&gt;
+&gt;     errorList "mail" view
+&gt;     label     "mail" view "Email address: "
+&gt;     inputText "mail" view
+&gt;     H.br
 
 Like forms, views are also composable: let's illustrate that by adding a view
 for the `releaseForm`, in which we reuse `userView`. In order to do this, we
@@ -190,36 +186,36 @@ child of the specified form. In this case, this means a list of errors from
 `"package.name"` and `"package.version"`. Note how we use `foo.bar` to refer to
 nested forms.
 
-> releaseView :: View H.Html -> H.Html
-> releaseView view = do
->     H.h2 "Author"
->     userView $ subView "author" view
->
->     H.h2 "Package"
->     childErrorList "package" view
->
->     label     "package.name" view "Name: "
->     inputText "package.name" view
->     H.br
->
->     label     "package.version" view "Version: "
->     inputText "package.version" view
->     H.br
->
->     label       "package.category" view "Category: "
->     inputSelect "package.category" view
->     H.br
+&gt; releaseView :: View H.Html -&gt; H.Html
+&gt; releaseView view = do
+&gt;     H.h2 "Author"
+&gt;     userView $ subView "author" view
+&gt;
+&gt;     H.h2 "Package"
+&gt;     childErrorList "package" view
+&gt;
+&gt;     label     "package.name" view "Name: "
+&gt;     inputText "package.name" view
+&gt;     H.br
+&gt;
+&gt;     label     "package.version" view "Version: "
+&gt;     inputText "package.version" view
+&gt;     H.br
+&gt;
+&gt;     label       "package.category" view "Category: "
+&gt;     inputSelect "package.category" view
+&gt;     H.br
 
 The attentive reader might have wondered what the type parameter for `View` is:
 it is the `String`-like type used for e.g. error messages.
 But wait! We have
-    releaseForm :: Monad m => Form Text m Release
-    releaseView :: View H.Html -> H.Html
+    releaseForm :: Monad m =&gt; Form Text m Release
+    releaseView :: View H.Html -&gt; H.Html
 ... doesn't this mean that we need a `View Text` rather than a `View Html`?  The
 answer is yes -- but having `View Html` allows us to write these views more
 easily with the `digestive-functors-blaze` library. Fortunately, we will be able
 to fix this using the `Functor` instance of `View`.
-    fmap :: Monad m => (v -> w) -> View v -> View w
+    fmap :: Monad m =&gt; (v -&gt; w) -&gt; View v -&gt; View w
 A backend
 ---------
 To finish this tutorial, we need to be able to actually run this code. We need
@@ -227,45 +223,45 @@ an HTTP server for that, and we use [Happstack] for this tutorial. The
 `digestive-functors-happstack` library gives about everything we need for this.
 [Happstack]: http://happstack.com/
 
-> site :: Happstack.ServerPart Happstack.Response
-> site = do
->     Happstack.decodeBody $ Happstack.defaultBodyPolicy "/tmp" 4096 4096 4096
->     r <- runForm "test" releaseForm
->     case r of
->         (view, Nothing) -> do
->             let view' = fmap H.toHtml view
->             Happstack.ok $ Happstack.toResponse $
->                 template $
->                     form view' "/" $ do
->                         releaseView view'
->                         H.br
->                         inputSubmit "Submit"
->         (_, Just release) -> Happstack.ok $ Happstack.toResponse $
->             template $ do
->                 css
->                 H.h1 "Release received"
->                 H.p $ H.toHtml $ show release
->
-> main :: IO ()
-> main = Happstack.simpleHTTP Happstack.nullConf site
+&gt; site :: Happstack.ServerPart Happstack.Response
+&gt; site = do
+&gt;     Happstack.decodeBody $ Happstack.defaultBodyPolicy "/tmp" 4096 4096 4096
+&gt;     r &lt;- runForm "test" releaseForm
+&gt;     case r of
+&gt;         (view, Nothing) -&gt; do
+&gt;             let view' = fmap H.toHtml view
+&gt;             Happstack.ok $ Happstack.toResponse $
+&gt;                 template $
+&gt;                     form view' "/" $ do
+&gt;                         releaseView view'
+&gt;                         H.br
+&gt;                         inputSubmit "Submit"
+&gt;         (_, Just release) -&gt; Happstack.ok $ Happstack.toResponse $
+&gt;             template $ do
+&gt;                 css
+&gt;                 H.h1 "Release received"
+&gt;                 H.p $ H.toHtml $ show release
+&gt;
+&gt; main :: IO ()
+&gt; main = Happstack.simpleHTTP Happstack.nullConf site
 
 Utilities
 ---------
 
-> template :: H.Html -> H.Html
-> template body = H.docTypeHtml $ do
->     H.head $ do
->         H.title "digestive-functors tutorial"
->         css
->     H.body body
-> css :: H.Html
-> css = H.style ! A.type_ "text/css" $ do
->     "label {width: 130px; float: left; clear: both}"
->     "ul.digestive-functors-error-list {"
->     "    color: red;"
->     "    list-style-type: none;"
->     "    padding-left: 0px;"
->     "}"
+&gt; template :: H.Html -&gt; H.Html
+&gt; template body = H.docTypeHtml $ do
+&gt;     H.head $ do
+&gt;         H.title "digestive-functors tutorial"
+&gt;         css
+&gt;     H.body body
+&gt; css :: H.Html
+&gt; css = H.style ! A.type_ "text/css" $ do
+&gt;     "label {width: 130px; float: left; clear: both}"
+&gt;     "ul.digestive-functors-error-list {"
+&gt;     "    color: red;"
+&gt;     "    list-style-type: none;"
+&gt;     "    padding-left: 0px;"
+&gt;     "}"
     </textarea>
   </form>
 
@@ -280,3 +276,4 @@ Utilities
   </script>
 
 </article>
+</body></html>

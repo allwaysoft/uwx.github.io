@@ -2281,3 +2281,10 @@ samp {
     display: flex;
 
 }
+/*syntax highlight colors*/
+.number {
+    color: #4ea2b0;
+}
+.keyword {
+    color: #e43333;
+}

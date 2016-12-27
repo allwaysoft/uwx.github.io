@@ -1,32 +1,29 @@
-<!doctype html>
-
-<title>CodeMirror: D mode</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<!DOCTYPE html><html><head><title>CodeMirror: D mode</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="d.js"></script>
 <style>.CodeMirror {border: 2px inset #dee;}</style>
-<div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+</head><body><div id="nav">
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </ul>
+    </li><li><a href="../../doc/manual.html">Manual</a>
+    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </li></ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">D</a>
-  </ul>
+    </li><li><a class="active" href="#">D</a>
+  </li></ul>
 </div>
 
 <article>
 <h2>D mode</h2>
-<form><textarea id="code" name="code">
-/* D demo code // copied from phobos/sd/metastrings.d */
+<form><textarea id="code" name="code">/* D demo code // copied from phobos/sd/metastrings.d */
 // Written in the D programming language.
 
 /**
@@ -36,7 +33,7 @@ Macros:
  WIKI = Phobos/StdMetastrings
 
 Copyright: Copyright Digital Mars 2007 - 2009.
-License:   <a href="http://www.boost.org/LICENSE_1_0.txt">Boost License 1.0</a>.
+License:   &lt;a href="http://www.boost.org/LICENSE_1_0.txt"&gt;Boost License 1.0&lt;/a&gt;.
 Authors:   $(WEB digitalmars.com, Walter Bright),
            Don Clugston
 Source:    $(PHOBOSSRC std/_metastrings.d)
@@ -114,7 +111,7 @@ unittest
 
 template toStringNow(ulong v)
 {
-    static if (v < 10)
+    static if (v &lt; 10)
         enum toStringNow = "" ~ cast(char)(v + '0');
     else
         enum toStringNow = toStringNow!(v / 10) ~ toStringNow!(v % 10);
@@ -122,13 +119,13 @@ template toStringNow(ulong v)
 
 unittest
 {
-    static assert(toStringNow!(1uL << 62) == "4611686018427387904");
+    static assert(toStringNow!(1uL &lt;&lt; 62) == "4611686018427387904");
 }
 
 /// ditto
 template toStringNow(long v)
 {
-    static if (v < 0)
+    static if (v &lt; 0)
         enum toStringNow = "-" ~ toStringNow!(cast(ulong) -v);
     else
         enum toStringNow = toStringNow!(cast(ulong) v);
@@ -188,7 +185,7 @@ template parseUinteger(const(char)[] s)
         enum value = "";
         enum rest = "";
     }
-    else static if (s[0] >= '0' && s[0] <= '9')
+    else static if (s[0] &gt;= '0' &amp;&amp; s[0] &lt;= '9')
     {
         enum value = s[0] ~ parseUinteger!(s[1..$]).value;
         enum rest = parseUinteger!(s[1..$]).rest;
@@ -220,13 +217,13 @@ template parseInteger(const(char)[] s)
         enum value = "";
         enum rest = "";
     }
-    else static if (s[0] >= '0' && s[0] <= '9')
+    else static if (s[0] &gt;= '0' &amp;&amp; s[0] &lt;= '9')
     {
         enum value = s[0] ~ parseUinteger!(s[1..$]).value;
         enum rest = parseUinteger!(s[1..$]).rest;
     }
-    else static if (s.length >= 2 &&
-            s[0] == '-' && s[1] >= '0' && s[1] <= '9')
+    else static if (s.length &gt;= 2 &amp;&amp;
+            s[0] == '-' &amp;&amp; s[1] &gt;= '0' &amp;&amp; s[1] &lt;= '9')
     {
         enum value = s[0..2] ~ parseUinteger!(s[2..$]).value;
         enum rest = parseUinteger!(s[2..$]).rest;
@@ -271,3 +268,4 @@ deprecated alias parseUinteger ParseInteger;
     <p><strong>MIME types defined:</strong> <code>text/x-d</code>
     .</p>
   </article>
+</body></html>

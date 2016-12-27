@@ -1,32 +1,29 @@
-<!doctype html>
-
-<title>CodeMirror: Dart mode</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<!DOCTYPE html><html><head><title>CodeMirror: Dart mode</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../doc/docs.css">
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="../clike/clike.js"></script>
 <script src="dart.js"></script>
 <style>.CodeMirror {border: 1px solid #dee;}</style>
-<div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+</head><body><div id="nav">
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </ul>
+    </li><li><a href="../../doc/manual.html">Manual</a>
+    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </li></ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Dart</a>
-  </ul>
+    </li><li><a class="active" href="#">Dart</a>
+  </li></ul>
 </div>
 
 <article>
 <h2>Dart mode</h2>
 <form>
-<textarea id="code" name="code">
-import 'dart:math' show Random;
+<textarea id="code" name="code">import 'dart:math' show Random;
 
 void main() {
   print(new Die(n: 12).roll());
@@ -41,11 +38,11 @@ class Die {
   int sides, value;
 
   // Define a method using shorthand syntax.
-  String toString() => '$value';
+  String toString() =&gt; '$value';
 
   // Define a constructor.
   Die({int n: 6}) {
-    if (4 <= n && n <= 20) {
+    if (4 &lt;= n &amp;&amp; n &lt;= 20) {
       sides = n;
     } else {
       // Support for errors and exceptions.
@@ -69,3 +66,4 @@ class Die {
 </script>
 
 </article>
+</body></html>
