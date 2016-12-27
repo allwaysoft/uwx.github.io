@@ -2,8 +2,10 @@
 /* jshint node:true*/
 /* exported hexo*/
 'use strict';
+console.log('here');
 var CleanCSS = require('clean-css'),
     UglifyJS = require('uglify-js'),
+    Htmlminifier = require('html-minifier').minify,
     Imagemin = require('imagemin'),
     mozjpeg = require('imagemin-mozjpeg'),
     pngquant = require('imagemin-pngquant'),
@@ -16,12 +18,18 @@ var CleanCSS = require('clean-css'),
 const _htmlMinifier = require('html-minify').minify;
 var Promise = require('bluebird'); // jshint ignore:line
 var minimatch = require('minimatch');
+//var htmlparser = require('htmlparser2');
+//var domutils = require('domutils');
 var DOMParser = require('xmldom').DOMParser;
 var XMLSerializer = require('xmldom').XMLSerializer;
+const parse5 = require('parse5');
+console.log('here2');
 
 function OptimizeHTML(str, data, _hexo, _path) {
-    var hexo = _hexo,
-        options = hexo.config.html_minifier;
+    var hexo = _hexo||this;
+    //console.log('hexo ' + hexo, '_hexo ' + _hexo, 'this ' + this);
+    
+    var options = hexo.config.html_minifier;
     // Return if disabled.
     if (false === options.enable) return;
 
@@ -35,19 +43,170 @@ function OptimizeHTML(str, data, _hexo, _path) {
         }
     }
 
-    var log = hexo.log || console.log;
+    var log = hexo.log.log.bind(hexo.log) || hexo.log || console.log;
     
-    var document = new DOMParser().parseFromString(src, 'text/html');
+    var result;
     
-    var result = new XMLSerializer().serializeToString(document); //_htmlMinifier(str, options.linebreakpos || 512);
-    var saved = ((str.length - result.length) / str.length * 100).toFixed(2);
-    log.log('update Optimize HTML: %s [ %s saved]', path, saved + '%');
+    //// domparser
+    //var rawHtml = str;
+    //var handler = new htmlparser.DomHandler(function (error, dom) {
+    //    if (error)
+    //      throw error;
+    //    else {
+    //      result = domutils.getOuterHTML(dom.body)
+    //      console.log(result);
+    //    }
+    //      
+    //});
+    //var parser = new htmlparser.Parser(handler);
+    //parser.write(rawHtml);
+    //parser.done();
+    //// domparser end
+    
+    try {
+      result = parse5.serialize(parse5.parse(str));
+    } catch (e) {
+      try {
+        log('domparser failed!');
+        result = Htmlminifier(str, options);
+      } catch (e) {
+        log('htmlminifier failed: ' + (e.toString().split('\n')[0]));
+        
+        try {
+          var document = new DOMParser().parseFromString(str, 'text/html');
+          
+          result = new XMLSerializer().serializeToString(document); //_htmlMinifier(str, options.linebreakpos || 512);
+        } catch (e) {
+          log('xmldom failed: ' + e);
+          result = _minify(str).replace(/>\s*\?\?\s+\?\?\s*</g, '><');
+        }
+      }
+    }
+    var saved = ((result.length / str.length) * 100).toFixed(2);
+    log('update Optimize HTML: %s [ %s saved]', path, saved + '%');
 
     return result;
 }
 
+/*
+old:
+
+function OptimizeHTML(str, data) {
+    var hexo = this,
+        options = hexo.config.html_minifier;
+    // Return if disabled.
+    if (false === options.enable) return;
+
+    var path = data.path;
+    var exclude = options.exclude;
+    if (exclude && !Array.isArray(exclude)) exclude = [exclude];
+
+    if (path && exclude && exclude.length) {
+        for (var i = 0, len = exclude.length; i < len; i++) {
+            if (minimatch(path, exclude[i])) return str;
+        }
+    }
+
+    var log = hexo.log || console.log;
+    var result = Htmlminifier(str, options);
+    var saved = ((str.length - result.length) / str.length * 100).toFixed(2);
+    log.log('update Optimize HTML: %s [ %s saved]', path, saved + '%');
+
+    return result;
+};
+*/
+
+
+function _minify(contents) {
+    var htmlBuilder = [];
+    var inner = false,
+        intag = false, //<div> or </div>
+        intagin = false, //<% expr %> ... <% for(var a=1; a "<" 5
+        inscript = false,
+        incss = false;
+
+    var innerTextBuilder = [];
+    for (var i = 0; i < contents.length; i++) {
+        var charstr = contents[i];
+        if (charstr === '<') {
+            if (contents.substr(i, 7).toLowerCase() === '<script') {
+                inscript = true;
+            }
+
+            if (contents.substr(i, 6).toLowerCase() === '<style') {
+                inscript = true;
+            }
+
+            //maybe [<]div> or [<]/div> or a [<] 5
+            if (contents[i + 1] !== '%') {
+                //case a <= 5
+                if (!intagin) {
+                    intag = true;
+                }
+                inner = true;
+            } else {
+                //> ... [<]% ...
+                if (!inner) {
+                    intag = false;
+                    inner = true;
+                    intagin = true;
+                }
+            }
+
+            if (inner && innerTextBuilder.length) {
+                //debugger;
+                var innerTextStr = innerTextBuilder.join('');
+                htmlBuilder.push(trim(innerTextStr))
+                innerTextBuilder = [];
+            }
+        }
+
+        if (charstr === '>') {
+            if (i >= 4 && contents.substr(i - 6, 6).toLowerCase() === '/style') {
+                incss = false;
+                htmlBuilder.push(charstr);
+                inner = intag = intagin = false;
+                continue;
+            }
+            if (i >= 7 && contents.substr(i - 7, 7).toLowerCase() === '/script') {
+                inscript = false;
+                htmlBuilder.push(charstr);
+                inner = intag = intagin = false;
+                continue;
+            }
+        }
+
+        if (inscript || incss) {
+            htmlBuilder.push(charstr);
+            continue;
+        } else {
+            if (inner) {
+                htmlBuilder.push(charstr);
+            } else {
+                if (charstr === '\r' || charstr === '\n' || charstr === '\t')
+                    continue;
+                innerTextBuilder.push(charstr);
+            }
+        }
+        //maybe <...div[>] or </div[>] or <% a [>] 5 %> or <div ...  <% a [>] 5 %>[>]
+        if (charstr === '>') {
+            if (contents[i - 1] !== '%') {
+                intag = false;
+                inner = false;
+            } else {
+                if (!intag) {
+                    inner = false;
+                    intagin = false;
+                }
+            }
+        }
+    }
+    return htmlBuilder.join('');
+}
+
+
 function OptimizeCSS(str, data, _hexo, _path) {
-    var hexo = _hexo,
+    var hexo = _hexo||this,
         options = hexo.config.css_minifier;
     // Return if disabled.
     if (false === options.enable) return;
@@ -79,7 +238,7 @@ function OptimizeCSS(str, data, _hexo, _path) {
 }
 
 function OptimizeJS(str, data, _hexo, _path) {
-    var hexo = _hexo,
+    var hexo = _hexo||this,
         options = hexo.config.js_minifier;
     // Return if disabled.
     if (false === options.enable) return;

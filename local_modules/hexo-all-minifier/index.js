@@ -1,146 +1,267 @@
 /* jshint node:true, strict:false*/
 /* global hexo */
 
-var assign = require('object-assign');
+// important stuff
 const minimatch = require('minimatch');
-const async = require('async');
-const accum = require('accum');
-const hasProp = {}.hasOwnProperty;
-const extend = function (child, parent) {
-  for (var key in parent) {
-    if (hasProp.call(parent, key)) child[key] = parent[key]; }
+const assign = require('object-assign');
+const fs = require('fs');
 
-  function ctor() {
-    this.constructor = child;
+// minify deps
+const CleanCSS = require('clean-css');
+const UglifyJS = require('uglify-js');
+const Htmlminifier = require('html-minifier').minify;
+const Imagemin = require('imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
+const gifsicle = require('imagemin-gifsicle');
+const jpegtran = require('imagemin-jpegtran');
+const optipng = require('imagemin-optipng');
+const svgo = require('imagemin-svgo');
+const streamToArray = require('stream-to-array');
+const Promise = require('bluebird'); // jshint ignore:line
+const DOMParser = require('xmldom').DOMParser;
+const XMLSerializer = require('xmldom').XMLSerializer;
+const parse5 = require('parse5');
+const chalk = require('chalk');
+
+var log = hexo.log ? hexo.log.log.bind(hexo.log) : console.log.bind(console);
+
+const _registeredMatchers = [];
+const _registeredHandlers = [];
+
+// HTML minifier
+hexo.config.html_minifier = assign({
+  enable: true,
+  exclude: [],
+  ignoreCustomComments: [/^\s*more/],
+  removeComments: true,
+  removeCommentsFromCDATA: true,
+  collapseWhitespace: true,
+  collapseBooleanAttributes: true,
+  removeEmptyAttributes: true,
+  minifyJS: true,
+  minifyCSS: true,
+}, hexo.config.html_minifier);
+
+// Css minifier
+hexo.config.css_minifier = assign({
+  enable: true,
+  exclude: ['*.min.css']
+}, hexo.config.css_minifier);
+
+// Js minifier
+hexo.config.js_minifier = assign({
+  enable: true,
+  mangle: true,
+  output: {},
+  compress: {},
+  exclude: ['*.min.js']
+}, hexo.config.js_minifier, {
+  fromString: true
+});
+
+// Image minifier
+hexo.config.image_minifier = assign({
+  enable: true,
+  interlaced: false,
+  multipass: false,
+  optimizationLevel: 3,
+  pngquant: false,
+  progressive: false
+}, hexo.config.image_minifier);
+
+/*
+raw data object:
+{
+  path: 'file path, absolute',
+  toString: true,
+  text: 'content'
+}
+*/
+function js(contents, path, rawDataObject, options) {
+  options.fromString=true;
+  //console.log(path);
+  
+  return UglifyJS.minify(contents, options).code;
+}
+
+function html(contents, path, rawDataObject, options) {
+  return 'weme'+contents;
+}
+
+function check(type, path) {
+  if (typeof type == 'string') type = type.split('/');
+  
+  const options = hexo.config[type[0]+'_minifier'] || {};
+  
+  if (options.enable === false) {
+    console.log(path + '; disabled thru options');
+    return false;
   }
-
-  ctor.prototype = parent.prototype;
-  child.prototype = new ctor();
-  child.__super__ = parent.prototype;
-  return child; };
-
-const Applier = (function (superClass) {
-  extend(Applier, superClass);
-
-  function Applier(opts, applyFunction, _hexo, _path) {
-    var defaults;
-    Applier.__super__.constructor.call(this);
-    defaults = {
-      collapseWhitespace: true,
-      conservativeCollapse: false,
-      removeAttributeQuotes: true,
-      removeComments: true,
-      removeRedundantAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true
-    };
-    this.opts = assign({}, opts, defaults);
-    this.applyFunction = applyFunction;
-    this._hexo = _hexo;
-    this._path = _path;
-  }
-
-  Applier.prototype._transform = function (chunk, encoding, cb) {
-    var err;
-    try {
-      chunk = this.applyFunction(chunk.toString('utf8'), this.opts, this._hexo, this._path);
-    } catch (error) {
-      err = error;
-      console.trace(error);
-      throw err;
+  
+  let b = false;
+  for (let i = 0; i < type.length; i++) {
+    if (path.endsWith(type[i])) {
+      b = true;
+      break;
     }
-    this.push(chunk);
-    return cb();
-  };
+  }
+  if (!b) {
+    console.log(path + '; path doesnt end with ' + type);
+    return false;
+  }
+  
+  let exclude = options.exclude || [];
+  if (typeof exclude == 'string') exclude = [exclude];
 
-  return Applier;
+  if (exclude.length > 0) {
+    for (let i = 0, len = exclude.length; i < len; i++) {
+      if (minimatch(path, exclude[i])) {
+        console.log(path + '; excluded by ' + exclude[i]);
+        return false;
+      }
+    }
+  }
+  
+  return true;//FUCKING HELL DONT FORGET ABOUT THIS STUFF
+}
 
-})(require('stream').Transform);
+addSyncHandler('**/*.js', 'js', (contents, path, options) => {
+  options.fromString=true;
+  
+  var code = UglifyJS.minify(contents, options).code;
+  //console.log(code);
+  return code;
+});
 
-function setRoutes(ctx, opts, resolve, reject, route, paths, applyFunction, _hexo) {
-  return async.forEach(paths, function (path, callback) {
-    return route.get(path).pipe(new Applier(opts, applyFunction, _hexo, path)).on('error', function (e) {
-      return ctx.log.debug("Minifier Error: %s", e);
-    }).pipe(accum.buffer(function (buffer) {
-      route.set(path, buffer);
-      return callback();
-    }));
-  }, function () {
-    return resolve();
+addSyncHandler('**/*.html', 'html', (contents, path, options) => {
+  try {
+    return Htmlminifier(contents, options);
+    log('htmlminifier failed: ' + (e.toString().split('\n')[0]));
+  } catch (e) {
+    try {
+      return parse5.serialize(parse5.parse(contents));
+    } catch (e) {
+      log('domparser failed!');
+      
+      try {
+        var document = new DOMParser().parseFromString(contents, 'text/html');
+        
+        return new XMLSerializer().serializeToString(document); //_htmlMinifier(contents, options.linebreakpos || 512);
+      } catch (e) {
+        log('xmldom failed: ' + e);
+        return contents;
+        //return _minify(str).replace(/>\s*\?\?\s+\?\?\s*</g, '><');
+      }
+    }
+  }
+});
+
+/**
+handler structure:
+  function handlerFunc(
+    function resolvePromise
+    function rejectPromise
+    object? route
+    string[] paths
+  )
+*/
+function addHandler(matcherString, handlerFunc) {
+  _registeredMatchers.push(matcherString);
+  _registeredHandlers.push(handlerFunc);
+}
+
+/**
+handler structure:
+  function handlerFunc(
+    string contents,
+    string path,
+    object options
+  ) returns -> string newContents
+*/
+function addSyncHandler(matcherString, type /*eg js or html, where the config is pulled from*/, handlerFunc) {
+  _registeredMatchers.push(matcherString);
+  _registeredHandlers.push((resolve, reject, route, routes) => {
+    let success = true;
+    
+    const options = hexo.config[type+'_minifier'] || {};
+    
+    routes.forEach(path => {
+      
+      //console.log(path);
+        
+      if (!check(type, path)) {
+        return;
+      }
+      
+      try {
+        const rpath = './public/'+path;
+        const contents = fs.readFileSync(rpath, 'utf8');
+        
+        const newContents = handlerFunc(contents, rpath, options);
+        
+        if (contents !== newContents) {
+          fs.writeFileSync(rpath, newContents, 'utf8');
+          console.log(fs.readFileSync(rpath, 'utf8') == newContents && (rpath +process.cwd()));
+          log('Minifying: ' + path + '; from ' + ~~(contents.length / 1024) + 'KiB to ' + ~~(newContents.length/1024) + 'KiB, saved: ' + (100-Math.floor((newContents.length/contents.length)*100)) + '%');
+        }
+      } catch (e) {
+        console.error(chalk.red(e));
+        success = false;
+      }
+      
+    });
+    
+    //if (success) resolve();
+    //else reject();
   });
 }
 
-function makeFunc(func, extension, opt, _hexo) {
-  return function() {
-    // ???
-    //let hexo = this || module.exports;
-    let route = hexo.route;
-    let opts = hexo.config[opt];
-    let routes = route.list().filter(function (path) {
-      return minimatch(path, '**/*.' + extension, {
-        nocase: true
+let hasListened=false;
+hexo.extend.filter.register('after_generate', function() {
+  if (hasListened)return;
+  hasListened=true;
+  process.once('exit', () => {
+    _registeredMatchers.forEach((_, i) => {
+      var route = hexo.route;
+
+      var routes = route.list().filter(function(path) {
+        return minimatch(path, _registeredMatchers[i], { nocase: true });
       });
+      
+      _registeredHandlers[i](function(){}, function(){}, route, routes);
+      //return new Promise(function (resolve, reject) {
+      //  _registeredHandlers[i](resolve, reject, route, routes);
+      //});
     });
-    return new Promise(function (resolve, reject) {
-      return setRoutes(hexo, opts, resolve, reject, route, routes, func, _hexo);
-    });
-  };
-}
-
-//module.exports = function (hexo) {
-if (false === hexo.config.hasOwnProperty('all_minifier') || true === hexo.config.all_minifier) {
-  // HTML minifier
-  hexo.config.html_minifier = assign({
-    enable: true,
-    exclude: [],
-    ignoreCustomComments: [/^\s*more/],
-    removeComments: true,
-    removeCommentsFromCDATA: true,
-    collapseWhitespace: true,
-    collapseBooleanAttributes: true,
-    removeEmptyAttributes: true,
-    minifyJS: true,
-    minifyCSS: true,
-  }, hexo.config.html_minifier);
-
-  // Css minifier
-  hexo.config.css_minifier = assign({
-    enable: true,
-    exclude: ['*.min.css']
-  }, hexo.config.css_minifier);
-
-  // Js minifier
-  hexo.config.js_minifier = assign({
-    enable: true,
-    mangle: true,
-    output: {},
-    compress: {},
-    exclude: ['*.min.js']
-  }, hexo.config.js_minifier, {
-    fromString: true
   });
-
-  // Image minifier
-  hexo.config.image_minifier = assign({
-    enable: true,
-    interlaced: false,
-    multipass: false,
-    optimizationLevel: 3,
-    pngquant: false,
-    progressive: false
-  }, hexo.config.image_minifier);
+}, 10000);
 
 
-  var filter = require('./lib/filter');
-  //        hexo.extend.filter.register('after_render:html', filter.optimizeHTML);
-  //
-  //        hexo.extend.filter.register('after_render:css', filter.optimizeCSS);
-  //
-  //        hexo.extend.filter.register('after_render:js', filter.optimizeJS);
 
-  hexo.extend.filter.register('after_generate', makeFunc(filter.optimizeHTML, 'html', 'html_minifier', hexo));
-  hexo.extend.filter.register('after_generate', makeFunc(filter.optimizeCSS, 'css', 'css_minifier', hexo));
-  hexo.extend.filter.register('after_generate', makeFunc(filter.optimizeJS, 'js', 'js_minifier', hexo));
-  hexo.extend.filter.register('after_generate', filter.optimizeImage);
-}
-//}
+
+// after render does not work, its not far enough!
+/*
+console.log('FUCKIGN HELL');
+hexo.extend.filter.register('after_render:js', function(str, data) {
+  if (!check('js', data.path)) {
+    return str;
+  }
+  
+  const out = js(str, data.path, data, hexo.config['js_minifier'] || {});
+  log('Minifying: ' + (data.path.substr(data.path.lastIndexOf('static-site-hexo\\'))) + '; Saved: ' + Math.floor((out.length/str.length)*100) + '%');
+  return out;
+  
+});
+
+hexo.extend.filter.register('after_render:html', function(str, data) {
+  if (!check('html/md/ejs', data.path)) {
+    return str;
+  }
+  
+  const out = html(str, data.path, data, hexo.config['html_minifier'] || {});
+  log('Minifying: ' + (data.path.substr(data.path.lastIndexOf('static-site-hexo\\'))) + '; Saved: ' + Math.floor((out.length/str.length)*100) + '%');
+  return out;
+  
+});
+*/
