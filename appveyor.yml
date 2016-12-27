@@ -28,4 +28,5 @@ test_script:
     node --version
     npm --version
     
-
+cache:
+  - node_modules -> **\package.json      # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
