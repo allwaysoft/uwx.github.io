@@ -60,22 +60,29 @@ noSidebar: true
       lineNumbers: true
     });
 
+    // Escape
+    queryId('do-esc').onclick = makeFunc(descape, 'Could not escape: ');
+    queryId('do-un-esc').onclick = makeFunc(undescape, 'Could not escape: ');
+    // Encode URI
+    queryId('do-enc').onclick = makeFunc(encodeURI, 'Could not encode: ');
+    queryId('do-un-enc').onclick = makeFunc(decodeURI, 'Could not encode: ');
+    // Escape RegExp
+    queryId('do-resc').onclick = makeFunc(re_escape, 'Could not escape: ');
+    queryId('do-un-resc').onclick = makeFunc(un_re_escape, 'Could not escape: ');
+    // Escape RegExp (no newlines)
+    queryId('do-resc2').onclick = makeFunc(re_escape_n, 'Could not escape: ');
+    queryId('do-un-resc2').onclick = makeFunc(un_re_escape_n, 'Could not escape: ');
+    // Escape JSON
+    queryId('do-jesc').onclick = makeFunc(jsonEscape, 'Could not escape: ');
+    //queryId('do-un-jesc').onclick = makeFunc(unjsonEscape, 'Could not escape: ');
+    // Escape HTML
+    queryId('do-htmlesc').onclick = makeFunc(htmlEscape, 'Could not escape: ');
+    queryId('do-un-htmlesc').onclick = makeFunc(unhtmlEscape, 'Could not escape: ');
+    
     // Minify
     queryId('do-min').onclick = makeFunc(minify, 'Could not minify: ');
     // Beautify
     queryId('do-bt').onclick = makeFunc(beautify, 'Could not beautify: ');
-    // Escape
-    queryId('do-esc').onclick = makeFunc(descape, 'Could not escape: ');
-    // Encode URI
-    queryId('do-enc').onclick = makeFunc(encodeURI, 'Could not encode: ');
-    // Escape RegExp
-    queryId('do-resc').onclick = makeFunc(re_escape, 'Could not escape: ');
-    // Escape RegExp (no newlines)
-    queryId('do-resc2').onclick = makeFunc(re_escape_n, 'Could not escape: ');
-    // Escape JSON
-    queryId('do-jesc').onclick = makeFunc(jsonEscape, 'Could not escape: ');
-    // Escape HTML
-    queryId('do-htmlesc').onclick = makeFunc(htmlEscape, 'Could not escape: ')
     // Remove duplicate lines
     queryId('do-dupl').onclick = makeFunc(function(text) {
       var out = removeDuplicateLines(text);
@@ -253,11 +260,30 @@ noSidebar: true
       <button class="submit hansen-wrap" id="do-mrond">Round number</button>
     </td>
   </tr>
+  <tr>
+    <td>
+      <h1 class="hansen-header">Escapism Tools <span style="font-size: 6pt;font-weight: initial;font-style: italic;">because your life is no fun</span></h1>
+      <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <br>
+      <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <br>
+      <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <br>
+      <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <br>
+      <button class="submit hansen-wrap" id="do-htmlesc">Escape (HTML)</button> <br>
+      <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button>
+    </td>
+    <td>
+      <h1 class="hansen-header">Descapism Tools <span style="font-size: 6pt;font-weight: initial;font-style: italic;">because making up words is fun</span></h1>
+      <button class="submit hansen-wrap" id="do-un-esc">Unescape (String)</button> <br>
+      <button class="submit hansen-wrap" id="do-un-enc">Decode URI</button> <br>
+      <button class="submit hansen-wrap" id="do-un-resc">Unescape (RegExp)</button> <br>
+      <button class="submit hansen-wrap" id="do-un-resc2">Unescape (RegExp without newlines)</button> <br>
+      <button class="submit hansen-wrap" id="do-un-htmlesc">Unescape (HTML)</button> <br>
+    </td>
+  </tr>
 </table> 
 
 <h1 class="hansen-header" id="txt-header" onload="showHeader();">General Text Tools</h1>
 
-<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-esc">Escape (String)</button> <button class="submit hansen-wrap" id="do-enc">Encode URI</button> <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <button class="submit hansen-wrap" id="do-htmlesc">Escape (HTML)</button> <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button> <button class="submit hansen-wrap" id="do-zalgo">Remove combining characters</button> <button class="submit hansen-wrap" id="do-dlowercase">Convert to lowercase</button> <button class="submit hansen-wrap" id="do-duppercase">Convert to uppercase</button> <button class="submit hansen-wrap" id="do-dtitlecase">Convert to titlecase</button>
+<button class="submit hansen-wrap" id="do-min">Minify</button> <button class="submit hansen-wrap" id="do-bt">Beautify</button> <button class="submit hansen-wrap" id="do-dupl">Remove duplicate lines</button> <input id="chk-case-sensitive" type="checkbox"> Case-sensitive <button class="submit hansen-wrap" id="do-reme">Remove empty lines</button> <button class="submit hansen-wrap" id="do-trim">Trim lines</button> <button class="submit hansen-wrap" id="do-reprint">Escape non-printable characters</button> <button class="submit hansen-wrap" id="do-prijson">Escape non-printable characters (JSON)</button> <button class="submit hansen-wrap" id="do-zalgo">Remove combining characters</button> <button class="submit hansen-wrap" id="do-dlowercase">Convert to lowercase</button> <button class="submit hansen-wrap" id="do-duppercase">Convert to uppercase</button> <button class="submit hansen-wrap" id="do-dtitlecase">Convert to titlecase</button>
 
 <div id="textfield"></div>
 
