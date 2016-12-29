@@ -23,6 +23,9 @@ const DOMParser = require('xmldom').DOMParser;
 const XMLSerializer = require('xmldom').XMLSerializer;
 const parse5 = require('parse5');
 const chalk = require('chalk');
+const getTemporaryFilePath = require('gettemporaryfilepath');
+
+const OptiPng = require('optipng');
 
 var log = hexo.log ? hexo.log.log.bind(hexo.log) : console.log.bind(console);
 
@@ -134,6 +137,14 @@ addSyncHandler('**/*.js', 'js', (contents, path, options) => {
   return code;
 });
 
+addSyncHandler('**/*.css', 'css', (contents, path, options) => {
+  //options.fromString=true;
+  
+  var code = new CleanCSS(options).minify(contents).styles;
+  //console.log(code);
+  return code;
+});
+
 addSyncHandler('**/*.html', 'html', (contents, path, options) => {
   try {
     return Htmlminifier(contents, options);
@@ -156,6 +167,38 @@ addSyncHandler('**/*.html', 'html', (contents, path, options) => {
     }
   }
 });
+
+//addHandler('**/*.png', (_1, _2, route, paths) => {
+//
+//  paths.forEach(path => {
+//    try {
+//      if (!check('png', path)) {
+//        return;
+//      }
+//      
+//      const rpath = './public/'+path;
+//      const pSize = fs.statSync(rpath).size;
+//      
+//      const opti = new OptiPng(['-o7']);
+//      
+//      if (!opti.writeStream) { // write a tempfile to give to binary
+//        opti.tempFile = getTemporaryFilePath({suffix: '.png'});
+//        opti.writeStream = fs.createWriteStream(opti.tempFile);
+//        opti.writeStream.on('error', function onWsErr(err){
+//          opti._error(err);
+//        }.bind(opti));
+//      }
+//
+//      fs.createReadStream(rpath).pipe(opti).pipe(fs.createWriteStream(rpath)).once('end', () => {
+//        const nSize = fs.statSync(rpath).size;
+//
+//        log('Minifying: ' + path + '; from ' + ~~(pSize / 1024) + 'KiB to ' + ~~(nSize/1024) + 'KiB, saved: ' + (100-Math.floor((nSize/pSize)*100)) + '%');    
+//      });
+//    } catch (e) {
+//      console.error(chalk.red('error during png optimization:' + e.toString().split('\n')[0]));
+//    }
+//  });
+//});
 
 /**
 handler structure:
@@ -217,25 +260,38 @@ function addSyncHandler(matcherString, type /*eg js or html, where the config is
   });
 }
 
-let hasListened=false;
-hexo.extend.filter.register('after_generate', function() {
-  if (hasListened)return;
-  hasListened=true;
-  process.once('exit', () => {
-    _registeredMatchers.forEach((_, i) => {
-      var route = hexo.route;
+//let hasListened=false;
 
-      var routes = route.list().filter(function(path) {
-        return minimatch(path, _registeredMatchers[i], { nocase: true });
-      });
-      
-      _registeredHandlers[i](function(){}, function(){}, route, routes);
-      //return new Promise(function (resolve, reject) {
-      //  _registeredHandlers[i](resolve, reject, route, routes);
-      //});
+const wemeFunc = p => {
+  var route = hexo.route;
+
+  _registeredMatchers.forEach((_, i) => {
+    var routes = [p].filter(function(path) {
+      return minimatch(path, _registeredMatchers[i], { nocase: true });
     });
+    
+    _registeredHandlers[i](function(){}, function(){}, route, routes);
+    //return new Promise(function (resolve, reject) {
+    //  _registeredHandlers[i](resolve, reject, route, routes);
+    //});
   });
-}, 10000);
+};
+
+global.hacks=global.hacks||{};
+global.hacks.onGenerate = p => {
+  //console.log('weme func has been called');
+  
+  //if (hasListened)return;
+  //hasListened=true;
+  
+  wemeFunc(p);
+}
+
+//hexo.extend.filter.register('after_generate', function() {
+//  if (hasListened)return;
+//  hasListened=true;
+//  process.once('exit', wemeFunc);
+//}, 10000);
 
 
 
