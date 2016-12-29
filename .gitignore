@@ -224,3 +224,4 @@
 /public/ss64/nt/*.zip
 /public/ss64/pass/*.zip
 /--package.json
+/log.log
