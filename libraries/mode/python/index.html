@@ -1,33 +1,30 @@
-<!doctype html>
-
-<title>CodeMirror: Python mode</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="../../doc/docs.css">
+<!DOCTYPE html><html><head><title>CodeMirror: Python mode</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="python.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-<div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+</head><body><div id="nav">
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </ul>
+    </li><li><a href="../../doc/manual.html">Manual</a>
+    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </li></ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Python</a>
-  </ul>
+    </li><li><a class="active" href="#">Python</a>
+  </li></ul>
 </div>
 
 <article>
 <h2>Python mode</h2>
 
-    <div><textarea id="code" name="code">
-# Literals
+    <div><textarea id="code" name="code"># Literals
 1234
 0.0e101
 .123
@@ -75,8 +72,8 @@ a⃗ = v̇
 F⃗ = m•a⃗ 
 
 # Operators
-+ - * / % & | ^ ~ < >
-== != <= >= <> << >> // **
++ - * / % &amp; | ^ ~ &lt; &gt;
+== != &lt;= &gt;= &lt;&gt; &lt;&lt; &gt;&gt; // **
 and or not in is
 
 #infix matrix multiplication operator (PEP 465)
@@ -84,8 +81,8 @@ A @ B
 
 # Delimiters
 () [] {} , : ` = ; @ .  # Note that @ and . require the proper context on Python 2.
-+= -= *= /= %= &= |= ^=
-//= >>= <<= **=
++= -= *= /= %= &amp;= |= ^=
+//= &gt;&gt;= &lt;&lt;= **=
 
 # Keywords
 as assert break class continue def del elif else except
@@ -132,7 +129,6 @@ class ExampleClass(ParentClass):
 <h2>Cython mode</h2>
 
 <div><textarea id="code-cython" name="code-cython">
-
 import numpy as np
 cimport cython
 from libc.math cimport sqrt
@@ -196,3 +192,4 @@ def pairwise_cython(double[:, ::1] X):
 
     <p><strong>MIME types defined:</strong> <code>text/x-python</code> and <code>text/x-cython</code>.</p>
   </article>
+</body></html>
