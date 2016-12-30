@@ -30,3 +30,4 @@ test_script:
     
 cache:
   - node_modules -> **\package.json      # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
+  - '%APPDATA%\npm-cache'               # npm cache
