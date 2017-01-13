@@ -19,11 +19,23 @@ date: 2016-08-15 13:49:34
 
 <script type="text/javascript">
 window.onload = function() {
+
   var form = document.forms.namedItem("fileinfo");
   form.addEventListener('submit', function(ev) {
+    
+    var val = document.getElementById('turl').value;
+    var oData;
+    if (val.startsWith('http')) {
+      var blob = new Blob([val], {type: 'file'});
+      oData = new FormData();
+      oData.append('imgfile', blob);
+    } else {
+      oData = new FormData(form);
+    }
 
-    var oOutput = document.querySelector("#resultdiv"),
-        oData = new FormData(form);
+    console.log();
+
+    var oOutput = document.querySelector("#resultdiv");
 
     //oData.append("CustomField", "This is some extra data");
 
@@ -66,7 +78,8 @@ window.onload = function() {
 </style>
 
 <form enctype="multipart/form-data" method="post" name="fileinfo">
-  <input type="file" name="imgfile" required />
+  <input type="file" name="imgfile" />
+  <input id="turl" type="text" value="URL" />
   <input type="submit" value="Plant the bomb!" />
 </form><p></p>
 <div id="resultdiv"></div>
