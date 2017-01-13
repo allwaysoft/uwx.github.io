@@ -883,7 +883,7 @@ const unescapables = [
   /\&spades;/g, "♠",
   /\&clubs;/g, "♣",
   /\&hearts;/g, "♥",
-  /♦/g, "&diams;"
+  /\&diams;/g, "♦"
 ];
 
 function htmlEscape(str) {
