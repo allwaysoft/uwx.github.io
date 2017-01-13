@@ -1,5 +1,5 @@
 /*globals UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math*/
-/*exported UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math, removeDuplicateLines, removeEmptyLines, trimLines, re_escape_n, re_escape, descape, jsonEscape, minify, beautify, escapeNonPrintable, escapeNonPrintableJSON, unZalgo, fromBinary, toBinary, toHex, fromHex, toDec, fromDec, doChecksum, titleCase, htmlEscape*/
+/*exported escapeNonASCIIJSON, escapeNonASCII, unhtmlEscape, undescape, un_re_escape_n, un_re_escape, UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math, removeDuplicateLines, removeEmptyLines, trimLines, re_escape_n, re_escape, descape, jsonEscape, minify, beautify, escapeNonPrintable, escapeNonPrintableJSON, unZalgo, fromBinary, toBinary, toHex, fromHex, toDec, fromDec, doChecksum, titleCase, htmlEscape*/
 /*jshint evil:true*/
 
 'use strict';
@@ -883,7 +883,7 @@ const unescapables = [
   /\&spades;/g, "♠",
   /\&clubs;/g, "♣",
   /\&hearts;/g, "♥",
-  /♦/g, "&diams;"
+  /\&diams;/g, "♦"
 ];
 
 function htmlEscape(str) {
@@ -898,4 +898,37 @@ function unhtmlEscape(str) {
     str = str.replace(unescapables[i], unescapables[i+1]);
   }
   return str;
+}
+
+function escapeNonASCII(str) {
+  const arr = [];
+
+  for (let i = 0, len = str.length; i < len; i++) {
+    let codePoint = str.charCodeAt(i);
+    if (codePoint > 126) {//>126 doesn't match ASCII
+      if (codePoint < 256) {
+        arr.push('\\x' + ("00" + codePoint).slice(-2)); // not in JSON
+      } else {
+        arr.push('\\u' + ("0000" + codePoint).slice(-4)); // basically the standard
+      }
+    } else {
+      arr.push(str[i]);
+    }
+  }
+
+  return arr.join('');
+}
+function escapeNonASCIIJSON(str) {
+  const arr = [];
+
+  for (let i = 0, len = str.length; i < len; i++) {
+    let codePoint = str.charCodeAt(i);
+    if (codePoint > 126) {//>126 doesn't match ASCII
+      arr.push('\\u' + ("0000" + codePoint).slice(-4)); // basically the standard
+    } else {
+      arr.push(str[i]);
+    }
+  }
+
+  return arr.join('');
 }
