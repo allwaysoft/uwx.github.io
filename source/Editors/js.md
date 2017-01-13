@@ -74,7 +74,9 @@ noSidebar: true
     queryId('do-un-resc2').onclick = makeFunc(un_re_escape_n, 'Could not escape: ');
     // Escape JSON
     queryId('do-jesc').onclick = makeFunc(jsonEscape, 'Could not escape: ');
-    //queryId('do-un-jesc').onclick = makeFunc(unjsonEscape, 'Could not escape: ');
+    // escape non ascii
+    queryId('do-aesc').onclick = makeFunc(escapeNonASCII, 'Could not escape: ');
+    queryId('do-aesc-json').onclick = makeFunc(escapeNonASCIIJSON, 'Could not escape: ');
     // Escape HTML
     queryId('do-htmlesc').onclick = makeFunc(htmlEscape, 'Could not escape: ');
     queryId('do-un-htmlesc').onclick = makeFunc(unhtmlEscape, 'Could not escape: ');
@@ -268,7 +270,9 @@ noSidebar: true
       <button class="submit hansen-wrap" id="do-resc">Escape (RegExp)</button> <br>
       <button class="submit hansen-wrap" id="do-resc2">Escape (RegExp without newlines)</button> <br>
       <button class="submit hansen-wrap" id="do-htmlesc">Escape (HTML)</button> <br>
-      <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button>
+      <button class="submit hansen-wrap" id="do-jesc">Escape (JSON)</button> <br>
+      <button class="submit hansen-wrap" id="do-aesc">Escape non-ASCII chars</button> <br>
+      <button class="submit hansen-wrap" id="do-aesc-json">Escape non-ASCII chars (JSON)</button>
     </td>
     <td>
       <h1 class="hansen-header">Descapism Tools <span style="font-size: 6pt;font-weight: initial;font-style: italic;">because making up words is fun</span></h1>
