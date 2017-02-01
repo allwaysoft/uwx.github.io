@@ -8,7 +8,7 @@ For /f "tokens=1-2 delims=/:" %%a in ('time /t') do (set mytime=%%a%%b)
 
 @rem clone gh pages branch
 mkdir %USERPROFILE%\master
-git clone --quiet --branch=master https://github.com/rafa1231518/rafa1231518.github.io %USERPROFILE%\master
+git clone --quiet --branch=master https://github.com/fallk/fallk.github.io %USERPROFILE%\master
 
 @rem override public data and add to git
 robocopy public %USERPROFILE%\master /E /IS /NFL /NP
