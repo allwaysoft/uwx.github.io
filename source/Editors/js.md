@@ -63,6 +63,7 @@ noSidebar: true
     // Escape
     queryId('do-esc').onclick = makeFunc(descape, 'Could not escape: ');
     queryId('do-un-esc').onclick = makeFunc(undescape, 'Could not escape: ');
+    queryId('do-un-esc-legacy').onclick = makeFunc(undescapeLegacy, 'Could not escape: ');
     // Encode URI
     queryId('do-enc').onclick = makeFunc(encodeURI, 'Could not encode: ');
     queryId('do-un-enc').onclick = makeFunc(decodeURI, 'Could not encode: ');
@@ -277,6 +278,7 @@ noSidebar: true
     <td>
       <h1 class="hansen-header">Descapism Tools <span style="font-size: 6pt;font-weight: initial;font-style: italic;">because making up words is fun</span></h1>
       <button class="submit hansen-wrap" id="do-un-esc">Unescape (String)</button> <br>
+      <button class="submit hansen-wrap" id="do-un-esc-legacy">Unescape (String, legacy/obsolete)</button> <br>
       <button class="submit hansen-wrap" id="do-un-enc">Decode URI</button> <br>
       <button class="submit hansen-wrap" id="do-un-resc">Unescape (RegExp)</button> <br>
       <button class="submit hansen-wrap" id="do-un-resc2">Unescape (RegExp without newlines)</button> <br>

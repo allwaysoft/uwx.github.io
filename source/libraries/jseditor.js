@@ -1,5 +1,5 @@
 /*globals UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math*/
-/*exported escapeNonASCIIJSON, escapeNonASCII, unhtmlEscape, undescape, un_re_escape_n, un_re_escape, UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math, removeDuplicateLines, removeEmptyLines, trimLines, re_escape_n, re_escape, descape, jsonEscape, minify, beautify, escapeNonPrintable, escapeNonPrintableJSON, unZalgo, fromBinary, toBinary, toHex, fromHex, toDec, fromDec, doChecksum, titleCase, htmlEscape*/
+/*exported undescapeLegacy, escapeNonASCIIJSON, escapeNonASCII, unhtmlEscape, undescape, un_re_escape_n, un_re_escape, UglifyJS, js_beautify, CodeMirror, weirdhash, outputText, makeFunc, generateNumberList, randomizeList, reverseList, JSHINT, transpileArnold, runBrainfuck, makeVisible, fishq9plus, math, removeDuplicateLines, removeEmptyLines, trimLines, re_escape_n, re_escape, descape, jsonEscape, minify, beautify, escapeNonPrintable, escapeNonPrintableJSON, unZalgo, fromBinary, toBinary, toHex, fromHex, toDec, fromDec, doChecksum, titleCase, htmlEscape*/
 /*jshint evil:true*/
 
 'use strict';
@@ -904,7 +904,7 @@ function escapeNonASCII(str) {
   const arr = [];
 
   for (let i = 0, len = str.length; i < len; i++) {
-    let codePoint = str.charCodeAt(i);
+    let codePoint = str.charCodeAt(i).toString(16);
     if (codePoint > 126) {//>126 doesn't match ASCII
       if (codePoint < 256) {
         arr.push('\\x' + ("00" + codePoint).slice(-2)); // not in JSON
@@ -922,7 +922,7 @@ function escapeNonASCIIJSON(str) {
   const arr = [];
 
   for (let i = 0, len = str.length; i < len; i++) {
-    let codePoint = str.charCodeAt(i);
+    let codePoint = str.charCodeAt(i).toString(16);
     if (codePoint > 126) {//>126 doesn't match ASCII
       arr.push('\\u' + ("0000" + codePoint).slice(-4)); // basically the standard
     } else {
@@ -931,4 +931,14 @@ function escapeNonASCIIJSON(str) {
   }
 
   return arr.join('');
+}
+
+function undescapeLegacy(string) {
+  return (''+string)
+    .replace(/\\(["'\\])/g, '$1')
+    .replace(/\\n/g, '\n')
+    .replace(/\\r/g, '\r')
+    .replace(/\\u([\d\w]{4})/gi, function (match, grp) {
+      return String.fromCharCode(parseInt(grp, 10));
+    });
 }
