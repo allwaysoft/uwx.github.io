@@ -6,7 +6,7 @@
     "version": "3.2.2"
   },
   "dependencies": {
-    "chalk": "^2.3.1",
+    "chalk": "^2.4.1",
     "cheerio": "^0.22.0",
     "hexo": "github:rafa1231518/hexo",
     "hexo-all-minifier": "file:local_modules/hexo-all-minifier",
