@@ -1,6 +1,8 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Ruby mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Ruby mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
@@ -10,23 +12,24 @@
       .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
       .cm-s-default span.cm-arrow { color: red; }
     </style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Ruby</a>
-  </li></ul>
+    <li><a class=active href="#">Ruby</a>
+  </ul>
 </div>
 
 <article>
 <h2>Ruby mode</h2>
-<form><textarea id="code" name="code"># Code from http://sandbox.mc.edu/~bennet/ruby/code/poly_rb.html
+<form><textarea id="code" name="code">
+# Code from http://sandbox.mc.edu/~bennet/ruby/code/poly_rb.html
 #
 # This program evaluates polynomials.  It first asks for the coefficients
 # of a polynomial, which must be entered on one line, highest-order first.
@@ -83,9 +86,9 @@ def term_to_str(coef, exp)
 
     # Show coeff, unless it's 1 or at the right
     coef = coef.abs
-    ret = coef.to_s     unless coef == 1 &amp;&amp; exp &gt; 0
-    ret += "x" if exp &gt; 0                               # x if exponent not 0
-    ret += "^" + exp.to_s if exp &gt; 1                    # ^exponent, if &gt; 1.
+    ret = coef.to_s     unless coef == 1 && exp > 0
+    ret += "x" if exp > 0                               # x if exponent not 0
+    ret += "^" + exp.to_s if exp > 1                    # ^exponent, if > 1.
 
     return ret
 end
@@ -106,13 +109,13 @@ def polystr(p)
     # *** Now p is a non-empty list of [ coef, exponent ] pairs. ***
 
     # Convert the first term, preceded by a "-" if it's negative.
-    result = (if p[0][0] &lt; 0 then "-" else "" end) + term_to_str(*p[0])
+    result = (if p[0][0] < 0 then "-" else "" end) + term_to_str(*p[0])
 
     # Convert the rest of the terms, in each case adding the appropriate
     # + or - separating them.  
     for term in p[1...p.length]
         # Add the separator then the rep. of the term.
-        result += (if term[0] &lt; 0 then " - " else " + " end) + 
+        result += (if term[0] < 0 then " - " else " + " end) + 
                 term_to_str(*term)
     end
 
@@ -178,4 +181,3 @@ end
     by <a href="http://ubalo.com/">Ubalo</a>.</p>
 
   </article>
-</body></html>

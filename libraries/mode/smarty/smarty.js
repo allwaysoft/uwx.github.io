@@ -1,1 +1,225 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror"],e);else e(CodeMirror)})(function(e){"use strict";e.defineMode("smarty",function(t,r){var i=r.rightDelimiter||"}";var n=r.leftDelimiter||"{";var a=r.version||2;var o=e.getMode(t,r.baseMode||"null");var l=["debug","extends","function","include","literal"];var f={operatorChars:/[+\-*&%=<>!?]/,validIdentifier:/[a-zA-Z0-9_]/,stringChar:/['"]/};var u;function s(e,t){u=t;return e}function d(e,t,r){t.tokenize=r;return r(e,t)}function c(e,t){if(t==null)t=e.pos;return a===3&&n=="{"&&(t==e.string.length||/\s/.test(e.string.charAt(t)))}function p(e,t){var r=e.string;for(var a=e.pos;;){var l=r.indexOf(n,a);a=l+n.length;if(l==-1||!c(e,l+n.length))break}if(l==e.pos){e.match(n);if(e.eat("*")){return d(e,t,b("comment","*"+i))}else{t.depth++;t.tokenize=h;u="startTag";return"tag"}}if(l>-1)e.string=r.slice(0,l);var f=o.token(e,t.base);if(l>-1)e.string=r;return f}function h(e,t){if(e.match(i,true)){if(a===3){t.depth--;if(t.depth<=0){t.tokenize=p}}else{t.tokenize=p}return s("tag",null)}if(e.match(n,true)){t.depth++;return s("tag","startTag")}var r=e.next();if(r=="$"){e.eatWhile(f.validIdentifier);return s("variable-2","variable")}else if(r=="|"){return s("operator","pipe")}else if(r=="."){return s("operator","property")}else if(f.stringChar.test(r)){t.tokenize=v(r);return s("string","string")}else if(f.operatorChars.test(r)){e.eatWhile(f.operatorChars);return s("operator","operator")}else if(r=="["||r=="]"){return s("bracket","bracket")}else if(r=="("||r==")"){return s("bracket","operator")}else if(/\d/.test(r)){e.eatWhile(/\d/);return s("number","number")}else{if(t.last=="variable"){if(r=="@"){e.eatWhile(f.validIdentifier);return s("property","property")}else if(r=="|"){e.eatWhile(f.validIdentifier);return s("qualifier","modifier")}}else if(t.last=="pipe"){e.eatWhile(f.validIdentifier);return s("qualifier","modifier")}else if(t.last=="whitespace"){e.eatWhile(f.validIdentifier);return s("attribute","modifier")}if(t.last=="property"){e.eatWhile(f.validIdentifier);return s("property",null)}else if(/\s/.test(r)){u="whitespace";return null}var o="";if(r!="/"){o+=r}var d=null;while(d=e.eat(f.validIdentifier)){o+=d}for(var c=0,h=l.length;c<h;c++){if(l[c]==o){return s("keyword","keyword")}}if(/\s/.test(r)){return null}return s("tag","tag")}}function v(e){return function(t,r){var i=null;var n=null;while(!t.eol()){n=t.peek();if(t.next()==e&&i!=="\\"){r.tokenize=h;break}i=n}return"string"}}function b(e,t){return function(r,i){while(!r.eol()){if(r.match(t)){i.tokenize=p;break}r.next()}return e}}return{startState:function(){return{base:e.startState(o),tokenize:p,last:null,depth:0}},copyState:function(t){return{base:e.copyState(o,t.base),tokenize:t.tokenize,last:t.last,depth:t.depth}},innerMode:function(e){if(e.tokenize==p)return{mode:o,state:e.base}},token:function(e,t){var r=t.tokenize(e,t);t.last=u;return r},indent:function(t,r){if(t.tokenize==p&&o.indent)return o.indent(t.base,r);else return e.Pass},blockCommentStart:n+"*",blockCommentEnd:"*"+i}});e.defineMIME("text/x-smarty","smarty")});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+/**
+ * Smarty 2 and 3 mode.
+ */
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+  "use strict";
+
+  CodeMirror.defineMode("smarty", function(config, parserConf) {
+    var rightDelimiter = parserConf.rightDelimiter || "}";
+    var leftDelimiter = parserConf.leftDelimiter || "{";
+    var version = parserConf.version || 2;
+    var baseMode = CodeMirror.getMode(config, parserConf.baseMode || "null");
+
+    var keyFunctions = ["debug", "extends", "function", "include", "literal"];
+    var regs = {
+      operatorChars: /[+\-*&%=<>!?]/,
+      validIdentifier: /[a-zA-Z0-9_]/,
+      stringChar: /['"]/
+    };
+
+    var last;
+    function cont(style, lastType) {
+      last = lastType;
+      return style;
+    }
+
+    function chain(stream, state, parser) {
+      state.tokenize = parser;
+      return parser(stream, state);
+    }
+
+    // Smarty 3 allows { and } surrounded by whitespace to NOT slip into Smarty mode
+    function doesNotCount(stream, pos) {
+      if (pos == null) pos = stream.pos;
+      return version === 3 && leftDelimiter == "{" &&
+        (pos == stream.string.length || /\s/.test(stream.string.charAt(pos)));
+    }
+
+    function tokenTop(stream, state) {
+      var string = stream.string;
+      for (var scan = stream.pos;;) {
+        var nextMatch = string.indexOf(leftDelimiter, scan);
+        scan = nextMatch + leftDelimiter.length;
+        if (nextMatch == -1 || !doesNotCount(stream, nextMatch + leftDelimiter.length)) break;
+      }
+      if (nextMatch == stream.pos) {
+        stream.match(leftDelimiter);
+        if (stream.eat("*")) {
+          return chain(stream, state, tokenBlock("comment", "*" + rightDelimiter));
+        } else {
+          state.depth++;
+          state.tokenize = tokenSmarty;
+          last = "startTag";
+          return "tag";
+        }
+      }
+
+      if (nextMatch > -1) stream.string = string.slice(0, nextMatch);
+      var token = baseMode.token(stream, state.base);
+      if (nextMatch > -1) stream.string = string;
+      return token;
+    }
+
+    // parsing Smarty content
+    function tokenSmarty(stream, state) {
+      if (stream.match(rightDelimiter, true)) {
+        if (version === 3) {
+          state.depth--;
+          if (state.depth <= 0) {
+            state.tokenize = tokenTop;
+          }
+        } else {
+          state.tokenize = tokenTop;
+        }
+        return cont("tag", null);
+      }
+
+      if (stream.match(leftDelimiter, true)) {
+        state.depth++;
+        return cont("tag", "startTag");
+      }
+
+      var ch = stream.next();
+      if (ch == "$") {
+        stream.eatWhile(regs.validIdentifier);
+        return cont("variable-2", "variable");
+      } else if (ch == "|") {
+        return cont("operator", "pipe");
+      } else if (ch == ".") {
+        return cont("operator", "property");
+      } else if (regs.stringChar.test(ch)) {
+        state.tokenize = tokenAttribute(ch);
+        return cont("string", "string");
+      } else if (regs.operatorChars.test(ch)) {
+        stream.eatWhile(regs.operatorChars);
+        return cont("operator", "operator");
+      } else if (ch == "[" || ch == "]") {
+        return cont("bracket", "bracket");
+      } else if (ch == "(" || ch == ")") {
+        return cont("bracket", "operator");
+      } else if (/\d/.test(ch)) {
+        stream.eatWhile(/\d/);
+        return cont("number", "number");
+      } else {
+
+        if (state.last == "variable") {
+          if (ch == "@") {
+            stream.eatWhile(regs.validIdentifier);
+            return cont("property", "property");
+          } else if (ch == "|") {
+            stream.eatWhile(regs.validIdentifier);
+            return cont("qualifier", "modifier");
+          }
+        } else if (state.last == "pipe") {
+          stream.eatWhile(regs.validIdentifier);
+          return cont("qualifier", "modifier");
+        } else if (state.last == "whitespace") {
+          stream.eatWhile(regs.validIdentifier);
+          return cont("attribute", "modifier");
+        } if (state.last == "property") {
+          stream.eatWhile(regs.validIdentifier);
+          return cont("property", null);
+        } else if (/\s/.test(ch)) {
+          last = "whitespace";
+          return null;
+        }
+
+        var str = "";
+        if (ch != "/") {
+          str += ch;
+        }
+        var c = null;
+        while (c = stream.eat(regs.validIdentifier)) {
+          str += c;
+        }
+        for (var i=0, j=keyFunctions.length; i<j; i++) {
+          if (keyFunctions[i] == str) {
+            return cont("keyword", "keyword");
+          }
+        }
+        if (/\s/.test(ch)) {
+          return null;
+        }
+        return cont("tag", "tag");
+      }
+    }
+
+    function tokenAttribute(quote) {
+      return function(stream, state) {
+        var prevChar = null;
+        var currChar = null;
+        while (!stream.eol()) {
+          currChar = stream.peek();
+          if (stream.next() == quote && prevChar !== '\\') {
+            state.tokenize = tokenSmarty;
+            break;
+          }
+          prevChar = currChar;
+        }
+        return "string";
+      };
+    }
+
+    function tokenBlock(style, terminator) {
+      return function(stream, state) {
+        while (!stream.eol()) {
+          if (stream.match(terminator)) {
+            state.tokenize = tokenTop;
+            break;
+          }
+          stream.next();
+        }
+        return style;
+      };
+    }
+
+    return {
+      startState: function() {
+        return {
+          base: CodeMirror.startState(baseMode),
+          tokenize: tokenTop,
+          last: null,
+          depth: 0
+        };
+      },
+      copyState: function(state) {
+        return {
+          base: CodeMirror.copyState(baseMode, state.base),
+          tokenize: state.tokenize,
+          last: state.last,
+          depth: state.depth
+        };
+      },
+      innerMode: function(state) {
+        if (state.tokenize == tokenTop)
+          return {mode: baseMode, state: state.base};
+      },
+      token: function(stream, state) {
+        var style = state.tokenize(stream, state);
+        state.last = last;
+        return style;
+      },
+      indent: function(state, text) {
+        if (state.tokenize == tokenTop && baseMode.indent)
+          return baseMode.indent(state.base, text);
+        else
+          return CodeMirror.Pass;
+      },
+      blockCommentStart: leftDelimiter + "*",
+      blockCommentEnd: "*" + rightDelimiter
+    };
+  });
+
+  CodeMirror.defineMIME("text/x-smarty", "smarty");
+});

@@ -1,1 +1,123 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror"],e);else e(CodeMirror)})(function(e){"use strict";e.defineMode("commonlisp",function(e){var t=/^(block|let*|return-from|catch|load-time-value|setq|eval-when|locally|symbol-macrolet|flet|macrolet|tagbody|function|multiple-value-call|the|go|multiple-value-prog1|throw|if|progn|unwind-protect|labels|progv|let|quote)$/;var n=/^with|^def|^do|^prog|case$|^cond$|bind$|when$|unless$/;var r=/^(?:[+\-]?(?:\d+|\d*\.\d+)(?:[efd][+\-]?\d+)?|[+\-]?\d+(?:\/[+\-]?\d+)?|#b[+\-]?[01]+|#o[+\-]?[0-7]+|#x[+\-]?[\da-f]+)/;var i=/[^\s'`,@()\[\]";]/;var o;function l(e){var t;while(t=e.next()){if(t=="\\")e.next();else if(!i.test(t)){e.backUp(1);break}}return e.current()}function c(e,i){if(e.eatSpace()){o="ws";return null}if(e.match(r))return"number";var c=e.next();if(c=="\\")c=e.next();if(c=='"')return(i.tokenize=u)(e,i);else if(c=="("){o="open";return"bracket"}else if(c==")"||c=="]"){o="close";return"bracket"}else if(c==";"){e.skipToEnd();o="ws";return"comment"}else if(/['`,@]/.test(c))return null;else if(c=="|"){if(e.skipTo("|")){e.next();return"symbol"}else{e.skipToEnd();return"error"}}else if(c=="#"){var c=e.next();if(c=="["){o="open";return"bracket"}else if(/[+\-=\.']/.test(c))return null;else if(/\d/.test(c)&&e.match(/^\d*#/))return null;else if(c=="|")return(i.tokenize=s)(e,i);else if(c==":"){l(e);return"meta"}else return"error"}else{var f=l(e);if(f==".")return null;o="symbol";if(f=="nil"||f=="t"||f.charAt(0)==":")return"atom";if(i.lastType=="open"&&(t.test(f)||n.test(f)))return"keyword";if(f.charAt(0)=="&")return"variable-2";return"variable"}}function u(e,t){var n=false,r;while(r=e.next()){if(r=='"'&&!n){t.tokenize=c;break}n=!n&&r=="\\"}return"string"}function s(e,t){var n,r;while(n=e.next()){if(n=="#"&&r=="|"){t.tokenize=c;break}r=n}o="ws";return"comment"}return{startState:function(){return{ctx:{prev:null,start:0,indentTo:0},lastType:null,tokenize:c}},token:function(t,r){if(t.sol()&&typeof r.ctx.indentTo!="number")r.ctx.indentTo=r.ctx.start+1;o=null;var i=r.tokenize(t,r);if(o!="ws"){if(r.ctx.indentTo==null){if(o=="symbol"&&n.test(t.current()))r.ctx.indentTo=r.ctx.start+e.indentUnit;else r.ctx.indentTo="next"}else if(r.ctx.indentTo=="next"){r.ctx.indentTo=t.column()}r.lastType=o}if(o=="open")r.ctx={prev:r.ctx,start:t.column(),indentTo:null};else if(o=="close")r.ctx=r.ctx.prev||r.ctx;return i},indent:function(e,t){var n=e.ctx.indentTo;return typeof n=="number"?n:e.ctx.start+1},closeBrackets:{pairs:'()[]{}""'},lineComment:";;",blockCommentStart:"#|",blockCommentEnd:"|#"}});e.defineMIME("text/x-common-lisp","commonlisp")});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+"use strict";
+
+CodeMirror.defineMode("commonlisp", function (config) {
+  var specialForm = /^(block|let*|return-from|catch|load-time-value|setq|eval-when|locally|symbol-macrolet|flet|macrolet|tagbody|function|multiple-value-call|the|go|multiple-value-prog1|throw|if|progn|unwind-protect|labels|progv|let|quote)$/;
+  var assumeBody = /^with|^def|^do|^prog|case$|^cond$|bind$|when$|unless$/;
+  var numLiteral = /^(?:[+\-]?(?:\d+|\d*\.\d+)(?:[efd][+\-]?\d+)?|[+\-]?\d+(?:\/[+\-]?\d+)?|#b[+\-]?[01]+|#o[+\-]?[0-7]+|#x[+\-]?[\da-f]+)/;
+  var symbol = /[^\s'`,@()\[\]";]/;
+  var type;
+
+  function readSym(stream) {
+    var ch;
+    while (ch = stream.next()) {
+      if (ch == "\\") stream.next();
+      else if (!symbol.test(ch)) { stream.backUp(1); break; }
+    }
+    return stream.current();
+  }
+
+  function base(stream, state) {
+    if (stream.eatSpace()) {type = "ws"; return null;}
+    if (stream.match(numLiteral)) return "number";
+    var ch = stream.next();
+    if (ch == "\\") ch = stream.next();
+
+    if (ch == '"') return (state.tokenize = inString)(stream, state);
+    else if (ch == "(") { type = "open"; return "bracket"; }
+    else if (ch == ")" || ch == "]") { type = "close"; return "bracket"; }
+    else if (ch == ";") { stream.skipToEnd(); type = "ws"; return "comment"; }
+    else if (/['`,@]/.test(ch)) return null;
+    else if (ch == "|") {
+      if (stream.skipTo("|")) { stream.next(); return "symbol"; }
+      else { stream.skipToEnd(); return "error"; }
+    } else if (ch == "#") {
+      var ch = stream.next();
+      if (ch == "[") { type = "open"; return "bracket"; }
+      else if (/[+\-=\.']/.test(ch)) return null;
+      else if (/\d/.test(ch) && stream.match(/^\d*#/)) return null;
+      else if (ch == "|") return (state.tokenize = inComment)(stream, state);
+      else if (ch == ":") { readSym(stream); return "meta"; }
+      else return "error";
+    } else {
+      var name = readSym(stream);
+      if (name == ".") return null;
+      type = "symbol";
+      if (name == "nil" || name == "t" || name.charAt(0) == ":") return "atom";
+      if (state.lastType == "open" && (specialForm.test(name) || assumeBody.test(name))) return "keyword";
+      if (name.charAt(0) == "&") return "variable-2";
+      return "variable";
+    }
+  }
+
+  function inString(stream, state) {
+    var escaped = false, next;
+    while (next = stream.next()) {
+      if (next == '"' && !escaped) { state.tokenize = base; break; }
+      escaped = !escaped && next == "\\";
+    }
+    return "string";
+  }
+
+  function inComment(stream, state) {
+    var next, last;
+    while (next = stream.next()) {
+      if (next == "#" && last == "|") { state.tokenize = base; break; }
+      last = next;
+    }
+    type = "ws";
+    return "comment";
+  }
+
+  return {
+    startState: function () {
+      return {ctx: {prev: null, start: 0, indentTo: 0}, lastType: null, tokenize: base};
+    },
+
+    token: function (stream, state) {
+      if (stream.sol() && typeof state.ctx.indentTo != "number")
+        state.ctx.indentTo = state.ctx.start + 1;
+
+      type = null;
+      var style = state.tokenize(stream, state);
+      if (type != "ws") {
+        if (state.ctx.indentTo == null) {
+          if (type == "symbol" && assumeBody.test(stream.current()))
+            state.ctx.indentTo = state.ctx.start + config.indentUnit;
+          else
+            state.ctx.indentTo = "next";
+        } else if (state.ctx.indentTo == "next") {
+          state.ctx.indentTo = stream.column();
+        }
+        state.lastType = type;
+      }
+      if (type == "open") state.ctx = {prev: state.ctx, start: stream.column(), indentTo: null};
+      else if (type == "close") state.ctx = state.ctx.prev || state.ctx;
+      return style;
+    },
+
+    indent: function (state, _textAfter) {
+      var i = state.ctx.indentTo;
+      return typeof i == "number" ? i : state.ctx.start + 1;
+    },
+
+    closeBrackets: {pairs: "()[]{}\"\""},
+    lineComment: ";;",
+    blockCommentStart: "#|",
+    blockCommentEnd: "|#"
+  };
+});
+
+CodeMirror.defineMIME("text/x-common-lisp", "commonlisp");
+
+});

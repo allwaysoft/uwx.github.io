@@ -1,1 +1,104 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror"],e);else e(CodeMirror)})(function(e){"use strict";e.defineMode("solr",function(){"use strict";var e=/[^\s\|\!\+\-\*\?\~\^\&\:\(\)\[\]\{\}\^\"\\]/;var t=/[\|\!\+\-\*\?\~\^\&]/;var n=/^(OR|AND|NOT|TO)$/i;function r(e){return parseFloat(e,10).toString()===e}function i(e){return function(t,n){var r=false,i;while((i=t.next())!=null){if(i==e&&!r)break;r=!r&&i=="\\"}if(!r)n.tokenize=u;return"string"}}function o(e){return function(t,n){var r="operator";if(e=="+")r+=" positive";else if(e=="-")r+=" negative";else if(e=="|")t.eat(/\|/);else if(e=="&")t.eat(/\&/);else if(e=="^")r+=" boost";n.tokenize=u;return r}}function f(t){return function(i,o){var f=t;while((t=i.peek())&&t.match(e)!=null){f+=i.next()}o.tokenize=u;if(n.test(f))return"operator";else if(r(f))return"number";else if(i.peek()==":")return"field";else return"string"}}function u(n,r){var l=n.next();if(l=='"')r.tokenize=i(l);else if(t.test(l))r.tokenize=o(l);else if(e.test(l))r.tokenize=f(l);return r.tokenize!=u?r.tokenize(n,r):null}return{startState:function(){return{tokenize:u}},token:function(e,t){if(e.eatSpace())return null;return t.tokenize(e,t)}}});e.defineMIME("text/x-solr","solr")});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+"use strict";
+
+CodeMirror.defineMode("solr", function() {
+  "use strict";
+
+  var isStringChar = /[^\s\|\!\+\-\*\?\~\^\&\:\(\)\[\]\{\}\^\"\\]/;
+  var isOperatorChar = /[\|\!\+\-\*\?\~\^\&]/;
+  var isOperatorString = /^(OR|AND|NOT|TO)$/i;
+
+  function isNumber(word) {
+    return parseFloat(word, 10).toString() === word;
+  }
+
+  function tokenString(quote) {
+    return function(stream, state) {
+      var escaped = false, next;
+      while ((next = stream.next()) != null) {
+        if (next == quote && !escaped) break;
+        escaped = !escaped && next == "\\";
+      }
+
+      if (!escaped) state.tokenize = tokenBase;
+      return "string";
+    };
+  }
+
+  function tokenOperator(operator) {
+    return function(stream, state) {
+      var style = "operator";
+      if (operator == "+")
+        style += " positive";
+      else if (operator == "-")
+        style += " negative";
+      else if (operator == "|")
+        stream.eat(/\|/);
+      else if (operator == "&")
+        stream.eat(/\&/);
+      else if (operator == "^")
+        style += " boost";
+
+      state.tokenize = tokenBase;
+      return style;
+    };
+  }
+
+  function tokenWord(ch) {
+    return function(stream, state) {
+      var word = ch;
+      while ((ch = stream.peek()) && ch.match(isStringChar) != null) {
+        word += stream.next();
+      }
+
+      state.tokenize = tokenBase;
+      if (isOperatorString.test(word))
+        return "operator";
+      else if (isNumber(word))
+        return "number";
+      else if (stream.peek() == ":")
+        return "field";
+      else
+        return "string";
+    };
+  }
+
+  function tokenBase(stream, state) {
+    var ch = stream.next();
+    if (ch == '"')
+      state.tokenize = tokenString(ch);
+    else if (isOperatorChar.test(ch))
+      state.tokenize = tokenOperator(ch);
+    else if (isStringChar.test(ch))
+      state.tokenize = tokenWord(ch);
+
+    return (state.tokenize != tokenBase) ? state.tokenize(stream, state) : null;
+  }
+
+  return {
+    startState: function() {
+      return {
+        tokenize: tokenBase
+      };
+    },
+
+    token: function(stream, state) {
+      if (stream.eatSpace()) return null;
+      return state.tokenize(stream, state);
+    }
+  };
+});
+
+CodeMirror.defineMIME("text/x-solr", "solr");
+
+});

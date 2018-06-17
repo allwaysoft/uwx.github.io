@@ -1,6 +1,8 @@
-<!DOCTYPE html><html><head><title>CodeMirror: JSX mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: JSX mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
@@ -8,18 +10,18 @@
 <script src="../xml/xml.js"></script>
 <script src="jsx.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">JSX</a>
-  </li></ul>
+    <li><a class=active href="#">JSX</a>
+  </ul>
 </div>
 
 <article>
@@ -28,47 +30,47 @@
 <div><textarea id="code" name="code">// Code snippets from http://facebook.github.io/react/docs/jsx-in-depth.html
 
 // Rendering HTML tags
-var myDivElement = &lt;div className="foo" /&gt;;
+var myDivElement = <div className="foo" />;
 ReactDOM.render(myDivElement, document.getElementById('example'));
 
 // Rendering React components
 var MyComponent = React.createClass({/*...*/});
-var myElement = &lt;MyComponent someProperty={true} /&gt;;
+var myElement = <MyComponent someProperty={true} />;
 ReactDOM.render(myElement, document.getElementById('example'));
 
 // Namespaced components
 var Form = MyFormComponent;
 
 var App = (
-  &lt;Form&gt;
-    &lt;Form.Row&gt;
-      &lt;Form.Label /&gt;
-      &lt;Form.Input /&gt;
-    &lt;/Form.Row&gt;
-  &lt;/Form&gt;
+  <Form>
+    <Form.Row>
+      <Form.Label />
+      <Form.Input />
+    </Form.Row>
+  </Form>
 );
 
 // Attribute JavaScript expressions
-var person = &lt;Person name={window.isLoggedIn ? window.name : ''} /&gt;;
+var person = <Person name={window.isLoggedIn ? window.name : ''} />;
 
 // Boolean attributes
-&lt;input type="button" disabled /&gt;;
-&lt;input type="button" disabled={true} /&gt;;
+<input type="button" disabled />;
+<input type="button" disabled={true} />;
 
 // Child JavaScript expressions
-var content = &lt;Container&gt;{window.isLoggedIn ? &lt;Nav /&gt; : &lt;Login /&gt;}&lt;/Container&gt;;
+var content = <Container>{window.isLoggedIn ? <Nav /> : <Login />}</Container>;
 
 // Comments
 var content = (
-  &lt;Nav&gt;
+  <Nav>
     {/* child comment, put {} around */}
-    &lt;Person
+    <Person
       /* multi
          line
          comment */
       name={window.isLoggedIn ? window.name : ''} // end of line comment
-    /&gt;
-  &lt;/Nav&gt;
+    />
+  </Nav>
 );
 </textarea></div>
 
@@ -85,4 +87,3 @@ JavaScript syntax extension.</p>
 <p><strong>MIME types defined:</strong> <code>text/jsx</code>, <code>text/typescript-jsx</code>.</p>
 
 </article>
-</body></html>

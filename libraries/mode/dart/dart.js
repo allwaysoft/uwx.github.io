@@ -1,1 +1,157 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"),require("../clike/clike"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror","../clike/clike"],e);else e(CodeMirror)})(function(e){"use strict";var t=("this super static final const abstract class extends external factory "+"implements get native operator set typedef with enum throw rethrow "+"assert break case continue default in return new deferred async await "+"try catch finally do else for if switch while import library export "+"part of show hide is as").split(" ");var n="try catch finally do else for if switch while".split(" ");var i="true false null".split(" ");var r="void bool num int double dynamic var String".split(" ");function o(e){var t={};for(var n=0;n<e.length;++n)t[e[n]]=true;return t}function a(e){(e.interpolationStack||(e.interpolationStack=[])).push(e.tokenize)}function l(e){return(e.interpolationStack||(e.interpolationStack=[])).pop()}function u(e){return e.interpolationStack?e.interpolationStack.length:0}e.defineMIME("application/dart",{name:"clike",keywords:o(t),blockKeywords:o(n),builtin:o(r),atoms:o(i),hooks:{"@":function(e){e.eatWhile(/[\w\$_\.]/);return"meta"},"'":function(e,t){return c("'",e,t,false)},'"':function(e,t){return c('"',e,t,false)},r:function(e,t){var n=e.peek();if(n=="'"||n=='"'){return c(e.next(),e,t,true)}return false},"}":function(e,t){if(u(t)>0){t.tokenize=l(t);return null}return false},"/":function(e,t){if(!e.eat("*"))return false;t.tokenize=k(1);return t.tokenize(e,t)}}});function c(e,t,n,i){var r=false;if(t.eat(e)){if(t.eat(e))r=true;else return"string"}function o(t,n){var o=false;while(!t.eol()){if(!i&&!o&&t.peek()=="$"){a(n);n.tokenize=f;return"string"}var l=t.next();if(l==e&&!o&&(!r||t.match(e+e))){n.tokenize=null;break}o=!i&&!o&&l=="\\"}return"string"}n.tokenize=o;return o(t,n)}function f(e,t){e.eat("$");if(e.eat("{")){t.tokenize=null}else{t.tokenize=s}return null}function s(e,t){e.eatWhile(/[\w_]/);t.tokenize=l(t);return"variable"}function k(e){return function(t,n){var i;while(i=t.next()){if(i=="*"&&t.eat("/")){if(e==1){n.tokenize=null;break}else{n.tokenize=k(e-1);return n.tokenize(t,n)}}else if(i=="/"&&t.eat("*")){n.tokenize=k(e+1);return n.tokenize(t,n)}}return"comment"}}e.registerHelper("hintWords","application/dart",t.concat(i).concat(r));e.defineMode("dart",function(t){return e.getMode(t,"application/dart")},"clike")});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"), require("../clike/clike"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror", "../clike/clike"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+  "use strict";
+
+  var keywords = ("this super static final const abstract class extends external factory " +
+    "implements get native operator set typedef with enum throw rethrow " +
+    "assert break case continue default in return new deferred async await " +
+    "try catch finally do else for if switch while import library export " +
+    "part of show hide is as").split(" ");
+  var blockKeywords = "try catch finally do else for if switch while".split(" ");
+  var atoms = "true false null".split(" ");
+  var builtins = "void bool num int double dynamic var String".split(" ");
+
+  function set(words) {
+    var obj = {};
+    for (var i = 0; i < words.length; ++i) obj[words[i]] = true;
+    return obj;
+  }
+
+  function pushInterpolationStack(state) {
+    (state.interpolationStack || (state.interpolationStack = [])).push(state.tokenize);
+  }
+
+  function popInterpolationStack(state) {
+    return (state.interpolationStack || (state.interpolationStack = [])).pop();
+  }
+
+  function sizeInterpolationStack(state) {
+    return state.interpolationStack ? state.interpolationStack.length : 0;
+  }
+
+  CodeMirror.defineMIME("application/dart", {
+    name: "clike",
+    keywords: set(keywords),
+    blockKeywords: set(blockKeywords),
+    builtin: set(builtins),
+    atoms: set(atoms),
+    hooks: {
+      "@": function(stream) {
+        stream.eatWhile(/[\w\$_\.]/);
+        return "meta";
+      },
+
+      // custom string handling to deal with triple-quoted strings and string interpolation
+      "'": function(stream, state) {
+        return tokenString("'", stream, state, false);
+      },
+      "\"": function(stream, state) {
+        return tokenString("\"", stream, state, false);
+      },
+      "r": function(stream, state) {
+        var peek = stream.peek();
+        if (peek == "'" || peek == "\"") {
+          return tokenString(stream.next(), stream, state, true);
+        }
+        return false;
+      },
+
+      "}": function(_stream, state) {
+        // "}" is end of interpolation, if interpolation stack is non-empty
+        if (sizeInterpolationStack(state) > 0) {
+          state.tokenize = popInterpolationStack(state);
+          return null;
+        }
+        return false;
+      },
+
+      "/": function(stream, state) {
+        if (!stream.eat("*")) return false
+        state.tokenize = tokenNestedComment(1)
+        return state.tokenize(stream, state)
+      }
+    }
+  });
+
+  function tokenString(quote, stream, state, raw) {
+    var tripleQuoted = false;
+    if (stream.eat(quote)) {
+      if (stream.eat(quote)) tripleQuoted = true;
+      else return "string"; //empty string
+    }
+    function tokenStringHelper(stream, state) {
+      var escaped = false;
+      while (!stream.eol()) {
+        if (!raw && !escaped && stream.peek() == "$") {
+          pushInterpolationStack(state);
+          state.tokenize = tokenInterpolation;
+          return "string";
+        }
+        var next = stream.next();
+        if (next == quote && !escaped && (!tripleQuoted || stream.match(quote + quote))) {
+          state.tokenize = null;
+          break;
+        }
+        escaped = !raw && !escaped && next == "\\";
+      }
+      return "string";
+    }
+    state.tokenize = tokenStringHelper;
+    return tokenStringHelper(stream, state);
+  }
+
+  function tokenInterpolation(stream, state) {
+    stream.eat("$");
+    if (stream.eat("{")) {
+      // let clike handle the content of ${...},
+      // we take over again when "}" appears (see hooks).
+      state.tokenize = null;
+    } else {
+      state.tokenize = tokenInterpolationIdentifier;
+    }
+    return null;
+  }
+
+  function tokenInterpolationIdentifier(stream, state) {
+    stream.eatWhile(/[\w_]/);
+    state.tokenize = popInterpolationStack(state);
+    return "variable";
+  }
+
+  function tokenNestedComment(depth) {
+    return function (stream, state) {
+      var ch
+      while (ch = stream.next()) {
+        if (ch == "*" && stream.eat("/")) {
+          if (depth == 1) {
+            state.tokenize = null
+            break
+          } else {
+            state.tokenize = tokenNestedComment(depth - 1)
+            return state.tokenize(stream, state)
+          }
+        } else if (ch == "/" && stream.eat("*")) {
+          state.tokenize = tokenNestedComment(depth + 1)
+          return state.tokenize(stream, state)
+        }
+      }
+      return "comment"
+    }
+  }
+
+  CodeMirror.registerHelper("hintWords", "application/dart", keywords.concat(atoms).concat(builtins));
+
+  // This is needed to make loading through meta.js work.
+  CodeMirror.defineMode("dart", function(conf) {
+    return CodeMirror.getMode(conf, "application/dart");
+  }, "clike");
+});

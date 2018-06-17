@@ -1,29 +1,32 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Julia mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Julia mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="julia.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Julia</a>
-  </li></ul>
+    <li><a class=active href="#">Julia</a>
+  </ul>
 </div>
 
 <article>
 <h2>Julia mode</h2>
 
-    <div><textarea id="code" name="code">#numbers
+    <div><textarea id="code" name="code">
+#numbers
 1234
 1234im
 .234
@@ -63,7 +66,7 @@ F⃗ = m·a⃗
 #dicts and indexing
 x=[1, 2, 3]
 x[end-1]
-x={"julia"=&gt;"language of technical computing"}
+x={"julia"=>"language of technical computing"}
 
 
 #exception handling
@@ -76,7 +79,7 @@ finally
 end
 
 #types
-immutable Color{T&lt;:Number}
+immutable Color{T<:Number}
   r::T
   g::T
   b::T
@@ -94,48 +97,48 @@ f('b', (2, 3)...)
 
 #operators
 |=
-&amp;=
+&=
 ^=
 \-
 %=
 *=
 +=
 -=
-&lt;=
-&gt;=
+<=
+>=
 !=
 ==
 %
 *
 +
 -
-&lt;
-&gt;
+<
+>
 !
 =
 |
-&amp;
+&
 ^
 \
 ?
 ~
 :
 $
-&lt;:
-.&lt;
-.&gt;
-&lt;&lt;
-&lt;&lt;=
-&gt;&gt;
-&gt;&gt;&gt;&gt;
-&gt;&gt;=
-&gt;&gt;&gt;=
-&lt;&lt;=
-&lt;&lt;&lt;=
-.&lt;=
-.&gt;=
+<:
+.<
+.>
+<<
+<<=
+>>
+>>>>
+>>=
+>>>=
+<<=
+<<<=
+.<=
+.>=
 .==
--&gt;
+->
 //
 in
 ...
@@ -152,13 +155,13 @@ in
 \\=
 ||
 ===
-&amp;&amp;
+&&
 |=
 .|=
-&lt;:
-&gt;:
-|&gt;
-&lt;|
+<:
+>:
+|>
+<|
 ::
 x ? y : z
 
@@ -190,4 +193,3 @@ true false enumerate
 
     <p><strong>MIME types defined:</strong> <code>text/x-julia</code>.</p>
 </article>
-</body></html>

@@ -1,6 +1,8 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Modelica mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Modelica mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
@@ -9,24 +11,25 @@
 <script src="../../addon/hint/show-hint.js"></script>
 <script src="modelica.js"></script>
 <style>.CodeMirror {border: 2px inset #dee;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Modelica</a>
-  </li></ul>
+    <li><a class=active href="#">Modelica</a>
+  </ul>
 </div>
 
 <article>
 <h2>Modelica mode</h2>
 
-<div><textarea id="modelica">model BouncingBall
+<div><textarea id="modelica">
+model BouncingBall
   parameter Real e = 0.7;
   parameter Real g = 9.81;
   Real h(start=1);
@@ -35,12 +38,12 @@
   Boolean impact;
   Real v_new;
 equation
-  impact = h &lt;= 0.0;
+  impact = h <= 0.0;
   der(v) = if flying then -g else 0;
   der(h) = v;
-  when {h &lt;= 0.0 and v &lt;= 0.0, impact} then
+  when {h <= 0.0 and v <= 0.0, impact} then
     v_new = if edge(impact) then -e*pre(v) else 0;
-    flying = v_new &gt; 0;
+    flying = v_new > 0;
     reinit(v, v_new);
   end when;
   annotation (uses(Modelica(version="3.2")));
@@ -62,4 +65,3 @@ end BouncingBall;
     <p><strong>MIME types defined:</strong> <code>text/x-modelica</code>
     (Modlica code).</p>
 </article>
-</body></html>

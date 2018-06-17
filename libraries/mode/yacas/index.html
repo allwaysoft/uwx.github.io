@@ -1,34 +1,37 @@
-<!DOCTYPE html><html><head><title>CodeMirror: yacas mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
 
-<link rel="stylesheet" href="../../lib/codemirror.css">
-<script src="../../lib/codemirror.js"></script>
-<script src="../../addon/edit/matchbrackets.js"></script>
-<script src="yacas.js"></script>
-<style type="text/css">
+<title>CodeMirror: yacas mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel=stylesheet href=../../lib/codemirror.css>
+<script src=../../lib/codemirror.js></script>
+<script src=../../addon/edit/matchbrackets.js></script>
+<script src=yacas.js></script>
+<style type=text/css>
   .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
 </style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">yacas</a>
-  </li></ul>
+    <li><a class=active href="#">yacas</a>
+  </ul>
 </div>
 
 <article>
 <h2>yacas mode</h2>
 
 
-<textarea id="yacasCode">// example yacas code
-Graph(edges_IsList) &lt;-- [
+<textarea id="yacasCode">
+// example yacas code
+Graph(edges_IsList) <-- [
     Local(v, e, f, t);
 
     vertices := {};
@@ -44,13 +47,13 @@ Graph(edges_IsList) &lt;-- [
     Graph(RemoveDuplicates(vertices), edges);
 ];
 
-10 # IsGraph(Graph(vertices_IsList, edges_IsList)) &lt;-- True;
-20 # IsGraph(_x) &lt;-- False;
+10 # IsGraph(Graph(vertices_IsList, edges_IsList)) <-- True;
+20 # IsGraph(_x) <-- False;
 
-Edges(Graph(vertices_IsList, edges_IsList)) &lt;-- edges;
-Vertices(Graph(vertices_IsList, edges_IsList)) &lt;-- vertices;
+Edges(Graph(vertices_IsList, edges_IsList)) <-- edges;
+Vertices(Graph(vertices_IsList, edges_IsList)) <-- vertices;
 
-AdjacencyList(g_IsGraph) &lt;-- [
+AdjacencyList(g_IsGraph) <-- [
     Local(l, vertices, edges, e, op, f, t);
 
     l := Association'Create();
@@ -65,7 +68,7 @@ AdjacencyList(g_IsGraph) &lt;-- [
         If (IsList(e), e := Head(e));
         {op, f, t} := Listify(e);
         DestructiveAppend(Association'Get(l, f), t);
-        If (String(op) = "&lt;-&gt;", DestructiveAppend(Association'Get(l, t), f));
+        If (String(op) = "<->", DestructiveAppend(Association'Get(l, t), f));
     ];
 
     l;
@@ -82,4 +85,3 @@ AdjacencyList(g_IsGraph) &lt;-- [
 
 <p><strong>MIME types defined:</strong> <code>text/x-yacas</code> (yacas).</p>
 </article>
-</body></html>

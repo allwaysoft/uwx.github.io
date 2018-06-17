@@ -1,1 +1,178 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror"],e);else e(CodeMirror)})(function(e){"use strict";e.defineMode("pig",function(e,r){var O=r.keywords,T=r.builtins,t=r.types,E=r.multiLineStrings;var I=/[*+\-%<>=&?:\/!|]/;function N(e,r,O){r.tokenize=O;return O(e,r)}function A(e,r){var O=false;var T;while(T=e.next()){if(T=="/"&&O){r.tokenize=R;break}O=T=="*"}return"comment"}function n(e){return function(r,O){var T=false,t,I=false;while((t=r.next())!=null){if(t==e&&!T){I=true;break}T=!T&&t=="\\"}if(I||!(T||E))O.tokenize=R;return"error"}}function R(e,r){var E=e.next();if(E=='"'||E=="'")return N(e,r,n(E));else if(/[\[\]{}\(\),;\.]/.test(E))return null;else if(/\d/.test(E)){e.eatWhile(/[\w\.]/);return"number"}else if(E=="/"){if(e.eat("*")){return N(e,r,A)}else{e.eatWhile(I);return"operator"}}else if(E=="-"){if(e.eat("-")){e.skipToEnd();return"comment"}else{e.eatWhile(I);return"operator"}}else if(I.test(E)){e.eatWhile(I);return"operator"}else{e.eatWhile(/[\w\$_]/);if(O&&O.propertyIsEnumerable(e.current().toUpperCase())){if(!e.eat(")")&&!e.eat("."))return"keyword"}if(T&&T.propertyIsEnumerable(e.current().toUpperCase()))return"variable-2";if(t&&t.propertyIsEnumerable(e.current().toUpperCase()))return"variable-3";return"variable"}}return{startState:function(){return{tokenize:R,startOfLine:true}},token:function(e,r){if(e.eatSpace())return null;var O=r.tokenize(e,r);return O}}});(function(){function r(e){var r={},O=e.split(" ");for(var T=0;T<O.length;++T)r[O[T]]=true;return r}var O="ABS ACOS ARITY ASIN ATAN AVG BAGSIZE BINSTORAGE BLOOM BUILDBLOOM CBRT CEIL "+"CONCAT COR COS COSH COUNT COUNT_STAR COV CONSTANTSIZE CUBEDIMENSIONS DIFF DISTINCT DOUBLEABS "+"DOUBLEAVG DOUBLEBASE DOUBLEMAX DOUBLEMIN DOUBLEROUND DOUBLESUM EXP FLOOR FLOATABS FLOATAVG "+"FLOATMAX FLOATMIN FLOATROUND FLOATSUM GENERICINVOKER INDEXOF INTABS INTAVG INTMAX INTMIN "+"INTSUM INVOKEFORDOUBLE INVOKEFORFLOAT INVOKEFORINT INVOKEFORLONG INVOKEFORSTRING INVOKER "+"ISEMPTY JSONLOADER JSONMETADATA JSONSTORAGE LAST_INDEX_OF LCFIRST LOG LOG10 LOWER LONGABS "+"LONGAVG LONGMAX LONGMIN LONGSUM MAX MIN MAPSIZE MONITOREDUDF NONDETERMINISTIC OUTPUTSCHEMA  "+"PIGSTORAGE PIGSTREAMING RANDOM REGEX_EXTRACT REGEX_EXTRACT_ALL REPLACE ROUND SIN SINH SIZE "+"SQRT STRSPLIT SUBSTRING SUM STRINGCONCAT STRINGMAX STRINGMIN STRINGSIZE TAN TANH TOBAG "+"TOKENIZE TOMAP TOP TOTUPLE TRIM TEXTLOADER TUPLESIZE UCFIRST UPPER UTF8STORAGECONVERTER ";var T="VOID IMPORT RETURNS DEFINE LOAD FILTER FOREACH ORDER CUBE DISTINCT COGROUP "+"JOIN CROSS UNION SPLIT INTO IF OTHERWISE ALL AS BY USING INNER OUTER ONSCHEMA PARALLEL "+"PARTITION GROUP AND OR NOT GENERATE FLATTEN ASC DESC IS STREAM THROUGH STORE MAPREDUCE "+"SHIP CACHE INPUT OUTPUT STDERROR STDIN STDOUT LIMIT SAMPLE LEFT RIGHT FULL EQ GT LT GTE LTE "+"NEQ MATCHES TRUE FALSE DUMP";var t="BOOLEAN INT LONG FLOAT DOUBLE CHARARRAY BYTEARRAY BAG TUPLE MAP ";e.defineMIME("text/x-pig",{name:"pig",builtins:r(O),keywords:r(T),types:r(t)});e.registerHelper("hintWords","pig",(O+t+T).split(" "))})()});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+/*
+ *      Pig Latin Mode for CodeMirror 2
+ *      @author Prasanth Jayachandran
+ *      @link   https://github.com/prasanthj/pig-codemirror-2
+ *  This implementation is adapted from PL/SQL mode in CodeMirror 2.
+ */
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+"use strict";
+
+CodeMirror.defineMode("pig", function(_config, parserConfig) {
+  var keywords = parserConfig.keywords,
+  builtins = parserConfig.builtins,
+  types = parserConfig.types,
+  multiLineStrings = parserConfig.multiLineStrings;
+
+  var isOperatorChar = /[*+\-%<>=&?:\/!|]/;
+
+  function chain(stream, state, f) {
+    state.tokenize = f;
+    return f(stream, state);
+  }
+
+  function tokenComment(stream, state) {
+    var isEnd = false;
+    var ch;
+    while(ch = stream.next()) {
+      if(ch == "/" && isEnd) {
+        state.tokenize = tokenBase;
+        break;
+      }
+      isEnd = (ch == "*");
+    }
+    return "comment";
+  }
+
+  function tokenString(quote) {
+    return function(stream, state) {
+      var escaped = false, next, end = false;
+      while((next = stream.next()) != null) {
+        if (next == quote && !escaped) {
+          end = true; break;
+        }
+        escaped = !escaped && next == "\\";
+      }
+      if (end || !(escaped || multiLineStrings))
+        state.tokenize = tokenBase;
+      return "error";
+    };
+  }
+
+
+  function tokenBase(stream, state) {
+    var ch = stream.next();
+
+    // is a start of string?
+    if (ch == '"' || ch == "'")
+      return chain(stream, state, tokenString(ch));
+    // is it one of the special chars
+    else if(/[\[\]{}\(\),;\.]/.test(ch))
+      return null;
+    // is it a number?
+    else if(/\d/.test(ch)) {
+      stream.eatWhile(/[\w\.]/);
+      return "number";
+    }
+    // multi line comment or operator
+    else if (ch == "/") {
+      if (stream.eat("*")) {
+        return chain(stream, state, tokenComment);
+      }
+      else {
+        stream.eatWhile(isOperatorChar);
+        return "operator";
+      }
+    }
+    // single line comment or operator
+    else if (ch=="-") {
+      if(stream.eat("-")){
+        stream.skipToEnd();
+        return "comment";
+      }
+      else {
+        stream.eatWhile(isOperatorChar);
+        return "operator";
+      }
+    }
+    // is it an operator
+    else if (isOperatorChar.test(ch)) {
+      stream.eatWhile(isOperatorChar);
+      return "operator";
+    }
+    else {
+      // get the while word
+      stream.eatWhile(/[\w\$_]/);
+      // is it one of the listed keywords?
+      if (keywords && keywords.propertyIsEnumerable(stream.current().toUpperCase())) {
+        //keywords can be used as variables like flatten(group), group.$0 etc..
+        if (!stream.eat(")") && !stream.eat("."))
+          return "keyword";
+      }
+      // is it one of the builtin functions?
+      if (builtins && builtins.propertyIsEnumerable(stream.current().toUpperCase()))
+        return "variable-2";
+      // is it one of the listed types?
+      if (types && types.propertyIsEnumerable(stream.current().toUpperCase()))
+        return "variable-3";
+      // default is a 'variable'
+      return "variable";
+    }
+  }
+
+  // Interface
+  return {
+    startState: function() {
+      return {
+        tokenize: tokenBase,
+        startOfLine: true
+      };
+    },
+
+    token: function(stream, state) {
+      if(stream.eatSpace()) return null;
+      var style = state.tokenize(stream, state);
+      return style;
+    }
+  };
+});
+
+(function() {
+  function keywords(str) {
+    var obj = {}, words = str.split(" ");
+    for (var i = 0; i < words.length; ++i) obj[words[i]] = true;
+    return obj;
+  }
+
+  // builtin funcs taken from trunk revision 1303237
+  var pBuiltins = "ABS ACOS ARITY ASIN ATAN AVG BAGSIZE BINSTORAGE BLOOM BUILDBLOOM CBRT CEIL "
+    + "CONCAT COR COS COSH COUNT COUNT_STAR COV CONSTANTSIZE CUBEDIMENSIONS DIFF DISTINCT DOUBLEABS "
+    + "DOUBLEAVG DOUBLEBASE DOUBLEMAX DOUBLEMIN DOUBLEROUND DOUBLESUM EXP FLOOR FLOATABS FLOATAVG "
+    + "FLOATMAX FLOATMIN FLOATROUND FLOATSUM GENERICINVOKER INDEXOF INTABS INTAVG INTMAX INTMIN "
+    + "INTSUM INVOKEFORDOUBLE INVOKEFORFLOAT INVOKEFORINT INVOKEFORLONG INVOKEFORSTRING INVOKER "
+    + "ISEMPTY JSONLOADER JSONMETADATA JSONSTORAGE LAST_INDEX_OF LCFIRST LOG LOG10 LOWER LONGABS "
+    + "LONGAVG LONGMAX LONGMIN LONGSUM MAX MIN MAPSIZE MONITOREDUDF NONDETERMINISTIC OUTPUTSCHEMA  "
+    + "PIGSTORAGE PIGSTREAMING RANDOM REGEX_EXTRACT REGEX_EXTRACT_ALL REPLACE ROUND SIN SINH SIZE "
+    + "SQRT STRSPLIT SUBSTRING SUM STRINGCONCAT STRINGMAX STRINGMIN STRINGSIZE TAN TANH TOBAG "
+    + "TOKENIZE TOMAP TOP TOTUPLE TRIM TEXTLOADER TUPLESIZE UCFIRST UPPER UTF8STORAGECONVERTER ";
+
+  // taken from QueryLexer.g
+  var pKeywords = "VOID IMPORT RETURNS DEFINE LOAD FILTER FOREACH ORDER CUBE DISTINCT COGROUP "
+    + "JOIN CROSS UNION SPLIT INTO IF OTHERWISE ALL AS BY USING INNER OUTER ONSCHEMA PARALLEL "
+    + "PARTITION GROUP AND OR NOT GENERATE FLATTEN ASC DESC IS STREAM THROUGH STORE MAPREDUCE "
+    + "SHIP CACHE INPUT OUTPUT STDERROR STDIN STDOUT LIMIT SAMPLE LEFT RIGHT FULL EQ GT LT GTE LTE "
+    + "NEQ MATCHES TRUE FALSE DUMP";
+
+  // data types
+  var pTypes = "BOOLEAN INT LONG FLOAT DOUBLE CHARARRAY BYTEARRAY BAG TUPLE MAP ";
+
+  CodeMirror.defineMIME("text/x-pig", {
+    name: "pig",
+    builtins: keywords(pBuiltins),
+    keywords: keywords(pKeywords),
+    types: keywords(pTypes)
+  });
+
+  CodeMirror.registerHelper("hintWords", "pig", (pBuiltins + pTypes + pKeywords).split(" "));
+}());
+
+});

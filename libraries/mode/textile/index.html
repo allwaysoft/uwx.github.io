@@ -1,28 +1,31 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Textile mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Textile mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="textile.js"></script>
 <style>.CodeMirror {background: #f8f8f8;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/marijnh/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/marijnh/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Textile</a>
-  </li></ul>
+    <li><a class="active" href="#">Textile</a>
+  </ul>
 </div>
 
 <article>
     <h2>Textile mode</h2>
-    <form><textarea id="code" name="code">h1. Textile Mode
+    <form><textarea id="code" name="code">
+h1. Textile Mode
 
 A paragraph without formatting.
 
@@ -88,8 +91,8 @@ Layouts and phrase modifiers can be modified with various kinds of attributes: a
 
 h3. Alignment
 
-div&lt;. left align
-div&gt;. right align
+div<. left align
+div>. right align
 
 h3. CSS ID and class name
 
@@ -115,7 +118,7 @@ h2. Table
 |\2.         Cell spanning 2 columns                             |
 |/2.         Cell spanning 2 rows       |(cell-class). one       |
 |                                                two             |
-|&gt;.                  Right aligned cell |&lt;. Left aligned cell    |
+|>.                  Right aligned cell |<. Left aligned cell    |
 
 
 h3. A table with attributes:
@@ -138,11 +141,11 @@ function factorial(n) {
 pre..
                 ,,,,,,
             o#'9MMHb':'-,o,
-         .oH":HH$' "' ' -*R&amp;o,
+         .oH":HH$' "' ' -*R&o,
         dMMM*""'`'      .oM"HM?.
-       ,MMM'          "HLbd&lt; ?&amp;H\
-      .:MH ."\          ` MM  MM&amp;b
-     . "*H    -        &amp;MMMMMMMMMH:
+       ,MMM'          "HLbd< ?&H\
+      .:MH ."\          ` MM  MM&b
+     . "*H    -        &MMMMMMMMMH:
      .    dboo        MMMMMMMMMMMM.
      .   dMMMMMMb      *MMMMMMMMMP.
      .    MMMMMMMP        *MMMMMP .
@@ -153,7 +156,7 @@ pre..
             -.   .         .-
               ''-.oo,oo.-''
 
-\. _(9&gt;
+\. _(9>
  \==_)
   -'=
 
@@ -168,10 +171,10 @@ h2. HTML
 
 Some block layouts are simply textile versions of HTML tags with the same name, like @div@, @pre@, and @p@. HTML tags can also exist on their own line:
 
-&lt;section&gt;
-  &lt;h1&gt;Title&lt;/h1&gt;
-  &lt;p&gt;Hello!&lt;/p&gt;
-&lt;/section&gt;
+<section>
+  <h1>Title</h1>
+  <p>Hello!</p>
+</section>
 
 </textarea></form>
     <script>
@@ -186,4 +189,3 @@ Some block layouts are simply textile versions of HTML tags with the same name, 
     <p><strong>Parsing/Highlighting Tests:</strong> <a href="../../test/index.html#textile_*">normal</a>,  <a href="../../test/index.html#verbose,textile_*">verbose</a>.</p>
 
 </article>
-</body></html>

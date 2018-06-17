@@ -1,30 +1,33 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Verilog/SystemVerilog mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Verilog/SystemVerilog mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="verilog.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Verilog/SystemVerilog</a>
-  </li></ul>
+    <li><a class=active href="#">Verilog/SystemVerilog</a>
+  </ul>
 </div>
 
 <article>
 <h2>SystemVerilog mode</h2>
 
-<div><textarea id="code" name="code">// Literals
+<div><textarea id="code" name="code">
+// Literals
 1'b0
 1'bx
 1'bz
@@ -50,23 +53,23 @@ module block(
   always @(posedge clk or negedge rst_n) begin
 
     if (~rst_n) begin
-      data_out &lt;= 8'b0;
+      data_out <= 8'b0;
     end else begin
-      data_out &lt;= data_in;
+      data_out <= data_in;
     end
     
     if (~rst_n)
-      data_out &lt;= 8'b0;
+      data_out <= 8'b0;
     else
-      data_out &lt;= data_in;
+      data_out <= data_in;
     
     if (~rst_n)
       begin
-        data_out &lt;= 8'b0;
+        data_out <= 8'b0;
       end
     else
       begin
-        data_out &lt;= data_in;
+        data_out <= data_in;
       end
 
   end
@@ -107,12 +110,11 @@ endclass
 
 <p>
 Syntax highlighting and indentation for the Verilog and SystemVerilog languages (IEEE 1800).
-</p><h2>Configuration options:</h2>
+<h2>Configuration options:</h2>
   <ul>
     <li><strong>noIndentKeywords</strong> - List of keywords which should not cause indentation to increase. E.g. ["package", "module"]. Default: None</li>
   </ul>
-<p></p>
+</p>
 
 <p><strong>MIME types defined:</strong> <code>text/x-verilog</code> and <code>text/x-systemverilog</code>.</p>
 </article>
-</body></html>

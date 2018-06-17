@@ -1,22 +1,417 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content="A place for random garbage."><title>Hex color to RGB color (and back) | Chris Hansen&#39;s Nut Shack</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content=".boxr {
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A place for random garbage." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>
+    
+        Hex color to RGB color (and back) | 
+      
+      Chris Hansen&#39;s Nut Shack
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=".boxr {
   margin: 1.714285714rem auto 1.714285714rem auto;
   /*width: 5em;*/
   border: 3px solid green;
   padding: 10px;
   background-color: #fff;
   border: 1px solid rgb(162, 230, 247);
-  border-rad"><meta property="og:type" content="website"><meta property="og:title" content="Hex color to RGB color (and back)"><meta property="og:url" content="http://rafa1231518.github.io/Editors/hex-rgb.html"><meta property="og:site_name" content="Chris Hansen's Nut Shack"><meta property="og:description" content=".boxr {
+  border-rad">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hex color to RGB color (and back)">
+<meta property="og:url" content="http://rafa1231518.github.io/Editors/hex-rgb.html">
+<meta property="og:site_name" content="Chris Hansen's Nut Shack">
+<meta property="og:description" content=".boxr {
   margin: 1.714285714rem auto 1.714285714rem auto;
   /*width: 5em;*/
   border: 3px solid green;
   padding: 10px;
   background-color: #fff;
   border: 1px solid rgb(162, 230, 247);
-  border-rad"><meta property="og:updated_time" content="2017-02-10T22:36:19.294Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Hex color to RGB color (and back)"><meta name="twitter:description" content=".boxr {
+  border-rad">
+<meta property="og:updated_time" content="2018-06-17T02:05:54.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hex color to RGB color (and back)">
+<meta name="twitter:description" content=".boxr {
   margin: 1.714285714rem auto 1.714285714rem auto;
   /*width: 5em;*/
   border: 3px solid green;
   padding: 10px;
   background-color: #fff;
   border: 1px solid rgb(162, 230, 247);
-  border-rad"><link rel="icon" href="/css/images/favicon.ico"><link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><style type="text/css">.header-anchor{display:none}</style></head><body class="home blog custom-background custom-font-enabled single-author"><div id="page" class="hfeed site"><header id="masthead" class="site-header" role="banner"><hgroup><h1 class="site-title"><a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a></h1><h2 class="site-description"><a href="/" id="subtitle">Have a seat, right over there.</a></h2></hgroup><nav id="site-navigation" class="main-navigation" role="navigation"><button class="menu-toggle">菜单</button> <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><div class="menu-main-container"><ul id="menu-main" class="nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li></ul></div></nav></header><div id="main" class="wrapper"><div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry"><header class="entry-header"><h1 class="entry-title article-title">Hex color to RGB color (and back)</h1><div class="comments-link"></div></header><div class="entry-content"><style type="text/css">.boxr{margin:1.714285714rem auto 1.714285714rem auto;border:3px solid green;padding:10px;background-color:#fff;border:1px solid #a2e6f7;border-radius:3px;line-height:.7em;width:8em;width:-moz-fit-content;text-align:center}</style><script type="text/javascript">function getCaretPosition(e){var t=0;if(document.selection){e.focus&&e.focus();var o=document.selection.createRange();o.moveStart("character",-e.value.length),t=o.text.length}else(e.selectionStart||"0"===e.selectionStart||0===e.selectionStart)&&(t=e.selectionStart);return t}function setCaretPosition(e,t){if(null!=e)if(e.createTextRange){var o=e.createTextRange();o.move("character",t),o.select()}else e.selectionStart?(e.focus&&e.focus(),e.setSelectionRange(t,t)):e.focus&&e.focus()}function componentToHex(e){var t=Number(e).toString(16);return 1==t.length?"0"+t:t}function rgbToHex(e,t,o){return"#"+componentToHex(e)+componentToHex(t)+componentToHex(o)}function hexToRgb(e){var t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e);return t?[parseInt(t[1],16),parseInt(t[2],16),parseInt(t[3],16)]:null}window.onload=function(){var e=document.getElementById.bind(document),t=e("hex"),o=e("rgb"),n=e("boxr"),a=e("hex2"),l=e("rgb2"),r=e("boxr2");t.onkeypress=function(e){setTimeout(function(){console.log("typed");var e=getCaretPosition(o);"#"!=t.value[0]&&(t.value="#"+t.value,setCaretPosition(o,e+1));var a=t.value;4==t.value.length&&(a="#"+a[1]+a[1]+a[2]+a[2]+a[3]+a[3]),o.value=hexToRgb(a),n.style.backgroundColor=a},0)},o.onkeypress=function(e){setTimeout(function(){console.log("typed");var e=getCaretPosition(o);o.value.startsWith("rgb")&&(o.value=o.value.substring(3),e-=3,e<0&&(e=0),setCaretPosition(o,e)),"("==o.value[0]&&(o.value=o.value.substring(1),e-=1,e<0&&(e=0),setCaretPosition(o,e));var a=o.value.length-1;")"==o.value[a]&&(o.value=o.value.substring(0,a));var l=o.value.indexOf(",");0!==o.value.length&&l===-1&&(o.value=o.value.match(/.{1,3}/g).join(",")),console.log("apply "+o.value.split(",")),t.value=rgbToHex.apply(null,o.value.split(",")),n.style.backgroundColor=t.value},0)},a.onkeypress=function(e){setTimeout(function(){console.log("typed");var e=a.value;"#"!=e[0]&&(e="#"+e),4==e.length&&(e="#"+e[1]+e[1]+e[2]+e[2]+e[3]+e[3]),l.value=hexToRgb(e),r.style.backgroundColor=e},0)},l.onkeypress=function(e){setTimeout(function(){console.log("typed");var e=l.value;e.startsWith("rgb")&&(e=e.substring(3)),"("==e[0]&&(e=e.substring(1));var t=e.length-1;")"==e[t]&&(e=e.substring(0,t));var o=e.indexOf(",");0!==e.length&&o===-1&&(e=e.match(/.{1,3}/g).join(",")),console.log("apply "+e.split(",")),a.value=rgbToHex.apply(null,e.split(",")),r.style.backgroundColor=a.value},0)}}</script><p><input name="hex" id="hex" tabindex="5" size="40"><br></p><div id="boxr" class="boxr"><span style="color:#000">Preview</span> <span style="color:#eee">Preview</span></div><input name="rgb" id="rgb" tabindex="5" size="40"><h1 style="font-weight:400">Lite mode: does not change your input.</h1><p><input name="hex2" id="hex2" tabindex="5" size="40"><br></p><div id="boxr2" class="boxr"><span style="color:#000">Preview</span> <span style="color:#eee">Preview</span></div><input name="rgb2" id="rgb2" tabindex="5" size="40"></div><footer class="entry-meta">Posted at <a href="/Editors/hex-rgb.html"><time datetime="2017-02-10T22:36:19.294Z" class="entry-date">2017-02-10 </time></a>(click date for permalink).</footer></article></div></div><div id="secondary" class="widget-area" role="complementary"><aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search"><div><input type="text" name="s" id="s"> <input type="submit" id="searchsubmit" value="Search"></div></form></aside><aside class="widget"><h3 class="widget-title">Recents</h3><div class="widget-content"><ul><li><a href="/2017/02/10/hello-world/">Hello World</a></li><li><a href="/2016/11/23/thing/">farming simulator 15 xbox thing</a></li></ul></div></aside></div></div><footer id="colophon" role="contentinfo"><p>&copy; 2017 chrishansen69 (rafa1231518). All rights reserved.</p><p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p></footer><script src="/js/jquery-2.0.3.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><script src="/js/navigation.js"></script><div id="bg"></div></div></body></html>
+  border-rad">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+.header-anchor {
+  display: none;
+}
+    </style>
+  
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!-- tracking
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Chris Hansen&#39;s Nut Shack" rel="home">Chris Hansen&#39;s Nut Shack</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Have a seat, right over there.</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pagelist">Tools &amp; Stuff</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        
+          <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      Hex color to RGB color (and back)
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <style type="text/css">
+.boxr {
+  margin: 1.714285714rem auto 1.714285714rem auto;
+  /*width: 5em;*/
+  border: 3px solid green;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid rgb(162, 230, 247);
+  border-radius: 3px;
+
+  line-height: 0.7em;
+  width: 8em;
+  width: -moz-fit-content;
+  text-align: center;
+}
+</style>
+<script type="text/javascript">
+  /*
+  ** Returns the caret (cursor) position of the specified text field.
+  ** Return value range is 0-oField.value.length.
+  */
+  function getCaretPosition(oField) {
+
+    // Initialize
+    var iCaretPos = 0;
+
+    // IE Support
+    if (document.selection) {
+
+      // Set focus on the element
+      if (oField.focus)
+        oField.focus();
+
+      // To get cursor position, get empty selection range
+      var oSel = document.selection.createRange();
+
+      // Move selection start to 0 position
+      oSel.moveStart('character', -oField.value.length);
+
+      // The caret position is selection length
+      iCaretPos = oSel.text.length;
+    }
+
+    // Firefox support
+    else if (oField.selectionStart || oField.selectionStart === '0' || oField.selectionStart === 0)
+      iCaretPos = oField.selectionStart;
+
+    // Return results
+    return iCaretPos;
+  }
+
+  function setCaretPosition(elem, caretPos) {
+
+      if(elem != null) {
+          if(elem.createTextRange) {
+              var range = elem.createTextRange();
+              range.move('character', caretPos);
+              range.select();
+          } else {
+              if(elem.selectionStart) {
+                  if (elem.focus)
+                    elem.focus();
+                  elem.setSelectionRange(caretPos, caretPos);
+              } else if (elem.focus) {
+                elem.focus();
+              }
+          }
+      }
+  }
+
+  function componentToHex(c) {
+    var hex = Number(c).toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+
+  function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  }
+
+  function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? [
+      parseInt(result[1], 16),
+      parseInt(result[2], 16),
+      parseInt(result[3], 16)
+    ] : null;
+  }
+
+  window.onload = function() {
+    var $id = document.getElementById.bind(document);
+
+    var hex = $id('hex');
+    var rgb = $id('rgb');
+    var boxr = $id('boxr');
+
+    var hex2 = $id('hex2'); // lite mode
+    var rgb2 = $id('rgb2'); // lite mode
+    var boxr2 = $id('boxr2');
+
+    hex.onkeypress = function(e) {
+      setTimeout(function() { // setTimeout with 0 so we get the up-to-date field value
+        console.log('typed');
+        var caretPos = getCaretPosition(rgb);
+
+        if (hex.value[0] != '#') { // RRGGBB without #
+          hex.value = '#' + hex.value;
+          setCaretPosition(rgb, caretPos+1);
+        }
+        var fakeVal = hex.value;
+        if (hex.value.length == 4) { // #RGB
+          fakeVal = '#' + fakeVal[1] + fakeVal[1] + fakeVal[2] + fakeVal[2] + fakeVal[3] + fakeVal[3];
+        }
+        rgb.value = hexToRgb(fakeVal);
+        boxr.style.backgroundColor = fakeVal;
+      }, 0);
+    }
+
+    rgb.onkeypress = function(e) {
+      setTimeout(function() { // setTimeout with 0 so we get the up-to-date field value
+        console.log('typed');
+        var caretPos = getCaretPosition(rgb);
+
+        if (rgb.value.startsWith('rgb')) { // rgb(r,g,b)
+          rgb.value = rgb.value.substring(3);
+
+          caretPos -= 3;
+          if (caretPos < 0) caretPos = 0;
+          setCaretPosition(rgb, caretPos);
+        }
+        if (rgb.value[0] == '(') { // (r,g,b
+          rgb.value = rgb.value.substring(1);
+
+          caretPos -= 1;
+          if (caretPos < 0) caretPos = 0;
+          setCaretPosition(rgb, caretPos);
+        }
+        var len = rgb.value.length-1;
+        if (rgb.value[len] == ')') { // r,g,b)
+          rgb.value = rgb.value.substring(0, len);
+        }
+        var indexs = rgb.value.indexOf(',');
+        if (rgb.value.length !== 0 && indexs === -1) { // RRRGGGBBB
+          rgb.value = rgb.value.match(/.{1,3}/g).join(',');
+        }
+        console.log('apply ' + rgb.value.split(','));
+        hex.value = rgbToHex.apply(null, rgb.value.split(','));
+        boxr.style.backgroundColor = hex.value;
+      }, 0);
+    }
+
+    hex2.onkeypress = function(e) {
+      setTimeout(function() { // setTimeout with 0 so we get the up-to-date field value
+        console.log('typed');
+        var value = hex2.value;
+
+        if (value[0] != '#') { // RRGGBB without #
+          value = '#' + value;
+        }
+        if (value.length == 4) { // #RGB
+          value = '#' + value[1] + value[1] + value[2] + value[2] + value[3] + value[3];
+        }
+        rgb2.value = hexToRgb(value);
+        boxr2.style.backgroundColor = value;
+      }, 0);
+    }
+
+    rgb2.onkeypress = function(e) {
+      setTimeout(function() { // setTimeout with 0 so we get the up-to-date field value
+        console.log('typed');
+        var value = rgb2.value;
+
+        if (value.startsWith('rgb')) { // rgb(r,g,b)
+          value = value.substring(3);
+        }
+        if (value[0] == '(') { // (r,g,b
+          value = value.substring(1);
+        }
+        var len = value.length-1;
+        if (value[len] == ')') { // r,g,b)
+          value = value.substring(0, len);
+        }
+        var indexs = value.indexOf(',');
+        if (value.length !== 0 && indexs === -1) { // RRRGGGBBB
+          value = value.match(/.{1,3}/g).join(',');
+        }
+        console.log('apply ' + value.split(','));
+        hex2.value = rgbToHex.apply(null, value.split(','));
+        boxr2.style.backgroundColor = hex2.value;
+      }, 0);
+    }
+  };
+</script>
+<p><input name="hex" id="hex" tabindex="5" size="40"><br></p>
+<div id="boxr" class="boxr"><span style="color:#000;">Preview</span> <span style="color:#eee;">Preview</span></div>
+<input name="rgb" id="rgb" tabindex="5" size="40">
+<h1 style="font-weight: normal;">Lite mode: does not change your input.</h1>
+<p><input name="hex2" id="hex2" tabindex="5" size="40"><br></p>
+<div id="boxr2" class="boxr"><span style="color:#000;">Preview</span> <span style="color:#eee;">Preview</span></div>
+<input name="rgb2" id="rgb2" tabindex="5" size="40">
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    Posted at <a href="/Editors/hex-rgb.html">
+    <time datetime="2018-06-17T02:05:54.486Z" class="entry-date">
+        2018-06-17
+    </time>
+</a> (click date for permalink).
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+          <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/23/thing/">farming simulator 15 xbox thing</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+        
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 chrishansen69 (rafa1231518).
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/wizardforcel/hexo-theme-cyanstyle">Wizard Zhang (wizardforcel)</a></p>
+</footer>
+    <!-- tracking
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+-->
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+  
+</body>
+</html>

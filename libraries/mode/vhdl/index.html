@@ -1,30 +1,33 @@
-<!DOCTYPE html><html><head><title>CodeMirror: VHDL mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: VHDL mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="vhdl.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">VHDL</a>
-  </li></ul>
+    <li><a class=active href="#">VHDL</a>
+  </ul>
 </div>
 
 <article>
 <h2>VHDL mode</h2>
 
-<div><textarea id="code" name="code">LIBRARY ieee;
+<div><textarea id="code" name="code">
+LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
@@ -33,8 +36,8 @@ END tb;
 
 ARCHITECTURE behavior OF tb IS
    --Inputs
-   signal a : unsigned(2 downto 0) := (others =&gt; '0');
-   signal b : unsigned(2 downto 0) := (others =&gt; '0');
+   signal a : unsigned(2 downto 0) := (others => '0');
+   signal b : unsigned(2 downto 0) := (others => '0');
     --Outputs
    signal a_eq_b : std_logic;
    signal a_le_b : std_logic;
@@ -46,11 +49,11 @@ BEGIN
 
     -- Instantiate the Unit Under Test (UUT)
    uut: entity work.comparator PORT MAP (
-          a =&gt; a,
-          b =&gt; b,
-          a_eq_b =&gt; a_eq_b,
-          a_le_b =&gt; a_le_b,
-          a_gt_b =&gt; a_gt_b
+          a => a,
+          b => b,
+          a_eq_b => a_eq_b,
+          a_le_b => a_le_b,
+          a_gt_b => a_gt_b
         );
 
    -- Stimulus process
@@ -58,8 +61,8 @@ BEGIN
    begin
         for i in 0 to 8 loop
             for j in 0 to 8 loop
-                a &lt;= to_unsigned(i,3); --integer to unsigned type conversion
-                b &lt;= to_unsigned(j,3);
+                a <= to_unsigned(i,3); --integer to unsigned type conversion
+                b <= to_unsigned(j,3);
                 wait for 10 ns;
             end loop;
         end loop;
@@ -80,14 +83,13 @@ END;
 
 <p>
 Syntax highlighting and indentation for the VHDL language.
-</p><h2>Configuration options:</h2>
+<h2>Configuration options:</h2>
   <ul>
     <li><strong>atoms</strong> - List of atom words. Default: "null"</li>
     <li><strong>hooks</strong> - List of meta hooks. Default: ["`", "$"]</li>
     <li><strong>multiLineStrings</strong> - Whether multi-line strings are accepted. Default: false</li>
   </ul>
-<p></p>
+</p>
 
 <p><strong>MIME types defined:</strong> <code>text/x-vhdl</code>.</p>
 </article>
-</body></html>

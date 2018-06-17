@@ -1,10 +1,12 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Forth mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
 
-<link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css">
+<title>CodeMirror: Forth mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../../lib/codemirror.css">
-<link rel="stylesheet" href="../../theme/colorforth.css">
+<link rel=stylesheet href="../../theme/colorforth.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="forth.js"></script>
 <style>
@@ -13,39 +15,40 @@
     font-size: 14px;
 }
 </style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Forth</a>
-  </li></ul>
+    <li><a class=active href="#">Forth</a>
+  </ul>
 </div>
 
 <article>
 
 <h2>Forth mode</h2>
 
-<form><textarea id="code" name="code">\ Insertion sort
+<form><textarea id="code" name="code">
+\ Insertion sort
 
 : cell-  1 cells - ;
 
 : insert ( start end -- start )
-  dup @ &gt;r ( r: v )
+  dup @ >r ( r: v )
   begin
-    2dup &lt;
+    2dup <
   while
-    r@ over cell- @ &lt;
+    r@ over cell- @ <
   while
     cell-
     dup @ over cell+ !
   repeat then
-  r&gt; swap ! ;
+  r> swap ! ;
 
 : sort ( array len -- )
   1 ?do
@@ -70,4 +73,3 @@
 <p><strong>MIME types defined:</strong> <code>text/x-forth</code>.</p>
 
 </article>
-</body></html>

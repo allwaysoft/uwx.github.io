@@ -1,1 +1,113 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror"],e);else e(CodeMirror)})(function(e){"use strict";e.defineMode("http",function(){function e(e,r){e.skipToEnd();r.cur=o;return"error"}function r(r,n){if(r.match(/^HTTP\/\d\.\d/)){n.cur=t;return"keyword"}else if(r.match(/^[A-Z]+/)&&/[ \t]/.test(r.peek())){n.cur=i;return"keyword"}else{return e(r,n)}}function t(r,t){var i=r.match(/^\d+/);if(!i)return e(r,t);t.cur=n;var u=Number(i[0]);if(u>=100&&u<200){return"positive informational"}else if(u>=200&&u<300){return"positive success"}else if(u>=300&&u<400){return"positive redirect"}else if(u>=400&&u<500){return"negative client-error"}else if(u>=500&&u<600){return"negative server-error"}else{return"error"}}function n(e,r){e.skipToEnd();r.cur=o;return null}function i(e,r){e.eatWhile(/\S/);r.cur=u;return"string-2"}function u(r,t){if(r.match(/^HTTP\/\d\.\d$/)){t.cur=o;return"keyword"}else{return e(r,t)}}function o(e){if(e.sol()&&!e.eat(/[ \t]/)){if(e.match(/^.*?:/)){return"atom"}else{e.skipToEnd();return"error"}}else{e.skipToEnd();return"string"}}function c(e){e.skipToEnd();return null}return{token:function(e,r){var t=r.cur;if(t!=o&&t!=c&&e.eatSpace())return null;return t(e,r)},blankLine:function(e){e.cur=c},startState:function(){return{cur:r}}}});e.defineMIME("message/http","http")});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+"use strict";
+
+CodeMirror.defineMode("http", function() {
+  function failFirstLine(stream, state) {
+    stream.skipToEnd();
+    state.cur = header;
+    return "error";
+  }
+
+  function start(stream, state) {
+    if (stream.match(/^HTTP\/\d\.\d/)) {
+      state.cur = responseStatusCode;
+      return "keyword";
+    } else if (stream.match(/^[A-Z]+/) && /[ \t]/.test(stream.peek())) {
+      state.cur = requestPath;
+      return "keyword";
+    } else {
+      return failFirstLine(stream, state);
+    }
+  }
+
+  function responseStatusCode(stream, state) {
+    var code = stream.match(/^\d+/);
+    if (!code) return failFirstLine(stream, state);
+
+    state.cur = responseStatusText;
+    var status = Number(code[0]);
+    if (status >= 100 && status < 200) {
+      return "positive informational";
+    } else if (status >= 200 && status < 300) {
+      return "positive success";
+    } else if (status >= 300 && status < 400) {
+      return "positive redirect";
+    } else if (status >= 400 && status < 500) {
+      return "negative client-error";
+    } else if (status >= 500 && status < 600) {
+      return "negative server-error";
+    } else {
+      return "error";
+    }
+  }
+
+  function responseStatusText(stream, state) {
+    stream.skipToEnd();
+    state.cur = header;
+    return null;
+  }
+
+  function requestPath(stream, state) {
+    stream.eatWhile(/\S/);
+    state.cur = requestProtocol;
+    return "string-2";
+  }
+
+  function requestProtocol(stream, state) {
+    if (stream.match(/^HTTP\/\d\.\d$/)) {
+      state.cur = header;
+      return "keyword";
+    } else {
+      return failFirstLine(stream, state);
+    }
+  }
+
+  function header(stream) {
+    if (stream.sol() && !stream.eat(/[ \t]/)) {
+      if (stream.match(/^.*?:/)) {
+        return "atom";
+      } else {
+        stream.skipToEnd();
+        return "error";
+      }
+    } else {
+      stream.skipToEnd();
+      return "string";
+    }
+  }
+
+  function body(stream) {
+    stream.skipToEnd();
+    return null;
+  }
+
+  return {
+    token: function(stream, state) {
+      var cur = state.cur;
+      if (cur != header && cur != body && stream.eatSpace()) return null;
+      return cur(stream, state);
+    },
+
+    blankLine: function(state) {
+      state.cur = body;
+    },
+
+    startState: function() {
+      return {cur: start};
+    }
+  };
+});
+
+CodeMirror.defineMIME("message/http", "http");
+
+});

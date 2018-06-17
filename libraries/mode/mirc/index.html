@@ -1,29 +1,32 @@
-<!DOCTYPE html><html><head><title>CodeMirror: mIRC mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: mIRC mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <link rel="stylesheet" href="../../theme/twilight.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="mirc.js"></script>
 <style>.CodeMirror {border: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">mIRC</a>
-  </li></ul>
+    <li><a class=active href="#">mIRC</a>
+  </ul>
 </div>
 
 <article>
 <h2>mIRC mode</h2>
-<form><textarea id="code" name="code">;AKA Nick Tracker by Ford_Lawnmower irc.GeekShed.net #Script-Help
+<form><textarea id="code" name="code">
+;AKA Nick Tracker by Ford_Lawnmower irc.GeekShed.net #Script-Help
 ;*****************************************************************************;
 ;**Start Setup
 ;Change JoinDisplay, below, for On Join AKA Display. On = 1 - Off = 0
@@ -41,14 +44,14 @@ On *:Join:#: {
 }
 on *:Nick: { NickNamesAdd $newnick $+($network,$wildsite) $nick }
 alias -l NickNames.display {
-  if ($gettok($hget(NickNames,$+($3,$4)),0,126) &gt; 1) {
+  if ($gettok($hget(NickNames,$+($3,$4)),0,126) > 1) {
     echo -g $2 $AKALogo $+(09,$1) $AKALogo 07 $mid($replace($hget(NickNames,$+($3,$4)),$chr(126),$chr(44)),2,-1)
   }
 }
 alias -l NickNamesAdd {
   if ($hget(NickNames,$2)) {
     if (!$regex($hget(NickNames,$2),/~\Q $+ $replacecs($1,\E,\E\\E\Q) $+ \E~/i)) {
-      if ($gettok($hget(NickNames,$2),0,126) &lt;= $MaxNicks) {
+      if ($gettok($hget(NickNames,$2),0,126) <= $MaxNicks) {
         hadd NickNames $2 $+($hget(NickNames,$2),$1,~)
       }
       else {
@@ -75,7 +78,7 @@ menu nicklist,query {
   -
   .AKA
   ..Check $$1: {
-    if ($gettok($hget(NickNames,$+($network,$address($1,2))),0,126) &gt; 1) {
+    if ($gettok($hget(NickNames,$+($network,$address($1,2))),0,126) > 1) {
       NickNames.display $1 $active $network $address($1,2)
     }
     else { echo -ag $AKALogo $+(09,$1) 07has not been known by any other nicknames while I have been watching. }
@@ -108,7 +111,7 @@ dialog AKA_Search {
 }
 On *:Dialog:Aka_Search:init:*: { did -c $dname 5 }
 On *:Dialog:Aka_Search:Sclick:2,7,9: {
-  if ($did == 2) &amp;&amp; ($did($dname,1)) {
+  if ($did == 2) && ($did($dname,1)) {
     did -r $dname 6
     var %search $+(*,$v1,*), %type $iif($did($dname,5).state,data,item), %matches = $hfind(NickNames,%search,0,w). [ $+ [ %type ] ]
     while (%matches) {
@@ -117,8 +120,8 @@ On *:Dialog:Aka_Search:Sclick:2,7,9: {
     }
     did -c $dname 6 1
   }
-  elseif ($did == 7) &amp;&amp; ($did($dname,6).seltext) { echo -ga $AKALogo 07 $mid($replace($hget(NickNames,$v1),$chr(126),$chr(44)),2,-1) }
-  elseif ($did == 9) &amp;&amp; ($did($dname,6).seltext) { clipboard $mid($v1,$pos($v1,*,1)) }
+  elseif ($did == 7) && ($did($dname,6).seltext) { echo -ga $AKALogo 07 $mid($replace($hget(NickNames,$v1),$chr(126),$chr(44)),2,-1) }
+  elseif ($did == 9) && ($did($dname,6).seltext) { clipboard $mid($v1,$pos($v1,*,1)) }
 }
 On *:Start:{
   if (!$hget(NickNames)) { hmake NickNames 10 }
@@ -155,4 +158,3 @@ Raw 315:*: {
     <p><strong>MIME types defined:</strong> <code>text/mirc</code>.</p>
 
   </article>
-</body></html>

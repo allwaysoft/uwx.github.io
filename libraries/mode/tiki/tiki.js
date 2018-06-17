@@ -1,1 +1,312 @@
-(function(e){if(typeof exports=="object"&&typeof module=="object")e(require("../../lib/codemirror"));else if(typeof define=="function"&&define.amd)define(["../../lib/codemirror"],e);else e(CodeMirror)})(function(e){"use strict";e.defineMode("tiki",function(e){function t(e,t,n){return function(i,u){while(!i.eol()){if(i.match(t)){u.tokenize=r;break}i.next()}if(n)u.tokenize=n;return e}}function n(e){return function(t,n){while(!t.eol()){t.next()}n.tokenize=r;return e}}function r(e,i){function u(t){i.tokenize=t;return t(e,i)}var a=e.sol();var f=e.next();switch(f){case"{":e.eat("/");e.eatSpace();e.eatWhile(/[^\s\u00a0=\"\'\/?(}]/);i.tokenize=o;return"tag";case"_":if(e.eat("_"))return u(t("strong","__",r));break;case"'":if(e.eat("'"))return u(t("em","''",r));break;case"(":if(e.eat("("))return u(t("variable-2","))",r));break;case"[":return u(t("variable-3","]",r));break;case"|":if(e.eat("|"))return u(t("comment","||"));break;case"-":if(e.eat("=")){return u(t("header string","=-",r))}else if(e.eat("-")){return u(t("error tw-deleted","--",r))}break;case"=":if(e.match("=="))return u(t("tw-underline","===",r));break;case":":if(e.eat(":"))return u(t("comment","::"));break;case"^":return u(t("tw-box","^"));break;case"~":if(e.match("np~"))return u(t("meta","~/np~"));break}if(a){switch(f){case"!":if(e.match("!!!!!")){return u(n("header string"))}else if(e.match("!!!!")){return u(n("header string"))}else if(e.match("!!!")){return u(n("header string"))}else if(e.match("!!")){return u(n("header string"))}else{return u(n("header string"))}break;case"*":case"#":case"+":return u(n("tw-listitem bracket"));break}}return null}var i=e.indentUnit;var u,a;function o(e,t){var n=e.next();var i=e.peek();if(n=="}"){t.tokenize=r;return"tag"}else if(n=="("||n==")"){return"bracket"}else if(n=="="){a="equals";if(i==">"){n=e.next();i=e.peek()}if(!/[\'\"]/.test(i)){t.tokenize=c()}return"operator"}else if(/[\'\"]/.test(n)){t.tokenize=f(n);return t.tokenize(e,t)}else{e.eatWhile(/[^\s\u00a0=\"\'\/?]/);return"keyword"}}function f(e){return function(t,n){while(!t.eol()){if(t.next()==e){n.tokenize=o;break}}return"string"}}function c(){return function(e,t){while(!e.eol()){var n=e.next();var r=e.peek();if(n==" "||n==","||/[ )}]/.test(r)){t.tokenize=o;break}}return"string"}}var s,l;function d(){for(var e=arguments.length-1;e>=0;e--)s.cc.push(arguments[e])}function k(){d.apply(null,arguments);return true}function g(e,t){var n=s.context&&s.context.noIndent;s.context={prev:s.context,pluginName:e,indent:s.indented,startOfLine:t,noIndent:n}}function p(){if(s.context)s.context=s.context.prev}function b(e){if(e=="openPlugin"){s.pluginName=u;return k(x,h(s.startOfLine))}else if(e=="closePlugin"){var t=false;if(s.context){t=s.context.pluginName!=u;p()}else{t=true}if(t)l="error";return k(m(t))}else if(e=="string"){if(!s.context||s.context.name!="!cdata")g("!cdata");if(s.tokenize==r)p();return k()}else return k()}function h(e){return function(t){if(t=="selfclosePlugin"||t=="endPlugin")return k();if(t=="endPlugin"){g(s.pluginName,e);return k()}return k()}}function m(e){return function(t){if(e)l="error";if(t=="endPlugin")return k();return d()}}function x(e){if(e=="keyword"){l="attribute";return k(x)}if(e=="equals")return k(v,x);return d()}function v(e){if(e=="keyword"){l="string";return k()}if(e=="string")return k(w);return d()}function w(e){if(e=="string")return k(w);else return d()}return{startState:function(){return{tokenize:r,cc:[],indented:0,startOfLine:true,pluginName:null,context:null}},token:function(e,t){if(e.sol()){t.startOfLine=true;t.indented=e.indentation()}if(e.eatSpace())return null;l=a=u=null;var n=t.tokenize(e,t);if((n||a)&&n!="comment"){s=t;while(true){var r=t.cc.pop()||b;if(r(a||n))break}}t.startOfLine=false;return l||n},indent:function(e,t){var n=e.context;if(n&&n.noIndent)return 0;if(n&&/^{\//.test(t))n=n.prev;while(n&&!n.startOfLine)n=n.prev;if(n)return n.indent+i;else return 0},electricChars:"/"}});e.defineMIME("text/tiki","tiki")});
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    mod(require("../../lib/codemirror"));
+  else if (typeof define == "function" && define.amd) // AMD
+    define(["../../lib/codemirror"], mod);
+  else // Plain browser env
+    mod(CodeMirror);
+})(function(CodeMirror) {
+"use strict";
+
+CodeMirror.defineMode('tiki', function(config) {
+  function inBlock(style, terminator, returnTokenizer) {
+    return function(stream, state) {
+      while (!stream.eol()) {
+        if (stream.match(terminator)) {
+          state.tokenize = inText;
+          break;
+        }
+        stream.next();
+      }
+
+      if (returnTokenizer) state.tokenize = returnTokenizer;
+
+      return style;
+    };
+  }
+
+  function inLine(style) {
+    return function(stream, state) {
+      while(!stream.eol()) {
+        stream.next();
+      }
+      state.tokenize = inText;
+      return style;
+    };
+  }
+
+  function inText(stream, state) {
+    function chain(parser) {
+      state.tokenize = parser;
+      return parser(stream, state);
+    }
+
+    var sol = stream.sol();
+    var ch = stream.next();
+
+    //non start of line
+    switch (ch) { //switch is generally much faster than if, so it is used here
+    case "{": //plugin
+      stream.eat("/");
+      stream.eatSpace();
+      stream.eatWhile(/[^\s\u00a0=\"\'\/?(}]/);
+      state.tokenize = inPlugin;
+      return "tag";
+    case "_": //bold
+      if (stream.eat("_"))
+        return chain(inBlock("strong", "__", inText));
+      break;
+    case "'": //italics
+      if (stream.eat("'"))
+        return chain(inBlock("em", "''", inText));
+      break;
+    case "(":// Wiki Link
+      if (stream.eat("("))
+        return chain(inBlock("variable-2", "))", inText));
+      break;
+    case "[":// Weblink
+      return chain(inBlock("variable-3", "]", inText));
+      break;
+    case "|": //table
+      if (stream.eat("|"))
+        return chain(inBlock("comment", "||"));
+      break;
+    case "-":
+      if (stream.eat("=")) {//titleBar
+        return chain(inBlock("header string", "=-", inText));
+      } else if (stream.eat("-")) {//deleted
+        return chain(inBlock("error tw-deleted", "--", inText));
+      }
+      break;
+    case "=": //underline
+      if (stream.match("=="))
+        return chain(inBlock("tw-underline", "===", inText));
+      break;
+    case ":":
+      if (stream.eat(":"))
+        return chain(inBlock("comment", "::"));
+      break;
+    case "^": //box
+      return chain(inBlock("tw-box", "^"));
+      break;
+    case "~": //np
+      if (stream.match("np~"))
+        return chain(inBlock("meta", "~/np~"));
+      break;
+    }
+
+    //start of line types
+    if (sol) {
+      switch (ch) {
+      case "!": //header at start of line
+        if (stream.match('!!!!!')) {
+          return chain(inLine("header string"));
+        } else if (stream.match('!!!!')) {
+          return chain(inLine("header string"));
+        } else if (stream.match('!!!')) {
+          return chain(inLine("header string"));
+        } else if (stream.match('!!')) {
+          return chain(inLine("header string"));
+        } else {
+          return chain(inLine("header string"));
+        }
+        break;
+      case "*": //unordered list line item, or <li /> at start of line
+      case "#": //ordered list line item, or <li /> at start of line
+      case "+": //ordered list line item, or <li /> at start of line
+        return chain(inLine("tw-listitem bracket"));
+        break;
+      }
+    }
+
+    //stream.eatWhile(/[&{]/); was eating up plugins, turned off to act less like html and more like tiki
+    return null;
+  }
+
+  var indentUnit = config.indentUnit;
+
+  // Return variables for tokenizers
+  var pluginName, type;
+  function inPlugin(stream, state) {
+    var ch = stream.next();
+    var peek = stream.peek();
+
+    if (ch == "}") {
+      state.tokenize = inText;
+      //type = ch == ")" ? "endPlugin" : "selfclosePlugin"; inPlugin
+      return "tag";
+    } else if (ch == "(" || ch == ")") {
+      return "bracket";
+    } else if (ch == "=") {
+      type = "equals";
+
+      if (peek == ">") {
+        ch = stream.next();
+        peek = stream.peek();
+      }
+
+      //here we detect values directly after equal character with no quotes
+      if (!/[\'\"]/.test(peek)) {
+        state.tokenize = inAttributeNoQuote();
+      }
+      //end detect values
+
+      return "operator";
+    } else if (/[\'\"]/.test(ch)) {
+      state.tokenize = inAttribute(ch);
+      return state.tokenize(stream, state);
+    } else {
+      stream.eatWhile(/[^\s\u00a0=\"\'\/?]/);
+      return "keyword";
+    }
+  }
+
+  function inAttribute(quote) {
+    return function(stream, state) {
+      while (!stream.eol()) {
+        if (stream.next() == quote) {
+          state.tokenize = inPlugin;
+          break;
+        }
+      }
+      return "string";
+    };
+  }
+
+  function inAttributeNoQuote() {
+    return function(stream, state) {
+      while (!stream.eol()) {
+        var ch = stream.next();
+        var peek = stream.peek();
+        if (ch == " " || ch == "," || /[ )}]/.test(peek)) {
+      state.tokenize = inPlugin;
+      break;
+    }
+  }
+  return "string";
+};
+                     }
+
+var curState, setStyle;
+function pass() {
+  for (var i = arguments.length - 1; i >= 0; i--) curState.cc.push(arguments[i]);
+}
+
+function cont() {
+  pass.apply(null, arguments);
+  return true;
+}
+
+function pushContext(pluginName, startOfLine) {
+  var noIndent = curState.context && curState.context.noIndent;
+  curState.context = {
+    prev: curState.context,
+    pluginName: pluginName,
+    indent: curState.indented,
+    startOfLine: startOfLine,
+    noIndent: noIndent
+  };
+}
+
+function popContext() {
+  if (curState.context) curState.context = curState.context.prev;
+}
+
+function element(type) {
+  if (type == "openPlugin") {curState.pluginName = pluginName; return cont(attributes, endplugin(curState.startOfLine));}
+  else if (type == "closePlugin") {
+    var err = false;
+    if (curState.context) {
+      err = curState.context.pluginName != pluginName;
+      popContext();
+    } else {
+      err = true;
+    }
+    if (err) setStyle = "error";
+    return cont(endcloseplugin(err));
+  }
+  else if (type == "string") {
+    if (!curState.context || curState.context.name != "!cdata") pushContext("!cdata");
+    if (curState.tokenize == inText) popContext();
+    return cont();
+  }
+  else return cont();
+}
+
+function endplugin(startOfLine) {
+  return function(type) {
+    if (
+      type == "selfclosePlugin" ||
+        type == "endPlugin"
+    )
+      return cont();
+    if (type == "endPlugin") {pushContext(curState.pluginName, startOfLine); return cont();}
+    return cont();
+  };
+}
+
+function endcloseplugin(err) {
+  return function(type) {
+    if (err) setStyle = "error";
+    if (type == "endPlugin") return cont();
+    return pass();
+  };
+}
+
+function attributes(type) {
+  if (type == "keyword") {setStyle = "attribute"; return cont(attributes);}
+  if (type == "equals") return cont(attvalue, attributes);
+  return pass();
+}
+function attvalue(type) {
+  if (type == "keyword") {setStyle = "string"; return cont();}
+  if (type == "string") return cont(attvaluemaybe);
+  return pass();
+}
+function attvaluemaybe(type) {
+  if (type == "string") return cont(attvaluemaybe);
+  else return pass();
+}
+return {
+  startState: function() {
+    return {tokenize: inText, cc: [], indented: 0, startOfLine: true, pluginName: null, context: null};
+  },
+  token: function(stream, state) {
+    if (stream.sol()) {
+      state.startOfLine = true;
+      state.indented = stream.indentation();
+    }
+    if (stream.eatSpace()) return null;
+
+    setStyle = type = pluginName = null;
+    var style = state.tokenize(stream, state);
+    if ((style || type) && style != "comment") {
+      curState = state;
+      while (true) {
+        var comb = state.cc.pop() || element;
+        if (comb(type || style)) break;
+      }
+    }
+    state.startOfLine = false;
+    return setStyle || style;
+  },
+  indent: function(state, textAfter) {
+    var context = state.context;
+    if (context && context.noIndent) return 0;
+    if (context && /^{\//.test(textAfter))
+        context = context.prev;
+        while (context && !context.startOfLine)
+          context = context.prev;
+        if (context) return context.indent + indentUnit;
+        else return 0;
+       },
+    electricChars: "/"
+  };
+});
+
+CodeMirror.defineMIME("text/tiki", "tiki");
+
+});

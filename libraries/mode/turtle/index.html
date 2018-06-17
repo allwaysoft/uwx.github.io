@@ -1,34 +1,37 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Turtle mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Turtle mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="turtle.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Turtle</a>
-  </li></ul>
+    <li><a class=active href="#">Turtle</a>
+  </ul>
 </div>
 
 <article>
 <h2>Turtle mode</h2>
-<form><textarea id="code" name="code">@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
-@prefix geo: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+<form><textarea id="code" name="code">
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-&lt;http://purl.org/net/bsletten&gt; 
+<http://purl.org/net/bsletten> 
     a foaf:Person;
-    foaf:interest &lt;http://www.w3.org/2000/01/sw/&gt;;
+    foaf:interest <http://www.w3.org/2000/01/sw/>;
     foaf:based_near [
         geo:lat "34.0736111" ;
         geo:lon "-118.3994444"
@@ -45,4 +48,3 @@
     <p><strong>MIME types defined:</strong> <code>text/turtle</code>.</p>
 
   </article>
-</body></html>

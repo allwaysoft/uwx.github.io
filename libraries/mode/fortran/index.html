@@ -1,30 +1,33 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Fortran mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Fortran mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="fortran.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Fortran</a>
-  </li></ul>
+    <li><a class=active href="#">Fortran</a>
+  </ul>
 </div>
 
 <article>
 <h2>Fortran mode</h2>
 
 
-<div><textarea id="code" name="code">! Example Fortran code
+<div><textarea id="code" name="code">
+! Example Fortran code
   program average
 
   ! Read in some numbers and take the average
@@ -46,15 +49,15 @@
   read  (*,*) points
 
   ! Take the average by summing points and dividing by number_of_points
-  if (number_of_points &gt; 0) average_points = sum(points) / number_of_points
+  if (number_of_points > 0) average_points = sum(points) / number_of_points
 
   ! Now form average over positive and negative points only
-  if (count(points &gt; 0.) &gt; 0) then
-     positive_average = sum(points, points &gt; 0.) / count(points &gt; 0.)
+  if (count(points > 0.) > 0) then
+     positive_average = sum(points, points > 0.) / count(points > 0.)
   end if
 
-  if (count(points &lt; 0.) &gt; 0) then
-     negative_average = sum(points, points &lt; 0.) / count(points &lt; 0.)
+  if (count(points < 0.) > 0) then
+     negative_average = sum(points, points < 0.) / count(points < 0.)
   end if
 
   deallocate (points)
@@ -76,4 +79,3 @@
 
     <p><strong>MIME types defined:</strong> <code>text/x-fortran</code>.</p>
   </article>
-</body></html>

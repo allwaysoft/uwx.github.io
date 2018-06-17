@@ -1,34 +1,37 @@
-<!DOCTYPE html><html><head><title>CodeMirror: Pascal mode</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="../../doc/docs.css">
+<!doctype html>
+
+<title>CodeMirror: Pascal mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
 
 <link rel="stylesheet" href="../../lib/codemirror.css">
 <script src="../../lib/codemirror.js"></script>
 <script src="pascal.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-</head><body><div id="nav">
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id="logo" src="../../doc/logo.png"></a>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
   <ul>
     <li><a href="../../index.html">Home</a>
-    </li><li><a href="../../doc/manual.html">Manual</a>
-    </li><li><a href="https://github.com/codemirror/codemirror">Code</a>
-  </li></ul>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
   <ul>
     <li><a href="../index.html">Language modes</a>
-    </li><li><a class="active" href="#">Pascal</a>
-  </li></ul>
+    <li><a class=active href="#">Pascal</a>
+  </ul>
 </div>
 
 <article>
 <h2>Pascal mode</h2>
 
 
-<div><textarea id="code" name="code">(* Example Pascal code *)
+<div><textarea id="code" name="code">
+(* Example Pascal code *)
 
-while a &lt;&gt; b do writeln('Waiting');
+while a <> b do writeln('Waiting');
  
-if a &gt; b then 
+if a > b then 
   writeln('Condition met')
 else 
   writeln('Condition not met');
@@ -56,4 +59,3 @@ end;
 
     <p><strong>MIME types defined:</strong> <code>text/x-pascal</code>.</p>
   </article>
-</body></html>
