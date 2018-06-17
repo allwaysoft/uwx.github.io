@@ -10,7 +10,7 @@ init:
 
 environment:
   access_token:
-    secure: lJbB21g5AIksBu9oZjhrKw/oYREuj82+JRRZpQ7L17Zm+tnquFcpj2AMCV7FJkLX
+    secure: qNMRA5boyCslJ9JgiqjpLdHd0NvhQVWcjJx3ZMrcgrDz6DNFJnDsV7w9IZuhqwYZ
 
 install:
  - git submodule update --init --recursive
