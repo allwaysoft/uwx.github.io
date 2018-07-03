@@ -31,3 +31,10 @@ test_script:
 cache:
   - node_modules -> **\package.json      # preserve "node_modules" directory in the root of build folder but will reset it if package.json is modified
   - '%APPDATA%\npm-cache'               # npm cache
+
+notifications:
+  - provider: Slack
+    on_build_success: true
+    on_build_failure: true
+    incoming_webhook:
+      secure: +5y63VhkKwOZVK264xwgH8gp7vI2cJivXvseQeSoYYNyH3wjOtid8Qz+gyNOjCGpI/xqxxJNwqFrL75ZPHYOYEKs9WhBWznTsFpJUAs5hxn1kcczMv6WYuwUzXJNEdqX6m47PnS7xrzUZJIRWNQCHRJCtN5VX+hXfVV6BT+tKQdRDeRr/LANhRLr2pAbIOGP
