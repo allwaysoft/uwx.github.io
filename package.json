@@ -27,7 +27,7 @@
     "ejs-lint": "^0.2.0",
     "fs-extra": "github:uwx-node-modules/fsxt",
     "http-server": "^0.11.0",
-    "jsdom": "^14.0.0",
+    "jsdom": "^15.1.0",
     "rm-local-modules": "0.0.2"
   },
   "scripts": {
