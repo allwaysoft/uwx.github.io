@@ -20,7 +20,7 @@
     "hexo-renderer-less": "^1.0.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.3.0",
-    "optipng": "^2.0.0",
+    "optipng": "^2.1.0",
     "parse5": "^5.0.0"
   },
   "devDependencies": {
